@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>25. MOSFET-Transistor als Schalter &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="26. BJT gemeinsamer Emitterverstärker" href="Activity_26_BJTCommonEmitterAmplifier.html" />
+    <link rel="prev" title="24. BJT-Transistor als Schalter" href="Activity_24_TheBJTasSwitch.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">25. MOSFET-Transistor als Schalter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">25.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">25.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">25.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">25.4. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">25.5. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>25. MOSFET-Transistor als Schalter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_25_MOSasSwitch.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mosfet-transistor-als-schalter">
+<h1>25. MOSFET-Transistor als Schalter<a class="headerlink" href="#mosfet-transistor-als-schalter" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>25.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Eine MOSFET-Vorrichtung (NMOS-Vorrichtung) kann in vielen
+Schaltungskonfigurationen verwendet werden, wie einem Verstärker,
+einem Oszillator, einem Filter, einem Gleichrichter oder einfach als
+Ein-Aus-Schalter verwendet werden. Wenn der FET in den
+Sättigungsbereich vorgespannt ist, arbeitet er als ein Verstärker oder
+eine andere lineare Schaltung, wenn er abwechselnd in dem linearen
+(Trioden) -Bereich und dem Sperrbereich vorgespannt wird, dann wird er
+als Schalter verwendet, der Strom fließen lässt oder nicht in anderen
+Teilen der Schaltung fließen. Diese Laboraktivität beschreibt das
+NMOS-Gerät, wenn es als Schalter betrieben wird.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>25.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab-Board-Hardware beziehen.</p>
+<p><a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; Signal_generator_Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p>Die für die Spannungsversorgung ** + 5V <a href="#id1"><span class="problematic" id="id2">**</span></a>, ** - 3.3V ** und ** + 3.3V
+** verwendeten Steckerstifte sind in der Dokumentation hier
+aufgeführt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
+maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
+Experiment werden die höheren Signalamplituden benötigt, um den
+NMOS-Transistor „einzuschalten“ ( <span class="math notranslate nohighlight">\(V_ {TH}\)</span> voltage). Aus
+diesem Grund werden wir einen <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> in der inverting_opamp
+Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
+zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
+erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
+Spannungsschienen geliefert. Die Verstärkung des invertierenden
+Verstärkers wird auf ~ 5 gesetzt, wobei gilt <span class="math notranslate nohighlight">\(R_i = 2.2k \
+Omega\)</span> und: math:` R_f = 10k Omega`.</p>
+<p class="last">Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+oder OP97 verwendet haben. (note „Schiene-zu-Schiene“).</p>
+</div>
+</div>
+<div class="section" id="hintergrund">
+<h2>25.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Schaltkreise unterscheiden sich wesentlich von linearen
+Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir
+komplexere Schaltungen untersuchen, werden wir mit der Einführung
+diskreter Halbleiterschaltkreise beginnen: diejenigen, die um
+NMOS-Bausteine ​​herum gebaut sind.</p>
+<p>Ein Schalter besteht aus einem NMOS-Transistor, der abwechselnd
+zwischen den Trioden- und Abschneidebereichen betrieben wird. Eine
+einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn
+der Eingang gleich ist <span class="math notranslate nohighlight">\(-V_ {in}\)</span>, ist die Gate-Source-Spannung
+kleiner als die Schwellenspannung ( <span class="math notranslate nohighlight">\(-V_ {TH}\)</span>) oder aus, so
+fließt kein Strom in den Drain. Dies wird durch die rote Lastlinie in
+der Abbildung veranschaulicht. Wenn der NMOS abgeschaltet ist, hat die
+Schaltung (idealerweise) die folgenden Werte:</p>
+<div class="math notranslate nohighlight">
+\[V_ {DS} = V_ {DD} \ Quad \ Text {und} \ Quad I_D = 0 A \ Quad (1)\]</div>
+<p>Dieser Zustand ähnelt einem offenen Schalter.</p>
+<p>Wenn der Eingang gleich ist <span class="math notranslate nohighlight">\(V_ {TH}\)</span>, wird der Transistor in
+die Triodenregion getrieben und die folgenden Bedingungen treten auf:</p>
+<div class="math notranslate nohighlight">
+\[V_ {DS} \ approx 0 \ quad \ text {und} \ quad I_D = \ frac {V_ {DD}} {R_D} A \ quad (2)\]</div>
+<p>Dieser Zustand ähnelt einem geschlossenen Schalter, der die Unterseite
+von <span class="math notranslate nohighlight">\(R_D\)</span> mit Masse verbindet.</p>
+<div class="figure" id="id3">
+<img alt="_images/Activity_25_Fig_01.png" src="_images/Activity_25_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 25.1 </span><span class="caption-text">Abbildung 1: NMOS-FET-Schalter und seine Ladeleitung</span></p>
+</div>
+<p>Die Eigenschaften für einen Enhancement-Modus-NMOS-Schalter setzen
+voraus, dass:</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(-V_ {in}\)</span> ist niedrig genug, um den Transistor in
+Abschaltung zu treiben.</li>
+<li><span class="math notranslate nohighlight">\(+ V_ {in}\)</span> muss größer sein als <span class="math notranslate nohighlight">\(V_ {TH}\)</span> um den
+Transistor in Triode zu treiben</li>
+<li>Der Transistor ist eine ideale Komponente. Diese Bedingungen können
+sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:<ol class="loweralpha">
+<li><span class="math notranslate nohighlight">\(-V_ {in} = V_ {TH}\)</span></li>
+<li><span class="math notranslate nohighlight">\(+ V_ {in} = V_ {TH}\)</span> ( <span class="math notranslate nohighlight">\(V_ {DD}\)</span> ist ein gutes
+Maximum)</li>
+</ol>
+</li>
+</ol>
+<p>Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den
+Abschaltbereich getrieben wird. Die Bedingungen 2 stellen sicher, dass
+der Transistor angesteuert wird in die Triodenregion.</p>
+<p>Ein tatsächlicher NMOS-Schalter unterscheidet sich von dem idealen
+Schalter in mehreren Aspekten. In der Praxis gibt es selbst im
+Sperrbereich einen kleinen Leckstrom durch den Transistor. In der
+Triode fällt auch immer eine gewisse Spannung über den internen
+Widerstand des Transistors ab <span class="math notranslate nohighlight">\(R_ {ON}\)</span>. Typischerweise liegt
+diese in Abhängigkeit von dem Drain-Strom und der Größe des Geräts
+zwischen 0,1 und 0,2 V in Triode. Diese Abweichungen vom Ideal sind
+bei einem Gerät mit einer geeigneten Größe im Allgemeinen geringfügig,
+so dass wir nahezu ideale Bedingungen annehmen können, wenn ein
+NMOS-Schaltkreis analysiert oder entworfen wird.</p>
+<div class="figure" id="id4">
+<img alt="_images/Activity_25_Fig_02.png" src="_images/Activity_25_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 25.2 </span><span class="caption-text">Abbildung 2: NMOS-LED-Schalter</span></p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>25.4. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Rotes Pitaya STEMlab</li>
+<li>1x 10kΩ Widerstand</li>
+<li>1x 100Ω Widerstand</li>
+<li>1x 5mm LED (jede Farbe)</li>
+<li>1x Kleinsignal-NMOS-Transistor <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a></li>
+<li>1x lötfreies Steckbrett</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>25.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die übliche Anwendung für einen NMOS (oder irgendeinen anderen)
+Schalter ist das Ansteuern einer LED. Ein LED-Treiber ist in Fig. 2
+gezeigt. Der Treiber, der in dieser Figur gezeigt ist, wird verwendet,
+um einen Niedrigstromteil der Schaltung an ein Gerät mit relativ hohem
+Strom (die LED) zu koppeln. Wenn der Ausgang von der
+Niedrigstromschaltung niedrig ist (0 V), ist der Transistor
+abgeschaltet und die LED ist aus. Wenn der Ausgang des
+Niederstromkreises hoch geht (oben <span class="math notranslate nohighlight">\(V_ {TH}\)</span>), wird der
+Transistor in Triode getrieben und die LED leuchtet. Der Treiber wird
+verwendet, da der stromsparende Teil der Schaltung möglicherweise
+nicht über die Stromfähigkeit verfügt, um die 20 mA (typisch) zu
+liefern, die erforderlich sind, um die LED auf volle Helligkeit zu
+bringen.</p>
+<ol class="arabic simple">
+<li>Bauen Sie den LED-Schalter-Schaltkreis, der in Abbildung 2 gezeigt
+wird, auf Ihrem lötfreien Steckbrett auf.  <span class="math notranslate nohighlight">\(R_D\)</span> dient zur
+Begrenzung des Stroms, der in der LED von der +5 V-Spannung fließt
+liefern. Der Schalter wird durch den Spannungsausgang OUT1
+gesteuert, der durch den invertierenden Verstärker OP484 verstärkt
+wird. Der Scope-Kanal IN zeigt die Spannung an der LED an, wie in
+Abbildung 2 dargestellt.</li>
+<li>Für <span class="math notranslate nohighlight">\(R_D\)</span> nehmen 100 <span class="math notranslate nohighlight">\(\ Omega\)</span> Widerstand. Für
+<span class="math notranslate nohighlight">\(R_G\)</span> nehmen Sie 10 <span class="math notranslate nohighlight">\(k \ Omega\)</span>. Gate-Widerstand mit
+der GND verbunden ist eine gute Praxis, um verhindert eine
+unerwünschte Transistorumschaltung durch statische
+Elektrizität.</li>
+</ol>
+<div class="figure" id="id5">
+<img alt="_images/Activity_25_Fig_03.png" src="_images/Activity_25_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 25.3 </span><span class="caption-text">Abbildung 3: NMOS LED-Schalter auf dem Steckbrett</span></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>Starten Sie die Applikation Oszilloskop &amp; Signalgenerator</li>
+<li>Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5
+V, den DC-Offset auf -0,5 V und die Frequenz auf 10 Hz ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü SQUARE,
+deaktivieren Sie SHOW und wählen Sie enable.</li>
+<li>Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN1 V / div auf 2V / div und IN2 auf 1V / div eingestellt ist
+(Sie können V / div einstellen, indem Sie die gewünschte Option
+auswählen   Kanal und mit vertikalen +/- Kontrollen)</li>
+<li>Setze t / div Wert auf 20ms / div (Du kannst t / div mit
+horizontalen +/- Kontrollen einstellen)</li>
+<li>Stellen Sie unter den Menüeinstellungen IN2 und IN1 den Messtaster
+auf x10 und den vertikalen Offset auf 0.</li>
+</ol>
+<div class="figure" id="id6">
+<img alt="_images/Activity_25_Fig_04.png" src="_images/Activity_25_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 25.4 </span><span class="caption-text">Abbildung 4: NMOS als Switch-Messungen</span></p>
+</div>
+<p>Aus Abbildung 4 können wir das Verhalten des NMOS-Transistors
+beobachten, wenn es als Schalter arbeitet. Wenn die Basisspannung
+„hoch“ ist, wird der Transistor „eingeschaltet“, wodurch ein
+Stromfluss von +5 V Spannungsschiene durch die Diode zu GND ermöglicht
+wird. Wenn der Strom zu fließen beginnt, blinkt die LED.</p>
+<p>In diesem „eingeschalteten“ Zustand können wir sehen, dass IN2
+(LED-Spannung nicht auf 0 V geht). Dies ist der Effekt der
+Vorwärtsabfallsspannungen der LED-Diode und des M1-Transistors. Aus
+Abbildung 4 können wir diese Drop-Down-Spannung von ~ 1,9 V
+messen. Versuchen Sie zu messen, wie viel Drop-Down-Spannung durch M1
+verursacht wird und welche Menge durch LED. Wenn die Basisspannung
+„niedrig“ ist, wird der Transistor „ausgeschaltet“, wodurch der
+Stromfluss gesperrt wird, weshalb die LED-Spannung gleich ist wie
+R1, d. H. 5 V.</p>
+<p>Wir können das „Einschalt-Ereignis“ von M1 beobachten, indem wir die
+TRIANGLE-Wellenform von OUT1 auswählen. Aus Abbildung 5 können wir
+sehen, wenn Gate-Signal übergeht <span class="math notranslate nohighlight">\(V_ {TH}\)</span> der Transistor ist
+eingeschaltet.</p>
+<div class="figure" id="id7">
+<img alt="_images/Activity_25_Fig_05.png" src="_images/Activity_25_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 25.5 </span><span class="caption-text">Abbildung 5: NMOS-Schaltereignis</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Mehrheit der NMOS-Transistoren haben <span class="math notranslate nohighlight">\(V_ {TH}\)</span> größer als 2V.</p>
+</div>
+<p>Durch Umschalten des Oszilloskop-Sensors IN2 auf den
+Drain-Anschluss (D) des M1 können wir den Spannungsabfall am
+M1-Transistor messen (Abbildung 6).</p>
+<div class="figure" id="id8">
+<img alt="_images/Activity_25_Fig_06.png" src="_images/Activity_25_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 25.6 </span><span class="caption-text">Abbildung 6: NMOS-Spannungsabfall.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Versuchen Sie aus dem M1 Spannungsabfall zu berechnen <span class="math notranslate nohighlight">\(R_
+{ON}\)</span> des NMOS <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> Transistors und vergleichen Sie die
+Ergebnisse mit den Werten aus dem Datenblatt.</p>
+<p class="last">Tipp: Berechnen Sie den Strom durch M1, messen Sie den
+Spannungsabfall an M1, berechnen Sie <span class="math notranslate nohighlight">\(R_ {ON}\)</span>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Transistor <span class="math notranslate nohighlight">\(R_ {ON}\)</span> Parameter ist entscheidend in
+Hochstromanwendungen, da die Verlustleistung vom Stromfluss durch
+den Transistor und <span class="math notranslate nohighlight">\(R_ {ON}\)</span> Wert abhängig ist.</p>
+</div>
+<div class="math notranslate nohighlight">
+\[P_ {dis} = I ^ 2_D R_ {ON} \ quad\]</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_26_BJTCommonEmitterAmplifier.html" class="btn btn-neutral float-right" title="26. BJT gemeinsamer Emitterverstärker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_24_TheBJTasSwitch.html" class="btn btn-neutral" title="24. BJT-Transistor als Schalter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

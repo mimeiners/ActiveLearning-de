@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>15. OPAMP Verstärkungsbandbreite Produkt \(GBW\) &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="16. Differenzverstärker" href="Activity_16_DifferenceAmplifier.html" />
+    <link rel="prev" title="14. OPAMP Open Loop Verstärkung" href="Activity_14_OPAMPOpenLoopGain.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">15.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">15.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">15.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">15.4. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">15.5. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_15_OpAmpGainBandwidthProduct.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="opamp-verstarkungsbandbreite-produkt-gbw">
+<h1>15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span><a class="headerlink" href="#opamp-verstarkungsbandbreite-produkt-gbw" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>15.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der <strong>Verstärkungsbandbreitenprodukt</strong> (<a href="#id1"><span class="problematic" id="id2">:mazh:`GBW`</span></a>) oder die Verstärkungsbandbreite der Einheit.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>15.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung -3,3V und +3,3V sind in der Dokumentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">hier</a> zu entnehmen. Die Anwendung des <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html">Bode</a> - Analysators wird verwendet, um den Frequenzgang der Operationsverstärker-Schaltung zu messen.</p>
+</div>
+<div class="section" id="materialien">
+<h2>15.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Rotes Pitaya STEMlab</li>
+<li>OPAMP: 1x OP97</li>
+<li>Widerstand: 2x 100 <span class="math notranslate nohighlight">\(\Omega\)</span></li>
+<li>Widerstand: 1x 47 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1x 100 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 2x 10 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+</ul>
+</div>
+<div class="section" id="hintergrund">
+<h2>15.4. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<dl class="docutils">
+<dt>Die Vorwärtsverstärkung,: math: „G“ ist definiert als die Verstärkung des Operationsverstärkers, wenn ein Signal differentiell in den Verstärker eingespeist wird, ohne dass eine negative Rückkopplung angelegt ist. Diese Verstärkung ist bei allen Frequenzen idealerweise unendlich, aber bei einem echten Operationsverstärker ist sie endlich und hängt von der Frequenz ab. Bei niedriger Frequenz ist die Verstärkung maximal, nimmt linear mit steigender Frequenz ab und hat einen Wert von eins bei der Frequenz, die allgemein als die Einheitsverstärkung oder Grenzfrequenz bezeichnet wird <span class="math notranslate nohighlight">\(f_ {c}\)</span> (in der Gleichungsform, <span class="math notranslate nohighlight">\(G (f_c) = 1\)</span>). Für den Operationsverstärker ** OP97 ** beträgt die Verstärkungsfrequenz ** 900 kHz <a href="#id3"><span class="problematic" id="id4">**</span></a>, die Verstärkung ** Open-Loop bei dieser Frequenz ist einfach eins <a href="#id5"><span class="problematic" id="id6">**</span></a>. Dies ist auch die Closed-Loop-Bandbreite oder die maximale Frequenz, wenn die Rückkopplung mit einer Regelkreisverstärkung von 1 konfiguriert ist <span class="math notranslate nohighlight">\(G_f\)</span> ist definiert als das ** Verstärkungs-Bandbreite-Produkt <a href="#id7"><span class="problematic" id="id8">**</span></a>,</dt>
+<dd><span class="math notranslate nohighlight">\(GBW\)</span>, und für alle Eingangsfrequenzen ist dieses Produkt konstant und gleich <span class="math notranslate nohighlight">\(f_c\)</span>. Die Verstärkung kann als einfache Zahl (Magnitude) oder in dB (Dezibel) angegeben werden.</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\]</div>
+<p>GBW = Gewinn * f_c</p>
+<p>oder</p>
+<p>GBW = Gewinn * BW</p>
+<p>Dabei gilt <span class="math notranslate nohighlight">\(f_c\)</span> ist die Grenzfrequenz (bei <span class="math notranslate nohighlight">\(f_c\)</span> wird um -3dB verringert (-3dB = <span class="math notranslate nohighlight">\(1 / \ sqrt {2}\)</span> drob in der Signalamplitude))
+und <span class="math notranslate nohighlight">\(BW\)</span> Frequenzbandbreite in diesem Fall gegeben als: math:` BW = f_c`</p>
+<p>Abbildung 1 aus dem OP97-Datenblatt veranschaulicht diese Beziehung grafisch. Wenn eine Rückkopplung bereitgestellt wird, wie in einem invertierenden Verstärker, ist die Verstärkung gegeben durch G = -R2 / R1; Es muss jedoch erkannt werden, dass die Größe dieser Verstärkung niemals die Verstärkung übersteigen kann, die durch das Verstärkungs-Bandbreite-Produkt gegeben ist.</p>
+<div class="figure">
+<img alt="_images/Activity_15_Fig_01.png" src="_images/Activity_15_Fig_01.png" />
+</div>
+<p>Abbildung 1: OP97 Open-Loop-Verstärkung, Phase vs. Frequenz</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Sie sollten folgendes beachten: Die maximale Frequenz des „normalen Betriebs“ (dh Frequenzbandbreite, dh Grenzfrequenz, dh Frequenz, bei der die Verstärkung um 3 dB abfällt) Ihrer Operationsverstärkerschaltung (Verstärker) in nicht invertierender oder invertierender Konfiguration ist IMMER abhängig von der GAIN. ** Wenn Sie eine höhere Verstärkung wählen, ist die Frequenzbandbreite geringer und umgekehrt. **</p>
+<p>Beispielsweise:
+Wenn wir einen invertierenden Verstärker mit Verstärkung = 100 basierend auf OP97 haben wollen, wird unsere Frequenzbandbreite wie folgt angegeben:</p>
+<div class="math notranslate nohighlight">
+\[BW = GBW_ {OP927} / 100 = 900 kHz / 100 = 9 kHz\]</div>
+<p>für Verstärkung = 1000</p>
+<div class="last math notranslate nohighlight">
+\[BW = GBW_ {OP927} / 1000 = 900 kHz / 1000 = 900 Hz\]</div>
+</div>
+</div>
+<div class="section" id="verfahren">
+<h2>15.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bauen Sie die in Abbildung 2 gezeigte Schaltung auf Ihrem lötfreien Steckbrett auf, um den Frequenzgang eines invertierenden Verstärkers mit einer Verstärkung von 1000 zu messen. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um ein kleines Signal mit dem STEMlab-Generator zu erzeugen, wird ein 1/1000-Spannungsteiler [R3 - (R4 || R1)] verwendet, um das 2 V p2p-Sinussignal auf 2 mV p2p am invertierenden Verstärkereingang zu reduzieren. R4 und R1 sind aufgrund der „virtuellen Masse“ an Pin 2 effektiv parallel. Die parallele Kombination von R4 und R1 beträgt 50 Ω, was bei 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.</p>
+<div class="figure">
+<img alt="_images/Activity_15_Fig_02.png" src="_images/Activity_15_Fig_02.png" />
+</div>
+<p>Abbildung 2: Invertierender Verstärker mit Verstärkung von 1000</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse anschließen, überprüfen Sie Ihren Stromkreis. Die Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen Kurzschluss und können im Falle eines Kurzschlusses beschädigt werden.</p>
+</div>
+<ol class="arabic simple">
+<li>Richten Sie die Filterschaltung wie in Abbildung 2 auf Ihrem lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2 = 100 kΩ und R3 = 47 kΩ ein.</li>
+<li>Starten Sie die Bode-Analyseanwendung. Die Bode-Analysator-Anwendung führt einen Frequenzsweep so durch, dass ein Sinussignal erzeugt wird <span class="math notranslate nohighlight">\(OUT1\)</span> innerhalb des von uns gewählten Frequenzbereichs (im Einstellungsmenü).  <span class="math notranslate nohighlight">\(IN1\)</span> Eingangssignal ist direkt verbunden mit: math:` OUT_1` folgt <span class="math notranslate nohighlight">\(IN1 = V_ {in}\)</span>.  <span class="math notranslate nohighlight">\(IN2\)</span> ist auf der anderen Seite des Filters verbunden und von diesem: math:` IN2 = <a href="#id9"><span class="problematic" id="id10">V_</span></a> {out} <cite>. Die Bode-Analysator-Anwendung nimmt dann für jeden Frequenzschritt das Verhältnis von :math:`IN1 / IN2</cite> ( <span class="math notranslate nohighlight">\(V_ {in} / V_ {out}\)</span> ) und berechnet den Frequenzgang.</li>
+<li>Stellen Sie im Bode-Analyzer-Einstellungsmenü Folgendes ein:</li>
+</ol>
+<ul class="simple">
+<li>Startfrequenz: 100 Hz</li>
+<li>Endfrequenz: 20 kHz</li>
+<li>Anzahl der Schritte: 50</li>
+<li>Maßstab: Protokoll</li>
+<li>Wählen Sie die RUN-Taste</li>
+</ul>
+<div class="figure">
+<img alt="_images/Activity_15_Fig_03.png" src="_images/Activity_15_Fig_03.png" />
+</div>
+<p>Abbildung 3: Typischer OP97 Bode Plot Gain = 1000</p>
+<p>Aus der Abbildung 3 können wir sehen, dass die Daten der Theorie und des OP97-Datenblattes mit der Messung übereinstimmen. Bei Gain = 1000 beträgt das BW 900Hz.
+Stellen Sie R2 auf 10 kΩ, R3 = 4,7 kΩ, wiederholen Sie die Messungen und beobachten Sie die Ergebnisse.</p>
+<div class="figure">
+<img alt="_images/Activity_15_Fig_04.png" src="_images/Activity_15_Fig_04.png" />
+</div>
+<p>Abbildung 3: Typischer OP97 Bode Plot Gain = 100</p>
+<p>Wie wir aus der Abbildung 4 für x10 weniger Verstärkung sehen können, wird das BW um x10 erhöht
+Gleichung <span class="math notranslate nohighlight">\(GBW = BW * Verstärkung = const\)</span>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_16_DifferenceAmplifier.html" class="btn btn-neutral float-right" title="16. Differenzverstärker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_14_OPAMPOpenLoopGain.html" class="btn btn-neutral" title="14. OPAMP Open Loop Verstärkung" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

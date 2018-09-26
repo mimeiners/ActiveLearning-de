@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>22. Der BJT-Transistor ist als Diode geschaltet &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="23. Der MOS-Transistor ist als Diode geschaltet" href="Activity_23_TheMOSAsDiode.html" />
+    <link rel="prev" title="21. Präzisionsgleichrichter, Absolutwertschaltungen" href="Activity_21_PrecisionRectifiers.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">22. Der BJT-Transistor ist als Diode geschaltet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">22.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">22.2. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">22.3. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vi-kurvenmessungen">22.4. VI-Kurvenmessungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reverse-breakdown-eigenschaften">22.5. Reverse Breakdown-Eigenschaften</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">22.6. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frage">22.7. Frage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#absenken-der-effektiven-durchlassspannung-der-diode">22.8. Absenken der effektiven Durchlassspannung der Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">22.9. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">22.10. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>22. Der BJT-Transistor ist als Diode geschaltet</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_22_TheBJTasDiode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="der-bjt-transistor-ist-als-diode-geschaltet">
+<h1>22. Der BJT-Transistor ist als Diode geschaltet<a class="headerlink" href="#der-bjt-transistor-ist-als-diode-geschaltet" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>22.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Zweck dieser Aktivität besteht darin, die Vorwärts- und
+Rückwärts-Strom-Spannungs-Kennlinie eines Bipolartransistors (BJT) zu
+untersuchen, der als Diode geschaltet ist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab-Board-Hardware beziehen.</p>
+<p><a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; Signal_generator_Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p class="last">Die für die Spannungsversorgung <strong>+5V</strong>, <strong>-3.3V</strong> und <strong>+3.3V</strong>
+verwendeten Steckerstifte sind in der Dokumentation hier
+aufgeführt.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p>Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
+maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
+Experiment sind die höheren Signalamplituden erforderlich. Aus
+diesem Grund werden wir einen <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> in der inverting_opamp
+Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
+zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
+erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
+Spannungsschienen geliefert. Die Verstärkung des invertierenden
+Verstärkers wird auf ~ 5 gesetzt, wobei gilt <span class="math notranslate nohighlight">\(R_i = 2.2k \ Omega\)</span>
+und <span class="math notranslate nohighlight">\(R_f = 10k \ Omega\)</span></p>
+<p class="last">Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+oder OP97 verwendet haben. (Hinweis: <em>Rail-to-Rail</em>).</p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>22.2. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> Quad-Rail-Rail-Operationsverstärker</li>
+<li>1kΩ Widerstand</li>
+<li>10kΩ Widerstand</li>
+<li>2,2 kΩ Widerstand</li>
+<li>kleinsignal NPN-Transistor (2N3904)</li>
+<li>kleinsignal PNP-Transistor (2N3906)</li>
+<li>lötfreies Steckbrett</li>
+<li>9V Batterie</li>
+</ul>
+<p>Ein NPN-Transistor, der wie in 1 gezeigt angeschlossen ist, verhält
+sich wie eine reguläre Diode. Wir können dies durch Messen der
+NPN-Antwort unter Verwendung der Oszilloskop- &amp;
+Signalgenerator-Anwendung zeigen.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_22_Fig_01.png" src="_images/Activity_22_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 22.1 </span><span class="caption-text">NPN als Diodenanschlussdiagramm</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Beachten Sie, dass die in Abbildung 1 (links) gezeigte
+Verstärkerschaltung nicht das Hauptthema dieses Experiments
+ist. Diese Schaltung wird nur hinzugefügt, um das Signal OUT1 zu
+verstärken.</p>
+<p class="last">Von hier aus können Sie Punkt <span class="math notranslate nohighlight">\(-5 \times V_{OUT1}\)</span> als
+Haupterregungssignal betrachten.</p>
+</div>
+</div>
+<div class="section" id="verfahren">
+<h2>22.3. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Erstellen Sie die Schaltung aus Abbildung 1 auf dem
+Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein</li>
+</ol>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_22_Fig_02.png" src="_images/Activity_22_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 22.2 </span><span class="caption-text">npn-Transistor als Diodenverbindung auf dem Steckbrett</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+anschließen, überprüfen Sie Ihren Stromkreis. Die
+Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+werden.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,8
+V, den DC-Offset auf -0,12 V und die Frequenz auf 1 kHz ein, um die
+Eingangsspannung anzulegen.</p>
+<p>Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
+wählen Sie enable.</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1, IN2 und MATH V / div auf der linken
+unteren Seite des Bildschirms auf 1V / div eingestellt sind (Sie
+können V / div einstellen, indem Sie die gewünschte Option
+auswählen Kanal und mit vertikalen +/- Kontrollen)</p>
+</li>
+<li><p class="first">Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
+horizontalen +/- Kontrollen einstellen)</p>
+</li>
+<li><p class="first">Stellen Sie unter MATH-Kanaleinstellungen folgendes ein: math:
+<cite>IN1-IN2</cite> und wählen Sie ENABLE.</p>
+</li>
+<li><p class="first">Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+auf x10 und den vertikalen Offset auf 0.</p>
+</li>
+</ol>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_22_Fig_03.png" src="_images/Activity_22_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 22.3 </span><span class="caption-text">npn-Transistor als Diodenmessungen</span></p>
+</div>
+<p>Aus <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 22.3</span></a> können wir sehen, dass der NPN BJT-Transistor
+in der in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 22.1</span></a> gezeigten Konfiguration sich wie eine
+Diode verhält.</p>
+<p>Vergleichen Sie die Ergebnisse mit den Diodenmessungen von <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements">previous</a>
+experiment.</p>
+</div>
+<div class="section" id="vi-kurvenmessungen">
+<h2>22.4. VI-Kurvenmessungen<a class="headerlink" href="#vi-kurvenmessungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Da sich BJT wie eine Diode verhalten kann (vgl. Konfiguration in
+<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 22.1</span></a>), können wir die VI-Charakteristik wie bei
+Diodenmessungen messen. Für diese Aufgabe verwenden wir die Jupyter
+Notebook Web-Anwendung. Wie man Jupyter Notebook startet und ein neues
+Projekt erstellt, ist in <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 22.4</span></a> dargestellt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Das <a class="reference external" href="http://jupyter.org/index.html">Jupyter</a> <a class="reference external" href="http://jupyter.org/index.html">Notebook</a> ist eine Webanwendung, mit der Sie Dokumente
+erstellen und freigeben können, die Live-Code, Gleichungen,
+Visualisierungen und erklärenden Text enthalten. Sie haben auch die
+Unterstützung der Jupyter-Anwendung mit Red Pitaya-Bibliotheken
+sichergestellt, die die Steuerung aller Funktionen der
+STEMlab-Boards ermöglichen: Signalerfassung, Signalerzeugung,
+digitale Signalsteuerung, Kommunikation usw. Das Jupyter-Notebook
+wird auf die gleiche Weise gestartet wie jedes andere
+Anwendungen. Nach dem Start der Jupyter-Anwendung wird ein
+webbasiertes Notizbuch geöffnet. Diese Kombination aus Notebook,
+STEMlab und Python macht das STEMlab zu einem hervorragenden
+Werkzeug für das Prototyping und die schnelle Programmierung. Seit
+Jupyter Notebook ermöglicht Text, Gleichung und Bildbearbeitung ist
+dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.</p>
+</div>
+<div class="figure align-center" id="fig-04">
+<img alt="img/Activity_22_Fig_04.png" src="img/Activity_22_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 22.4 </span><span class="caption-text">Erstellen eines neuen Jupyter-Notebooks</span></p>
+</div>
+<p>Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
+kopieren Sie den Code und fügen Sie ihn ein.</p>
+<p>Der Code unten erzeugt das gleiche Signal wie in Abbildung 6, aber es
+wird sie im XY-Diagramm darstellen.</p>
+<p>Zum Messen <span class="math notranslate nohighlight">\(VI\)</span> -Kurve wird ein „XY“-Plot benötigt, wobei
+die x-Achse die Diodenspannung darstellt <span class="math notranslate nohighlight">\(IN_2\)</span> und y-Achse
+ein Diodenstrom <span class="math notranslate nohighlight">\((IN_1 - IN_2) / R_3\)</span>.</p>
+<p><strong>Kopieren Sie den Code von unten in die Zelle 1</strong></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">from</span> <span class="nn">redpitaya.overlay.mercury</span> <span class="kn">import</span> <span class="n">mercury</span> <span class="k">as</span> <span class="n">overlay</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">push_notebook</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Range1d</span><span class="p">,</span> <span class="n">LinearAxis</span><span class="p">,</span> <span class="n">LabelSet</span><span class="p">,</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">bokeh.resources</span> <span class="kn">import</span> <span class="n">INLINE</span>
+<span class="n">output_notebook</span><span class="p">(</span><span class="n">resources</span><span class="o">=</span><span class="n">INLINE</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Initialize fpga modules</span>
+<span class="n">fpga</span> <span class="o">=</span> <span class="n">overlay</span><span class="p">()</span>
+<span class="n">gen0</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">osc</span> <span class="o">=</span> <span class="p">[</span><span class="n">fpga</span><span class="o">.</span><span class="n">osc</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fpga</span><span class="o">.</span><span class="n">MNO</span><span class="p">)]</span>
+
+<span class="c1"># Configure OUT1 generator channel</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.12</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">waveform</span> <span class="o">=</span> <span class="n">gen0</span><span class="o">.</span><span class="n">sawtooth</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">trigger</span><span class="p">()</span>
+
+<span class="c1"># R1 resistor value</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Configure IN1 and IN2 oscilloscope input channels</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">osc</span><span class="p">:</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">filter_bypass</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c1"># data rate decimation</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">decimation</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="c1"># trigger timing [sample periods]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">buffer_size</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_pre</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_post</span> <span class="o">=</span> <span class="n">N</span>
+
+    <span class="c1"># osc0 is controlling both channels</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">sync_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">sync_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trig_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">trig_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+
+    <span class="c1"># trigger level [V], edge [&#39;neg&#39;, &#39;pos&#39;] and holdoff time [sample periods]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">edg</span> <span class="o">=</span> <span class="s1">&#39;pos&#39;</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">holdoff</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Initialize diode current and voltage</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Plotting</span>
+    <span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;vline&#39;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="s2">&quot;@x&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;@y&quot;</span><span class="p">)])</span>
+    <span class="n">tools</span> <span class="o">=</span> <span class="s2">&quot;wheel_zoom, box_zoom, reset,pan&quot;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+               <span class="n">plot_width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+               <span class="n">title</span><span class="o">=</span><span class="s2">&quot;XY plot of transistor VI characteristic&quot;</span><span class="p">,</span>
+               <span class="n">toolbar_location</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+               <span class="n">tools</span><span class="o">=</span><span class="p">(</span><span class="n">tools</span><span class="p">,</span> <span class="n">hover</span><span class="p">))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Voltage [V]&#39;</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Current [mA]&#39;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+    <span class="c1"># get and explicit handle to update the next show cell</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">notebook_handle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Erstelle eine neue Zelle (Einfügen -&gt; Zelle darunter) und kopiere Code
+von unten hinein.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Measuring I, V  and re-plotting</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># reset and start</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># wait for data</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">status_run</span><span class="p">()):</span>
+        <span class="k">pass</span>
+    <span class="n">V0</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN1 signal</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN2 signal</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">((</span><span class="n">V0</span><span class="o">-</span><span class="n">V1</span><span class="p">)</span><span class="o">/</span><span class="n">R1</span><span class="p">)</span><span class="o">*</span><span class="mf">1E3</span>        <span class="c1"># 1E3 convert to mA</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">V0</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span>
+
+    <span class="n">push_notebook</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
+Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
+Erfassung stoppen, führen Sie nur die Zelle 2 aus  um die Messung
+erneut zu starten.</p>
+<p>Nach dem Ausführen des obigen Codes sollten Sie die Diode
+VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.</p>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_22_Fig_05.png" src="_images/Activity_22_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 22.5 </span><span class="caption-text">BJT VI-Charakteristik gemessen mit Jupyter Notebook</span></p>
+</div>
+<p>In <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 22.5</span></a> ist die BJT VI-Charakteristik, gemessen in einer
+Diodenkonfiguration, gezeigt. Vergleichen Sie diese Ergebnisse mit der
+Charakteristik der Diode VI.</p>
+<p>Wiederum können wir eine Hysterese sehen. Erklären Sie, warum wir
+Transistoren als Dioden verwenden wollen?</p>
+</div>
+<div class="section" id="reverse-breakdown-eigenschaften">
+<h2>22.5. Reverse Breakdown-Eigenschaften<a class="headerlink" href="#reverse-breakdown-eigenschaften" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier untersuchen wir die umgekehrte Durchbruchspannungskennlinie des
+Emitter-Basis-Übergangs eines Bipolartransistors (BJT), der als Diode
+geschaltet ist.</p>
+<p>Stellen Sie das Steckbrett so ein, wie es in Abbildung 6 dargestellt
+ist. <strong>Der Sender ist mit dem positiven Batteriepol verbunden.</strong></p>
+<p>Die NPNs haben wahrscheinlich eine Durchbruchspannung von mehr als 10
+V und es kann vorkommen, dass unser maximaler Spannungsbereich nicht
+ausreichend ist, d. H. Wir werden nicht in der Lage sein, Q1 oberhalb
+der Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine
+zusätzliche Batterie hinzugefügt, um das Emitterpotential in der Nähe
+der Durchbruchsspannung zu erhöhen. Wenn also unser <span class="math notranslate nohighlight">\(V_ {OUT}\)</span>
+Signal NEGATIV wird, wird der Transistor REVERSED PLOARIZED aber
+differentielle Spannung <span class="math notranslate nohighlight">\(V_ {E-BC} = V_E - V_ {BC}\)</span> ist größer
+als die BREAKDOWN-Spannung und der Transistor beginnt zu leiten.</p>
+<p>Zum Beispiel ohne Batterie, d. H. Wenn der Emitter auf GND ist, können
+wir Q1 um den Betrag polarisieren:</p>
+<div class="math notranslate nohighlight">
+\[V_ {E-BC} = V_E - V_ {BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}\]</div>
+<p>Mit der Batterie können wir die umgekehrte Polarisation um den
+maximalen Betrag erreichen</p>
+<div class="math notranslate nohighlight" id="equation-22-eq">
+<span class="eqno">(22.1)<a class="headerlink" href="#equation-22-eq" title="Permalink to this equation">¶</a></span>\[V_ {E-BC} &amp;= V_E - V_ {BC} = 9 - (-3,3 V) = 12.3 V\]</div>
+<p>Wobei <span class="math notranslate nohighlight">\(V_ {BC}\)</span> der maximale negative Swing unseres
+Anregungsspannungssignals ist <span class="math notranslate nohighlight">\(V_ {OUT}\)</span>.</p>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_22_Fig_06.png" src="_images/Activity_22_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 22.6 </span><span class="caption-text">npn-Emitter Base Reverse-Durchbruchkonfiguration</span></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>22.6. Verfahren<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Baue die Schaltung aus der Abbildung 6 auf dem Steckbrett und fahre
+mit den Messungen fort.</p>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/Activity_22_Fig_07.png" src="_images/Activity_22_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 22.7 </span><span class="caption-text">npn-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett</span></p>
+</div>
+<p>Für diese Aufgabe verwenden wir die Jupyter Notebook
+Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
+erstellt, ist in Abbildung 4 dargestellt.</p>
+<p>Da Sie Jupyter Notebook bereits von Previews aus ausführen, wird nur
+ein kleines Update des Codes benötigt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol
+<strong>Stop</strong> in der Menüleiste auswählen.</p>
+</div>
+<p>Nach diesem Update <strong>Zelle 2</strong> wie unten gezeigt:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Measuring I, V  and re-plotting</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># reset and start</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># wait for data</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">status_run</span><span class="p">()):</span>
+        <span class="k">pass</span>
+    <span class="n">V0</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN1 signal</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN2 signal</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">((</span><span class="n">V0</span><span class="o">-</span><span class="n">V1</span><span class="p">)</span><span class="o">/</span><span class="n">R1</span><span class="p">)</span><span class="o">*</span><span class="mf">1E3</span>        <span class="c1"># 1E3 convert to mA</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">V0</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span>
+
+    <span class="n">push_notebook</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Wie Sie aus dem obigen Code sehen können <strong>haben wir nur „-9“</strong>
+hinzugefügt, um das Potential der Batterie bei der Ausführung des
+Plottings zu berücksichtigen.</p>
+<p>Wählen Sie Zelle 2 und drücken Sie ** Play ** in der
+Menüleiste. Beachten Sie, Zelle 2 ist eine Hauptschleife für die
+Erfassung und das erneute Plotten. Wenn Sie die Erfassung stoppen,
+führen Sie nur die Zelle 2 aus, um die Messungen erneut zu starten.</p>
+<p>Achten Sie darauf, die tatsächliche Batteriespannung für die
+genauesten Messungen zu messen.</p>
+<p>Wenn Sie den Jupyter Notebook-Code aktualisiert und korrekt ausgeführt
+haben, sollten Sie ähnliche Ergebnisse wie in Abbildung 8 erhalten.</p>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/Activity_22_Fig_08.png" src="_images/Activity_22_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 22.8 </span><span class="caption-text">Messung der NPN-Emitter-Basis-Durchbruchspannung</span></p>
+</div>
+<p>Aus <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 22.8</span></a> können wir sehen, dass die umgekehrte
+Durchbruchspannung des NPN BJT 2N3904-Transistors etwa 10 V beträgt.</p>
+</div>
+<div class="section" id="frage">
+<h2>22.7. Frage<a class="headerlink" href="#frage" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie
+ändert sich die Durchbruchspannung?</p>
+</div>
+<div class="section" id="absenken-der-effektiven-durchlassspannung-der-diode">
+<h2>22.8. Absenken der effektiven Durchlassspannung der Diode<a class="headerlink" href="#absenken-der-effektiven-durchlassspannung-der-diode" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier untersuchen wir eine Schaltungskonfiguration mit kleineren
+Vorwärtsspannungseigenschaften als die eines bipolaren</p>
+<p>Sperrschichttransistor (BJT) als Diode geschaltet. Die
+Einschaltspannung der „Diode“ sollte etwa 0,1 V betragen im Vergleich
+zu 0,7 V für die einfache Diodenverbindung im ersten Beispiel.</p>
+<div class="figure align-center" id="fig-09">
+<img alt="_images/Activity_22_Fig_09.png" src="_images/Activity_22_Fig_09.png" />
+<p class="caption"><span class="caption-number">Abb. 22.9 </span><span class="caption-text">Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode</span></p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>22.9. Verfahren<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Erstellen Sie die Schaltung aus Abbildung 9 auf dem
+Steckbrett. Setze R3 = 1kΩ, R4 = 100kΩ und verwende für Q1 2N3904
+NPN und für Q2 2N3904 PNP-Transistor.</li>
+</ol>
+<div class="figure align-center" id="fig-10">
+<img alt="_images/Activity_22_Fig_10.png" src="_images/Activity_22_Fig_10.png" />
+<p class="caption"><span class="caption-number">Abb. 22.10 </span><span class="caption-text">Konfiguration zur Verringerung des effektiven
+Durchlassspannungsabfalls der Diode auf dem Steckbrett</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+anschließen, überprüfen Sie Ihren Stromkreis. Die
+Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+werden.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,8
+V, den DC-Offset auf -0,12 V und die Frequenz auf 1 kHz ein, um die
+Eingangsspannung anzulegen.</p>
+<p>Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
+wählen Sie enable.</p>
+</li>
+<li><p class="first">Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN1 V / div auf 1 V / div und IN2 V / div auf 500 mV / div
+eingestellt ist (Sie können V / div einstellen, indem Sie die
+gewünschte Option auswählen Kanal und mit vertikalen +/-
+Kontrollen)</p>
+</li>
+<li><p class="first">Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
+horizontalen +/- Kontrollen einstellen)</p>
+</li>
+<li><p class="first">Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+auf x10 und den vertikalen Offset auf 0.</p>
+</li>
+<li><p class="first">Stellen Sie unter MATH-Menüeinstellungen den vertikalen Offset auf
+0 ein.</p>
+</li>
+</ol>
+<div class="figure align-center" id="fig-11">
+<img alt="_images/Activity_22_Fig_11.png" src="_images/Activity_22_Fig_11.png" />
+<p class="caption"><span class="caption-number">Abb. 22.11 </span><span class="caption-text">Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p>Wie sie <a class="reference internal" href="#fig-11"><span class="std std-numref">Abb. 22.11</span></a> entnehmen können, beträgt der
+Vorwärtsspannungsabfall etwa 100 mV. Sie können auch feststellen,
+dass Q2 nicht notwendig ist, um die Drop-Down-Spannung des Q1 zu
+senken.</p>
+<p class="last">Die Hauptrolle spielt hier der Widerstand R4, der mit der Basis von
+Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
+zu beobachten.</p>
+</div>
+</div>
+<div class="section" id="fragen">
+<h2>22.10. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Könnte der Kollektor des PNP Q2 mit einem anderen Knoten wie einer
+negativen Versorgungsspannung verbunden sein? Und was wäre der
+Effekt?</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_23_TheMOSAsDiode.html" class="btn btn-neutral float-right" title="23. Der MOS-Transistor ist als Diode geschaltet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_21_PrecisionRectifiers.html" class="btn btn-neutral" title="21. Präzisionsgleichrichter, Absolutwertschaltungen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

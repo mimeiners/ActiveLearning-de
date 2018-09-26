@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>14. OPAMP Open Loop Verstärkung &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="15. OPAMP Verstärkungsbandbreite Produkt \(GBW\)" href="Activity_15_OpAmpGainBandwidthProduct.html" />
+    <link rel="prev" title="13. Grundlegende OP-Verstärkerkonfigurationen" href="Activity_13_BasicOPAmpConfigurations.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. OPAMP Open Loop Verstärkung</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">14.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">14.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">14.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">14.4. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">14.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schritt-1-s-ist-auf-pos1-14-fig-02">14.6. Schritt 1: S ist auf POS1 (<code class="docutils literal notranslate"><span class="pre">14_fig_02</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schritt-2-s-ist-auf-pos2-14-fig-02">14.7. Schritt 2: S ist auf POS2 (<code class="docutils literal notranslate"><span class="pre">14_fig_02</span></code>)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>14. OPAMP Open Loop Verstärkung</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_14_OPAMPOpenLoopGain.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="opamp-open-loop-verstarkung">
+<h1>14. OPAMP Open Loop Verstärkung<a class="headerlink" href="#opamp-open-loop-verstarkung" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>14.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieses Experiments ist es, die Verstärkungseigenschaften eines OP27-Operationsverstärkers im offenen Regelkreis zu messen.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>14.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> geht.</p>
+<p>Die <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oszilloskop</a> - und <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a>  <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p>Die Erweiterungsstecker-Pins für die Spannungsversorgung -3,3V und +3,3V sind in der Dokumentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">hier</a> dargestellt.</p>
+</div>
+<div class="section" id="materialien">
+<h2>14.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li><strong>Red Pitaya STEMlab 125-14</strong>. Ein Red Pitaya STEMlab 125-10 ist aufgrund der ADC-Auflösung für diese Messung nicht geeignet!</li>
+<li>OPAMP: 1x OP27</li>
+<li>OPAMP: 1x OP97</li>
+<li>Widerstand: 2x 100 <span class="math notranslate nohighlight">\(\Omega\)</span></li>
+<li>Widerstand: 2x 200 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1x 100 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Kondensator: 2x 0.1 <span class="math notranslate nohighlight">\(\mu F\)</span></li>
+<li>Kondensator: 1x 10 <span class="math notranslate nohighlight">\(\mu F\)</span></li>
+</ul>
+</div>
+<div class="section" id="hintergrund">
+<h2>14.4. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Im Gegensatz zum idealen Operationsverstärker hat ein praktischer Operationsverstärker eine endliche Verstärkung. Die ungeregelte DC-Verstärkung (meist als <span class="math notranslate nohighlight">\(A_{VOL}\)</span> und manchmal als Vorwärtsverstärkung bezeichnet) ist die Verstärkung des Opams, ohne dass der Rückkopplungskreis geschlossen ist, daher der Name „open-loop“. Für einen Präzisionsoperationsverstärker kann diese Verstärkung sehr hoch sein, in der Größenordnung von 160 dB (100 Millionen) oder mehr. Die Verstärkung des <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP27.pdf">OP27</a> -Verstärkers beträgt etwa 1,8 Millionen.</p>
+<div class="figure" id="id1">
+<span id="fig-01"></span><img alt="_images/Activity_14_Fig_01.png" src="_images/Activity_14_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 14.1 </span><span class="caption-text">: OP27 Datenblatt und Open Loop Gain Wert markiert</span></p>
+</div>
+<p>Die Definition von Open-Loop-Verstärkung ist</p>
+<div class="math notranslate nohighlight">
+\[A_ {OL} =\frac{V_ {out}}{(V^{+}-V^{-})}\quad                 (1)\]</div>
+<p>wobei <span class="math notranslate nohighlight">\((V^{+}-V^{-})\)</span> die Eingangsspannungsdifferenz <span class="math notranslate nohighlight">\(V_d\)</span> ist, die verstärkt wird, <span class="math notranslate nohighlight">\(V^{+}\)</span> eine Spannung am
+nichtinvertierenden Eingang und <span class="math notranslate nohighlight">\(V^{-}\)</span> Spannung am invertierenden Eingang.</p>
+<p>Spannungsrückkopplungs-Operationsverstärker arbeiten als <strong>Spannungsein- und -ausgangsverstärker</strong> und die Verstärkung ist ein <strong>dimensionsloses Verhältnis</strong>, so dass keine Einheiten erforderlich sind. In den Datenblättern wird jedoch manchmal der Gewinn in <span class="math notranslate nohighlight">\(V/mV\)</span> oder <span class="math notranslate nohighlight">\(V/ \mu V\)</span> anstelle von <span class="math notranslate nohighlight">\(V/V\)</span> angegeben, um die Verwendung kleinerer Zahlen zu ermöglichen. Oder, die Spannungsverstärkung kann auch in dB ausgedrückt werden, als Verstärkung in</p>
+<div class="math notranslate nohighlight">
+\[Verstärkung \quad in \quad dB = 20log(A_ {VOL}) \quad             (2)\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Also eine Open-Loop-Verstärkung von</p>
+<div class="math notranslate nohighlight">
+\[1V/ \mu V\quad = \quad 1 \quad Millionen V/V\quad = \quad 120 dB, \quad usw.\]</div>
+<p class="last">Lesen Sie das <a class="reference external" href="http://www.analog.com/media/en/training-seminars/tutorials/MT-044.pdf">Tutorial</a> zu Open Loop Gain und Open Loop Gain Nonlinearity, bevor Sie diese Experimente durchführen.</p>
+</div>
+</div>
+<div class="section" id="verfahren">
+<h2>14.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Gleichstromverstärkung wird gemessen, indem der Ausgang des Prüflings (OPAMP unter Test eines OP27 in unserem Fall) gezwungen wird, sich um einen bekannten Betrag zu bewegen (1V in unserem Fall, siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>), indem R5 zwischen dem Prüflingsausgang (OP27 Pin 6) und einer 1V-Referenz (STEMlab OUT1 Ausgang) mit dem Schalter S umgeschaltet wird. Wenn R5 bei +1V (Schalter S Position POS2) liegt, dann muss der Prüflingsausgang (OP27 Pin6) auf -1V verschoben werden, wenn der Eingang des Hilfsverstärkers unverändert bei Null bleiben soll. Die Spannungsänderung am Hilfsverstärkerausgang <span class="math notranslate nohighlight">\(V_{out}\)</span> (OP97 Pin 6), gedämpft durch den <strong>R3/R1</strong> -Faktor, ist der Eingang zum Prüfling (OP27 Pin 3), der eine 1V-Ausgangsänderung bewirkt, aus der einfach die Verstärkung berechnet werden kann:</p>
+<div class="math notranslate nohighlight">
+\[A_ {OL} = Verstärkung_ {OL} =\frac{R_3}{R_2}\frac{1V}{V_ {out}}\quad             (2)\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Mit anderen Worten, DUT-Eingangsdifferenzspannung <span class="math notranslate nohighlight">\(V_d = V^{+} + {V^-}\)</span>, (wobei <span class="math notranslate nohighlight">\(V^-=0\)</span> und <span class="math notranslate nohighlight">\(V_d =V^+\)</span>),
+die notwendig ist, um den DUT-Ausgang auf -1 V einzustellen, ist <span class="math notranslate nohighlight">\(\frac{V_ {out}}{A_ {OL}}\)</span>.</p>
+<p class="last">Der Prüflingsausgang muss auf -1 V gehen, da sich unser AUX-Operationsverstärker in einer Rückkopplungsschleife befindet und
+versucht, seinen <span class="math notranslate nohighlight">\(V_d\)</span> auf 0V zu drücken.</p>
+</div>
+<p><strong>Beispiel:</strong></p>
+<p>Wenn wir <span class="math notranslate nohighlight">\(A_ {OL} = 1.8E6\)</span> nehmen, dann müssen wir für 1V am DUT(OP27)-Ausgang eine Eingangsspannung <span class="math notranslate nohighlight">\(V_d\)</span> als Folgespannung haben:</p>
+<div class="math notranslate nohighlight">
+\[V_d =\frac{1V}{1.8E6} \approx 0,555 \mu V\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Theoretisch konnten wir zur Messung von <span class="math notranslate nohighlight">\(A_{OL}\)</span> nur einen Signalgenerator (zur Einstellung des <span class="math notranslate nohighlight">\(V_{d}\)</span>)
+und ein Voltmeter zur Messung der Prüflingsleistung verwenden. Aber in der Praxis ist dies fast
+nicht haltbar gegenüber Unvollkommenheiten, Lärmpegeln, Offsetpegeln und so weiter. Aus diesem
+Grund verwenden wir das in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a> dargestellte Verfahren, bei dem wir die Messungen des
+Ausgangssignals <span class="math notranslate nohighlight">\(V_{out}\)</span> durchführen, das durch den Spannungsteiler (R3/R2) auf <span class="math notranslate nohighlight">\(V_{d}\)</span> bezogen ist und
+einige Größenordnungen größer als <span class="math notranslate nohighlight">\(V_{d}\)</span> und somit mit unseren Geräten messbar ist.</p>
+</div>
+<p><strong>Bauen Sie die in</strong> <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a> <strong>dargestellte Schaltung auf</strong>. Bevor Sie die Widerstände R2 und R3 in die
+Schaltung einsetzen, messen und notieren Sie die Werte der beiden Widerstände mit einem DMM, falls vorhanden.</p>
+<p>In unserem Fall ist R3 = 97.3k <span class="math notranslate nohighlight">\(\Omega\)</span> und R2 = 99.7 <span class="math notranslate nohighlight">\(\Omega\)</span></p>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+überprüfen Sie Ihre Schaltung nochmals. Die Spannungsversorgungsstifte -3,3V und +3,3V
+haben keine Kurzschlusssicherung und können im Falle eines Kurzschlusses beschädigt werden.</p>
+</div>
+<div class="figure" id="id2">
+<span id="fig-02"></span><img alt="_images/Activity_14_Fig_02.png" src="_images/Activity_14_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 14.2 </span><span class="caption-text">: Spannungsversorgung und Testschaltung</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p>Der C1-Kondensator wird als Rückkopplungsimpedanz auf die Umkehrverstärker-Konfiguration
+des AUX-Operationsverstärkers verwendet. Dies geschieht, um alle Wechselstromsignale in der
+Schaltung und den AUX-Operationsverstärkerausgang zu dämpfen. Aus diesem Grund ist es gut,
+eine große Kapazität von C1 zu haben, um Wechselstromsignale zu eliminieren.</p>
+<p class="last">Wir haben uns für 10uF entschieden und hier einen polarisierten (elektrolytischen) Kondensator
+verwendet. Dies ist keine „ok“-Lösung, da unser Kondensator einer umgekehrten Polarisation
+unterzogen werden kann. Für gute Messungen und kurze Messzeiten kann jedoch der Elektrolytkondensator
+verwendet werden.</p>
+</div>
+</div>
+<div class="section" id="schritt-1-s-ist-auf-pos1-14-fig-02">
+<h2>14.6. Schritt 1: S ist auf POS1 (<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)<a class="headerlink" href="#schritt-1-s-ist-auf-pos1-14-fig-02" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Anstatt den Schalter S zu verwenden, kann R5 manuell auf Pin6 des Prüflings auf der Leiterplatte eingestellt werden. Bauen Sie eine Schaltung auf der Platine auf und stellen Sie R5 auf POS1 ein.</p>
+<p><strong>Verbinden Sie OUT1 mit IN1 und stellen Sie die Tastkopfdämpfungen auf x1 ein.</strong></p>
+<div class="figure" id="id3">
+<span id="fig-03"></span><img alt="_images/Activity_14_Fig_03.png" src="_images/Activity_14_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 14.3 </span><span class="caption-text">: Testschaltung. R5 auf POS1 (siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)</span></p>
+</div>
+<ol class="arabic">
+<li><p class="first">Starten Sie die Oszilloskop &amp; Signalgenerator - Anwendung</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1 V/div auf 500mV/div und IN2 V/div auf 10mV/div eingestellt ist
+(Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden).</p>
+</li>
+<li><p class="first">Setzen Sie t/div mit horizontalen +/- Bedienelementen auf 100 ms/div</p>
+</li>
+<li><p class="first">Wählen Sie im Messmenü „MEAN“, wählen Sie IN1 und drücken Sie FERTIG, wählen Sie IN2 und drücken Sie FERTIG</p>
+</li>
+<li><p class="first"><strong>Anzeige MEAN (IN2): In unserem Fall ist es -34.2mV</strong></p>
+<div class="figure" id="id4">
+<span id="fig-04"></span><img alt="_images/Activity_14_Fig_04.png" src="_images/Activity_14_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 14.4 </span><span class="caption-text">: Messungen von <span class="math notranslate nohighlight">\(V_ {out}\)</span> wenn R5 auf POS1 gesetzt wird (siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="schritt-2-s-ist-auf-pos2-14-fig-02">
+<h2>14.7. Schritt 2: S ist auf POS2 (<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)<a class="headerlink" href="#schritt-2-s-ist-auf-pos2-14-fig-02" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.</p>
+<div class="figure" id="id5">
+<span id="fig-05"></span><img alt="_images/Activity_14_Fig_05.png" src="_images/Activity_14_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 14.5 </span><span class="caption-text">: Testschaltung. R5 auf POS2 (siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)</span></p>
+</div>
+<ol class="arabic">
+<li><p class="first">Wählen Sie im Einstellungsmenü OUT1 aus dem Wellenform-Menü die Option DC.
+Amplitudenwert auf 1V einstellen, um eine 1V Gleichspannung an die Schaltung (R5) anzulegen.</p>
+<p>Deaktivieren Sie die SHOW-Schaltfläche und wählen Sie Enable.</p>
+</li>
+<li><p class="first">Passen Sie die OUT1-Amplitude an, bis MEAN (IN1) nahe 1V erscheint.</p>
+</li>
+<li><p class="first"><strong>Anzeige MEAN (IN2): In unserem Fall ist es -34.8mV</strong></p>
+<div class="figure" id="id6">
+<span id="fig-06"></span><img alt="_images/Activity_14_Fig_06.png" src="_images/Activity_14_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 14.6 </span><span class="caption-text">: Messungen von <span class="math notranslate nohighlight">\(V_ {out}\)</span> wenn R5 auf POS2 gesetzt ist (siehe <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>)</span></p>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Wie Sie den Messungen entnehmen können, gibt es einen gewissen Offset
+der AUX-Operationsverstärker-Ausgang (Pin 6). Idealerweise, wenn R5 auf POS1 eingestellt ist
+(<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>) sollte <span class="math notranslate nohighlight">\(V_ {out}\)</span> 0 sein.</p>
+</div>
+<p>Dennoch ist der DC-Offset bei beiden (POS1 und POS2) Messungen gleich und wird bei der Berechnung der Open-Loop-Verstärkung aufgehoben.</p>
+<p>Für eine offene Schleifenverstärkung gemäß Gleichung 2 erhalten wir:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A_ {OL} =\frac{R3}{R2} \frac{1V}{(V_{out_{POS1}}-V_{out_{POS2}})} =\\A_ {OL} =\frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(-34.8mV))} =\\A_ {OL} \approx  1566365,764 \approx 1,566 Millionen\end{aligned}\end{align} \]</div>
+<p>Vergleichen Sie die Messungen mit dem Datenblattwert aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 14.2</span></a>. Unsere Messungen liegen sehr nahe am Sollwert. Für eine genauere Messung ist eine Ausrüstung mit höherer Auflösung und weniger störenden Umgebungsgeräuschen erforderlich.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_15_OpAmpGainBandwidthProduct.html" class="btn btn-neutral float-right" title="15. OPAMP Verstärkungsbandbreite Produkt \(GBW\)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_13_BasicOPAmpConfigurations.html" class="btn btn-neutral" title="13. Grundlegende OP-Verstärkerkonfigurationen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

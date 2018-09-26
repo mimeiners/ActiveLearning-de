@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>19. Diodes und Jupyter Notebook Beispiel &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="20. Diodengleichrichter" href="Activity_20_DiodeRectifiers.html" />
+    <link rel="prev" title="18. Der Komparator, Positive Feedback und Schmitt Trigger" href="Activity_18_TheComparatorSchmittTrigger.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt <span class="math notranslate nohighlight">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19. Diodes und Jupyter Notebook Beispiel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">19.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">19.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">19.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diode-schematische-symbole">19.4. Diode schematische Symbole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zener-dioden-grundlagen">19.5. Zener-Dioden-Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#schottky-dioden-grundlagen">19.6. Schottky-Dioden-Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#led-grundlagen">19.7. LED-Grundlagen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pn-flachendiode-i-v-charakteristik">19.8. pn-Flächendiode I/V-Charakteristik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">19.9. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zeitbereichsmessungen">19.10. Zeitbereichsmessungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vorgehensweise-vi-merkmalsmessungen">19.11. Vorgehensweise - VI-Merkmalsmessungen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>19. Diodes und Jupyter Notebook Beispiel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_19_Diodes.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diodes-und-jupyter-notebook-beispiel">
+<h1>19. Diodes und Jupyter Notebook Beispiel<a class="headerlink" href="#diodes-und-jupyter-notebook-beispiel" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>19.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Zweck dieser Aktivität besteht darin, den Strom gegen die Spannung
+zu untersuchen Eigenschaften von verschiedenen Festkörper - PN -
+Übergangsdioden, wie z konventionelle Si - Diode, die Schottky -
+Diode, die Zener - Diode und Leuchtdiode (LED).</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>19.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch
+wenn man sich auf die Verbindungen zum Red Pitaya STEMlab Board bezieht
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a>.</p>
+<p>Erweiterungssteckerstifte für <strong>-3.3V</strong> und <strong>+3.3V</strong> Spannung
+Versorgung finden Sie in der Dokumentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">here</a>.</p>
+<p><a href="#id3"><span class="problematic" id="id4">Oscilloscope_</span></a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> Anwendung wird zum Generieren verwendet
+und Beobachten von Signalen auf der Schaltung.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>19.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die PN-Sperrschichtdiode ist eine Vorrichtung, die üblicherweise in
+der Schaltung verwendet wird Anwendungen wie Rektifikation, wo Strom
+fließen darf nur eine Richtung. Wenn die Diode in Silizium hergestellt
+wird, die Vorwärtsspannungsabfall beträgt typischerweise 0,7 V und
+das <span class="math notranslate nohighlight">\({V_D}\)</span> vs. <span class="math notranslate nohighlight">\({I_D}\)</span> - Charakteristik in Bezug auf
+Diodenspannung und -strom kann durch eine exponentielle Beziehung
+beschrieben werden:</p>
+<div class="math notranslate nohighlight" id="equation-19-eq-01">
+<span class="eqno">(19.1)<a class="headerlink" href="#equation-19-eq-01" title="Permalink to this equation">¶</a></span>\[I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (1)\]</div>
+<p>wo <span class="math notranslate nohighlight">\(I_ {S}\)</span> und n sind Skalierungsfaktoren und <span class="math notranslate nohighlight">\(kT / q\)</span>
+(25,4 mV bei Raumtemperatur) ist die sogenannte thermische
+Spannung <span class="math notranslate nohighlight">\({V_T}\)</span>.</p>
+</div>
+<div class="section" id="diode-schematische-symbole">
+<h2>19.4. Diode schematische Symbole<a class="headerlink" href="#diode-schematische-symbole" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Jeder Typ von Diode hat ein spezifisches schematisches Symbol, das ist
+Variationen des herkömmlichen Diodensymbols links in
+Abbildung 1. Eine Art „Z“ -förmige Kathode bezeichnet eine Zener-Diode wie in der
+zweites Symbol in Fig. 1. Eine „S“ -förmige Kathode bezeichnet einen Schottky
+Diode wie im nächsten Symbol. Die Pfeile zeigen von der Diode weg
+bezeichnet eine LED wie im rechten Symbol. Pfeile zeigen in Richtung
+die Diode würde einen Photodioden-Lichtdetektor darstellen.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_19_Fig_01.png" src="_images/Activity_19_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 19.1 </span><span class="caption-text">Diodeschemasymbole</span></p>
+</div>
+</div>
+<div class="section" id="zener-dioden-grundlagen">
+<h2>19.5. Zener-Dioden-Grundlagen<a class="headerlink" href="#zener-dioden-grundlagen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Eine Zener-Diode ist im Aufbau und in der Funktionsweise ähnlich
+Diode. Im Gegensatz zu einer herkömmlichen Diode, bei der die
+beabsichtigte Verwendung ist Strom in umgekehrter Richtung verhindern,
+wird meistens eine Zenerdiode verwendet im umgekehrten Bereich
+oberhalb der Durchbruchspannung. Es ist <span class="math notranslate nohighlight">\(I\)</span> vs,
+<span class="math notranslate nohighlight">\(V\)</span> -Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch
+das Einstellen der Dotierung der P- und N-Seiten der Kreuzung ist es
+möglich, eine Zener-Diode zu entwerfen, die irgendwo aufbricht
+von ein paar Volt bis zu einigen hundert Volt. Siehe Abbildung 2. In diesem
+Durchbruch oder Zener-Bereich wird die Diodenspannung bleiben
+über einen weiten Bereich von Strömen ungefähr konstant. Das
+maximales Sperrspannungspotential, das vorher angewendet werden kann
+Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
+(PIV) oder die Spitzensperrspannung (PRV).</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_19_Fig_02.png" src="_images/Activity_19_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 19.2 </span><span class="caption-text">Vorwärts- und Rückwärts-Zenerdiode <span class="math notranslate nohighlight">\(I/V\)</span> -Charakteristik</span></p>
+</div>
+<p>Bei Spannungen oberhalb des Ausbruchsbeginns wurde ein Anstieg angewendet
+Spannung wird dazu führen, dass mehr Strom in der Diode fließt, aber die Spannung
+über die Diode bleibt fast bei <span class="math notranslate nohighlight">\(V_Z\)</span>. Eine Zener-Diode
+im Rückwärtsbetrieb betriebene Breakdown kann eine Referenzspannung für liefern
+Systeme wie Spannungsregler oder Spannungsvergleicher.</p>
+</div>
+<div class="section" id="schottky-dioden-grundlagen">
+<h2>19.6. Schottky-Dioden-Grundlagen<a class="headerlink" href="#schottky-dioden-grundlagen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Eine Schottky-Diode verwendet einen gleichrichtenden Metall-Halbleiter
+Verbindung, die durch Plattieren, Verdampfen oder Sputtern von einer Vielzahl gebildet wird
+von Metallen auf n-Typ- oder p-Typ-Halbleitermaterial. Allgemein,
+Im Handel sind Silizium vom n-Typ und GaAs vom n-Typ verwendet
+Schottky-Dioden. Die Eigenschaften einer in Vorwärtsrichtung vorgespannten Schottky-Barriere
+Dioden werden durch Majoritätsträgerphänomene bestimmt. Eine herkömmliche PN
+Die Eigenschaften der Sperrschichtdiode werden durch Minorität bestimmt
+Träger. Schottky-Dioden sind Majority-Carrier-Geräte, die sein können
+schnell umgeschaltet von Vorwärts- zu Sperrspannung ohne Minoritätsträger
+Speichereffekte.</p>
+<p>Der normale Strom gegen Spannung <span class="math notranslate nohighlight">\(I/V\)</span> -Kurve einer Schottky-Barriere
+Diode ähnelt der einer PN-Diode mit dem folgenden
+Ausnahmen:</p>
+<ol class="arabic simple">
+<li>Die Durchbruchspannung einer Schottky-Diode ist niedriger
+und der Sperr-Leckstrom ist höher als der eines PN-Übergangs
+Diode hergestellt unter Verwendung des Halbleitermaterials mit dem
+gleichen spezifischen Widerstand.</li>
+<li>Die Vorwärtsspannung bei einem bestimmten Vorwärtsstrom ist auch niedriger für
+eine Schottky-Diode als für eine PN-Diode. Beispielsweise,
+bei 2 mA Durchlassvorspannung eine Silizium-Schottky-Diode mit
+niedriger Sperrschicht wird eine Vorwärtsspannung von ~ 0,3 Volt
+haben, während ein Silizium PN Die Sperrschichtdiode hat eine
+Spannung von ~ 0,7 Volt. Das ist niedriger Vorwärtsspannungsabfall
+kann die Verlustleistung in der Diode durch abschneiden mehr als
+die Hälfte. Diese Energieeinsparung kann sehr bedeutend sein, wenn
+Die Dioden müssen große Vorwärtsströme führen. Die jetzige
+vs. Spannung ( <span class="math notranslate nohighlight">\(I / V\)</span>) Beziehung für eine Schottky-Diode
+ist durch die folgende Gleichung gegeben, die als Richardson bekannt ist
+Gleichung. Der Hauptunterschied zur herkömmlichen Diode
+Gleichung ist in <span class="math notranslate nohighlight">\(I_S\)</span> mit dem Zusatz der modifizierten
+Richardson-Konstante <span class="math notranslate nohighlight">\(A ^ *\)</span>.</li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-19-eq-02">
+<span class="eqno">(19.2)<a class="headerlink" href="#equation-19-eq-02" title="Permalink to this equation">¶</a></span>\[I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (2)\]</div>
+<div class="math notranslate nohighlight" id="equation-19-eq-03">
+<span class="eqno">(19.3)<a class="headerlink" href="#equation-19-eq-03" title="Permalink to this equation">¶</a></span>\[I_S = A A ^ * T ^ 2 e ^ {- \ Frac {q \ Phi B} {kT}} \ quad (3)\]</div>
+<p>Woher:</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(A\)</span> = Verbindungsbereich</li>
+<li><span class="math notranslate nohighlight">\(A ^ *\)</span> = modifizierte Richardson-Konstante (der Wert variiert
+je nach Material und Dotierstoff) = <span class="math notranslate nohighlight">\(110 A / (° K ^ 2-cm ^ 2)\)</span> für Si vom n-Typ</li>
+<li><span class="math notranslate nohighlight">\(T\)</span> = absolute Temperatur in <span class="math notranslate nohighlight">\(K\)</span> (Kelvins)</li>
+<li><span class="math notranslate nohighlight">\(q\)</span> = elektronische Ladung = <span class="math notranslate nohighlight">\(1.6E-19 \ quad C\)</span></li>
+<li><span class="math notranslate nohighlight">\(\ Phi B\)</span> = Barrierenhöhe in Volt</li>
+<li>k = Boltzman-Konstante = 1.37 * 10-23 J / K = <span class="math notranslate nohighlight">\(1.37E-23 \ quad J / K\)</span></li>
+<li><span class="math notranslate nohighlight">\(n\)</span> = Idealitätsfaktor (Vorwärtsneigungsfaktor, bestimmt durch
+Metall-Halbleiter-Schnittstelle)</li>
+</ul>
+</div>
+<div class="section" id="led-grundlagen">
+<h2>19.7. LED-Grundlagen<a class="headerlink" href="#led-grundlagen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die LED ist eine Sperrdiode, die bei Vorwärtsbetrieb Licht emittiert
+voreingenommen. Tatsächlich emittieren alle PN-Übergangsdioden
+Photonen, wenn sie vorwärts gehen Voreingenommen ist es nur, dass die
+Photonen im Infrarotband liegen und die Die physikalische Form der
+Diode lässt die Photonen nicht austreten Paket. Um die Eigenschaft der
+Emission von sichtbarem Licht zu erreichen, ist es notwendig, um die
+LED aus Materialien mit größeren Bandlücken herzustellen anders als
+Silizium. Infolgedessen sinkt der Vorwärtsspannungsabfall der LED ist
+größer als 0,7 V; in der Regel in der Größenordnung von 1,5 bis 2 Volt
+abhängig auf der Wellenlänge des emittierten Lichts. Die LED ist
+ebenfalls in einem eingebaut spezielle transparente Verpackung wie in
+Abbildung 3 gezeigt.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_19_Fig_03.png" src="_images/Activity_19_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 19.3 </span><span class="caption-text">Leuchtdioden</span></p>
+</div>
+<p>Eine LED ist ein Halbleitergerät, das elektromagnetische Strahlung emittiert
+bei optischen und Infrarotfrequenzen. Das Gerät ist eine PN-Diode
+hergestellt aus Halbleitern vom p-Typ und n-Typ, gewöhnlich GaAs, GaP
+oder SiC. Sie geben nur dann Licht ab, wenn eine externe angelegte
+Spannung verwendet wird Vorspannung die Diode über einen minimalen
+Schwellenwert. Der Gewinn in die von dieser Spannung abgegebene
+elektrische potentielle Energie reicht dazu aus erzwingen, dass
+Elektronen aus dem n-Typ-Material über die Sperrschicht und in die
+p-Typ-Region. Diese Schwellenspannung für den Beginn des Stromflusses
+über die Kreuzung und die Produktion des Lichts ist <span class="math notranslate nohighlight">\(V_0\)</span>. Die
+Emission von Licht erfolgt nach Elektronen Eintritt in die p-Region
+(und Löcher in die n-Region). Diese Elektronen sind eine kleine
+Minderheit, die von Löchern umgeben ist (im Wesentlichen die
+Antiteilchen der Elektronen) und sie werden schnell ein Loch finden
+rekombinieren mit. Energetisch entspannt sich das Elektron vom
+Erregten Zustand (Leitungsband) zum Grundzustand (Valenzband). Die
+Dioden Man nennt das Licht emittieren, weil die Energie vom Elektron
+abgegeben wird wenn es sich entspannt, wird es als Photon
+emittiert. Über dem Schwellenwert, der Strom und Lichtleistung steigen
+exponentiell mit der Vorspannung an über die Diode. Die Quanten der
+Energie oder des Photons haben eine Energie <span class="math notranslate nohighlight">\(E = hf\)</span>. Die
+Beziehung zwischen der Photonenenergie und der Einschaltspannung
+<span class="math notranslate nohighlight">\(V_0\)</span>, ist:</p>
+<div class="math notranslate nohighlight">
+\[eV_0 = E_g = hf = \ frac {hc} {\ lambda} \ quad (4)\]</div>
+<p>woher:</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(E_g\)</span> ist die Größe der Energielücke</li>
+<li><span class="math notranslate nohighlight">\(V_0\)</span> ist die Schwellenspannung</li>
+<li><span class="math notranslate nohighlight">\(f\)</span> und <span class="math notranslate nohighlight">\(\lambda\)</span> sind die Frequenz und Wellenlänge von
+die emittierten Photonen</li>
+<li><span class="math notranslate nohighlight">\(c\)</span> ist die Lichtgeschwindigkeit</li>
+<li><span class="math notranslate nohighlight">\(e\)</span> ist die elektronische Ladung</li>
+<li><span class="math notranslate nohighlight">\(h\)</span> ist Plancks Konstante</li>
+</ul>
+</div>
+<div class="section" id="pn-flachendiode-i-v-charakteristik">
+<h2>19.8. pn-Flächendiode I/V-Charakteristik<a class="headerlink" href="#pn-flachendiode-i-v-charakteristik" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Strom-Spannungs-Kennlinie der pn-Diode kann gemessen werden mit
+dem STEMlab und den folgenden Verbindungen in Abbildung 4. Stellen Sie
+das Steckbrett mit dem OUT1-Ausgang des Generators ein an einem Ende
+des Widerstands angebracht. Das andere Ende des Widerstands ist
+verbunden mit einem Ende der Diode gemessen wie in der Diagramm. Die
+Eingangskanäle IN1 und IN2 sind ebenfalls unterschiedlich verbunden
+beendet den Widerstand, daher werden Diodenstrom und -spannung
+angegeben wie:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}I_d = (IN_1 - IN_2) / R_1 \\\end{split}\\V_d = IN_2\end{aligned}\end{align} \]</div>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_19_Fig_04.png" src="_images/Activity_19_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 19.4 </span><span class="caption-text">Anschlussplan für Dioden I- und V-Kurven</span></p>
+</div>
+<p>Zur Messung der Strom-Spannungs-Kennlinie des PN-Übergangs
+Diode OUT1 Generator sollte als 1kHz Dreieckswelle mit 1 konfiguriert
+werden V max und 0 V min Werte. Zum Messen: math: VI-Kurve und
+XY-Kurve wird benötigt, wenn die x-Achse die Diodenspannung darstellt
+<span class="math notranslate nohighlight">\(IN_2\)</span> und y-Achse ein Diodenstrom <span class="math notranslate nohighlight">\((IN_1 - IN_2) / R_1\)</span>.
+Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Das <a class="reference external" href="http://jupyter.org/index.html">Jupyter</a> <a class="reference external" href="http://jupyter.org/index.html">Notebook</a> ist eine Webanwendung, die es Ihnen
+ermöglicht erstellen und teilen Sie Dokumente, die Live-Code,
+Gleichungen, Visualisierungen und erklärender Text. Sie haben auch
+die Unterstützung sichergestellt für die Jupyter-Anwendung mit Red
+Pitaya-Bibliotheken aktivieren Kontrolle aller Features der STEMlab
+Boards wie: Signal Erfassung, Signalerzeugung, digitale
+Signalsteuerung, Kommunikation usw. Das Jupyter Notebook wird auf
+die gleiche Weise gestartet wie alle anderen Anwendungen. Nach dem
+Start von Jupyter Anwendung ein Web basiertes Notizbuch ist
+geöffnet. Diese Kombination des Notebooks, STEMlab und Python
+Features macht das STEMlab zu einem ausgezeichneten Werkzeug für
+Prototyping und schnelle Programmierung. Seit Jupyter Notebook
+ermöglicht Text, Gleichung und Bildbearbeitung ist dies ein
+perfektes Werkzeug für Tutorials, Beispiele usw.</p>
+</div>
+<p>Aber bevor Sie messen VI-Kurve sollten Sie Spannungen überprüfen
+Signale mit Oszilloskop &amp; Signalgenerator Anwendung.</p>
+</div>
+<div class="section" id="materialien">
+<h2>19.9. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Lötfreies Steckbrett</li>
+<li>Widerstand 10 Ω</li>
+<li>Herkömmliche Diode (1N4001 oder ähnlich)</li>
+</ul>
+</div>
+<div class="section" id="zeitbereichsmessungen">
+<h2>19.10. Zeitbereichsmessungen<a class="headerlink" href="#zeitbereichsmessungen" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett</p>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_19_Fig_05.png" src="_images/Activity_19_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 19.5 </span><span class="caption-text">Verbindungen auf dem Steckbrett</span></p>
+</div>
+</li>
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, DC-Offset auf ein
+0,5 V, um eine Dreieckswelle als Eingangsspannung anzulegen. Von dem
+Waveform-Menü TRIANGLE auswählen, SHOW-Button deaktivieren und auswählen
+aktivieren.</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1 V / div am linken unteren Bildschirmrand steht
+200mV / div (Sie können V / div einstellen, indem Sie den gewünschten Kanal und auswählen
+mit vertikalen +/- Kontrollen)</p>
+</li>
+<li><p class="first">Vergewissern Sie sich, dass IN2 V / div auf der linken unteren Seite des Bildschirms steht
+200mV / div (Sie können V / div einstellen, indem Sie den gewünschten Kanal und auswählen
+mit vertikalen +/- Kontrollen)</p>
+</li>
+<li><p class="first">Setzen Sie t / div-Wert auf 200us / div (Sie können t / div mit horizontalem einstellen
++/- Kontrollen)</p>
+</li>
+<li><p class="first">Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie enable. <a href="#id1"><span class="problematic" id="id2">**</span></a>math
+Spur mit Faktor R1 skaliert Diodenstrom **</p>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_19_Fig_06.png" src="_images/Activity_19_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 19.6 </span><span class="caption-text">Spannungen und Strom auf der Diode (zeitabhängig)</span></p>
+</div>
+</li>
+</ol>
+<p>Aus Abbildung 6 können wir sehen, dass die Diode bei der Spannung
+leitend wird darauf überschreiten Diodenspannung, die etwa 0,6 V ist.</p>
+<p>Außerdem ist der mit der MATH-Spur dargestellte Diodenstrom
+beobachtbar. Wir können deutlich sehen, dass, wenn die Diodenspannung
+unter 0,6 liegt der Diodenstrom ist 0A. Zu dem Zeitpunkt, zu dem die
+Diodenspannung 0,6 V überschreitet, beginnt die Diode Leiten und der
+Pfadstrom wird nur durch den Widerstand R1 begrenzt.</p>
+</div>
+<div class="section" id="vorgehensweise-vi-merkmalsmessungen">
+<h2>19.11. Vorgehensweise - VI-Merkmalsmessungen<a class="headerlink" href="#vorgehensweise-vi-merkmalsmessungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
+Wie man Jupyter Notebook startet und ein neues Projekt erstellt, zeigt
+das Flussdiagramm in Abbildung 7.</p>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/Activity_19_Fig_07.png" src="_images/Activity_19_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 19.7 </span><span class="caption-text">Erstellen eines neuen Jupyter-Notebooks.</span></p>
+</div>
+<p>Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
+kopieren und einfügen Code unten und führen Sie es aus. Code unten
+erzeugt das gleiche Signal wie von Abbildung 6, aber es wird sie in
+XY-Graphen darstellen. Zum Messen <span class="math notranslate nohighlight">\(VI\)</span> Kurve ein „XY“
+Diagramm ist erforderlich, wo x-Achse Diode darstellt Spannung
+<span class="math notranslate nohighlight">\(IN_2\)</span> und y-Achse ein Diodenstrom <span class="math notranslate nohighlight">\((IN_1 - IN_2)/R_1\)</span>.</p>
+<p>Kopieren Sie den Code von unten in die Zelle 1.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">from</span> <span class="nn">redpitaya.overlay.mercury</span> <span class="kn">import</span> <span class="n">mercury</span> <span class="k">as</span> <span class="n">overlay</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">push_notebook</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Range1d</span><span class="p">,</span> <span class="n">LinearAxis</span><span class="p">,</span> <span class="n">LabelSet</span><span class="p">,</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">bokeh.resources</span> <span class="kn">import</span> <span class="n">INLINE</span>
+<span class="n">output_notebook</span><span class="p">(</span><span class="n">resources</span><span class="o">=</span><span class="n">INLINE</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Initialize fpga modules</span>
+<span class="n">fpga</span> <span class="o">=</span> <span class="n">overlay</span><span class="p">()</span>
+<span class="n">gen0</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">osc</span> <span class="o">=</span> <span class="p">[</span><span class="n">fpga</span><span class="o">.</span><span class="n">osc</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fpga</span><span class="o">.</span><span class="n">_MNO</span><span class="p">)]</span>
+
+<span class="c1"># Configure OUT1 generator channel</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">waveform</span> <span class="o">=</span> <span class="n">gen0</span><span class="o">.</span><span class="n">sawtooth</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">trigger</span><span class="p">()</span>
+
+<span class="c1"># R1 resistor value</span>
+<span class="n">R1</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Configure IN1 and IN2 oscilloscope input channels</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">osc</span><span class="p">:</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">filter_bypass</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="c1"># data rate decimation</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">decimation</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="c1"># trigger timing [sample periods]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">buffer_size</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_pre</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_post</span> <span class="o">=</span> <span class="n">N</span>
+    <span class="c1"># osc0 is controlling both channels</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">sync_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">sync_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trig_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">trig_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+    <span class="c1"># trigger level [V], edge [&#39;neg&#39;, &#39;pos&#39;] and holdoff time [sample periods]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">edg</span> <span class="o">=</span> <span class="s1">&#39;pos&#39;</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">holdoff</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Initialize diode current and voltage</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;vline&#39;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="s2">&quot;@x&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;@y&quot;</span><span class="p">)])</span>
+<span class="n">tools</span> <span class="o">=</span> <span class="s2">&quot;wheel_zoom, box_zoom, reset, pan&quot;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">plot_width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;XY plot of diodes VI characteristic&quot;</span><span class="p">,</span>
+           <span class="n">toolbar_location</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+           <span class="n">tools</span><span class="o">=</span><span class="p">(</span><span class="n">tools</span><span class="p">,</span> <span class="n">hover</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Voltage in V&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Current in mA&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># get and explicit handle to update the next show cell</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">notebook_handle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Erstelle eine neue Zelle (Einfügen -&gt; Zelle darunter) und kopiere Code
+von unten in es.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Measuring I, V and re-plotting</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># reset and start</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># wait for data</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">status_run</span><span class="p">()):</span>
+        <span class="k">pass</span>
+
+    <span class="n">V0</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># IN1 signal</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># IN2 signal</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">((</span><span class="n">V0</span><span class="o">-</span><span class="n">V1</span><span class="p">)</span><span class="o">/</span><span class="n">R1</span><span class="p">)</span><span class="o">*</span><span class="mf">1E3</span>     <span class="c1"># 1E3 convert to mA</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">V0</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span>
+
+    <span class="n">push_notebook</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Führen Sie Zelle 1 und Zelle 2 aus. note Zelle 2 ist eine
+Hauptschleife für die Akquisition und Neuplanung. Wenn Sie die
+Erfassung stoppen, fahren Sie einfach fort nur Zelle 2 zum erneuten
+Starten der Messungen.</p>
+<p>Nach dem Ausführen des obigen Codes sollten Sie die Diode VI als
+charakteristisch erhalten ist in Abb. 8 dargestellt.</p>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/Activity_19_Fig_08.png" src="_images/Activity_19_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 19.8 </span><span class="caption-text">Didoes VI-Charakteristik gemessen mit Jupyter Notebook</span></p>
+</div>
+<p>Aus der Abbildung 8 ist die typische Dioden-VI-Charakteristik
+ersichtlich. Von die Zahl 8 können wir sehen, wie die Spannung an der
+Diode ist steigend (von 0 bis 0,5 V) bleibt der Diodenstrom nahe Null
+bis Spannung erreicht Werte in der Nähe der Schwellenspannung (~ 0,6
+V). An diesem Punkt Diode ist „eingeschaltet“ und der Pfad Strom
+(Diodenstrom) ist nur begrenzt durch Widerstand R1. In dem Fall, wenn
+die Diodenspannung abnimmt die VI-Kurve ist nicht die gleiche, was zu
+der Diodenhysterese führt. Oberer, höher Die Kurve aus Abbildung 8
+zeigt, dass nach dem Einschalten der Diode die Eine niedrigere
+Diodenspannung verursacht einen höheren Strom als in dem Fall, wenn
+die Diode wurde vorher „ausgeschaltet“. Eine ideale Diode hätte das
+nicht Hysterese, d.h. der Diodenstrom wäre unabhängig von vorherigem
+Diodenzustände aber nur auf der Diodenspannung.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Versuchen Sie zu beantworten, was die Diodenhysterese verursacht.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_20_DiodeRectifiers.html" class="btn btn-neutral float-right" title="20. Diodengleichrichter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_18_TheComparatorSchmittTrigger.html" class="btn btn-neutral" title="18. Der Komparator, Positive Feedback und Schmitt Trigger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
