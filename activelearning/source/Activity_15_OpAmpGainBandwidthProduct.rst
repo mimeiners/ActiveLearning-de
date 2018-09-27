@@ -4,7 +4,7 @@ OPAMP Verstärkungsbandbreite Produkt :math:`GBW`
 Zielsetzung
 ___________
 
-Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt** (:mazh:`GBW`) oder die Verstärkungsbandbreite der Einheit.
+Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt** (:math:`GBW`) oder die Verstärkungsbandbreite der Einheit.
 
 Anmerkungen
 ___________
@@ -15,13 +15,13 @@ ___________
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
-.. _finite: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity14_OPAMPOpenLoopGain.html#opamp-open-loop-gain
-.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _amplifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _voltage: https://en.wikipedia.org/wiki/Voltage_divider
-.. _divider: https://en.wikipedia.org/wiki/Voltage_divider
+.. _begrenzt: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity14_OPAMPOpenLoopGain.html#opamp-open-loop-gain
+.. _invertierenden: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _Verstärker: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _Spannungsteiler: https://de.wikipedia.org/wiki/Spannungsteiler
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung -3,3V und +3,3V sind in der Dokumentation hier_ zu entnehmen. Die Anwendung des Bode_ - Analysators wird verwendet, um den Frequenzgang der Operationsverstärker-Schaltung zu messen.
+
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung **-3,3V** und **+3,3V** sind in der Dokumentation hier_ zu entnehmen. Die Anwendung des Bode_ - Analysators wird verwendet, um den Frequenzgang der Operationsverstärker-Schaltung zu messen.
 
 
 Materialien
@@ -37,39 +37,42 @@ ___________
 Hintergrund
 ___________
 
-Die Vorwärtsverstärkung,: math: "G" ist definiert als die Verstärkung des Operationsverstärkers, wenn ein Signal differentiell in den Verstärker eingespeist wird, ohne dass eine negative Rückkopplung angelegt ist. Diese Verstärkung ist bei allen Frequenzen idealerweise unendlich, aber bei einem echten Operationsverstärker ist sie endlich und hängt von der Frequenz ab. Bei niedriger Frequenz ist die Verstärkung maximal, nimmt linear mit steigender Frequenz ab und hat einen Wert von eins bei der Frequenz, die allgemein als die Einheitsverstärkung oder Grenzfrequenz bezeichnet wird :math:`f_ {c}` (in der Gleichungsform, :math:`G (f_c) = 1`). Für den Operationsverstärker ** OP97 ** beträgt die Verstärkungsfrequenz ** 900 kHz **, die Verstärkung ** Open-Loop bei dieser Frequenz ist einfach eins **. Dies ist auch die Closed-Loop-Bandbreite oder die maximale Frequenz, wenn die Rückkopplung mit einer Regelkreisverstärkung von 1 konfiguriert ist :math:`G_f` ist definiert als das ** Verstärkungs-Bandbreite-Produkt **,
- :math:`GBW`, und für alle Eingangsfrequenzen ist dieses Produkt konstant und gleich :math:`f_c`. Die Verstärkung kann als einfache Zahl (Magnitude) oder in dB (Dezibel) angegeben werden.
+Die Vorwärtsverstärkung, :math:`G`, ist definiert als die Verstärkung des Operationsverstärkers, wenn ein Signal differentiell und ohne negative Rückkopplung in den Verstärker eingespeist wird. Diese Verstärkung ist bei allen Frequenzen idealerweise unendlich, aber in einem echten Operationsverstärker ist sie begrenzt_ und hängt von der Frequenz ab. Bei niedriger Frequenz ist die Verstärkung maximal, nimmt mit zunehmender Frequenz linear ab und hat einen Wert von eins bei der Frequenz, die allgemein als Einheitsverstärkung- oder Grenzfrequenz :math:`f_{c}` bezeichnet wird (in Gleichungsform, :math:`G(f_c)=1`). Für den **OP97** beträgt die **Verstärkungsfrequenz 900 kHz**, die **Verstärkung im offenen Regelkreis bei dieser Frequenz ist einfach eins**. Dies ist auch die Closed-Loop-Bandbreite oder die maximale Frequenz, wenn die Rückführung mit einer Closed-Loop-Verstärkung von 1 konfiguriert ist. :math:`G_f` ist definiert als das **Verstärkungs-Bandbreitenprodukt** :math:`GBW`, und für alle Eingangsfrequenzen ist dieses Produkt konstant und gleich :math:`f_c`. Die Verstärkung kann als einfache Zahl (Betrag) oder in dB(Dezibel) angegeben werden.
 
 .. math::
-GBW = Gewinn * f_c
+   GBW = Gewinn * f_c
 
-oder
+   oder
 
-GBW = Gewinn * BW
+   GBW = Gewinn * BW
 
-Dabei gilt :math:`f_c` ist die Grenzfrequenz (bei :math:`f_c` wird um -3dB verringert (-3dB = :math:`1 / \ sqrt {2}` drob in der Signalamplitude))
-und :math:`BW` Frequenzbandbreite in diesem Fall gegeben als: math:` BW = f_c`
+wobei :math:`f_c` die Grenzfrequenz ist (bei :math:`f_c` verringer sich die Verstärkung um -3dB (-3dB = :math:`1/ \sqrt{2}` Abfall in der Signalamplitude)) und :math:`BW` Frequenzbandbreite in diesem Fall gegeben als :math:`BW = f_c`
 
-Abbildung 1 aus dem OP97-Datenblatt veranschaulicht diese Beziehung grafisch. Wenn eine Rückkopplung bereitgestellt wird, wie in einem invertierenden Verstärker, ist die Verstärkung gegeben durch G = -R2 / R1; Es muss jedoch erkannt werden, dass die Größe dieser Verstärkung niemals die Verstärkung übersteigen kann, die durch das Verstärkungs-Bandbreite-Produkt gegeben ist.
+:numref:`15_fig_01` aus dem OP97-Datenblatt veranschaulicht diesen Zusammenhang grafisch. Wenn eine Rückkopplung wie bei einem invertierenden_  Verstärker_  vorgesehen ist, wird die Verstärkung durch G = -R2/R1 angegeben; es muss jedoch beachtet werden, dass die Größe dieser Verstärkung niemals die Verstärkung überschreiten kann, die durch das Bandbreitenprodukt gegeben ist.
 
+.. _15_fig_01:
 .. figure:: img/ Activity_15_Fig_01.png
 
-Abbildung 1: OP97 Open-Loop-Verstärkung, Phase vs. Frequenz
+	    : OP97 Open-Loop-Verstärkung, Phase vs. Frequenz
 
 .. note::
+   
+   Sie sollten daran denken, Folgendes zu beachten: Die maximale Frequenz des "Normalbetriebs"
+   (d.h. die Frequenzbandbreite, d.h. die Grenzfrequenz, d.h. die Frequenz, bei der die
+   Verstärkung um 3dB sinkt) Ihrer Operationsverstärkerschaltung (Verstärker) in nicht
+   invertierender oder invertierender Konfiguration wird IMMER vom Gewinn abhängig sein.
+   **Wenn Sie eine höhere Verstärkung wählen, ist die Frequenzbandbreite niedriger und umgekehrt.**
 
-    Sie sollten folgendes beachten: Die maximale Frequenz des "normalen Betriebs" (dh Frequenzbandbreite, dh Grenzfrequenz, dh Frequenz, bei der die Verstärkung um 3 dB abfällt) Ihrer Operationsverstärkerschaltung (Verstärker) in nicht invertierender oder invertierender Konfiguration ist IMMER abhängig von der GAIN. ** Wenn Sie eine höhere Verstärkung wählen, ist die Frequenzbandbreite geringer und umgekehrt. **
-
-    Beispielsweise:
-    Wenn wir einen invertierenden Verstärker mit Verstärkung = 100 basierend auf OP97 haben wollen, wird unsere Frequenzbandbreite wie folgt angegeben:
-    
+   Zum Beispiel: Wenn wir einen invertierenden Verstärker mit Verstärkung = 100 basierend
+   auf OP97 haben wollen, dann wird unsere Frequenzbandbreite als:
+   
     .. math::
-        BW = GBW_ {OP927} / 100 = 900 kHz / 100 = 9 kHz
+        BW = GBW_{OP927}/100 = 900 kHz / 100 = 9 kHz
     
     für Verstärkung = 1000
     
     .. math::
-         BW = GBW_ {OP927} / 1000 = 900 kHz / 1000 = 900 Hz
+         BW = GBW_{OP927}/1000 = 900 kHz / 1000 = 900 Hz
 
 
 
@@ -77,43 +80,49 @@ Abbildung 1: OP97 Open-Loop-Verstärkung, Phase vs. Frequenz
 Verfahren
 _________
 
-Bauen Sie die in Abbildung 2 gezeigte Schaltung auf Ihrem lötfreien Steckbrett auf, um den Frequenzgang eines invertierenden Verstärkers mit einer Verstärkung von 1000 zu messen. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um ein kleines Signal mit dem STEMlab-Generator zu erzeugen, wird ein 1/1000-Spannungsteiler [R3 - (R4 || R1)] verwendet, um das 2 V p2p-Sinussignal auf 2 mV p2p am invertierenden Verstärkereingang zu reduzieren. R4 und R1 sind aufgrund der "virtuellen Masse" an Pin 2 effektiv parallel. Die parallele Kombination von R4 und R1 beträgt 50 Ω, was bei 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.
+Bauen Sie die in :numref:`15_fig_02` gezeigte Schaltung auf Ihrer lötfreien Lochrasterplatine auf, um den Frequenzgang eines Umkehrverstärkers zu messen, der mit einer geschlossenen Regelverstärkung von 1000 konfiguriert ist. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um mit dem STEMlab-Generator ein Kleinsignal zu erzeugen, wird ein 1/1000- Spannungsteiler_ [R3 - (R4|||R1)] verwendet, um das 2V p2p-Sinussignal am Eingang des Wechselrichters auf 2 mV p2p zu reduzieren. Die Parallelkombination von R4 und R1 ist 50 KΩ, was bei den 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.
 
-
+.. _15_fig_02:
 .. figure:: img/ Activity_15_Fig_02.png
 
-Abbildung 2: Invertierender Verstärker mit Verstärkung von 1000
+	    : Invertierender Verstärker mit Verstärkung von 1000
 
 .. Warnung::
-      Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse anschließen, überprüfen Sie Ihren Stromkreis. Die Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen Kurzschluss und können im Falle eines Kurzschlusses beschädigt werden.
+   Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+   überprüfen Sie Ihre Schaltung nochmals. Die Spannungsversorgungsstifte -3,3V
+   und +3,3V haben keine Schutzschaltung und können im Falle eines Kurzschlusses beschädigt werden.
+   
+1. Bauen Sie die Filterschaltung wie in :numref:`15_fig_02` auf Ihrem lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2 = 100 kΩ und R3 = 47 kΩ auf.
 
-
-1. Richten Sie die Filterschaltung wie in Abbildung 2 auf Ihrem lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2 = 100 kΩ und R3 = 47 kΩ ein.
-
-2. Starten Sie die Bode-Analyseanwendung. Die Bode-Analysator-Anwendung führt einen Frequenzsweep so durch, dass ein Sinussignal erzeugt wird :math:`OUT1` innerhalb des von uns gewählten Frequenzbereichs (im Einstellungsmenü).  :math:`IN1` Eingangssignal ist direkt verbunden mit: math:` OUT_1` folgt :math:`IN1 = V_ {in}`.  :math:`IN2` ist auf der anderen Seite des Filters verbunden und von diesem: math:` IN2 = V_ {out} `. Die Bode-Analysator-Anwendung nimmt dann für jeden Frequenzschritt das Verhältnis von :math:`IN1 / IN2` ( :math:`V_ {in} / V_ {out}` ) und berechnet den Frequenzgang.
+2. Starten Sie die Anwendung Bode analyzer. Die Bode-Analysatoranwendung führt einen
+   Frequenzdurchlauf durch, so dass sie ein Sinussignal auf :math:`OUT1` innerhalb des von uns
+   gewählten Frequenzbereichs (im Einstellungsmenü) erzeugt. Das Eingangssignal :math:`IN1` ist
+   direkt mit :math:`OUT1` verbunden, gefolgt von :math:`IN1=V_{in}`. :math:`IN2` wird auf der anderen Seite des
+   Filters und daraus :math:`IN2=V_{out}` angeschlossen. Die Anwendung des Bode-Analysators nimmt
+   dann für jeden Frequenzschritt das Verhältnis von :math:`IN1/IN2` (:math:`V_{in}/V_{out}`) und
+   berechnet den Frequenzgang.
 
 3. Stellen Sie im Bode-Analyzer-Einstellungsmenü Folgendes ein:
 
 - Startfrequenz: 100 Hz
 - Endfrequenz: 20 kHz
 - Anzahl der Schritte: 50
-- Maßstab: Protokoll
+- Skallierung: Log
 - Wählen Sie die RUN-Taste
 
-
+.. _15_fig_03:
 .. figure:: img/ Activity_15_Fig_03.png
 
-Abbildung 3: Typischer OP97 Bode Plot Gain = 1000
+	    : Typischer OP97 Bode Plot Gain = 1000
 
-Aus der Abbildung 3 können wir sehen, dass die Daten der Theorie und des OP97-Datenblattes mit der Messung übereinstimmen. Bei Gain = 1000 beträgt das BW 900Hz.
-Stellen Sie R2 auf 10 kΩ, R3 = 4,7 kΩ, wiederholen Sie die Messungen und beobachten Sie die Ergebnisse.
+Aus der :numref:`15_fig_03` können wir ersehen, dass Theorie und OP97-Datenblatt mit der Messung übereinstimmen. Bei Verstärkung = 1000 ist das BW 900Hz. R2 auf 10 kΩ einstellen, R3 = 4,7 kΩ, die Messungen wiederholen und die Ergebnisse beobachten.
 
+.. _15_fig_04:
 .. figure:: img/ Activity_15_Fig_04.png
 
-Abbildung 3: Typischer OP97 Bode Plot Gain = 100
+	    : Typischer OP97 Bode Plot Gain = 100
 
-Wie wir aus der Abbildung 4 für x10 weniger Verstärkung sehen können, wird das BW um x10 erhöht
-Gleichung :math:`GBW = BW * Verstärkung = const`.
+Wie wir aus der Abbildung 4 für x10 weniger Verstärkung ersehen können, wird das BW um x10 erhöht, was die Gleichung :math:`GBW = BW ∗ Gain = const` bestätigt.
 
 
 
