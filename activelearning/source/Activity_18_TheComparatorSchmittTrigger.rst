@@ -4,38 +4,25 @@ Der Komparator, Positive Feedback und Schmitt Trigger
 Zielsetzung
 -----------
 
-Ziel dieser Übung ist es, den Spannungskomparator, die Verwendung
-einer positiven Rückkopplung und den Betrieb der
-Schmitt-Trigger-Konfiguration zu untersuchen. Die Verwendung
-herkömmlicher Operationsverstärker als Ersatz für
-Spannungskomparatoren wird in grundlegenden
-Operationsverstärkerschaltungen beschrieben.
+Ziel dieser Übung ist es, den Spannungskomparator, die Verwendung von positiver Rückführung und den Betrieb der Schmitt-Trigger-Konfiguration zu untersuchen. Die Verwendung konventioneller Operationsverstärker als Ersatz für Spannungskomparatoren wird im Abschnitt Grundlegende Operationsverstärker-Schaltungen beschrieben.
 
 
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _AD8561: http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf
 .. _section: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#using-an-op-amp-as-a-comparator
 .. _LM317: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
 .. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
 
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die für die **5V** - Spannungsversorgung verwendeten Verlängerungsstecker-Pins sind in der Dokumentation_ dargestellt. Die Oszilloskop_ - und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
-Die für die ** 5V ** - Spannungsversorgung verwendeten Steckerstifte
-der Verlängerung sind in der Dokumentation hier zu sehen.
-
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
 
 
 Hintergrund
@@ -43,32 +30,13 @@ Hintergrund
 
 Der Spannungsvergleicher
 ------------------------
-Ein Differenzspannungsvergleicher wie der AD8561_ aus dem analogen
-Teilekit hat eine Pinbelegung, die in vielerlei Hinsicht der eines
-herkömmlichen Operationsverstärkers ähnelt, jedoch mit vielen
-wichtigen Unterschieden (Abbildung 1). Es gibt die üblichen :math:`V_
-+` und :math:`V_-` Stromversorgungspins, aber ein Komparator hat auch
-einen Masse (GND) Pin. Das Differential :math:`+ IN` und: math:` -IN`
-Pins sind im Wesentlichen die gleichen wie bei einem herkömmlichen
-Operationsverstärker. Es wird auch einen Ausgangspin wie in einem
-Operationsverstärker geben, aber es gibt oft einen zweiten
-"invertierenden" (oder komplementären) Ausgang. Auch wenn die Spannung
-am Ausgang eines Operationsverstärkers im Allgemeinen nahe bei den
-:math:`+` und :math:`-` Versorgungsschienen schwingen kann, schwingt
-der Ausgang eines Komparators nur zwischen Masse (gnd) und dem
-:math:`0` Versorgung. Dies macht die Ausgabe mehr wie ein
-digitales Signal und kompatibel mit Standard-Logikgattern wie
-TTL oder CMOS. Der Spannungskomparator kann als ein
-Ein-Bit-Analog-Digital-Wandler (ADC) betrachtet werden. Der
-AD8561 enthält auch einen LATCH-Eingang, der den Ausgang
-zwischenspeichert oder einfriert und verhindert, dass er sich
-ändert, selbst wenn sich die Eingänge ändern.
+
+Ein Differenzspannungskomparator wie der AD8561_ aus dem Analogteilesatz hat eine Pinbelegung, die in vielerlei Hinsicht der eines herkömmlichen Operationsverstärkers ähnlich ist, aber viele wichtige Unterschiede aufweist (:numref:`18_fig_01`). Es gibt die üblichen :math:`V_+` und :math:`V_-` Spannungsversorgungsstifte, aber ein Komparator hat auch einen Erdungsstift (GND). Die differentiellen :math:`+IN` - und :math:`-IN` -Pins sind im Wesentlichen die gleichen wie bei einem herkömmlichen Operationsverstärker. Es wird auch einen Ausgangspin wie in einem Operationsverstärker geben, aber es gibt oft einen zweiten "invertierenden" ("invertierenden") ("komplementären") Ausgang. Auch während die Spannung am Ausgang eines Operationsverstärkers im Allgemeinen in der Nähe der :math:`+` und :math:`-` Versorgungsschienen schwingen kann, schwingt der Ausgang eines Vergleichers nur zwischen Masse (gnd) und der :math:`+` Versorgung. Dies macht den Ausgang eher zu einem digitalen Signal und ist kompatibel mit Standard-Logikgattern wie TTL oder CMOS. Der Spannungskomparator kann als ein Single-Bit-Analog-Digital-Wandler (ADC) betrachtet werden. Der AD8561 beinhaltet auch einen LATCH-Eingang, der den Ausgang verriegelt oder einfriert und verhindert, dass er sich ändert, auch wenn sich die Eingänge ändern.
       
-
-
+.. _18_fig_01:
 .. figure:: img/Activity_18_Fig_01.png
 
-   Abbildung 1: AD8561_ Datenblatt und Pinbelegung
+	    : AD8561_ Datenblatt und Pinbelegung
 
    
 Materialien
