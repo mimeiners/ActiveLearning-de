@@ -151,24 +151,33 @@ Vorgehensweise
 
 - Überprüfen des Überlagerungssatzes:
 
-  - Bauen Sie die Schaltung von Abb. 2 auf. Messen und protokollieren Sie die Spannung am :math:`\4.7k\Omega` Widerstand.
+  - Bauen Sie die Schaltung von Abb. 2 auf. Messen und protokollieren
+    Sie die Spannung am :math:`4.7\,k\Omega` Widerstand.
     
 
   - Bauen Sie die Schaltung von Abb. 3 auf. Messen und
-    protokollieren Sie die Spannung am :math:`4,7 k\Omega`
+    protokollieren Sie die Spannung am :math:`4,7\,k\Omega`
     Widerstand.
     
 
     
-.. note:: Das Messen des Spannungsabfalls am gewünschten Widerstand erfolgt so, dass die Oszilloskopsonde von IN1 mit der einen Seite des Widerstands und die Oszilloskopsonde von IN2 mit der anderen Seite des Widerstands verbunden ist. Die Spannungsdifferenz V\ :sub:`in1`\-V\ :sub:`in2`\ gibt eine Spannung am gemessenen Widerstand an.
+.. note::
+   Das Messen des Spannungsabfalls am gewünschten Widerstand
+   erfolgt so, dass die Oszilloskopsonde von IN1 mit der einen
+   Seite des Widerstands und die Oszilloskopsonde von IN2 mit
+   der anderen Seite des Widerstands verbunden ist. Die
+   Spannungsdifferenz V\ :sub:`in1`\-V\ :sub:`in2`\ gibt eine
+   Spannung am gemessenen Widerstand an.
+	  
 	  
 
 
 - Berechnen Sie die Gesamtreaktion "V\ :sub:`out`\" für die Schaltung
-  der Figur 2, in dem Sie die Ergebnise aus der Messung der  Schaltung von Figur 1 und Messung der Schaltung von Figur 3 addieren.
-  
+  der Figur 2, in dem Sie die Ergebnise aus der Messung der  Schaltung
+  von Figur 1 und Messung der Schaltung von Figur 3 addieren.
+    
 
-  V\ :sub:`out`\(figure 2) = V\ :sub:`out`\(figure 1) + V\ :sub:`out`\(figure 3) = _______________
+  V\ :sub:`out` (figure 2) = V\ :sub:`out` (figure 1) + V\ :sub:`out` (figure 3) = _______________
 
 
 - Vergleichen Sie Ihr berechnetes Ergebnis mit dem, was Sie in Schritt
@@ -184,10 +193,16 @@ Vorgehensweise
 Fragen zu
 ---------
 
-1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die Steigung der Grafik an jedem beliebigen Punkt und vergleichen Sie sie mit dem Wert von K, der sich aus den Messungen ergibt. Erklären Sie eventuelle Unterschiede.
+1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die
+   Steigung der Grafik an jedem beliebigen Punkt und vergleichen Sie
+   sie mit dem Wert von K, der sich aus den Messungen ergibt. Erklären
+   Sie eventuelle Unterschiede.
    
+      
+2. Wie genau haben sich die berechneten und gemessenen Ergebnisse für
+   jede der drei Schaltungen, die Sie für das Überlagerungsexperiment
+   gebaut haben, verhalten? Erklären Sie eventuelle Unterschiede.
    
-2. Wie genau haben sich die berechneten und gemessenen Ergebnisse für jede der drei Schaltungen, die Sie für das Überlagerungsexperiment gebaut haben, verhalten? Erklären Sie eventuelle Unterschiede.
    
 
 

@@ -201,15 +201,16 @@ Starten Sie die Anwendung Oszilloskop & Signalgenerator.
       Zum Beispiel: Wenn wir die Impulsbreite Ihres OUT1-Quadratsignals
       gleich :math:`5 \tau` haben wollen.
 
-      (:math:`\tau` - Zeitkonstante des RC-Kreises :math:`\tau` = R * C)
+      (:math:`\tau` - Zeitkonstante des RC-Kreises :math:`\tau = R \cdot C` )
 
       .. math::
 	 :label: 06_eq_06
 		 
 	 \tau &= R \cdot C
-	 & = 2.2\, k\Omega \cdot 1\,\mu F
-	 &= 2.2\, ms
+	 & = 2.2\,k\Omega \cdot 1\,\mu F
+	 &= 2.2\,ms
 
+	 
 
       .. math:: 
 	 :label: 06_eq_07

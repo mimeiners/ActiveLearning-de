@@ -22,7 +22,12 @@ Pitaya STEMlab Hardware und Software gewonnen werden.
 Hintergrund
 -----------
 
-Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen und passive Komponenten betrachten, die es uns ermöglichen, die Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du solltest mit der Gleichung vertraut sein: 
+Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen
+und passive Komponenten betrachten, die es uns ermöglichen, die
+Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden
+wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du
+solltest mit der Gleichung vertraut sein:
+
 
 .. math:: f(t) = \sin(\omega t + \theta)
    :label: 01_eq_1
@@ -90,7 +95,7 @@ ursprüngliche Sinuswelle und eine zweite Sinuswelle, die
 dich mit der Zeit nach links verschoben hat. Abbildung 2 zeigt die
 ursprüngliche Sinuswelle (grün) und die zweite Sinuswelle (orange) mit
 einem Zeitversatz. Da der Offset konstant ist, sehen wir die
-ursprüngliche Sinuswelle zeitlich um einen Wert von :math:`\ theta`
+ursprüngliche Sinuswelle zeitlich um einen Wert von :math:`\theta`
 verschoben, was :math:`1/4` der Periode in diesem Beispiel entspricht.
 
 .. _01_fig_02:
@@ -260,7 +265,11 @@ dann:
 .. _Quickstart: http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html
 .. _hier: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 
-Sie werden das STEMlab-Board von Red Pitaya und die Anwendung Oszilloskop & Signalgenerator verwenden. Eine Anleitung zum Starten des Red Pitaya STEMlab-Boards finden Sie unter Quickstart_, während die Anwendung des Oszilloskops und des Signalgenerators hier_ erläutert wird.
+Sie werden das STEMlab-Board von Red Pitaya und die Anwendung
+Oszilloskop & Signalgenerator verwenden. Eine Anleitung zum Starten
+des Red Pitaya STEMlab-Boards finden Sie unter Quickstart_, während
+die Anwendung des Oszilloskops und des Signalgenerators hier_
+erläutert wird.
 
 
 
@@ -294,8 +303,8 @@ Verfahren
   
 
 - Stellen Sie im Menü (Steuerrad) von  OUT1 die Frequenz auf 1000 Hz,
-  die Phase auf 0∘ und Amplitude auf 0,9 V  ein. Wählen Sie die
-  Sinuswellenform und aktivieren Sie die Ausgabe.
+  die Phase auf :math:`0^{\circ}` und Amplitude auf 0,9 V  ein. Wählen
+  Sie die Sinuswellenform und aktivieren Sie die Ausgabe.
   
 
 - Stellen Sie im Menü (Steuerrad) von OUT2 die Frequenz auf 1000 Hz
@@ -309,6 +318,7 @@ Verfahren
 .. _01_fig_04:
 .. figure:: img/Activity_01_Fig_04.png
    :scale: 50%
+   :align: center
 
    Sinussignal erzeugt mit Oszilloskop und Signal
    Generatoranwendungen. Markiert mit Grün - Haupteinstellung und
@@ -427,13 +437,13 @@ beobachten können.
   IN2 ein.
 
 Die in IN1 (gelb) angezeigte Sinuswelle ist die Spannung an beiden
-Widerständen (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die in IN2 dargestellte
+Widerständen (:math:`V_{R1} + V_{R2}`). Die in IN2 dargestellte
 Sinuswelle ist die Spannung an nur R\ :sub:`2`\
 (V\ :sub:`R2` \). Um die Spannung über R\ :sub:`1` anzuzeigen,
 verwenden wir die Math-Funktion der Red Pitayas. Unter dem
 Mathe-Menü für Signal 1 wählen Sie IN1, wählen Sie den Operator "-",
 für Signal2 wählen Sie dann IN2. Nun aktivieren Sie Math. Sie sollten nun
-eine dritte Sinuswelle für die Spannung über R\ :sub:`1` \(V \ :sub:`R1` \).
+eine dritte Sinuswelle für die Spannung über R\ :sub:`1` (:math:`V_{R1}`).
 
 - Mit den vertikalen +/- Reglern setzen Sie 200 mV / div (0,2 V / div)
   für MATH-Kurve.
@@ -442,10 +452,9 @@ Mit diesen Einstellungen beobachtest du:
 
 - IN1- Eingangserregungssignal
 
-- IN2- Spannung am Widerstand R\ :sub:`2` \
+- IN2- Spannung am Widerstand R\ :sub:`2` 
 
-- MATH - Spannung am Widerstand R\ :sub:`1` \
-
+- MATH - Spannung am Widerstand R\ :sub:`1` 
 
 - Notieren Sie  V\ :sub:`R1` \ und V\ :sub:`R2` \.
 
@@ -459,10 +468,10 @@ Mit diesen Einstellungen beobachtest du:
   sehen?
   
 - Können Sie sogar zwei unterschiedliche Sinuswellen sehen?
-
   Wahrscheinlich nicht. Es sollte keinen beobachtbaren Zeitversatz geben
   und somit keine Phasenverschiebung.
 
+  
 Sie sehen, dass sich die MATH- (lila) und IN2- (grün) Kurven
 überlappen. Um beide Spuren zu sehen, können Sie die vertikale
 Position eines Kanals verschieben, um sie zu trennen.
@@ -554,17 +563,21 @@ dem Gitter. Lassen Sie uns die Zeitverschiebungen messen und die
 Phasenunterschiede berechnen..
 
 
-4. Messen Sie den Zeitunterschied zwischen V\ :sub:`R1` \ und V\ :sub:`C1` \ und berechne die Phasenversätze. 
+4. Messen Sie den Zeitunterschied zwischen V\ :sub:`R1` \ und V\
+   :sub:`C1` \ und berechne die Phasenversätze.
+	
 
-   Verwenden Sie Gl. (2) und das gemessene :math:`\Delta t`, zur Berechnung des Phasenwinkels :math:`\theta`.
+   Verwenden Sie Gl. (2) und das gemessene :math:`\Delta t`, zur
+   Berechnung des Phasenwinkels :math:`\theta`.
+   
 
-Die CURSORS sind nützlich für die Bestimmung von :math:`\Delta t`;
-kurze Erklärung wie: 
+   Die CURSORS sind nützlich für die Bestimmung von :math:`\Delta t`;
+   kurze Erklärung wie: 
 
-- Zeigen Sie mindestens 2 Zyklen der Sinuswellen an.
+   - Zeigen Sie mindestens 2 Zyklen der Sinuswellen an.
 
-- Stellen Sie die horizontale time/Div auf 500 us/div ein.
-  Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen der Differenz anzeigt.
+   - Stellen Sie die horizontale time/Div auf 500 us/div ein.
+     Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen der Differenz anzeigt.
 
 
 Sie können die Messanzeige verwenden, um die Frequenz zu ermitteln. Da

@@ -157,7 +157,7 @@ Da sich BJT wie eine Diode verhalten kann (vgl. Konfiguration in
 :numref:`22_fig_01`), können wir die VI-Charakteristik wie bei
 Diodenmessungen messen. Für diese Aufgabe verwenden wir die Jupyter
 Notebook Web-Anwendung. Wie man Jupyter Notebook startet und ein neues
-Projekt erstellt, ist in :numref:`22_fig_04` dargestellt.
+Projekt erstellt, ist in :numref:`22_fig_05` dargestellt.
 
 
 .. note::
@@ -177,8 +177,8 @@ Projekt erstellt, ist in :numref:`22_fig_04` dargestellt.
    dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
    
 
-.. figure:: img/Activity_22_Fig_04.png
-   :name: 22_fig_04
+.. figure:: img/Activity_22_Fig_05.png
+   :name: 22_fig_05
    :align: center
 
    Erstellen eines neuen Jupyter-Notebooks
