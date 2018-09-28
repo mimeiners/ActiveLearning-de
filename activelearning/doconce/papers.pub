@@ -1,0 +1,1017 @@
+* articles
+** MOS Operational Amplifier Design-A Tutorial Overview
+   key:       gray1982
+   author:    P. R. Gray, R. G. Meyer
+   year:      1982
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    17
+   number:    6
+   pages:     969--982
+   doi:       10.1109/JSSC.1982.1051851
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     dec
+** Design Formulas for Biquad Active Filters Using Three Operational Amplifiers
+   key:       fleischer1973
+   author:    P.E. Fleischer, J. Tow
+   year:      1973
+   journal:   Proceedings of the IEEE
+   volume:    61
+   number:    5
+   pages:     662--663
+   doi:       10.1109/PROC.1973.9124
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9219
+   month:     may
+** A Practical Method of Designing RC Active Filters
+   key:       sallen1955
+   author:    R. P. Sallen, E. L. Key
+   year:      1955
+   journal:   IRE Transactions on Circuit Theory
+   volume:    2
+   number:    1
+   pages:     74--85
+   doi:       10.1109/TCT.1955.6500159
+   pdf:       missing
+   status:    published
+   entrytype: article
+** Dynamic Range Performance of On-Chip RF Bandpass Filters
+   key:       kuhn2003
+   author:    W.B. Kuhn, D. Nobbe, D. Kelly, A.W. Orsborn
+   year:      2003
+   journal:   IEEE Transactions on Circuits and Systems II: Analog and Digital Signal Processing
+   volume:    50
+   number:    10
+   pages:     685--694
+   doi:       10.1109/TCSII.2003.818364
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      1057-7130
+   month:     oct
+** A 10-300-MHz IF-Digitizing IC With 90-105-DB Dynamic Range and 15-333-KHz Bandwidth
+   key:       schreier2002
+   author:    R. Schreier, J. Lloyd, L. Singer, D. Paterson, M. Timko, M. Hensley, G. Patterson, K. Behel, J. Zhou
+   year:      2002
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    37
+   number:    12
+   pages:     1636--1644
+   doi:       10.1109/JSSC.2002.804331
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     dec
+** Capacity Limits and Matching Properties of Integrated Capacitors
+   key:       aparicio2002
+   author:    R. Aparicio, A. Hajimiri
+   year:      2002
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    37
+   number:    3
+   pages:     384--393
+   doi:       10.1109/4.987091
+   pdf:       missing
+   status:    published
+   entrytype: article
+** Simple Accurate Expressions for Planar Spiral Inductances
+   key:       mohan1999
+   author:    S.S. Mohan, M. del Mar Hershenson, S.P. Boyd, T.H. Lee
+   year:      1999
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    34
+   number:    10
+   pages:     1419--1424
+   doi:       10.1109/4.792620
+   pdf:       missing
+   status:    published
+   entrytype: article
+** MIM Capacitor Integration for Mixed-Signal/RF Applications
+   key:       ng2005
+   author:    Chit Hwei Ng, Chaw-Sing Ho, Shao-Fu Sanford Chu, Shi-Chung Sun
+   year:      2005
+   journal:   IEEE Transactions on Electron Devices
+   volume:    52
+   number:    7
+   pages:     1399--1409
+   doi:       10.1109/TED.2005.850642
+   pdf:       missing
+   status:    published
+   entrytype: article
+** A Fully Integrated Direct-Conversion Receiver for CDMA and GPS Applications
+   key:       lim2006
+   author:    K. Lim, S. H. Lee, S. Min, S. Ock, M. W. Hwang, C. H. Lee, K. L. Kim, S. Han
+   year:      2006
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    41
+   number:    11
+   pages:     2408--2416
+   doi:       10.1109/JSSC.2006.882892
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     nov
+** Matching Properties of MOS Transistors
+   key:       pelgrom1989
+   author:    M. J. M. Pelgrom, A. C. J. Duinmaijer, A. P. G. Welbers
+   year:      1989
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    24
+   number:    5
+   pages:     1433--1439
+   doi:       10.1109/JSSC.1989.572629
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     oct
+** State-Variable Synthesis for Insensitive Integrated Circuit Transfer Functions
+   key:       kerwin1967
+   author:    W.J. Kerwin, L.P. Huelsman, R.W. Newcomb
+   year:      1967
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    2
+   number:    3
+   pages:     87--92
+   doi:       10.1109/JSSC.1967.1049798
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     sep
+** The Biquad: Part I-Some Practical Design Considerations
+   key:       thomas1971
+   author:    L. Thomas
+   year:      1971
+   journal:   IRE Transactions on Circuit Theory
+   volume:    18
+   number:    3
+   pages:     350--357
+   doi:       10.1109/TCT.1971.1083277
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9324
+   month:     may
+** The Biquad: Part II-A Multipurpose Active Filtering System
+   key:       thomas1971a
+   author:    L. Thomas
+   year:      1971
+   journal:   IRE Transactions on Circuit Theory
+   volume:    18
+   number:    3
+   pages:     358--361
+   doi:       10.1109/TCT.1971.1083278
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9324
+   month:     may
+** Realisation of Gyrators Using Operational Amplifiers, and Their Use in RC-Active-Network Synthesis
+   key:       antoniou1969
+   author:    A. Antoniou
+   year:      1969
+   journal:   Electrical Engineers, Proceedings of the Institution of
+   volume:    116
+   number:    11
+   pages:     1838-1850
+   doi:       10.1049/piee.1969.0339
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0020-3270
+   month:     nov
+** New Active-Gyrator Circuit
+   key:       orchard1974
+   author:    H. J. Orchard, A. N. Willson
+   year:      1974
+   journal:   Electronics Letters
+   volume:    10
+   number:    13
+   pages:     261-262
+   doi:       10.1049/el:19740207
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0013-5194
+   month:     jun
+** Simulated Inductors Using Differential Amplifiers
+   key:       riordan1967
+   author:    R. H. S. Riordan
+   year:      1967
+   journal:   Electronics Letters
+   volume:    3
+   number:    2
+   pages:     50-51
+   doi:       10.1049/el:19670039
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0013-5194
+   month:     feb
+** A Broad-Band Tunable CMOS Channel-Select Filter for a Low-IF Wireless Receiver
+   key:       behbahani2000
+   author:    F. Behbahani, Weeguan Tan, A. Karimi-Sanjaani, A. Roithmeier, A.A. Abidi
+   year:      2000
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    35
+   number:    4
+   pages:     476--489
+   doi:       10.1109/4.839908
+   pdf:       missing
+   status:    published
+   entrytype: article
+** Interface and Control Electronics for a Bulk Micromachined Capacitive Gyroscope
+   key:       saukoski2008
+   author:    Mikko Saukoski, Lasse Aaltonen, Teemu Salo, Kari A.I. Halonen
+   year:      2008
+   journal:   Sensors and Actuators A
+   volume:    147
+   number:    1
+   pages:     183--193
+   doi:       10.1016/j.sna.2008.03.023
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0924-4247
+** Sigma-Delta Modulators: Tutorial Overview, Design Guide, and State-of-the-Art Survey
+   key:       rosa2011
+   author:    J.M. de la Rosa
+   year:      2011
+   journal:   IEEE J. Circuit and Systems
+   volume:    58
+   number:    1
+   pages:     1--21
+   doi:       10.1109/TCSI.2010.2097652
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      1549-8328
+   month:     jan
+** Decimation for Sigma Delta Modulation
+   key:       candy1986
+   author:    J. Candy
+   year:      1986
+   journal:   IEEE Comm. Mag.
+   volume:    34
+   number:    1
+   pages:     72--76
+   doi:       10.1109/TCOM.1986.1096432
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0090-6778
+   month:     jan
+** {ADC} Input Noise: the Good, the Bad, and the Ugly. Is No Noise Good Noise?
+   key:       kester2006
+   author:    Walt Kester
+   year:      2006
+   journal:   Analog Dialogue
+   volume:    40
+   pdf:       missing
+   url:       http://www.analog.com/library/analogdialogue/archives/40-02/adc_noise.html
+   status:    published
+   entrytype: article
+   issn:      1552-3284
+   month:     feb
+** Optimal Parameters for {$\Delta\Sigma$} Modulator Topologies
+   key:       marques1998
+   author:    A. Marques, V. Peluso, M. S. Steyaert, W. M. Sansen
+   year:      1998
+   journal:   IEEE J. Circuit and Systems
+   volume:    45
+   number:    9
+   pages:     1232--1241
+   doi:       10.1109/82.718590
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      1057-7130
+   month:     sep
+** Statistical Analysis of Amplitude-Quantized Sampled-Data Systems
+   key:       widrow1960
+   author:    B. Widrow
+   year:      1960
+   journal:   Transactions of the AIEE - PArt II: Applications and Industry
+   volume:    79
+   pages:     555--568
+   pdf:       missing
+   status:    published
+   entrytype: article
+   month:     jan
+** The Design of Sigma-Delta Modulation Analog-to-Digital Converters
+   key:       boser1988
+   author:    B. E. Boser, B. A. Wooley
+   year:      1988
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    23
+   number:    6
+   pages:     1298--1308
+   doi:       10.1109/4.90025
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     dec
+** Active RC Filters-A State-Space Realization
+   key:       tow1968
+   author:    J. Tow
+   year:      1968
+   journal:   Proceedings of the IEEE
+   volume:    56
+   number:    6
+   pages:     1137--1139
+   doi:       10.1109/PROC.1968.6502
+   pdf:       missing
+   status:    published
+   entrytype: article
+** A Versatile Active RC Building Block With Inherent Compensation for the Finite Bandwidth of the Amplifier
+   key:       akerberg1974
+   author:    D. Akerberg, Kare Mossberg
+   year:      1974
+   journal:   IEEE Transactions on Circuits and systems
+   volume:    21
+   number:    1
+   pages:     75--78
+   doi:       10.1109/TCS.1974.1083785
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0098-4094
+   month:     jan
+** Analog Sample-Data Filters
+   key:       fried1972
+   author:    D.L. Fried
+   year:      1972
+   journal:   IEEE Journal of Solid-State Circuits
+   volume:    7
+   number:    4
+   pages:     302--304
+   doi:       10.1109/JSSC.1972.1050305
+   pdf:       missing
+   status:    published
+   entrytype: article
+   issn:      0018-9200
+   month:     aug
+* books
+** Design of Analog Filters
+   key:       schaumann2010
+   author:    Rolf Schaumann, Haiqiao Xiao, Mac E. van Valkenburg
+   year:      2010
+   publisher: Cambridge University Press
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      978-0-19-538055-2
+   month:     dec
+   note:      International Edition
+** Halbleiter-Schaltungstechnik
+   key:       tietze2012
+   author:    Ulrich Tietze, Christoph Schenk, Eberhard Gramm
+   year:      2012
+   publisher: Springer
+   pages:     1807
+   pdf:       missing
+   status:    published
+   edition:   14
+   entrytype: book
+   isbn:      978-3-642-31025-6
+** CMOS: Circuit Design, Layout, and Simulation
+   key:       baker2010
+   author:    R. Jacob Baker
+   year:      2010
+   publisher: Wiley Press
+   pages:     1208
+   pdf:       missing
+   url:       http://lib.myilibrary.com?id=337262
+   status:    published
+   edition:   3
+   entrytype: book
+   isbn:      978-0-470-88132-3
+   month:     oct
+** Analog Filters Using {MATLAB}
+   key:       wanhammar2009
+   author:    Lars Wanhammar
+   year:      2009
+   publisher: Springer
+   doi:       10.1007/978-0-387-92767-1
+   pdf:       missing
+   url:       http://www.myilibrary.com?ID=223668
+   status:    published
+   entrytype: book
+   eprint:    978-0-387-92767-1
+   isbn:      978-0-387-92766-4
+** Programming for Computations - {P}ython
+   key:       linge2016a
+   author:    Hans Petter Langtangen, Svein Linge
+   year:      2016
+   publisher: Springer
+   doi:       10.1007/978-3-319-32428-9
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-319-32427-2
+** Analysis and Design of Analog Integrated Circuits
+   key:       gray2010
+   author:    Paul R. Gray, Paul J. Hurst, Stephen H. Lewis, Robert G. Meyer
+   year:      2010
+   publisher: John Wiley \& Sons, Inc.
+   pages:     896
+   pdf:       missing
+   status:    published
+   edition:   5
+   entrytype: book
+   isbn:      978-0-470-39877-7
+   month:     may
+   note:      International Student Edition - Paperback
+** Elektronische Bauelemente
+   key:       reisch2007
+   author:    Michael Reisch
+   year:      2007
+   publisher: Springer
+   pages:     1517
+   doi:       10.1007/978-3-540-34015-7
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      978-3-540-34015-7
+   subtitle:  Funktion, Grundschaltungen, Modellierung mit SPICE
+** Physics of Semiconductor Devices
+   key:       sze2006
+   author:    S. M. Sze, Kwok K. Ng
+   year:      2006
+   publisher: John Wiley \& Sons, Inc.
+   pages:     832
+   pdf:       missing
+   status:    published
+   edition:   3
+   entrytype: book
+   isbn:      978-0-471-14323-9
+** Analog Integrated Circuit Design
+   key:       carusone2012
+   author:    Tony Chan Carusone, David A. Johns, Kenneth W. Martin
+   year:      2012
+   publisher: John Wiley \& Sons, Inc.
+   pages:     824
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      978-1-1180-9233-0
+   note:      International Student Edition - Paperback
+** Continuous-Time Active Filter Design
+   key:       deliyannis1998
+   author:    T. Deliyannis, Yichuang Sun, J.K. Fidler
+   year:      1998
+   publisher: CRC Press
+   doi:       10.1201/9781439821879
+   pdf:       missing
+   status:    published
+   entrytype: book
+   eprint:    978-1-4398-2187-9
+   isbn:      978-0-8493-2573-1
+** Electronic Filter Design Handbook
+   key:       williams2006
+   author:    Arthur Williams, Fred J. Taylor
+   year:      2006
+   date:      2006-08-01
+   publisher: McGraw-Hill Professional
+   pages:     775
+   pdf:       missing
+   status:    published
+   edition:   4
+   entrytype: book
+   isbn:      978-0071471718
+   month:     aug
+   pagetotal: 775
+** Analog and Digital Filter Design
+   key:       winder2002
+   author:    Steve Winder
+   year:      2002
+   date:      2002-10-24
+   publisher: Newnes (imprint of Elsevier Science)
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      0-7506-7547-0
+   pagetotal: 450
+   series:    EDN Series for Design Engineers
+** Aktive Filter Und Oszillatoren
+   key:       wangenheim2008
+   author:    Lutz von Wangenheim
+   year:      2008
+   publisher: Springer
+   doi:       10.1007/978-3-540-71739-3
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-540-71739-3
+   language:  German
+   subtitle:  Entwurf und Schaltungstechnik mit integrierten Bausteinen
+** Systematic Design of Sigma-Delta Analog-to-Digital Converters
+   key:       bajdechi2004a
+   author:    Ovidiu Bajdechi, Johan Huijsing
+   year:      2004
+   publisher: Kluwer Academic Publishers
+   volume:    768
+   pages:     208
+   pdf:       missing
+   url:       http://www.springer.com/engineering/circuits+%26+systems/book/978-1-4020-7945-0?changeHeader
+   status:    published
+   entrytype: book
+   isbn:      978-1-4020-7945-0
+   series:    The Springer International Series in Engineering and Computer Science
+** Understanding Delta-Sigma Data Converters
+   key:       schreier2005a
+   author:    Richard Schreier, Gabor C. Temes
+   year:      2005
+   publisher: IEEE Press and Wiley-Interscience
+   pages:     464
+   pdf:       missing
+   status:    published
+   entrytype: book
+** Design of Analog CMOS Integrated Circuits
+   key:       razavi2003
+   author:    Bezad Razavi
+   year:      2003
+   publisher: McGraw-Hill Professional
+   pages:     704
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-0-071-18839-5
+   month:     oct
+   series:    Higher Education
+** Pro Git
+   key:                chacon2009
+   author:             Scott Chacon
+   year:               2009
+   publisher:          Apress
+   pages:              288
+   doi:                10.1007/978-1-4302-1834-0
+   pdf:                missing
+   url:                https://git-scm.com/book/de/v1
+   status:             published
+   allowed_duplicates: chacon2014
+   edition:            1
+   entrytype:          book
+   howpublished:       eBook
+   isbn:               978-1430218333
+** Pro Git
+   key:                chacon2014
+   author:             Scott Chacon, Ben Straub
+   year:               2014
+   publisher:          Apress
+   pages:              456
+   doi:                10.1007/978-1-4842-0076-6
+   pdf:                missing
+   url:                https://git-scm.com/book/en/v2
+   status:             published
+   allowed_duplicates: chacon2009
+   edition:            2
+   entrytype:          book
+   isbn:               978-1-484-20077-3
+   month:              nov
+** Gnuplot in Action
+   key:       janert2016
+   author:    Philipp K. Janert
+   year:      2016
+   publisher: Manning Publications
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      978-1-633-43018-1
+   pagetotal: 372
+** Gnuplot Cookbook
+   key:       phillips2012
+   author:    Lee Phillips
+   year:      2012
+   date:      2012-02-11
+   publisher: Packt Publishing
+   pdf:       missing
+   status:    published
+   ean:       9781849517249
+   entrytype: book
+   isbn:      978-1-84951-724-9
+   pagetotal: 220
+** R Graph Essentials
+   key:       lillis2014
+   author:    David Alexander Lillis
+   year:      2014
+   date:      2014-09-25
+   publisher: Packt Publishing
+   pdf:       missing
+   status:    published
+   ean:       9781783554553
+   entrytype: book
+   isbn:      978-1-78355-455-3
+   pagetotal: 190
+** Data Science at the Command Line
+   key:          janssens2015
+   author:       Jeroen Janssens
+   year:         2015
+   date:         2014-10-30
+   publisher:    O'Reilly Media, Inc.
+   pdf:          missing
+   status:       published
+   ean:          9781491947852
+   entrytype:    book
+   howpublished: Print
+   isbn:         978-1-491-94785-2
+   pagetotal:    191
+** A Primer on Scientific Programming With {P}ython
+   key:          langtangen2014
+   author:       Hans Petter Langtangen
+   year:         2014
+   date:         2014-08-01
+   publisher:    Springer
+   doi:          10.1007/978-3-642-54959-5
+   pdf:          missing
+   status:       published
+   ean:          9783642549595
+   entrytype:    book
+   howpublished: PDF
+   isbn:         978-3-642-54959-5
+** Programming for Computations - MATLAB/Octave
+   key:       linge2016
+   author:    Hans Petter Langtangen, Svein Linge
+   year:      2016
+   publisher: Springer
+   doi:       10.1007/978-3-319-32452-4
+   pdf:       missing
+   status:    published
+   ean:       9783319324517
+   entrytype: book
+   isbn:      978-3-319-32451-7
+** Raspberry Pi Cookbook for {P}ython Programmers
+   key:       cox2014
+   author:    Tim Cox
+   year:      2014
+   date:      2014-03-21
+   publisher: Packt Publishing
+   pdf:       missing
+   status:    published
+   ean:       9781849696623
+   entrytype: book
+   isbn:      978-1-84969-662-3
+   pagetotal: 402
+** Raspberry Pi - {D}as Technische {H}andbuch
+   key:       dembowski2015
+   author:    Klaus Dembowski
+   year:      2015
+   publisher: Springer
+   pages:     287
+   doi:       10.1007/978-3-658-08711-1
+   pdf:       missing
+   status:    published
+   edition:   2
+   entrytype: book
+   isbn:      978-3-658-08711-1
+   subtitle:  {K}onfiguration, {H}ardware, {A}pplikationseinstellungen
+** Raspberry Pi Cookbook
+   key:       monk2014
+   author:    Simon Monk
+   year:      2014
+   date:      2014-01-11
+   publisher: O'Reilly Media, Inc.
+   pdf:       missing
+   status:    published
+   ean:       9781449365226
+   entrytype: book
+   isbn:      978-1-449-36522-6
+   pagetotal: 410
+** Sensorschaltungen
+   key:       baumann2010
+   author:    Peter Baumann
+   year:      2010
+   publisher: Springer
+   doi:       10.1007/978-3-8348-9753-4
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-8348-9753-4
+** Parameterextraktion Bei Halbleiterbauelementen - Simulation Mit PSPICE
+   key:         baumann2012
+   author:      Peter Baumann
+   year:        2012
+   publisher:   Springer
+   doi:         10.1007/978-3-8348-2495-0
+   pdf:         missing
+   status:      published
+   affiliation: Hochschule Bremen, Bremen, Deutschland
+   entrytype:   book
+   isbn:        978-3-8348-2495-0
+** Pr{\"{u}}fungsfragen Zur Elektronik
+   key:       baumann2013
+   author:    Peter Baumann
+   year:      2013
+   publisher: Springer
+   doi:       10.1007/978-3-658-02913-5
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-658-02913-5
+   subtitle:  Bachelor Ausbildung
+** Ausgew{\"a}hlte Sensorschaltungen
+   key:       baumann2015
+   author:    Peter Baumann
+   year:      2015
+   publisher: Springer
+   pages:     130
+   doi:       10.1007/978-3-658-08558-2
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-658-08558-2
+   subtitle:  Vom Datenblatt zur Simulation
+** Einf\"{u}hrung in Die Halbleiter-Schaltungstechnik
+   key:       goebel2014
+   author:    Holger G\"{o}bel
+   year:      2014
+   publisher: Springer
+   doi:       10.1007/978-3-642-53869-8
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-642-53869-8
+   issn:      0937-7433
+   series:    Springer-Lehrbuch
+** \"{U}bungen Zur Halbleiter-Schaltungstechnik
+   key:       goebel2014a
+   author:    Holger G\"{o}bel, Henning Siemund
+   year:      2014
+   publisher: Springer
+   doi:       10.1007/978-3-642-53903-9
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-3-642-53903-9
+   issn:      0937-7433
+   series:    Springer-Lehrbuch
+** Silizium-Halbleitertechnologie - Grundlagen Mikroelektronischer Integrationstechniken
+   key:       hilleringmann2014
+   author:    Ulrich Hilleringmann
+   year:      2014
+   publisher: Springer
+   pages:     263
+   doi:       10.1007/978-3-8348-2085-3
+   pdf:       missing
+   status:    published
+   edition:   6
+   entrytype: book
+   isbn:      978-3-8348-2085-3
+   subtitle:  Grundlagen mikroelektronischer Integrationstechnik
+** Elektronik Und Schaltungstechnik
+   key:       oehme2011
+   author:    W. Friedrich Oehme, Mario Huemer, Markus Pfaff
+   year:      2011
+   publisher: Carl Hanser Verlag GmbH \& Co. KG
+   doi:       10.3139/9783446429659.fm
+   pdf:       missing
+   status:    published
+   entrytype: book
+   issn:      978-3-446-42961-1
+   month:     nov
+** Halbleiter-Baulelemente
+   key:       reisch2007a
+   author:    Michael Reisch
+   year:      2007
+   publisher: Springer
+   pages:     368
+   doi:       10.1007/978-3-540-73200-6
+   pdf:       missing
+   status:    published
+   edition:   2.
+   entrytype: book
+   isbn:      978-3-540-73200-6
+** Schaltungstechnik
+   key:       schmidt2002
+   author:    W. Schmidt
+   year:      2002
+   publisher: Vogel
+   pdf:       missing
+   status:    published
+   entrytype: book
+** Schaltungstechnik - Analog Und Gemischte Analog/digital
+   key:       siegl2010
+   author:    Johann Siegl
+   year:      2010
+   publisher: Springer
+   pages:     636
+   doi:       10.1007/978-3-642-13304-6
+   pdf:       missing
+   status:    published
+   edition:   4.
+   entrytype: book
+   isbn:      978-3-642-13304-6
+   series:    Springer-Lehrbuch
+   subtitle:  Entwicklung, Funktionsschaltungen, Funktionsprimitive von Schaltkreisen
+** {CMOS} Sigma-Delta Converters - Practical Design Guide
+   key:       rosa2013
+   author:    Jose M. de la Rosa, Rocio del Rio
+   year:      2013
+   publisher: John Wiley \& Sons, Inc.
+   pages:     398
+   doi:       10.1002/9781118569238
+   pdf:       missing
+   status:    published
+   entrytype: book
+   isbn:      978-1-119-97925-8 (Print), 978-1-118-56922-1 (eISBN)
+** Top-Down Design of High-Performance Sigma-Delta Modulators
+   key:       medeiro1999
+   author:    Fernando Medeiro, Bel{\'e}n Perez-Verd{\'u}, Angel Rodr{\'\i}guez-V{\'a}zquez
+   year:      1999
+   publisher: Springer
+   volume:    480
+   pdf:       missing
+   url:       http://www.springer.com/engineering/circuits+%26+systems/book/978-1-4419-5067-3?changeHeader
+   status:    published
+   edition:   1
+   entrytype: book
+   isbn:      978-1-4419-5067-3
+   series:    The Springer International Series in Engineering and Computer Science
+** Delta-Sigma Data Converters
+   key:        northworthy1996
+   author:     Steven R. Northworthy, Richard Schreier, Babor C. Temes
+   year:       1996
+   publisher:  John Wiley \& Sons, Inc.
+   pdf:        missing
+   status:     published
+   edition:    1
+   entrytype:  book
+   isbn:       978-0780310452
+   month:      oct
+   subtitle:   Theory, Design, and Simulation
+   titleaddon: Theory, Design, and Simulation
+** Op Amps for Everyone
+   key:                carter2013
+   author:             Bruce Carter
+   year:               2013
+   publisher:          Newnes (imprint of Elsevier Science)
+   doi:                http://dx.doi.org/10.1016/B978-0-12-391495-8.00001-5
+   pdf:                missing
+   status:             published
+   allowed_duplicates: mancini2002
+   address:            Boston
+   edition:            Fourth Edition
+   entrytype:          book
+   isbn:               978-0-12-391495-8
+* edited
+** Raspberry Pi Cookbook - Software and Hardware Problems and Solutions
+   key:       monk2013
+   author:    Rachel Roumeliotis
+   year:      2013
+   publisher: O'Reilly Media, Inc.
+   pages:     414
+   pdf:       missing
+   status:    published
+   edition:   1
+   entrytype: book
+   isbn:      978-1-44936-522-6
+   language:  English
+   month:     dec
+** Data Conversion Handbook
+   key:       kester2004
+   author:    Walt Kester
+   year:      2004
+   publisher: Newnes (imprint of Elsevier Science)
+   pdf:       missing
+   url:       http://www.analog.com/library/analogDialogue/archives/39-06/data_conversion_handbook.html
+   status:    published
+   entrytype: book
+   eprint:    9780080477015
+   isbn:      9780750678414
+   month:     dec
+** Oversampling Delta-Sigma Data Converters
+   key:       candy1991
+   author:    James C. Candy, Gabor C. Temes
+   year:      1991
+   publisher: Wiley Press
+   pages:     512
+   pdf:       missing
+   url:       http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0879422858.html
+   status:    published
+   entrytype: book
+   isbn:      978-0-87942-285-1
+   month:     aug
+   subtitle:  Theory, Design, and Simulation
+* proceedings
+** A Single Operational Amplifier Biquadratic Filter Section
+   key:       friend1970
+   author:    J. J. Friend
+   year:      1970
+   booktitle: Proc. IEEE Int. Symp. Circuit Theory
+   pages:     179--180
+   pdf:       missing
+   status:    published
+   entrytype: inproceedings
+** An Ultra-Wideband CMOS LNA for 3.1 to 10.6{~}GHz Wireless Receivers
+   key:       bevilacqua2004a
+   author:    A. Bevilacqua, A.M. Niknejad
+   year:      2004
+   booktitle: Proc. Digest of Technical Papers Solid-State Circuits Conf. ISSCC. 2004 IEEE Int
+   pages:     382--533
+   doi:       10.1109/ISSCC.2004.1332754
+   pdf:       missing
+   status:    published
+   entrytype: inproceedings
+** A 2-GHz Low-Power Single-Chip CMOS Receiver for WCDMA Applications
+   key:       yee2000
+   author:    D. Yee, Chinh Doan, D. Sobel, B. Limketkai, S. Alalusi, R. Brodersen
+   year:      2000
+   booktitle: Proceedings of the 26th European Solid-State Circuits Conference
+   pages:     57-60
+   pdf:       missing
+   status:    published
+   entrytype: inproceedings
+   month:     sep
+** A Low-Power 3-Axis Digital-Output {MEMS} Gyroscope With Single Drive and Multiplexed Angular Rate Readout
+   key:       prandi2011
+   author:    L. Prandi, C. Caminada, L. Coronato, G. Cazzaniga, F. Biganzoli, R. Antonello, R. Oboe
+   year:      2011
+   booktitle: Proc. IEEE Int. Solid-State Circuits Conf. Digest of Technical Papers (ISSCC)
+   pages:     104--106
+   doi:       10.1109/ISSCC.2011.5746238
+   pdf:       missing
+   status:    published
+   entrytype: inproceedings
+* reports
+** Accurate Temperature Sensing With an External P-N Junction
+   key:         jones2012
+   author:      Michael Jones
+   year:        2012
+   institution: Linear Technology
+   number:      an137
+   pdf:         missing
+   url:         http://cds.linear.com/docs/en/application-note/an137f.pdf
+   status:      published
+   address:     Linear Technology Corporation, 1630 McCarthy Blvd., Milpitas, CA 95035-7417, U.S.
+   entrytype:   techreport
+   type:        Application Note
+** Diode-Based Temperature Measurement
+   key:         stitt1991
+   author:      R. Mark Stitt, David Kunst
+   year:        1991
+   institution: Burr-Brown
+   number:      sboa019
+   pdf:         missing
+   url:         http://www.ti.com/lit/an/sboa019/sboa019.pdf
+   status:      published
+   entrytype:   techreport
+   type:        Application Report
+** Minimizing Component-Variation Sensitivity in Single Op Amp Filters
+   key:         maxim2002a
+   author:      Maxim
+   year:        2002
+   institution: Maxim Integrated TM
+   number:      738
+   pdf:         missing
+   url:         http://pdfserv.maximintegrated.com/en/an/AN738.pdf
+   status:      published
+   entrytype:   techreport
+   type:        Tutorial
+** Demystifying Delta-Sigma {ADC}s
+   key:         maxim2003
+   author:      Maxim
+   year:        2003
+   institution: Maxim Integrated TM
+   number:      1870
+   pdf:         missing
+   url:         https://www.maximintegrated.com/en/app-notes/index.mvp/id/1870
+   status:      published
+   entrytype:   techreport
+   month:       jan
+   type:        Tutorial
+** Op Amps for Everyone
+   key:                mancini2002
+   author:             Ron Mancini
+   year:               2002
+   institution:        Texas Instruments Incorporation
+   number:             SLOD006B
+   pdf:                missing
+   url:                http://www.ti.com/general/docs/lit/getliterature.tsp?literatureNumber=slod006b&fileType=pdf&keyMatch=op%20amps%20for%20everyone&tisearch=Search-EN-TechDocs
+   status:             published
+   allowed_duplicates: carter2013
+   entrytype:          techreport
+   month:              aug
+   type:               Design Reference
+* misc
+** CMOSedu
+   key:          baker2015
+   author:       R. Jacob Baker
+   year:         2015
+   pdf:          missing
+   url:          http://www.cmosedu.com
+   status:       published
+   entrytype:    misc
+   howpublished: Website
