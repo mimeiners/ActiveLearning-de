@@ -24,7 +24,7 @@ Anmerkungen
 .. _AD8561: http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf
 .. _section: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#using-an-op-amp-as-a-comparator
 .. _LM317: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
-.. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
+.. _Kapitel: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
 
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
@@ -67,32 +67,33 @@ der den Ausgang verriegelt oder einfriert und verhindert,
 dass er sich ändert, auch wenn sich die Eingänge ändern.
 	    
       
-.. _18_fig_01:
-.. figure:: img/Activity_18_Fig_01.png
 
-   AD8561_ Datenblatt und Pinbelegung
+.. figure:: img/Activity_18_Fig_01.png
+	:name: 18_fig_02
+	:align: center
+		
+	AD8561_ Datenblatt und Pinbelegung
 
    
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
+- Red Pitaya STEMlab
 - OPAMP: 1x AD8561_ Spannungskomparator
 - Spannungsregler: 1x LM317
-- Widerstand: 2x 4,7 :math:`k \ Omega`
-- Widerstand: 1x 20 :math:`k \ Omega`
-- Widerstand: 1x 47 :math:`k \ Omega`
-- Widerstand: 1x 100 :math:`k \ Omega`
-- Kondensator: 1x 0.1 :math:`\ mu F`
+- Widerstand: 2x 4,7 :math:`k\Omega`
+- Widerstand: 1x 20 :math:`k\Omega`
+- Widerstand: 1x 47 :math:`k\Omega`
+- Widerstand: 1x 100 :math:`k\Omega`
+- Kondensator: 1x 0.1 :math:`\mu F`
 
-Richtungen
-----------
+Vorbereitung
+------------
 
-Konstruieren Sie die Komparator-Testschaltung wie in Abbildung 2 auf
-Ihrem Lötplatinen-Board dargestellt. Die zwei Pull-up-Widerstände mit
-4,7 kΩ sind optional und werden verwendet, um den positiven
-Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
-
+Bauen Sie die Vergleichsprüfschaltung wie in :numref:`18_fig_02` auf Ihrer
+lötfreien Lochrasterplatine auf. Die beiden Pull-up-Widerstände :math:`4.7,k\Omega`
+sind optional und werden verwendet, um den maximalen positiven Ausgangshub
+auf näher an die :math:`+5-V` -Versorgung zu erhöhen.
 
 .. figure:: img/Activity_18_Fig_02.png
    :name: 18_fig_02
@@ -102,28 +103,20 @@ Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
 
    
 .. note::
-   Spannungsvergleicher sind extrem empfindlich gegenüber Störungen
-   und Störungen auf der Stromversorgungsschiene. Laute
-   Stromversorgungsschiene führt zu Störungen im Ausgangssignal. Diese
-   Störimpulse treten bei Schaltschwellenspannungen auf. Mit anderen
-   Worten, der Komparator wird einige Schwierigkeiten haben, zu
-   entscheiden, V + oder V- einzuschalten, wenn er zwei
-   Eingangssignale vergleicht, die von dem Stromversorgungsrauschen
-   betroffen sind. Aus diesem Grund verwenden wir hier einen
-   Spannungsregler, um unsere Stromversorgungsschiene zu stabilisieren
-   und eine verrauschte Ausgabe von dem Komparator zu verhindern.
-
+   Spannungskomparatoren sind extrem empfindlich gegenüber dem Rauschen
+   und den Störungen auf der Stromversorgungsschiene. Eine verrauschte
+   Stromversorgungsschiene führt zu Störungen des Ausgangssignals. Diese
+   Störungen treten bei Schaltschwellenspannungen auf. Mit anderen Worten,
+   der Vergleicher wird Schwierigkeiten haben, sich für das Einschalten von
+   :math:`V+` oder :math:`V-` zu entscheiden, wenn er zwei Eingangssignale vergleicht, die
+   vom Rauschen der Stromversorgung betroffen sind. Aus diesem Grund verwenden
+   wir hier einen Spannungsregler, um unsere Stromversorgungsschiene zu
+   stabilisieren und eine verrauschte Ausgabe des Vergleichers zu verhindern.
+   Sie können es direkt mit der :math:`5,V` -Netzteilschiene versuchen und die
+   Ergebnisse beobachten und mit den Ergebnissen des Spannungsreglers vergleichen.
+   Hinweis: Es ist nicht notwendig, die Spannung von :math:`5,V` auf :mazh:`2,5,V`
+   herunterzufahren, aber wir haben uns für diese einfache Form entschieden.
    
-Sie können direkt die 5-V-Stromversorgungsschiene verwenden und die
-Ergebnisse beobachten und sie mit den mit dem Spannungsregler
-erzielten Ergebnissen vergleichen.
-   
-.. note::
-   Es ist nicht notwendig, die Spannung von 5V auf 2,5V
-   herunterzufahren, aber wir haben uns für Einfachheit entschieden.
-   
-
-
 .. figure:: img/Activity_18_Fig_03.png
    :name: 18_fig_03
    :align: center
@@ -131,35 +124,35 @@ erzielten Ergebnissen vergleichen.
    AD8561_ Komparatorschaltung auf dem Steckbrett
 
    
-LM317_ Spannungsregler ist im vorherigen Abschnitt beschrieben.
+LM317_ Spannungsregler ist im vorherigen Kapitel_ beschrieben.
 
 Verfahren
 ---------
 
-1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 bis x1 und
-   IN2 bis x10
+1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x1 und
+   IN2 auf x10
    
-2. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
 3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Menü OUT1
-   settings den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
-   setzen. Wählen Sie im Wellenform-Menü DREIECK, Deaktivieren Sie den
-   SHOW-Button und wählen Sie enable.
+   Einstellungen den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
+   setzen. Wählen Sie im Wellenform-Menü TRIANGLE, Deaktivieren Sie den
+   SHOW-Button und wählen Sie Enable.
    
 4. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf 0,5 V
    ein, wählen Sie im Wellenformmenü die Option DC und aktivieren Sie
-   die Option.
+   Enable.
    
 5. Stellen Sie im Menü für die IN2-Einstellungen die Sondendämpfung
    auf x10 ein
    
 6. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 500 mV / div eingestellt ist (Sie können V /
-   div einstellen, indem Sie den gewünschten Kanal auswählen und die
+   dass IN1 :math:`V/div` auf :math:`500,mV/div` eingestellt ist (Sie können :math:`V/
+   div` einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
 7. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN2 V / div auf 1V / div eingestellt ist (Sie können V / div
+   dass IN2 :math:`V/div` auf :math:`1,V/div` eingestellt ist (Sie können V / div
    einstellen, indem Sie den gewünschten Kanal auswählen und vertikale
    +/- Regler verwenden)
    
