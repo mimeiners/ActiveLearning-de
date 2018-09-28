@@ -52,7 +52,7 @@ untersuchen. Bevor dieses Experiment durchgeführt wird, wird ein
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
    Verstärkers wird auf ~ 5 gesetzt, wobei gilt
-   :math:`R_i = 2.2k \Omega` und :math:`R_f = 10k \ Omega`
+   :math:`R_i = 2.2\,k\Omega` und :math:`R_f = 10 \,k\Omega`
 
    
 Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
@@ -79,12 +79,12 @@ Diodenkonfiguration.
 
 Die Vorwärts-Drop-Down-Spannung ist nicht typisch 0,7 V, aber sie
 hängt von der Transistorgröße, der Spezifikation usw. ab. Für den
-ausgewählten NMOS-Transistor so genannte Schwellenspannung :math:`V_
-{TH}` ist etwa 2.4V. Dies bedeutet, wenn die Gate (G) Spannung
+ausgewählten NMOS-Transistor so genannte Schwellenspannung
+:math:`V_{TH}` ist etwa 2.4V. Dies bedeutet, wenn die Gate (G) Spannung
 überschreitet :math:`V_ {TH}` der Transistor wird eingeschaltet und
 beginnt zu leiten. Da der Drain (D) -Pin natürlich mit dem Gate-Pin
 des Transistors verbunden ist, bleibt das Potential von :math:`D-G`
-auf dem Pegel der Schwellenspannung :math:`V_ {TH}`.
+auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
 
 
 .. note::
@@ -97,7 +97,7 @@ auf dem Pegel der Schwellenspannung :math:`V_ {TH}`.
 
    ZVN211_ Spezifikationen
 
-Auf dem Steckbrett die Schaltung aus Abbildung 2 aufbauen und mit den
+Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und mit den
 Messungen fortfahren.
 
 
@@ -112,7 +112,7 @@ Messungen fortfahren.
 Verfahren
 ----------
 
-1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem
+1. Erstellen Sie die Schaltung aus :numref:`23_fig_01` auf dem
    Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
    M1 nehmen Sie ZVN211.
    
@@ -174,10 +174,10 @@ VI-Kurvenmessungen
 
 Da sich NMOS wie eine Diode mit einer Vorwärtsspannung verhalten kann,
 die der folgenden Gleichung entspricht :math:`V_ {TH}` (Konfiguration
-in Abbildung 2) können wir die VI-Charakteristik wie bei
+in :numref:`23_fig_02`) können wir die VI-Charakteristik wie bei
 Diodenmessungen messen. Für diese Aufgabe wird Jupyter verwendet
 Notebook-Webanwendung. Wie man Jupyter Notebook startet und ein neues
-Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
+Projekt erstellt, zeigt das Flussdiagramm in :numref:`23_fig_05`.
 
 
 .. note::
@@ -198,7 +198,7 @@ Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
    
 
 
-.. figure:: img/Activity_23_Fig_05.png
+.. figure:: img/Activity_19_Fig_07.png
    :name: 23_fig_05
    :align: center
 
@@ -208,7 +208,7 @@ Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
 kopieren Sie den Code und fügen Sie ihn ein.
 
-Der Code unten erzeugt das gleiche Signal wie in Abbildung 4, aber es
+Der Code unten erzeugt das gleiche Signal wie in :numref:`23_fig_04`, aber es
 wird sie im XY-Diagramm darstellen.
 
 Zum Messen VI-Kurve wird ein "XY"-Plot benötigt, wobei die
@@ -237,7 +237,7 @@ Erfassung stoppen, führen Sie nur die Zelle 2 aus um die Messung erneut zu star
 
 
 Nach dem Ausführen des obigen Codes sollten Sie die Diode
-VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
+VI-Charakteristik erhalten, wie in :numref:`23_fig_05` gezeigt.
 
 
 .. figure:: img/Activity_23_Fig_06.png
@@ -254,7 +254,7 @@ PMOS als Diode
 Gleiche Maße können auch für PMOS-Transistor gelten. Beim
 PMOS-Transistor ist die Polarität der Spannung umgekehrt, so dass die
 Konfiguration der PMOS-Diode anders sein muss NMOS eins. Die
-Konfiguration der PMOS-Diode ist in Abbildung 7 dargestellt.
+Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
 
 
 
@@ -269,7 +269,7 @@ Konfiguration der PMOS-Diode ist in Abbildung 7 dargestellt.
 Verfahren
 ---------
 
-1. Erstellen Sie die Schaltung aus Abbildung 7 auf dem
+1. Erstellen Sie die Schaltung aus :numref:`23_fig_07` auf dem
    Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
    M1 nimm ZVP211.
 
@@ -317,7 +317,7 @@ Verfahren
    PMOS-Diodenanschlussmessungen
 
    
-Wie in Abbildung 8 zu sehen, verhält sich der PMOS in der
+Wie in :numref:`23_fig_08` zu sehen, verhält sich der PMOS in der
 Diodenkonfiguration wie eine Diode mit einer Vorwärtsabfallspannung
 gleich dem PMOS :math:`V_ {TH}`. Vergleichen Sie die Abbildungen 8 und
 4 und versuchen Sie, den Unterschied zwischen NMOS- und

@@ -45,8 +45,8 @@ untersuchen, der als Diode geschaltet ist.
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \ Omega`
-   und :math:`R_f = 10k \ Omega`
+   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2\,k\Omega`
+   und :math:`R_f = 10\,k\Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
    oder OP97 verwendet haben. (Hinweis: *Rail-to-Rail*).
@@ -95,19 +95,19 @@ Verfahren
    Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein
    
 
-.. figure:: img/Activity_22_Fig_02.png
-   :name: 22_fig_02
-   :align: center
+   .. figure:: img/Activity_22_Fig_02.png
+      :name: 22_fig_02
+      :align: center
 
-   npn-Transistor als Diodenverbindung auf dem Steckbrett
+      npn-Transistor als Diodenverbindung auf dem Steckbrett
    
 
-.. note::
-   Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
-   anschließen, überprüfen Sie Ihren Stromkreis. Die
-   Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
-   Kurzschluss und können im Falle eines Kurzschlusses beschädigt
-   werden. 
+      .. note::
+	 Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+	 anschließen, überprüfen Sie Ihren Stromkreis. Die
+	 Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+	 Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+	 werden. 
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
@@ -133,11 +133,11 @@ Verfahren
    auf x10 und den vertikalen Offset auf 0.
    
 
-.. figure:: img/Activity_22_Fig_03.png
-   :name: 22_fig_03
-   :align: center
-
-   npn-Transistor als Diodenmessungen
+   .. figure:: img/Activity_22_Fig_03.png
+      :name: 22_fig_03
+      :align: center
+	      
+      npn-Transistor als Diodenmessungen
 
    
 .. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements
@@ -177,8 +177,8 @@ Projekt erstellt, ist in :numref:`22_fig_05` dargestellt.
    dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
    
 
-.. figure:: img/Activity_22_Fig_05.png
-   :name: 22_fig_05
+.. figure:: img/Activity_19_Fig_07.png
+   :name: 22_fig_04
    :align: center
 
    Erstellen eines neuen Jupyter-Notebooks
@@ -265,13 +265,15 @@ wir Q1 um den Betrag polarisieren:
 
 
 .. math::
+   :label: 22_eq_01
+	   
    V_ {E-BC} = V_E - V_ {BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
 
 Mit der Batterie können wir die umgekehrte Polarisation um den
 maximalen Betrag erreichen
 
 .. math::
-   :label: 22_eq_
+   :label: 22_eq_02
 	   
    V_ {E-BC} &= V_E - V_ {BC} = 9 - (-3,3 V) = 12.3 V 
 
@@ -303,7 +305,7 @@ mit den Messungen fort.
    
 Für diese Aufgabe verwenden wir die Jupyter Notebook
 Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
-erstellt, ist in Abbildung 4 dargestellt.
+erstellt, ist in Abbildung 4 dargestellt. 
 
 Da Sie Jupyter Notebook bereits von Previews aus ausführen, wird nur
 ein kleines Update des Codes benötigt.
@@ -426,22 +428,23 @@ Verfahren
    0 ein.
    
 
-.. figure:: img/Activity_22_Fig_11.png
-   :name: 22_fig_11
-   :align: center
+   .. figure:: img/Activity_22_Fig_11.png
+      :name: 22_fig_11
+      :align: center
 
-   Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen
+      Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen
 
    
-.. warning::
-   Wie sie :numref:`22_fig_11` entnehmen können, beträgt der
-   Vorwärtsspannungsabfall etwa 100 mV. Sie können auch feststellen,
-   dass Q2 nicht notwendig ist, um die Drop-Down-Spannung des Q1 zu
-   senken.
+      .. warning::
+
+	 Wie sie :numref:`22_fig_11` entnehmen können, beträgt der
+	 Vorwärtsspannungsabfall etwa 100 mV. Sie können auch feststellen,
+	 dass Q2 nicht notwendig ist, um die Drop-Down-Spannung des Q1 zu
+	 senken.
    
-   Die Hauptrolle spielt hier der Widerstand R4, der mit der Basis von
-   Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
-   zu beobachten.
+	 Die Hauptrolle spielt hier der Widerstand R4, der mit der Basis von
+	 Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
+	 zu beobachten.
    
 
 Fragen
