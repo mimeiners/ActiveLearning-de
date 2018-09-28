@@ -46,7 +46,7 @@ beschrieben werden:
 .. math::
    :label: 19_eq_01
 
-   I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (1)
+   I_D = I_S \left(e^{\frac{V_D q}{n k T}} - 1 \right)
 
 wo :math:`I_ {S}` und n sind Skalierungsfaktoren und :math:`kT / q`
 (25,4 mV bei Raumtemperatur) ist die sogenannte thermische
@@ -146,28 +146,28 @@ Ausnahmen:
 .. math::
    :label: 19_eq_02
 
-   I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (2)
-
+   I_D = I_S \left(e^{\frac{V_D q}{n k T}} - 1 \right)
+   
 .. math::
    :label: 19_eq_03
 
-   I_S = A A ^ * T ^ 2 e ^ {- \ Frac {q \ Phi B} {kT}} \ quad (3)
+   I_S = A A^* T^2 e^{-\frac{q \phi_B}{kT}}
 
    
 Woher:
 
 * :math:`A` = Verbindungsbereich
   
-* :math:`A ^ *` = modifizierte Richardson-Konstante (der Wert variiert
-  je nach Material und Dotierstoff) = :math:`110 A / (° K ^ 2-cm ^ 2)` für Si vom n-Typ
+* :math:`A^*` = modifizierte Richardson-Konstante (der Wert variiert
+  je nach Material und Dotierstoff) = :math:`110 A /(^{\circ}K^2 - cm^2)` für Si vom n-Typ
   
 * :math:`T` = absolute Temperatur in :math:`K` (Kelvins)
   
-* :math:`q` = elektronische Ladung = :math:`1.6E-19 \ quad C`
+* :math:`q` = elektronische Ladung = :math:`1.6E-19 \, C`
   
-* :math:`\ Phi B` = Barrierenhöhe in Volt
+* :math:`\phi_B` = Barrierenhöhe in Volt
 
-* k = Boltzman-Konstante = 1.37 * 10-23 J / K = :math:`1.37E-23 \ quad J / K`
+* k = Boltzman-Konstante = 1.37 * 10-23 J / K = :math:`1.37E-23 \, J/K`
   
 * :math:`n` = Idealitätsfaktor (Vorwärtsneigungsfaktor, bestimmt durch
   Metall-Halbleiter-Schnittstelle) 
@@ -223,8 +223,9 @@ Beziehung zwischen der Photonenenergie und der Einschaltspannung
 
       
 .. math::
+   :label: 19_eq_4
    
-   eV_0 = E_g = hf = \ frac {hc} {\ lambda} \ quad (4)
+   eV_0 = E_g = hf = \frac{hc}{\lambda}
 
    
 woher:
@@ -257,7 +258,7 @@ angegeben wie:
 
 .. math::
 
-   I_d = (IN_1 - IN_2) / R_1 \\
+   I_d = (IN_1 - IN_2) / R_1
    
    V_d = IN_2
 

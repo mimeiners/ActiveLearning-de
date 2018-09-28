@@ -53,12 +53,14 @@ Strom wird als Pfadstrom angegeben.
      
     I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}}
 
-Da die Differenzspannung am Widerstand (gegeben als :math:`\Delta V =
-V_{R_{shunt_{Knoten_1}}}-V_{R_{shunt_{Knoten_2}}}`) gemessen werden
-sollte, können wir sehen, dass ein Differenzverstärker ist eine ideale
-Schaltung für diese Aufgabe. Der kleine differentielle Spannungsabfall
-über den Shunt wird verstärkt und durch einen Operationsverstärker in
-eine einseitige (gemeinsam referenzierte) Spannung umgewandelt.
+    
+Da die Differenzspannung am Widerstand, gegeben als
+:math:`\Delta V = V_{R_{shunt_{Knoten_1}}}-V_{R_{shunt_{Knoten_2}}}`,
+gemessen werden sollte, können wir sehen, dass ein Differenzverstärker
+ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle
+Spannungsabfall über den Shunt wird verstärkt und durch einen
+Operationsverstärker in eine einseitige (gemeinsam referenzierte)
+Spannung umgewandelt. 
 
 
 
@@ -83,6 +85,7 @@ zu tun haben wird. Die erste Annahme ist wie folgt:
 oder
 
 .. math::
+   
     I_L \propto \frac{V_ {out}}{R_s}
 
 Mit anderen Worten: durch einfaches Messen und Skalieren von
@@ -93,7 +96,9 @@ Schaltung ist:
       
 
 .. math::
-   V_{out} = V_+ \bigg( 1 + \frac{R_2}{R_1} \bigg) - V_- \bigg(\frac{R_2}{R_1} \bigg) \quad (2)
+   :label: 17_eq_2
+   
+   V_{out} = V_+ \left(1 + \frac{R_2}{R_1} \right) - V_- \left(\frac{R_2}{R_1} \right) 
 
 
 Dabei sind :math:`V_{+}` und :math:`V_{-}` Spannungen an
@@ -103,8 +108,10 @@ Operationsverstärkerseingängen. Setzen wir nun :math:`V_{+}` und
       
 
 .. math::
+   :label: 17_eq_3
    
-   V_{out} = V_S \bigg (\frac{R_4}{R_3 + R_4} \bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1 } \bigg) \quad  (3)
+   V_{out} = V_S \left( \frac{R_4}{R_3 + R_4} \right) \left(1 +
+   \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)
 
 
 wobei :math:`V_S` ist die Quellspannung und :math:`V_L` Lastspannung ist. Wir können auch schreiben
@@ -112,15 +119,17 @@ wobei :math:`V_S` ist die Quellspannung und :math:`V_L` Lastspannung ist. Wir k�
 
 .. math::
 
-V_S = V_{R_{shunt_{Knoten_1}}} \quad V_L = V_{R_{shunt_{Knoten_2}}}
+   V_S = V_{R_{shunt_{Knoten_1}}} \quad V_L = V_{R_{shunt_{Knoten_2}}}
 
 
 und
 
+
 .. math::
 
-V_S = V_L + \Delta V \quad \Delta V = V_S - V_L
+   V_S = V_L + \Delta V \quad \Delta V = V_S - V_L
 
+   
 Auf den ersten Blick, durch das Hinzufügen des Widerstandes
 :math:`R_4` zur Schaltung, wie in :numref:`17_fig_01` dargestellt,
 haben wir irgendwie eine komplizierte Übertragungsfunktion; von
@@ -142,11 +151,11 @@ Auswahl der Werte von :math:`R_3` und :math:`R_4` als
 Mit den obigen Gleichungen können wir Gleichung (3) wie folgt schreiben
 
 .. math::
-   V_{out} = V_S \bigg(\frac{R_2}{R_1 + R_2} \bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1 } \bigg) \quad (4)
-
-   =
-
-   V_{out} = V_S \bigg (\frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg)
+   :label: 17_eq_4
+	   
+   V_{out} &= V_S \left(\frac{R_2}{R_1 + R_2} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right) \\
+   
+   &= V_S \left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) - V_L \left( \frac{R_2}{R_1} \right)
 
    
 Sie besagt, dass
@@ -158,7 +167,9 @@ Sie besagt, dass
 So können wir Gleichung (4) einfach schreiben als:
 
 .. math::
-   V_{out} = V_S \bigg (\frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg) \quad (5)
+   :label: 17_eq_5
+	   
+   V_{out} = V_S \left( \frac{R_2}{R_1} \right) - V_L \left(\frac{R_2}{R_1} \right)
 
    
 Jetzt haben wir eine einfache Gleichung (5) für unseren
@@ -168,39 +179,46 @@ auf :math:`I_L`.
 
 
 .. math::
-   V_{out} = \bigg (\frac{R_2}{R_1} \bigg)(V_S-V_L)
+   :label: 17_eq_6
 
-.. math::
-     V_{out} = \frac{R_2}{R_1} \Delta V
+   V_{out} &= \left( \frac{R_2}{R_1} \right) (V_S-V_L) \\
 
-.. math::
-     V_{out} = \frac{R_2}{R_1} I_L R_S \quad (6)
+   &= \frac{R_2}{R_1} \Delta V \\
+ 
+   &= \frac{R_2}{R_1} I_L R_S
 
 
 .. note::
 
     Und für :mathe:`I_L` bekommen wir:
 
-    .. math::
-
-        I_L = V_{Aus} \frac{R_1}{R_2 R_S} \quad (7)
+    .. math:: I_L = V_{Aus} \frac{R_1}{R_2 R_S}
+       :label: 17_eq_7
 
 
 	
 In unserem Beispiel haben wir
 -----------------------------
 
-.. math::
+- Widerstände:
    
-   R_4 = R_2 = 100k\Omega, \quad R_3 = R_1 10k\Omega, \quad R_2/R_1 = 10, \quad R_S = R_5 = 10\Omega, \quad I_L = \frac{V_{out}}{10R_S}
+   - :math:`R_4 = R_2 = 100k\Omega,`
+   - :math:`R_3 = R_1 10k\Omega,`
+   - :math:`R_2/R_1 = 10,`
+   - :math:`R_S = R_5 = 10\Omega,`
+
+- Spulestrom:
+
+  - :math:`I_L = \frac{V_{out}}{10R_S}.`
 
    
 .. note::
-   **In unserem Beispiel wird der Laststrom wie folgt angegeben**
+   **In unserem Beispiel wird der Laststrom wie folgt angegeben:**
 
-   .. math::
+   .. math:: I_L = \frac{V_{out}}{100}
+      :label: 17_eq_8
 
-      I_L = \frac{V_ {out}}{100} \quad (8)
+
 
       
 Materialien
@@ -238,9 +256,22 @@ Laststrom direkt an, wie in Gleichung 8 dargestellt.
    
 Komponentenwerte sind folgende:
 
-.. math::
+- Widerstände:
    
-   R_4 = R_2 = 100k\Omega, \quad R_3 = R_1 = 10k\Omega, \quad R_S = R_5 = 10\Omega, \quad R_6 = 220\Omega, \quad C_1 = 0,1 \mu F, \quad \quad L_1 = 4,7 mH
+  - :math:`R_4 = R_2 = 100k\Omega,`
+
+  - :math:`R_3 = R_1 = 10k\Omega,`
+
+  - :math:`R_S = R_5 = 10\Omega,`
+
+  - :math:`R_6 = 220\Omega,`
+
+  
+- Kondensator und Spule:
+
+  - :math:`C_1 = 0,1 \mu F,`
+
+  - :math:`L_1 = 4,7 mH`
 
    
 
