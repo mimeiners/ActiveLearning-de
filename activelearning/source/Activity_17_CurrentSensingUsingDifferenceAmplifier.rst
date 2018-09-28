@@ -251,27 +251,16 @@ Laststrom direkt an, wie in Gleichung 8 dargestellt.
 .. _17_fig_02:
 .. figure:: img/ Activity_17_Fig_02.png
 
-	    Differenzverstärkerschaltung für die Strommessung
+   Differenzverstärkerschaltung für die Strommessung
 
    
 Komponentenwerte sind folgende:
 
-- Widerstände:
-   
-  - :math:`R_4 = R_2 = 100k\Omega,`
+.. math::
+     
+     R_4=R_2 = 100k \Omega , \quad  R_3=R_1 = 10k \Omega ,  \quad R_S = R_5 = 10 \Omega , \quad R_6 = 220 \Omega ,
 
-  - :math:`R_3 = R_1 = 10k\Omega,`
-
-  - :math:`R_S = R_5 = 10\Omega,`
-
-  - :math:`R_6 = 220\Omega,`
-
-  
-- Kondensator und Spule:
-
-  - :math:`C_1 = 0,1 \mu F,`
-
-  - :math:`L_1 = 4,7 mH`
+     \quad C_1 = 0.1 \mu F , \quad \quad L_1 = 4.7 mH
 
    
 
@@ -353,7 +342,7 @@ Nenntoleranzen der Last- und Nebenwiderstände.
 
 
 Kapazitive Last
----------------
+^^^^^^^^^^^^^^^
 
 Für die Last nehmen Sie :math:`0.1\mu F` Kondensator und bauen
 Schaltung wie in :numref:`17_fig_02` gezeigt auf.
@@ -386,7 +375,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt ber
 
    
 Induktive Last
---------------
+^^^^^^^^^^^^^^
 
 Für Last nehmen Sie :math:`4.7 mH` Induktivität und bauen Sie die Schaltung wie in :numref:`17_fig_02` gezeigt auf.
 
