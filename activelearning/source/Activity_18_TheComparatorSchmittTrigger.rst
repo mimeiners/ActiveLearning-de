@@ -69,7 +69,7 @@ dass er sich ändert, auch wenn sich die Eingänge ändern.
       
 
 .. figure:: img/Activity_18_Fig_01.png
-	:name: 18_fig_02
+	:name: 18_fig_01
 	:align: center
 		
 	AD8561_ Datenblatt und Pinbelegung
@@ -114,7 +114,7 @@ auf näher an die :math:`+5-V` -Versorgung zu erhöhen.
    stabilisieren und eine verrauschte Ausgabe des Vergleichers zu verhindern.
    Sie können es direkt mit der :math:`5,V` -Netzteilschiene versuchen und die
    Ergebnisse beobachten und mit den Ergebnissen des Spannungsreglers vergleichen.
-   Hinweis: Es ist nicht notwendig, die Spannung von :math:`5,V` auf :mazh:`2,5,V`
+   Hinweis: Es ist nicht notwendig, die Spannung von :math:`5,V` auf :math:`2,5,V`
    herunterzufahren, aber wir haben uns für diese einfache Form entschieden.
    
 .. figure:: img/Activity_18_Fig_03.png
