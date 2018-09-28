@@ -251,7 +251,7 @@ Laststrom direkt an, wie in Gleichung 8 dargestellt.
 .. _17_fig_02:
 .. figure:: img/ Activity_17_Fig_02.png
 
-   Differenzverstärkerschaltung für die Strommessung
+	    Differenzverstärkerschaltung für die Strommessung
 
    
 Komponentenwerte sind folgende:
