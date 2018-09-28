@@ -4,7 +4,13 @@ Der Komparator, Positive Feedback und Schmitt Trigger
 Zielsetzung
 -----------
 
-Ziel dieser Übung ist es, den Spannungskomparator, die Verwendung von positiver Rückführung und den Betrieb der Schmitt-Trigger-Konfiguration zu untersuchen. Die Verwendung konventioneller Operationsverstärker als Ersatz für Spannungskomparatoren wird im Abschnitt Grundlegende Operationsverstärker-Schaltungen beschrieben.
+Ziel dieser Übung ist es, den Spannungskomparator, die Verwendung von
+positiver Rückführung und den Betrieb der
+Schmitt-Trigger-Konfiguration zu untersuchen. Die Verwendung
+konventioneller Operationsverstärker als Ersatz für
+Spannungskomparatoren wird im Abschnitt Grundlegende
+Operationsverstärker-Schaltungen beschrieben.
+
 
 
 
@@ -21,7 +27,13 @@ Anmerkungen
 .. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
 
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die für die **5V** - Spannungsversorgung verwendeten Verlängerungsstecker-Pins sind in der Dokumentation_ dargestellt. Die Oszilloskop_ - und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
+In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab
+Board Hardware_ geht. Die für die **5V** - Spannungsversorgung
+verwendeten Verlängerungsstecker-Pins sind in der Dokumentation_
+dargestellt. Die Oszilloskop_ - und Signalgeneratoranwendung wird zum
+Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
+
 
 
 
@@ -31,12 +43,34 @@ Hintergrund
 Der Spannungsvergleicher
 ------------------------
 
-Ein Differenzspannungskomparator wie der AD8561_ aus dem Analogteilesatz hat eine Pinbelegung, die in vielerlei Hinsicht der eines herkömmlichen Operationsverstärkers ähnlich ist, aber viele wichtige Unterschiede aufweist (:numref:`18_fig_01`). Es gibt die üblichen :math:`V_+` und :math:`V_-` Spannungsversorgungsstifte, aber ein Komparator hat auch einen Erdungsstift (GND). Die differentiellen :math:`+IN` - und :math:`-IN` -Pins sind im Wesentlichen die gleichen wie bei einem herkömmlichen Operationsverstärker. Es wird auch einen Ausgangspin wie in einem Operationsverstärker geben, aber es gibt oft einen zweiten "invertierenden" ("invertierenden") ("komplementären") Ausgang. Auch während die Spannung am Ausgang eines Operationsverstärkers im Allgemeinen in der Nähe der :math:`+` und :math:`-` Versorgungsschienen schwingen kann, schwingt der Ausgang eines Vergleichers nur zwischen Masse (gnd) und der :math:`+` Versorgung. Dies macht den Ausgang eher zu einem digitalen Signal und ist kompatibel mit Standard-Logikgattern wie TTL oder CMOS. Der Spannungskomparator kann als ein Single-Bit-Analog-Digital-Wandler (ADC) betrachtet werden. Der AD8561 beinhaltet auch einen LATCH-Eingang, der den Ausgang verriegelt oder einfriert und verhindert, dass er sich ändert, auch wenn sich die Eingänge ändern.
+Ein Differenzspannungskomparator wie der AD8561_ aus dem
+Analogteilesatz hat eine Pinbelegung, die in vielerlei Hinsicht der
+eines herkömmlichen Operationsverstärkers ähnlich ist, aber viele
+wichtige Unterschiede aufweist (:numref:`18_fig_01`). Es gibt die
+üblichen :math:`V_+` und :math:`V_-` Spannungsversorgungsstifte, aber
+ein Komparator hat auch einen Erdungsstift (GND). Die differentiellen
+:math:`+IN` - und :math:`-IN` -Pins sind im Wesentlichen die gleichen
+wie bei einem herkömmlichen Operationsverstärker. Es wird auch
+einen Ausgangspin wie in einem Operationsverstärker geben, aber
+es gibt oft einen zweiten "invertierenden" ("invertierenden")
+("komplementären") Ausgang. Auch während die Spannung am Ausgang
+eines Operationsverstärkers im Allgemeinen in der Nähe der
+:math:`+` und :math:`-` Versorgungsschienen schwingen kann,
+schwingt der Ausgang eines Vergleichers nur zwischen Masse
+(gnd) und der :math:`+` Versorgung. Dies macht den Ausgang
+eher zu einem digitalen Signal und ist kompatibel mit
+Standard-Logikgattern wie TTL oder CMOS. Der
+Spannungskomparator kann als ein
+Single-Bit-Analog-Digital-Wandler (ADC) betrachtet
+werden. Der AD8561 beinhaltet auch einen LATCH-Eingang,
+der den Ausgang verriegelt oder einfriert und verhindert,
+dass er sich ändert, auch wenn sich die Eingänge ändern.
+	    
       
 .. _18_fig_01:
 .. figure:: img/Activity_18_Fig_01.png
 
-	    : AD8561_ Datenblatt und Pinbelegung
+   AD8561_ Datenblatt und Pinbelegung
 
    
 Materialien
@@ -61,8 +95,10 @@ Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
 
 
 .. figure:: img/Activity_18_Fig_02.png
+   :name: 18_fig_02
+   :align: center
 
-   Abbildung 2: AD8561_ Komparatorschaltung
+   AD8561_ Komparatorschaltung
 
    
 .. note::
@@ -87,8 +123,10 @@ Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
 
 
 .. figure:: img/ Activity_18_Fig_03.png
+   :name: 18_fig_03
+   :align: center
 
-   Abbildung 3: AD8561_ Komparatorschaltung auf dem Steckbrett
+   AD8561_ Komparatorschaltung auf dem Steckbrett
 
    
 LM317_ Spannungsregler ist im vorherigen Abschnitt beschrieben.
@@ -101,7 +139,7 @@ Verfahren
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
    
-3. Zum Anlegen der Eingangsspannung :math:`V_ {in}` im Menü OUT1
+3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Menü OUT1
    settings den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
    setzen. Wählen Sie im Wellenform-Menü DREIECK, Deaktivieren Sie den
    SHOW-Button und wählen Sie enable.
@@ -134,8 +172,10 @@ Verfahren
 
 
 .. figure:: img/ Activity_18_Fig_04.png
+   :name: 18_fig_04
+   :align: center
 
-   Abbildung 4: AD8561_ Komparatorschaltung Messungen
+   AD8561_ Komparatorschaltung Messungen
 
 Sie sollten eine Rechteckwelle sehen, die hoch ist (nahe +2,5 V), wenn
 der Eingangssignalpegel größer als 0,5 V (OUT2 DC-Wert) und niedrig
@@ -167,17 +207,19 @@ LOW-Zeitdauern sehen.
    auf x10 und den Offsetpegel -1700mV ein
    
 
-.. note::
-   Aus der obigen Beschreibung können Sie vielleicht sehen, wie man
-   ein PWM-Signal (Pulsweitenmodulation) unter Verwendung eines
-   Dreiecksignals mit konstanter Frequenz und eines veränderbaren DC
-   :math:`V_ {ref}` -Werts erzeugt.
+   .. note::
+      Aus der obigen Beschreibung können Sie vielleicht sehen, wie man
+      ein PWM-Signal (Pulsweitenmodulation) unter Verwendung eines
+      Dreiecksignals mit konstanter Frequenz und eines veränderbaren DC
+      :math:`V_{ref}` -Werts erzeugt.
 	 
 
 
-.. figure:: img/ Activity_18_Fig_05.png
+   .. figure:: img/Activity_18_Fig_05.png
+      :name: 18_fig_05
+      :align: center
 
-   Abbildung 5: AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_ {ref} = 0.7V`
+      AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_{ref} = 0.7V`
 
    
 Untersuchen Sie die fallende Flanke des Rechtecks ​​des Ausgangs (IN2),
@@ -212,37 +254,37 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
    zu korrelieren. Im Falle eines Spannungskomparators ist dies
    nicht immer der Fall.
      
-   Wenn wir die OUT1-Frequenz ( :math:`V_ {in}`) auf 100 kHz
+   Wenn wir die OUT1-Frequenz ( :math:`V_{in}`) auf 100 kHz
    erhöhen, ist das Schaltrauschen viel geringer. Weg ist das? Sie
    denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
-   Eingänge und vergleicht ständig Werte von :math:`V_ {in}` und
-   :math:`V_ {ref}`. Nun stellen wir :math:`V_ {in}` als
-   geräuschloses Signal und :math:`V_ {ref} = DC + (-) A_{noise}`.
-   Wenn die Dreieckwelle :math:`V_ {in}` Signal sich
-   langsam nähert :math:`V_ {ref}` beginnt der
+   Eingänge und vergleicht ständig Werte von :math:`V_{in}` und
+   :math:`V_{ref}`. Nun stellen wir :math:`V_{in}` als
+   geräuschloses Signal und :math:`V_{ref} = DC + (-) A_{noise}`.
+   Wenn die Dreieckwelle :math:`V_{in}` Signal sich
+   langsam nähert :math:`V_{ref}` beginnt der
    Spannungsvergleicher zu schalten und wenn die
    :math:`V_{ref}` Amplitude um den DC-Wert schwingt um
    :math:`A_{noise}` der Komparator
 	   
    Die Ausgabe ändert die Zustände entsprechend dem
-   :math:`V_ {in} - (V_ {ref} = DC + (-) A_ {Rauschen})`
+   :math:`V_{in} - (V_{ref} = DC + (-) A_{Rauschen})`
    Verhältnis. Also, so lange
-   :math:`V_ {in}` amplitude **bleibt im Bereich** von
-   :math:`V_{ref} = DC + (-) A_ {noise}` Wert wird der
+   :math:`V_{in}` amplitude **bleibt im Bereich** von
+   :math:`V_{ref} = DC + (-) A_{noise}` Wert wird der
    Komparatorausgang effektiv eingeschaltet  :math:`A_{noise}`
-   und nicht auf den Eingangssignalen. Einmal :math:`V_ {in}`
-   geht unter :math:`V_ {ref} = DC - A_{noise}` oder höher
-   :math:`V_ {ref} = DC + A_{noise}` wird der Komparator ausgegeben
+   und nicht auf den Eingangssignalen. Einmal :math:`V_{in}`
+   geht unter :math:`V_{ref} = DC - A_{noise}` oder höher
+   :math:`V_{ref} = DC + A_{noise}` wird der Komparator ausgegeben
    Schalter hoch  oder niedrig, aber jetzt auf Eingangssignalwerte
    nicht auf Rauschwerte. Sie können sehen, dass **
-   niederfrequente Dreiecksschwingung ** :math:`V_ {in}
+   niederfrequente Dreiecksschwingung ** :math:`V_{in}
    'Amplitude ** mehr Zeit verbringen wird ** in der
-   Nähe von: math:` V_ {ref} = DC + (-) A_ {noise} `
+   Nähe von: math:` V_{ref} = DC + (-) A_{noise} `
    wodurch der Spannungsvergleicher eine verrauschte
    Ausgabe erzeugt, während die ** hohe
-   Frequenzdreieckwelle ** :math:`V_ {in}` die Amplitude
+   Frequenzdreieckwelle ** :math:`V_{in}` die Amplitude
    **schnell vergeht**
-   :math:`V_ {ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
+   :math:`V_{ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
 		 
 
 
@@ -257,23 +299,23 @@ Mit positivem Feedback hinzufügen Hysterese: der Schmitt-Trigger
 ** Neben der rauscharmen Stromversorgung ist es eine übliche Lösung
 für das gerade beschriebene Problem, der Komparatorschaltung eine
 Rauschimmunität hinzuzufügen, indem eine Hysterese in die
-Übergangsschwellwertspannung ** :math:`V_ {th}` eingebaut wird, wie in
+Übergangsschwellwertspannung ** :math:`V_{th}` eingebaut wird, wie in
 8 gezeigt .
 
 Mit "Hysterese" meinen wir, dass die Schwellenspannung eine Funktion
 des aktuellen Betriebszustands des Systems ist, der für diese
 Schaltung durch ihre Ausgangsspannung definiert ist: positive oder
-negative Sättigung. Weil :math:`V_ {th}`, die Spannung an Pin 2, durch
+negative Sättigung. Weil :math:`V_{th}`, die Spannung an Pin 2, durch
 den aus Widerständen R1 und R2 gebildeten Spannungsteiler bestimmt
 wird, ändert sich diese in Reaktion auf eine Änderung der
 Ausgangsspannung: sobald der Ausgang als Reaktion auf High gegangen
 ist zu einem Eingang, der die Schwellenspannung unterschritten hat,
 wird die Schwellenspannung auf einen höheren Wert geändert :math:`V_
-{th +}` ( :math:`V_ {ref}` + ein Bruchteil der ausgegebenen
+{th +}` ( :math:`V_{ref}` + ein Bruchteil der ausgegebenen
 Hochspannung); Umgekehrt ändert eine durchsteigende Eingangsspannung
-:math:`V_ {th +}` den Ausgang in seinen niedrigen Zustand und bewirkt,
+:math:`V_{th +}` den Ausgang in seinen niedrigen Zustand und bewirkt,
 dass die Schwellenspannung auf einen niedrigeren Wert gesetzt
-wird :math:`V_ {th-}` ( :math:`V_ {ref}` - ein Bruchteil der
+wird :math:`V_{th-}` ( :math:`V_{ref}` - ein Bruchteil der
 niedrigen Ausgangsspannung.
       
 
@@ -282,11 +324,11 @@ niedrigen Ausgangsspannung.
 
    Abbildung 8: Schmitt-Trigger
 
-Dieser Unterschied zwischen :math:`V_ {th +}` und :math:`V_ {th-}`
+Dieser Unterschied zwischen :math:`V_{th +}` und :math:`V_{th-}`
 bedeutet, dass, sobald ein Übergang durch eine Änderung von :math:`V_
 {in}` ausgelöst wird, Rauschunterschreitungen kleiner als diese
-Differenz sind auf dem Eingang wird nicht verursachen :math:`V_ {in}`,
-um die Hysteresespalte zu überqueren :math:`V_ {hist} = V_ {th +} - V_
+Differenz sind auf dem Eingang wird nicht verursachen :math:`V_{in}`,
+um die Hysteresespalte zu überqueren :math:`V_{hist} = V_{th +} - V_
 {th-}` und eine unerwünschte Umkehrung des Ausgangszustands
 verursachen. Wenn die Hysteresespalte groß genug gemacht wird, kann
 das System vollständig für das Rauschen des Eingangssignals
@@ -299,28 +341,28 @@ Berechnen der Schwelle
 ----------------------
 
 Nennen wir die maximalen und minimalen Ausgangsspannungen :math:`V_
-{high}` und :math:`V_ {low}`. Die Schwellwertspannung bei der Ausgabe
-von :math:`V_ {high}` und bei :math:`V_ {low}` ist:
+{high}` und :math:`V_{low}`. Die Schwellwertspannung bei der Ausgabe
+von :math:`V_{high}` und bei :math:`V_{low}` ist:
 
 
 Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
 
 .. math::
-   V_ {th_ {hoch}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} + V_ {ref}) + V_ {ref} \ quad (1)
+   V_{th_ {hoch}} = \ frac {R_1} {R_1 + R_2} (V_{hoch} + V_{ref}) + V_{ref} \ quad (1)
 
-   V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {niedrig} - V_ {ref}) + V_ {ref} \ quad (2)
+   V_{th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_{niedrig} - V_{ref}) + V_{ref} \ quad (2)
 
 
 Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
 
 .. math::
-   V_ {hist} = V_ {th_ {hoch}} - V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} - V_ {niedrig}) \ quad (3)
+   V_{hist} = V_{th_ {hoch}} - V_{th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_{hoch} - V_{niedrig}) \ quad (3)
 
 
 Für den AD8561 mit einer +2,5-V-Stromversorgung und Pull-up-Widerstand
-:math:`V_ {hoch} - V_ {niedrig} \ ca. 2,3 V`. Weil das andere Ende des
+:math:`V_{hoch} - V_{niedrig} \ ca. 2,3 V`. Weil das andere Ende des
 Spannungsteilers (unten von R1) verbunden ist mit
-:math:`V_{ref} = 0,5V`, die Schwellenspannungen :math:`V_ {th_{high}}`
+:math:`V_{ref} = 0,5V`, die Schwellenspannungen :math:`V_{th_{high}}`
 und :math:`V_{th_{low}}` wird um 0,5 V herum zentriert
 (:math:`V_{ref}`) unter der Annahme, dass :math:`V_{high}`
 und :math:`V_{low}` mehr oder weniger zentriert sind etwa 0,5V).
@@ -376,7 +418,7 @@ R1. Funktioniert die Schaltung noch?
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
    
-3. Zum Anlegen der Eingangsspannung :math:`V_ {in}` im Menü OUT1
+3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Menü OUT1
    settings den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
    setzen. Wählen Sie im Wellenform-Menü DREIECK,
    

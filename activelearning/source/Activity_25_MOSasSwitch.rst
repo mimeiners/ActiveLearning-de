@@ -35,12 +35,11 @@ In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
 STEMlab-Board-Hardware beziehen.
 
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
+Oscilloscope_ & Signal_ generator_ Anwendung wird zum Erzeugen und
 Beobachten von Signalen auf der Schaltung verwendet.
 
-Die für die Spannungsversorgung ** + 5V **, ** - 3.3V ** und ** + 3.3V
-** verwendeten Steckerstifte sind in der Dokumentation hier
-aufgeführt.
+Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
 
 
 .. note::

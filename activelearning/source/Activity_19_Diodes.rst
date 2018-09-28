@@ -14,7 +14,7 @@ Anmerkungen
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Jupyter: http://jupyter.org/index.html
@@ -337,8 +337,8 @@ Zeitbereichsmessungen
 6. Setzen Sie t / div-Wert auf 200us / div (Sie können t / div mit horizontalem einstellen
    +/- Kontrollen)
    
-7. Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie enable. **math
-   Spur mit Faktor R1 skaliert Diodenstrom **
+7. Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie
+   enable. math Spur mit Faktor R1 skaliert Diodenstrom
    
 
    .. figure:: img/Activity_19_Fig_06.png
