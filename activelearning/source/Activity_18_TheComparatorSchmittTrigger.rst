@@ -124,7 +124,7 @@ erzielten Ergebnissen vergleichen.
    
 
 
-.. figure:: img/ Activity_18_Fig_03.png
+.. figure:: img/Activity_18_Fig_03.png
    :name: 18_fig_03
    :align: center
 
@@ -173,7 +173,7 @@ Verfahren
    
 
 
-.. figure:: img/ Activity_18_Fig_04.png
+.. figure:: img/Activity_18_Fig_04.png
    :name: 18_fig_04
    :align: center
 
@@ -245,9 +245,11 @@ Versuchen Sie die Schaltgeräuschmessung bei einer geräuschvolleren
 Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
 
 
-.. figure:: img/ Activity_18_Fig_06.png
+.. figure:: img/Activity_18_Fig_06.png
+   :name: 18_fig_06
+   :align: center
 
-   Abbildung 6: Schaltgeräuschmessungen.
+   Schaltgeräuschmessungen.
 
    
 .. note::
@@ -256,7 +258,7 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
    zu korrelieren. Im Falle eines Spannungskomparators ist dies
    nicht immer der Fall.
      
-   Wenn wir die OUT1-Frequenz ( :math:`V_{in}`) auf 100 kHz
+   Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf 100 kHz
    erhöhen, ist das Schaltrauschen viel geringer. Weg ist das? Sie
    denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
    Eingänge und vergleicht ständig Werte von :math:`V_{in}` und
@@ -278,30 +280,31 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
    geht unter :math:`V_{ref} = DC - A_{noise}` oder höher
    :math:`V_{ref} = DC + A_{noise}` wird der Komparator ausgegeben
    Schalter hoch  oder niedrig, aber jetzt auf Eingangssignalwerte
-   nicht auf Rauschwerte. Sie können sehen, dass **
-   niederfrequente Dreiecksschwingung ** :math:`V_{in}
-   'Amplitude ** mehr Zeit verbringen wird ** in der
-   Nähe von: math:` V_{ref} = DC + (-) A_{noise} `
+   nicht auf Rauschwerte. Sie können sehen, dass
+   **niederfrequente Dreiecksschwingung** :math:`V_{in}`
+   Amplitude **mehr Zeit verbringen wird** in der
+   Nähe von :math:`V_{ref} = DC + (-) A_{noise}`
    wodurch der Spannungsvergleicher eine verrauschte
-   Ausgabe erzeugt, während die ** hohe
-   Frequenzdreieckwelle ** :math:`V_{in}` die Amplitude
-   **schnell vergeht**
+   Ausgabe erzeugt, während die **hohe Frequenzdreieckwelle**
+   :math:`V_{in}` die Amplitude **schnell vergeht**
    :math:`V_{ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
 		 
 
 
-.. figure:: img/ Activity_18_Fig_07.png
+.. figure:: img/Activity_18_Fig_07.png
+   :name: 18_fig_07
+   :align: center
 
-   Abbildung 7: Schaltvorgang bei hoher Eingangssignalfrequenz (100 kHz)
+   Schaltvorgang bei hoher Eingangssignalfrequenz (100 kHz)
 
    
 Mit positivem Feedback hinzufügen Hysterese: der Schmitt-Trigger
 ----------------------------------------------------------------
 
-** Neben der rauscharmen Stromversorgung ist es eine übliche Lösung
+Neben der rauscharmen Stromversorgung ist es eine übliche Lösung
 für das gerade beschriebene Problem, der Komparatorschaltung eine
 Rauschimmunität hinzuzufügen, indem eine Hysterese in die
-Übergangsschwellwertspannung ** :math:`V_{th}` eingebaut wird, wie in
+Übergangsschwellwertspannung :math:`V_{th}` eingebaut wird, wie in
 8 gezeigt .
 
 Mit "Hysterese" meinen wir, dass die Schwellenspannung eine Funktion
@@ -323,46 +326,58 @@ niedrigen Ausgangsspannung.
 
 
 .. figure:: img/ Activity_18_Fig_08.png
+   :name: 18_fig_08
+   :align: center
 
-   Abbildung 8: Schmitt-Trigger
+   Schmitt-Trigger
 
 Dieser Unterschied zwischen :math:`V_{th +}` und :math:`V_{th-}`
-bedeutet, dass, sobald ein Übergang durch eine Änderung von :math:`V_
-{in}` ausgelöst wird, Rauschunterschreitungen kleiner als diese
+bedeutet, dass, sobald ein Übergang durch eine Änderung von
+:math:`V_{in}` ausgelöst wird, Rauschunterschreitungen kleiner als diese
 Differenz sind auf dem Eingang wird nicht verursachen :math:`V_{in}`,
-um die Hysteresespalte zu überqueren :math:`V_{hist} = V_{th +} - V_
-{th-}` und eine unerwünschte Umkehrung des Ausgangszustands
-verursachen. Wenn die Hysteresespalte groß genug gemacht wird, kann
-das System vollständig für das Rauschen des Eingangssignals
-undurchlässig gemacht werden, wodurch die störenden Ausgangspegel
-eliminiert werden, die von der Basiskomparatorschaltung (Fig. 1)
-erlitten werden.
+um die Hysteresespalte zu überqueren
+:math:`V_{hist} = V_{th +} - V_{th-}` und eine unerwünschte Umkehrung
+des Ausgangszustands verursachen. Wenn die Hysteresespalte groß genug
+gemacht wird, kann das System vollständig für das Rauschen des
+Eingangssignals undurchlässig gemacht werden, wodurch die störenden
+Ausgangspegel eliminiert werden, die von der Basiskomparatorschaltung
+(Fig. 1) erlitten werden.
 
 
 Berechnen der Schwelle
 ----------------------
 
-Nennen wir die maximalen und minimalen Ausgangsspannungen :math:`V_
-{high}` und :math:`V_{low}`. Die Schwellwertspannung bei der Ausgabe
-von :math:`V_{high}` und bei :math:`V_{low}` ist:
+Nennen wir die maximalen und minimalen Ausgangsspannungen
+:math:`V_{high}` und :math:`V_{low}`. Die Schwellwertspannung bei der
+Ausgabe von :math:`V_{high}` und bei :math:`V_{low}` ist:
 
+
+Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist
+gegeben durch: 
+
+.. math::
+   :label: 18_eq_1
+   
+   V_{th_{hoch}} = \frac{R_1}{R_1 + R_2} (V_{hoch} + V_{ref}) + V_{ref}
+   
+
+.. math::
+   :label: 18_eq_2
+	   
+   V_{th_{niedrig}} = \frac{R_1}{R_1 + R_2} (V_{niedrig} - V_{ref}) + V_{ref}
+
+   
 
 Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
 
 .. math::
-   V_{th_ {hoch}} = \ frac {R_1} {R_1 + R_2} (V_{hoch} + V_{ref}) + V_{ref} \ quad (1)
-
-   V_{th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_{niedrig} - V_{ref}) + V_{ref} \ quad (2)
-
-
-Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
-
-.. math::
-   V_{hist} = V_{th_ {hoch}} - V_{th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_{hoch} - V_{niedrig}) \ quad (3)
+   :label: 18_eq_3
+	   
+   V_{hist} = V_{th_{hoch}} - V_{th_{niedrig}} = \frac{R_1}{R_1 + R_2} (V_{hoch} - V_{niedrig})
 
 
 Für den AD8561 mit einer +2,5-V-Stromversorgung und Pull-up-Widerstand
-:math:`V_{hoch} - V_{niedrig} \ ca. 2,3 V`. Weil das andere Ende des
+:math:`V_{hoch} - V_{niedrig} \, ca. 2,3 V`. Weil das andere Ende des
 Spannungsteilers (unten von R1) verbunden ist mit
 :math:`V_{ref} = 0,5V`, die Schwellenspannungen :math:`V_{th_{high}}`
 und :math:`V_{th_{low}}` wird um 0,5 V herum zentriert
@@ -382,8 +397,10 @@ Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
 
 
 .. figure:: img/ Activity_18_Fig_09.png
+   :name: 18_fig_09
+   :align: center
 
-   Abbildung 9: Schmitt Hysterese
+   Schmitt Hysterese
 
    
 .. note::
@@ -402,7 +419,7 @@ Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
 
 
 Verfahren
-_________
+---------
 
 
 Fügen Sie die beiden positiven Rückkopplungswiderstände zu Ihrer
@@ -453,9 +470,12 @@ R1. Funktioniert die Schaltung noch?
 
 
 .. figure:: img/ Activity_18_Fig_10.png
+   :name: 18_fig_10
+   :align: center
 
-   Abbildung 10: Schmitt Hysterese und Ausgangssignal
+   Schmitt Hysterese und Ausgangssignal
 
+   
 Vergleichen Sie die Ergebnisse aus Abbildung 10 und Abbildung 4. Sehen
 Sie sich die Pegel von IN1 an, wenn IN2 hoch und niedrig wird.
 
@@ -476,9 +496,12 @@ anpassen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie der
    
 
 .. figure:: img/ Activity_18_Fig_11.png
+   :name: 18_fig_11
+   :align: center
 	    
-   Abbildung 11: Schaltgeräusch mit Hysterese
+   Schaltgeräusch mit Hysterese
 
+   
 Wie Sie in Abbildung 11 sehen können, ist bei der Verwendung von
 Hysterese kein Schaltgeräusch vorhanden. Vergleichen Sie Abbildung 6
 und Abbildung 11.
