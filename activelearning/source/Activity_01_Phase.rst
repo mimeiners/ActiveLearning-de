@@ -33,13 +33,15 @@ solltest mit der Gleichung vertraut sein:
    :label: 01_eq_1
 
    
-:math:`\omega` stellt die Frequenz der sinusförmigen Welle im zeitlichen Verlauf :math:`t` ein,
-und :math:`\theta` definiert einen Zeitversatz, der eine Phasenverschiebung in der Funktion definiert.
+:math:`\omega` stellt die Frequenz der sinusförmigen Welle im
+zeitlichen Verlauf :math:`t` ein, und :math:`\theta` definiert einen
+Zeitversatz, der eine Phasenverschiebung in der Funktion definiert. 
 
-Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur Folge. Nehmen Sie zunächst
-die Zeitvariable :math:`t` als konstand an, sagen wir 1. Das
-Argument, :math:`\omega t`, ist jetzt nicht länger eine Funktion der
-Zeit. Mit :math:`\omega` im Bogenmaß, ergibt sich für :math:`\sin(\frac{\pi}{4})\approx 0.7071`.
+Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur
+Folge. Nehmen Sie zunächst die Zeitvariable :math:`t` als konstand an,
+sagen wir 1. Das Argument, :math:`\omega t`, ist jetzt nicht länger
+eine Funktion der Zeit. Mit :math:`\omega` im Bogenmaß, ergibt sich
+für :math:`\sin(\frac{\pi}{4})\approx 0.7071`.
 
 
 :math:`2\pi` im Bogenmaß entsricht :math:`360^{\circ}`, so
@@ -64,7 +66,8 @@ Sie, dass bei Verwendung von bei :math:`\omega t`,
 wir uns in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
 :math:`360^{\circ}` bewegen, um die in :numref:`01_fig_01` dargestellte
 Sinuswelle zu erhalten.
-      
+
+
 .. _01_fig_01:
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
@@ -105,8 +108,8 @@ verschoben, was :math:`1/4` der Periode in diesem Beispiel entspricht.
    Funktionsplots von :math:`\sin(t)` und :math:`\sin(t + \pi/4)`.
 
    
-:math:`\theta` ist Zeitversatz oder Phasenanteil von :eq:`01_eq_1`. Der
-Phasenwinkel definiert den zeitlichen Versatz und
+:math:`\theta` ist Zeitversatz oder Phasenanteil von
+:eq:`01_eq_1`. Der Phasenwinkel definiert den zeitlichen Versatz und 
 umgekehrt. Gl. (2) zeigt die Beziehung. Wir haben uns für einen
 besonders häufig gewählten Phasenversatz von :math:`90^{\circ}`. Der
 Phasenversatz zwischen einer Sinuswelle und Kosinuswelle ist
@@ -130,10 +133,12 @@ Phase
 -----
 
 .. math::
+   :label: 01_eq_2
+
    \theta &= \frac{\Delta t}{T} 360^{\circ} \\
    &= \frac{\Delta t}{T} 2\pi \, rad \\
    &= \Delta t f 2 \pi \, rad;
-   :label: 01_eq_2
+
 	   
 
 Wobei :math:`T` die Periode der Sinuswelle ist.
@@ -246,8 +251,11 @@ Stellen Sie die Gleichung soweit um, bis sie aussieht wie
 Zahlen sind. Die Phasenbeziehung des Stroms zur Spannung ist
 dann: 
 
-.. math::  \theta = \arctan\left(\frac{b}{a}\right).
+.. math::
    :label: 01_eq_5
+	   
+   \theta = \arctan\left(\frac{b}{a}\right).
+   
 	   
 
 
@@ -342,7 +350,7 @@ von Nullphasenwinkel übereinander liegen und nach einer aussehen.
 Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt
 (vorläuft). Das Signal OUT2 durchquert die 0-V-Achse (x-Achse) von
 unten nach oben vor dem Signal OUT1. Es stellt sich heraus, dass eine
-positive :math:`θ` als Phasenleitung bezeichnet wird. Der
+positive :math:`\theta` als Phasenleitung bezeichnet wird. Der
 Referenzpunkt für die niedrige bis hohe Übergangszeit ist
 beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt
 werden.

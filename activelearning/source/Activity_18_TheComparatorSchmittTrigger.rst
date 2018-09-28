@@ -112,12 +112,14 @@ Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
    betroffen sind. Aus diesem Grund verwenden wir hier einen
    Spannungsregler, um unsere Stromversorgungsschiene zu stabilisieren
    und eine verrauschte Ausgabe von dem Komparator zu verhindern.
+
    
-   Sie können direkt die 5-V-Stromversorgungsschiene verwenden und die
-   Ergebnisse beobachten und sie mit den mit dem Spannungsregler
-   erzielten Ergebnissen vergleichen.
+Sie können direkt die 5-V-Stromversorgungsschiene verwenden und die
+Ergebnisse beobachten und sie mit den mit dem Spannungsregler
+erzielten Ergebnissen vergleichen.
    
-   note: Es ist nicht notwendig, die Spannung von 5V auf 2,5V
+.. note::
+   Es ist nicht notwendig, die Spannung von 5V auf 2,5V
    herunterzufahren, aber wir haben uns für Einfachheit entschieden.
    
 
@@ -179,7 +181,7 @@ Verfahren
 
 Sie sollten eine Rechteckwelle sehen, die hoch ist (nahe +2,5 V), wenn
 der Eingangssignalpegel größer als 0,5 V (OUT2 DC-Wert) und niedrig
-(nahe 0 V) ​​ist, wenn das Eingangssignal weniger als 0,5 V beträgt
+(nahe 0 Volt) ist, wenn das Eingangssignal weniger als 0,5 V beträgt
 Pegel der Eingangsdreieckwelle, bei der sich der Ausgang von niedrig
 zu hoch und von hoch zu niedrig ändert.
 
@@ -222,7 +224,7 @@ LOW-Zeitdauern sehen.
       AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_{ref} = 0.7V`
 
    
-Untersuchen Sie die fallende Flanke des Rechtecks ​​des Ausgangs (IN2),
+Untersuchen Sie die fallende Flanke des Rechtecks des Ausgangs (IN2),
 indem Sie die Einstellungen für Horizontale Position und Zeit pro
 Teilung so anpassen, dass die fallende Kante auf der Zeitachse
 zentriert ist und die Zeit pro Div klein genug ist, um die

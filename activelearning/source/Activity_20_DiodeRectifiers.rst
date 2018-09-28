@@ -103,7 +103,7 @@ Fragen
 1. Warum ist der Spitzenwert der gleichgerichteten Ausgabe kleiner als
    der Spitzenwert der AC-Eingabe und um wie viel? 
 
-2. An welchem ​​Punkt der Eingangswellenform wird die gleichgerichtete
+2. An welchem Punkt der Eingangswellenform wird die gleichgerichtete
    Wellenform positiv, d. H. Etwas anderes als Null? 
 
 3. Was passiert, wenn die Richtung der Diode umgekehrt wird?

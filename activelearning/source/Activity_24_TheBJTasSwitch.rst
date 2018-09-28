@@ -179,7 +179,7 @@ Verfahren
 7. Setzen Sie unter IN1 den vertikalen Offset auf 0.
 
    
-.. figure:: img/ Activity_24_Fig_04.png
+.. figure:: img/Activity_24_Fig_04.png
    :name: 24_fig_04
    :align: center
 

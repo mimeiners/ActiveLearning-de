@@ -7,7 +7,7 @@ Zielsetzung
 Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der
 die Leistung von Operationsverstärkern bei hohen Frequenzen
 beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt**
-(:math:`GBW`) oder die Verstärkungsbandbreite der Einheit.
+(GBW) oder die Verstärkungsbandbreite der Einheit.
 
 
 Anmerkungen
@@ -64,13 +64,14 @@ eins**. Dies ist auch die Closed-Loop-Bandbreite oder die
 maximale Frequenz, wenn die Rückführung mit einer
 Closed-Loop-Verstärkung von 1 konfiguriert
 ist. :math:`G_f` ist definiert als das
-**Verstärkungs-Bandbreitenprodukt** :math:`GBW`, und für
+**Verstärkungs-Bandbreitenprodukt** (GBW), und für
 alle Eingangsfrequenzen ist dieses Produkt konstant und
 gleich :math:`f_c`. Die Verstärkung kann als einfache Zahl
-(Betrag) oder in dB(Dezibel) angegeben werden.
+(Betrag) oder in dB (Dezibel) angegeben werden.
 	    
 
 .. math::
+
    \text{GBW} &= \text{Gewinn} \cdot f_c
 
    \text{GBW} &= \text{Gewinn} \cdot \text{BW}
@@ -106,17 +107,22 @@ Bandbreitenprodukt gegeben ist.
    invertierender oder invertierender Konfiguration wird IMMER vom Gewinn abhängig sein.
    **Wenn Sie eine höhere Verstärkung wählen, ist die Frequenzbandbreite niedriger und umgekehrt.**
 
-   Zum Beispiel: Wenn wir einen invertierenden Verstärker mit Verstärkung = 100 basierend
-   auf OP97 haben wollen, dann wird unsere Frequenzbandbreite als:
+   
+Zum Beispiel: Wenn wir einen invertierenden Verstärker mit Verstärkung = 100 basierend
+auf OP97 haben wollen, dann wird unsere Frequenzbandbreite als:
 
    
-    .. math::
-        BW = GBW_{OP927}/100 = 900 kHz / 100 = 9 kHz
+.. math::
+
+   BW = GBW_{OP927}/100 = 900 kHz / 100 = 9 kHz
+
+       
+für Verstärkung = 1000
+
     
-    für Verstärkung = 1000
-    
-    .. math::
-         BW = GBW_{OP927}/1000 = 900 kHz / 1000 = 900 Hz
+.. math::
+
+   BW = GBW_{OP927}/1000 = 900 kHz / 1000 = 900 Hz
 
 
 
@@ -143,7 +149,7 @@ Teilerverhältnis nahe 1/1000 führt.
    Invertierender Verstärker mit Verstärkung von 1000
 
    
-.. Warnung::
+.. warning::
    Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
    überprüfen Sie Ihre Schaltung nochmals. Die Spannungsversorgungsstifte -3,3V
    und +3,3V haben keine Schutzschaltung und können im Falle eines
@@ -151,16 +157,21 @@ Teilerverhältnis nahe 1/1000 führt.
    
    
 1. Bauen Sie die Filterschaltung wie in :numref:`15_fig_02` auf Ihrem
-   lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2
-   = 100 kΩ und R3 = 47 kΩ auf.
+   lötfreien Steckbrett mit den Komponentenwerten
+   :math:`R1 = R4 = 100 \Omega`, :math:`R2 = 100 \,k\Omega` und
+   :math:`R3 = 47 \,k\Omega` auf.
    
 
-2. Starten Sie die Anwendung Bode analyzer. Die Bode-Analysatoranwendung führt einen
-   Frequenzdurchlauf durch, so dass sie ein Sinussignal auf :math:`OUT1` innerhalb des von uns
-   gewählten Frequenzbereichs (im Einstellungsmenü) erzeugt. Das Eingangssignal :math:`IN1` ist
-   direkt mit :math:`OUT1` verbunden, gefolgt von :math:`IN1=V_{in}`. :math:`IN2` wird auf der anderen Seite des
-   Filters und daraus :math:`IN2=V_{out}` angeschlossen. Die Anwendung des Bode-Analysators nimmt
-   dann für jeden Frequenzschritt das Verhältnis von :math:`IN1/IN2` (:math:`V_{in}/V_{out}`) und
+2. Starten Sie die Anwendung Bode analyzer. Die
+   Bode-Analysatoranwendung führt einen
+   Frequenzdurchlauf durch, so dass sie ein Sinussignal auf
+   :math:`OUT1` innerhalb des von uns gewählten Frequenzbereichs (im
+   Einstellungsmenü) erzeugt. Das Eingangssignal :math:`IN1` ist
+   direkt mit :math:`OUT1` verbunden, gefolgt von
+   :math:`IN1=V_{in}`. :math:`IN2` wird auf der anderen Seite des
+   Filters und daraus :math:`IN2=V_{out}` angeschlossen. Die
+   Anwendung des Bode-Analysators nimmt dann für jeden Frequenzschritt
+   das Verhältnis von :math:`IN1/IN2` (:math:`V_{in}/V_{out}`) und
    berechnet den Frequenzgang.
 
 3. Stellen Sie im Bode-Analyzer-Einstellungsmenü Folgendes ein:
@@ -173,25 +184,26 @@ Teilerverhältnis nahe 1/1000 führt.
 
   
 .. _15_fig_03:
-.. figure:: img/ Activity_15_Fig_03.png
+.. figure:: img/Activity_15_Fig_03.png
 
    Typischer OP97 Bode Plot Gain = 1000
 
    
 Aus der :numref:`15_fig_03` können wir ersehen, dass Theorie und
 OP97-Datenblatt mit der Messung übereinstimmen. Bei Verstärkung = 1000
-ist das BW 900Hz. R2 auf 10 kΩ einstellen, R3 = 4,7 kΩ, die Messungen
-wiederholen und die Ergebnisse beobachten.
+ist das BW 900Hz. R2 auf :math:`10 \,k\Omega` einstellen,
+:math:`R3 = 4,7 \,k\Omega`, die Messungen wiederholen und die
+Ergebnisse beobachten. 
 
 
 .. _15_fig_04:
-.. figure:: img/ Activity_15_Fig_04.png
+.. figure:: img/Activity_15_Fig_04.png
 
    Typischer OP97 Bode Plot Gain = 100
 
 Wie wir aus der Abbildung 4 für x10 weniger Verstärkung ersehen
-können, wird das BW um x10 erhöht, was die Gleichung :math:`GBW = BW ∗
-Gain = const` bestätigt.
+können, wird das BW um x10 erhöht, was die Gleichung
+:math:`GBW = BW \cdot Gain = const.` bestätigt.
 
 
 

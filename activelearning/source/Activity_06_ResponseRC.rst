@@ -115,12 +115,17 @@ Materialien
 Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 Widerstände: 
-* :math:`2.2\,k\Omega` , 
-* :math:`10\,k\Omega`
 
+- :math:`2.2\,k\Omega` , 
+
+- :math:`10\,k\Omega`
+
+  
 Kondensatoren: 
-* :math:`1\,\mu F`, 
-* :math:`0.01\,\mu F` 
+
+- :math:`1\,\mu F`, 
+
+- :math:`0.01\,\mu F` 
 
   
 Vorgehensweise
@@ -193,9 +198,11 @@ Starten Sie die Anwendung Oszilloskop & Signalgenerator.
 	 von OUT1 gleich dem Sollwert von :math:`x \cdot \tau` nach
 	 :eq:`06_eq_02` ist.
 		
-	 .. math:: f_out = \frac{1}{2 \cdot x \cdot \tau}
+	 .. math::
 	    :label: 06_eq_05
 
+	    f_{out} = \frac{1}{2 \cdot x \cdot \tau}
+		    
 
 
       Zum Beispiel: Wenn wir die Impulsbreite Ihres OUT1-Quadratsignals
@@ -203,21 +210,21 @@ Starten Sie die Anwendung Oszilloskop & Signalgenerator.
 
       (:math:`\tau` - Zeitkonstante des RC-Kreises :math:`\tau = R \cdot C` )
 
+      
       .. math::
 	 :label: 06_eq_06
 		 
-	 \tau &= R \cdot C
-	 & = 2.2\,k\Omega \cdot 1\,\mu F
-	 &= 2.2\,ms
-
+	 \tau &= R \cdot C \\
+	 &= 2.2 \, k\Omega \cdot 1\,\mu F \\
+	 &= 2.2 \,\text{ms}
 	 
 
       .. math:: 
 	 :label: 06_eq_07
-
-	 f_out &= \frac{1}{2 \cdot 5 \cdot \tau} 
-	 &= \frac{1}{2 \cdot 5 \cdot 2.2\,ms}
-	 &= 45\,Hz
+      
+	 f_out &= \frac{1}{2 \cdot 5 \cdot \tau} \\
+	 &= \frac{1}{2 \cdot 5 \cdot 2.2\,ms} \\
+	 &= 45\,Hz \\
 	
 
       Bestimmen Sie die Zeitkonstante aus den auf dem Bildschirm angezeigten

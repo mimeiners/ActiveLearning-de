@@ -89,7 +89,7 @@ Nach dem Superpositionsprinzip bekommen wir
 .. math::
    :label: 16_eq_3
 
-   V_{out} &= V_{out_{Schritt_1}} + V_{out_{Schritt_2}}
+   V_{out} &= V_{out_{Schritt_1}} + V_{out_{Schritt_2}} \\
    &= V_2 \left(1 + \frac{R_f}{R_i} \right) - V_1 \left(\frac{R_f}{R_i}\right)
 
    

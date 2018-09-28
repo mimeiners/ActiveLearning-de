@@ -121,7 +121,7 @@ mit der Basis.
 .. math::
    :label: 26_eq_4
 
-   R_{out} = R_L \quad \text{und,} \quad R_{in} = R_{B}
+   R_{out} = R_L \quad \text{und} \quad R_{in} = R_{B}
 
    
 Es folgt:
@@ -140,7 +140,7 @@ Lass uns setzen :math:`I_C = 5 mA`, dann
 .. math::
    :label: 26_eq_6
    
-   R_L = \frac V_{R_L}}{I_C} = \frac{1.6V}{5mA} = 320 \Omega
+   R_L = \frac{V_{R_L}}{I_C} = \frac{1.6V}{5mA} = 320 \Omega
 
 
 Um Gl. (2) Daraus folgt:
@@ -156,7 +156,7 @@ Jetzt können wir berechnen :math:`R_ {in}`, d. H . :math:`R_ {B}` Wert als:
 .. math::
    :label: 26_eq_8
 
-   R_{B} = \beta \frac {R_L}{A} = 100 \frac{320 \Omega}{5} = 6.4\,k\Omega.
+   R_{B} = \beta \frac{R_L}{A} = 100 \frac{320 \Omega}{5} = 6.4\,k\Omega.
 
 
 Der letzte Schritt besteht darin, Werte von
@@ -169,8 +169,7 @@ kann aus Gl. (10).
 .. math::
    :label: 26_eq_9
 
-   R_2 &\approx 10 R_E 
-   &= 3,2 \,k\Omega
+   R_2 &\approx 10 R_E = 3,2 \,k\Omega
 
 
 .. math::
@@ -184,7 +183,7 @@ wo :math:`v_ {BE} = 0.6 V`
 
 .. math::
    
-   R_1 = \frac {5 V - (0,6 V + 1,6 V)} {\frac{(0,6 V + 1,6 V)}{3,2 k \Omega}} = 4,0 k \Omega
+   R_1 = \frac{5 V - (0,6 V + 1,6 V)}{\frac{(0,6 V + 1,6 V)}{3,2 k \Omega}} = 4,0 k \Omega
 
  
 .. note::
@@ -238,7 +237,7 @@ Verfahren
 ---------
 
 Nach obigen Berechnungen und Richtlinien haben wir gemeinsam gebaut
-Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine :math:`470 \ Omega`
+Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine :math:`470 \Omega`
 Widerstände verfügbar und diese Widerstände wurden verwendet für :math:`R_L` und
 :math:`R_E`. Nach Auswahl von :math:`R_L` und :math:`R_E` der anderen
 Komponenten wurden berechnet und ausgewählt.

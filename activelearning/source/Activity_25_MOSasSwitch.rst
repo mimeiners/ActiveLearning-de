@@ -67,7 +67,7 @@ Schaltkreise unterscheiden sich wesentlich von linearen
 Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir
 komplexere Schaltungen untersuchen, werden wir mit der Einführung
 diskreter Halbleiterschaltkreise beginnen: diejenigen, die um
-NMOS-Bausteine ​​herum gebaut sind.
+NMOS-Baustein herum gebaut sind.
 
 
 Ein Schalter besteht aus einem NMOS-Transistor, der abwechselnd
