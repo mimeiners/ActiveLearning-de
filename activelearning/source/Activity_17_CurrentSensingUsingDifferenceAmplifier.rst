@@ -256,11 +256,22 @@ Laststrom direkt an, wie in Gleichung 8 dargestellt.
    
 Komponentenwerte sind folgende:
 
-.. math::
-     
-     R_4=R_2 = 100k \Omega , \quad  R_3=R_1 = 10k \Omega ,  \quad R_S = R_5 = 10 \Omega , \quad R_6 = 220 \Omega ,
+- Widerstände:
+   
+  - :math:`R_4 = R_2 = 100k\Omega,`
 
-     \quad C_1 = 0.1 \mu F , \quad \quad L_1 = 4.7 mH
+  - :math:`R_3 = R_1 = 10k\Omega,`
+
+  - :math:`R_S = R_5 = 10\Omega,`
+
+  - :math:`R_6 = 220\Omega,`
+
+  
+- Kondensator und Spule:
+
+  - :math:`C_1 = 0,1 \mu F,`
+
+  - :math:`L_1 = 4,7 mH`
 
    
 

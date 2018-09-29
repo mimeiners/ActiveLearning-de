@@ -152,12 +152,12 @@ Verfahren
    vertikalen +/- Regler verwenden)
    
 7. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN2 :math:`V/div` auf :math:`1,V/div` eingestellt ist (Sie können V / div
+   dass IN2 :math:`V/div` auf :math:`1,V/div` eingestellt ist (Sie können V/div
    einstellen, indem Sie den gewünschten Kanal auswählen und vertikale
    +/- Regler verwenden)
    
 8. Stellen Sie sicher, dass OUT2 V / div am linken unteren
-   Bildschirmrand auf 500mV / div eingestellt ist (Sie können V / div
+   Bildschirmrand auf 500 mV/div eingestellt ist (Sie können V/div
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
@@ -172,31 +172,28 @@ Verfahren
 
    AD8561_ Komparatorschaltung Messungen
 
-Sie sollten eine Rechteckwelle sehen, die hoch ist (nahe +2,5 V), wenn
-der Eingangssignalpegel größer als 0,5 V (OUT2 DC-Wert) und niedrig
-(nahe 0 Volt) ist, wenn das Eingangssignal weniger als 0,5 V beträgt
-Pegel der Eingangsdreieckwelle, bei der sich der Ausgang von niedrig
-zu hoch und von hoch zu niedrig ändert.
+Sie sollten eine Rechteckwelle sehen, die hoch (etwa :math:`+2.5 V`) ist, wenn der
+Eingangssignalpegel größer als :math:`0.5 V` (OUT2 DC-Wert) und niedrig (etwa :math:`0 V`) ist,
+wenn das Eingangssignal kleiner als 0.5 V ist. Beachten Sie die Pegel der
+Eingangsdreieckswelle, bei denen der Ausgang von niedrig nach hoch und von hoch
+nach niedrig wechselt.
+
+Verbinden Sie nun den Kanal IN1 (Einstellung der Sondendämpfung x10 und IN1
+Einstellung Menü Sondendämpfung auf x10 einstellen) mit dem invertierenden
+Ausgang (Pin 8). Sie sollten wieder eine Rechteckwelle sehen, aber mit entgegengesetzter
+Phase zu Pin 7(IN2). Ändern Sie auch den Gleichstrompegel von OUT2
+(Amplitude auf :math:`0,7 V` einstellen) - dies ändert den Schaltpegel des
+Spannungskomparators und führt zu einer unterschiedlichen Dauer der Zustände
+HIGH und LOW des Komparatorausgangs. Du solltest wieder zwei Rechteckwellen mit
+entgegengesetzten Phasen sehen, aber jetzt mit entgegengesetzten HIGH und LOW Zeitdauern.
 
 
-Verbinden Sie jetzt den Kanal IN1 (Einstellung der Sondendämpfung x10
-und des IN1-Einstellungsmenüs stellen Sie die Sondendämpfung auf x10
-ein) mit dem invertierenden Ausgang (Pin 8). Sie sollten wieder eine
-Rechteckwelle mit entgegengesetzter Phase zu Pin 7 (IN2) sehen. Ändern
-Sie auch den DC-Pegel von OUT2 (stellen Sie die Amplitude auf 0,7 V
-ein) - dies ändert den Schaltpegel des Spannungskomparators, was zu
-unterschiedlichen Zeitdauern der HIGH- und LOW-Zustände des
-Komparatorausgangs führt. Sie sollten wieder zwei Rechteckwellen mit
-entgegengesetzten Phasen, aber jetzt mit entgegengesetzten HIGH- und
-LOW-Zeitdauern sehen.
-
-
-1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 bis x10 und
-   IN2 bis x10
+1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x10 und
+   IN2 auf x10
    
-2. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf 0,7 V
+2. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf :math:`0,7 V`
    ein, wählen Sie im Wellenformmenü die Option DC, und wählen Sie
-   enable.
+   Enable.
    
 3. Stellen Sie im Einstellungsmenü für IN2 und IN2 die Sondendämpfung
    auf x10 und den Offsetpegel -1700mV ein
@@ -210,32 +207,25 @@ LOW-Zeitdauern sehen.
 	 
 
 
-   .. figure:: img/Activity_18_Fig_05.png
-      :name: 18_fig_05
-      :align: center
+.. figure:: img/Activity_18_Fig_05.png
+   :name: 18_fig_05
+   :align: center
 
-      AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_{ref} = 0.7V`
+   AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_{ref} = 0.7V`
 
-   
-Untersuchen Sie die fallende Flanke des Rechtecks des Ausgangs (IN2),
-indem Sie die Einstellungen für Horizontale Position und Zeit pro
-Teilung so anpassen, dass die fallende Kante auf der Zeitachse
-zentriert ist und die Zeit pro Div klein genug ist, um die
-Übergangszeit der Kante zu sehen (5 US-Dollar / Div). Sie sollten
-sehen, dass der Ausgang nicht vom hohen Ausgangspegel bis zum
-niedrigen Ausgangspegel auf einmal geht, sondern halbwegs stoppt und
-einige Zeit auf einem mittleren Pegel verbleibt, bevor der Rest des
-Weges bis zum niedrigen Ausgangspegel fortgesetzt wird. Sie sollten
-diese Verzögerung auch beim Übergang von niedrig zu hoch (IN1) sehen.
-
-Diese Verzögerung wird durch Rauschen verursacht, da das
-Eingangssignal langsam den Eingangsschwellenwert (in diesem Fall 0,7
-Volt) durchläuft und Probleme verursachen kann. Aus diesem Grund ist
-es gut, eine rauscharme Stromversorgung und rauscharme Eingangssignale
-am Spannungsvergleicher zu haben.
-
-Versuchen Sie die Schaltgeräuschmessung bei einer geräuschvolleren
-Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
+Zoomen Sie in die fallende Flanke der Rechteckwelle des Ausgangs (IN2), indem
+Sie die Einstellungen für die horizontale Position und die Zeit pro Teilung so
+anpassen, dass die fallende Flanke auf die Zeitachse zentriert ist und die Zeit
+pro Teilung klein genug ist, um die Übergangszeit der Flanke (5 uS/div) zu sehen.
+Sie sollten sehen, dass der Ausgang nicht vom hohen Ausgangspegel bis zum niedrigen
+Ausgangspegel auf einmal geht, sondern teilweise stoppt und einige Zeit auf einem
+Zwischenpegel verbringt, bevor er den weiteren Weg zum niedrigen Ausgangspegel geht.
+Sie sollten diese Verzögerung auch beim Übergang von Low zu High (IN1) sehen. Diese
+Verzögerung wird durch Rauschen verursacht, da das Eingangssignal langsam den
+Eingangsschwellenwert (in diesem Fall 0,7 Volt) überschreitet und Probleme
+verursachen kann. Aus diesem Grund ist es gut, eine rauscharme Stromversorgung und
+rauscharme Eingangssignale am Spannungsvergleicher zu haben. Versuchen Sie, die
+Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pin direkt vom STEMlab-Board).
 
 
 .. figure:: img/Activity_18_Fig_06.png
@@ -246,41 +236,31 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
 
    
 .. note::
-   Normalerweise besteht unsere Intuition darin, eine hohe
-   Wahrscheinlichkeit von Rauschproblemen mit Hochfrequenzsignalen
+   Normalerweise besteht unserer Bestreben,  eine hohe
+   Wahrscheinlichkeit von Rauschproblemen mit hochfrequenten Signalen
    zu korrelieren. Im Falle eines Spannungskomparators ist dies
-   nicht immer der Fall.
-     
-   Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf 100 kHz
-   erhöhen, ist das Schaltrauschen viel geringer. Weg ist das? Sie
+   nicht immer der Fall. Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf 100 kHz
+   erhöhen, ist das Schaltrauschen viel geringer. Wie ist das möglich? Sie
    denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
    Eingänge und vergleicht ständig Werte von :math:`V_{in}` und
-   :math:`V_{ref}`. Nun stellen wir :math:`V_{in}` als
-   geräuschloses Signal und :math:`V_{ref} = DC + (-) A_{noise}`.
-   Wenn die Dreieckwelle :math:`V_{in}` Signal sich
-   langsam nähert :math:`V_{ref}` beginnt der
-   Spannungsvergleicher zu schalten und wenn die
-   :math:`V_{ref}` Amplitude um den DC-Wert schwingt um
-   :math:`A_{noise}` der Komparator
-	   
-   Die Ausgabe ändert die Zustände entsprechend dem
-   :math:`V_{in} - (V_{ref} = DC + (-) A_{Rauschen})`
-   Verhältnis. Also, so lange
-   :math:`V_{in}` amplitude **bleibt im Bereich** von
-   :math:`V_{ref} = DC + (-) A_{noise}` Wert wird der
-   Komparatorausgang effektiv eingeschaltet  :math:`A_{noise}`
-   und nicht auf den Eingangssignalen. Einmal :math:`V_{in}`
-   geht unter :math:`V_{ref} = DC - A_{noise}` oder höher
-   :math:`V_{ref} = DC + A_{noise}` wird der Komparator ausgegeben
-   Schalter hoch  oder niedrig, aber jetzt auf Eingangssignalwerte
-   nicht auf Rauschwerte. Sie können sehen, dass
-   **niederfrequente Dreiecksschwingung** :math:`V_{in}`
-   Amplitude **mehr Zeit verbringen wird** in der
-   Nähe von :math:`V_{ref} = DC + (-) A_{noise}`
-   wodurch der Spannungsvergleicher eine verrauschte
-   Ausgabe erzeugt, während die **hohe Frequenzdreieckwelle**
-   :math:`V_{in}` die Amplitude **schnell vergeht**
-   :math:`V_{ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
+   :math:`V_{ref}`. Stellen wir nun :math:`V_{in}` als
+   rauschfreies Signal und :math:`V_{ref} = DC + (-) A_{noise}` ein.
+   Wenn sich das Dreieckwellen- :math:`V_{in}` -Signal langsam
+   :math:`V_{ref}` nähert, beginnt der Spannungsvergleicher
+   zu schalten und wenn die :math:`V_{ref}` -Amplitude um den DC-Wert rauscht,
+   ändert der Vergöeichsausgang den Zustand entsprechend dem
+   :math:`V_{in} - (V_{ref} = DC + (-) A_{Rauschen})` -Verhältnis. Solange
+   die :math:`V_{in}` -Amplitude also im **Bereich** von
+   :math:`V_{ref} = DC + (-) A_{noise}` -Wertes **bleib** schaltet der
+   Komparatorausgang effektiv das Rauschen ein und nicht die
+   Eingangssignale. Sobald :math:`V_{in}` unter :math:`V_{ref} = DC - A_{noise}`
+   oder über :math:`V_{ref} = DC + A_{noise}` geht, schaltet der Komparator hoch oder niedrig,
+   aber jetzt auf Eingangssignalwerte und nicht auf Rauschwerte. Sie können sehen, dass die
+   **niederfrequente Dreieckwelle** :math:`V_{in}` **mehr Zeit** in der
+   Nähe von :math:`V_{ref} = DC + (-) A_{noise}` **verbringen wird**,
+   was dazu führt, dass der Spannungsvergleicher verrauschte Signale erzeugt,
+   während die **hochfrequente Dreieckwelle** :math:`V_{in}`  **schnell** durch den
+   :math:`V_{ref} = DC + (-) A_{noise}` -Bereich **geht** und verhindert, dass der Komparator ein rauschen erzeugt.
 		 
 
 
