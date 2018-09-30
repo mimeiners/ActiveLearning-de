@@ -64,7 +64,7 @@ Spannung umgewandelt.
 
 
 
-.. figure:: img/ Activity_17_Fig_01.png
+.. figure:: img/Activity_17_Fig_01.png
    :name: 17_fig_01
    :align: center
 
@@ -110,8 +110,7 @@ Operationsverstärkerseingängen. Setzen wir nun :math:`V_{+}` und
 .. math::
    :label: 17_eq_3
    
-   V_{out} = V_S \left( \frac{R_4}{R_3 + R_4} \right) \left(1 +
-   \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)
+   V_{out} = V_S \left( \frac{R_4}{R_3 + R_4} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)
 
 
 wobei :math:`V_S` ist die Quellspannung und :math:`V_L` Lastspannung ist. Wir können auch schreiben
@@ -119,7 +118,9 @@ wobei :math:`V_S` ist die Quellspannung und :math:`V_L` Lastspannung ist. Wir k�
 
 .. math::
 
-   V_S = V_{R_{shunt_{Knoten_1}}} \quad V_L = V_{R_{shunt_{Knoten_2}}}
+   V_S = V_{R_{shunt_{Knoten_1}}}
+
+   V_L = V_{R_{shunt_{Knoten_2}}}
 
 
 und
@@ -127,7 +128,9 @@ und
 
 .. math::
 
-   V_S = V_L + \Delta V \quad \Delta V = V_S - V_L
+   V_S = V_L + \Delta V
+
+   \Delta V = V_S - V_L
 
    
 Auf den ersten Blick, durch das Hinzufügen des Widerstandes
@@ -153,15 +156,15 @@ Mit den obigen Gleichungen können wir Gleichung (3) wie folgt schreiben
 .. math::
    :label: 17_eq_4
 	   
-   V_{out} &= V_S \left(\frac{R_2}{R_1 + R_2} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right) \\
+   V_{out} = V_S \left(\frac{R_2}{R_1 + R_2} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)
    
-   &= V_S \left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) - V_L \left( \frac{R_2}{R_1} \right)
+   V_{out} = V_S \left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) - V_L \left( \frac{R_2}{R_1} \right)
 
    
 Sie besagt, dass
 
 .. math::
-     \bigg (\frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \bigg) = \frac{R_2}{R_1}
+     \left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) = \frac{R_2}{R_1}
 
      
 So können wir Gleichung (4) einfach schreiben als:
@@ -181,11 +184,11 @@ auf :math:`I_L`.
 .. math::
    :label: 17_eq_6
 
-   V_{out} &= \left( \frac{R_2}{R_1} \right) (V_S-V_L) \\
+   V_{out} = \left( \frac{R_2}{R_1} \right) (V_S-V_L)
 
-   &= \frac{R_2}{R_1} \Delta V \\
+   V_{out} = \frac{R_2}{R_1} \Delta V 
  
-   &= \frac{R_2}{R_1} I_L R_S
+   V_{out} = \frac{R_2}{R_1} I_L R_S
 
 
 .. note::
@@ -207,13 +210,14 @@ In unserem Beispiel haben wir
    - :math:`R_2/R_1 = 10,`
    - :math:`R_S = R_5 = 10\Omega,`
 
+     
 - Spulestrom:
 
   - :math:`I_L = \frac{V_{out}}{10R_S}.`
 
    
 .. note::
-   **In unserem Beispiel wird der Laststrom wie folgt angegeben:**
+   In unserem Beispiel wird der Laststrom wie folgt angegeben:
 
    .. math:: I_L = \frac{V_{out}}{100}
       :label: 17_eq_8
@@ -249,7 +253,7 @@ Laststrom direkt an, wie in Gleichung 8 dargestellt.
 
 
 .. _17_fig_02:
-.. figure:: img/ Activity_17_Fig_02.png
+.. figure:: img/Activity_17_Fig_02.png
 
    Differenzverstärkerschaltung für die Strommessung
 
@@ -287,7 +291,7 @@ eine Schaltung, wie in :numref:`17_fig_02` dargestellt auf.
 
 
 .. _17_fig_03:
-.. figure:: img/ Activity_17_Fig_03.png
+.. figure:: img/Activity_17_Fig_03.png
 
    Differenzverstärkerschaltung für Strommessung - Resistive Last
 
@@ -323,7 +327,7 @@ eine Schaltung, wie in :numref:`17_fig_02` dargestellt auf.
    
 
 .. _17_fig_04:
-.. figure:: img/ Activity_17_Fig_04.png
+.. figure:: img/Activity_17_Fig_04.png
 	    
    resestive-Last-Strommessungen
 
@@ -334,7 +338,7 @@ Laststrom berechnen als:
 
 .. math::
    
-   I_L = \frac{IN2_{max}}{100} = \frac{108,0 mV}{100} = 1,08 mA
+   I_L = \frac{IN2_{max}}{100} = \frac{108.0\,mV}{100} = 1.08\, mA
 
 
 Wir können unsere Messungen überprüfen, indem wir den Laststrom berechnen wie folgt berechnen
@@ -342,7 +346,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom berechnen wie
 
 .. math::
      
-   I_L = \frac{OUT1_{max}}{R_{Laden} + R_s} = \frac{0.5V}{470\Omega + 10\Omega} = 1.04mA
+   I_L = \frac{OUT1_{max}}{R_{Laden} + R_s} = \frac{0.5V}{470\Omega + 10\Omega} = 1.04\,mA
 
      
 Wir können sehen, dass der gemessene Strom dem entspricht, was wir
@@ -360,13 +364,13 @@ Schaltung wie in :numref:`17_fig_02` gezeigt auf.
 
 
 .. _17_fig_05:
-.. figure:: img/ Activity_17_Fig_05.png
+.. figure:: img/Activity_17_Fig_05.png
 
    Kapazitive Last
 
 
 .. _17_fig_06:
-.. figure:: img/ Activity_17_Fig_06.png
+.. figure:: img/Activity_17_Fig_06.png
 
    Kapazitive-Last-Strommessungen
 
@@ -382,16 +386,21 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt ber
 
 .. math::
      
-   I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s} = \frac{0,5V}{1592\Omega + 10\Omega} = 0,31 mA
+   I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s}
+
+   = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s}
+
+   = \frac{0.5V}{1592\Omega + 10\Omega} = 0.31\, mA
 
    
 Induktive Last
 ^^^^^^^^^^^^^^
 
-Für Last nehmen Sie :math:`4.7 mH` Induktivität und bauen Sie die Schaltung wie in :numref:`17_fig_02` gezeigt auf.
+Für Last nehmen Sie :math:`4.7 mH` Induktivität und bauen Sie die
+Schaltung wie in :numref:`17_fig_02` gezeigt auf. 
 
 .. _17_fig_07:
-.. figure:: img/ Activity_17_Fig_07.png
+.. figure:: img/Activity_17_Fig_07.png
 
    Induktive Last
 
@@ -410,33 +419,41 @@ Für Last nehmen Sie :math:`4.7 mH` Induktivität und bauen Sie die Schaltung wi
    verwenden)
    
 
-.. _17_fig_08:
-.. figure:: img/ Activity_17_Fig_08.png
+   .. _17_fig_08:
+   .. figure:: img/Activity_17_Fig_08.png
 	    
-   Induktive-Last-Strommessungen
-
-Aus den Messungen aus :numref:`17_fig_08` können wir den maximalen
-Laststrom berechnen als:
-
-
-.. math::
-     
-   I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2mA
+      Induktive-Last-Strommessungen
 
    
-Wir können unsere Messungen überprüfen, indem wir den Laststrom wie
-folgt berechnen
+   Aus den Messungen aus :numref:`17_fig_08` können wir den maximalen
+   Laststrom berechnen als:
 
 
-.. math::
+   .. math::
      
-   I_L = \frac {OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s} = \frac{0.2V}{30\Omega +10\Omega} = 5,0 mA
+      I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2mA
 
+   
+   Wir können unsere Messungen überprüfen, indem wir den Laststrom wie
+   folgt berechnen:
+
+
+   .. math::
+     
+      I_L = \frac {OUT1_{max}}{Z_{Laden} + R_s}
+
+      = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s}
+
+      = \frac{0.2V}{30\Omega +10\Omega} = 5,0 mA
+
+      
 .. note::
 
    Bei induktiver Last haben wir den größten Unterschied in den
-   Messungen. Versuchen Sie zu erklären, warum. Hinweis: Parasitäre,
-   Serienwiderstand eines Induktors.
+   Messungen. Versuchen Sie zu erklären, warum.
+
+   
+.. hint:: Parasitärer Serienwiderstand einer Induktivität.
    
 
 
