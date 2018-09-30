@@ -114,8 +114,8 @@ PN-Übergangsdiode mit den folgenden Ausnahmen:
 2. Die Durchlassspannung bei einem bestimmten Durchlassstrom ist auch bei einer
    Schottky-Diode niedriger als bei einer PN-Übergangsdiode. So hat beispielsweise
    eine Schottky-Diode mit niedriger Sperrschicht bei :math:`2 mA` Vorwärtsvorspannung eine
-   Durchlassspannung von :math:`\approx 0,3 \, Volt`, während eine PN-Übergangsdiode aus Silizium eine
-   Spannung von :math:`\approx 0,7 Volt` hat. Dieser geringere Vorwärtsspannung kann die in der Diode
+   Durchlassspannung von :math:`\approx 0,3 V`, während eine PN-Übergangsdiode aus Silizium eine
+   Spannung von :math:`\approx 0,7 V` hat. Dieser geringere Vorwärtsspannung kann die in der Diode
    abgegebene Leistung um mehr als die Hälfte reduzieren. Diese Energieeinsparung kann
    sehr bedeutend sein, wenn die Dioden große Durchlassströme leiten müssen. Die Beziehung
    zwischen Strom und Spannung (:math:`I/V`) für eine Schottky-Diode wird durch die folgende Gleichung,
@@ -147,7 +147,7 @@ Wo:
   
 * :math:`\phi_B` = Barrierenhöhe in Volt
 
-* k = Boltzman-Konstante = 1.37 * 10-23 J / K = :math:`1.37E-23 \, J/K`
+* k = Boltzman-Konstante = :math:`1.37 \cdot 10-23 \, J/K` = :math:`1.37E-23 \, J/K`
   
 * :math:`n` = Idealitätsfaktor (Vorwärtsneigungsfaktor, bestimmt durch
   Metall-Halbleiter-Schnittstelle) 
@@ -163,7 +163,7 @@ gerichtet sind, es ist nur, dass sich die Photonen im Infrarotband befinden und 
 physikalische Form der Diode es den Photonen nicht erlaubt, aus dem Gehäuse zu entweichen.
 Um die Eigenschaft der sichtbaren Lichtemission zu erreichen, ist es notwendig, die LED aus
 Materialien mit größeren Bandlücken als Silizium herzustellen. Infolgedessen ist der
-Durchlassspannung der LED größer als :math:`0,7 /, V`; normalerweise in der Größenordnung von :math:`1,5 - 2 /, Volt`,
+Durchlassspannung der LED größer als :math:`0,7 \, V`; normalerweise in der Größenordnung von :math:`1,5 - 2 Volt`,
 abhängig von der Wellenlänge des ausgestrahlten Lichts. Die LED ist ebenfalls in einem
 speziellen transparenten Gehäuse eingebaut, wie in :numref:`19_fig_03` dargestellt.
 
@@ -288,20 +288,20 @@ Zeitbereichsmessungen
       
 2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,5 /, V`, DC-Offset auf ein
-   :math:`0,5 /, V`, um eine Dreieckswelle als Eingangsspannung anzulegen. Von dem
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,5 V`, DC-Offset auf ein
+   :math:`0,5 V`, um eine Dreieckswelle als Eingangsspannung anzulegen. Von dem
    Waveform-Menü TRIANGLE auswählen, SHOW-Button deaktivieren und auswählen
    aktivieren.
    
 4. Stellen Sie sicher, dass IN1 :math:`V/div` am linken unteren Bildschirmrand steht
-   :math:`200 /, mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
+   :math:`200 mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
    mit vertikalen +/- Kontrollen)
    
 5. Vergewissern Sie sich, dass IN2 :math:`V/div` auf der linken unteren Seite des Bildschirms steht
-   :math:`200 /, mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
+   :math:`200 mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
    mit vertikalen +/- Kontrollen)
    
-6. Setzen Sie :math:`t/div` -Wert auf :math:`200 /, us/div` (Sie können t / div mit horizontalem einstellen
+6. Setzen Sie :math:`t/div` -Wert auf :math:`200 us/div` (Sie können :math:`t/div` mit horizontalem einstellen
    +/- Kontrollen)
    
 7. Im Menü MATH settings IN1-IN2 einstellen und enable auswählen. Die mathematische Kurve,
@@ -317,12 +317,12 @@ Zeitbereichsmessungen
 
 Aus :numref:`19_fig_06` können wir sehen, dass die Diode anfängt zu leiten,
 wenn die Spannung an ihr die Schwellenspannung der Diode überschreitet,
-die etwa :math:`0,6 /, V` beträgt. 
+die etwa :math:`0,6 V` beträgt. 
 
 Außerdem ist der mit der MATH-Trace dargestellte Diodenstrom beobachtbar.
-Wir können deutlich sehen, dass, wenn die Diodenspannung unter :math:`0,6 /, V` liegt, der
-Diodenstrom :math:`0 /, A` beträgt. Zu einem Zeitpunkt, an dem die Diodenspannung größer
-als :math:`0,6 /, V` ist, beginnt die Diode zu leiten und der Pfadstrom wird nur durch den
+Wir können deutlich sehen, dass, wenn die Diodenspannung unter :math:`0,6 V` liegt, der
+Diodenstrom :math:`0A` beträgt. Zu einem Zeitpunkt, an dem die Diodenspannung größer
+als :math:`0,6 V` ist, beginnt die Diode zu leiten und der Pfadstrom wird nur durch den
 Widerstand :math:`R1` begrenzt. 
 
 
@@ -376,8 +376,8 @@ Diode :math:`VI` erhalten, wie in :numref:`19_fig_08` dargestellt.
 
 In der :numref:`19_fig_08` ist die typische :math:`VI` -Dioden-Kennlinie dargestellt.
 Aus der :numref:`19_fig_08` ist ersichtlich, dass bei steigender Spannung an der
-Diode (von :math:`0 - 0,5 /, V`) der Diodenstrom nahe Null bleibt, bis die Spannung Werte
-nahe der Schwellenspannung (:math:`\approx 0,6 /, V`) erreicht. An dieser Stelle wird die Diode
+Diode (von :math:`0 - 0,5 V`) der Diodenstrom nahe Null bleibt, bis die Spannung Werte
+nahe der Schwellenspannung (:math:`\approx 0,6 V`) erreicht. An dieser Stelle wird die Diode
 "eingeschaltet" und der Wegstrom (Diodenstrom) wird nur durch den Widerstand :math:`R1`
 begrenzt. Falls bei abnehmender Diodenspannung die :math:`VI` -Kurve nicht gleich ist,
 führt dies zur Diodenhysterese. Die obere Kurve aus :numref:`19_fig_08` zeigt, dass die
