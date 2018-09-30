@@ -85,15 +85,15 @@ Materialien
 - Widerstand: 1x 20 :math:`k\Omega`
 - Widerstand: 1x 47 :math:`k\Omega`
 - Widerstand: 1x 100 :math:`k\Omega`
-- Kondensator: 1x 0.1 :math:`\mu F`
+- Kondensator: 1x 0,1 :math:`\mu F`
 
 Vorbereitung
 ------------
 
 Bauen Sie die Vergleichsprüfschaltung wie in :numref:`18_fig_02` auf Ihrer
-lötfreien Lochrasterplatine auf. Die beiden Pull-up-Widerstände :math:`4.7,k\Omega`
+lötfreien Lochrasterplatine auf. Die beiden Pull-up-Widerstände :math:`4,7 k\Omega`
 sind optional und werden verwendet, um den maximalen positiven Ausgangshub
-auf näher an die :math:`+5-V` -Versorgung zu erhöhen.
+auf näher an die :math:`+5 V` -Versorgung zu erhöhen.
 
 .. figure:: img/Activity_18_Fig_02.png
    :name: 18_fig_02
@@ -112,9 +112,9 @@ auf näher an die :math:`+5-V` -Versorgung zu erhöhen.
    vom Rauschen der Stromversorgung betroffen sind. Aus diesem Grund verwenden
    wir hier einen Spannungsregler, um unsere Stromversorgungsschiene zu
    stabilisieren und eine verrauschte Ausgabe des Vergleichers zu verhindern.
-   Sie können es direkt mit der :math:`5,V` -Netzteilschiene versuchen und die
+   Sie können es direkt mit der :math:`5 V` -Netzteilschiene versuchen und die
    Ergebnisse beobachten und mit den Ergebnissen des Spannungsreglers vergleichen.
-   Hinweis: Es ist nicht notwendig, die Spannung von :math:`5,V` auf :math:`2,5,V`
+   Hinweis: Es ist nicht notwendig, die Spannung von :math:`5 V` auf :math:`2,5 V`
    herunterzufahren, aber wir haben uns für diese einfache Form entschieden.
    
 .. figure:: img/Activity_18_Fig_03.png
@@ -135,11 +135,11 @@ Verfahren
 2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
 3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Menü OUT1
-   Einstellungen den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
+   Einstellungen den Amplitudenwert auf :math:`0,5 V` und den DC-Offset auf :math:`0,5 V`
    setzen. Wählen Sie im Wellenform-Menü TRIANGLE, Deaktivieren Sie den
    SHOW-Button und wählen Sie Enable.
    
-4. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf 0,5 V
+4. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf :math:`0,5 V`
    ein, wählen Sie im Wellenformmenü die Option DC und aktivieren Sie
    Enable.
    
@@ -147,24 +147,23 @@ Verfahren
    auf x10 ein
    
 6. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 :math:`V/div` auf :math:`500,mV/div` eingestellt ist (Sie können :math:`V/
+   dass IN1 :math:`V/div` auf :math:`500 mV/div` eingestellt ist (Sie können :math:`V/
    div` einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
 7. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN2 :math:`V/div` auf :math:`1,V/div` eingestellt ist (Sie können V/div
+   dass IN2 :math:`V/div` auf :math:`1 V/div` eingestellt ist (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal auswählen und vertikale
    +/- Regler verwenden)
    
-8. Stellen Sie sicher, dass OUT2 V / div am linken unteren
-   Bildschirmrand auf 500 mV/div eingestellt ist (Sie können V/div
+8. Stellen Sie sicher, dass OUT2 :math:`V/div` am linken unteren
+   Bildschirmrand auf :math:`500 mV/div` eingestellt ist (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
-9. Setze t / div Wert auf 200us / div (Du kannst t / div mit
+9. Setze :math:`t/div` Wert auf :math:`200 us/div` (Du kannst :math:`t/div` mit
    horizontalen +/- Kontrollen einstellen)
    
-
 
 .. figure:: img/Activity_18_Fig_04.png
    :name: 18_fig_04
@@ -173,8 +172,8 @@ Verfahren
    AD8561_ Komparatorschaltung Messungen
 
 Sie sollten eine Rechteckwelle sehen, die hoch (etwa :math:`+2.5 V`) ist, wenn der
-Eingangssignalpegel größer als :math:`0.5 V` (OUT2 DC-Wert) und niedrig (etwa :math:`0 V`) ist,
-wenn das Eingangssignal kleiner als 0.5 V ist. Beachten Sie die Pegel der
+Eingangssignalpegel größer als :math:`0,5 V` (OUT2 DC-Wert) und niedrig (etwa :math:`0 V`) ist,
+wenn das Eingangssignal kleiner als :math:`0,5 V` ist. Beachten Sie die Pegel der
 Eingangsdreieckswelle, bei denen der Ausgang von niedrig nach hoch und von hoch
 nach niedrig wechselt.
 
@@ -196,7 +195,7 @@ entgegengesetzten Phasen sehen, aber jetzt mit entgegengesetzten HIGH und LOW Ze
    Enable.
    
 3. Stellen Sie im Einstellungsmenü für IN2 und IN2 die Sondendämpfung
-   auf x10 und den Offsetpegel -1700mV ein
+   auf x10 und den Offsetpegel :math:`-1700 mV` ein
    
 
    .. note::
@@ -216,16 +215,16 @@ entgegengesetzten Phasen sehen, aber jetzt mit entgegengesetzten HIGH und LOW Ze
 Zoomen Sie in die fallende Flanke der Rechteckwelle des Ausgangs (IN2), indem
 Sie die Einstellungen für die horizontale Position und die Zeit pro Teilung so
 anpassen, dass die fallende Flanke auf die Zeitachse zentriert ist und die Zeit
-pro Teilung klein genug ist, um die Übergangszeit der Flanke (5 uS/div) zu sehen.
+pro Teilung klein genug ist, um die Übergangszeit der Flanke (:math:`5 uS/div`) zu sehen.
 Sie sollten sehen, dass der Ausgang nicht vom hohen Ausgangspegel bis zum niedrigen
 Ausgangspegel auf einmal geht, sondern teilweise stoppt und einige Zeit auf einem
 Zwischenpegel verbringt, bevor er den weiteren Weg zum niedrigen Ausgangspegel geht.
 Sie sollten diese Verzögerung auch beim Übergang von Low zu High (IN1) sehen. Diese
 Verzögerung wird durch Rauschen verursacht, da das Eingangssignal langsam den
-Eingangsschwellenwert (in diesem Fall 0,7 Volt) überschreitet und Probleme
+Eingangsschwellenwert (in diesem Fall :math:`0,7 Volt`) überschreitet und Probleme
 verursachen kann. Aus diesem Grund ist es gut, eine rauscharme Stromversorgung und
 rauscharme Eingangssignale am Spannungsvergleicher zu haben. Versuchen Sie, die
-Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pin direkt vom STEMlab-Board).
+Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (:math:`5 V` -Pin direkt vom STEMlab-Board).
 
 
 .. figure:: img/Activity_18_Fig_06.png
@@ -239,7 +238,7 @@ Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pi
    Normalerweise besteht unserer Bestreben darin, eine hohe
    Wahrscheinlichkeit von Rauschproblemen mit hochfrequenten Signalen
    zu korrelieren. Im Falle eines Spannungskomparators ist dies
-   nicht immer der Fall. Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf 100 kHz
+   nicht immer der Fall. Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf :math:`100 kHz`
    erhöhen, ist das Schaltrauschen viel geringer. Wie ist das möglich? Sie
    denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
    Eingänge und vergleicht ständig Werte von :math:`V_{in}` und
@@ -370,7 +369,7 @@ Verfahren
 
 Fügen Sie die beiden positiven Rückkopplungswiderstände zu Ihrer
 Schaltung hinzu, wie in :numref:`18_fig_08` dargestellt. Verwenden Sie Werte für
-:math:`R2 = 100 k /Omega` und :math:`R1 = 10 k /Omega`. Mit IN2 beobachten Sie erneut
+:math:`R2 = 100 k \Omega` und :math:`R1 = 10 k \Omega`. Mit IN2 beobachten Sie erneut
 die Ausgangsrechteckwelle, notieren Sie aber den Pegel der Eingangsdreieckwelle,
 wenn der Ausgang den Pegel von niedrig nach hoch und hoch nach niedrig ändert.
 Versuchen Sie einen Wert für :math:`R2` kleiner als :math:`R1`.
@@ -383,34 +382,34 @@ Funktioniert die Schaltung noch?
 2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
 3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Einstellungsmenu OUT1
-   den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
+   den Amplitudenwert auf :math:`0,5 V` und den DC-Offset auf :math:`0,5 V`
    setzen. Wählen Sie im Wellenform-Menü TRIANGLE,
    Deaktivieren Sie den SHOW-Button und wählen Sie Enable.
    
-4. Stellen Sie im OUT2-Einstellungsmenu den Amplitudenwert auf 0,5 V
+4. Stellen Sie im OUT2-Einstellungsmenu den Amplitudenwert auf :math:`0,5 V`
    ein, wählen Sie im Wellenformmenü die Option DC, deaktivieren Sie
    die Option SHOW und wählen Sie Enable.
    
 5. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V/div auf 200 mV/div eingestellt ist (Sie können V/div
+   dass IN1 :math:`V/div` auf :math:`200 mV/div` eingestellt ist (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
-6. Stellen Sie sicher, dass IN2 V/div am linken unteren
-   Bildschirmrand auf 500 mV/div eingestellt ist (Sie können V/div
+6. Stellen Sie sicher, dass IN2 :math:`V/div` am linken unteren
+   Bildschirmrand auf :math:`500 mV/div` eingestellt ist (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
 7. Stellen Sie im Einstellungsmenü IN1 die Sondendämpfung auf x1 und
-   den Offsetpegel auf -500 mV ein
+   den Offsetpegel auf :math:`-500 mV` ein
    
 8. Stellen Sie im IN2-Einstellungsmenü die Sondendämpfung auf x10 und
-   den Offsetpegel auf -1000mV ein
+   den Offsetpegel auf :math:`-1000mV` ein
    
 9. Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
-   positive Flanke und stellen Sie den Triggerpegel auf 2V ein
+   positive Flanke und stellen Sie den Triggerpegel auf :math:`2 V` ein
    
-10. Setze t/div Wert auf 200 us/div (Du kannst t/div mit horizontalen +/- Kontrollen einstellen)
+10. Setze :math:`t/div` Wert auf :math:`200 us/div` (Du kannst t/div mit horizontalen +/- Kontrollen einstellen)
 
 
 .. figure:: img/ Activity_18_Fig_10.png
@@ -435,7 +434,7 @@ oder hat er diese Verzögerung nicht mehr?
 1. Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
    positive Flanke, NORMAL und setzen Sie den Triggerpegel auf 2V
    
-2. Setze t/div Wert auf 5 us/ iv (Du kannst t/div mit
+2. Setze :math:`t/div` Wert auf :math:`5 us/div` (Du kannst :math:`t/div` mit
    horizontalen +/- Kontrollen einstellen)
    
 
