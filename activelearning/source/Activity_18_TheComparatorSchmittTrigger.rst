@@ -236,7 +236,7 @@ Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pi
 
    
 .. note::
-   Normalerweise besteht unserer Bestreben,  eine hohe
+   Normalerweise besteht unserer Bestreben darin, eine hohe
    Wahrscheinlichkeit von Rauschproblemen mit hochfrequenten Signalen
    zu korrelieren. Im Falle eines Spannungskomparators ist dies
    nicht immer der Fall. Wenn wir die OUT1-Frequenz (:math:`V_{in}`) auf 100 kHz
@@ -248,7 +248,7 @@ Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pi
    Wenn sich das Dreieckwellen- :math:`V_{in}` -Signal langsam
    :math:`V_{ref}` nähert, beginnt der Spannungsvergleicher
    zu schalten und wenn die :math:`V_{ref}` -Amplitude um den DC-Wert rauscht,
-   ändert der Vergöeichsausgang den Zustand entsprechend dem
+   ändert der Vergleichsausgang den Zustand entsprechend dem
    :math:`V_{in} - (V_{ref} = DC + (-) A_{Rauschen})` -Verhältnis. Solange
    die :math:`V_{in}` -Amplitude also im **Bereich** von
    :math:`V_{ref} = DC + (-) A_{noise}` -Wertes **bleib** schaltet der
@@ -271,31 +271,23 @@ Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (5V-Pi
    Schaltvorgang bei hoher Eingangssignalfrequenz (100 kHz)
 
    
-Mit positivem Feedback hinzufügen Hysterese: der Schmitt-Trigger
-----------------------------------------------------------------
+Mit positiver Rückkopplung zur Hysterese: der Schmitt-Trigger
+-------------------------------------------------------------
 
-Neben der rauscharmen Stromversorgung ist es eine übliche Lösung
-für das gerade beschriebene Problem, der Komparatorschaltung eine
-Rauschimmunität hinzuzufügen, indem eine Hysterese in die
-Übergangsschwellwertspannung :math:`V_{th}` eingebaut wird, wie in
-8 gezeigt .
-
-Mit "Hysterese" meinen wir, dass die Schwellenspannung eine Funktion
-des aktuellen Betriebszustands des Systems ist, der für diese
-Schaltung durch ihre Ausgangsspannung definiert ist: positive oder
-negative Sättigung. Weil :math:`V_{th}`, die Spannung an Pin 2, durch
-den aus Widerständen R1 und R2 gebildeten Spannungsteiler bestimmt
-wird, ändert sich diese in Reaktion auf eine Änderung der
-Ausgangsspannung: sobald der Ausgang als Reaktion auf High gegangen
-ist zu einem Eingang, der die Schwellenspannung unterschritten hat,
-wird die Schwellenspannung auf einen höheren Wert geändert :math:`V_
-{th +}` ( :math:`V_{ref}` + ein Bruchteil der ausgegebenen
-Hochspannung); Umgekehrt ändert eine durchsteigende Eingangsspannung
-:math:`V_{th +}` den Ausgang in seinen niedrigen Zustand und bewirkt,
-dass die Schwellenspannung auf einen niedrigeren Wert gesetzt
-wird :math:`V_{th-}` ( :math:`V_{ref}` - ein Bruchteil der
-niedrigen Ausgangsspannung.
-      
+**Neben der rauscharmen Stromversorgung besteht eine gemeinsame Lösung für
+das soeben skizzierte Problem darin, der Vergleichsschaltung eine Störfestigkeit
+hinzuzufügen, indem die Hysterese in die Übergangsschwellenspannung** :math:`V_{th}` integriert wird, wie in
+:numref:`18_fig_08` dargestellt. Unter "Hysterese" verstehen wir, dass die Schwellenspannung
+eine Funktion des aktuellen Betriebszustandes des Systems ist, der für diese Schaltung
+durch seine Ausgangsspannung definiert ist: positive oder negative Sättigung. Da :math:`V_{th}`,
+die Spannung an Pin 2, durch den aus den Widerständen :math:`R1` und :math:`R2` gebildeten Spannungsteiler
+bestimmt wird, ändert sie sich als Reaktion auf eine Änderung der Ausgangsspannung:
+Sobald der Ausgang als Reaktion auf einen Eingang, der die Schwellenspannung
+unterschritten hat, hochgegangen ist, wird die Schwellenspannung auf einen höheren
+Wert :math:`V_{th+}` ( :math:`V_{ref}` + ein Bruchteil der Ausgangshochspannung) geändert; umgekehrt ändert
+eine durch :math:`V_{th+}` ansteigende Eingangsspannung den Ausgang in ihren niedrigen Zustand
+und bewirkt, dass die Schwellenspannung auf einen niedrigeren
+Wert :math:`V_{th}` - ( :math:`V_{ref}` - ein Bruchteil der Ausgangsniederspannung) eingestellt wird.
 
 
 .. figure:: img/ Activity_18_Fig_08.png
@@ -304,68 +296,53 @@ niedrigen Ausgangsspannung.
 
    Schmitt-Trigger
 
-Dieser Unterschied zwischen :math:`V_{th +}` und :math:`V_{th-}`
-bedeutet, dass, sobald ein Übergang durch eine Änderung von
-:math:`V_{in}` ausgelöst wird, Rauschunterschreitungen kleiner als diese
-Differenz sind auf dem Eingang wird nicht verursachen :math:`V_{in}`,
-um die Hysteresespalte zu überqueren
-:math:`V_{hist} = V_{th +} - V_{th-}` und eine unerwünschte Umkehrung
-des Ausgangszustands verursachen. Wenn die Hysteresespalte groß genug
-gemacht wird, kann das System vollständig für das Rauschen des
-Eingangssignals undurchlässig gemacht werden, wodurch die störenden
-Ausgangspegel eliminiert werden, die von der Basiskomparatorschaltung
-(Fig. 1) erlitten werden.
+Diese Differenz zwischen :math:`V_{th+}` und :math:`V_{th-}` bedeutet, dass Rauschauslenkungen,
+die kleiner als diese Differenz am Eingang sind, :math:`V_{in}` nicht dazu veranlassen,
+die Hystereselücke :math:`V_{hist} = V_{th+} - V_{th-}` zu überschreiten und eine unerwünschte
+Umkehrung des Ausgangszustands bewirken. Wenn der Hysteresespalt groß genug
+ist, kann das System vollständig undurchlässig für das Rauschen des
+Eingangssignals gemacht werden, wodurch die störenden Ausgangspegel der
+grundlegenden Vergleichsschaltung eliminiert werden (:numref:`18_fig_0`).
 
 
-Berechnen der Schwelle
-----------------------
+Berechnung des Schwellenwertes
+------------------------------
 
-Nennen wir die maximalen und minimalen Ausgangsspannungen
-:math:`V_{high}` und :math:`V_{low}`. Die Schwellwertspannung bei der
-Ausgabe von :math:`V_{high}` und bei :math:`V_{low}` ist:
-
-
-Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist
-gegeben durch: 
+Lassen Sie uns die maximalen und minimalen Ausgangsspannungen
+:math:`V_{high}` und :math:`V_{low}` nennen. Die Schwellenspannung, wenn der
+Ausgang auf :math:`V_{high}` und :math:`V_{low}` steht, ist:
 
 .. math::
    :label: 18_eq_1
    
-   V_{th_{hoch}} = \frac{R_1}{R_1 + R_2} (V_{hoch} + V_{ref}) + V_{ref}
+   V_{th_{high}} = \frac{R_1}{R_1 + R_2} (V_{high} + V_{ref}) + V_{ref}
    
 
 .. math::
    :label: 18_eq_2
 	   
-   V_{th_{niedrig}} = \frac{R_1}{R_1 + R_2} (V_{niedrig} - V_{ref}) + V_{ref}
+   V_{th_{low}} = \frac{R_1}{R_1 + R_2} (V_{low} - V_{ref}) + V_{ref}
 
-   
 
-Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
+Die resultierende Hystereselücke für die Schaltung von :numref:`18_fig_08` ist gegeben durch:
 
 .. math::
    :label: 18_eq_3
 	   
    V_{hist} = V_{th_{hoch}} - V_{th_{niedrig}} = \frac{R_1}{R_1 + R_2} (V_{hoch} - V_{niedrig})
 
-
-Für den AD8561 mit einer +2,5-V-Stromversorgung und Pull-up-Widerstand
-:math:`V_{hoch} - V_{niedrig} \, ca. 2,3 V`. Weil das andere Ende des
-Spannungsteilers (unten von R1) verbunden ist mit
-:math:`V_{ref} = 0,5V`, die Schwellenspannungen :math:`V_{th_{high}}`
-und :math:`V_{th_{low}}` wird um 0,5 V herum zentriert
-(:math:`V_{ref}`) unter der Annahme, dass :math:`V_{high}`
-und :math:`V_{low}` mehr oder weniger zentriert sind etwa 0,5V).
-Wenn Sie die Unterseite von R1 an eine andere
-Spannungsreferenzquelle als an die mittlere Stromversorgung
-anschließen, wirkt sich dies nicht auf die Hysteresespalte aus,
-sondern zentriert diese Lücke um einen Schwellenwert, der
-proportional zur neuen Referenzspannung ist. Tatsächlich könnte
-der negative Eingangspin des Komparators mit der festen
-Referenzspannung und das Ende von R1 als der Eingang verbunden
-sein. Dies kehrt die Richtung der beiden Ausgänge um oder
-invertiert sie. Die oben angegebenen Werte können in der
-Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
+Für den AD8561 mit :math:`+2,5 V` Spannungsversorgung und Pull-up-Widerstand,
+beträgt :math:`V_{high} - V_{low} \approx 2,3 V`. Da das andere Ende des Spannungsteilers (unten bei :math:`R1`)
+mit :math:`V_{ref} = 0,5 V` verbunden ist, werden die Schwellenspannungen :math:`V_{th_{high}} und V_{th_{low}}`
+um :math:`0,5 V` (:math:`V_{ref}`) zentriert, vorausgesetzt, dass :math:`V_{high}` und :math:`V_{low}` mehr oder weniger
+um :mazh:`0,5 V` zentriert sind). Das Anschließen des unteren Teils von :math:`R1` an eine andere
+Spannungs-Referenzquelle und nicht an die mittlere Versorgung hat keinen Einfluss
+auf die Hysterese, sondern zentriert diese um einen Schwellenwert, der proportional
+zur neuen Referenzspannung ist. Tatsächlich könnte der negative Eingangspin des
+Vergleichers an die feste Referenzspannung angeschlossen werden und das Ende von :math:`R1`
+als Eingang betrachtet werden. Dadurch wird der Sinn der beiden Ausgänge umgekehrt
+oder umgekehrt. Die oben genannte Darstellung kann im Schmitt-Hysterese-Plot
+in :numref:`18_fig_09` dargestellt werden.
       
 
 
@@ -377,56 +354,50 @@ Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
 
    
 .. note::
-   Die Hysteresespaltgleichung stellt eine potentielle Einschränkung
-   für das Verhältnis R1 / R2 für einen Schmitt-Trigger dar: wenn R1
-   <R2 ist, ist die Hysteresespalte größer als die Hälfte des
-   Peak-zu-Peak-Ausgangsspannungshubbereichs des Komparators und
-   abhängig von der Referenzspannung der eine oder der andere der
-   Schmitt-Trigger-Schwellwerte könnte außerhalb des Bereichs der
-   Ausgangsspannung liegen. Unter der Annahme, dass der
-   Spannungsbereich des Eingangssignals auch auf den
-   Ausgangsschwingungsbereich (mit anderen Worten die
-   Stromversorgungsschienen) begrenzt ist, könnte der Ausgang der
-   Schaltung blockieren und nicht mehr auf irgendwelche Änderungen der
-   Eingabe reagieren, wodurch die Schaltung unbrauchbar wird. 
-
+   Die Hysteresegleichung stellt eine potenzielle Einschränkung des
+   Verhältnisses :math:`R1` / :math:`R2` für einen Schmitt-Trigger dar: Sofern :math:`R1` < :math:`R2` fehlt,
+   ist die Hysteresegrenze größer als die Hälfte des Peak-to-Peak-Ausgangsspannungshubbereichs
+   des Vergleichers und je nach Referenzspannungswert kann die eine oder
+   andere der Schmitt-Triggergrenzen außerhalb des Bereichs der Ausgangsspannung
+   liegen. Angenommen, der Eingangssignalspannungsbereich ist ebenfalls auf den
+   Ausgangshubbereich beschränkt (d.h. die Stromversorgungsschienen), dann könnte
+   der Ausgang der Schaltung blockieren und nicht mehr auf Änderungen im Eingang
+   reagieren, was die Schaltung unbrauchbar macht.
 
 Verfahren
 ---------
 
 
 Fügen Sie die beiden positiven Rückkopplungswiderstände zu Ihrer
-Schaltung hinzu, wie in Abbildung 8 gezeigt. Verwenden Sie Werte für
-R2 = 100 KΩ und R1 gleich 10 KΩ. Unter Verwendung von IN2 wiederum die
-Ausgangsquadratwelle beobachten, aber den Pegel der
-Eingangsdreieckwelle notieren, wenn der Ausgang den Pegel von niedrig
-zu hoch und von hoch zu niedrig ändert. Erkläre deine
-Ergebnisse. Versuchen Sie einen Wert für R2 kleiner als
-R1. Funktioniert die Schaltung noch?
+Schaltung hinzu, wie in :numref:`18_fig_08` dargestellt. Verwenden Sie Werte für
+:math:`R2 = 100 k /Omega` und :math:`R1 = 10 k /Omega`. Mit IN2 beobachten Sie erneut
+die Ausgangsrechteckwelle, notieren Sie aber den Pegel der Eingangsdreieckwelle,
+wenn der Ausgang den Pegel von niedrig nach hoch und hoch nach niedrig ändert.
+Versuchen Sie einen Wert für :math:`R2` kleiner als :math:`R1`.
+Funktioniert die Schaltung noch?
 
 
-1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 bis x1 und
-   IN2 bis x10
+1. Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x1 und
+   IN2 auf x10
    
-2. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
-3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Menü OUT1
-   settings den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
-   setzen. Wählen Sie im Wellenform-Menü DREIECK,
+3. Zum Anlegen der Eingangsspannung :math:`V_{in}` im Einstellungsmenu OUT1
+   den Amplitudenwert auf 0,5 V und den DC-Offset auf 0,5 V
+   setzen. Wählen Sie im Wellenform-Menü TRIANGLE,
+   Deaktivieren Sie den SHOW-Button und wählen Sie Enable.
    
-   Deaktivieren Sie den SHOW-Button und wählen Sie enable.
-   
-4. Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf 0,5 V
+4. Stellen Sie im OUT2-Einstellungsmenu den Amplitudenwert auf 0,5 V
    ein, wählen Sie im Wellenformmenü die Option DC, deaktivieren Sie
-   die Option SHOW und wählen Sie enable.
+   die Option SHOW und wählen Sie Enable.
    
 5. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 200 mV / div eingestellt ist (Sie können V /
-   div einstellen, indem Sie den gewünschten Kanal auswählen und die
+   dass IN1 V/div auf 200 mV/div eingestellt ist (Sie können V/div
+   einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
-6. Stellen Sie sicher, dass IN2 V / div am linken unteren
-   Bildschirmrand auf 500mV / div eingestellt ist (Sie können V / div
+6. Stellen Sie sicher, dass IN2 V/div am linken unteren
+   Bildschirmrand auf 500 mV/div eingestellt ist (Sie können V/div
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
@@ -436,10 +407,10 @@ R1. Funktioniert die Schaltung noch?
 8. Stellen Sie im IN2-Einstellungsmenü die Sondendämpfung auf x10 und
    den Offsetpegel auf -1000mV ein
    
-9. Wählen Sie im Menü TRIGGER settings die Quelle IN2, wählen Sie die
+9. Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
    positive Flanke und stellen Sie den Triggerpegel auf 2V ein
    
-10. Setze t / div Wert auf 200us / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
+10. Setze t/div Wert auf 200 us/div (Du kannst t/div mit horizontalen +/- Kontrollen einstellen)
 
 
 .. figure:: img/ Activity_18_Fig_10.png
@@ -449,22 +420,22 @@ R1. Funktioniert die Schaltung noch?
    Schmitt Hysterese und Ausgangssignal
 
    
-Vergleichen Sie die Ergebnisse aus Abbildung 10 und Abbildung 4. Sehen
-Sie sich die Pegel von IN1 an, wenn IN2 hoch und niedrig wird.
+Vergleichen Sie die Ergebnisse aus :numref:`18_fig_10` und :numref:`18_fig_04`.
+Betrachten Sie die Pegel von IN1, wenn IN2 hoch und runter geht.
+
+Um zu sehen, ob sich die durch das Eingangsrauschen verursachte Verzögerung
+geändert hat, zoomen Sie erneut in die fallende und steigende Flanke der
+Ausgangsrechteckwelle, indem Sie die horizontale Position und die Zeit pro Division
+einstellen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie die Übergänge
+oder hat er diese Verzögerung nicht mehr?
 
 
-Um zu sehen, ob sich die durch das Eingangsrauschen verursachte
-Verzögerung geändert hat, zoomen Sie erneut in die fallenden und
-steigenden Flanken der Ausgangsquadratwelle, indem Sie die Einstellung
-für die horizontale Position und die Zeit pro Teilung
-anpassen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie der
-Übergang oder hat er diese Verzögerung nicht mehr?
 
 
-1. Wählen Sie im Menü TRIGGER settings die Quelle IN2, wählen Sie die
+1. Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
    positive Flanke, NORMAL und setzen Sie den Triggerpegel auf 2V
    
-2. Setze t / div Wert auf 5us / div (Du kannst t / div mit
+2. Setze t/div Wert auf 5 us/ iv (Du kannst t/div mit
    horizontalen +/- Kontrollen einstellen)
    
 
@@ -475,6 +446,5 @@ anpassen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie der
    Schaltgeräusch mit Hysterese
 
    
-Wie Sie in Abbildung 11 sehen können, ist bei der Verwendung von
-Hysterese kein Schaltgeräusch vorhanden. Vergleichen Sie Abbildung 6
-und Abbildung 11.
+Wie Sie aus :numref:`18_fig_11` ersehen können, ist bei Verwendung der Hysterese
+kein Schaltrauschen vorhanden. Vergleichen Sie :numref:`18_fig_06` und :numref:`18_fig_11`.
