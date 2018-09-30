@@ -302,7 +302,7 @@ die Hystereselücke :math:`V_{hist} = V_{th+} - V_{th-}` zu überschreiten und e
 Umkehrung des Ausgangszustands bewirken. Wenn der Hysteresespalt groß genug
 ist, kann das System vollständig undurchlässig für das Rauschen des
 Eingangssignals gemacht werden, wodurch die störenden Ausgangspegel der
-grundlegenden Vergleichsschaltung eliminiert werden (:numref:`18_fig_0`).
+grundlegenden Vergleichsschaltung eliminiert werden (:numref:`18_fig_01`).
 
 
 Berechnung des Schwellenwertes
@@ -335,7 +335,7 @@ Für den AD8561 mit :math:`+2,5 V` Spannungsversorgung und Pull-up-Widerstand,
 beträgt :math:`V_{high} - V_{low} \approx 2,3 V`. Da das andere Ende des Spannungsteilers (unten bei :math:`R1`)
 mit :math:`V_{ref} = 0,5 V` verbunden ist, werden die Schwellenspannungen :math:`V_{th_{high}} und V_{th_{low}}`
 um :math:`0,5 V` (:math:`V_{ref}`) zentriert, vorausgesetzt, dass :math:`V_{high}` und :math:`V_{low}` mehr oder weniger
-um :mazh:`0,5 V` zentriert sind). Das Anschließen des unteren Teils von :math:`R1` an eine andere
+um :math:`0,5 V` zentriert sind). Das Anschließen des unteren Teils von :math:`R1` an eine andere
 Spannungs-Referenzquelle und nicht an die mittlere Versorgung hat keinen Einfluss
 auf die Hysterese, sondern zentriert diese um einen Schwellenwert, der proportional
 zur neuen Referenzspannung ist. Tatsächlich könnte der negative Eingangspin des
