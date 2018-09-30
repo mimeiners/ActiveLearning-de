@@ -4,65 +4,55 @@ Diodes und Jupyter Notebook Beispiel
 Zielsetzung
 -----------
 
-Der Zweck dieser Aktivität besteht darin, den Strom gegen die Spannung
-zu untersuchen Eigenschaften von verschiedenen Festkörper - PN -
-Übergangsdioden, wie z konventionelle Si - Diode, die Schottky -
-Diode, die Zener - Diode und Leuchtdiode (LED).
+Ziel dieser Übung ist es, die Strom-/Spannungseigenschaften verschiedener
+PN-Halbleiterdioden wie der konventionellen Si-Diode, der Schottky-Barrierediode,
+der Zenerdiode und der lichtemittierenden Diode (LED) zu untersuchen.
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Jupyter: http://jupyter.org/index.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Notebook: http://jupyter.org/index.html
 
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht.
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch
-wenn man sich auf die Verbindungen zum Red Pitaya STEMlab Board bezieht
-Hardware_.
+Die Erweiterungsstecker-Pins für die Spannungsversorgung **-3,3V** und **+3,3V** sind in der Dokumentation_ dargestellt.
 
-Erweiterungssteckerstifte für **-3.3V** und **+3.3V** Spannung
-Versorgung finden Sie in der Dokumentation here_.
-
-Oscilloscope_ & Signal_ generator_ Anwendung wird zum Generieren verwendet
-und Beobachten von Signalen auf der Schaltung.
+Die Oszilloskop_ und Signalgeneratoranwendung_ wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
 
 Hintergrund
 -----------
 
-Die PN-Sperrschichtdiode ist eine Vorrichtung, die üblicherweise in
-der Schaltung verwendet wird Anwendungen wie Rektifikation, wo Strom
-fließen darf nur eine Richtung. Wenn die Diode in Silizium hergestellt
-wird, die Vorwärtsspannungsabfall beträgt typischerweise 0,7 V und
-das :math:`{V_D}` vs. :math:`{I_D}` - Charakteristik in Bezug auf
-Diodenspannung und -strom kann durch eine exponentielle Beziehung
-beschrieben werden: 
-
+Die PN-Sperrschichtdiode ist ein el. Bauelement, das häufig in Schaltungsanwendungen
+wie der Gleichrichtung verwendet wird, bei denen der Strom nur in eine
+Richtung fließen darf. Wenn die Diode aus Silizium hergestellt wird, liegt die
+Durchlassspannung typischerweise bei :math:`0,7 V` und die :math:`V_D` - zu - :math:`I_D` -Charakteristik
+in Bezug auf Diodenspannung und -strom kann durch eine exponentielle Beziehung beschrieben werden:
+ 
 .. math::
    :label: 19_eq_01
 
    I_D = I_S \left(e^{\frac{V_D q}{n k T}} - 1 \right)
 
-wo :math:`I_ {S}` und n sind Skalierungsfaktoren und :math:`kT / q`
-(25,4 mV bei Raumtemperatur) ist die sogenannte thermische
+wobei :math:`I_ {S}` und n Skalierungsfaktoren sind und :math:`kT / q`
+(:math:`25,4 mV` bei Raumtemperatur) ist die sogenannte thermische
 Spannung :math:`{V_T}`.
 
 
 Diode schematische Symbole
 --------------------------
 
-Jeder Typ von Diode hat ein spezifisches schematisches Symbol, das ist
-Variationen des herkömmlichen Diodensymbols links in
-Abbildung 1. Eine Art "Z" -förmige Kathode bezeichnet eine Zener-Diode wie in der
-zweites Symbol in Fig. 1. Eine "S" -förmige Kathode bezeichnet einen Schottky
-Diode wie im nächsten Symbol. Die Pfeile zeigen von der Diode weg
-bezeichnet eine LED wie im rechten Symbol. Pfeile zeigen in Richtung
-die Diode würde einen Photodioden-Lichtdetektor darstellen.
+Jeder Diodentyp hat ein spezifisches Schaltplansymbol, das Abweichungen
+vom herkömmlichen Diodensymbol darstellt, das links in Abbildung 1 dargestellt
+ist. Eine Art "Z"-förmige Kathode bezeichnet eine Zenerdiode wie im zweiten
+Symbol in :numref:`19_fig_01`. Eine "S"-förmige Kathode bezeichnet eine Schottky-Diode wie
+im nächsten Symbol. Die Pfeile, die von der Diode weg zeigen, kennzeichnen eine
+LED wie im rechten Symbol. Pfeile, die auf die Diode zeigen, würden einen Photodioden-Lichtsensor darstellen.
 
 
 .. figure:: img/Activity_19_Fig_01.png
@@ -74,21 +64,18 @@ die Diode würde einen Photodioden-Lichtdetektor darstellen.
    
 Zener-Dioden-Grundlagen
 -----------------------
-Eine Zener-Diode ist im Aufbau und in der Funktionsweise ähnlich
-Diode. Im Gegensatz zu einer herkömmlichen Diode, bei der die
-beabsichtigte Verwendung ist Strom in umgekehrter Richtung verhindern,
-wird meistens eine Zenerdiode verwendet im umgekehrten Bereich
-oberhalb der Durchbruchspannung. Es ist :math:`I` vs,
-:math:`V` -Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch 
-das Einstellen der Dotierung der P- und N-Seiten der Kreuzung ist es
-möglich, eine Zener-Diode zu entwerfen, die irgendwo aufbricht
-von ein paar Volt bis zu einigen hundert Volt. Siehe Abbildung 2. In diesem
-Durchbruch oder Zener-Bereich wird die Diodenspannung bleiben
-über einen weiten Bereich von Strömen ungefähr konstant. Das
-maximales Sperrspannungspotential, das vorher angewendet werden kann
-Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
-(PIV) oder die Spitzensperrspannung (PRV).
 
+Eine Zenerdiode ist in Aufbau und Betrieb ähnlich wie eine gewöhnliche Diode.
+Im Gegensatz zu einer herkömmlichen Diode, bei der der Zweck darin besteht,
+Strom in umgekehrter Richtung zu verhindern, wird eine Zenerdiode meist im
+umgekehrten Bereich oberhalb der Durchbruchspannung eingesetzt. Die :math:`I` vs. :math:`V` -Kennlinie
+ist ähnlich wie bei herkömmlichen Dioden. Durch die Einstellung der Dotierung
+der P- und N-Seite der Verbindung ist es möglich, eine Zenerdiode zu entwerfen,
+die bei einigen Volt bis einigen hundert Volt zusammenbricht. Siehe :numref:`19_fig_02`.
+In diesem Durchbruch- oder Zenerbereich bleibt die Diodenspannung über einen weiten
+Strombereich annähernd konstant. Das maximale Umkehrvorspannungspotential, das vor
+dem Betreten des Zenerbereichs angelegt werden kann, wird als Peak Inverse Voltage (PIV)
+oder Peak Reverse Voltage (PRV) bezeichnet.
 
 .. figure:: img/Activity_19_Fig_02.png
    :name: 19_fig_02
@@ -96,51 +83,44 @@ Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
 
    Vorwärts- und Rückwärts-Zenerdiode :math:`I/V` -Charakteristik
    
-
-Bei Spannungen oberhalb des Ausbruchsbeginns wurde ein Anstieg angewendet
-Spannung wird dazu führen, dass mehr Strom in der Diode fließt, aber die Spannung
-über die Diode bleibt fast bei :math:`V_Z`. Eine Zener-Diode
-im Rückwärtsbetrieb betriebene Breakdown kann eine Referenzspannung für liefern
-Systeme wie Spannungsregler oder Spannungsvergleicher.
+Bei Spannungen über dem Durchbruchbeginn führt ein Anstieg der angelegten
+Spannung dazu, dass mehr Strom in der Diode fließt, aber die Spannung über
+der Diode bleibt sehr nahe bei :math:`V_Z`. Eine Zenerdiode, die im
+Rückwärtsdurchbruch betrieben wird, kann eine Referenzspannung für Systeme
+wie Spannungsregler oder Spannungskomparatoren liefern.
 
 
 Schottky-Dioden-Grundlagen
 --------------------------
 
-Eine Schottky-Diode verwendet einen gleichrichtenden Metall-Halbleiter
-Verbindung, die durch Plattieren, Verdampfen oder Sputtern von einer Vielzahl gebildet wird
-von Metallen auf n-Typ- oder p-Typ-Halbleitermaterial. Allgemein,
-Im Handel sind Silizium vom n-Typ und GaAs vom n-Typ verwendet
-Schottky-Dioden. Die Eigenschaften einer in Vorwärtsrichtung vorgespannten Schottky-Barriere
-Dioden werden durch Majoritätsträgerphänomene bestimmt. Eine herkömmliche PN
-Die Eigenschaften der Sperrschichtdiode werden durch Minorität bestimmt
-Träger. Schottky-Dioden sind Majority-Carrier-Geräte, die sein können
-schnell umgeschaltet von Vorwärts- zu Sperrspannung ohne Minoritätsträger
-Speichereffekte.
+Die Schottky-Barrierediode verwendet einen gleichrichtenden Metall-Halbleiter-Übergang,
+der durch Beschichten, Verdampfen oder Kathodisieren eines aus einer Vielzahl von
+Metallen auf n- oder p-Halbleitermaterial gebildet wird. Im Allgemeinen werden n-Typ
+Silizium und n-Typ GaAs in handelsüblichen Schottky-Dioden verwendet. Die Eigenschaften
+einer vorwärtsgerichteten Schottky-Barrierediode werden durch die meisten
+Trägerphänomene bestimmt. Die Eigenschaften einer herkömmlichen PN-Übergangsdiode
+werden durch Minderheitsträger bestimmt. Schottky-Dioden sind Majoritätetenträgerbauelemente,
+die schnell von Vorwärts- auf Rückwärtsvorspannung umgeschaltet werden können,
+ohne dass Minoritätenträgerspeichereffekte auftreten.
 
-Der normale Strom gegen Spannung :math:`I/V` -Kurve einer Schottky-Barriere
-Diode ähnelt der einer PN-Diode mit dem folgenden
-Ausnahmen:
+Die Normalstrom-/Spannungs-:math:`I/V` -Kurve einer Schottky-Barrierediode ähnelt der einer
+PN-Übergangsdiode mit den folgenden Ausnahmen:
 
 1. Die Durchbruchspannung einer Schottky-Diode ist niedriger
    und der Sperr-Leckstrom ist höher als der eines PN-Übergangs
    Diode hergestellt unter Verwendung des Halbleitermaterials mit dem
    gleichen spezifischen Widerstand. 
    
-2. Die Vorwärtsspannung bei einem bestimmten Vorwärtsstrom ist auch niedriger für
-   eine Schottky-Diode als für eine PN-Diode. Beispielsweise,
-   bei 2 mA Durchlassvorspannung eine Silizium-Schottky-Diode mit
-   niedriger Sperrschicht wird eine Vorwärtsspannung von ~ 0,3 Volt
-   haben, während ein Silizium PN Die Sperrschichtdiode hat eine
-   Spannung von ~ 0,7 Volt. Das ist niedriger Vorwärtsspannungsabfall
-   kann die Verlustleistung in der Diode durch abschneiden mehr als
-   die Hälfte. Diese Energieeinsparung kann sehr bedeutend sein, wenn
-   Die Dioden müssen große Vorwärtsströme führen. Die jetzige 
-   vs. Spannung ( :math:`I / V`) Beziehung für eine Schottky-Diode
-   ist durch die folgende Gleichung gegeben, die als Richardson bekannt ist
-   Gleichung. Der Hauptunterschied zur herkömmlichen Diode
-   Gleichung ist in :math:`I_S` mit dem Zusatz der modifizierten
-   Richardson-Konstante :math:`A ^ *`.
+2. Die Durchlassspannung bei einem bestimmten Durchlassstrom ist auch bei einer
+   Schottky-Diode niedriger als bei einer PN-Übergangsdiode. So hat beispielsweise
+   eine Schottky-Diode mit niedriger Sperrschicht bei :math:`2 mA` Vorwärtsvorspannung eine
+   Durchlassspannung von :math:`\approx 0,3 \, Volt`, während eine PN-Übergangsdiode aus Silizium eine
+   Spannung von :math:`\approx 0,7 Volt` hat. Dieser geringere Vorwärtsspannung kann die in der Diode
+   abgegebene Leistung um mehr als die Hälfte reduzieren. Diese Energieeinsparung kann
+   sehr bedeutend sein, wenn die Dioden große Durchlassströme leiten müssen. Die Beziehung
+   zwischen Strom und Spannung (:math:`I/V`) für eine Schottky-Diode wird durch die folgende Gleichung,
+   die als Richardson-Gleichung bekannt ist, bestimmt. Der primäre Unterschied zur herkömmlichen
+   Diodengleichung liegt im IS mit der Ergänzung der modifizierten Richardson-Konstante :math:`A^*`.
    
 
 .. math::
@@ -154,16 +134,16 @@ Ausnahmen:
    I_S = A A^* T^2 e^{-\frac{q \phi_B}{kT}}
 
    
-Woher:
+Wo:
 
-* :math:`A` = Verbindungsbereich
+* :math:`A` = Sperrbereich
   
 * :math:`A^*` = modifizierte Richardson-Konstante (der Wert variiert
   je nach Material und Dotierstoff) = :math:`110 A /(^{\circ}K^2 - cm^2)` für Si vom n-Typ
   
-* :math:`T` = absolute Temperatur in :math:`K` (Kelvins)
+* :math:`T` = absolute Temperatur in :math:`K` (Kelvin)
   
-* :math:`q` = elektronische Ladung = :math:`1.6E-19 \, C`
+* :math:`q` = elektrische Ladung = :math:`1.6E-19 \, C`
   
 * :math:`\phi_B` = Barrierenhöhe in Volt
 
@@ -177,18 +157,15 @@ Woher:
 LED-Grundlagen
 --------------
 
-Die LED ist eine Sperrdiode, die bei Vorwärtsbetrieb Licht emittiert
-voreingenommen. Tatsächlich emittieren alle PN-Übergangsdioden
-Photonen, wenn sie vorwärts gehen Voreingenommen ist es nur, dass die
-Photonen im Infrarotband liegen und die Die physikalische Form der
-Diode lässt die Photonen nicht austreten Paket. Um die Eigenschaft der
-Emission von sichtbarem Licht zu erreichen, ist es notwendig, um die
-LED aus Materialien mit größeren Bandlücken herzustellen anders als
-Silizium. Infolgedessen sinkt der Vorwärtsspannungsabfall der LED ist
-größer als 0,7 V; in der Regel in der Größenordnung von 1,5 bis 2 Volt
-abhängig auf der Wellenlänge des emittierten Lichts. Die LED ist
-ebenfalls in einem eingebaut spezielle transparente Verpackung wie in
-Abbildung 3 gezeigt.
+Die LED ist eine Verbindungsdiode, die bei Vorwärtsvorspannung Licht erzeugt.
+Tatsächlich strahlen alle PN-Übergangsdioden Photonen aus, wenn sie vorwärts
+gerichtet sind, es ist nur, dass sich die Photonen im Infrarotband befinden und die
+physikalische Form der Diode es den Photonen nicht erlaubt, aus dem Gehäuse zu entweichen.
+Um die Eigenschaft der sichtbaren Lichtemission zu erreichen, ist es notwendig, die LED aus
+Materialien mit größeren Bandlücken als Silizium herzustellen. Infolgedessen ist der
+Durchlassspannung der LED größer als :math:`0,7 /, V`; normalerweise in der Größenordnung von :math:`1,5 - 2 /, Volt`,
+abhängig von der Wellenlänge des ausgestrahlten Lichts. Die LED ist ebenfalls in einem
+speziellen transparenten Gehäuse eingebaut, wie in :numfig:`19_fig_03` dargestellt.
 
 
 .. figure:: img/Activity_19_Fig_03.png
@@ -197,38 +174,32 @@ Abbildung 3 gezeigt.
 
    Leuchtdioden
 
-Eine LED ist ein Halbleitergerät, das elektromagnetische Strahlung emittiert
-bei optischen und Infrarotfrequenzen. Das Gerät ist eine PN-Diode
-hergestellt aus Halbleitern vom p-Typ und n-Typ, gewöhnlich GaAs, GaP
-oder SiC. Sie geben nur dann Licht ab, wenn eine externe angelegte
-Spannung verwendet wird Vorspannung die Diode über einen minimalen
-Schwellenwert. Der Gewinn in die von dieser Spannung abgegebene
-elektrische potentielle Energie reicht dazu aus erzwingen, dass
-Elektronen aus dem n-Typ-Material über die Sperrschicht und in die
-p-Typ-Region. Diese Schwellenspannung für den Beginn des Stromflusses
-über die Kreuzung und die Produktion des Lichts ist :math:`V_0`. Die
-Emission von Licht erfolgt nach Elektronen Eintritt in die p-Region
-(und Löcher in die n-Region). Diese Elektronen sind eine kleine
-Minderheit, die von Löchern umgeben ist (im Wesentlichen die
-Antiteilchen der Elektronen) und sie werden schnell ein Loch finden
-rekombinieren mit. Energetisch entspannt sich das Elektron vom
-Erregten Zustand (Leitungsband) zum Grundzustand (Valenzband). Die
-Dioden Man nennt das Licht emittieren, weil die Energie vom Elektron
-abgegeben wird wenn es sich entspannt, wird es als Photon
-emittiert. Über dem Schwellenwert, der Strom und Lichtleistung steigen
-exponentiell mit der Vorspannung an über die Diode. Die Quanten der
-Energie oder des Photons haben eine Energie :math:`E = hf`. Die
-Beziehung zwischen der Photonenenergie und der Einschaltspannung
-:math:`V_0`, ist: 
-
-      
+Eine LED ist eine Halbleitervorrichtung, die elektromagnetische Strahlung bei
+optischen und Infrarotfrequenzen abgibt. Das Bauelement ist eine PN-Übergangsdiode
+aus p- und n-Halbleitern, meist GaAs, GaP oder SiC. Sie strahlen nur dann Licht aus,
+wenn eine externe Spannung verwendet wird, um die Diode über einen minimalen
+Schwellenwert hinaus vorzuspannen. Der Gewinn an elektrischer Potentialenergie,
+der durch diese Spannung geliefert wird, ist ausreichend, um Elektronen zu zwingen,
+aus dem n-Typ-Material, über die Verbindungsbarriere und in den p-Typ-Bereich zu fließen.
+Diese Schwellenspannung für den Beginn des Stromflusses über die Verbindung und die
+Erzeugung von Licht ist :math:`V_0`. Die Lichtemission erfolgt, nachdem Elektronen in
+die p-Region (und Löcher in die n-Region) gelangt sind. Diese Elektronen sind eine
+kleine Minorität, die von Löchern umgeben ist (im Wesentlichen die Antiteilchen der
+Elektronen) und sie werden schnell ein Loch finden, mit dem sie sich wieder verbinden
+können. Energetisch entspannt sich das Elektron aus dem angeregten Zustand (Leitungsband)
+in den Grundzustand (Valenzband). Die Dioden werden als lichtemittierend bezeichnet,
+da die vom Elektron beim Entspannen abgegebene Energie als Photon abgegeben wird.
+Oberhalb des Schwellenwerts steigt die Strom- und Lichtleistung exponentiell mit der
+Vorspannung über der Diode an. Die Quanten von Energie oder Photon haben eine Energie
+:math:`E = hf`. Das Verhältnis zwischen der Photonenenergie und der Einschaltspannung :math:`V_0` ist:
+    
 .. math::
    :label: 19_eq_4
    
    eV_0 = E_g = hf = \frac{hc}{\lambda}
 
    
-woher:
+wo:
 
 * :math:`E_g` ist die Größe der Energielücke
   
@@ -239,22 +210,20 @@ woher:
   
 * :math:`c` ist die Lichtgeschwindigkeit
   
-* :math:`e` ist die elektronische Ladung
+* :math:`e` ist die elektrische Ladung
   
-* :math:`h` ist Plancks Konstante
+* :math:`h` ist Planck - Konstante
 
   
-pn-Flächendiode I/V-Charakteristik
-----------------------------------
+pn-Übergangsdiode :math:`I/V` - Charakteristik
+----------------------------------------------
 
-Die Strom-Spannungs-Kennlinie der pn-Diode kann gemessen werden mit
-dem STEMlab und den folgenden Verbindungen in Abbildung 4. Stellen Sie
-das Steckbrett mit dem OUT1-Ausgang des Generators ein an einem Ende
-des Widerstands angebracht. Das andere Ende des Widerstands ist
-verbunden mit einem Ende der Diode gemessen wie in der Diagramm. Die
-Eingangskanäle IN1 und IN2 sind ebenfalls unterschiedlich verbunden
-beendet den Widerstand, daher werden Diodenstrom und -spannung
-angegeben wie:
+Die Strom-/Spannungseigenschaften der PN-Übergangsdiode können mit dem STEMlab
+und den folgenden in :numref:`19_fig_04` dargestellten Anschlüssen gemessen werden.
+Richten Sie die Steckplatine mit dem Generator OUT1-Kanalausgang an einem Ende
+des Widerstandes ein. Das andere Ende des Widerstandes ist mit einem Ende der zu
+messenden Diode verbunden, wie im Diagramm dargestellt. Die Eingangskanäle IN1
+und IN2 sind ebenfalls unterschiedlich angeschlossen, daher werden Diodenstrom und -spannung als:
 
 .. math::
 
@@ -269,32 +238,29 @@ angegeben wie:
 
    Anschlussplan für Dioden I- und V-Kurven
 
-Zur Messung der Strom-Spannungs-Kennlinie des PN-Übergangs
-Diode OUT1 Generator sollte als 1kHz Dreieckswelle mit 1 konfiguriert
-werden V max und 0 V min Werte. Zum Messen: math: VI-Kurve und
-XY-Kurve wird benötigt, wenn die x-Achse die Diodenspannung darstellt 
-:math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_1`.
-Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
+Zur Messung der Strom-/Spannungseigenschaften der PN-Übergangsdiode sollte
+der OUT1-Generator als 1kHz-Dreieckswelle mit :math:`1 V` max und :mazh:`0 V` min Werten
+konfiguriert werden. Für die Messung der :math:`VI` -Kurve ist ein "XY"-Plot erforderlich,
+wobei die x-Achse die Diodenspannung IN2 und die y-Achse einen
+Diodenstrom :math:`(IN1-IN2)/R1` darstellt. Für diese Aufgabe verwenden wir die
+Webanwendung Jupyter Notebook.
 
 .. note::
-   Das Jupyter_ Notebook_ ist eine Webanwendung, die es Ihnen
-   ermöglicht erstellen und teilen Sie Dokumente, die Live-Code,
-   Gleichungen, Visualisierungen und erklärender Text. Sie haben auch
-   die Unterstützung sichergestellt für die Jupyter-Anwendung mit Red
-   Pitaya-Bibliotheken aktivieren Kontrolle aller Features der STEMlab
-   Boards wie: Signal Erfassung, Signalerzeugung, digitale
-   Signalsteuerung, Kommunikation usw. Das Jupyter Notebook wird auf
-   die gleiche Weise gestartet wie alle anderen Anwendungen. Nach dem
-   Start von Jupyter Anwendung ein Web basiertes Notizbuch ist
-   geöffnet. Diese Kombination des Notebooks, STEMlab und Python
-   Features macht das STEMlab zu einem ausgezeichneten Werkzeug für
-   Prototyping und schnelle Programmierung. Seit Jupyter Notebook
-   ermöglicht Text, Gleichung und Bildbearbeitung ist dies ein
-   perfektes Werkzeug für Tutorials, Beispiele usw.
+   Das Jupyter Notebook_ ist eine Webanwendung, mit der Sie Dokumente erstellen
+   und freigeben können, die Live-Code, Gleichungen, Visualisierungen und erklärenden
+   Text enthalten. Sie haben auch die Unterstützung für die Jupyter-Anwendung mit Red
+   Pitaya-Bibliotheken sichergestellt, die die Steuerung aller Funktionen der STEMlab-Boards
+   ermöglichen, wie z.B.: Signalerfassung, Signalerzeugung, digitale Signalsteuerung,
+   Kommunikation usw. Das Jupyter Notebook wird auf die gleiche Weise gestartet wie alle
+   anderen Anwendungen. Nach dem Start der Jupyter-Anwendung wird ein webbasiertes Notebook
+   geöffnet. Diese Kombination aus Notebook, STEMlab und Python macht das STEMlab zu einem
+   hervorragenden Werkzeug für Prototyping und schnelle Programmierung. Da Jupyter Notebook
+   Text-, Gleichungs- und Bildbearbeitung ermöglicht, ist es ein perfektes Werkzeug für
+   Tutorials, Beispiele etc.
 
    
-Aber bevor Sie messen VI-Kurve sollten Sie Spannungen überprüfen
-Signale mit Oszilloskop & Signalgenerator Anwendung.
+Aber vor der Messung der VI-Kurve sollten Sie die Spannungssignale mit Hilfe
+von Oszilloskopen und Signalgeneratoren überprüfen.
 
 
 
@@ -311,7 +277,7 @@ Materialien
 Zeitbereichsmessungen
 ---------------------
 
-1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
+1. Bauen Sie die Schaltung aus :numref:`19_fig_04` auf dem Steckbrett auf
 
    .. figure:: img/Activity_19_Fig_05.png
       :name: 19_fig_05
@@ -320,26 +286,26 @@ Zeitbereichsmessungen
       Verbindungen auf dem Steckbrett
 
       
-2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
+2. Starten Sie die Oszilloskop & Signalgenerator - Anwendung
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, DC-Offset auf ein
-   0,5 V, um eine Dreieckswelle als Eingangsspannung anzulegen. Von dem
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,5 /, V`, DC-Offset auf ein
+   :math:`0,5 /, V`, um eine Dreieckswelle als Eingangsspannung anzulegen. Von dem
    Waveform-Menü TRIANGLE auswählen, SHOW-Button deaktivieren und auswählen
    aktivieren.
    
-4. Stellen Sie sicher, dass IN1 V / div am linken unteren Bildschirmrand steht
-   200mV / div (Sie können V / div einstellen, indem Sie den gewünschten Kanal und auswählen
+4. Stellen Sie sicher, dass IN1 :math:`V/div` am linken unteren Bildschirmrand steht
+   :math:`200 /, mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
    mit vertikalen +/- Kontrollen)
    
-5. Vergewissern Sie sich, dass IN2 V / div auf der linken unteren Seite des Bildschirms steht
-   200mV / div (Sie können V / div einstellen, indem Sie den gewünschten Kanal und auswählen
+5. Vergewissern Sie sich, dass IN2 :math:`V/div` auf der linken unteren Seite des Bildschirms steht
+   :math:`200 /, mV/div` (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal und auswählen
    mit vertikalen +/- Kontrollen)
    
-6. Setzen Sie t / div-Wert auf 200us / div (Sie können t / div mit horizontalem einstellen
+6. Setzen Sie :math:`t/div` -Wert auf :math:`200 /, us/div` (Sie können t / div mit horizontalem einstellen
    +/- Kontrollen)
    
-7. Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie
-   enable. math Spur mit Faktor R1 skaliert Diodenstrom
+7. Im Menü MATH settings IN1-IN2 einstellen und enable auswählen. Die mathematische Kurve,
+   skaliert mit dem Faktor :math:`R1`, stellt den Diodenstrom dar.
    
 
    .. figure:: img/Activity_19_Fig_06.png
@@ -349,22 +315,23 @@ Zeitbereichsmessungen
       Spannungen und Strom auf der Diode (zeitabhängig)
       
 
-Aus Abbildung 6 können wir sehen, dass die Diode bei der Spannung
-leitend wird darauf überschreiten Diodenspannung, die etwa 0,6 V ist. 
+Aus :numref:`19_fig_06` können wir sehen, dass die Diode anfängt zu leiten,
+wenn die Spannung an ihr die Schwellenspannung der Diode überschreitet,
+die etwa :math:`0,6 /, V` beträgt. 
 
-Außerdem ist der mit der MATH-Spur dargestellte Diodenstrom
-beobachtbar. Wir können deutlich sehen, dass, wenn die Diodenspannung
-unter 0,6 liegt der Diodenstrom ist 0A. Zu dem Zeitpunkt, zu dem die
-Diodenspannung 0,6 V überschreitet, beginnt die Diode Leiten und der
-Pfadstrom wird nur durch den Widerstand R1 begrenzt. 
+Außerdem ist der mit der MATH-Trace dargestellte Diodenstrom beobachtbar.
+Wir können deutlich sehen, dass, wenn die Diodenspannung unter :math:`0,6 /, V` liegt, der
+Diodenstrom :math:`0 /, A` beträgt. Zu einem Zeitpunkt, an dem die Diodenspannung größer
+als :math:`0,6 /, V` ist, beginnt die Diode zu leiten und der Pfadstrom wird nur durch den
+Widerstand :math:`R1` begrenzt. 
 
 
 Vorgehensweise - VI-Merkmalsmessungen
 -------------------------------------
 
-Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung. 
-Wie man Jupyter Notebook startet und ein neues Projekt erstellt, zeigt
-das Flussdiagramm in Abbildung 7. 
+Für diese Aufgabe verwenden wir die Webanwendung Jupyter Notebook. Wie Sie Jupyter
+Notebook starten und ein neues Projekt erstellen, ist in :numref:`19_fig_07` des
+Flussdiagramms dargestellt.
 
 .. figure:: img/Activity_19_Fig_07.png
    :name: 19_fig_07
@@ -372,15 +339,14 @@ das Flussdiagramm in Abbildung 7.
 
    Erstellen eines neuen Jupyter-Notebooks.
    
+Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren Sie
+den untenstehenden Code und führen Sie ihn aus. Der untenstehende Code erzeugt
+das gleiche Signal wie in :numref:`19_fig_06`, aber er zeichnet sie im XY-Diagramm auf.
+Für die Messung der :math:`VI` -Kurve ist ein "XY"-Plot erforderlich, wobei die x-Achse
+die Diodenspannung IN2 und die y-Achse einen Diodenstrom :math:`(IN1-IN2)/R1` darstellt. 
 
-Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
-kopieren und einfügen Code unten und führen Sie es aus. Code unten
-erzeugt das gleiche Signal wie von Abbildung 6, aber es wird sie in
-XY-Graphen darstellen. Zum Messen :math:`VI` Kurve ein "XY"
-Diagramm ist erforderlich, wo x-Achse Diode darstellt Spannung
-:math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_1`. 
-
-Kopieren Sie den Code von unten in die Zelle 1.
+.. note::
+   Kopieren Sie den Code von unten in die Zelle 1.
   
 .. literalinclude:: code/Activity_19_Code_01.py
    :language: python
@@ -395,15 +361,12 @@ von unten in es.
    :language: python
    :linenos:
 
-   
-Führen Sie Zelle 1 und Zelle 2 aus. note Zelle 2 ist eine
-Hauptschleife für die Akquisition und Neuplanung. Wenn Sie die
-Erfassung stoppen, fahren Sie einfach fort nur Zelle 2 zum erneuten
-Starten der Messungen. 
+Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
+für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen
+Sie einfach nur Zelle 2 aus, um die Messungen erneut zu starten. 
 
-
-Nach dem Ausführen des obigen Codes sollten Sie die Diode VI als
-charakteristisch erhalten ist in Abb. 8 dargestellt.
+Nach dem Ausführen des obigen Codes sollten Sie die Charakteristik der
+Diode :math:`VI` erhalten, wie in :numref:`19_fig_08` dargestellt.
 
 .. figure:: img/Activity_19_Fig_08.png
    :name: 19_fig_08
@@ -411,19 +374,17 @@ charakteristisch erhalten ist in Abb. 8 dargestellt.
 
    Didoes VI-Charakteristik gemessen mit Jupyter Notebook
 
-Aus der Abbildung 8 ist die typische Dioden-VI-Charakteristik
-ersichtlich. Von die Zahl 8 können wir sehen, wie die Spannung an der
-Diode ist steigend (von 0 bis 0,5 V) bleibt der Diodenstrom nahe Null
-bis Spannung erreicht Werte in der Nähe der Schwellenspannung (~ 0,6
-V). An diesem Punkt Diode ist "eingeschaltet" und der Pfad Strom
-(Diodenstrom) ist nur begrenzt durch Widerstand R1. In dem Fall, wenn
-die Diodenspannung abnimmt die VI-Kurve ist nicht die gleiche, was zu
-der Diodenhysterese führt. Oberer, höher Die Kurve aus Abbildung 8
-zeigt, dass nach dem Einschalten der Diode die Eine niedrigere
-Diodenspannung verursacht einen höheren Strom als in dem Fall, wenn
-die Diode wurde vorher "ausgeschaltet". Eine ideale Diode hätte das
-nicht Hysterese, d.h. der Diodenstrom wäre unabhängig von vorherigem 
-Diodenzustände aber nur auf der Diodenspannung.
+In der :numref:`19_fig_08` ist die typische :math:`VI` -Dioden-Kennlinie dargestellt.
+Aus der :numref:`19_fig_08` ist ersichtlich, dass bei steigender Spannung an der
+Diode (von :math:`0 - 0,5 /, V`) der Diodenstrom nahe Null bleibt, bis die Spannung Werte
+nahe der Schwellenspannung (:math:`\approx 0,6 /, V`) erreicht. An dieser Stelle wird die Diode
+"eingeschaltet" und der Wegstrom (Diodenstrom) wird nur durch den Widerstand :math:`R1`
+begrenzt. Falls bei abnehmender Diodenspannung die :math:`VI` -Kurve nicht gleich ist,
+führt dies zur Diodenhysterese. Die obere Kurve aus :numref:`19_fig_08` zeigt, dass die
+untere Diodenspannung nach dem "Einschalten" der Diode einen höheren Strom
+verursacht als bei der vorherigen "Abschaltung" der Diode. Eine ideale Diode hätte
+keine Hysterese, d.h. der Diodenstrom wäre unabhängig von früheren Diodenzuständen,
+sondern nur von der Diodenspannung.
 
 .. note::
-   Versuchen Sie zu beantworten, was die Diodenhysterese verursacht.
+   Versuchen Sie zu beantworten, was die Ursache der Diodenhysterese ist?
