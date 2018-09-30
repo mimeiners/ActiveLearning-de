@@ -165,7 +165,7 @@ Um die Eigenschaft der sichtbaren Lichtemission zu erreichen, ist es notwendig, 
 Materialien mit größeren Bandlücken als Silizium herzustellen. Infolgedessen ist der
 Durchlassspannung der LED größer als :math:`0,7 /, V`; normalerweise in der Größenordnung von :math:`1,5 - 2 /, Volt`,
 abhängig von der Wellenlänge des ausgestrahlten Lichts. Die LED ist ebenfalls in einem
-speziellen transparenten Gehäuse eingebaut, wie in :numfig:`19_fig_03` dargestellt.
+speziellen transparenten Gehäuse eingebaut, wie in :numref:`19_fig_03` dargestellt.
 
 
 .. figure:: img/Activity_19_Fig_03.png
@@ -239,7 +239,7 @@ und IN2 sind ebenfalls unterschiedlich angeschlossen, daher werden Diodenstrom u
    Anschlussplan für Dioden I- und V-Kurven
 
 Zur Messung der Strom-/Spannungseigenschaften der PN-Übergangsdiode sollte
-der OUT1-Generator als 1kHz-Dreieckswelle mit :math:`1 V` max und :mazh:`0 V` min Werten
+der OUT1-Generator als 1kHz-Dreieckswelle mit :math:`1 V` max und :math:`0 V` min Werten
 konfiguriert werden. Für die Messung der :math:`VI` -Kurve ist ein "XY"-Plot erforderlich,
 wobei die x-Achse die Diodenspannung IN2 und die y-Achse einen
 Diodenstrom :math:`(IN1-IN2)/R1` darstellt. Für diese Aufgabe verwenden wir die
