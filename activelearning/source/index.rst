@@ -23,6 +23,7 @@ Willkommen zu Red Pitaya's aktivem Lernen
    ./Activity_15_OpAmpGainBandwidthProduct
    ./Activity_16_DifferenceAmplifier
    ./Activity_17_CurrentSensingUsingDifferenceAmplifier
+   ./Activity_17_CurrentSensingUsingDifferenceAmplifier_error
    ./Activity_18_TheComparatorSchmittTrigger
    ./Activity_19_Diodes
    ./Activity_20_DiodeRectifiers
