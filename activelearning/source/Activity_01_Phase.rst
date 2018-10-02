@@ -25,7 +25,7 @@ Hintergrund
 Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen
 und passive Komponenten betrachten, die es uns ermöglichen, die
 Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden
-wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du
+wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Sie
 solltest mit der Gleichung vertraut sein:
 
 
@@ -38,13 +38,13 @@ zeitlichen Verlauf :math:`t` ein, und :math:`\theta` definiert einen
 Zeitversatz, der eine Phasenverschiebung in der Funktion definiert. 
 
 Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur
-Folge. Nehmen Sie zunächst die Zeitvariable :math:`t` als konstand an,
+Folge. Nehmen Sie zunächst die Zeitvariable :math:`t` als konstant an,
 sagen wir 1. Das Argument, :math:`\omega t`, ist jetzt nicht länger
 eine Funktion der Zeit. Mit :math:`\omega` im Bogenmaß, ergibt sich
 für :math:`\sin(\frac{\pi}{4})\approx 0.7071`.
 
 
-:math:`2\pi` im Bogenmaß entsricht :math:`360^{\circ}`, so
+:math:`2\pi` im Bogenmaß entsricht :math:`360^{\circ}`,
 so ergibt sich für :math:`\frac{\pi}{4}` im Bogemaß 
 :math:`45^{\circ}` bzw. :math:`\sin(45^{\circ}) = 0.7071` entsprechend.
 

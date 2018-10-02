@@ -28,7 +28,7 @@ Schaltung von :numref:`03_fig_01` lauten die Formeln der Spannungsteilung:
 .. math:: V_1 = V_S \frac{R_1}{R_1 + R_2}
    :label: 03_eq_01
 
-.. math:: V_2 &= V_S \frac{R_2}{R_1 + R_2}
+.. math:: V_2 = V_S \frac{R_2}{R_1 + R_2}
    :label: 03_eq_02
 
    
