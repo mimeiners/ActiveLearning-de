@@ -26,7 +26,7 @@ Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen
 und passive Komponenten betrachten, die es uns ermöglichen, die
 Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden
 wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Sie
-solltest mit der Gleichung vertraut sein:
+sollten mit der Gleichung vertraut sein:
 
 
 .. math:: f(t) = \sin(\omega t + \theta)
@@ -50,13 +50,14 @@ so ergibt sich für :math:`\frac{\pi}{4}` im Bogemaß
 
 
 Lassen Sie nun :math:`t` mit der Zeit variieren, wie es normalerweise
-der Fall ist. Wenn der Wert von :math:`\omega t` mit der Zit linear ändert,
-ergibt es eine Sinuswelle wie in Abb. 1 dargestellt. Da
-:math:`\omega t` von 0 bis :math:`2 \pi` geht, verläuft die Sinuswelle von 0 bis 1,
-fällt auf -1 und geht zurück auf die 0. Diesen Abschnitt nennt man ein Zyklus oder
-eine Periode :math:`T`, einer Sinuswelle. Die X-Achse ist die das
-zeitvareable Argument / Winkel von :math:`\omega t`, das von 0
-bis :math:`2\pi` variiert. 
+der Fall ist. Wenn der Wert von :math:`\omega t` sich mit der Zeit
+linear ändert, ergibt es eine Sinuswelle wie in :numref:`01_fig_01`
+dargestellt. Da :math:`\omega t` von 0 bis :math:`2 \pi` geht,
+verläuft die Sinuswelle von 0 bis 1, fällt auf -1 und geht zurück auf
+die 0. Diesen Abschnitt nennt man ein Zyklus oder eine Periode
+:math:`T`, einer Sinuswelle. Die X-Achse ist die das zeitvareable
+Argument / Winkel von :math:`\omega t`, das von 0 bis :math:`2\pi`
+variiert.
 
 Der Wert von :math:`\theta` ist in der in :numref:`01_fig_01` dargestellten
 Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
@@ -512,13 +513,13 @@ Was passiert, wenn Sie :math:`220 \Omega` Wert für R \ :sub:`2` \ einsetzen?
 
    RC-Schaltung an
    
-.. hint:: Für einen 1 μF-Kondensator wird wahrscheinlich ein
-	  Elektrolyt verwendet Kondensator.
+.. hint:: Für einen :math:`1\,\mu F` Kondensator verwenden Sie einen
+	  Elektrolytkondensator. 
 
 
 Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven
-Kondensator-Pin sollte die Spannung niemals negativ und auf dem
-negativen Pin (GND) niemals positiv sein.
+Anschluss sollte die Spannung niemals negativ und auf dem
+negativen Anschluss (GND) niemals positiv sein.
 
 
 Aus dem vorherigen Beispiel (RR-Schaltung) und den Einstellungen des
