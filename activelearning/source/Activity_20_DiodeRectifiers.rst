@@ -86,7 +86,7 @@ und :math:`V_{rec} = IN_2` dargestellt werden.
    Regler auswählen)
    
 6. Setzen Sie :math:`t/div` Wert auf :math:`200\,us/div` (Sie können :math:`t/div` mit
-   horizontalen +/- Kontrollen einstellen)
+   horizontalen +/- Regler einstellen)
    
 
 .. figure:: img/Activity_20_Fig_03.png
@@ -95,7 +95,7 @@ und :math:`V_{rec} = IN_2` dargestellt werden.
 
    Halbwellen-Diodengleichrichtermessungen
 
-Wie man in Abbildung 3 sehen kann, wird nur die positive Halbperiode des
+Wie man in :numref:`20_fig_03` sehen kann, wird nur die positive Halbperiode des
 Eingangssignals auf die Last übertragen. Dies bedeutet, dass die
 negative Halbperiode nicht an der Leistungsübertragung beteiligt ist.
 
