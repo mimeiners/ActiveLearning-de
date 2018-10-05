@@ -43,7 +43,7 @@ Einleitung
 
 Richten Sie die Steckplatine so ein, dass die Kanäle OUT1 und IN2 an einem Ende
 der Diode angebracht sind. Das andere Ende der Diode ist mit einem Ende des
-Lastwiderstandes :math:`1 \, k\Omega` verbunden, wie in :numref:`19_fig_02` dargestellt. Das andere Ende
+Lastwiderstandes :math:`1 \, k\Omega` verbunden, wie in :numref:`20_fig_02` dargestellt. Das andere Ende
 des Widerstandes ist mit der GND-Schiene verbunden. Der Eingang des Scope Kanals
 IN2 ist mit dem Ende des Widerstandes verbunden, der nicht mit der GND-Schiene verbunden ist.
 
