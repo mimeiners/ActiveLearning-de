@@ -5,32 +5,31 @@ Zielsetzung
 -----------
 
 
-Das Ziel dieses Experiments ist die Untersuchung von Halb- und
+Das Ziel dieser Übung ist die Untersuchung von Halb- und
 Vollwellen-Diodengleichrichtern, die zur Umwandlung von Wechselstrom
 in Gleichstrom verwendet werden. 
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signalgenerator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
+STEMlab - Board - Hardware_ beziehen.
 
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
+Oszilloskop_ & Signalgenerator_ Anwendung wird zum Erzeugen und
 Beobachten von Signalen auf der Schaltung verwendet. 
 
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
+- Red Pitaya STEMlab
   
-- Widerstand: 1 x 1 :math:`k \ Omega`
+- Widerstand: 1 x 1 :math:`k\Omega`
   
 - Kleinsignaldiode: 4 x (1N914 oder ähnlich)
 
@@ -39,60 +38,64 @@ Materialien
 Halbwellengleichrichter
 -----------------------
 
-Richtungen
+Einleitung
 ----------
 
-Stellen Sie das Steckbrett mit OUT1- und IN2-Kanälen auf, die an einem
-Ende der Diode angebracht sind. Das andere Ende der Diode ist mit
-einem Ende des 1 kΩ-Lastwiderstands verbunden, wie in 2 gezeigt. Das
-andere Ende des Widerstands ist mit der GND-Schiene verbunden. Der
-Eingang des Oszilloskopkanals IN2 ist mit dem Ende des Widerstands
-verbunden, der nicht mit der GND-Schiene verbunden ist. 
+Richten Sie die Steckplatine so ein, dass die Kanäle OUT1 und IN2 an einem Ende
+der Diode angebracht sind. Das andere Ende der Diode ist mit einem Ende des
+Lastwiderstandes :math:`1 \, k\Omega` verbunden, wie in :numref:`19_fig_02` dargestellt. Das andere Ende
+des Widerstandes ist mit der GND-Schiene verbunden. Der Eingang des Scope Kanals
+IN2 ist mit dem Ende des Widerstandes verbunden, der nicht mit der GND-Schiene verbunden ist.
 
 .. figure:: img/Activity_20_Fig_01.png
+   :name: 20_fig_01
+   :align: center
 
-   Abbildung 1: Anschlussplan für Halbwellen-Diodengleichrichter
+   Anschlussplan für Halbwellen-Diodengleichrichter
 
-Aus der obigen Konfiguration folgt, dass die Eingangswechselspannung
-und die gleichgerichtete "Gleichspannung" in der Oszilloskopanwendung
-als mathematisch dargestellt werden :math:`V_ {AC} = IN_1` und :math:`V_
-{rec} = IN_2`. 
+Aus der obigen Konfiguration folgt, dass die Eingangswechselspannung und die
+gleichgerichtete Gleichspannung im Scope als :math:`V_{AC} = IN_1`
+und :math:`V_{rec} = IN_2` dargestellt werden. 
 
 
-1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem Steckbrett
+1. Bauen Sie die Schaltung aus :numref:`20_fig_01` auf dem Steckbrett auf.
 
    
 .. figure:: img/Activity_20_Fig_02.png
+   :name: 20_fig_02
+   :align: center
 
-   Abbildung 2: Verbindungen auf dem Steckbrett
+   Verbindungen auf dem Steckbrett
 
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,9 V
-   und den DC-Offset auf 0 V ein, um die Eingangsspannung
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,9\,V`
+   und den DC-Offset auf :math:`0\,V` ein, um die Eingangsspannung
    anzulegen. Wählen Sie im Wellenformmenü SINE, Deaktivieren Sie den
-   SHOW-Button und wählen Sie enable.
+   SHOW-Button und wählen Sie Enable.
    
 4. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 200mV / div eingestellt ist (Sie können V /
-   div einstellen, indem Sie den gewünschten Kanal und die vertikalen
-   +/- Regler auswählen
+   dass IN1 :math:`V/div` auf :math:`200\,mV/div` eingestellt ist (Sie können
+   :math:`V/div` einstellen, indem Sie den gewünschten Kanal und die vertikalen
+   +/- Regler auswählen)
    
-5. Stellen Sie sicher, dass IN2 V / div am linken unteren
-   Bildschirmrand auf 200mV / div eingestellt ist (Sie können V / div
+5. Stellen Sie sicher, dass IN2 :math:`V/div` am linken unteren
+   Bildschirmrand auf :math:`200\,mV/div` eingestellt ist (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal und die vertikalen +/-
    Regler auswählen)
    
-6. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
+6. Setzen Sie :math:`t/div` Wert auf :math:`200\,us/div` (Sie können :math:`t/div` mit
    horizontalen +/- Kontrollen einstellen)
    
 
 .. figure:: img/Activity_20_Fig_03.png
+   :name: 20_fig_03
+   :align: center
 
-   Abbildung 3: Halbwellen-Diodengleichrichtermessungen
+   Halbwellen-Diodengleichrichtermessungen
 
-Wie man in Abbildung 3 sehen kann, wird die positive Halbperiode des
+Wie man in Abbildung 3 sehen kann, wird nur die positive Halbperiode des
 Eingangssignals auf die Last übertragen. Dies bedeutet, dass die
 negative Halbperiode nicht an der Leistungsübertragung beteiligt ist.
 
@@ -100,11 +103,11 @@ negative Halbperiode nicht an der Leistungsübertragung beteiligt ist.
 Fragen
 ------
 
-1. Warum ist der Spitzenwert der gleichgerichteten Ausgabe kleiner als
-   der Spitzenwert der AC-Eingabe und um wie viel? 
+1. Warum ist der Spitzenwert des gleichgerichteten Ausgangs kleiner als
+   der Spitzenwert des AC-Eingangs und um wie viel? 
 
-2. An welchem Punkt der Eingangswellenform wird die gleichgerichtete
-   Wellenform positiv, d. H. Etwas anderes als Null? 
+2. An welcher Stelle in der Eingangswellenform wird die gleichgerichtete
+   Wellenform positiv, d.h. etwas anderes als Null? 
 
 3. Was passiert, wenn die Richtung der Diode umgekehrt wird?
    Wiederholen Sie das Experiment mit umgekehrter Richtung der Diode. 
@@ -118,67 +121,69 @@ Hier untersuchen wir die Verwendung von zwei Dioden als Vollwellengleichrichter.
 Unter Verwendung von 1N914-Dioden wird das Steckbrett mit OUT1 an
 einem Ende der ersten Diode D1 und OUT2 an einem Ende der zweiten
 Diode D2 aufgebaut. Beide Dioden sollten in die gleiche Richtung
-weisen wie in 5 gezeigt. Das andere Ende jeder Diode ist mit einem
-Ende des 1 k & OHgr; Lastwiderstandes RL verbunden. Das andere Ende
-des Widerstands ist mit der GND V-Schiene verbunden.
+weisen wie in :numref:`20_fig_05` gezeigt. Das andere Ende jeder Diode ist mit einem
+Ende des :math:`1\,k\Omega`  Lastwiderstandes :math:`R_L` verbunden. Das andere Ende
+des Widerstands ist mit der GND - Schiene verbunden.
 
 
 .. figure:: img/Activity_20_Fig_04.png
+   :name: 20_fig_04
+   :align: center
 
-   Abbildung 4: Anschlussplan für Vollwellen-Diodengleichrichter
+   Anschlussplan für Vollwellen-Diodengleichrichter
 
    
-Verfahren
----------
+Durchführung
+------------
 
-1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
+1. Bauen Sie die Schaltung aus :numref:`20_fig_04` auf dem Steckbrett auf. 
 
    
 .. figure:: img/Activity_20_Fig_05.png
+   :name: 20_fig_05
+   :align: center
 
-   Abbildung 5: Verbindungen auf dem Steckbrett
+   Verbindungen auf dem Steckbrett
 
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
 
 3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf
-   0,9 V und den DC-Offset auf 0 V ein, um die Eingangsspannung
-   anzulegen. Wählen Sie im Wellenform-Menü SINE und aktivieren
-   Sie.
+   :math:`0,9\,V` und den DC-Offset auf :math:`0\,V` ein, um die Eingangsspannung
+   anzulegen. Wählen Sie im Wellenform-Menü SINE und wählen
+   Sie Enable. 
       
-4. Stellen Sie im Menü OUT2-Einstellungen den Amplitudenwert auf 0,9
-   V, DC-Offset auf 0 V, ** Phase auf 180 ° ** ein, um die
-   Eingangsspannung anzulegen. Aus dem Wellenformmenü
-   
-   Wählen Sie SINE, und wählen Sie Aktivieren.
+4. Stellen Sie im Menü OUT2-Einstellungen den Amplitudenwert auf
+   :math:`0,9\,V`, DC-Offset auf :math:`0\,V`, **Phase auf 180 °** ein, um die
+   Eingangsspannung anzulegen. Aus dem Wellenformmenü wählen Sie SINE, und wählen Sie Enable.
    
 5. Deaktivieren Sie im Einstellungsmenü der IN1 SHOW
    
-6. Stellen Sie sicher, dass IN2, OUT1 und OUT2 V / div auf der linken
-   Seite des Bildschirms auf 200mV / div eingestellt sind (Sie können
-   V / div einstellen, indem Sie die gewünschte Option auswählen
-   Kanal und mit vertikalen +/- Kontrollen
+6. Stellen Sie sicher, dass IN2, OUT1 und OUT2 :math:`V/div` auf der linken
+   Seite des Bildschirms auf :math:`200\,mV/div` eingestellt sind (Sie können
+   :math:`V/div` einstellen, indem Sie den gewünschten Kanal auswählen
+   und vertikale +/- Regler verwenden)
    
-7. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
-   horizontalen +/- Kontrollen einstellen)
+7. Setzen Sie :math:`t/div` Wert auf :math:`200\,us/div` (Sie können :math:`t/div` mit
+   horizontalen +/- Regler einstellen)
    
 8. Stellen Sie im Trigger-Einstellungsmenü die Triggerquelle auf IN2,
-   den Triggerpegel auf 0,2 V, den Triggermodus auf Normal und den
-   Triggeroffset auf -0,12 ms
+   den Triggerpegel auf :math:`0,2\,V`, den Triggermodus auf Normal und den
+   Triggeroffset auf :math:`-0,12\,ms` ein. 
    
 
 Wenn sowohl 0-Grad- als auch 180-Grad-Phasen des AC-Eingangssignals
 (OUT1 und OUT2) verfügbar sind, kann eine zweite Diode die fehlende
-Halbwelle des Eingangs füllen und das vollweggleichgerichtete Signal
-erzeugen. Wiederum ist die Vorwärtsspannung der Dioden offensichtlich,
-und die Ausgangswellenform wird aufgrund der
-Nicht-Null-Einschaltspannung der Dioden am Nulldurchgang nicht zu
-einem scharfen Punkt kommen.
-
+Halbwelle des Eingangs füllen und das vollwellige gleichgerichtete Signal
+erzeugen. Auch hier wird die Durchlassspannung der Dioden sichtbar und die
+Ausgangswellenform wird aufgrund der ungleich Null-Einschaltspannung der
+Dioden nicht zu einem scharfen Punkt am Nulldurchgang kommen.
 
 .. figure:: img/Activity_20_Fig_06.png
+   :name: 20_fig_06
+   :align: center
 
-   Abbildung 6: Vollweggleichrichtermessungen
+   Vollweggleichrichtermessungen
 
    
 Fragen
@@ -189,7 +194,7 @@ Fragen
    Dioden.
    
 2. Was passiert, wenn die Richtung einer Diode entgegengesetzt ist?
-   Wiederholen Sie den Versuch mit der umgekehrten Richtung einer
+   Wiederholen Sie den Versuch mit der umgekehrten Richtung der
    Diode (D1).
    
 3. Wie können sowohl 0-Grad- als auch 180-Grad-Phasen aus einer
@@ -201,39 +206,33 @@ Fragen
 Brückengleichrichter
 --------------------
 
-Hier untersuchen wir die Verwendung von vier Dioden als
-Brückengleichrichter.
-
-Brückengleichrichter ist ein Vollwellengleichrichter und wir sollten
-dieselben Signale wie in Abbildung 6 erwarten. Der Unterschied ist
-hier
-
-Brückengleichrichter füllen die negative Halbwelle ohne zusätzliche um
-180 Grad verschobene Spannungsquelle. Stattdessen Brückengleichrichter
-verwenden 4 Dioden, um Vollwellengleichrichter zu machen, ohne eine
-zusätzliche Spannungsquelle zu benötigen. 
-
+Hier untersuchen wir den Einsatz von vier Dioden als Brückengleichrichter.
+Brückengleichrichter ist ein Vollwellengleichrichter und wir sollten die gleichen
+Signale erwarten, wie in :numref:`20_fig_06` dargestellt. Der Unterschied besteht darin,
+dass der Brückengleichrichter die negative Halbwelle ohne zusätzliche um 180 Grad
+versetzte Spannungsquelle ausfüllt und stattdessen 4 Dioden verwendet, um einen
+Vollwellengleichrichter ohne zusätzliche Spannungsquelle herzustellen.
 
 .. figure:: img/Activity_20_Fig_07.png
+   :name: 20_fig_07
+   :align: center
 
-   Abbildung 7: Brückenvollwellen-Diodengleichrichter
-
+   Brückenvollwellen-Diodengleichrichter
 
 .. note::
-    In der Brückendiodenkonfiguration muss die "AC" -Seite
-    potentialfrei sein, d. H. Wir können keine DC-Erdungsreferenz von
-    unserem Signalgenerator-Ausgang (OUT1) zu der AC-Seite der
-    Diodenkonfiguration. Wenn wir dies tun, befinden sich die Punkte 3
-    und 4 (7) auf dem gleichen GND-Bezug, wodurch D3 effektiv
-    abgekürzt wird. Die Abkürzung von D3 wird im Fall einer negativen
-    OUT1-Halbwelle einfach durch diesen Punkt vorwärtspolarisiert D4,
-    Bypass-Stromfluss direkt durch D4 und nicht den Lastwiderstand
-    RL. Aus diesem Grund wird ein Trenntransformator benötigt, um die
-    gemeinsame Masse der "DC" -Seite der Diodenbrücke zu trennen. 
+   In der Brückendiodenkonfiguration muss die "AC"-Seite potentialfrei sein,
+   d.h. wir können keine DC-Masse-Referenz von unserem Signalgeneratorausgang
+   (OUT1) auf die AC-Seite der Diodenkonfiguration bringen. Wenn wir das tun,
+   werden die Punkte 3 und 4 (:numref:`20_fig_07`) auf der gleichen GND-Referenz liegen,
+   wodurch D3 effektiv abgekürzt wird. Die Abkürzung von D3 wird im Falle einer
+   negativen OUT1-Halbwelle einfach, an dieser Stelle vorwärts polarisiert D4
+   durchlaufen, den Stromfluss direkt durch D4 und nicht durch den Lastwiderstand :math:`R_L`
+   umgehen. Aus diesem Grund wird ein Trenntrafo benötigt, um die gemeinsame Masse
+   der "DC"-Seite der Diodenbrücke zu trennen.
 
-In Abbildung 8 ist die Brückengleichrichterkonfiguration mit
+In :numref:`20_fig_08` ist die Brückengleichrichterkonfiguration mit
 Transformator dargestellt. Dies ist die gebräuchlichste Verwendung des
-Brückengleichrichters. Wie aus der Abbildung 8 zu ersehen ist, sind
+Brückengleichrichters. Wie aus der :numref:`20_fig_08` zu ersehen ist, sind
 die Punkte 1 und 3 des Brückengleichrichters der Differenzspannung des
 Transformators ausgesetzt, was einen korrekten Betrieb des
 Gleichrichters ermöglicht. Punkt 3 wird nicht auf GND gelegt, wenn der
@@ -243,82 +242,80 @@ IN2-Fühler angeschlossen ist und D3 nicht überbrückt wird, da die "AC"
 
 
 .. figure:: img/Activity_20_Fig_08.png
+   :name: 20_fig_08
+   :align: center
 
-   Abbildung 8: Brückenvollwellen-Diodengleichrichter mit Transformator
+   Brückenvollwellen-Diodengleichrichter mit Transformator
 
    
 .. note::
    Hier haben wir einen 1: 6 Transformator verwendet. Die Auswahl des
    Transformators ist abhängig von den Spannungspegeln usw. Hier
    verwenden wir einen 1: 6-Wandler, um die Versorgungsspannung OUT1
-   (+/- 1V) zu erhöhen. Dieser Spannungsanstieg, d. H. Das
-   Transformatorverhältnis, beeinträchtigt nicht die Brückenoperation
-   selbst. Sie können 1: 1,1: 2 oder verschiedene
-   Übersetzungstransformatoren verwenden.
+   (:math:`+/-\, 1\,V`) zu erhöhen. Diese Spannungserhöhung, d.h. das Übersetzungsverhältnis,
+   hat keinen Einfluss auf den Brückenbetrieb selbst. Sie können 1:1,1:2 oder
+   verschiedene Verhältniswandler verwenden.
    
 
-Verfahren
----------
+Durchführung
+------------
 
-1. Baue die Schaltung aus Abbildung 8 auf dem Steckbrett
+1. Bauen Sie die  chaltung aus :numref:`20_fig_08` auf dem Steckbrett auf.
 
    
 .. figure:: img/Activity_20_Fig_09.png
+   :name: 20_fig_09
+   :align: center
 
-   Abbildung 9: Brückengleichrichter auf dem Steckbrett
+   Brückengleichrichter auf dem Steckbrett
 
    
 2. Stellen Sie die IN2-Sondendämpfung auf x10
 
 3. Starten Sie die Applikation Oszilloskop & Signalgenerator
    
-4. Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf 0,9 V,
-   DC-Offset auf 0 V und Frequenz auf 100 Hz ein, um die
+4. Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf :math:`0,9\,V`,
+   DC-Offset auf :math:`0\,V` und Frequenz auf :math:`100\,Hz` ein, um die
    Eingangsspannung anzulegen. Wählen Sie im Wellenformmenü SINE,
-   
-   Deaktivieren Sie SHOW und wählen Sie Aktivieren.
+   Deaktivieren Sie SHOW und wählen Sie Enable.
    
 5. Stellen Sie im IN2-Eingangsmenü die Sondendämpfung auf x10 ein
    
 6. Vergewissern Sie sich auf der linken Seite des Bildschirms, dass
-   IN1 auf 200mV / Div steht (Sie können V / Div einstellen, indem Sie
-   den gewünschten Wert auswählen
-   
-   Kanal und mit vertikalen +/- Kontrollen
+   IN1 auf :math:`200\,mV/Div` steht (Sie können :math:`V/Div` einstellen, indem Sie
+   den gewünschten Kanal auswählen und vertikale +/- Regler verwenden)
    
 7. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN2 auf 2V / Div eingestellt ist (Sie können V / Div
-   einstellen, indem Sie den gewünschten Wert auswählen
+   dass IN2 auf :math:`2\,V/Div` eingestellt ist (Sie können :math:`V/Div`
+   einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden)
    
-   Kanal und mit vertikalen +/- Kontrollen
-   
-8. Setze t / div Wert auf 2ms / div (Du kannst t / div mit
+8. Setze :math:`t/div` Wert auf :math:`2\,ms/div` (Du kannst :math:`t/div` mit
    horizontalen +/- Kontrollen einstellen)
    
 
 .. figure:: img/Activity_20_Fig_10.png
+   :name: 20_fig_10
+   :align: center
 
-   Abbildung 10: Brückengleichrichtermessungen
+   Brückengleichrichtermessungen
 
-   
 .. note::
-   Das in Fig. 10 gezeigte Signal IN1 ist das Spannungssignal auf der
-   Primärseite des Transformators (Fig. 8). Diese Spannung (IN1)
+   Das in :numref:`20_fig_10` gezeigte Signal IN1 ist das Spannungssignal auf der
+   Primärseite des Transformators (:numref:`20_fig_08`). Diese Spannung (IN1)
    multipliziert mit dem Transformatorverhältnis und um 180º
    verschoben ist das tatsächliche Wechselstromsignal am
    Brückengleichrichter. Warum haben wir die IN1-Sonde nicht auf die
-   Sekundärseite des Transformators gelegt? Schau dir die Abbildung 7
-   und ihre Erklärung an. 
+   Sekundärseite des Transformators gelegt? Betrachten Sie die :numref:`20_fig_07`
+   und Ihre Erklärung. 
 
-Wie aus Abbildung 10 ersichtlich, ist die Brückenkonfiguration
+Wie aus :numref:`20_fig_10` ersichtlich, ist die Brückenkonfiguration
 tatsächlich ein Vollwellengleichrichter, der nur eine Spannungsquelle
 verwendet. Bei Verwendung von STEMlab wurde ein zusätzlicher
 Transformator benötigt. Bei Verwendung eines Transformators mit dem
 zentralen Abgriff können wir einen Vollwellengleichrichter mit nur
-zwei Dioden herstellen. Erkunde wie!
+zwei Dioden herstellen. Erkunden Sie, wie!
 
-Der Nachteil dieser Schaltung besteht darin, dass jetzt zwei
-Diodenabfälle in Reihe mit der Last liegen und der Spitzenwert des
-gleichgerichteten Ausgangs weniger als der Wechselstromeingang von 1,2
-Volt ist als die 0,6 V in den vorherigen Schaltungen. Versuchen Sie,
-diesen Spannungsabfall zu messen.
+Der Nachteil dieser Schaltung ist, dass nun zwei Diodenabfälle mit der Last in
+Reihe geschaltet sind und der Spitzenwert des gleichgerichteten Ausgangs um :math:`1,2\,Volt`
+geringer ist als der AC-Eingang und nicht mehr die :math:`0,6\,V` in den vorherigen Schaltungen.
+Versuchen Sie, diesen Spannungsabfall zu messen.
