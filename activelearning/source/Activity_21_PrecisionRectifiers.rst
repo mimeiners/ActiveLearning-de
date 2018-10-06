@@ -18,7 +18,7 @@ Anmerkungen
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Signalgenerator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _Operationsverstärkerschaltungen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _Operationsverstärkerschaltung: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
@@ -104,7 +104,7 @@ Verfahren
 
 
 .. note::
-    Aus den auf :numfig:`21_fig_03` gezeigten Messungen können wir folgendes beobachten:
+    Aus den auf :numref:`21_fig_03` gezeigten Messungen können wir folgendes beobachten:
     Die Spitze des gleichgerichteten Ausgangs sollte nun gleich dem Spitzenwert
     des Eingangs sein (nur Wechselspannungsspitze, beachten Sie, dass der
     Gleichstrompegel des Eingangssignals nicht auf den Ausgang übertragen wird).
