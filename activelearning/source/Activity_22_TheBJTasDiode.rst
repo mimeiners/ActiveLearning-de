@@ -38,7 +38,7 @@ verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
    diesem Grund werden wir einen OP484_ Inverter verwenden,
    um die Signalverstärkung von OUT1 / OUT2
    zu ermöglichen und einen Spannungshub von :math:`+4,7\,V` bis :math:`-3,2\,V`
-   zu erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
+   zu erreichen. Ein OP484_ wird von STEMlab :math:`+ 5\,V` und :math:`-3.3\,V`
    Spannungsschienen versorgt. Die Verstärkung des invertierenden
    Verstärkers wird auf :math:`\approx5` gesetzt, wobei gilt :math:`R_i = 2.2\,k\Omega`
    und :math:`R_f = 10\,k\Omega`
