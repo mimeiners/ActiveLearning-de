@@ -7,9 +7,8 @@ Zielsetzung
 Der Zweck dieses Versuchs ist es, die Vorwärts- und Rückwärtsstrom-/Spannungseigenschaften
 eines als Diode geschalteten Bipolartransistors ("Bipolar junction transistor", BJT) zu untersuchen.
 
-
-.. note::
-
+Hinweise
+--------
    .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
    .. _Signalgenerator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
    .. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
@@ -98,11 +97,11 @@ Verfahren
       npn-Transistor als Diodenverbindung auf dem Steckbrett
    
 
-      .. warning::
-	 Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
-	 überprüfen Sie nochmal Ihre Schaltung. Die Spannungsversorgungsstifte -3,3V
-	 und +3,3V haben keine Schutzschaltung und können im Falle eines Kurzschlusses
-	 beschädigt werden. 
+   .. warning::
+      Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+      überprüfen Sie nochmal Ihre Schaltung. Die Spannungsversorgungsstifte -3,3V
+      und +3,3V haben keine Schutzschaltung und können im Falle eines Kurzschlusses
+      beschädigt werden. 
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
@@ -265,7 +264,7 @@ Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag
 .. math::
    :label: 22_eq_02
 	   
-   V_{E-BC} &= V_E - V_{BC} = 9 - (-3,3 V) = 12.3 V 
+   V_{E-BC} = V_E - V_{BC} = 9 - (-3,3 V) = 12.3 V 
 
 
 Wo :math:`V_{BC}` die maximale negative Schwankung unseres
@@ -319,7 +318,7 @@ Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"**
 hinzugefügt, um das Potential der Batterie bei der Ausführung des
 Plottings zu berücksichtigen.
    
-Wählen Sie Zelle 2 und drücken Sie ** Play ** in der
+Wählen Sie Zelle 2 und drücken Sie **Play** in der
 Menüleiste. Beachten Sie, Zelle 2 ist eine Hauptschleife für die
 Erfassung und das erneute Plotten. Wenn Sie die Erfassung stoppen,
 führen Sie nur die Zelle 2 aus, um die Messungen erneut zu starten.
@@ -374,9 +373,9 @@ Verfahren
    Steckbrett auf. Setzen Sie für :math:`R3 = 1\,k\Omega`, :math:`R4 = 100\,k\Omega`
    und verwende für Q1 2N3904 NPN und für Q2 2N3904 PNP-Transistor.
    
-.. figure:: img/Activity_22_Fig_10.png
-   :name: 22_fig_10
-   :align: center
+   .. figure:: img/Activity_22_Fig_10.png
+      :name: 22_fig_10
+      :align: center
 
    Konfiguration zur Verringerung des effektiven
    Durchlassspannungsabfalls der Diode auf dem Steckbrett
@@ -418,16 +417,16 @@ Verfahren
       Geringere effektivere Durchlassspannung von Diodenmessungen
 
    
-      .. warning::
+   .. warning::
 
-	 Wie sie :numref:`22_fig_11` entnehmen können, beträgt die
-	 Durchlassspannung etwa 100 mV. Sie können auch feststellen,
-	 dass Q2 nicht notwendig ist, um die Durchlassspannung des Q1 zu
-	 senken.
+      Wie sie :numref:`22_fig_11` entnehmen können, beträgt die
+      Durchlassspannung etwa 100 mV. Sie können auch feststellen,
+      dass Q2 nicht notwendig ist, um die Durchlassspannung des Q1 zu
+      senken.
    
-	 Die Hauptrolle spielt hier der Widerstand :math:`R4`, der mit der Basis von
-	 Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
-	 zu beobachten.
+      Die Hauptrolle spielt hier der Widerstand :math:`R4`, der mit der Basis von
+      Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
+      zu beobachten.
    
 
 Fragen
