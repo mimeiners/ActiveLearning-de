@@ -9,7 +9,7 @@ Proportionalität- und  Überlagerungssatzes (Superposition).
 
 .. _E1: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
 
 .. note:: In diesen Tutorials verwenden wir die Terminologie aus dem
 	  Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya

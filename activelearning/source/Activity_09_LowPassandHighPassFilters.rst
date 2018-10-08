@@ -9,7 +9,7 @@ Das Ziel dieser Labortätigkeit ist es, die Eigenschaften von passiven Filtern z
 Notizen
 -------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html

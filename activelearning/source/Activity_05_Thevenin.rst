@@ -13,15 +13,15 @@ Leistungsübertragung.
 
 .. note::
 
-   .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-   .. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+   .. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
+   .. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
    .. _E1: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1
 
    In diesen Tutorials verwenden wir die Terminologie aus dem
    Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya
    STEMlab-Board Hardware_ geht. Verlängerungsstecker-Pins, die als
-   3,3 V Spannungsquelle verwendet werden, sind in der Dokumentation
-   hier_ dargestellt.
+   3,3 V Spannungsquelle verwendet werden, sind in der Dokumentation_
+   dargestellt.
    
 
 

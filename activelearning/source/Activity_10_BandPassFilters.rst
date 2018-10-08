@@ -14,7 +14,7 @@ Das Ziel dieser Labortätigkeit ist es,:
 Notizen
 -------
 
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html 
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch.
