@@ -13,7 +13,7 @@ Pitaya STEMlab Hardware und Software gewonnen werden.
 Anmerkungen
 -----------
 
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
 wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 

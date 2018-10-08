@@ -11,13 +11,13 @@ Knotenanalyse der gegebenen Schaltung zu überprüfen.
 
 .. note::
    
-   .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-   .. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+   .. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
+   .. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
    In diesen Tutorials verwenden wir die Terminologie aus dem
    Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya
    STEMlab-Board Hardware_ geht. Die als 5V-Spannungsquelle verwendeten
-   Verlängerungsstecker-Pins sind in der Dokumentation hier_ dargestellt.
+   Verlängerungsstecker-Pins sind in der Dokumentation_ dargestellt.
 
 
 Hintergrund
