@@ -1,62 +1,58 @@
-Der MOS-Transistor ist als Diode geschaltet
-===========================================
+Die Nutzung der MOS-Transistors als Diode
+=========================================
 
 Zielsetzung
 -----------
 
-Der Zweck dieser Experimente besteht darin, die
+Ziel dieses Versuchs ist die Untersuchung, der
 Vorwärtsstrom-Spannungs-Charakteristik eines MOS-Feldeffekttransistors
-(NMOS und PMOS), der als eine Diode verbunden ist, zu
-untersuchen. Bevor dieses Experiment durchgeführt wird, wird ein
-Überblick über das vorherige Experiment empfohlen.
+(NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem Experiment wird
+eine Übersicht über den vorherigen Versuch_ empfohlen.
 
+
+
+Anmerkung
+--------
+   
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
+.. _invertierenden: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _Jupyter: http://jupyter.org/index.html
+.. _Notebook: http://jupyter.org/index.html
+.. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
+.. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
+.. _Versuch: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
+
+
+In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab - Board - Hardware_ beziehen.
+
+Die Oszilloskop- und Signalgeneratoranwendung_ wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.
+
+Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
 
 
 .. note::
-   
-   .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-   .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-   .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-   .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-   .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-   .. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-   .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-   .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
-   .. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-   .. _Jupyter: http://jupyter.org/index.html
-   .. _Notebook: http://jupyter.org/index.html
-   .. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
-   .. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
-   .. _empfohlen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
-
-
-   In diesen Tutorials verwenden wir die Terminologie aus dem
-   Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-   STEMlab-Board-Hardware beziehen.
-
-   Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-   Beobachten von Signalen auf der Schaltung verwendet.
-
-   Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-   verwendeten Steckerstifte sind in der Dokumentation hier
-   aufgeführt.
-
-
-.. hint::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-   maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
-   Experiment sind die höheren Signalamplituden erforderlich. Aus
-   diesem Grund werden wir einen OP484_ in der inverting_opamp
+   maximalen Ausgangsbereich von :math:`+/-\,1\,V` (2Vpp) erzeugen. Für diesen Versuch
+   werden höhere Signalamplituden benötigt. Aus
+   diesem Grund werden wir einen OP484_ in der invertierenden
    Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
-   Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt
-   :math:`R_i = 2.2\,k\Omega` und :math:`R_f = 10 \,k\Omega`
+   Spannungsschienen versorgt. Der Verstärkungfaktor des invertierenden
+   Verstärkers wird auf :math:`\approx 5` gesetzt, wobei
+   :math:`R1 = 2.2\,k\Omega` und :math:`R2 = 10 \,k\Omega` eingesetzt werden. 
 
-   
-Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
+   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+   oder OP97 verwendet haben. (Hinweis:"Schiene-zu-Schiene").
    
 
 Materialien
@@ -64,7 +60,7 @@ Materialien
 
 - Red Pitaya STEMlab
 - OP484_ Quad-Rail-Rail-Operationsverstärker
-- 1kΩ Widerstand
+- :math:`1\,k\Omega` Widerstand
 - Kleinsignal-NMOS-Transistor (ZVN211_)
 - Kleinsignal-PMOS-Transistor (ZVP211_)
 - lötfreies Steckbrett
@@ -73,7 +69,7 @@ Materialien
 NMOS als Diode
 --------------
 
-Die Verbindung des NMOS in Diodenkonfiguration ist in Fig. 2
+Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02`
 gezeigt. NMOS arbeitet anders als der NPN BJT-Transistor in einer
 Diodenkonfiguration.
 
