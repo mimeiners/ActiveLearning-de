@@ -36,7 +36,7 @@ leichter zu verstehen. Bevor wir komplexere Schaltungen untersuchen, beginnen wi
 mit der Einführung diskreter Halbleiter-Schaltkreise: solche, die auf BJTs basieren.
 
 Ein Schalter besteht aus einem BJT-Transistor, der abwechselnd zwischen dem Sättigungs- und
-dem Cutoff-Bereich angesteuert wird. Eine einfache Version des Schalters ist in :math:`24_fig_01`
+dem Cutoff-Bereich angesteuert wird. Eine einfache Version des Schalters ist in :numref:`24_fig_01`
 dargestellt. Wenn der Eingang gleich :math:`-V_{in}` ist, ist die Basis-Emitter-Verbindung umgekehrt
 vorgespannt oder ausgeschaltet, so dass kein Strom im Kollektor fließt. Dies wird durch die in
 der Abbildung dargestellte rote Belastungslinie veranschaulicht. Wenn sich der BJT in der
