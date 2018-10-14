@@ -12,7 +12,7 @@ eine Übersicht über den vorherigen Versuch_ empfohlen.
 
 
 Anmerkung
---------
+---------
    
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
