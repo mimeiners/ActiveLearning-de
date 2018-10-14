@@ -21,7 +21,6 @@ Anmerkung
 .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
 .. _invertierenden: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _Jupyter: http://jupyter.org/index.html
 .. _Notebook: http://jupyter.org/index.html
 .. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
 .. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
@@ -70,22 +69,21 @@ NMOS als Diode
 --------------
 
 Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02`
-gezeigt. NMOS arbeitet anders als der NPN BJT-Transistor in einer
-Diodenkonfiguration.
+gezeigt. In der Diodenkonfiguration arbeitet der NMOS anders als der
+NPN BJT-Transistor. 
 
-Die Vorwärts-Drop-Down-Spannung ist nicht typisch 0,7 V, aber sie
-hängt von der Transistorgröße, der Spezifikation usw. ab. Für den
-ausgewählten NMOS-Transistor so genannte Schwellenspannung
-:math:`V_{TH}` ist etwa 2.4V. Dies bedeutet, wenn die Gate (G) Spannung
-überschreitet :math:`V_ {TH}` der Transistor wird eingeschaltet und
-beginnt zu leiten. Da der Drain (D) -Pin natürlich mit dem Gate-Pin
+Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei :math:`\approx 0,7\,V`, sie
+hängt von der Größe des Transistors und seinen Eigenschaften ab. Für den
+ausgewählten NMOS-Transistor liegt die Schwellenspannung
+:math:`V_{TH}` bei etwa :math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin
+anliegende Spannung den :math:`V_ {TH}` von :math:`2,4\,V`überschreitet "schaltet"
+der MOS_Transistor ein und beginnt zu leiten. Da der Drain (D) -Pin schalttechnisch mit dem Gate-Pin
 des Transistors verbunden ist, bleibt das Potential von :math:`D-G`
 auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
 
-
 .. note::
-   Diese Konfiguration von NMOS wird effektiv eine Diode mit einer
-   Vorwärtsabfallspannung erzeugen, die gleich ist zu :math:`V_ {TH}` 
+   Diese Konfiguration von NMOS erzeugt effektiv eine Diode mit Durchlassspannung,
+   die der :math:`V_ {TH}` entspricht. 
 
 
 .. figure:: img/Activity_23_Fig_01.png
@@ -93,9 +91,9 @@ auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
 
    ZVN211_ Spezifikationen
 
+   
 Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und mit den
 Messungen fortfahren.
-
 
 
 .. figure:: img/Activity_23_Fig_02.png
@@ -108,8 +106,8 @@ Messungen fortfahren.
 Verfahren
 ----------
 
-1. Erstellen Sie die Schaltung aus :numref:`23_fig_01` auf dem
-   Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
+1. Bauen Sie die Schaltung aus :numref:`23_fig_01` auf dem
+   Steckbrettauf. Stellen Sie :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega` und :math:`R3 = 1\,k\Omega` ein. Für
    M1 nehmen Sie ZVN211.
    
 
@@ -121,41 +119,37 @@ Verfahren
 
    
    .. warning::
-      Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
-      anschließen, überprüfen Sie Ihren Stromkreis. Die
-      Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
-      Kurzschluss und können im Falle eines Kurzschlusses beschädigt
-      werden.
-   
+      Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+      überprüfen Sie Ihre Schaltung nochmal. Die Spannungsversorgungsstifte
+      -3,3V und +3,3V haben keine Schutzschaltung und können im Falle eines
+      Kurzschlusses beschädigt werden.
 
+   
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,45
-   V, den DC-Offset auf -0,45 V und die Frequenz auf 1 kHz ein, um die
-   Eingangsspannung anzulegen.
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,45\,V`,
+   den DC-Offset auf :math:`-0,45\,V` und die Frequenz auf :math:`1 kHz` ein, um die
+   Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren
+   Sie SHOW und wählen Sie Enable.
    
-   Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
-   wählen Sie enable.
+4. Stellen Sie sicher, dass IN1, IN2 und MATH :math:`V/div` auf der linken
+   unteren Seite des Bildschirms auf :math:`1\,V/div` eingestellt sind (Sie
+   können :math:`V/div` einstellen, indem Sie die gewünschten Kanal auswählen
+   und mit vertikalen +/- Regler verwenden)
    
-4. Stellen Sie sicher, dass IN1, IN2 und MATH V / div auf der linken
-   unteren Seite des Bildschirms auf 1V / div eingestellt sind (Sie
-   können V / div einstellen, indem Sie die gewünschte Option
-   auswählen Kanal und mit vertikalen +/- Kontrollen)
+5. Setzen Sie :math:`t/div` Wert auf :math:`200\,us/div` (Sie können :math:`t/div` mit
+   horizontalen +/- Reglern einstellen)
    
-5. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
-   horizontalen +/- Kontrollen einstellen)
-   
-6. Stellen Sie unter MATH-Kanaleinstellungen folgendes ein
-   :math:`IN1-IN2` und wählen Sie ENABLE.
+6. Stellen Sie unter MATH-Kanaleinstellungen :math:`IN1-IN2` ein
+   und wählen Sie ENABLE.
 	 
-7. Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+7. Stellen Sie unter den Menueinstellungen IN1 und IN2 den Messtaster
    auf x10 und den vertikalen Offset auf 0.
    
-8. Stellen Sie unter Einstellungen des Menüs MATH den vertikalen
+8. Stellen Sie unter Einstellungen des MATH-Menus den vertikalen
    Offset auf 0 ein.
    
-9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf 1V ein
-
+9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf :math:`1\,V` ein
 
 
    .. figure:: img/Activity_23_Fig_04.png
@@ -168,32 +162,29 @@ Verfahren
 VI-Kurvenmessungen
 ------------------
 
-Da sich NMOS wie eine Diode mit einer Vorwärtsspannung verhalten kann,
-die der folgenden Gleichung entspricht :math:`V_ {TH}` (Konfiguration
-in :numref:`23_fig_02`) können wir die VI-Charakteristik wie bei
-Diodenmessungen messen. Für diese Aufgabe wird Jupyter verwendet
-Notebook-Webanwendung. Wie man Jupyter Notebook startet und ein neues
-Projekt erstellt, zeigt das Flussdiagramm in :numref:`23_fig_05`.
+Da sich NMOS wie eine Diode mit einer Durchlassspannung entsprechend der :math:`V_{TH}`
+verhalten kann (Konfiguration in :numref:`23_fig_02`), können wir ihre VI-Charakteristik
+wie bei Diodenmessungen messen, wofür wir die Webanwendung Jupyter Notebook verwenden werden.
+Wie Sie Jupyter Notebook starten und ein neues Projekt erstellen, ist
+in :numref:`23_fig_05` als Flussdiagramms dargestellt.
+
 
 
 .. note::
-   Das Jupyter_ Notebook_ ist eine Webanwendung, mit der Sie Dokumente
-   erstellen und freigeben können, die Live-Code, Gleichungen,
-   Visualisierungen und erklärenden Text enthalten. Sie haben auch die
-   Unterstützung der Jupyter-Anwendung mit Red Pitaya-Bibliotheken
-   sichergestellt, die die Steuerung aller Funktionen der
-   STEMlab-Boards ermöglichen: Signalerfassung, Signalerzeugung,
-   digitale Signalsteuerung, Kommunikation usw. Das Jupyter-Notebook
-   wird auf die gleiche Weise gestartet wie jedes andere
-   Anwendungen. Nach dem Start der Jupyter-Anwendung wird ein
-   webbasiertes Notizbuch geöffnet. Diese Kombination aus Notebook,
-   STEMlab und Python macht das STEMlab zu einem hervorragenden
-   Werkzeug für das Prototyping und die schnelle Programmierung. Seit
-   Jupyter Notebook ermöglicht Text, Gleichung und Bildbearbeitung ist
-   dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
+   Das Jupyter Notebook_ ist eine Webanwendung, mit der Sie Dokumente erstellen
+   und freigeben können, die Live-Code, Gleichungen, Visualisierungen und
+   erklärenden Text enthalten. Sie haben auch die Unterstützung für die
+   Jupyter-Anwendung mit Red Pitaya-Bibliotheken sichergestellt, die die Steuerung
+   aller Funktionen der STEMlab-Boards ermöglichen, wie z.B.: Signalerfassung,
+   Signalerzeugung, digitale Signalsteuerung, Kommunikation usw. Das Jupyter Notebook
+   wird auf die gleiche Weise gestartet wie alle anderen Anwendungen. Nach dem Start
+   der Jupyter-Anwendung wird ein webbasiertes Notebook geöffnet. Diese Kombination
+   aus Notebook, STEMlab und Python macht das STEMlab zu einem hervorragenden Werkzeug
+   für Prototyping und schnelle Programmierung. Da Jupyter Notebook Text-, Gleichungs-
+   und Bildbearbeitung ermöglicht, ist es ein perfektes Werkzeug für Tutorials, Beispiele
+   und vieles mehr.
+
    
-
-
 .. figure:: img/Activity_19_Fig_07.png
    :name: 23_fig_05
    :align: center
