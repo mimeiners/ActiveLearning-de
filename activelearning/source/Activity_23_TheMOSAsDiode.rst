@@ -76,7 +76,7 @@ Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei :math:`\approx
 hängt von der Größe des Transistors und seinen Eigenschaften ab. Für den
 ausgewählten NMOS-Transistor liegt die Schwellenspannung
 :math:`V_{TH}` bei etwa :math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin
-anliegende Spannung den :math:`V_ {TH}` von :math:`2,4\,V`überschreitet "schaltet"
+anliegende Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreitet "schaltet"
 der MOS_Transistor ein und beginnt zu leiten. Da der Drain (D) -Pin schalttechnisch mit dem Gate-Pin
 des Transistors verbunden ist, bleibt das Potential von :math:`D-G`
 auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
