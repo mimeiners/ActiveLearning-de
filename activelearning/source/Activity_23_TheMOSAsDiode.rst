@@ -192,39 +192,35 @@ in :numref:`23_fig_05` als Flussdiagramms dargestellt.
    Erstellen eines neuen Jupyter-Notebooks
 
 
-Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
-kopieren Sie den Code und fügen Sie ihn ein.
+Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren
+Sie den untenstehenden Code und führen Sie ihn aus.
 
-Der Code unten erzeugt das gleiche Signal wie in :numref:`23_fig_04`, aber es
-wird sie im XY-Diagramm darstellen.
+Der unten stehende Code erzeugt das gleiche Signal wie in :numref:`23_fig_04`, aber er
+plotet dieses in einem XY-Diagramm.
 
-Zum Messen VI-Kurve wird ein "XY"-Plot benötigt, wobei die
-x-Achse die Diodenspannung darstellt
-:math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
+Für die Messung der VI-Kurve ist ein "XY"-Plot erforderlich, wobei die
+x-Achse die Diodenspannung :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_3` dargestellt.
 
-**Kopieren Sie den Code von unten in die Zelle 1**
+**Kopieren Sie den unten stehenden Code in die Zelle 1**
 
 .. literalinclude:: code/Activity_23_Code_01.py
    :language: python
    :linenos:
       
     
-Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere
-Code von unten hinein.
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und
+kopieren Sie den unten stehenden Code.
  
 
 .. literalinclude:: code/Activity_23_Code_02.py
    :language: python
    :linenos:
 
-	  
-Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
-Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
-Erfassung stoppen, führen Sie nur die Zelle 2 aus um die Messung erneut zu starten.
+Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
+für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen Sie
+einfach nur Zelle 2 aus, um die Messungen erneut zu starten.
 
-
-Nach dem Ausführen des obigen Codes sollten Sie die Diode
-VI-Charakteristik erhalten, wie in :numref:`23_fig_05` gezeigt.
+Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der Diode  erhalten, wie in :numref:`23_fig_06`  dargestellt.
 
 
 .. figure:: img/Activity_23_Fig_06.png
@@ -238,10 +234,10 @@ VI-Charakteristik erhalten, wie in :numref:`23_fig_05` gezeigt.
 PMOS als Diode
 --------------
 
-Gleiche Maße können auch für PMOS-Transistor gelten. Beim
-PMOS-Transistor ist die Polarität der Spannung umgekehrt, so dass die
-Konfiguration der PMOS-Diode anders sein muss NMOS eins. Die
-Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
+Dieselben Messungen können auch für den PMOS-Transistor durchgeführt werden.
+Beim PMOS-Transistor wird die Spannungspolarität umgekehrt, so dass die
+Konfiguration der PMOS-Diode anders sein muss als bei NMOS.
+Die Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
 
 
 
@@ -256,45 +252,43 @@ Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
 Verfahren
 ---------
 
-1. Erstellen Sie die Schaltung aus :numref:`23_fig_07` auf dem
-   Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
-   M1 nimm ZVP211.
+1. Bauen Sie die Schaltung aus :numref:`23_fig_07` auf dem
+   Steckbrett auf. Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega` und für :math:`R3 = 1\,k\Omega`
+   ein. Für M1 nehmen Sie bitte ZVP211.
 
    .. warning::
-      Bevor Sie den Stromkreis an die STEMlab :math:`-3.3\,\text{V}` und
-      :math:`+3.3\,\text{V}` Anschlüsse anschließen, überprüfen Sie Ihren
-      Stromkreis. Die Spannungsversorgungsstifte -3,3 V und +3,3 V haben
-      keinen Kurzschluss und können im Falle eines Kurzschlusses
-      beschädigt werden.
+      Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+      überprüfen Sie Ihre Schaltung nochmal. Die Spannungsversorgungsstifte
+      -3,3V und +3,3V haben keine Schutzschaltung und können im Falle eines
+      Kurzschlusses beschädigt werden.
    
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,45
-   V, den DC-Offset auf -0,45 V und die Frequenz auf 1 kHz ein, um die
-   Eingangsspannung anzulegen.
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,45\,V`,
+   den DC-Offset auf :math:`-0,45\,V` und die Frequenz auf :math:`1 kHz` ein, um die
+   Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren
+   Sie SHOW und wählen Sie Enable.
    
-   Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
-   wählen Sie enable.
+4. Stellen Sie sicher, dass IN1, IN2 und MATH :math:`V/div` auf der linken
+   unteren Seite des Bildschirms auf :math:`1\,V/div` eingestellt sind (Sie
+   können :math:`V/div` einstellen, indem Sie die gewünschten Kanal auswählen
+   und mit vertikalen +/- Regler verwenden)
    
-4. Stellen Sie sicher, dass IN1, IN2 und MATH V / div auf der linken
-   unteren Seite des Bildschirms auf 1V / div eingestellt sind (Sie
-   können V / div einstellen, indem Sie die gewünschte Option
-   auswählen Kanal und mit vertikalen +/- Kontrollen)
+5. Setzen Sie :math:`t/div` Wert auf :math:`200\,us/div` (Sie können :math:`t/div` mit
+   horizontalen +/- Reglern einstellen)
    
-5. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
-   horizontalen +/- Kontrollen einstellen)
-   
-6. Stellen Sie unter MATH-Kanaleinstellungen folgendes ein
-   :math:`IN1-IN2` und wählen Sie ENABLE.
+6. Stellen Sie unter MATH-Kanaleinstellungen :math:`IN1-IN2` ein
+   und wählen Sie ENABLE.
 	 
-7. Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+7. Stellen Sie unter den Menueinstellungen IN1 und IN2 den Messtaster
    auf x10 und den vertikalen Offset auf 0.
    
-8. Stellen Sie unter Einstellungen des Menüs MATH den vertikalen
+8. Stellen Sie unter Einstellungen des MATH-Menus den vertikalen
    Offset auf 0 ein.
    
-9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf 1V ein
+9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf :math:`1\,V` ein
+
 
 
 .. figure:: img/Activity_23_Fig_08.png
@@ -305,9 +299,10 @@ Verfahren
 
    
 Wie in :numref:`23_fig_08` zu sehen, verhält sich der PMOS in der
-Diodenkonfiguration wie eine Diode mit einer Vorwärtsabfallspannung
-gleich dem PMOS :math:`V_ {TH}`. Vergleichen Sie die Abbildungen 8 und
-4 und versuchen Sie, den Unterschied zwischen NMOS- und
+Diodenkonfiguration wie eine Diode mit einer Durchlassspannung
+gleich dem PMOS :math:`V_ {TH}`.
+
+Vergleichen Sie die :numref:`23_fig_08` und :numref:`23_fig_04` und versuchen Sie, den Unterschied zwischen NMOS- und
 PMOS-Diodenkonfigurationen zu erklären.
 
 
