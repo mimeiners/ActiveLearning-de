@@ -4,26 +4,21 @@ MOSFET-Transistor als Schalter
 Zielsetzung
 -----------
 
-Eine MOSFET-Vorrichtung (NMOS-Vorrichtung) kann in vielen
-Schaltungskonfigurationen verwendet werden, wie einem Verstärker,
-einem Oszillator, einem Filter, einem Gleichrichter oder einfach als
-Ein-Aus-Schalter verwendet werden. Wenn der FET in den
-Sättigungsbereich vorgespannt ist, arbeitet er als ein Verstärker oder
-eine andere lineare Schaltung, wenn er abwechselnd in dem linearen
-(Trioden) -Bereich und dem Sperrbereich vorgespannt wird, dann wird er
-als Schalter verwendet, der Strom fließen lässt oder nicht in anderen
-Teilen der Schaltung fließen. Diese Laboraktivität beschreibt das
-NMOS-Gerät, wenn es als Schalter betrieben wird.
+Ein MOS FET (NMOS) Bauelement kann in vielen Schaltungskonfigurationen wie Verstärker,
+Oszillator, Filter, Gleichrichter oder einfach als Ein-/Ausschalter verwendet werden.
+Wenn der FET in den Sättigungsbereich vorgespannt ist, arbeitet er als Verstärker oder
+eine andere lineare Schaltung, wenn er abwechselnd im linearen (Trioden-)Bereich und im
+Trennbereich vorgespannt ist, dann wird er als Schalter verwendet, der den Strom in anderen
+Teilen der Schaltung fließen lässt oder nicht. Diese Übung beschreibt den NMOS-Transistor,
+wenn es als Schalter betrieben wird.
 
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 .. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
@@ -33,125 +28,109 @@ Anmerkungen
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
+STEMlab - Board - Hardware_ beziehen.
 
-Oscilloscope_ & Signal_ generator_ Anwendung wird zum Erzeugen und
+Oszilloskope & Signalgeneratoranwendung_ wird zum Erzeugen und
 Beobachten von Signalen auf der Schaltung verwendet.
 
 Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
+verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
 
 
 .. note::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
    maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
-   Experiment werden die höheren Signalamplituden benötigt, um den
-   NMOS-Transistor "einzuschalten" ( :math:`V_ {TH}` voltage). Aus
-   diesem Grund werden wir einen OP484_ in der inverting_opamp
+   Experiment werden höhere Signalamplituden benötigt, um den
+   NMOS-Transistor "einzuschalten" (:math:`V_ {TH}` - Spannung ). Aus
+   diesem Grund werden wir einen OP484_ in der invertierenden
    Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
-   erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
-   Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \
-   Omega` und: math:` R_f = 10k \ Omega`.
+   erreichen. Ein OP484 wird von STEMlab mit :math:`+5\,V` und :math:`-3.3\,V`
+   Spannung über die Spannungsschienen versorgt. Der Verstärkungsfaktor des invertierenden
+   Verstärkers wird auf :math:`\approx 5` gesetzt, wobei für :math:`R_1 = 2.2\,k\Omega`
+   und :math:`R_f = 10\,k\Omega` eingesetzt werden. Versuchen Sie zu beantworten, warum wir
+   einen OP484 verwendet haben, anstatt z.B. OP27 oder OP97. (Hinweis "Schiene zu Schiene").
    
-   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
-   
-
    
 Hintergrund
 -----------
 
-Schaltkreise unterscheiden sich wesentlich von linearen
-Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir
-komplexere Schaltungen untersuchen, werden wir mit der Einführung
-diskreter Halbleiterschaltkreise beginnen: diejenigen, die um
-NMOS-Baustein herum gebaut sind.
+Schaltstromkreise unterscheiden sich deutlich von linearen Stromkreisen.
+Sie sind auch leichter zu verstehen. Bevor wir komplexere Schaltkreise
+untersuchen, beginnen wir mit der Einführung diskreter Halbleiter-Schaltkreise:
+solche, die auf NMOS-Bauelementen aufbauen.
 
-
-Ein Schalter besteht aus einem NMOS-Transistor, der abwechselnd
-zwischen den Trioden- und Abschneidebereichen betrieben wird. Eine
-einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn
-der Eingang gleich ist :math:`-V_ {in}`, ist die Gate-Source-Spannung
-kleiner als die Schwellenspannung ( :math:`-V_ {TH}`) oder aus, so
-fließt kein Strom in den Drain. Dies wird durch die rote Lastlinie in
-der Abbildung veranschaulicht. Wenn der NMOS abgeschaltet ist, hat die
-Schaltung (idealerweise) die folgenden Werte:
-
+Ein Schalter besteht aus einem NMOS-Transistor, der abwechselnd zwischen Durchlass-
+und Trennbereich angesteuert wird. Eine einfache Version des Schalters ist in :numref:`25_fig_01`
+dargestellt. Wenn der Eingang gleich :math:`-V_{in}` ist, ist die Gate-Source-Spannung kleiner als
+die Schwellenspannung (:math:`-V_{TH}`) oder nicht vorhanden, so dass kein Strom im Drain fließt.
+Dies wird durch die in der :numref:`25_fig_01` dargestellte rote Belastungslinie veranschaulicht. Wenn das NMOS in
+Abschaltung ist, hat die Schaltung (idealerweise) die folgenden Werte:
 
 .. math::
+   :label: 25_eq_01
   
-   V_ {DS} = V_ {DD} \ Quad \ Text {und} \ Quad I_D = 0 A \ Quad (1)
+   V_{DS} = V_{DD} \Quad \Text {und} \Quad I_D = 0 A \ Quad 
 
-
-Dieser Zustand ähnelt einem offenen Schalter.
-
-Wenn der Eingang gleich ist :math:`V_ {TH}`, wird der Transistor in
-die Triodenregion getrieben und die folgenden Bedingungen treten auf:
-
+Dieser Zustand ist vergleichbar mit einem offenen Schalter. Wenn der Eingang
+gleich :math:`V_{TH}` ist, wird der Transistor leitend und es treten die folgenden
+Bedingungen auf:
 
 .. math::
+   :label: 25_eq_02
 
-   V_ {DS} \ approx 0 \ quad \ text {und} \ quad I_D = \ frac {V_ {DD}} {R_D} A \ quad (2)
+   V_{DS} \approx 0 \quad \ text {und} \ quad I_D = \ frac{V_{DD}}{R_D}A \quad
 
-   
-Dieser Zustand ähnelt einem geschlossenen Schalter, der die Unterseite
-von :math:`R_D` mit Masse verbindet.
-
+Dieser Zustand ist vergleichbar mit einem geschlossenen Schalter, der den unteren
+Teil des :math:`R_D` mit der Masse verbindet.
 
 .. figure:: img/ Activity_25_Fig_01.png
+   :name: 25_fig_01
+   :align: center
 
-   Abbildung 1: NMOS-FET-Schalter und seine Ladeleitung
+   NMOS-FET-Schalter und seine Ladeleitung
 
-   
-Die Eigenschaften für einen Enhancement-Modus-NMOS-Schalter setzen
-voraus, dass:
+Die Eigenschaften eines Anreicherung Modus NMOS-Schalters gehen davon aus:
 
-
-1. :math:`-V_ {in}` ist niedrig genug, um den Transistor in
+1. :math:`-V_{in}` ist niedrig genug, um den Transistor in
    Abschaltung zu treiben.
    
-2. :math:`+ V_ {in}` muss größer sein als :math:`V_ {TH}` um den
-   Transistor in Triode zu treiben
+2. :math:`+ V_{in}` muss größer sein als :math:`V_{TH}` um den
+   Transistor in Triodeden leitenden Zustand zu treiben
    
 3. Der Transistor ist eine ideale Komponente. Diese Bedingungen können
    sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:
    
-
-   a. :math:`-V_ {in} = V_ {TH}`
+   a. :math:`-V_{in} = V_{TH}`
       
-   b. :math:`+ V_ {in} = V_ {TH}` ( :math:`V_ {DD}` ist ein gutes
-      Maximum)
+   b. :math:`+ V_{in} = V_{TH}` (:math:`V_{DD}` ist ein gutes Maximum)
       
+Bedingung 1 gewährleistet, dass die Schaltung durch den Eingang in den Sperrbereich
+gefahren wird. Die Bedingungen 2 stellen sicher, dass der Transistor in den Durchlassbereich
+gefahren wird.
 
-Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den
-Abschaltbereich getrieben wird. Die Bedingungen 2 stellen sicher, dass
-der Transistor angesteuert wird in die Triodenregion.
-
-Ein tatsächlicher NMOS-Schalter unterscheidet sich von dem idealen
-Schalter in mehreren Aspekten. In der Praxis gibt es selbst im
-Sperrbereich einen kleinen Leckstrom durch den Transistor. In der
-Triode fällt auch immer eine gewisse Spannung über den internen
-Widerstand des Transistors ab :math:`R_ {ON}`. Typischerweise liegt
-diese in Abhängigkeit von dem Drain-Strom und der Größe des Geräts
-zwischen 0,1 und 0,2 V in Triode. Diese Abweichungen vom Ideal sind
-bei einem Gerät mit einer geeigneten Größe im Allgemeinen geringfügig,
-so dass wir nahezu ideale Bedingungen annehmen können, wenn ein
-NMOS-Schaltkreis analysiert oder entworfen wird.
+Ein realer NMOS-Schalter unterscheidet sich in mehrfacher Hinsicht vom idealen Schalter.
+In der Praxis kommt es auch in der Abschaltung zu einem kleinen Ableitstrom durch den Transistor.
+Auch im Durchlassbereich gibt es immer einen Spannungsabfall über den Innenwiderstand(:math:`R_{ON}`)
+des Transistors. Typischerweise liegt diese zwischen :math:`0,1` und :math:`0,2\,V` in Durchlassrichtung,
+abhängig vom Drainstrom und der Größe des Bauteils. Diese Abweichungen vom Ideal sind bei
+einem richtig dimensionierten Bauteil im Allgemeinen gering, so dass wir bei der Analyse
+oder dem Design einer NMOS-Schalterschaltung von nahezu idealen Bedingungen ausgehen können.
 
 
 .. figure:: img/ Activity_25_Fig_02.png
+   :name: 25_fig_02
+   :align: center
 
-   Abbildung 2: NMOS-LED-Schalter
+   NMOS-LED-Schalter
 
    
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
-- 1x 10kΩ Widerstand
-- 1x 100Ω Widerstand
+- Red Pitaya STEMlab
+- 1x :math:`10\,k\Omega` Widerstand
+- 1x :math:`100\,Ω` Widerstand
 - 1x 5mm LED (jede Farbe)
 - 1x Kleinsignal-NMOS-Transistor ZVN211_
 - 1x lötfreies Steckbrett
