@@ -22,7 +22,7 @@ Anmerkungen
 .. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
 .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
-.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _invertierenden: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
 .. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
 
 
@@ -42,7 +42,7 @@ verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
    maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
    Experiment werden höhere Signalamplituden benötigt, um den
    NMOS-Transistor "einzuschalten" (:math:`V_ {TH}` - Spannung ). Aus
-   diesem Grund werden wir einen OP484_ in der invertierenden
+   diesem Grund werden wir einen OP484_ in der invertierenden_
    Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab mit :math:`+5\,V` und :math:`-3.3\,V`
@@ -139,32 +139,26 @@ Materialien
 Verfahren
 ---------
 
-Die übliche Anwendung für einen NMOS (oder irgendeinen anderen)
-Schalter ist das Ansteuern einer LED. Ein LED-Treiber ist in Fig. 2
-gezeigt. Der Treiber, der in dieser Figur gezeigt ist, wird verwendet,
-um einen Niedrigstromteil der Schaltung an ein Gerät mit relativ hohem
-Strom (die LED) zu koppeln. Wenn der Ausgang von der
-Niedrigstromschaltung niedrig ist (0 V), ist der Transistor
-abgeschaltet und die LED ist aus. Wenn der Ausgang des
-Niederstromkreises hoch geht (oben :math:`V_ {TH}`), wird der
-Transistor in Triode getrieben und die LED leuchtet. Der Treiber wird
-verwendet, da der stromsparende Teil der Schaltung möglicherweise
-nicht über die Stromfähigkeit verfügt, um die 20 mA (typisch) zu
-liefern, die erforderlich sind, um die LED auf volle Helligkeit zu
-bringen.
+Eine häufige Anwendung für einen NMOS-Schalter (oder einen anderen) ist die
+Ansteuerung einer LED. Ein LED-Treiber ist in :numref:`25_fig_02` dargestellt. Der in
+dieser Abbildung dargestellte Treiber(NMOS) wird verwendet, um mit kleinen Strömen
+eine relativ hochstromigen Teil der Schaltung zu treiben. Wenn
+der Ausgang des Niederstromkreises niedrig ist (:math:`0\,V`), befindet sich der Transistor
+im Cutoff(Nichtleitend) und die LED ist aus. Wenn am Ausgang des Niederstromkreises eine
+Spannung (:math:`V_{TH}`)angelegt wird, wird der Transistor leitend und die LED leuchtet. Der Treiber wird verwendet,
+da die Niederstromschaltung möglicherweise nicht die Stromfähigkeit hat, um die 20 mA (typisch)
+zu liefern, die erforderlich sind, um die LED auf volle Helligkeit zu bringen.
 
-
-
-1. Bauen Sie den LED-Schalter-Schaltkreis, der in Abbildung 2 gezeigt
-   wird, auf Ihrem lötfreien Steckbrett auf.  :math:`R_D` dient zur
-   Begrenzung des Stroms, der in der LED von der +5 V-Spannung fließt
-   liefern. Der Schalter wird durch den Spannungsausgang OUT1
+1. Bauen Sie den LED-Schalter-Schaltkreis, der in :numref:`25_fig_02` gezeigt
+   wird, auf Ihrem lötfreien Steckbrett auf. :math:`R_D` dient zur
+   Begrenzung des Stroms, der in der LED von der :math:`+5\,V` - Spannungversorgungsschiene
+   fließt. Der Schalter wird durch den Spannungsausgang OUT1
    gesteuert, der durch den invertierenden Verstärker OP484 verstärkt
    wird. Der Scope-Kanal IN zeigt die Spannung an der LED an, wie in
-   Abbildung 2 dargestellt.
+   :numref:`25_fig_02` dargestellt.
    
-2. Für :math:`R_D` nehmen 100 :math:`\ Omega` Widerstand. Für
-   :math:`R_G` nehmen Sie 10 :math:`k \ Omega`. Gate-Widerstand mit
+2. Für :math:`R_D` nehmen Sie einen 100 :math:`\Omega` Widerstand. Für
+   :math:`R_G` nehmen Sie :math:`10\,k\Omega` Widerstand. Gate-Widerstand mit
    der GND verbunden ist eine gute Praxis, um verhindert eine
    unerwünschte Transistorumschaltung durch statische
    Elektrizität.
