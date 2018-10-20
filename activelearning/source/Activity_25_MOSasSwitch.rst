@@ -39,12 +39,12 @@ verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
 
 .. note::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-   maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
+   maximalen Ausgangsbereich von :math:`+/-1\,V` (:math:`2\,Vpp`) erzeugen. Für dieses
    Experiment werden höhere Signalamplituden benötigt, um den
-   NMOS-Transistor "einzuschalten" (:math:`V_ {TH}` - Spannung ). Aus
+   NMOS-Transistor "einzuschalten" (:math:`V_{TH}` - Spannung ). Aus
    diesem Grund werden wir einen OP484_ in der invertierenden_
    Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
-   zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
+   zu ermöglichen und einen Spannungshub von :math:`+4,7\,V` bis :math:`-3,2\,V` zu
    erreichen. Ein OP484 wird von STEMlab mit :math:`+5\,V` und :math:`-3.3\,V`
    Spannung über die Spannungsschienen versorgt. Der Verstärkungsfaktor des invertierenden
    Verstärkers wird auf :math:`\approx 5` gesetzt, wobei für :math:`R_1 = 2.2\,k\Omega`
@@ -70,7 +70,7 @@ Abschaltung ist, hat die Schaltung (idealerweise) die folgenden Werte:
 .. math::
    :label: 25_eq_01
   
-   V_{DS} = V_{DD} \Quad \Text {und} \Quad I_D = 0 A \ Quad 
+   V_{DS} = V_{DD} \quad \text{und} \quad I_D = 0 A \quad 
 
 Dieser Zustand ist vergleichbar mit einem offenen Schalter. Wenn der Eingang
 gleich :math:`V_{TH}` ist, wird der Transistor leitend und es treten die folgenden
@@ -79,7 +79,7 @@ Bedingungen auf:
 .. math::
    :label: 25_eq_02
 
-   V_{DS} \approx 0 \quad \ text {und} \ quad I_D = \ frac{V_{DD}}{R_D}A \quad
+   V_{DS} \approx 0 \quad \text{und} \quad I_D = \frac{V_{DD}}{R_D}A \quad
 
 Dieser Zustand ist vergleichbar mit einem geschlossenen Schalter, der den unteren
 Teil des :math:`R_D` mit der Masse verbindet.
@@ -240,10 +240,8 @@ Spannungsabfall über dem M1-Transistor messen (:numref:`25_fig_06`).
    Hochstromanwendungen, da die Verlustleistung des Stromflusses durch
    den Transistor von :math:`R_ {ON}` - Wert abhängig ist.
    
-
-.. math::
-
-   P_{dis} = I^2_D R_{ON} \quad
+   .. math::
+      P_{dis} = I^2_D R_{ON} \quad
 
 
 
