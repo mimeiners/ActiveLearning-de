@@ -158,101 +158,92 @@ zu liefern, die erforderlich sind, um die LED auf volle Helligkeit zu bringen.
    :numref:`25_fig_02` dargestellt.
    
 2. Für :math:`R_D` nehmen Sie einen 100 :math:`\Omega` Widerstand. Für
-   :math:`R_G` nehmen Sie :math:`10\,k\Omega` Widerstand. Gate-Widerstand mit
-   der GND verbunden ist eine gute Praxis, um verhindert eine
-   unerwünschte Transistorumschaltung durch statische
-   Elektrizität.
+   :math:`R_G` nehmen Sie :math:`10\,k\Omega` Widerstand. Der mit dem GND verbundene
+   Gate-Widerstand ist eine gute Vorgehensweise, um unerwünschte Transistorumschaltungen
+   durch statische Elektrizität zu vermeiden.
 	 
-
 .. figure:: img/ Activity_25_Fig_03.png
+   :name: 25_fig_03
+   :align: center
 
-   Abbildung 3: NMOS LED-Schalter auf dem Steckbrett
+   NMOS LED-Schalter auf dem Steckbrett
 
    
 3. Starten Sie die Applikation Oszilloskop & Signalgenerator
    
-4. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5
-   V, den DC-Offset auf -0,5 V und die Frequenz auf 10 Hz ein, um die
+4. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,5\,V`,
+   den DC-Offset auf :math:`-0,5\,V` und die Frequenz auf :math:`10\,Hz` ein, um die
    Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü SQUARE,
-   deaktivieren Sie SHOW und wählen Sie enable.
+   deaktivieren Sie SHOW und wählen Sie Enable.
    
 5. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 2V / div und IN2 auf 1V / div eingestellt ist
-   (Sie können V / div einstellen, indem Sie die gewünschte Option
-   auswählen   Kanal und mit vertikalen +/- Kontrollen)
+   dass IN1 :math:`V/div` auf :math:`2\,V/div` und IN2 auf :math:`1\,V/div` eingestellt ist
+   (Sie können :math:`V/div` einstellen, indem Sie den gewünschten Kanal auswählen
+   und vertikale +/- Regler verwenden).
    
-6. Setze t / div Wert auf 20ms / div (Du kannst t / div mit
-   horizontalen +/- Kontrollen einstellen)
+6. Setze :math:`t/div` Wert auf :math:`20\,ms/div` (Du kannst :math:`t/div` mit
+   horizontalen +/- Reglern einstellen)
    
-7. Stellen Sie unter den Menüeinstellungen IN2 und IN1 den Messtaster
+7. Stellen Sie unter den Menueinstellungen IN2 und IN1 den Messtaster
    auf x10 und den vertikalen Offset auf 0.
    
-
 .. figure:: img/ Activity_25_Fig_04.png
+   :name: 25_fig_04
+   :align: center
 
-   Abbildung 4: NMOS als Switch-Messungen
+   NMOS als Switch-Messungen
 
-   
-Aus Abbildung 4 können wir das Verhalten des NMOS-Transistors
-beobachten, wenn es als Schalter arbeitet. Wenn die Basisspannung
-"hoch" ist, wird der Transistor "eingeschaltet", wodurch ein
-Stromfluss von +5 V Spannungsschiene durch die Diode zu GND ermöglicht
-wird. Wenn der Strom zu fließen beginnt, blinkt die LED.
+Aus :numref:`25_fig_04` können wir das Verhalten des NMOS-Transistors beobachten,
+wenn er als Schalter arbeitet. Wenn die Basisspannung "hoch" ist, wird der
+Transistor "eingeschaltet", so dass der Strom von der :math:`+5\,V` - Spannungsschiene
+durch die Diode zum GND fließt. Wenn der Strom fließt, blinkt die LED. In
+diesem "eingeschalteten" Zustand sehen wir eine kleine Spannung an IN2 (LED-Spannung geht nicht auf 0 V).
+Dies ist der Einfluss der Schwellspannung der LED-Diode und des M1-Transistors.
+Aus :numref:`25_fig_04` können wir diesen Spannungsabfall messen, der bei :math:`\approx 1,9\,V`
+liegt. Versuchen Sie zu messen, wie viel Abfallspannung von M1 verursacht wird und wie
+viel von der LED. Wenn die Basisspannung "low" ist, wird der Transistor "ausgeschaltet"
+und der Stromfluss deaktiviert, daher ist die LED-Spannung gleich :math:`R1`, d.h. :math:`5\,V`.
 
-In diesem "eingeschalteten" Zustand können wir sehen, dass IN2
-(LED-Spannung nicht auf 0 V geht). Dies ist der Effekt der
-Vorwärtsabfallsspannungen der LED-Diode und des M1-Transistors. Aus
-Abbildung 4 können wir diese Drop-Down-Spannung von ~ 1,9 V
-messen. Versuchen Sie zu messen, wie viel Drop-Down-Spannung durch M1
-verursacht wird und welche Menge durch LED. Wenn die Basisspannung
-"niedrig" ist, wird der Transistor "ausgeschaltet", wodurch der
-Stromfluss gesperrt wird, weshalb die LED-Spannung gleich ist wie
-R1, d. H. 5 V.
-
-
-Wir können das "Einschalt-Ereignis" von M1 beobachten, indem wir die
-TRIANGLE-Wellenform von OUT1 auswählen. Aus Abbildung 5 können wir
-sehen, wenn Gate-Signal übergeht :math:`V_ {TH}` der Transistor ist
-eingeschaltet.
-
+Wir können das "Einschaltereignis" von M1 beobachten, indem wir die TRIANGLE-Wellenform
+von OUT1 auswählen. Aus :numref:`25_fig_05` können wir sehen, wenn das Gatesignal höher :math:`V_{TH}` steigt,
+wird der Transistor eingeschaltet.
 
 .. figure:: img/ Activity_25_Fig_05.png
+   :name: 25_fig_05
+   :align: center
 
-   Abbildung 5: NMOS-Schaltereignis
+   NMOS-Schaltereignis
 
    
 .. note::
-   Mehrheit der NMOS-Transistoren haben :math:`V_ {TH}` größer als 2V.
+   Die Mehrheit der NMOS-Transistoren haben :math:`V_ {TH}` größer als :math:`2\,V`.
 
-   
-Durch Umschalten des Oszilloskop-Sensors IN2 auf den
-Drain-Anschluss (D) des M1 können wir den Spannungsabfall am
-M1-Transistor messen (Abbildung 6).
-
+Durch Umschalten der IN2-Scope-Sonde auf den M1 Drain (D)-Stift können wir den
+Spannungsabfall über dem M1-Transistor messen (:numref:`25_fig_06`).
 
 .. figure:: img/ Activity_25_Fig_06.png
+   :name: 25_fig_06
+   :align: center
 
-   Abbildung 6: NMOS-Spannungsabfall.
+   NMOS-Spannungsabfall.
 
    
 .. note::
-   Versuchen Sie aus dem M1 Spannungsabfall zu berechnen :math:`R_
-   {ON}` des NMOS ZVN211_ Transistors und vergleichen Sie die
-   Ergebnisse mit den Werten aus dem Datenblatt.
-   
-   Tipp: Berechnen Sie den Strom durch M1, messen Sie den
-   Spannungsabfall an M1, berechnen Sie :math:`R_ {ON}`.
+   Versuchen Sie aus dem Spannungsabfall M1 den :math:`R_{ON}` des NMOS ZVN211_ Transistors
+   zu berechnen und die Ergebnisse mit den Werten aus dem Datenblatt zu vergleichen.
+   Hinweis: Berechnen Sie den Strom durch M1, messen Sie den Spannungsabfall auf M1,
+   berechnen Sie den :math:`R_{ON}`.
    
 
 .. warning::
-   Transistor :math:`R_ {ON}` Parameter ist entscheidend in
-   Hochstromanwendungen, da die Verlustleistung vom Stromfluss durch
-   den Transistor und :math:`R_ {ON}` Wert abhängig ist.
+   Transistor - :math:`R_ {ON}` - Parameter ist entscheidend in
+   Hochstromanwendungen, da die Verlustleistung des Stromflusses durch
+   den Transistor von :math:`R_ {ON}` - Wert abhängig ist.
    
 
 .. math::
 
-   P_ {dis} = I ^ 2_D R_ {ON} \ quad
+   P_{dis} = I^2_D R_{ON} \quad
 
 
 
