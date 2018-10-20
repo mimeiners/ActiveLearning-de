@@ -70,7 +70,7 @@ Abschaltung ist, hat die Schaltung (idealerweise) die folgenden Werte:
 .. math::
    :label: 25_eq_01
   
-   V_{DS} = V_{DD} \quad \text{und} \quad I_D = 0 A \quad 
+   V_{DS} = V_{DD} \quad \text{und} \quad I_D = 0\,A \quad 
 
 Dieser Zustand ist vergleichbar mit einem offenen Schalter. Wenn der Eingang
 gleich :math:`V_{TH}` ist, wird der Transistor leitend und es treten die folgenden
@@ -79,7 +79,7 @@ Bedingungen auf:
 .. math::
    :label: 25_eq_02
 
-   V_{DS} \approx 0 \quad \text{und} \quad I_D = \frac{V_{DD}}{R_D}A \quad
+   V_{DS} \approx 0 \quad \text{und} \quad I_D = \frac{V_{DD}}{R_D}\,A \quad
 
 Dieser Zustand ist vergleichbar mit einem geschlossenen Schalter, der den unteren
 Teil des :math:`R_D` mit der Masse verbindet.
