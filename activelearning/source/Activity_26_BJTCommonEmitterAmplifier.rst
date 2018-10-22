@@ -130,7 +130,7 @@ Setzen wir :math:`I_C = 5\,mA`, dann folgt
    R_L = \frac{V_{R_L}}{I_C} = \frac{1.6V}{5mA} = 320 \Omega
 
 
-Entspprechend der Gleichung :eq:`26_eq_02`, folgt daraus:
+Entspprechend der Gleichung :eq:`26_eq_2`, folgt daraus:
 
 .. math::
    :label: 26_eq_7
