@@ -4,68 +4,57 @@ BJT gemeinsamer Emitterverstärker
 Zielsetzung
 -----------
 
-Der Zweck dieses Experiments ist es, den gemeinsamen Emitter zu untersuchen
-Konfiguration mit dem BJT-Gerät.
+Der Zweck dieses Versuchs ist es, die gängige Emitterkonfiguration des BJT-Transistors zu untersuchen.
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht.
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch
-wenn man sich auf die Verbindungen zum Red Pitaya STEMlab Board bezieht
-hardware_.
+Oscilloscope- & Signalgeneratoranwendung_ wird zum Erzeugen und Beaibachten von
+Signalen auf der Schaltung verwendet.
 
-Oscilloscope_ & Signal_ generator_ Anwendung wird zum Generieren verwendet
-und Beobachten von Signalen auf der Schaltung.
+Die Erweiterungsstecker-Pins für die Spannungsversorgung **+5 V**, **-3,3 V** und **+3,3 V**
+sind in der Dokumentation_ dargestellt.
 
-Erweiterungssteckerstifte für **+5 V**, **-3,3 V** und **+ 3,3 V**
-Spannungsversorgung finden Sie in der Dokumentation here_.
 
 Hintergrund
 -----------
 
-Die Konfiguration, die in Fig. 1 gezeigt ist, zeigt einen npn-Transistor
-als ein gemeinsamer Emitterverstärker
-verwendet. Ausgangslastwiderstand :math:`R_L` ist so gewählt, dass für
-den gewünschten Nennkollektorstrom
-:math:`I_C`, ungefähr ein Drittel der +5 V Spannung (1,6 V)
-erscheint bei :math:`V_ {CE}` (bei DC-Betriebspunktbedingung). Widerstand
-:math:`R_B` legt den Betriebspunkt für die nominale Vorspannung für die
-Transistor (Basisstrom :math:`I_B`), um den erforderlichen Kollektor zu versenken
-aktuell :math:`I_C`. Das Eingangssignal ist AC-gekoppelt mit der Basis von
-der Transistor mit Kondensator :math:`C_1`, um die DC-Vorspannung nicht zu stören
-Bedingungen**. Spannungsteiler :math:`\ frac {R_1} {R_2}` wird gewählt
-einen selbst vorgespannten DC-Arbeitspunkt bereitstellen. Widerstand
-:math:`R_E` wird verwendet Emitterdegeneration (Stromrückkopplung)
-hinzufügen, um sich zu stabilisieren der DC-Arbeitspunkt.
+Die in :numref:`26_fig_01` dargestellte Konfiguration zeigt einen npn-Transistor, der als
+Common-Emitter-Verstärker verwendet wird. Der Ausgangslastwiderstand :math:`R_L` ist so
+gewählt, dass für den gewünschten Kollektornennstrom :math:`I_C` etwa ein Drittel der :math:`+5\,V`
+Spannung (:math:`1,6\,V`) bei :math:`V_{CE}` (DC-Arbeitspunktbedingung) erscheint. Der Widerstand
+:math:`R_B` stellt den Nennarbeitspunkt für den Transistor (Basisstrom :math:`I_B`) ein, um den
+erforderlichen Kollektorstrom :math:`I_C` zu senken. Das Eingangssignal ist mit der Basis des
+Transistors mit dem Kondensator :math:`C_1` AC gekoppelt, um die DC-Vorspannung nicht zu stören.
+Der Spannungsteiler :math:`\frac{R1}{R2}` wird gewählt, um einen selbstvorbelasteten DC-Arbeitspunkt
+bereitzustellen. Der Widerstand :math:`R_E` wird zur Addition der Emitterschwankungen (Stromrückführung)
+verwendet, um den DC-Arbeitspunkt zu stabilisieren.
 
-
-Der beste Ansatz für die Auswahl von :math:`R_L` und :math:`R_E`
-ist es, Spannungsabfälle quer zu ermöglichen :math:`Q_1`, :math:`R_L` und
-:math:`R_E` entspricht dem 1/3 von :math:`V_ {CC}` (bei DC-Betrieb
-Punktbedingung). Also :math:`R_E` = :math:`R_L`. Hinzufügen des Emitters
-Degenerationswiderstand hat die Stabilität des DC-Betriebs verbessert
-Punkt auf Kosten der reduzierten Verstärkerverstärkung. Eine höhere
-Verstärkung für AC Signale können durch Hinzufügen eines Kondensators
-in gewissem Umfang wiederhergestellt werden :math:`C_E` über den
-Degenerationswiderstand :math:`R_E`, effektiv Setzen Sie den Wert "
-:math:`R_E` "nahe Null für AC Signale. Kondensator :math:`C_2` wird
-hinzugefügt, um die DC-Komponente zu blockieren des Ausgangssignals.
+Der beste Ansatz für die Auswahl von :math:`R_L` und :math:`R_E` besteht darin, Spannungsabfälle
+über :math:`Q_1`, :math:`R_L` und :math:`R_E` zu ermöglichen, die dem 1/3 des VCC entsprechen (DC-Arbeitspunktbedingungen).
+Daher :math:`R_E = R_L`. Das Hinzufügen des Emitter-Degenerationswiderstandes hat die
+Stabilität des DC-Arbeitspunktes auf Kosten der reduzierten Verstärkung verbessert.
+Eine höhere Verstärkung für Wechselstromsignale kann bis zu einem gewissen
+Grad wiederhergestellt werden, indem der Kondensator :math:`C_E` über den Degenerationswiderstand :math:`R_E`
+hinzugefügt wird, wodurch der " :math:`R_E` " Wert für Wechselstromsignale praktisch gegen Null
+gesetzt wird. Der Kondensator :math:`C_2` wird hinzugefügt, um die DC-Komponente des Ausgangssignals
+zu blockieren.
 
 .. _2N3904: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 .. _The Signal Path: https://www.youtube.com/watch?v=Y2ELwLrZrEM&t=1213s
 
-
 .. note::
-    Wie man einen Common-Emitter-Verstärker entwickelt, wird in a gut erklärt
-    Video-Tutorial zum `The Signal Path`_ Youtube-Kanal.
-
+    Wie man einen Common-Emitter-Verstärker entwickelt, wird in einem Video-Tutorial
+    auf `The Signal Path`_ Youtube-Kanal ausführlich erklärt.
 
 .. figure:: img/ Activity_26_Fig_01.png
    :name: 26_fig_01
@@ -78,14 +67,15 @@ hinzugefügt, um die DC-Komponente zu blockieren des Ausgangssignals.
 Schnelle Berechnung des gemeinsamen Emitterverstärkers
 ------------------------------------------------------
 
-Nehmen wir an, wir wollen einen Verstärker mit der Verstärkung konstruieren
-:math:`A = 5` mit npn-Transistor 2N3904_ und einer Spannungsversorgung von
-:math:`V_ {CC} = 5V`.
+Angenommen, wir wollen einen Verstärker mit der Verstärkung :math:`A=5` mit einem 2N3904_ npn-Transistor
+und einer Spannungsversorgung von :math:`V_{CC}=5\,V` entwerfen.
 
-
-Für den NPN-Transistor 2N3904 können wir folgendes annehmen :math:`\ beta = 100` und
+Für den npn-Transistor 2N3904 können wir davon ausgehen, dass Für den NPN-Transistor 2N3904_ können wir folgendes annehmen :math:`\ beta = 100` und
 :math:`v_ {CE_ {sat}} = 0.2 V`. In einem ersten Schritt wird der DC-Arbeitspunkt eingestellt
-durch Entscheiden von Spannungen über :math:`R_L`, :math:`R_E` und :math:`Q_1`.
+durch Entscheiden von Spannungen über :math:`R_L`, :math:`R_E` und :math:`Q_1`.:math:`\beta = 100`
+und :math:`V_{CE_{sat}}=0,2\,V`. Der erste Schritt ist die Einstellung des
+DC-Arbeitspunktes durch die Wahl der Spannungen über :math:`R_L`,
+:math:`R_E` und :math:`Q_1`.
 
    
 .. math::
@@ -93,9 +83,9 @@ durch Entscheiden von Spannungen über :math:`R_L`, :math:`R_E` und :math:`Q_1`.
 
    V_{R_L} + (V_{CE} + v_{CE_{sat}}) + V_{R_E} = V_{CC}
 
-
-Wenn wir berücksichtigen :math:`v_ {CE_ {sat}}` und 1/3 Verhältnis von
-Spannungen an :math:`R_L`, :math:`R_E` und :math:`Q_1` erhalten wir folgendes:
+   
+Wenn wir :math:`V_{CE_{sat}}` und 1/3 Verhältnis der Spannungen auf :math:`R_L`, :math:`R_E`
+und :math:`Q_1` berücksichtigen, erhalten wir folgendes:
 
 
 .. math::
@@ -104,8 +94,8 @@ Spannungen an :math:`R_L`, :math:`R_E` und :math:`Q_1` erhalten wir folgendes:
    1,6 V + 1,6 V + 0,2 V + 1,6 V = 5 V
 
 
-Vom gewünschten Verstärkungswert :math:`A` können wir berechnen :math:`R_L`
-mit Gl. (3) - (7)
+Aus dem Sollwert der Verstärkung A können wir den Wert für :math:`R_L` mit den
+Gleichungen (3) - (7) berechnen.
 
 .. math::
    :label: 26_eq_3
@@ -113,10 +103,8 @@ mit Gl. (3) - (7)
    A = \beta \frac{R_ {out}}{R_ {in}}.
 
    
-wo :math:`R_ {out}` ist der Widerstand in Serie mit der
-Kollektor und :math:`R_ {in}` ist der in Reihe geschaltete Widerstand
-mit der Basis.
-
+wobei :math:`R_{out}` der Widerstand ist, der in Reihe mit dem Kollektor geschaltet ist,
+und :math:`R_{in}` der Widerstand ist, der in Reihe mit der Basis geschaltet ist.
 
 .. math::
    :label: 26_eq_4
@@ -131,11 +119,10 @@ Es folgt:
       
    A = \beta \frac{R_L}{R_B}
 
-   
-In diesem Schritt müssen wir **aktuelle Bewertungen unseres Verstärkers einstellen**
-d.h. wir müssen wählen :math:`I_C` um zu berechnen :math:`R_L`.
+In diesem Schritt müssen wir die **Nennströme unseres Verstärkers** einstellen, d.h. wir
+müssen den IC zur Berechnung des RL wählen.
 
-Lass uns setzen :math:`I_C = 5 mA`, dann
+Setzen wir :math:`I_C = 5\,mA`, dann folgt
  
 .. math::
    :label: 26_eq_6
@@ -143,7 +130,7 @@ Lass uns setzen :math:`I_C = 5 mA`, dann
    R_L = \frac{V_{R_L}}{I_C} = \frac{1.6V}{5mA} = 320 \Omega
 
 
-Um Gl. (2) Daraus folgt:
+Entspprechend der Gleichung :numref:`26_eq_02`, folgt daraus:
 
 .. math::
    :label: 26_eq_7
@@ -151,7 +138,7 @@ Um Gl. (2) Daraus folgt:
    R_E = R_L, \quad \text{d.h.} \quad R_E = \frac{V_{R_L}}{I_C} = 320 \Omega.
 
    
-Jetzt können wir berechnen :math:`R_ {in}`, d. H . :math:`R_ {B}` Wert als:
+Jetzt können wir den Wert für :math:`R_{in}` bzw. :math:`R_{B}` berechnen als:
 
 .. math::
    :label: 26_eq_8
@@ -159,17 +146,15 @@ Jetzt können wir berechnen :math:`R_ {in}`, d. H . :math:`R_ {B}` Wert als:
    R_{B} = \beta \frac{R_L}{A} = 100 \frac{320 \Omega}{5} = 6.4\,k\Omega.
 
 
-Der letzte Schritt besteht darin, Werte von
-DC-Vorspannungswiderständen zu berechnen  :math:`R_1` und
-:math:`R_2`. :math:`R_2` kann erhalten werden von
-"Kochbuch" -Beziehung in Gl. (9) und deshalb :math:`R_1`
-kann aus Gl. (10).
+Der letzte Schritt ist das Berechnen der Werte der DC-Vorspannungswiderstände :math:`R_1` und :math:`R_2`.
+:math:`R_2` kann aus der in Gleichung (:numref:`26_eq_9`) angegebenen "Kochbuch"-Beziehung gewonnen werden und somit
+kann :math:`R_1` aus Gleichung (:numref:`26_eq_10`) berechnet werden.
 
 
 .. math::
    :label: 26_eq_9
 
-   R_2 &\approx 10 R_E = 3,2 \,k\Omega
+   R_2 \approx 10 R_E = 3,2 \,k\Omega
 
 
 .. math::
@@ -178,36 +163,31 @@ kann aus Gl. (10).
    R_1 = \frac{V_{CC} - (v_{BE} + V_{R_E})}{\frac{(v_{BE} + V_{R_E})}{R_2}}
 
    
-wo :math:`v_ {BE} = 0.6 V`
+wo :math:`v_{BE} = 0.6\,V`
 
 
 .. math::
    
-   R_1 = \frac{5 V - (0,6 V + 1,6 V)}{\frac{(0,6 V + 1,6 V)}{3,2 k \Omega}} = 4,0 k \Omega
+   R_1 = \frac{5\,V - (0,6\,V + 1,6\,V)}{\frac{(0,6\,V + 1,6\,V)}{3,2\,k\Omega}} = 4,0\,k\Omega
 
  
 .. note::
-   Die oben gezeigte Berechnung des gemeinsamen Emitterverstärkers sollte sein
-   Verwenden Sie als Richtlinie und nicht als definitive Design-Blaupause. Das
-   Grund dafür ist, dass in den meisten Fällen berechnete Werte von
-   Die Widerstände liegen außerhalb der verfügbaren Widerstände
-   der Markt. Daher sollten Widerstandswerte abgerundet oder geändert werden
-   um sie an die Schlusswerte von allgemein verfügbaren anzupassen
-   Widerstände. Es ist eine gute Übung, zu setzen :math:`R_1` und
-   :math:`R_B` als Potentiometer da wir mit diesen zwei Widerständen können
-   Tuner manuell einstellen. Tuning des Verstärkers ist notwendig
-   da Transistoren sich voneinander unterscheiden können.
+   Die oben gezeigte Berechnung des herkömmlichen Emitterverstärkers sollte als
+   Richtlinie und nicht als definitive Entwurfsgrundlage verwendet werden. Der
+   Grund dafür ist, dass in den meisten Fällen berechnete Werte der Widerstände
+   außerhalb der auf dem Markt verfügbaren Widerstände liegen. Daher sollten die
+   Widerstandswerte gerundet oder geändert werden, um sie an die Endwerte von
+   handelsüblichen Widerständen anzupassen. Es ist eine gute Praxis, :math:`R_1` und :math:`R_B` als
+   Potentiometer einzustellen, da wir mit diesen beiden Widerständen den Verstärker
+   manuell abstimmen können. Die Abstimmung des Verstärkers ist notwendig, da sich die
+   Transistoren voneinander unterscheiden können.
 
-   Auswahl der Werte der Kondensatoren :math:`C_1`, :math:`C_2` und
-   :math:`C_E` wird durch die Verwendung von Kondensatoren mit hohem
-   Wert während der Die maximale Nennspannung der Kondensatoren muss
-   größer als sein :math:`V_ {CC}`. Üblicherweise werden
-   Elektrolytkondensatoren verwendet in Bereichen von :math:`\ mu
-   F`. Wenn wir (Emitter - Gnd) bringen wollen Impedanz (für AC) nahe
-   bei Null dann :math:`C_E` muss groß sein wie möglich. Auch
-   :math:`C_1`, :math:`C_2` sollte groß sein verhindern Sie große
-   Spannungsabfälle über sie.
-
+   Die Auswahl der Werte der Kondensatoren :math:`C_1`, :math:`C_2` und :math:`C_E` erfolgt durch die Verwendung
+   hochwertiger Kondensatoren, wobei die maximale Nennspannung der Kondensatoren größer
+   als VCC sein muss. Üblicherweise werden Elektrolytkondensatoren in den Bereichen
+   von :math:`\mu F` verwendet. Wenn wir die Impedanz (für AC) nahe Null bringen wollen, dann
+   muss :math:`C_E` so groß wie möglich sein. Auch :math:`C_1`, :math:`C_2` sollte groß sein,
+   um große Spannungsabfälle über ihnen zu vermeiden.
 
    
 Materialien
@@ -215,17 +195,17 @@ Materialien
 
 - Red Pitaya STEMlab
   
-- 2x 470Ω Widerstand
+- 2x :math:`470\,\Omega` Widerstand
   
-- 2x 10kΩ Widerstand
+- 2x :math:`10\,k\Omega` Widerstand
   
-- 1x 10kΩ Trimer
+- 1x :math:`10\,k\Omega` Trimer
   
-- 1x 1kΩ Widerstand
+- 1x :math:`1\,k\Omega` Widerstand
   
-- 1x 10uF Kondensator
+- 1x :math:`10\,\mu F` Kondensator
   
-- 2x 4,7 uF Kondensator
+- 2x :math:`4,7\,\mu F` Kondensator
   
 - 1x kleinsignal NPN-Transistor (2N3904_)
   

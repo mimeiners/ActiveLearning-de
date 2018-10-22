@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>18. Der Komparator, Positive Feedback und Schmitt Trigger &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="19. Diodes und Jupyter Notebook Beispiel" href="Activity_19_Diodes.html" />
+    <link rel="prev" title="17. Strommessung mit einem Differenzverstärker" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. Der Komparator, Positive Feedback und Schmitt Trigger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">18.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">18.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">18.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#der-spannungsvergleicher">18.4. Der Spannungsvergleicher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">18.5. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vorbereitung">18.6. Vorbereitung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">18.7. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mit-positiver-ruckkopplung-zur-hysterese-der-schmitt-trigger">18.8. Mit positiver Rückkopplung zur Hysterese: der Schmitt-Trigger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#berechnung-des-schwellenwertes">18.9. Berechnung des Schwellenwertes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">18.10. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>18. Der Komparator, Positive Feedback und Schmitt Trigger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_18_TheComparatorSchmittTrigger.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="der-komparator-positive-feedback-und-schmitt-trigger">
+<h1>18. Der Komparator, Positive Feedback und Schmitt Trigger<a class="headerlink" href="#der-komparator-positive-feedback-und-schmitt-trigger" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>18.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieser Übung ist es, den Spannungskomparator, die Verwendung von
+positiver Rückführung und den Betrieb der
+Schmitt-Trigger-Konfiguration zu untersuchen. Die Verwendung
+konventioneller Operationsverstärker als Ersatz für
+Spannungskomparatoren wird im Abschnitt Grundlegende
+Operationsverstärker-Schaltungen beschrieben.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>18.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab
+Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> geht. Die für die <strong>5V</strong> - Spannungsversorgung
+verwendeten Verlängerungsstecker-Pins sind in der <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">Dokumentation</a>
+dargestellt. Die <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oszilloskop</a> - und Signalgeneratoranwendung wird zum
+Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>18.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+</div>
+<div class="section" id="der-spannungsvergleicher">
+<h2>18.4. Der Spannungsvergleicher<a class="headerlink" href="#der-spannungsvergleicher" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ein Differenzspannungskomparator wie der <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> aus dem
+Analogteilesatz hat eine Pinbelegung, die in vielerlei Hinsicht der
+eines herkömmlichen Operationsverstärkers ähnlich ist, aber viele
+wichtige Unterschiede aufweist (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 18.1</span></a>). Es gibt die
+üblichen <span class="math notranslate nohighlight">\(V_+\)</span> und <span class="math notranslate nohighlight">\(V_-\)</span> Spannungsversorgungsstifte, aber
+ein Komparator hat auch einen Erdungsstift (GND). Die differentiellen
+<span class="math notranslate nohighlight">\(+IN\)</span> - und <span class="math notranslate nohighlight">\(-IN\)</span> -Pins sind im Wesentlichen die gleichen
+wie bei einem herkömmlichen Operationsverstärker. Es wird auch
+einen Ausgangspin wie in einem Operationsverstärker geben, aber
+es gibt oft einen zweiten „invertierenden“ („invertierenden“)
+(„komplementären“) Ausgang. Auch während die Spannung am Ausgang
+eines Operationsverstärkers im Allgemeinen in der Nähe der
+<span class="math notranslate nohighlight">\(+\)</span> und <span class="math notranslate nohighlight">\(-\)</span> Versorgungsschienen schwingen kann,
+schwingt der Ausgang eines Vergleichers nur zwischen Masse
+(gnd) und der <span class="math notranslate nohighlight">\(+\)</span> Versorgung. Dies macht den Ausgang
+eher zu einem digitalen Signal und ist kompatibel mit
+Standard-Logikgattern wie TTL oder CMOS. Der
+Spannungskomparator kann als ein
+Single-Bit-Analog-Digital-Wandler (ADC) betrachtet
+werden. Der AD8561 beinhaltet auch einen LATCH-Eingang,
+der den Ausgang verriegelt oder einfriert und verhindert,
+dass er sich ändert, auch wenn sich die Eingänge ändern.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_18_Fig_01.png" src="_images/Activity_18_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 18.1 </span><span class="caption-text"><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> Datenblatt und Pinbelegung</span></p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>18.5. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>OPAMP: 1x <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> Spannungskomparator</li>
+<li>Spannungsregler: 1x LM317</li>
+<li>Widerstand: 2x 4,7 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1x 20 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1x 47 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1x 100 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Kondensator: 1x 0,1 <span class="math notranslate nohighlight">\(\mu F\)</span></li>
+</ul>
+</div>
+<div class="section" id="vorbereitung">
+<h2>18.6. Vorbereitung<a class="headerlink" href="#vorbereitung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bauen Sie die Vergleichsprüfschaltung wie in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 18.2</span></a> auf Ihrer
+lötfreien Lochrasterplatine auf. Die beiden Pull-up-Widerstände <span class="math notranslate nohighlight">\(4,7 k\Omega\)</span>
+sind optional und werden verwendet, um den maximalen positiven Ausgangshub
+auf näher an die <span class="math notranslate nohighlight">\(+5 V\)</span> -Versorgung zu erhöhen.</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_18_Fig_02.png" src="_images/Activity_18_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 18.2 </span><span class="caption-text"><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> Komparatorschaltung</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Spannungskomparatoren sind extrem empfindlich gegenüber dem Rauschen
+und den Störungen auf der Stromversorgungsschiene. Eine verrauschte
+Stromversorgungsschiene führt zu Störungen des Ausgangssignals. Diese
+Störungen treten bei Schaltschwellenspannungen auf. Mit anderen Worten,
+der Vergleicher wird Schwierigkeiten haben, sich für das Einschalten von
+<span class="math notranslate nohighlight">\(V+\)</span> oder <span class="math notranslate nohighlight">\(V-\)</span> zu entscheiden, wenn er zwei Eingangssignale vergleicht, die
+vom Rauschen der Stromversorgung betroffen sind. Aus diesem Grund verwenden
+wir hier einen Spannungsregler, um unsere Stromversorgungsschiene zu
+stabilisieren und eine verrauschte Ausgabe des Vergleichers zu verhindern.
+Sie können es direkt mit der <span class="math notranslate nohighlight">\(5 V\)</span> -Netzteilschiene versuchen und die
+Ergebnisse beobachten und mit den Ergebnissen des Spannungsreglers vergleichen.
+Hinweis: Es ist nicht notwendig, die Spannung von <span class="math notranslate nohighlight">\(5 V\)</span> auf <span class="math notranslate nohighlight">\(2,5 V\)</span>
+herunterzufahren, aber wir haben uns für diese einfache Form entschieden.</p>
+</div>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_18_Fig_03.png" src="_images/Activity_18_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 18.3 </span><span class="caption-text"><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> Komparatorschaltung auf dem Steckbrett</span></p>
+</div>
+<p><a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power">LM317</a> Spannungsregler ist im vorherigen <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power">Kapitel</a> beschrieben.</p>
+</div>
+<div class="section" id="verfahren">
+<h2>18.7. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x1 und
+IN2 auf x10</li>
+<li>Starten Sie die Oszilloskop &amp; Signalgenerator - Anwendung.</li>
+<li>Zum Anlegen der Eingangsspannung <span class="math notranslate nohighlight">\(V_{in}\)</span> im Menü OUT1
+Einstellungen den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5 V\)</span> und den DC-Offset auf <span class="math notranslate nohighlight">\(0,5 V\)</span>
+setzen. Wählen Sie im Wellenform-Menü TRIANGLE, Deaktivieren Sie den
+SHOW-Button und wählen Sie Enable.</li>
+<li>Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5 V\)</span>
+ein, wählen Sie im Wellenformmenü die Option DC und aktivieren Sie
+Enable.</li>
+<li>Stellen Sie im Menü für die IN2-Einstellungen die Sondendämpfung
+auf x10 ein</li>
+<li>Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN1 <span class="math notranslate nohighlight">\(V/div\)</span> auf <span class="math notranslate nohighlight">\(500 mV/div\)</span> eingestellt ist (Sie können <span class="math notranslate nohighlight">\(V/
+div\)</span> einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</li>
+<li>Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN2 <span class="math notranslate nohighlight">\(V/div\)</span> auf <span class="math notranslate nohighlight">\(1 V/div\)</span> eingestellt ist (Sie können <span class="math notranslate nohighlight">\(V/div\)</span>
+einstellen, indem Sie den gewünschten Kanal auswählen und vertikale
++/- Regler verwenden)</li>
+<li>Stellen Sie sicher, dass OUT2 <span class="math notranslate nohighlight">\(V/div\)</span> am linken unteren
+Bildschirmrand auf <span class="math notranslate nohighlight">\(500 mV/div\)</span> eingestellt ist (Sie können <span class="math notranslate nohighlight">\(V/div\)</span>
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(200 us/div\)</span> (Du kannst <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Kontrollen einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_18_Fig_04.png" src="_images/Activity_18_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 18.4 </span><span class="caption-text"><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> Komparatorschaltung Messungen</span></p>
+</div>
+<p>Sie sollten eine Rechteckwelle sehen, die hoch (etwa <span class="math notranslate nohighlight">\(+2.5 V\)</span>) ist, wenn der
+Eingangssignalpegel größer als <span class="math notranslate nohighlight">\(0,5 V\)</span> (OUT2 DC-Wert) und niedrig (etwa <span class="math notranslate nohighlight">\(0 V\)</span>) ist,
+wenn das Eingangssignal kleiner als <span class="math notranslate nohighlight">\(0,5 V\)</span> ist. Beachten Sie die Pegel der
+Eingangsdreieckswelle, bei denen der Ausgang von niedrig nach hoch und von hoch
+nach niedrig wechselt.</p>
+<p>Verbinden Sie nun den Kanal IN1 (Einstellung der Sondendämpfung x10 und IN1
+Einstellung Menü Sondendämpfung auf x10 einstellen) mit dem invertierenden
+Ausgang (Pin 8). Sie sollten wieder eine Rechteckwelle sehen, aber mit entgegengesetzter
+Phase zu Pin 7(IN2). Ändern Sie auch den Gleichstrompegel von OUT2
+(Amplitude auf <span class="math notranslate nohighlight">\(0,7 V\)</span> einstellen) - dies ändert den Schaltpegel des
+Spannungskomparators und führt zu einer unterschiedlichen Dauer der Zustände
+HIGH und LOW des Komparatorausgangs. Du solltest wieder zwei Rechteckwellen mit
+entgegengesetzten Phasen sehen, aber jetzt mit entgegengesetzten HIGH und LOW Zeitdauern.</p>
+<ol class="arabic">
+<li><p class="first">Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x10 und
+IN2 auf x10</p>
+</li>
+<li><p class="first">Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,7 V\)</span>
+ein, wählen Sie im Wellenformmenü die Option DC, und wählen Sie
+Enable.</p>
+</li>
+<li><p class="first">Stellen Sie im Einstellungsmenü für IN2 und IN2 die Sondendämpfung
+auf x10 und den Offsetpegel <span class="math notranslate nohighlight">\(-1700 mV\)</span> ein</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Aus der obigen Beschreibung können Sie vielleicht sehen, wie man
+ein PWM-Signal (Pulsweitenmodulation) unter Verwendung eines
+Dreiecksignals mit konstanter Frequenz und eines veränderbaren DC
+<span class="math notranslate nohighlight">\(V_{ref}\)</span> -Werts erzeugt.</p>
+</div>
+</li>
+</ol>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_18_Fig_05.png" src="_images/Activity_18_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 18.5 </span><span class="caption-text"><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> beide Ausgangsmessungen bei verschiedenen <span class="math notranslate nohighlight">\(V_{ref} = 0.7V\)</span></span></p>
+</div>
+<p>Zoomen Sie in die fallende Flanke der Rechteckwelle des Ausgangs (IN2), indem
+Sie die Einstellungen für die horizontale Position und die Zeit pro Teilung so
+anpassen, dass die fallende Flanke auf die Zeitachse zentriert ist und die Zeit
+pro Teilung klein genug ist, um die Übergangszeit der Flanke (<span class="math notranslate nohighlight">\(5 uS/div\)</span>) zu sehen.
+Sie sollten sehen, dass der Ausgang nicht vom hohen Ausgangspegel bis zum niedrigen
+Ausgangspegel auf einmal geht, sondern teilweise stoppt und einige Zeit auf einem
+Zwischenpegel verbringt, bevor er den weiteren Weg zum niedrigen Ausgangspegel geht.
+Sie sollten diese Verzögerung auch beim Übergang von Low zu High (IN1) sehen. Diese
+Verzögerung wird durch Rauschen verursacht, da das Eingangssignal langsam den
+Eingangsschwellenwert (in diesem Fall <span class="math notranslate nohighlight">\(0,7 Volt\)</span>) überschreitet und Probleme
+verursachen kann. Aus diesem Grund ist es gut, eine rauscharme Stromversorgung und
+rauscharme Eingangssignale am Spannungsvergleicher zu haben. Versuchen Sie, die
+Messung des Schaltrauschens an einem verrauschten Netzteil zu wiederholen (<span class="math notranslate nohighlight">\(5 V\)</span> -Pin direkt vom STEMlab-Board).</p>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_18_Fig_06.png" src="_images/Activity_18_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 18.6 </span><span class="caption-text">Schaltgeräuschmessungen.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Normalerweise besteht unserer Bestreben darin, eine hohe
+Wahrscheinlichkeit von Rauschproblemen mit hochfrequenten Signalen
+zu korrelieren. Im Falle eines Spannungskomparators ist dies
+nicht immer der Fall. Wenn wir die OUT1-Frequenz (<span class="math notranslate nohighlight">\(V_{in}\)</span>) auf <span class="math notranslate nohighlight">\(100 kHz\)</span>
+erhöhen, ist das Schaltrauschen viel geringer. Wie ist das möglich? Sie
+denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
+Eingänge und vergleicht ständig Werte von <span class="math notranslate nohighlight">\(V_{in}\)</span> und
+<span class="math notranslate nohighlight">\(V_{ref}\)</span>. Stellen wir nun <span class="math notranslate nohighlight">\(V_{in}\)</span> als
+rauschfreies Signal und <span class="math notranslate nohighlight">\(V_{ref} = DC + (-) A_{noise}\)</span> ein.
+Wenn sich das Dreieckwellen- <span class="math notranslate nohighlight">\(V_{in}\)</span> -Signal langsam
+<span class="math notranslate nohighlight">\(V_{ref}\)</span> nähert, beginnt der Spannungsvergleicher
+zu schalten und wenn die <span class="math notranslate nohighlight">\(V_{ref}\)</span> -Amplitude um den DC-Wert rauscht,
+ändert der Vergleichsausgang den Zustand entsprechend dem
+<span class="math notranslate nohighlight">\(V_{in} - (V_{ref} = DC + (-) A_{Rauschen})\)</span> -Verhältnis. Solange
+die <span class="math notranslate nohighlight">\(V_{in}\)</span> -Amplitude also im <strong>Bereich</strong> von
+<span class="math notranslate nohighlight">\(V_{ref} = DC + (-) A_{noise}\)</span> -Wertes <strong>bleib</strong> schaltet der
+Komparatorausgang effektiv das Rauschen ein und nicht die
+Eingangssignale. Sobald <span class="math notranslate nohighlight">\(V_{in}\)</span> unter <span class="math notranslate nohighlight">\(V_{ref} = DC - A_{noise}\)</span>
+oder über <span class="math notranslate nohighlight">\(V_{ref} = DC + A_{noise}\)</span> geht, schaltet der Komparator hoch oder niedrig,
+aber jetzt auf Eingangssignalwerte und nicht auf Rauschwerte. Sie können sehen, dass die
+<strong>niederfrequente Dreieckwelle</strong> <span class="math notranslate nohighlight">\(V_{in}\)</span> <strong>mehr Zeit</strong> in der
+Nähe von <span class="math notranslate nohighlight">\(V_{ref} = DC + (-) A_{noise}\)</span> <strong>verbringen wird</strong>,
+was dazu führt, dass der Spannungsvergleicher verrauschte Signale erzeugt,
+während die <strong>hochfrequente Dreieckwelle</strong> <span class="math notranslate nohighlight">\(V_{in}\)</span>  <strong>schnell</strong> durch den
+<span class="math notranslate nohighlight">\(V_{ref} = DC + (-) A_{noise}\)</span> -Bereich <strong>geht</strong> und verhindert, dass der Komparator ein rauschen erzeugt.</p>
+</div>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/Activity_18_Fig_07.png" src="_images/Activity_18_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 18.7 </span><span class="caption-text">Schaltvorgang bei hoher Eingangssignalfrequenz (100 kHz)</span></p>
+</div>
+</div>
+<div class="section" id="mit-positiver-ruckkopplung-zur-hysterese-der-schmitt-trigger">
+<h2>18.8. Mit positiver Rückkopplung zur Hysterese: der Schmitt-Trigger<a class="headerlink" href="#mit-positiver-ruckkopplung-zur-hysterese-der-schmitt-trigger" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>Neben der rauscharmen Stromversorgung besteht eine gemeinsame Lösung für
+das soeben skizzierte Problem darin, der Vergleichsschaltung eine Störfestigkeit
+hinzuzufügen, indem die Hysterese in die Übergangsschwellenspannung</strong> <span class="math notranslate nohighlight">\(V_{th}\)</span> integriert wird, wie in
+<a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 18.8</span></a> dargestellt. Unter „Hysterese“ verstehen wir, dass die Schwellenspannung
+eine Funktion des aktuellen Betriebszustandes des Systems ist, der für diese Schaltung
+durch seine Ausgangsspannung definiert ist: positive oder negative Sättigung. Da <span class="math notranslate nohighlight">\(V_{th}\)</span>,
+die Spannung an Pin 2, durch den aus den Widerständen <span class="math notranslate nohighlight">\(R1\)</span> und <span class="math notranslate nohighlight">\(R2\)</span> gebildeten Spannungsteiler
+bestimmt wird, ändert sie sich als Reaktion auf eine Änderung der Ausgangsspannung:
+Sobald der Ausgang als Reaktion auf einen Eingang, der die Schwellenspannung
+unterschritten hat, hochgegangen ist, wird die Schwellenspannung auf einen höheren
+Wert <span class="math notranslate nohighlight">\(V_{th+}\)</span> ( <span class="math notranslate nohighlight">\(V_{ref}\)</span> + ein Bruchteil der Ausgangshochspannung) geändert; umgekehrt ändert
+eine durch <span class="math notranslate nohighlight">\(V_{th+}\)</span> ansteigende Eingangsspannung den Ausgang in ihren niedrigen Zustand
+und bewirkt, dass die Schwellenspannung auf einen niedrigeren
+Wert <span class="math notranslate nohighlight">\(V_{th}\)</span> - ( <span class="math notranslate nohighlight">\(V_{ref}\)</span> - ein Bruchteil der Ausgangsniederspannung) eingestellt wird.</p>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/Activity_18_Fig_08.png" src="_images/Activity_18_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 18.8 </span><span class="caption-text">Schmitt-Trigger</span></p>
+</div>
+<p>Diese Differenz zwischen <span class="math notranslate nohighlight">\(V_{th+}\)</span> und <span class="math notranslate nohighlight">\(V_{th-}\)</span> bedeutet, dass Rauschauslenkungen,
+die kleiner als diese Differenz am Eingang sind, <span class="math notranslate nohighlight">\(V_{in}\)</span> nicht dazu veranlassen,
+die Hystereselücke <span class="math notranslate nohighlight">\(V_{hist} = V_{th+} - V_{th-}\)</span> zu überschreiten und eine unerwünschte
+Umkehrung des Ausgangszustands bewirken. Wenn der Hysteresespalt groß genug
+ist, kann das System vollständig undurchlässig für das Rauschen des
+Eingangssignals gemacht werden, wodurch die störenden Ausgangspegel der
+grundlegenden Vergleichsschaltung eliminiert werden (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 18.1</span></a>).</p>
+</div>
+<div class="section" id="berechnung-des-schwellenwertes">
+<h2>18.9. Berechnung des Schwellenwertes<a class="headerlink" href="#berechnung-des-schwellenwertes" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Lassen Sie uns die maximalen und minimalen Ausgangsspannungen
+<span class="math notranslate nohighlight">\(V_{high}\)</span> und <span class="math notranslate nohighlight">\(V_{low}\)</span> nennen. Die Schwellenspannung, wenn der
+Ausgang auf <span class="math notranslate nohighlight">\(V_{high}\)</span> und <span class="math notranslate nohighlight">\(V_{low}\)</span> steht, ist:</p>
+<div class="math notranslate nohighlight" id="equation-18-eq-1">
+<span class="eqno">(18.1)<a class="headerlink" href="#equation-18-eq-1" title="Permalink to this equation">¶</a></span>\[V_{th_{high}} = \frac{R_1}{R_1 + R_2} (V_{high} + V_{ref}) + V_{ref}\]</div>
+<div class="math notranslate nohighlight" id="equation-18-eq-2">
+<span class="eqno">(18.2)<a class="headerlink" href="#equation-18-eq-2" title="Permalink to this equation">¶</a></span>\[V_{th_{low}} = \frac{R_1}{R_1 + R_2} (V_{low} - V_{ref}) + V_{ref}\]</div>
+<p>Die resultierende Hystereselücke für die Schaltung von <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 18.8</span></a> ist gegeben durch:</p>
+<div class="math notranslate nohighlight" id="equation-18-eq-3">
+<span class="eqno">(18.3)<a class="headerlink" href="#equation-18-eq-3" title="Permalink to this equation">¶</a></span>\[V_{hist} = V_{th_{hoch}} - V_{th_{niedrig}} = \frac{R_1}{R_1 + R_2} (V_{hoch} - V_{niedrig})\]</div>
+<p>Für den AD8561 mit <span class="math notranslate nohighlight">\(+2,5 V\)</span> Spannungsversorgung und Pull-up-Widerstand,
+beträgt <span class="math notranslate nohighlight">\(V_{high} - V_{low} \approx 2,3 V\)</span>. Da das andere Ende des Spannungsteilers (unten bei <span class="math notranslate nohighlight">\(R1\)</span>)
+mit <span class="math notranslate nohighlight">\(V_{ref} = 0,5 V\)</span> verbunden ist, werden die Schwellenspannungen <span class="math notranslate nohighlight">\(V_{th_{high}} und V_{th_{low}}\)</span>
+um <span class="math notranslate nohighlight">\(0,5 V\)</span> (<span class="math notranslate nohighlight">\(V_{ref}\)</span>) zentriert, vorausgesetzt, dass <span class="math notranslate nohighlight">\(V_{high}\)</span> und <span class="math notranslate nohighlight">\(V_{low}\)</span> mehr oder weniger
+um <span class="math notranslate nohighlight">\(0,5 V\)</span> zentriert sind). Das Anschließen des unteren Teils von <span class="math notranslate nohighlight">\(R1\)</span> an eine andere
+Spannungs-Referenzquelle und nicht an die mittlere Versorgung hat keinen Einfluss
+auf die Hysterese, sondern zentriert diese um einen Schwellenwert, der proportional
+zur neuen Referenzspannung ist. Tatsächlich könnte der negative Eingangspin des
+Vergleichers an die feste Referenzspannung angeschlossen werden und das Ende von <span class="math notranslate nohighlight">\(R1\)</span>
+als Eingang betrachtet werden. Dadurch wird der Sinn der beiden Ausgänge umgekehrt
+oder umgekehrt. Die oben genannte Darstellung kann im Schmitt-Hysterese-Plot
+in <a class="reference internal" href="#fig-09"><span class="std std-numref">Abb. 18.9</span></a> dargestellt werden.</p>
+<div class="figure align-center" id="fig-09">
+<img alt="_images/Activity_18_Fig_09.png" src="_images/Activity_18_Fig_09.png" />
+<p class="caption"><span class="caption-number">Abb. 18.9 </span><span class="caption-text">Schmitt Hysterese</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Die Hysteresegleichung stellt eine potenzielle Einschränkung des
+Verhältnisses <span class="math notranslate nohighlight">\(R1\)</span> / <span class="math notranslate nohighlight">\(R2\)</span> für einen Schmitt-Trigger dar: Sofern <span class="math notranslate nohighlight">\(R1\)</span> &lt; <span class="math notranslate nohighlight">\(R2\)</span> fehlt,
+ist die Hysteresegrenze größer als die Hälfte des Peak-to-Peak-Ausgangsspannungshubbereichs
+des Vergleichers und je nach Referenzspannungswert kann die eine oder
+andere der Schmitt-Triggergrenzen außerhalb des Bereichs der Ausgangsspannung
+liegen. Angenommen, der Eingangssignalspannungsbereich ist ebenfalls auf den
+Ausgangshubbereich beschränkt (d.h. die Stromversorgungsschienen), dann könnte
+der Ausgang der Schaltung blockieren und nicht mehr auf Änderungen im Eingang
+reagieren, was die Schaltung unbrauchbar macht.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>18.10. Verfahren<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Fügen Sie die beiden positiven Rückkopplungswiderstände zu Ihrer
+Schaltung hinzu, wie in <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 18.8</span></a> dargestellt. Verwenden Sie Werte für
+<span class="math notranslate nohighlight">\(R2 = 100 k \Omega\)</span> und <span class="math notranslate nohighlight">\(R1 = 10 k \Omega\)</span>. Mit IN2 beobachten Sie erneut
+die Ausgangsrechteckwelle, notieren Sie aber den Pegel der Eingangsdreieckwelle,
+wenn der Ausgang den Pegel von niedrig nach hoch und hoch nach niedrig ändert.
+Versuchen Sie einen Wert für <span class="math notranslate nohighlight">\(R2\)</span> kleiner als <span class="math notranslate nohighlight">\(R1\)</span>.
+Funktioniert die Schaltung noch?</p>
+<ol class="arabic simple">
+<li>Stellen Sie die Dämpfung der Oszilloskopsonden ein; IN1 auf x1 und
+IN2 auf x10</li>
+<li>Starten Sie die Oszilloskop &amp; Signalgenerator - Anwendung.</li>
+<li>Zum Anlegen der Eingangsspannung <span class="math notranslate nohighlight">\(V_{in}\)</span> im Einstellungsmenu OUT1
+den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5 V\)</span> und den DC-Offset auf <span class="math notranslate nohighlight">\(0,5 V\)</span>
+setzen. Wählen Sie im Wellenform-Menü TRIANGLE,
+Deaktivieren Sie den SHOW-Button und wählen Sie Enable.</li>
+<li>Stellen Sie im OUT2-Einstellungsmenu den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5 V\)</span>
+ein, wählen Sie im Wellenformmenü die Option DC, deaktivieren Sie
+die Option SHOW und wählen Sie Enable.</li>
+<li>Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN1 <span class="math notranslate nohighlight">\(V/div\)</span> auf <span class="math notranslate nohighlight">\(200 mV/div\)</span> eingestellt ist (Sie können <span class="math notranslate nohighlight">\(V/div\)</span>
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</li>
+<li>Stellen Sie sicher, dass IN2 <span class="math notranslate nohighlight">\(V/div\)</span> am linken unteren
+Bildschirmrand auf <span class="math notranslate nohighlight">\(500 mV/div\)</span> eingestellt ist (Sie können <span class="math notranslate nohighlight">\(V/div\)</span>
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</li>
+<li>Stellen Sie im Einstellungsmenü IN1 die Sondendämpfung auf x1 und
+den Offsetpegel auf <span class="math notranslate nohighlight">\(-500 mV\)</span> ein</li>
+<li>Stellen Sie im IN2-Einstellungsmenü die Sondendämpfung auf x10 und
+den Offsetpegel auf <span class="math notranslate nohighlight">\(-1000mV\)</span> ein</li>
+<li>Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
+positive Flanke und stellen Sie den Triggerpegel auf <span class="math notranslate nohighlight">\(2 V\)</span> ein</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(200 us/div\)</span> (Du kannst t/div mit horizontalen +/- Kontrollen einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-10">
+<img alt="_images/Activity_18_Fig_10.png" src="_images/Activity_18_Fig_10.png" />
+<p class="caption"><span class="caption-number">Abb. 18.10 </span><span class="caption-text">Schmitt Hysterese und Ausgangssignal</span></p>
+</div>
+<p>Vergleichen Sie die Ergebnisse aus <a class="reference internal" href="#fig-10"><span class="std std-numref">Abb. 18.10</span></a> und <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 18.4</span></a>.
+Betrachten Sie die Pegel von IN1, wenn IN2 hoch und runter geht.</p>
+<p>Um zu sehen, ob sich die durch das Eingangsrauschen verursachte Verzögerung
+geändert hat, zoomen Sie erneut in die fallende und steigende Flanke der
+Ausgangsrechteckwelle, indem Sie die horizontale Position und die Zeit pro Division
+einstellen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie die Übergänge
+oder hat er diese Verzögerung nicht mehr?</p>
+<ol class="arabic simple">
+<li>Wählen Sie im Menü TRIGGER die Quelle IN2, wählen Sie die
+positive Flanke, NORMAL und setzen Sie den Triggerpegel auf 2V</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(5 us/div\)</span> (Du kannst <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Kontrollen einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-11">
+<img alt="_images/Activity_18_Fig_11.png" src="_images/Activity_18_Fig_11.png" />
+<p class="caption"><span class="caption-number">Abb. 18.11 </span><span class="caption-text">Schaltgeräusch mit Hysterese</span></p>
+</div>
+<p>Wie Sie aus <a class="reference internal" href="#fig-11"><span class="std std-numref">Abb. 18.11</span></a> ersehen können, ist bei Verwendung der Hysterese
+kein Schaltrauschen vorhanden. Vergleichen Sie <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 18.6</span></a> und <a class="reference internal" href="#fig-11"><span class="std std-numref">Abb. 18.11</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_19_Diodes.html" class="btn btn-neutral float-right" title="19. Diodes und Jupyter Notebook Beispiel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html" class="btn btn-neutral" title="17. Strommessung mit einem Differenzverstärker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

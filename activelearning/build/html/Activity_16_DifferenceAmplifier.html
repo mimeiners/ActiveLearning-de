@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>16. Differenzverstärker &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="17. Strommessung mit einem Differenzverstärker" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html" />
+    <link rel="prev" title="15. OPAMP Verstärkungsbandbreite Produkt" href="Activity_15_OpAmpGainBandwidthProduct.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Differenzverstärker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">16.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">16.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kurzer-hintergrund">16.3. Kurzer Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">16.4. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">16.5. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>16. Differenzverstärker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_16_DifferenceAmplifier.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="differenzverstarker">
+<h1>16. Differenzverstärker<a class="headerlink" href="#differenzverstarker" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>16.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Hinzufügen und / oder Subtrahieren von analogen Signalen ist
+möglicherweise die üblichste Funktion, die von einem
+Operationsverstärker ausgeführt wird. Diese Aktivität untersucht
+einzelne Operationsverstärkerschaltungen zum Subtrahieren zweier
+analoger Signale.</p>
+<p>Wir haben bereits <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#summing-amplifier-circuit">Summing</a> <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#summing-amplifier-circuit">Amplifier</a> circuit besprochen; ein
+einzelner Operationsverstärker zum Hinzufügen von zwei (oder mehr)
+analogen Signalen. Dasselbe Verhalten erwarten wir auch hier, während
+Signale in den Operationsverstärker-Eingängen subtrahiert und nicht
+summiert werden sollten.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>16.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab-Board-Hardware beziehen.</p>
+<p>Die für die Spannungsversorgung ** - 3.3V ** und ** + 3.3V **
+verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.</p>
+<p><a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; Signal_generator_Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+</div>
+<div class="section" id="kurzer-hintergrund">
+<h2>16.3. Kurzer Hintergrund<a class="headerlink" href="#kurzer-hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der grundlegende Unterschied Opamp Schaltung ist in Abbildung 1
+dargestellt. Um für die Übertragungsfunktion zu lösen <span class="math notranslate nohighlight">\(V_{out}
+= f (V_1, V_2)\)</span> des Differenzverstärkers können wir ein
+Superpositionsprinzip verwenden.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_16_Fig_01.png" src="_images/Activity_16_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 16.1 </span><span class="caption-text">Basis Differenzverstärker</span></p>
+</div>
+<p>Betrachten Sie im ersten Schritt die Schaltung von Abbildung 1, bei
+der der nichtinvertierende Eingang (Pin 3) auf GND gesetzt ist.</p>
+<p>Wir kennen die invertierende Verstärkerschaltung, deren
+Übertragungsfunktion gegeben ist als</p>
+<div class="math notranslate nohighlight" id="equation-16-eq-1">
+<span class="eqno">(16.1)<a class="headerlink" href="#equation-16-eq-1" title="Permalink to this equation">¶</a></span>\[V_{out} = - V_1 \left(\frac{R_f}{R_i} \right)\]</div>
+<p>Im zweiten Schritt betrachten wir die Schaltung aus Abbildung 1, wobei
+<span class="math notranslate nohighlight">\(V_1\)</span> Eingang auf GND gesetzt wird.</p>
+<p>Wir erhalten eine bekannte nicht-invertierende Verstärkerschaltung,
+deren Übertragungsfunktion gegeben ist als</p>
+<div class="math notranslate nohighlight" id="equation-16-eq-2">
+<span class="eqno">(16.2)<a class="headerlink" href="#equation-16-eq-2" title="Permalink to this equation">¶</a></span>\[V_{out} = V_2 \left(1 + \frac{R_f}{R_i} \right)\]</div>
+<p>Nach dem Superpositionsprinzip bekommen wir</p>
+<div class="math notranslate nohighlight" id="equation-16-eq-3">
+<span class="eqno">(16.3)<a class="headerlink" href="#equation-16-eq-3" title="Permalink to this equation">¶</a></span>\[\begin{split}V_{out} &amp;= V_{out_{Schritt_1}} + V_{out_{Schritt_2}} \\
+&amp;= V_2 \left(1 + \frac{R_f}{R_i} \right) - V_1 \left(\frac{R_f}{R_i}\right)\end{split}\]</div>
+<p>Aus der obigen Gleichung ist klar ersichtlich, dass die Schaltung von
+1 tatsächlich ein Differenzverstärker ist, wobei das Ausgangssignal
+<span class="math notranslate nohighlight">\(V_{out}\)</span> die Differenz der Eingangssignale ist <span class="math notranslate nohighlight">\(V_2-V_1\)</span>
+verstärkt um factor: math : <cite>frac {R_f} {R_1}</cite>.</p>
+<p>Für <span class="math notranslate nohighlight">\(R_f = R_i\)</span> erhalten wir:</p>
+<div class="math notranslate nohighlight" id="equation-16-eq-4">
+<span class="eqno">(16.4)<a class="headerlink" href="#equation-16-eq-4" title="Permalink to this equation">¶</a></span>\[V_{out} = 2V_2 -V_1\]</div>
+</div>
+<div class="section" id="materialien">
+<h2>16.4. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>OPAMP: 1x OP484</li>
+<li>Widerstand: 4x 10 <span class="math notranslate nohighlight">\(k \ Omega\)</span></li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>16.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bauen Sie den in Abbildung 2 gezeigten Differenzverstärker auf. R3 und
+R4 werden als Spannungsteiler addiert, um <span class="math notranslate nohighlight">\(V_2 ^ *\)</span>
+Eingangssignal um die Hälfte zu dämpfen.</p>
+<p>Mit dem hinzugefügten Spannungsteiler (R3, R4) für die in 2 gezeigte
+Schaltung und aus Gleichung (4) erhalten wir</p>
+<div class="math notranslate nohighlight">
+\[V_{out} = 2V_2 - V_1 = \ frac {1} {2} 2 V_2 ^ * - V_1 = V_2 ^ * - V_1 = OUT_2 - OUT_1 \ quad (5)\]</div>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_16_Fig_02.png" src="_images/Activity_16_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 16.2 </span><span class="caption-text">Differenzverstärker</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+anschließen, überprüfen Sie Ihren Stromkreis. Die
+Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+werden.</p>
+</div>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_16_Fig_03.png" src="_images/Activity_16_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 16.3 </span><span class="caption-text">Differenzverstärker auf dem Steckbrett</span></p>
+</div>
+<ol class="arabic simple">
+<li>Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator.</li>
+<li>Deaktivieren Sie im Einstellungsmenü der IN1 die Schaltfläche SHOW.</li>
+<li>Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,2 V
+ein, um eine 0,4 V-p Sinuswelle mit 0 V als Eingangsspannung zu
+verwenden <span class="math notranslate nohighlight">\(V_1\)</span>. Wählen Sie im Wellenform-Menü SINE und
+aktivieren Sie.</li>
+<li>Stellen Sie im OUT2-Einstellungsmenü den Amplitudenwert auf 0,6 V
+ein, um eine 1,2Vp-p-Sinuswelle mit 0 V als Eingangsspannung zu
+verwenden <span class="math notranslate nohighlight">\(V_2 ^ *\)</span>. Wählen Sie im Wellenform-Menü SINE und
+aktivieren Sie.</li>
+<li>Stellen Sie für die stabile Erfassung die Triggerquelle auf IN2 ein</li>
+<li>Stellen Sie sicher, dass IN2 V / div am linken unteren
+Bildschirmrand auf 200mV / div eingestellt ist (Sie können V / div
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</li>
+<li>Stellen Sie sicher, dass OUT1 V / div und OUT2 V / div auf der
+linken unteren Seite des Bildschirms auf 200mV / div eingestellt
+sind (Sie können V / div einstellen, indem Sie den gewünschten
+Kanal und die vertikalen +/- Regler auswählen)</li>
+<li>Wählen Sie im Messmenü „MAX“, wählen Sie IN2 und drücken Sie FERTIG</li>
+</ol>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_16_Fig_04.png" src="_images/Activity_16_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 16.4 </span><span class="caption-text">Differenzverstärkermessungen</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Wie aus den Messungen in Fig. 4 ersichtlich ist, verhält sich
+unsere Schaltung wie ein Spannungsdifferenzverstärker, da die
+IN2-Amplitude gleich der Differenz zwischen den OUT2- und
+OUT1-Amplituden ist, wie es durch Gleichung (5) vorhergesagt wird.</p>
+</div>
+<p>Da beide Eingangssignale sinusförmig sind, ist das einzige Artefakt
+der Differenzverstärkerschaltung am Ausgangssignal die
+Amplitudendifferenz. Aber was passiert, wenn wir verschiedene
+Wellenformen von OUT1 und OUT2 haben.</p>
+<ol class="arabic simple" start="10">
+<li>Wählen Sie im OUT2-Einstellungsmenü die SQUARE-Wellenform und
+beobachten Sie die Ergebnisse</li>
+</ol>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_16_Fig_05.png" src="_images/Activity_16_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 16.5 </span><span class="caption-text">Differenzverstärkermessungen - Verschiedene Wellenformen von OUT1
+und OUT2</span></p>
+</div>
+<p>Aus Fig. 5 kann ein Differenzverstärkerausgangssignal (IN2) beobachtet
+werden, das eine merkwürdige Wellenform hat, die als IN2 (Wellenform)
+= OUT2 (SQUARE) - OUT1 (SINE) angegeben ist.</p>
+<p>Diese Beobachtung bestätigt absolut, dass die in 2 gezeigte Schaltung
+ein Differenzverstärker ist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Probieren Sie verschiedene OUT1 und OUT2 Wellenformen aus und
+beobachten Sie die Ergebnisse.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html" class="btn btn-neutral float-right" title="17. Strommessung mit einem Differenzverstärker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_15_OpAmpGainBandwidthProduct.html" class="btn btn-neutral" title="15. OPAMP Verstärkungsbandbreite Produkt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>27. MOS-Transistor-Source-Verstärker &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="28. DC-DC-Aufwärtswandler" href="Activity_28_BoostConverter.html" />
+    <link rel="prev" title="26. BJT gemeinsamer Emitterverstärker" href="Activity_26_BJTCommonEmitterAmplifier.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">27. MOS-Transistor-Source-Verstärker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">27.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">27.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">27.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">27.4. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">27.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">27.6. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>27. MOS-Transistor-Source-Verstärker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_27_MOSCommonSourceAmplifier.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mos-transistor-source-verstarker">
+<h1>27. MOS-Transistor-Source-Verstärker<a class="headerlink" href="#mos-transistor-source-verstarker" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>27.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Zweck dieser Untersuchung besteht darin, die gemeinsame
+Source-Konfiguration des MOS-Transistors zu untersuchen.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>27.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab-Board-Hardware beziehen.</p>
+<p><a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; Signal_generator_Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p>Die für die Spannungsversorgung <strong>+5V</strong>, <strong>-3.3V</strong> und <strong>+3.3V</strong>
+verwendeten Steckerstifte sind in der Dokumentation hier
+aufgeführt.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>27.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Konfiguration, die in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 27.1</span></a> gezeigt ist, zeigt den
+NMOS-Transistor, der als ein gemeinsamer Quellenverstärker verwendet
+wird. Um den Transistor einzustellen <span class="math notranslate nohighlight">\(V_ {GS}\)</span> Spannung für einen
+selbstvorgespannten DC-Arbeitspunkt der Spannungsteiler <span class="math notranslate nohighlight">\(\ frac
+{ R_1} {R_2}\)</span> ist gewählt. Widerstand <span class="math notranslate nohighlight">\(R_G\)</span> wird verwendet, um
+die endgültige ** Verstärkung ** des Verstärkers einzustellen. Der
+Wert von <span class="math notranslate nohighlight">\(R_G\)</span> Widerstand in Kombination mit dem Widerstand
+<span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span> beeinflusst, wie viel von <span class="math notranslate nohighlight">\(V_ {in}\)</span>
+addiert wird zu <span class="math notranslate nohighlight">\(V_ {GS}\)</span> Spannung und damit direkt
+Einstellung des Verstärkers <strong>Verstärkung</strong>.
+Ausgangslastwiderstand <span class="math notranslate nohighlight">\(R_L\)</span> wird so gewählt, dass für
+den gewünschten Drain-Nennstrom <span class="math notranslate nohighlight">\(I_D\)</span> die Spannung, die
+bei <span class="math notranslate nohighlight">\(V_ {DS}\)</span> liegt, ungefähr ein Drittel der folgenden
+ist <span class="math notranslate nohighlight">\(V_ {DD}\)</span> Versorgungsspannung. Widerstand <span class="math notranslate nohighlight">\(R_S\)</span>
+wird eine Quellendegeneration hinzugefügt, um den
+DC-Arbeitspunkt zu stabilisieren. Der beste Ansatz für die
+Auswahl von <span class="math notranslate nohighlight">\(R_L\)</span> und <span class="math notranslate nohighlight">\(R_S\)</span> ist es, Spannungsabfälle
+zwischen <span class="math notranslate nohighlight">\(M_1\)</span>, <span class="math notranslate nohighlight">\(R_L\)</span> und <span class="math notranslate nohighlight">\(R_S\)</span> gleich dem 1 /
+3 von <span class="math notranslate nohighlight">\(V_ {DD}\)</span> (bei DC-Betriebsbedingung). Also
+<span class="math notranslate nohighlight">\(R_S\)</span> = <span class="math notranslate nohighlight">\(R_L\)</span>. Das Hinzufügen des
+Source-Degenerationswiderstands hat die Stabilität des
+DC-Arbeitspunkts bei den Kosten der verringerten
+Verstärkerverstärkung verbessert. Eine höhere Verstärkung
+für AC-Signale kann in einem gewissen Ausmaß durch
+Hinzufügen eines Kondensators wiederhergestellt werden
+<span class="math notranslate nohighlight">\(C_S\)</span> über den Degenerationswiderstand <span class="math notranslate nohighlight">\(R_S\)</span>
+setzt effektiv den Wert “ <span class="math notranslate nohighlight">\(R_S\)</span> „nahe Null für
+AC-Signale. Kondensator <span class="math notranslate nohighlight">\(C_2\)</span> wird
+hinzugefügt, um die Gleichstromkomponente des
+Ausgangssignals zu blockieren. Aufgrund der hohen
+Eingangsimpedanz kann transistor <span class="math notranslate nohighlight">\(C_1\)</span> im
+Bereich von <span class="math notranslate nohighlight">\(&lt;\ mu F\)</span> gewählt werden.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Einer der Hauptvorteile eines MOS-Source-Verstärkers gegenüber
+einem „BJT Common-Emitter-Verstärker“ ist eine extrem hohe
+Eingangsimpedanz zusammen mit einer niedrigen Rauschleistung, was
+sie ideal für die Verwendung in Verstärkerschaltungen mit sehr
+kleinen Eingangssignalen macht.</p>
+<p class="last">Die Eingangsimpedanz hängt effektiv nur von der Eingangskapazität
+ab <span class="math notranslate nohighlight">\(C_ {iss}\)</span>, Widerstände <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span>, die
+im Bereich von <span class="math notranslate nohighlight">\(M \ Omega\)</span> ausgewählt werden können.</p>
+</div>
+<div class="figure" id="fig-01">
+<img alt="_images/Activity_27_Fig_01.png" src="_images/Activity_27_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 27.1 </span><span class="caption-text">Gemeinsame Source-Verstärker-Konfiguration</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p>Berechnung und Design eines gemeinsamen Source-Verstärkers ist
+nicht geradlinig. Der Aufbau des gemeinsamen Source-Verstärkers
+hängt weitgehend von dem gewählten ab Transistor (seine Parameter),
+gewünschter Frequenzbereich und Endverstärkerverstärkung. In der
+Praxis beeinflussen viele Faktoren wie die Eingangskapazität das
+Schaltungsverhalten, während diese Faktoren weitgehend von den
+verfügbaren Tutorials und der Theorie ausgeschlossen sind. Für ein
+tiefergehendes Verständnis der folgenden Quellverstärker-Links wird
+empfohlen:</p>
+<ul class="last simple">
+<li>[1] <a class="reference external" href="https://en.wikipedia.org/wiki/Common_source">Wikipedia Common Source</a></li>
+<li>[2] <a class="reference external" href="http://www.electronics-tutorials.ws/amplifier/amp_3.html">Common Source Amplifier Tutorial 1</a></li>
+<li>[3] <a class="reference external" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-012-microelectronic-devices-and-circuits-fall-2005/lecture-notes/lecture19annotat.pdf">MIT Common Source Amplifier Lecture</a></li>
+<li>[4] <a class="reference external" href="http://examcrazy.com/Engineering/Electronics-Communication/Common_Source_Amplifier_with_Source_Degeneration.asp">Common Source Amplifier with Source Degeneration</a></li>
+<li>[5] <a class="reference external" href="https://www.slideshare.net/yordibautista/fet-basics1">Common Source Amplifier Tutorial 2</a></li>
+<li>[6] <a class="reference external" href="https://en.wikipedia.org/wiki/Transconductance">Transconductance</a> <span class="math notranslate nohighlight">\(g_m\)</span></li>
+<li>[7] <a class="reference external" href="http://www.ittc.ku.edu/~jstiles/312/handouts/Drain%20Output%20Resistance.pdf">Drain Output Resistance</a> <span class="math notranslate nohighlight">\(r_o\)</span></li>
+</ul>
+</div>
+<p><strong>Durch die unten aufgeführten Vereinfachungen kann die
+Näherungsverstärkungsbeziehung für den allgemeinen Quellenverstärker,
+die in 1 gezeigt ist, geschrieben werden, wie in Gleichung (2)</strong>
+gezeigt.</p>
+<ol class="arabic simple">
+<li>Vernachlässigung des Spannungsabfalls über <span class="math notranslate nohighlight">\(C_1\)</span>
+Kondensator. Wir können den Spannungsabfall über den Kondensator
+vernachlässigen <span class="math notranslate nohighlight">\(C_1\)</span> wenn <span class="math notranslate nohighlight">\(1 / (2 \ pi f C_1) &lt;&lt; R_G\)</span>.</li>
+<li>Vernachlässigung <span class="math notranslate nohighlight">\(C_S\)</span> -Impedanz. Wenn der Wert <span class="math notranslate nohighlight">\(C_S\)</span>
+im Bereich ausgewählt ist <span class="math notranslate nohighlight">\(C_S &gt;&gt; 10 \ mu F\)</span> Seine Impedanz
+wird vernachlässigbar sein, um zu gehen <span class="math notranslate nohighlight">\(0 \ Omega\)</span> für
+irgendwelche AC-Signale.</li>
+<li>Drain Output Resist im Falle von <span class="math notranslate nohighlight">\(\ lambda = 0\)</span> wird gegen
+unendlich gehen, <span class="math notranslate nohighlight">\(r_o \ to \ infty\)</span>, daher kann es in
+Gleichung (1) vernachlässigt werden.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Transkonduktanz <span class="math notranslate nohighlight">\(g_m\)</span> ist die Änderung des Drain-Stroms
+geteilt durch die kleine Änderung der Gate / Source-Spannung bei
+einer konstanten Drain / Source-Spannung. Typische Werte von
+<span class="math notranslate nohighlight">\(g_m\)</span> für einen Kleinsignal-Feldeffekttransistor sind 1 bis
+30 <span class="math notranslate nohighlight">\(mS\)</span> (Millisiemens).</p>
+</div>
+<div class="math notranslate nohighlight" id="equation-27-eq-1">
+<span class="eqno">(27.1)<a class="headerlink" href="#equation-27-eq-1" title="Permalink to this equation">¶</a></span>\[A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m (r_o || R_L || R_S)\]</div>
+<p>unter Vernachlässigung des <span class="math notranslate nohighlight">\(r_o\)</span> ( <span class="math notranslate nohighlight">\(r_o \ to \ infty\)</span>) erhalten wir:</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-2">
+<span class="eqno">(27.2)<a class="headerlink" href="#equation-27-eq-2" title="Permalink to this equation">¶</a></span>\[A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m  (R_L || R_S)\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(Z_ {iss}\)</span> ist die Eingangs-Gate-Impedanz aufgrund der
+Eingangskapazität <span class="math notranslate nohighlight">\(C_ {iss}\)</span> (Common-Source-Schaltung
+Eingangskapazität) des MOS-Transistors.</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-3">
+<span class="eqno">(27.3)<a class="headerlink" href="#equation-27-eq-3" title="Permalink to this equation">¶</a></span>\[Z_ {iss} = \frac{1}{2 \pi f C_{iss}}\]</div>
+<p>Wenn wir annehmen, dass die Transistorparameter <span class="math notranslate nohighlight">\(C_ {iss}\)</span>
+und <span class="math notranslate nohighlight">\(g_m\)</span> konstante Werte aus <a class="reference internal" href="#equation-27-eq-2">Gl. 27.2</a> sind, folgt
+daraus die Verstärkung der gemeinsamen Quelle Verstärker ist abhängig
+von den peripheren Widerständen <span class="math notranslate nohighlight">\(R_1, R_2, R_G, R_L, R_S\)</span>
+und Eingangssignalfrequenz <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Wenn <span class="math notranslate nohighlight">\(C_ {iss}\)</span> geht auf Null, dann hängt die
+Verstärkung nur von den peripheren Widerständen ab <span class="math notranslate nohighlight">\(R_1, R_2,
+R_G, R_L, R_S\)</span> und Transistor-Transkonduktanz <span class="math notranslate nohighlight">\(g_m\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>In der Praxis ist die Eingangskapazität der gemeinsamen
+Source-Schaltung <span class="math notranslate nohighlight">\(C_ {iss}\)</span> nicht Null und sie kann von der
+Gate-Spannung und der Verstärkerverstärkung abhängig sein.</p>
+<p class="last">Hier wird angenommen, dass das <span class="math notranslate nohighlight">\(C_ {iss}\)</span> ein konstanter
+Wert ist.  <span class="math notranslate nohighlight">\(C_ {iss}\)</span> und <span class="math notranslate nohighlight">\(g_m\)</span> Werte werden
+üblicherweise im Datenblatt des Transistors angegeben.</p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>27.4. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Rotes Pitaya STEMlab</li>
+<li>4x 1MΩ Widerstand</li>
+<li>2x 470Ω Widerstand</li>
+<li>1x 100kΩ Trimer</li>
+<li>2x 10uF Kondensator</li>
+<li>1x 1uF Kondensator</li>
+<li>1x kleinsignal NOMS-Transistor (<a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a>)</li>
+<li>1x lötfreies Steckbrett</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>27.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Angenommen, wir möchten einen Verstärker mit der Verstärkung
+<span class="math notranslate nohighlight">\(A_v = 5\)</span> und <span class="math notranslate nohighlight">\(I_L = 5mA\)</span> mit dem Transistor <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> und
+der Spannungsversorgung <span class="math notranslate nohighlight">\(V_ {DD} = 5V\)</span>.</p>
+<p>Nach den obigen Berechnungen und Richtlinien haben wir den in
+<a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 27.2</span></a> gezeigten gemeinsamen Quellenverstärker aufgebaut.</p>
+<p>Der erste Schritt besteht darin, den <strong>DC-Arbeitspunkt</strong>
+einzustellen, indem man die Spannungen über <span class="math notranslate nohighlight">\(R_L\)</span>, <span class="math notranslate nohighlight">\(R_D\)</span>
+und <span class="math notranslate nohighlight">\(M_1\)</span> bestimmt.</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-4">
+<span class="eqno">(27.4)<a class="headerlink" href="#equation-27-eq-4" title="Permalink to this equation">¶</a></span>\[V_ {R_L} + V_{DS} + V_{R_S} = V_{CC}\]</div>
+<p>Wenn wir ein 1/3 Verhältnis der Spannungen an rechnen <span class="math notranslate nohighlight">\(R_L\)</span>,
+<span class="math notranslate nohighlight">\(R_D\)</span> und <span class="math notranslate nohighlight">\(M_1\)</span> erhalten wir folgendes:</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-5">
+<span class="eqno">(27.5)<a class="headerlink" href="#equation-27-eq-5" title="Permalink to this equation">¶</a></span>\[1,5 V + 2,0 V + 1,5 V = 5 V\]</div>
+<p><span class="math notranslate nohighlight">\(V_ {DS}\)</span> ist die Spannung über <span class="math notranslate nohighlight">\(M_1\)</span> im Sättigungszustand.
+Vom gewünschten Wert von <span class="math notranslate nohighlight">\(I_L\)</span> können wir berechnen <span class="math notranslate nohighlight">\(R_L\)</span>
+als.</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-6">
+<span class="eqno">(27.6)<a class="headerlink" href="#equation-27-eq-6" title="Permalink to this equation">¶</a></span>\[R_L = \frac{V_{R_L}}{I_L} = \frac{1,5V}{5mA} = 300 \Omega\]</div>
+<p>Folgendes <span class="math notranslate nohighlight">\(1/3 V_ {DD}\)</span> Spannungen fallen über <span class="math notranslate nohighlight">\(R_L\)</span>,
+<span class="math notranslate nohighlight">\(R_D\)</span> und <span class="math notranslate nohighlight">\(M_1\)</span> setzen wir <span class="math notranslate nohighlight">\(R_S = R_L\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Aufgrund der Verfügbarkeit des Widerstandes haben wir gewählt
+<span class="math notranslate nohighlight">\(R_S = R_L = 470 \Omega\)</span>.</p>
+</div>
+<p>Um den Transistor <span class="math notranslate nohighlight">\(V_ {GS}\)</span> Spannung für den
+selbst-vorgespannten DC-Arbeitspunkt zu setzen, wird der
+Spannungsteiler <span class="math notranslate nohighlight">\(\ frac {R_1} {R_2}\)</span> so gewählt, dass
+<span class="math notranslate nohighlight">\(V_G\)</span> oben gesetzt ist ( <span class="math notranslate nohighlight">\(V_ {TH} + V_S\)</span>) Spannungswert
+(bei DC-Betriebsbedingung).</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-7">
+<span class="eqno">(27.7)<a class="headerlink" href="#equation-27-eq-7" title="Permalink to this equation">¶</a></span>\[V_G &gt; (V_{TH} + V_{S}) &gt; (2,0 V + 1,6 V) &gt; 3,6 V\]</div>
+<p>2,0 V ist die Schwellenspannung von ZVN211, 1,6 V ist die Gleichspannung über <span class="math notranslate nohighlight">\(R_S\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-27-eq-8">
+<span class="eqno">(27.8)<a class="headerlink" href="#equation-27-eq-8" title="Permalink to this equation">¶</a></span>\[V_G = \frac{R_2}{R_1 + R_2} V_{DD}\]</div>
+<p>Für ausgewählt <span class="math notranslate nohighlight">\(V_G = 3.7 V\)</span> und <span class="math notranslate nohighlight">\(R_1 = 1 M \Omega\)</span>
+erhalten wir (nächstliegenden Wert) für <span class="math notranslate nohighlight">\(R_2 = 3 M \Omega\)</span></p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_27_Fig_02.png" src="_images/Activity_27_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 27.2 </span><span class="caption-text">Gemeinsamer Quellverstärker mit Komponentenwerten</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<blockquote>
+<div><p>Für den Verstärker aus Abbildung 2 und die Eingangssignalfrequenz
+von <span class="math notranslate nohighlight">\(10\,kHz\)</span> können wir die Spannungsverstärkung mit Gleichung
+2 berechnen.</p>
+<p>Für <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> nehmen wir <span class="math notranslate nohighlight">\(g_m = 25 mS\)</span> und <span class="math notranslate nohighlight">\(C_ {iss} = 100pF\)</span>.</p>
+</div></blockquote>
+<div class="last math notranslate nohighlight" id="equation-27-eq-9">
+<span class="eqno">(27.9)<a class="headerlink" href="#equation-27-eq-9" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}R_1 || R_2 || Z_{iss} &amp;= 1 / (\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{Z_{iss}}
+&amp;= \frac{1}{R_1} + \frac{1}{R_2} + 2 \pi f C_{iss})
+&amp;= 1 / (\frac{1}{1 \times 10^6} + \frac{1}{3 \times 10^6} + 2 \pi
+10 \times 10^3 \cdot 100 \times 10^{- 12})
+&amp;= 131\,k\Omega\\R_L || R_S &amp;= \frac{R_S R_L}{R_S + R_L}
+&amp;= \frac{470 \cdot 470}{470 + 470}
+&amp;= 235 \Omega\\
+\text{trimmerwert einstellen} R_G \text{zu} 50\,k \Omega \text{wir bekommen:}\\
+A_v &amp;\approx -\frac{131\, k\Omega}{50\,k\Omega + 131\,k\Omega}
+\cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot 235 \Omega
+&amp;= -4.2\end{aligned}\end{align} \]</div>
+</div>
+<ol class="arabic">
+<li><p class="first">Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_27_Fig_03.png" src="_images/Activity_27_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 27.3 </span><span class="caption-text">Common Source Verstärker auf dem Steckbrett</span></p>
+</div>
+</li>
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf 0,1 V,
+DC-Offset auf 0 V und Frequenz auf 10 kHz ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenformmenü SINE,
+Deaktivieren Sie den SHOW-Button und wählen Sie enable.</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1 und IN2 V / div am linken unteren
+Bildschirmrand auf 200mV / div eingestellt sind (Sie können V / div
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden)</p>
+</li>
+<li><p class="first">Setzen Sie t / div Wert auf 20us / div (Sie können t / div mit
+horizontalen +/- Kontrollen einstellen)</p>
+</li>
+<li><p class="first">In den Einstellungen des Auslösermenüs und wählen Sie NORMAL</p>
+</li>
+<li><p class="first">Wählen Sie im Messmenü P2P für IN1 und IN2</p>
+<div class="figure" id="fig-04">
+<img alt="_images/Activity_27_Fig_04.png" src="_images/Activity_27_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 27.4 </span><span class="caption-text">Gemeinsame Quellenverstärker-Messungen</span></p>
+</div>
+</li>
+</ol>
+<p>In Abbildung 3 sind die Messungen des gemeinsamen Quellenverstärkers
+dargestellt. Aus den P2P-Messungen können wir die erzielte Verstärkung
+berechnen und es ist ungefähr <span class="math notranslate nohighlight">\(A \approx 4\)</span>. Warum ist der
+Unterschied zwischen berechneter und gemessener Verstärkung? Dies
+liegt an der Eingangskapazität, die wir als 100pF angenommen haben,
+aber in Wirklichkeit kann sie anders sein. Auch Werte anderer
+Komponenten und ähnlicher sind nicht exakt.</p>
+<ol class="arabic" start="8">
+<li><p class="first">Um den Einfluss der Verstärkungsabhängigkeit auf die
+Eingangssignalfrequenz zu sehen, stellen Sie die OUT1-Frequenz auf
+5 kHz ein und messen Sie die Verstärkung des Verstärkers.</p>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_27_Fig_05.png" src="_images/Activity_27_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 27.5 </span><span class="caption-text">Gemeinsame Quellenverstärkung bei 5 kHz Frequenz von <span class="math notranslate nohighlight">\(V_ {in}\)</span></span></p>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Wir könnten einstellen <span class="math notranslate nohighlight">\(1M \ Omega\)</span> Widerstand in Serie mit
+MOSFET Gate-Eingang. Dies würde die Wirkung der parasitären
+Kapazität verringern und eine hohe Eingangsimpedanz unabhängig von
+der Eingangssignalfrequenz ermöglichen. Wie Sie aus der Gleichung 2
+sehen können, sobald der 1M Widerstand hinzugefügt wird, gilt
+<span class="math notranslate nohighlight">\(Z_ {iss}\)</span> wird „konstant“ und größer bei hoher Frequenz sein
+und daher den Eingangsteiler weniger beeinflussen <span class="math notranslate nohighlight">\(R_G/R_2\)</span>.</p>
+<p>Eingangsimpedanz würde werden:</p>
+<div class="math notranslate nohighlight">
+\[Z_ {iss} = 1\,M\Omega + \frac {1}{2 \pi f C_ {iss}}\]</div>
+<p>und <span class="math notranslate nohighlight">\(Z_ {iss}\)</span> capacitance affect (part)</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2 \pi f C_{iss}}\]</div>
+<p class="last">hätte viel weniger Einfluss auf den Gewinn. Die
+Eingangssignalfrequenz hätte weniger Einfluss auf die Verstärkung
+des Verstärkers.</p>
+</div>
+</div>
+<div class="section" id="fragen">
+<h2>27.6. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Versuchen Sie Folgendes hinzuzufügen <span class="math notranslate nohighlight">\(1M\)</span> Widerstand in
+Reihe mit dem Transistor-Gate-Pin. Messverstärkerverstärkung
+messen. Was passiert, wenn die OUT1-Frequenz geändert wird?</li>
+<li>Versuchen Sie den Wert von <span class="math notranslate nohighlight">\(R_ {G_ {pot}}\)</span> zu ändern und
+beobachten Sie die Veränderung der Verstärkung?</li>
+<li>Versuchen Sie zu ändern <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span> zu :math:
+<cite>100k Omega</cite> und <span class="math notranslate nohighlight">\(300k \ Omega\)</span>. Von welcher Abhängigkeit
+hängt die Verstärkung ab <span class="math notranslate nohighlight">\(V_ {in}\)</span> frequency.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_28_BoostConverter.html" class="btn btn-neutral float-right" title="28. DC-DC-Aufwärtswandler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_26_BJTCommonEmitterAmplifier.html" class="btn btn-neutral" title="26. BJT gemeinsamer Emitterverstärker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

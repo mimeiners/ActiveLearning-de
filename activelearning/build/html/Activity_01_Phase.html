@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Was ist Phase? &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="2. Kirchhoffs Spannungs- und Stromgesetze" href="Activity_02_Kirchhoff.html" />
+    <link rel="prev" title="Willkommen zu Red Pitaya’s aktivem Lernen" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Was ist Phase?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">1.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">1.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">1.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#phase">1.4. Phase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#naturlich-auftretende-zeitverschiebungen-in-sinuswellen">1.5. Natürlich auftretende Zeitverschiebungen in Sinuswellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">1.6. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ubungsaufgaben">1.7. Übungsaufgaben</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">1.8. Verfahren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#messe-den-phasenwinkel-zwischen-zwei-generierten-wellenformen">1.8.1. Messe den Phasenwinkel zwischen zwei generierten Wellenformen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#messung-der-grosze-mit-einer-reelen-schaltung">1.8.2. Messung der Größe mit einer reelen Schaltung</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#messung-einer-rc-schaltung">1.8.3. Messung einer RC-Schaltung</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1. Was ist Phase?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_01_Phase.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="was-ist-phase">
+<h1>1. Was ist Phase?<a class="headerlink" href="#was-ist-phase" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>1.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Ziel dieses Labors ist es zu verstehen, was Phasenbeziehung
+zwischen Signalen bedeutet und zu prüfen, wie Theorie mit der Praxis
+übereinstimmen. Des Weiteren soll ein erstes Verständnis der Red
+Pitaya STEMlab Hardware und Software gewonnen werden.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>1.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab-Board <a class="reference external" href="https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html">Hardware</a> geht.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>1.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen
+und passive Komponenten betrachten, die es uns ermöglichen, die
+Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden
+wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen.
+Die nachfolgende Gleichung sollte bekannt sein.</p>
+<div class="math notranslate nohighlight" id="equation-01-eq-1">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-01-eq-1" title="Permalink to this equation">¶</a></span>\[f(t) = \sin(\omega t + \theta)\]</div>
+<p><span class="math notranslate nohighlight">\(\omega\)</span> setzt die Frequenz der sinusförmigen Welle im
+zeitlichen Verlauf <span class="math notranslate nohighlight">\(t\)</span> und <span class="math notranslate nohighlight">\(\theta\)</span>
+definiert einen Zeitversatz <span class="math notranslate nohighlight">\(\omega t_0\)</span>, der eine
+Phasenverschiebung in der Funktion definiert.</p>
+<p>Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur
+Folge. Setze zunächst die Zeitvariable <span class="math notranslate nohighlight">\(t\)</span> als konstant an,
+sagen wir 1. Das Argument, <span class="math notranslate nohighlight">\(\omega t\)</span>, ist jetzt nicht länger
+eine Funktion der Zeit. Mit <span class="math notranslate nohighlight">\(\omega\)</span> im Bogenmaß, ergibt sich
+für <span class="math notranslate nohighlight">\(\sin(\frac{\pi}{4})\approx 0.7071\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(2\pi\)</span> im Bogenmaß entspricht <span class="math notranslate nohighlight">\(360^{\circ}\)</span>,
+so ergibt sich für <span class="math notranslate nohighlight">\(\frac{\pi}{4}\)</span> im Bogemaß
+<span class="math notranslate nohighlight">\(45^{\circ}\)</span> bzw. <span class="math notranslate nohighlight">\(\sin(45^{\circ}) = 0.7071\)</span> entsprechend.</p>
+<p>Lasse nun <span class="math notranslate nohighlight">\(t\)</span> mit der Zeit variieren, wie es normalerweise
+der Fall ist. Wenn der Wert von <span class="math notranslate nohighlight">\(\omega t\)</span> sich mit der Zeit
+linear ändert, ergibt dies eine Sinuswelle wie in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 1.1</span></a>
+dargestellt. Da <span class="math notranslate nohighlight">\(\omega t\)</span> von 0 bis <span class="math notranslate nohighlight">\(2 \pi\)</span> geht,
+verläuft die Amplitude der Sinuswelle von 0 bis 1, fällt auf -1 und
+geht zurück auf den Wert 0. Diesen Abschnitt nennt man Zyklus oder Periode
+<span class="math notranslate nohighlight">\(T\)</span> einer Sinuswelle. Die x-Achse ist das zeitvariable Argument
+bzw.der Winkel von <span class="math notranslate nohighlight">\(\omega t\)</span>, der innerhalb von 0 bis <span class="math notranslate nohighlight">\(2\pi\)</span>
+variiert.</p>
+<p>Der Wert von <span class="math notranslate nohighlight">\(\theta\)</span> ist gleich 0 in der Funktion, die in
+<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 1.1</span></a> dargestellt ist. Aufgrund von <span class="math notranslate nohighlight">\(sin(0) = 0\)</span>
+beginnt die Funktion im Koordinatenursprung bei 0. Dies ist eine
+einfache Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung.
+Beachte, wenn man <span class="math notranslate nohighlight">\(\omega t\)</span> in Radianten in einem Bereich von 0
+bis <span class="math notranslate nohighlight">\(2 \pi\)</span> oder in Gradzahlen von 0 bis <span class="math notranslate nohighlight">\(360^{\circ}\)</span>
+verwendet, erhält man die in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 1.1</span></a> dargestellte
+Sinuswelle.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_01_Fig_01.png" src="_images/Activity_01_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 1.1 </span><span class="caption-text">2 Zyklen von <span class="math notranslate nohighlight">\(\sin(t)\)</span>.</span></p>
+</div>
+<p>Überlege, was passiert, wenn <span class="math notranslate nohighlight">\(\omega t &gt; 2\pi\)</span>.</p>
+<p>Als Beispiel gebe <span class="math notranslate nohighlight">\(2.5 \pi\)</span> in deinen Taschenrechner ein und
+sehe selbst. Die Sinusfunktion wiederholt sich alle
+<span class="math notranslate nohighlight">\(2 \pi\,rad\)</span> oder <span class="math notranslate nohighlight">\(360^{\circ}\)</span>. Es ist ähnlich wie das
+Subtrahieren von <span class="math notranslate nohighlight">\(N \cdot 2 \pi\)</span> rad vom Argument, wobei
+<span class="math notranslate nohighlight">\(N\)</span> die größte ganze Zahl ist, die ein nicht-negatives Ergebnis
+liefert.</p>
+<p>Was passiert, wenn wir eine zweite Sinuswelle in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 1.1</span></a> mit
+gleichem <span class="math notranslate nohighlight">\(\omega\)</span> und <span class="math notranslate nohighlight">\(\theta = 0\)</span> einzeichnen?</p>
+<p>Wir bekommen eine weitere Sinuswelle, die über der ersten Sinuswelle liegt.
+Aufgrund von <span class="math notranslate nohighlight">\(\theta = 0\)</span> gibt es keine Phasendifferenz zwischen
+den Sinuswellen und sie sehen im zeitlichen Verlauf gleich aus.</p>
+<p>Ändern Sie nun <span class="math notranslate nohighlight">\(\theta\)</span> auf <span class="math notranslate nohighlight">\(\pi/4\)</span> oder
+<span class="math notranslate nohighlight">\(45^{\circ}\)</span> für die zweite Sinuswelle. Wir sehen die
+ursprüngliche Sinuswelle und eine zweite Sinuswelle, die
+sich mit der Zeit nach links verschoben hat. <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 1.2</span></a> zeigt
+die ursprüngliche Sinuswelle und die zweite Sinuswelle mit
+einem Zeitversatz. Da der Offset konstant ist, sehen wir die
+ursprüngliche Sinuswelle zeitlich um einen Wert von <span class="math notranslate nohighlight">\(\theta\)</span>
+verschoben, was <span class="math notranslate nohighlight">\(1/4\)</span> der Periode in diesem Beispiel entspricht.</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_01_Fig_02.png" src="_images/Activity_01_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 1.2 </span><span class="caption-text">Funktionsplots von <span class="math notranslate nohighlight">\(\sin(t)\)</span> und <span class="math notranslate nohighlight">\(\sin(t + \pi/4)\)</span>.</span></p>
+</div>
+<p><span class="math notranslate nohighlight">\(\theta\)</span> ist Zeitversatz oder Phasenanteil von
+<a class="reference internal" href="#equation-01-eq-1">Gl. 1.1</a>. Der Phasenwinkel definiert den zeitlichen Versatz und
+umgekehrt. <a class="reference internal" href="#equation-01-eq-2">Gl. 1.2</a> zeigt die Beziehung. Wir haben uns für einen
+besonders häufig gewählten Phasenversatz von <span class="math notranslate nohighlight">\(90^{\circ}\)</span>
+entschieden. Der Phasenversatz zwischen einer Sinus- und Kosinuswelle ist
+<span class="math notranslate nohighlight">\(90^{\circ}\)</span>. Der Versatzwinkel ist fast immer
+nicht 90. Tatsächlich ist es oft eine Funktion der Frequenz
+(<span class="math notranslate nohighlight">\(f\)</span>).</p>
+</div>
+<div class="section" id="phase">
+<h2>1.4. Phase<a class="headerlink" href="#phase" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bei zwei Sinuswellen, die z.B. auf einem Monitor angezeigt werden, kann
+der Phasenwinkel durch Messung der Zeit zwischen den beiden
+Wellenformen berechnet werden (negative bis positive Nulldurchgänge
+oder „steigende Flanken“, können als Bezugspunkte für die Zeitmessung
+in der Wellenform verwendet werden). Eine volle Periode der Sinuswelle
+in der Zeit ist die gleich <span class="math notranslate nohighlight">\(360^{\circ}\)</span>. Wenn man das
+Verhältnis der Zeit zwischen den beiden Wellenformen als <span class="math notranslate nohighlight">\(\Delta
+t\)</span> und der Zeit in einer Periode einer vollen Sinuswelle als <span class="math notranslate nohighlight">\(T\)</span>
+nimmt, kann man den Winkel zwischen ihnen bestimmen. <a class="reference internal" href="#equation-01-eq-2">Gl. 1.2</a>
+gibt die Beziehung an.</p>
+<div class="math notranslate nohighlight" id="equation-01-eq-2">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-01-eq-2" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}\theta &amp;= \frac{\Delta t}{T} 360^{\circ}\\&amp;= \frac{\Delta t}{T} 2\pi \, rad\\&amp;= \Delta t f 2 \pi \, rad;\end{aligned}\end{align} \]</div>
+<p>Wobei <span class="math notranslate nohighlight">\(T\)</span> die Periode der Sinuswelle ist.</p>
+</div>
+<div class="section" id="naturlich-auftretende-zeitverschiebungen-in-sinuswellen">
+<h2>1.5. Natürlich auftretende Zeitverschiebungen in Sinuswellen<a class="headerlink" href="#naturlich-auftretende-zeitverschiebungen-in-sinuswellen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bei einigen passiven elektronischen Komponenten findet ein zeitlicher Versatz
+zwischen der über dem jeweilige Bauteil abfallenden Spannung und dem dieses
+Bauteile durchfließenden Strom statt. Im Grundlagenunterricht wird oft
+die Spannung und der Strom eines linearen Widerstandes behandelt, in
+dem auf die einfache zeitunabhängige Beziehung der beiden Grössen
+hingewiesen wird. Die Beziehung zwischen Strom und Spannung eines
+Widerstandes ist <span class="math notranslate nohighlight">\(V = R \cdot I\)</span>, wobei <span class="math notranslate nohighlight">\(R\)</span> real ist und
+in Ohm angegeben wird. Darau ergibt sich, dass Spannung und Strom in
+einem Widerstand immer in Phase sind.</p>
+<p>Für Kondensatoren und Induktivitäten ist die Gleichung für die
+Strom-Spannungsbeziehung ähnlich. <span class="math notranslate nohighlight">\(V = Z \cdot I\)</span>, wobei
+<span class="math notranslate nohighlight">\(Z\)</span> eine komplexe Impedanz mit Real- und Imaginärteilen ist.</p>
+<p>Wir sehen uns in diesem Labor nur einen Kondensator an.</p>
+<p>Im allgemeinen bestehen Kondensatoren aus zwei leitenden Platten,
+die durch ein dielektrisches Material getrennt sind.
+Wenn eine Potentialdifferenz über die Platten angelegt wird,
+entsteht ein elektrisches Feld zwischen den Platten.
+Dielektrika von Kondensatoren können aus vielen Materialien
+hergestellt werden, darunter dünne isolierende Schichten und Keramik.
+Das Unterscheidungsmerkmal eines Kondensators ist seine Kapazität (C),
+gemessen in Farad (F), die das Verhältnis zwischen Spannung und
+Ladung angibt.</p>
+<p>Die Grundregel für Kondensatoren ist, dass sich die Spannung am
+Kondensator nicht ändert, wenn kein Strom in den Kondensator
+fließt. Die Änderungsrate der Spannung (<span class="math notranslate nohighlight">\(dv_C/dt\)</span>) ist abhängig
+von der Größe des Stroms. Für einen idealen Kondensator wird der Strom
+<span class="math notranslate nohighlight">\(i_C(t)\)</span> durch die folgende Formel auf die Spannung bezogen:</p>
+<div class="math notranslate nohighlight" id="equation-01-eq-3">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-01-eq-3" title="Permalink to this equation">¶</a></span>\[i_C(t) = C \frac{dv_C(t)}{dt}\]</div>
+<p>An dieser Stelle wird auf die genaue Funktionsweise nicht weiter
+eingegangen. Die Verhaltensweisen dieses Bauelements wird später im
+Labor betrachtet. Die Impedanz eines Kondensators ist eine
+Funktion der Frequenz. Die Impedanz sinkt mit steigender Frequenz, d.h.je niedriger die Frequenz, desto höher die Impedanz.</p>
+<p>Dabei ist <span class="math notranslate nohighlight">\(\omega = 2 \pi f\)</span> als Winkelgeschwindigkeit definiert.</p>
+<p>Eine wesentliche Eigenschaft von <a class="reference internal" href="#equation-01-eq-4">Gl. 1.4</a> ist der imaginäre
+Operator <span class="math notranslate nohighlight">\(j\)</span>. Wenn wir uns einen Widerstand anschauen, gibt es
+keinen imaginären Operator in der Gleichung für die Impedanz. Der
+sinusförmige Strom durch einen Widerstand und die Spannung an
+einem Widerstand haben keinen zeitlichen Versatz untereinander,
+da die Beziehung der Grössen real ist. Der einzige Unterschied
+besteht in der Amplitude. Die Spannung ist sinusförmig und steht
+in Phase mit dem sinusförmigen Strom. Dies ist bei einem
+Kondensator nicht der Fall. Wenn wir die Wellenform einer
+sinusförmigen Spannung an einem Kondensator betrachten, wird sie
+im Vergleich zum Strom durch den Kondensator zeitlich
+verschoben. Dafür ist der imaginäre Operator <span class="math notranslate nohighlight">\(j\)</span>
+verantwortlich. Betrachtet man <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 1.3</span></a>, so kann man
+feststellen, dass die Stromwellenform eine Spitze (Maximum) aufweist,
+wenn die Steigung der Spannungswelle <span class="math notranslate nohighlight">\((dv/dt)\)</span> maximal ist.</p>
+<p>Die Zeitdifferenz zwischen den beiden Wellen kann als Phasenwinkel
+ausgedrückt werden, wie in <a class="reference internal" href="#equation-01-eq-2">Gl. 1.2</a> definiert.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-03"></span><img alt="_images/Activity_01_Fig_03.png" src="_images/Activity_01_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 1.3 </span><span class="caption-text">Phasenwinkelbestimmung zwischen Spannung (V) und Strom (I).</span></p>
+</div>
+<p>Wahrscheinlich hast du schon einmal Schaltungen gesehen, die
+vollständig aus Widerständen bestehen. Solche Schaltungen haben nur
+eine reale Impedanz, was bedeutet, dass die Spannungen in der gesamten
+Schaltung phasengleich sind (d.h <span class="math notranslate nohighlight">\(\theta=0\)</span>), da es die komplexe
+Impedanz ist, die den Strom in Bezug auf die Spannung zeitlich
+verschiebt. Beachten, dass die Impedanz eines Kondensators rein
+imaginär ist. Widerstände haben reale Impedanzen, so dass Schaltungen,
+die sowohl Widerstände als auch Kondensatoren enthalten, komplexe
+Impedanzen aufweisen.</p>
+<p>Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I)
+in einer RC-Schaltung zu berechnen, wird folgende Formel angewandt:</p>
+<div class="math notranslate nohighlight" id="equation-01-eq-4">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-01-eq-4" title="Permalink to this equation">¶</a></span>\[i(t) = \frac{v(t)}{Z_{tot}},\]</div>
+<p>wo <span class="math notranslate nohighlight">\(Z_ {tot}\)</span> ist die Gesamtimpedaz der Schaltung ist.</p>
+<p>Stellen Sie die Gleichung soweit um, bis sie aussieht wie
+<span class="math notranslate nohighlight">\(Z_ {tot} = a + jb\)</span>, wobei <span class="math notranslate nohighlight">\(a\)</span> und <span class="math notranslate nohighlight">\(b\)</span> reelle
+Zahlen sind. Die Phasenbeziehung des Stroms zur Spannung ist
+dann:</p>
+<div class="math notranslate nohighlight" id="equation-01-eq-5">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-01-eq-5" title="Permalink to this equation">¶</a></span>\[\theta = \arctan\left(\frac{b}{a}\right).\]</div>
+</div>
+<div class="section" id="materialien">
+<h2>1.6. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab 125-14 oder STEMlab 125-10</li>
+<li><span class="math notranslate nohighlight">\(2 \times 470\Omega\)</span> Widerstände</li>
+<li><span class="math notranslate nohighlight">\(1 \times 1\mu F\)</span> Kondensator</li>
+</ul>
+<p>Sie werden das STEMlab-Board von Red Pitaya und die Anwendung
+Oszilloskop &amp; Signalgenerator verwenden. Eine Anleitung zum Starten
+des Red Pitaya STEMlab-Boards finden Sie unter <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html">Quickstart</a>, während
+die Anwendung des Oszilloskops und des Signalgenerators <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">hier</a>
+erläutert werden.</p>
+</div>
+<div class="section" id="ubungsaufgaben">
+<h2>1.7. Übungsaufgaben<a class="headerlink" href="#ubungsaufgaben" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Untersuchen Sie die Phasenbeziehung von Spannungen in einer
+Widerstandsschaltung.</li>
+<li>Untersuchen Sie die Phasenbeziehung von Spannungen in einem
+RC-Kreis.</li>
+</ol>
+</div>
+<div class="section" id="verfahren">
+<h2>1.8. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Stelle sicher, dass das STEMlab an ein lokales Netzwerk
+angeschlossen ist und starte die Webschnittstelle über den
+Webbrowser.</li>
+<li>Starte die Anwendung Oszilloskop &amp; Signalgenerator. Der
+Hauptbildschirm sollte wie eine Scope-Anzeige mit einstellbaren
+Bereichs-, Positions- und Messparametern aussehen.</li>
+<li>Stelle am linken unteren Bildschirmrand sicher, dass OUT1 V/div
+und OUT2 V/div beide auf 200 mV/div eingestellt sind. V/div kann
+eingestellt werden, indem man den gewünschten Kanal auswählt und die
+vertikalen +/- Regler verwendet.</li>
+<li>Stelle im Menü (Steuerrad) von OUT1 die Frequenz auf 1000 Hz,
+die Phase auf <span class="math notranslate nohighlight">\(0^{\circ}\)</span> und die Amplitude auf 0,9 V ein. Wähle
+die Sinuswellenform und aktiviere die Ausgabe.</li>
+<li>Stelle im Menü (Steuerrad) von OUT2 die Frequenz auf 1000 Hz
+und die Amplitude auf 0,9 V ein. Wählen Sie die Sinuswellenform und
+aktivieren Sie die Ausgabe.</li>
+<li>Setze t/div auf 200 us/div (mit horizontalen +/- Regler).</li>
+</ul>
+<div class="figure align-center" id="fig-04">
+<a class="reference internal image-reference" href="_images/Activity_01_Fig_04.png"><img alt="_images/Activity_01_Fig_04.png" src="_images/Activity_01_Fig_04.png" style="width: 492.5px; height: 314.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.4 </span><span class="caption-text">Sinussignal erzeugt mit Oszilloskop und
+Signalgeneratoranwendungen. Markiert mit Grün - Haupteinstellung
+und Kontrollen.</span></p>
+</div>
+<div class="section" id="messe-den-phasenwinkel-zwischen-zwei-generierten-wellenformen">
+<h3>1.8.1. Messe den Phasenwinkel zwischen zwei generierten Wellenformen<a class="headerlink" href="#messe-den-phasenwinkel-zwischen-zwei-generierten-wellenformen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Aufgrund der vorhergegangenen Einstellungen sollte nur eine
+Sinuswelle zu sehen sein. Tatsächlich gibt es zwei Sinuswellen, die
+aufgrund des Nullphasenwinkels übereinander liegen.</p>
+<ul class="simple">
+<li>Ändern Sie im OUT1-Steuermenü die Phase auf <span class="math notranslate nohighlight">\(90^{\circ}\)</span>.</li>
+<li>Ändern Sie im OUT2-Steuermenü die Phase auf <span class="math notranslate nohighlight">\(135^{\circ}\)</span>.</li>
+<li>Auf welchem Kanal sieht es so aus, als ob ein Sinus vor dem anderen liegt?</li>
+</ul>
+<p>Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt
+(vorläuft). Das Signal OUT2 durchquert die 0-V-Achse (x-Achse) von
+unten nach oben vor dem Signal OUT1. Es wir definiert, dass eine
+positives <span class="math notranslate nohighlight">\(\theta\)</span> als voreilende Phase bezeichnet wird. Der
+Referenzpunkt für die niedrige bis hohe Übergangszeit ist
+beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt
+werden.</p>
+<div class="figure align-center" id="fig-05">
+<a class="reference internal image-reference" href="_images/Activity_01_Fig_05.png"><img alt="_images/Activity_01_Fig_05.png" src="_images/Activity_01_Fig_05.png" style="width: 490.5px; height: 313.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.5 </span><span class="caption-text">Oszilloskop-Applikation mit zwei Sinussignalen mit Phasendifferenz.</span></p>
+</div>
+<ul class="simple">
+<li>Ändern Sie die Phase von OUT2 zu <span class="math notranslate nohighlight">\(45^{\circ}\)</span>. Jetzt sieht
+es so aus, als ob das OUT2-Signal dem OUT1-Signal nacheilt.</li>
+<li>Drücken Sie die rote STOP-Taste, um die Erfassung des Oszilloskops
+anzuhalten.</li>
+<li>Wählen Sie das Menü „CURSOR“ und aktivieren Sie die Cursor X1 und X2.</li>
+<li>Mit horizontalen +/- Regler die Zeit auf 100 us / div stellen.</li>
+<li>Mit der linken Maustaste setzt man die Cursormarkierung gedrückt
+(weißer Pfeil am Ende der Cursorlinie). Setze eine Cursorposition
+so, dass die Cursorlinie durch den Punkt an OUT1 die 0V-Linie kreuzt.</li>
+<li>Wiederhole den Schritt für den zweiten Cursor und das OUT2-Signal.</li>
+<li>Lese die Zeitdifferenz zwischen den Cursorn ab.</li>
+<li>Was ist <span class="math notranslate nohighlight">\(\Delta t\)</span>?</li>
+<li>Verwende das gemessenen <span class="math notranslate nohighlight">\(\Delta t\)</span> und <a class="reference internal" href="#equation-01-eq-2">Gl. 1.2</a> um die
+Phase und den Offset <span class="math notranslate nohighlight">\(\theta\)</span> in Grad zu berechnen.</li>
+</ul>
+<p>Beachte, dass die Frequenz eines Signals nicht gemessen werden kann,
+bei dem nicht mindestens eine volle Periode auf dem Bildschirm
+angezeigt wird. Normalerweise benötigt man mehr als zwei Zyklen, um
+konstante Ergebnisse zu erzielen. Erzeuge ein Sinussignal mit
+einer vorgegeben Frequenz.</p>
+</div>
+<div class="section" id="messung-der-grosze-mit-einer-reelen-schaltung">
+<h3>1.8.2. Messung der Größe mit einer reelen Schaltung<a class="headerlink" href="#messung-der-grosze-mit-einer-reelen-schaltung" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="figure align-center" id="fig-06">
+<a class="reference internal image-reference" href="_images/Activity_01_Fig_06.png"><img alt="_images/Activity_01_Fig_06.png" src="_images/Activity_01_Fig_06.png" style="width: 525.0px; height: 498.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.6 </span><span class="caption-text">R-R-Schaltung.</span></p>
+</div>
+<p>Bauen Sie die in <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 1.6</span></a> gezeigte Schaltung auf Ihrer
+lötfreien Leiterplatte mit zwei <span class="math notranslate nohighlight">\(470 \Omega\)</span> Widerständen,
+Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p class="last">Verwende als Erdungs-Pin das Erdungskabel der Messspitzen (Krokodilstecker).</p>
+</div>
+<div class="figure align-center" id="fig-07">
+<a class="reference internal image-reference" href="_images/Activity_01_Fig_07.png"><img alt="_images/Activity_01_Fig_07.png" src="_images/Activity_01_Fig_07.png" style="width: 629.0px; height: 467.5px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.7 </span><span class="caption-text">R-R-Schaltung auf dem Steckbrett.</span></p>
+</div>
+<p>OUT1 ist direkt mit IN1 verbunden, so dass ein reales
+Spannungssignal über die Widerstände <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span>
+beobachtet werden kann.</p>
+<ul class="simple">
+<li>Stelle im Menü OUT1 die Frequenz auf 200 Hz mit <span class="math notranslate nohighlight">\(0^{\circ}\)</span>
+Phase und 0,9 V Amplitude ein. Deaktiviere die Taste „Show“, wähle
+SINE als Wellenform und aktiviere die Taste „ON“.</li>
+<li>Stelle die horizontale Zeitskala auf 1,0 mS/Div ein, um zwei
+Zyklen der Wellenform anzuzeigen.</li>
+<li>Klicke auf die Schaltfläche Start, wenn sie nicht bereits
+ausgeführt wird.</li>
+<li>Stelle mit den vertikalen +/- Reglern  200 mV / div für IN1 und
+IN2 ein.</li>
+</ul>
+<p>Die in IN1 (gelb) angezeigte Sinuswelle ist die Spannung an beiden
+Widerständen (<span class="math notranslate nohighlight">\(V_{R1} + V_{R2}\)</span>). Die in IN2 dargestellte
+Sinuswelle ist die Spannung an <span class="math notranslate nohighlight">\(R_2\)</span> (<span class="math notranslate nohighlight">\(V_{R2}\)</span>).
+Um die Spannung über <span class="math notranslate nohighlight">\(R_1\)</span> anzuzeigen, verwenden wir die
+Math-Funktion des Red Pitaya’s. Unter dem Mathe-Menü für Signal 1
+wähle IN1, wähle den Operator „-„; für Signal 2 wähle dann IN2. Nun
+aktiviere Math. Nun sollte eine dritte Sinuswelle für die Spannung
+über <span class="math notranslate nohighlight">\(R_1\)</span> (<span class="math notranslate nohighlight">\(V_{R1}\)</span>) erscheinen.</p>
+<ul class="simple">
+<li>Mit den vertikalen +/- Reglern setzen Sie 200 mV / div (0,2 V / div)
+für MATH-Kurve.</li>
+<li>Mit diesen Einstellungen kann beobachtet werden:<ul>
+<li>IN1- Eingangserregungssignal</li>
+<li>IN2- Spannung am Widerstand R<sub>2</sub></li>
+<li>MATH - Spannung am Widerstand R<sub>1</sub></li>
+</ul>
+</li>
+<li>Notiere:<ul>
+<li>V<sub>R1</sub> und V<sub>R2</sub> .</li>
+<li>V<sub>R1</sub> _______ V<sub>pp</sub> .</li>
+<li>V<sub>R2</sub> _______ V<sub>pp</sub> .</li>
+<li>V<sub>R1</sub> + V<sub>R2</sub> _______ V<sub>pp</sub> .</li>
+</ul>
+</li>
+<li>Ist ein Unterschied zwischen den Nulldurchgängen von V<sub>R1</sub> und V<sub>R1</sub> zu sehen?</li>
+<li>Sind sogar zwei unterschiedliche Sinuswellen zu sehen?
+Wahrscheinlich nicht. Es sollte keinen beobachtbaren Zeitversatz geben
+und somit keine Phasenverschiebung.</li>
+</ul>
+<p>Sieh, dass sich die MATH- (lila) und IN2- (grün) Kurven
+überlappen. Um beide Spuren zu sehen, kann die vertikale
+Position eines Kanals verschoben werden, um sie zu trennen.</p>
+<p>Dies geschieht, indem man den Leiterbahnmarker (auf der linken Seite
+des Gitters) mit der linken Maustaste auswählt und die Leiterbahn
+nach oben/unten bewegt. Stell sicher, dass die vertikale
+Position wieder auf 0 steht, um die Signale neu auszurichten.</p>
+<p>Hier haben wir keine Phasenverschiebung, da Wert von
+<span class="math notranslate nohighlight">\(R_1 = R_2\)</span>, so dass die Signalamplituden für <span class="math notranslate nohighlight">\(V_{R_1}\)</span>
+und <span class="math notranslate nohighlight">\(V_{R_2}\)</span> gleich sind. Das Ergebnis ist, dass wir zwei
+identische Signale (IN2 = V<sub>R2</sub>, MATH = V<sub>R1</sub>)` auf dem
+Oszilloskop haben.</p>
+<p>Was passiert, wenn man den Widerstand <span class="math notranslate nohighlight">\(R_2\)</span> auf
+<span class="math notranslate nohighlight">\(220 \Omega\)</span> setzt?</p>
+</div>
+<div class="section" id="messung-einer-rc-schaltung">
+<h3>1.8.3. Messung einer RC-Schaltung<a class="headerlink" href="#messung-einer-rc-schaltung" title="Link zu dieser Überschrift">¶</a></h3>
+<ul class="simple">
+<li>Ersetze R <sub>2</sub> durch einen <span class="math notranslate nohighlight">\(1\,\mu F\)</span> Kondensator <span class="math notranslate nohighlight">\(C_1\)</span>.</li>
+</ul>
+<div class="figure" id="id2">
+<span id="fig-08"></span><a class="reference internal image-reference" href="_images/Activity_01_Fig_08.png"><img alt="_images/Activity_01_Fig_08.png" src="_images/Activity_01_Fig_08.png" style="width: 371.5px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.8 </span><span class="caption-text">RC-Schaltung an</span></p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p class="last">Für einen <span class="math notranslate nohighlight">\(1\,\mu F\)</span> Kondensator verwenden Sie einen
+Elektrolytkondensator.</p>
+</div>
+<p>Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven
+Anschluss sollte die Spannung niemals negativ und auf dem
+negativen Anschluss (GND) niemals positiv sein.</p>
+<p>Aus dem vorherigen Beispiel (RR-Schaltung) und den Einstellungen des
+Oszilloskop- und Signalgenerators erzeugen wir Sinuswellen, die von
+-0,9 V bis 0,9 V gehen. Aufgrund der negativen Spannung wird falsche
+Polarisation des Kondensators verursacht (es kann einen Kondensator
+beschädigen). Daher müssen Sie das Ausgangssignal anpassen, damit Sie
+ein Sinussignal erzeugen, welches immer positiv ist (Sinussignal mit
+einem Offset).</p>
+<ul class="simple">
+<li>Im Menü OUT1 stellen Sie die Amplitude und den Offsetwerte auf 0,45
+V ein. Jetzt erzeugen wir ein Sinussignal, das um 0,45 V des
+DC-Offsetwertes oszilliert, d.h. ein sinusförmiges Signal geht von 0
+V auf 0,9 V.</li>
+</ul>
+<p>Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an
+diesem Gleichstromwert nicht interessiert. Um unsere Signale auf dem
+Raster neu zu zentrieren, müssen wir die Signale mit negativen
+Offsetwerten in vertikale Richtung verschieben.</p>
+<ul class="simple">
+<li>Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Offset
+auf -450 mV einstellen.</li>
+<li>Für eine stabile erfassung den Triggerpegel im Menu TRIGGER auf 0.45
+V einstellen.</li>
+</ul>
+<div class="figure" id="id3">
+<span id="fig-09"></span><a class="reference internal image-reference" href="_images/Activity_01_Fig_09.png"><img alt="_images/Activity_01_Fig_09.png" src="_images/Activity_01_Fig_09.png" style="width: 492.5px; height: 312.0px;" /></a>
+<p class="caption"><span class="caption-number">Abb. 1.9 </span><span class="caption-text">Oszilloskop-Signale mit RC-Schaltung.</span></p>
+</div>
+<ul class="simple">
+<li>Messen Sie den Wert von IN1, IN2 und Math P2P (Spitze zu Spitze).
+Welches Signal hat die Math-Wellenform?</li>
+<li>Nehmen Sie V<sub>R1</sub> , V<sub>C1</sub> und V<sub>R1</sub> + V<sub>C1</sub> auf.<ul>
+<li>V<sub>R1</sub> ____________ V<sub>PP</sub> .</li>
+<li>V<sub>C1</sub> _______________ V<sub>PP</sub> .</li>
+<li>V<sub>R1</sub> + V<sub>C1</sub> ____________ V<sub>PP</sub> .</li>
+</ul>
+</li>
+</ul>
+<p>Nun kommen Sie zu etwas, das mit Phase zu tun hat. Hoffentlich sehen
+Sie ein paar Sinuswellen mit Zeitversatz oder Phasendifferenzen auf
+dem Gitter. Lassen Sie uns die Zeitverschiebungen messen und die
+Phasenunterschiede berechnen..</p>
+<ul>
+<li><p class="first">Messen Sie den Zeitunterschied zwischen V<sub>R1</sub> und V<sub>C1</sub> und berechne die Phasenversätze.</p>
+<p>Verwenden Sie Gl. (2) und das gemessene <span class="math notranslate nohighlight">\(\Delta t\)</span>, zur
+Berechnung des Phasenwinkels <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Die CURSORS sind nützlich für die Bestimmung von <span class="math notranslate nohighlight">\(\Delta t\)</span>;
+kurze Erklärung wie:</p>
+<ul class="simple">
+<li>Zeigen Sie mindestens 2 Zyklen der Sinuswellen an.</li>
+<li>Stellen Sie die horizontale time/Div auf 500 us/div ein.
+Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen der Differenz anzeigt.</li>
+</ul>
+</li>
+</ul>
+<p>Sie können die Messanzeige verwenden, um die Frequenz zu ermitteln. Da
+Sie die Frequenz der Quelle einstellen, müssen Sie den Wert nicht
+ermittelt.</p>
+<p>Angenommen, <span class="math notranslate nohighlight">\(\Delta t\)</span> ist 0, wenn Sie wirklich keinen
+Unterschied zu 1 oder 2 Zyklen der Sinuswelle auf dem Bildschirm sehen
+können.</p>
+<ul>
+<li><p class="first">Setzen Sie den ersten Cursor auf das neg. zu
+pos. Nulldurchgang für das Signal IN1
+(V<sub>R1</sub> + V<sub>C1</sub> ). Setzen Sie den zweiten Cursor
+beim nächsten neg. zu pos. Nulldurchgang für den Math-Signal
+(V<sub>R1</sub> ). Erfassen Sie die Zeitdifferenz und berechnen Sie
+den Phasenwinkel. Bitte beachten Sie, dass  <span class="math notranslate nohighlight">\(\ Delta t\)</span> ein
+negatives Vorzeichen annehmen kann. Bedeutet das, dass der
+Phasenwinkel vor- oder nachläuft?</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+<li><p class="first">Setzen Sie den ersten Cursor auf das Neg. zu
+pos. Nulldurchgangsstelle für das Signal IN1 (V<sub>R1</sub> + V<sub>C1</sub> ). Setzen Sie den zweiten Cursor beim nächsten neg. zu
+pos. Nulldurchgangsstelle für den IN2 (V<sub>C1</sub> )
+Signal. Erfassen Sie die Zeitdifferenz und berechnen Sie
+den Phasenwinkel.</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+<li><p class="first">Setzen Sie den ersten Cursor auf das Neg. zu
+pos. Nulldurchgangsstelle für das Math (V<sub>R1</sub> )
+Signal. Setzen Sie den zweiten Cursor auf die nächstgelegenes
+neg. zu pos. Nulldurchgangsstelle für den IN2 (V<sub>C1</sub> )
+Signal. Erfassen Sie die Zeitdifferenz und berechnen Sie den
+Phasenwinkel.</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+<li><p class="first">Messen Sie die Zeitdifferenz und berechnen Sie den Phasenversatz
+<span class="math notranslate nohighlight">\(\theta\)</span> mit einer anderen Frequenz.</p>
+</li>
+<li><p class="first">Stellen Sie die Frequenz von OUT1 auf 1000 Hz und die Time/Div auf 200
+us/div.</p>
+</li>
+<li><p class="first">Setzen Sie den ersten Cursor auf das neg. zu
+pos. Nulldurchgang für das Signal IN1 (V<sub>R1</sub> + V<sub>C1</sub> ). Setzen Sie den zweiten Cursor beim nächsten
+neg. zu pos. Nulldurchgang für das Math-Signal (V<sub>R1</sub>
+). Erfassen Sie die Zeitdifferenz  und berechnen Sie
+den Phasenwinkel. Beachten Sie, dass <span class="math notranslate nohighlight">\(\Delta t\)</span> ein negatives
+Vorzeichen annehmen kann. Bedeutet das, dass der Phasenwinkel vor-
+oder nachläuft?</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+<li><p class="first">Setzen Sie den ersten Cursor auf das neg. zu
+pos. Nulldurchgang für das Signal IN1 (V<sub>R1</sub> + V<sub>C1</sub> ). Setzen Sie den zweiten Cursor beim nächsten
+neg. zu pos. Nulldurchgang für den IN2 (V<sub>C1</sub> ).
+Erfassen Sie die Zeitdifferenz und berechnen Sie den
+Phasenwinkel.</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+<li><p class="first">Setzen Sie den ersten Cursor auf das neg. zu
+pos. Nulldurchgang für das Math-Signal (V<sub>R1</sub> ).
+Setzen Sie einen zweiten Cursor auf den nächstgelegenen
+neg. zu pos. Nulldurchgang für den IN2 (V<sub>C1</sub> ).
+Erfassen Sie die Zeitdifferenz und berechnen Sie den
+Phasenwinkel.</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> _________, <span class="math notranslate nohighlight">\(\theta\)</span> _________</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_02_Kirchhoff.html" class="btn btn-neutral float-right" title="2. Kirchhoffs Spannungs- und Stromgesetze" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Willkommen zu Red Pitaya’s aktivem Lernen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

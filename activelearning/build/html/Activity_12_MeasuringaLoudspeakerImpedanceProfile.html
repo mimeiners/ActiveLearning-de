@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>12. Messung eines Lautsprecherimpedanzprofils &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="13. Grundlegende OP-Verstärkerkonfigurationen" href="Activity_13_BasicOPAmpConfigurations.html" />
+    <link rel="prev" title="11. Impedanzmessung - Frequenzeffekte" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. Messung eines Lautsprecherimpedanzprofils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">12.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">12.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">12.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lautsprecherimpedanzmodell">12.4. Lautsprecherimpedanzmodell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">12.5. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">12.6. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Der MOS-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>12. Messung eines Lautsprecherimpedanzprofils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_12_MeasuringaLoudspeakerImpedanceProfile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="messung-eines-lautsprecherimpedanzprofils">
+<h1>12. Messung eines Lautsprecherimpedanzprofils<a class="headerlink" href="#messung-eines-lautsprecherimpedanzprofils" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>12.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Ziel dieses Experiments ist es, das Impedanzprofil und die Resonanzfrequenz eines Permanentmagnet-Lautsprechers zu messen.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>12.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/index.html">Hardware</a> geht. Die Anwendung des <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer">Impedanz</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer">analysators</a> dient zur Messung der RLC-Schaltungsimpedanz <span class="math notranslate nohighlight">\(Z(f)\)</span>. Hier verwenden wir die Impedanzanalysatoranwendung ohne LCR-Meter-Frontend, wie <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer">HIER</a> beschrieben. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen 1Hz und 60MHz, obwohl der empfohlene Frequenzbereich bis zu 1MHz beträgt. Der Impedanzbereich liegt zwischen 0,1 Ohm und 10 Mohm. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Nebenschlusswiderstand ein.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>12.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die wichtigste elektrische Eigenschaft eines dynamischen Lautsprechers ist seine elektrische Impedanz in Abhängigkeit von der Frequenz. Es kann visualisiert werden, indem es als Diagramm, die Impedanzkurve genannt, dargestellt wird. Die gebräuchlichste Art von Lautsprechern ist ein elektromechanischer Wandler mit einer Schwingspule, die mit einer Membran oder einem Membrankonus verbunden ist. Die Schwingspule in Schwingspulenlautsprechern ist in einem Magnetfeld aufgehängt, das von einem Permanentmagneten erzeugt wird. Wenn elektrischer Strom durch die Schwingspule von einem Audioverstärker fließt, reagiert das durch den Strom in der Spule erzeugte elektromagnetische Feld gegen das Festfeld des Permanentmagneten und bewegt die Schwingspule (auch den Konus). Wechselstrom bewegt den Konus hin und her. Die Bewegung des Membrankonus vibriert die Luft, die den Klang erzeugt.</p>
+<p>Das bewegliche System des Lautsprechers, einschließlich Konus, Kegelaufhängung, Spinne und Schwingspule, hat eine bestimmte Masse und Nachgiebigkeit. Dies wird am häufigsten als eine einfache Masse modelliert, die an einer Feder aufgehängt ist, die eine bestimmte Resonanzfrequenz hat, bei der das System am freisten schwingt.</p>
+<p>Diese Frequenz wird als „Freiraumresonanz“ des Lautsprechers bezeichnet und mit <span class="math notranslate nohighlight">\(F_S\)</span> abgekürzt. Bei dieser Frequenz, da die Schwingspule mit der maximalen Spitze-Spitze-Amplitude und -Geschwindigkeit schwingt, ist auch der durch die Spulenbewegung in einem Magnetfeld erzeugte Gegenstrom maximal. Dadurch erreicht die effektive elektrische Impedanz des Lautsprechers bei <span class="math notranslate nohighlight">\(F_S\)</span>, bekannt als <span class="math notranslate nohighlight">\(F_{max}\)</span>, ihr Maximum. Bei Frequenzen knapp unterhalb der Resonanz steigt die Impedanz schnell an, wenn sich die Frequenz <span class="math notranslate nohighlight">\(F_S\)</span> nähert und ist induktiv. Bei der Resonanz ist die Impedanz rein resistiv und darüber hinaus, wenn die Impedanz sinkt, wirkt sie kapazitiv. Die Impedanz erreicht bei einer bestimmten Frequenz einen Minimalwert, <span class="math notranslate nohighlight">\(Z_{min}\)</span>, bei dem das Verhalten über einen bestimmten Frequenzbereich überwiegend (aber nicht perfekt) resistiv ist. Aus diesem <span class="math notranslate nohighlight">\(Z_{min}\)</span> -Wert wird die Nominale- oder Nennimpedanz eines Lautsprechers, <span class="math notranslate nohighlight">\(Z_{nom}\)</span>, abgeleitet.</p>
+<p>Die Kenntnis der Resonanzfrequenz sowie der minimalen und maximalen Impedanzen ist wichtig, wenn es darum geht, Crossover-Filternetzwerke für mehrere Treiberlautsprecher und das physikalische Gehäuse, in dem die Lautsprecher montiert sind, zu entwickeln.</p>
+</div>
+<div class="section" id="lautsprecherimpedanzmodell">
+<h2>12.4. Lautsprecherimpedanzmodell<a class="headerlink" href="#lautsprecherimpedanzmodell" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 12.1</span></a> ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.</p>
+<div class="figure" id="id1">
+<span id="fig-01"></span><img alt="_images/Activity_12_Fig_01.png" src="_images/Activity_12_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 12.1 </span><span class="caption-text">Lautsprecherimpedanzmodell</span></p>
+</div>
+<p>Die Schaltung in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 12.1</span></a> hat einen Gleichstromwiderstand, der in Reihe mit einem verlustbehafteten Parallelschwingkreis geschaltet ist, bestehend aus <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(R\)</span> und <span class="math notranslate nohighlight">\(C\)</span>, der die dynamische Impedanz des Lautsprecher über den interessierenden Frequenzbereich modelliert.</p>
+<ul class="simple">
+<li><span class="math notranslate nohighlight">\(R_ {dc}\)</span> ist der Gleichstromwiderstand des Lautsprechers, gemessen mit einem DC Ohmmeter.
+Der DC-Widerstand wird in einem Lautsprecher- / Subwoofer-Datenblatt oft als <span class="math notranslate nohighlight">\(DCR\)</span> bezeichnet.
+Der gemessene Gleichstromwiderstand ist normalerweise kleiner als die Nennimpedanz des Treibers <span class="math notranslate nohighlight">\(Z_ {nom}\)</span>.
+<span class="math notranslate nohighlight">\(R_ {dc}\)</span> ist normalerweise kleiner als die spezifizierte Lautsprecherimpedanz und der unerfahrene Lautsprecherenthusiast kann befürchten, dass der Treiberverstärker überlastet wird. Da jedoch die Induktivität <span class="math notranslate nohighlight">\(L\)</span> eines Lautsprechers mit der steigenden Frequenz zunimmt, ist es unwahrscheinlich, dass der Treiberverstärker tatsächlich den Gleichstromwiderstand als seine Last betrachtet.</li>
+<li><span class="math notranslate nohighlight">\(L\)</span> ist die Schwingspuleninduktivität, die üblicherweise in MilliHenries <span class="math notranslate nohighlight">\(mH\)</span> gemessen wird. Typischerweise ist der Industriestandard die Messung der Schwingspuleninduktivität bei <span class="math notranslate nohighlight">\(1kHz\)</span>. Wenn die Frequenzen über <span class="math notranslate nohighlight">\(0Hz\)</span> ansteigen, steigt die Impedanz über den <span class="math notranslate nohighlight">\(R_{DC}\)</span> -Wert. Der Grund dafür ist, dass die Schwingspule wie eine Induktivität wirkt. Folglich ist die Gesamtimpedanz eines Lautsprechers keine konstante Impedanz, sondern kann als dynamisches Profil dargestellt werden, das sich mit der Eingangsfrequenz ändert, wie wir bei Messungen sehen werden. Die maximale Impedanz, <span class="math notranslate nohighlight">\(Z_{max}\)</span>, des Lautsprechers tritt bei der Resonanzfrequenz, <span class="math notranslate nohighlight">\(F_s\)</span>, des Lautsprechers auf.</li>
+<li><span class="math notranslate nohighlight">\(F_s\)</span> ist die Resonanzfrequenz eines Lautsprechers. Die Impedanz eines Lautsprechers ist bei <span class="math notranslate nohighlight">\(Z_s\)</span> maximal. Die Resonanzfrequenz ist der Punkt, an dem die Gesamtmasse der beweglichen Teile des Lautsprechers während der Bewegung mit der Kraft der Lautsprecheraufhängung ausgeglichen wird. Die Resonanzfrequenzinformation ist wichtig, um zu verhindern, dass ein Gehäuse klingelt. Im Allgemeinen sind die Masse der beweglichen Teile und die Starrheit der Lautsprecheraufhängung die Schlüsselelemente, die die Resonanzfrequenz beeinflussen. Ein belüftetes Gehäuse (Bassreflex) ist auf <span class="math notranslate nohighlight">\(F_s\)</span> abgestimmt, so dass die beiden im Einklang arbeiten. In der Regel ist ein Lautsprecher mit einem niedrigeren <span class="math notranslate nohighlight">\(F_s\)</span> für die Tieftonwiedergabe besser als ein Lautsprecher mit einem höheren <span class="math notranslate nohighlight">\(F_s\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(R\)</span> tellt die mechanischen Verlust der Treibersystems dar.</li>
+</ul>
+</div>
+<div class="section" id="materialien">
+<h2>12.5. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab 125-14 oder STEMlab 125-10</li>
+<li>Widerstand - <span class="math notranslate nohighlight">\(R_ {shunt}\)</span>: 10 Ω</li>
+<li>Lautsprecher, ist es am besten, wenn der Lautsprecher mit einem Konusdurchmesser größer als 10 cm ist,
+so dass er eine relativ niedrige Resonanzfrequenz hat.</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>12.6. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Bauen Sie zuerst die in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 12.1</span></a> und <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 12.2</span></a> gezeigte Schaltung auf. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.</li>
+</ol>
+<div class="figure" id="id2">
+<span id="fig-02"></span><img alt="_images/Activity_12_Fig_02.png" src="_images/Activity_12_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 12.2 </span><span class="caption-text">Lautsprecheranschlüsse</span></p>
+</div>
+<div class="figure" id="id3">
+<span id="fig-03"></span><img alt="_images/Activity_12_Fig_03.png" src="_images/Activity_12_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 12.3 </span><span class="caption-text">STEMlab mit Shunt-Widerstand Impedanzanalysator und Lautsprecher</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Starten Sie die Anwendung Impedanzanalysator.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss vom Application Marketplace (Basar) heruntergeladen werden. Klicken Sie auf Application marketplace icon und wählen Sie Install for Impedance analyzer.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><dl class="first docutils">
+<dt>Starten Sie den Impedanzanalysator und:</dt>
+<dd><ul class="first last">
+<li>unter <strong>Messeinstelungen</strong> Anzahl der Schritte einstellen: 30</li>
+<li>unter <strong>Messeinstellungen</strong> den <span class="math notranslate nohighlight">\(R_ {shunt}\)</span> auf <span class="math notranslate nohighlight">\(10 \ Omega\)</span> setzen</li>
+<li>unter <strong>Frequenz-Sweep</strong> Startfrequenz auf 10 Hz und Endfrequenz auf 10 kHz einstellen</li>
+<li>Wählen Sie <strong>Messung Starten</strong></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="figure" id="id4">
+<span id="fig-04"></span><img alt="_images/Activity_12_Fig_04.png" src="_images/Activity_12_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 12.4 </span><span class="caption-text">Grafik der Impedanz der Lautsprecherimpedanz, die mit der Anwendung des Impedanzanalysators aufgenommen wurde</span></p>
+</div>
+<dl class="docutils">
+<dt>4.Ploten der gemessenen Phase</dt>
+<dd><ul class="first last simple">
+<li>unter <strong>Grafikeinstellungen</strong> für <strong>Y-Achse</strong> wählen Sie <strong>P [deg]</strong></li>
+</ul>
+</dd>
+</dl>
+<div class="figure" id="id5">
+<span id="fig-05"></span><img alt="_images/Activity_12_Fig_05.png" src="_images/Activity_12_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 12.5 </span><span class="caption-text">Grafik der Lautsprecherimpedanzphase, die mit der Anwendung des Impedanzanalysators aufgenommen wurde</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Die Frequenz, bei der <strong>(Phase = 0)</strong> auftritt, wird als Resonanzfrequenz bezeichnet.</p>
+</div>
+<p>Wie im Lautsprecher-Modell (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 12.1</span></a>) dargestellt, stellt der Widerstand <span class="math notranslate nohighlight">\(R\)</span> den mechanischen Verluste des Schwingsystems dar. Um einen Effekt dieses modellierten Widerstandes zu sehen, drehen Sie den Lautsprecher um,so dass seine Membran zur Werkbank zeigt. Damit werden wir die akustisch-mechanische Umgebung des Lautsprechers verändern, was sich auf die Lautsprecherimpedanz auswirkt.</p>
+<ol class="arabic simple" start="5">
+<li>Flipover-Lautsprecher wie in Abbildung 6 gezeigt und Impedanzmessungen wiederholen</li>
+</ol>
+<div class="figure" id="id6">
+<span id="fig-06"></span><img alt="_images/Activity_12_Fig_06.png" src="_images/Activity_12_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 12.6 </span><span class="caption-text">Lautsprecher in unterschiedlicher akustisch-mechanischer Umgebung</span></p>
+</div>
+<p>Wie wir aus <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 12.7</span></a> sehen können, ist die Impedanz des Lautsprechers jetzt anders und der Effekt von
+akustomechanische Umgebung ist deutlich sichtbar.</p>
+<div class="figure" id="id7">
+<span id="fig-07"></span><img alt="_images/Activity_12_Fig_07.png" src="_images/Activity_12_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 12.7 </span><span class="caption-text">Lautsprecherimpedanz in verschiedenen akustisch-mechanischen Umgebungen</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_13_BasicOPAmpConfigurations.html" class="btn btn-neutral float-right" title="13. Grundlegende OP-Verstärkerkonfigurationen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_11_ImpedanceMeasurementFrequencyEffects.html" class="btn btn-neutral" title="11. Impedanzmessung - Frequenzeffekte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
