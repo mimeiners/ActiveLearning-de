@@ -130,7 +130,7 @@ Setzen wir :math:`I_C = 5\,mA`, dann folgt
    R_L = \frac{V_{R_L}}{I_C} = \frac{1.6V}{5mA} = 320 \Omega
 
 
-Entspprechend der Gleichung :eq:`26_eq_2`, folgt daraus:
+Entspprechend der Gleichung 2, folgt daraus:
 
 .. math::
    :label: 26_eq_7
@@ -147,8 +147,8 @@ Jetzt können wir den Wert für :math:`R_{in}` bzw. :math:`R_{B}` berechnen als:
 
 
 Der letzte Schritt ist das Berechnen der Werte der DC-Vorspannungswiderstände :math:`R_1` und :math:`R_2`.
-:math:`R_2` kann aus der in Gleichung (:eq:`26_eq_9`) angegebenen "Kochbuch"-Beziehung gewonnen werden und somit
-kann :math:`R_1` aus Gleichung (:eq:`26_eq_10`) berechnet werden.
+:math:`R_2` kann aus der in Gleichung (9) angegebenen "Kochbuch"-Beziehung gewonnen werden und somit
+kann :math:`R_1` aus Gleichung (10) berechnet werden.
 
 
 .. math::
