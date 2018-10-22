@@ -239,7 +239,7 @@ auf <a class="reference external" href="https://www.youtube.com/watch?v=Y2ELwLrZ
 <h2>26.4. Schnelle Berechnung des gemeinsamen Emitterverstärkers<a class="headerlink" href="#schnelle-berechnung-des-gemeinsamen-emitterverstarkers" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Angenommen, wir wollen einen Verstärker mit der Verstärkung <span class="math notranslate nohighlight">\(A=5\)</span> mit einem <a class="reference external" href="https://www.sparkfun.com/datasheets/Components/2N3904.pdf">2N3904</a> npn-Transistor
 und einer Spannungsversorgung von <span class="math notranslate nohighlight">\(V_{CC}=5\,V\)</span> entwerfen.</p>
-<p>Für den npn-Transistor 2N3904 können wir davon ausgehen, dass Für den NPN-Transistor <a class="reference external" href="https://www.sparkfun.com/datasheets/Components/2N3904.pdf">2N3904</a> können wir folgendes annehmen <span class="math notranslate nohighlight">\(\ beta = 100\)</span> und
+<p>Für den npn-Transistor 2N3904 können wir davon ausgehen, dass Für den NPN-Transistor <a class="reference external" href="https://www.sparkfun.com/datasheets/Components/2N3904.pdf">2N3904</a> können wir folgendes annehmen <span class="math notranslate nohighlight">\(\beta = 100\)</span> und
 <span class="math notranslate nohighlight">\(v_ {CE_ {sat}} = 0.2 V\)</span>. In einem ersten Schritt wird der DC-Arbeitspunkt eingestellt
 durch Entscheiden von Spannungen über <span class="math notranslate nohighlight">\(R_L\)</span>, <span class="math notranslate nohighlight">\(R_E\)</span> und <span class="math notranslate nohighlight">\(Q_1\)</span>.:math:<cite>beta = 100</cite>
 und <span class="math notranslate nohighlight">\(V_{CE_{sat}}=0,2\,V\)</span>. Der erste Schritt ist die Einstellung des
@@ -274,13 +274,13 @@ müssen den IC zur Berechnung des RL wählen.</p>
 <div class="math notranslate nohighlight" id="equation-26-eq-8">
 <span class="eqno">(26.8)<a class="headerlink" href="#equation-26-eq-8" title="Permalink to this equation">¶</a></span>\[R_{B} = \beta \frac{R_L}{A} = 100 \frac{320 \Omega}{5} = 6.4\,k\Omega.\]</div>
 <p>Der letzte Schritt ist das Berechnen der Werte der DC-Vorspannungswiderstände <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span>.
-<span class="math notranslate nohighlight">\(R_2\)</span> kann aus der in Gleichung (<code class="xref std std-numref docutils literal notranslate"><span class="pre">26_eq_9</span></code>) angegebenen „Kochbuch“-Beziehung gewonnen werden und somit
-kann <span class="math notranslate nohighlight">\(R_1\)</span> aus Gleichung (<code class="xref std std-numref docutils literal notranslate"><span class="pre">26_eq_10</span></code>) berechnet werden.</p>
+<span class="math notranslate nohighlight">\(R_2\)</span> kann aus der in Gleichung (<a class="reference internal" href="#equation-26-eq-9">Gl. 26.9</a>) angegebenen „Kochbuch“-Beziehung gewonnen werden und somit
+kann <span class="math notranslate nohighlight">\(R_1\)</span> aus Gleichung (<a class="reference internal" href="#equation-26-eq-10">Gl. 26.10</a>) berechnet werden.</p>
 <div class="math notranslate nohighlight" id="equation-26-eq-9">
 <span class="eqno">(26.9)<a class="headerlink" href="#equation-26-eq-9" title="Permalink to this equation">¶</a></span>\[R_2 \approx 10 R_E = 3,2 \,k\Omega\]</div>
 <div class="math notranslate nohighlight" id="equation-26-eq-10">
 <span class="eqno">(26.10)<a class="headerlink" href="#equation-26-eq-10" title="Permalink to this equation">¶</a></span>\[R_1 = \frac{V_{CC} - (v_{BE} + V_{R_E})}{\frac{(v_{BE} + V_{R_E})}{R_2}}\]</div>
-<p>wo <span class="math notranslate nohighlight">\(v_{BE} = 0.6\,V\)</span></p>
+<p>wo <span class="math notranslate nohighlight">\(V_{BE} = 0.6\,V\)</span></p>
 <div class="math notranslate nohighlight">
 \[R_1 = \frac{5\,V - (0,6\,V + 1,6\,V)}{\frac{(0,6\,V + 1,6\,V)}{3,2\,k\Omega}} = 4,0\,k\Omega\]</div>
 <div class="admonition note">

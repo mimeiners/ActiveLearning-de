@@ -70,7 +70,7 @@ Schnelle Berechnung des gemeinsamen Emitterverstärkers
 Angenommen, wir wollen einen Verstärker mit der Verstärkung :math:`A=5` mit einem 2N3904_ npn-Transistor
 und einer Spannungsversorgung von :math:`V_{CC}=5\,V` entwerfen.
 
-Für den npn-Transistor 2N3904 können wir davon ausgehen, dass Für den NPN-Transistor 2N3904_ können wir folgendes annehmen :math:`\ beta = 100` und
+Für den npn-Transistor 2N3904 können wir davon ausgehen, dass Für den NPN-Transistor 2N3904_ können wir folgendes annehmen :math:`\beta = 100` und
 :math:`v_ {CE_ {sat}} = 0.2 V`. In einem ersten Schritt wird der DC-Arbeitspunkt eingestellt
 durch Entscheiden von Spannungen über :math:`R_L`, :math:`R_E` und :math:`Q_1`.:math:`\beta = 100`
 und :math:`V_{CE_{sat}}=0,2\,V`. Der erste Schritt ist die Einstellung des
@@ -147,8 +147,8 @@ Jetzt können wir den Wert für :math:`R_{in}` bzw. :math:`R_{B}` berechnen als:
 
 
 Der letzte Schritt ist das Berechnen der Werte der DC-Vorspannungswiderstände :math:`R_1` und :math:`R_2`.
-:math:`R_2` kann aus der in Gleichung (:numref:`26_eq_9`) angegebenen "Kochbuch"-Beziehung gewonnen werden und somit
-kann :math:`R_1` aus Gleichung (:numref:`26_eq_10`) berechnet werden.
+:math:`R_2` kann aus der in Gleichung (:eq:`26_eq_9`) angegebenen "Kochbuch"-Beziehung gewonnen werden und somit
+kann :math:`R_1` aus Gleichung (:eq:`26_eq_10`) berechnet werden.
 
 
 .. math::
@@ -163,7 +163,7 @@ kann :math:`R_1` aus Gleichung (:numref:`26_eq_10`) berechnet werden.
    R_1 = \frac{V_{CC} - (v_{BE} + V_{R_E})}{\frac{(v_{BE} + V_{R_E})}{R_2}}
 
    
-wo :math:`v_{BE} = 0.6\,V`
+wo :math:`V_{BE} = 0.6\,V`
 
 
 .. math::
