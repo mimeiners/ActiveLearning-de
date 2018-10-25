@@ -4,18 +4,15 @@ Test_MOS-Transistor-Source-Verstärker
 Zielsetzung
 -----------
 
-Der Zweck dieser Untersuchung besteht darin, die gemeinsame
-Source-Konfiguration des MOS-Transistors zu untersuchen.
+Der Zweck dieses Experiments ist es, die Common - Source - Verstärkerkonfiguration des MOS-Transistors zu untersuchen.
 
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 .. _BJT common emitter amplifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity26_BJTCommonEmitterAmplifier.html#bjt-common-emitter-amplifier
 .. _Wikipedia Common Source: https://en.wikipedia.org/wiki/Common_source
 .. _Common Source Amplifier Tutorial 1: http://www.electronics-tutorials.ws/amplifier/amp_3.html
@@ -25,85 +22,60 @@ Anmerkungen
 .. _Transconductance: https://en.wikipedia.org/wiki/Transconductance
 .. _Drain Output Resistance: http://www.ittc.ku.edu/~jstiles/312/handouts/Drain%20Output%20Resistance.pdf
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
-
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
-
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation hier
-aufgeführt.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht.
+Die Oszilloskop- und Signalgeneratoranwendung_ wird zum Erzeugen und Beobachten von
+Signalen auf der Schaltung verwendet. Die Erweiterungsstecker-Pins für die
+Spannungsversorgung **+5V**, **-3,3V** und **+3,3V** sind in der Dokumentation dargestellt.
 
 
 Hintergrund
 -----------
 
-Die Konfiguration, die in :numref:`27_fig_01` gezeigt ist, zeigt den
-NMOS-Transistor, der als ein gemeinsamer Quellenverstärker verwendet
-wird. Um den Transistor einzustellen :math:`V_ {GS}` Spannung für einen
-selbstvorgespannten DC-Arbeitspunkt der Spannungsteiler :math:`\ frac
-{ R_1} {R_2}` ist gewählt. Widerstand :math:`R_G` wird verwendet, um
-die endgültige ** Verstärkung ** des Verstärkers einzustellen. Der
-Wert von :math:`R_G` Widerstand in Kombination mit dem Widerstand
-:math:`R_1` und :math:`R_2` beeinflusst, wie viel von :math:`V_ {in}`
-addiert wird zu :math:`V_ {GS}` Spannung und damit direkt
-Einstellung des Verstärkers **Verstärkung**.
-Ausgangslastwiderstand :math:`R_L` wird so gewählt, dass für
-den gewünschten Drain-Nennstrom :math:`I_D` die Spannung, die
-bei :math:`V_ {DS}` liegt, ungefähr ein Drittel der folgenden
-ist :math:`V_ {DD}` Versorgungsspannung. Widerstand :math:`R_S`
-wird eine Quellendegeneration hinzugefügt, um den
-DC-Arbeitspunkt zu stabilisieren. Der beste Ansatz für die
-Auswahl von :math:`R_L` und :math:`R_S` ist es, Spannungsabfälle
-zwischen :math:`M_1`, :math:`R_L` und :math:`R_S` gleich dem 1 /
-3 von :math:`V_ {DD}` (bei DC-Betriebsbedingung). Also
-:math:`R_S` = :math:`R_L`. Das Hinzufügen des
-Source-Degenerationswiderstands hat die Stabilität des
-DC-Arbeitspunkts bei den Kosten der verringerten
-Verstärkerverstärkung verbessert. Eine höhere Verstärkung
-für AC-Signale kann in einem gewissen Ausmaß durch
-Hinzufügen eines Kondensators wiederhergestellt werden
-:math:`C_S` über den Degenerationswiderstand :math:`R_S`
-setzt effektiv den Wert " :math:`R_S` "nahe Null für
-AC-Signale. Kondensator :math:`C_2` wird
-hinzugefügt, um die Gleichstromkomponente des
-Ausgangssignals zu blockieren. Aufgrund der hohen
-Eingangsimpedanz kann transistor :math:`C_1` im
-Bereich von :math:`<\ mu F` gewählt werden.
-		  
+Die in Abbildung 1 dargestellte Konfiguration zeigt den NMOS-Transistor,
+der als Common-Source-Verstärker verwendet wird. Um die Transistor - :math:`V_{GS}` - Spannung
+für den selbstvorbelasteten DC-Betriebspunkt einzustellen, wird der
+Spannungsteiler :math:`\fraq{R_1}{R_2}` gewählt. Der Widerstand :math:`R_G` dient zur
+Einstellung des **Gewinns** des Verstärkers. Der Wert des :math:`R_G` - Widerstandes
+in Kombination mit den Widerständen :math:`R_1` und :math:`R_2` beeinflusst,
+wie viel :math:`V_{in}` zur :math:`V_{GS}` - Spannung addiert wird und somit direkt
+der **Gewinn** des Verstärkers eingestellt wird. Der Ausgangslastwiderstand :math:`R_L`
+ist so gewählt, dass für den gewünschten Nenn-Drainstrom :math:`I_D` die am :math:`V_{DS}`
+auftretende Spannung etwa ein Drittel der :math:`V_{DD}` - Versorgungsspannung beträgt.
+Der Widerstand :math:`R_S` wird verwendet, um die Quellendegeneration hinzuzufügen,
+um den DC-Betriebspunkt zu stabilisieren. Der beste Ansatz für die Auswahl von :math:`R_L`
+und :math:`R_S` besteht darin, Spannungsabfälle über :math:`M_1`, :math:`R_L` und :math:`R_S`
+zu ermöglichen, die dem 1/3 des :math:`V_{DD}` entsprechen (bei DC-Betriebszustand).
+Daher ist :math:`R_S` = :math:`R_L`. Das Hinzufügen des Quell-Degenerationswiderstandes
+hat die Stabilität des DC-Betriebspunktes bei gleichzeitig reduziertem Gewinn verbessert.
+Eine höhere Verstärkung für Wechselstromsignale, kann bis zu einem gewissen Grad wiederhergestellt
+werden, indem der Kondensator :math:`C_S` über den Degenerationswiderstand :math:`R_S` hinzugefügt wird,
+wodurch der Wert ":math:`R_S`" für Wechselstromsignale nahe Null gesetzt wird. Der Kondensator :math:`C_2`
+wird hinzugefügt, um die DC-Komponente des Ausgangssignals zu blockieren. Aufgrund der hohen
+Eingangsimpedanz kann die Kapazität :math:`C_1` im Bereich von :math:`<\mu F` ausgewählt werden.
 
 .. note::
-
-   Einer der Hauptvorteile eines MOS-Source-Verstärkers gegenüber
-   einem "BJT Common-Emitter-Verstärker" ist eine extrem hohe
-   Eingangsimpedanz zusammen mit einer niedrigen Rauschleistung, was
-   sie ideal für die Verwendung in Verstärkerschaltungen mit sehr
-   kleinen Eingangssignalen macht.
-   
-   Die Eingangsimpedanz hängt effektiv nur von der Eingangskapazität
-   ab :math:`C_ {iss}`, Widerstände :math:`R_1` und :math:`R_2`, die
-   im Bereich von :math:`M \ Omega` ausgewählt werden können.
-   
+   Einer der Hauptvorteile des MOS Common-Source-Verstärkers gegenüber dem
+   BJT Common-Emitter-Verstärker ist eine extrem hohe Eingangsimpedanz bei gleichzeitig
+   rauscharmem Ausgang, was ihn ideal für den Einsatz in Verstärkerschaltungen mit sehr
+   kleinen Eingangssignalen macht. Die Eingangsimpedanz ist faktisch nur von der
+   Eingangskapazität :math:`C_{iss}`, den Widerständen :math:`R_1` und :math:`R_2`,
+   die im Bereich von :math:`M\Omega` ausgewählt werden können, abhängig.
 
 .. figure:: img/ Activity_27_Fig_01.png
    :name: 27_fig_01
 
-   Gemeinsame Source-Verstärker-Konfiguration
+   Common-Source-Verstärker-Konfiguration
 
 .. warning::
-   Berechnung und Design eines gemeinsamen Source-Verstärkers ist
-   nicht geradlinig. Der Aufbau des gemeinsamen Source-Verstärkers
-   hängt weitgehend von dem gewählten ab Transistor (seine Parameter),
-   gewünschter Frequenzbereich und Endverstärkerverstärkung. In der
-   Praxis beeinflussen viele Faktoren wie die Eingangskapazität das
-   Schaltungsverhalten, während diese Faktoren weitgehend von den
-   verfügbaren Tutorials und der Theorie ausgeschlossen sind. Für ein
-   tiefergehendes Verständnis der folgenden Quellverstärker-Links wird
-   empfohlen:
+   Die Berechnung und das Design eines Common Source Verstärkers ist nicht einfach.
+   Das Design eines herkömmlichen Source-Verstärkers hängt weitgehend vom gewählten
+   Transistor (dessen Parametern), dem gewünschten Frequenzbereich und der Endverstärkung ab.
+   In der Praxis beeinflussen viele Faktoren wie die Eingangskapazität das Schaltungsverhalten,
+   während diese Faktoren aus den verfügbaren Tutorials und der Theorie weitgehend
+   ausgeschlossen sind. Für ein tieferes Verständnis der gängigen Quellverstärker werden die
+   folgenden Links vorgeschlagen:
    
-
    - [1] `Wikipedia Common Source`_
    - [2] `Common Source Amplifier Tutorial 1`_
    - [3] `MIT Common Source Amplifier Lecture`_
@@ -112,42 +84,36 @@ Bereich von :math:`<\ mu F` gewählt werden.
    - [6] `Transconductance`_ :math:`g_m`
    - [7] `Drain Output Resistance`_ :math:`r_o`
 
-
-**Durch die unten aufgeführten Vereinfachungen kann die
-Näherungsverstärkungsbeziehung für den allgemeinen Quellenverstärker,
-die in 1 gezeigt ist, geschrieben werden, wie in Gleichung (2)**
-gezeigt.
+**Durch Vereinfachungen, die im Folgenden aufgeführt sind, kann die ungefähre
+Verstärkung für einen Common-Source-Verstärker (:numref:`27_fig_01`),
+wie in Gleichung (2) dargestellt**, beschrieben werden.
 
 
-1. Vernachlässigung des Spannungsabfalls über :math:`C_1`
-   Kondensator. Wir können den Spannungsabfall über den Kondensator
-   vernachlässigen :math:`C_1` wenn :math:`1 / (2 \ pi f C_1) << R_G`.
+1. Vernachlässigung des Spannungsabfalls am :math:`C_1` - Kondensator.
+   Wir können den Spannungsabfall am Kondensator :math:`C_1` vernachlässigen,
+   wenn :math:`1/(2\pifC_1) <<< R_G` .
    
-2. Vernachlässigung :math:`C_S` -Impedanz. Wenn der Wert :math:`C_S`
-   im Bereich ausgewählt ist :math:`C_S >> 10 \ mu F` Seine Impedanz
-   wird vernachlässigbar sein, um zu gehen :math:`0 \ Omega` für
-   irgendwelche AC-Signale.
+2. Vernachlässigung der :math:`C_S` - Impedanz. Wenn der :math:`C_S` - Wert im Bereich
+   :math:`C_S >> 10\mu F` ausgewählt wird, ist seine Impedanz vernachlässigbar und geht für
+   alle AC-Signale effektiv auf :math:`0\,\Omega`.
    
-3. Drain Output Resist im Falle von :math:`\ lambda = 0` wird gegen
-   unendlich gehen, :math:`r_o \ to \ infty`, daher kann es in
+3. Drain-Ausgangswiderstand geht im Falle von :math:`\lambda = 0` gegen
+   Unendlich :math:`r_o \to \infty`, und kann daher in
    Gleichung (1) vernachlässigt werden.
    
-
 .. note::
-   Transkonduktanz :math:`g_m` ist die Änderung des Drain-Stroms
-   geteilt durch die kleine Änderung der Gate / Source-Spannung bei
-   einer konstanten Drain / Source-Spannung. Typische Werte von
-   :math:`g_m` für einen Kleinsignal-Feldeffekttransistor sind 1 bis
-   30 :math:`mS` (Millisiemens).
+   Transkonduktanz :math:`g_m` ist die Änderung des Drainstroms dividiert durch die
+   geringe Änderung der Gate-/Source-Spannung bei konstanter Drain-/Source-Spannung.
+   Typische Werte von :math:`g_m` für einen Kleinsignal-Feldeffekttransistor
+   sind :math:`1` bis :math:`30\,\milli S` (Millisiemens).
 	 
-
 .. math::
    :label: 27_eq_1
 	   
    A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m (r_o || R_L || R_S) 
    
 
-unter Vernachlässigung des :math:`r_o` ( :math:`r_o \ to \ infty`) erhalten wir:
+mit der Vernachlässigung des :math:`r_o` (:math:`r_o \to \infty`), erhalten wir:
 
 .. math::
    :label: 27_eq_2
@@ -155,47 +121,42 @@ unter Vernachlässigung des :math:`r_o` ( :math:`r_o \ to \ infty`) erhalten wir
    A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m  (R_L || R_S)
    
 
-wobei :math:`Z_ {iss}` ist die Eingangs-Gate-Impedanz aufgrund der
-Eingangskapazität :math:`C_ {iss}` (Common-Source-Schaltung
-Eingangskapazität) des MOS-Transistors.
-
+wobei :math:`Z_{iss}` die Gate-Impedanz aufgrund der
+Eingangskapazität :math:`C_{iss}` (Common-Source-Schaltung
+Eingangskapazität) des MOS-Transistors ist.
 
 .. math::
    :label: 27_eq_3
 
-   Z_ {iss} = \frac{1}{2 \pi f C_{iss}}
+   Z_{iss} = \frac{1}{2 \pi f C_{iss}}
 
-Wenn wir annehmen, dass die Transistorparameter :math:`C_ {iss}`
-und :math:`g_m` konstante Werte aus :eq:`27_eq_2` sind, folgt
-daraus die Verstärkung der gemeinsamen Quelle Verstärker ist abhängig
-von den peripheren Widerständen :math:`R_1, R_2, R_G, R_L, R_S`
-und Eingangssignalfrequenz :math:`f`.
+**Wenn wir annehmen, dass die Transistorparameter** :math:`C_{iss}` **und** :math:`g_m`
+**konstante Werte aus** :eq:`27_eq_2` **sind, folgt daraus, dass der Gewinn des
+Common-Source-Verstärkers abhängig von den peripheren Widerständen**
+:math:`R_1, R_2, R_G, R_L, R_S` **und der Eingangssignalfrequenz** :math:`f`.
 
 
-Wenn :math:`C_ {iss}` geht auf Null, dann hängt die
-Verstärkung nur von den peripheren Widerständen ab :math:`R_1, R_2,
-R_G, R_L, R_S` und Transistor-Transkonduktanz :math:`g_m`.
+**Wenn** :math:`C_{iss}` **auf Null geht, dann hängt die
+Verstärkung nur von den peripheren Widerständen** :math:`R_1, R_2,
+R_G, R_L, R_S` **und Transistor-Transkonduktanz** :math:`g_m` **ab**.
 
 
 .. note::
-   In der Praxis ist die Eingangskapazität der gemeinsamen
-   Source-Schaltung :math:`C_ {iss}` nicht Null und sie kann von der
-   Gate-Spannung und der Verstärkerverstärkung abhängig sein.
-   
-   Hier wird angenommen, dass das :math:`C_ {iss}` ein konstanter
-   Wert ist.  :math:`C_ {iss}` und :math:`g_m` Werte werden
-   üblicherweise im Datenblatt des Transistors angegeben.
-    
+   In der Praxis ist die Eingangskapazität der Common-Source-Schaltung
+   :math:`C_{iss}` nicht Null und kann von der Gatespannung und dem Verstärkungsfaktor
+   abhängig sein. Hier werden wir annehmen, dass der :math:`C_{iss}` ein
+   konstanter Wert ist. :math:`C_{iss}` und :math:`g_m` Werte sind üblicherweise im Datenblatt des
+   Transistors angegeben.
 
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
-- 4x 1MΩ Widerstand
-- 2x 470Ω Widerstand
-- 1x 100kΩ Trimer
-- 2x 10uF Kondensator
-- 1x 1uF Kondensator
+- Red Pitaya STEMlab
+- 4x :math:`1\,M\Omega` Widerstand
+- 2x :math:`470\,Omega` Widerstand
+- 1x :math:`100\,k\Omega` Trimer
+- 2x :math:`10\,\mu F` Kondensator
+- 1x :math:`1\,\mu F` Kondensator
 - 1x kleinsignal NOMS-Transistor (ZVN211_)
 - 1x lötfreies Steckbrett
 
@@ -205,55 +166,44 @@ Materialien
 Verfahren
 ---------
 
-
 Angenommen, wir möchten einen Verstärker mit der Verstärkung
 :math:`A_v = 5` und :math:`I_L = 5mA` mit dem Transistor ZVN211_ und
-der Spannungsversorgung :math:`V_ {DD} = 5V`.
-      
-Nach den obigen Berechnungen und Richtlinien haben wir den in
-:numref:`27_fig_02` gezeigten gemeinsamen Quellenverstärker aufgebaut.
+der Spannungsversorgung :math:`V_ {DD} = 5V` konstruiren.
+Nach den obigen Berechnungen und Richtwerten haben wir den in
+:numref:`27_fig_02` gezeigten Common-Source-Verstärker aufgebaut.
 
-
-Der erste Schritt besteht darin, den **DC-Arbeitspunkt**
-einzustellen, indem man die Spannungen über :math:`R_L`, :math:`R_D`
-und :math:`M_1` bestimmt.
-
+Der erste Schritt ist die Einstellung des **DC-Arbeitspunkt** durch die
+Wahl der Spannungen über :math:`R_L`, :math:`R_S` und :math:`M_1` .
 
 .. math::
    :label: 27_eq_4
       
-   V_ {R_L} + V_{DS} + V_{R_S} = V_{CC}
+   V_{R_L} + V_{DS} + V_{R_S} = V_{CC}
 
    
-Wenn wir ein 1/3 Verhältnis der Spannungen an rechnen :math:`R_L`,
-:math:`R_D` und :math:`M_1` erhalten wir folgendes:
+Wenn wir das Verhältnis von 1/3 der Spannungen auf :math:`R_L`,
+:math:`R_D` und :math:`M_1` berücksichtigen, erhalten wir folgendes:
       
-
 .. math::
    :label: 27_eq_5
       
    1,5 V + 2,0 V + 1,5 V = 5 V
 
-
-:math:`V_ {DS}` ist die Spannung über :math:`M_1` im Sättigungszustand.
-Vom gewünschten Wert von :math:`I_L` können wir berechnen :math:`R_L`
-als.
-
+:math:`V_{DS}` ist die Spannung über :math:`M_1` im Sättigungszustand.
+Aus dem Sollwert für :math:`I_L` können wir :math:`R_L` berechnen als:
 
 .. math::
    :label: 27_eq_6
       
-   R_L = \frac{V_{R_L}}{I_L} = \frac{1,5V}{5mA} = 300 \Omega
+   R_L = \frac{V_{R_L}}{I_L} = \frac{1,5\,V}{5\,mA} = 300\,\Omega
 
 
-Folgendes :math:`1/3 V_ {DD}` Spannungen fallen über :math:`R_L`,
-:math:`R_D` und :math:`M_1` setzen wir :math:`R_S = R_L`.
+Nach einem Spannungsabfall von :math:`1/3 V_{DD}` über :math:`R_L`,
+:math:`R_D` und :math:`M_1`, setzen wir :math:`R_S = R_L`.
       
-
 .. note::
 
-   Aufgrund der Verfügbarkeit des Widerstandes haben wir gewählt
-   :math:`R_S = R_L = 470 \Omega`.
+   Aufgrund der Verfügbarkeit haben wir einen :math:`R_S = R_L = 470\,\Omega` Widerstand gewählt.
 	 
 
 Um den Transistor :math:`V_ {GS}` Spannung für den
