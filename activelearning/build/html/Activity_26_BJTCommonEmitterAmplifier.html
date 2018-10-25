@@ -318,17 +318,16 @@ um große Spannungsabfälle über ihnen zu vermeiden.</p>
 </div>
 <div class="section" id="verfahren">
 <h2>26.6. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Nach obigen Berechnungen und Richtlinien haben wir gemeinsam gebaut
-Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine <span class="math notranslate nohighlight">\(470 \Omega\)</span>
-Widerstände verfügbar und diese Widerstände wurden verwendet für <span class="math notranslate nohighlight">\(R_L\)</span> und
-<span class="math notranslate nohighlight">\(R_E\)</span>. Nach Auswahl von <span class="math notranslate nohighlight">\(R_L\)</span> und <span class="math notranslate nohighlight">\(R_E\)</span> der anderen
-Komponenten wurden berechnet und ausgewählt.</p>
-<div class="figure" id="id1">
+<p>Nach den oben genannten Berechnungen und Vorgaben haben wir einen gemeinsamen
+Emitterverstärker gebaut, der in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 26.2</span></a> dargestellt ist. Wir hatten einen
+<span class="math notranslate nohighlight">\(470\,\Omega\)</span> Widerstand zur Verfügung und diese Widerstände wurden für <span class="math notranslate nohighlight">\(R_L\)</span> und <span class="math notranslate nohighlight">\(R_E\)</span> verwendet.
+Nach der Auswahl von <span class="math notranslate nohighlight">\(R_L\)</span> und <span class="math notranslate nohighlight">\(R_E\)</span> wurden die anderen Komponenten berechnet und ausgewählt.</p>
+<div class="figure align-center" id="fig-02">
 <img alt="_images/Activity_26_Fig_02.png" src="_images/Activity_26_Fig_02.png" />
-<p class="caption"><span class="caption-number">Abb. 26.2 </span><span class="caption-text">Abbildung 2: Gemeinsamer Emitterverstärker mit Komponentenwerten</span></p>
+<p class="caption"><span class="caption-number">Abb. 26.2 </span><span class="caption-text">Common - Emitter - Verstärker mit ermittelten Komponentenwerten</span></p>
 </div>
 <ol class="arabic">
-<li><p class="first">Bauen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett auf.</p>
+<li><p class="first">Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 26.2</span></a> auf dem Steckbrett auf.</p>
 <div class="figure align-center" id="fig-03">
 <img alt="_images/Activity_26_Fig_03.png" src="_images/Activity_26_Fig_03.png" />
 <p class="caption"><span class="caption-number">Abb. 26.3 </span><span class="caption-text">Gemeinsamer Emitter-Verstärker auf dem Steckbrett</span></p>
@@ -336,18 +335,17 @@ Komponenten wurden berechnet und ausgewählt.</p>
 </li>
 <li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
 </li>
-<li><p class="first">Stellen Sie im Einstellungsmenü OUT1 den Amplitudenwert auf 0,1 V, DC-Offset auf ein
-0 V und Frequenz bis 10 kHz zum Anlegen der Eingangsspannung. Von dem
-Waveform-Menü wählen Sie SINE, deaktivieren Sie die SHOW-Taste und wählen Sie enable.</p>
+<li><p class="first">Stellen Sie im Einstellungsmenü OUT1 den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,1\,V\)</span>,
+DC-Offset auf ein <span class="math notranslate nohighlight">\(0\,V\)</span> und die Frequenz auf <span class="math notranslate nohighlight">\(10\,kHz\)</span> zum Anlegen der Eingangsspannung. Von dem
+Waveform-Menü wählen Sie SINE, deaktivieren Sie die SHOW-Taste und wählen Sie Enable.</p>
 </li>
-<li><p class="first">Vergewissern Sie sich auf der linken Seite des Bildschirms, dass IN1 und IN2 V / div
-sind auf 200mV / div eingestellt (Sie können V / div einstellen, indem Sie die gewünschte Option auswählen
-Kanal und mit vertikalen +/- Kontrollen)</p>
+<li><p class="first">Vergewissern Sie sich auf der linken Seite des Bildschirms, dass IN1 und IN2 <span class="math notranslate nohighlight">\(V/div\)</span>
+sind auf <span class="math notranslate nohighlight">\(200\,mV/div\)</span> eingestellt (Sie können <span class="math notranslate nohighlight">\(V/div\)</span> einstellen, indem Sie den
+gewünschten Kanal auswählen und vertikale +/- Reglern verwenden)</p>
 </li>
-<li><p class="first">Setzen Sie t / div Wert auf 20us / div (Sie können t / div mit horizontalen +/- einstellen
-Kontrollen)</p>
+<li><p class="first">Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(20\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit horizontalen +/- Reglern einstellen)</p>
 </li>
-<li><p class="first">In den Einstellungen des Auslösermenüs und wählen Sie NORMAL</p>
+<li><p class="first">Wählen Sie im Triggermenü Einstellungen und dann NORMAL</p>
 </li>
 <li><p class="first">Wählen Sie im Messmenü P2P für IN1 und IN2</p>
 <div class="figure align-center" id="fig-04">
@@ -356,28 +354,27 @@ Kontrollen)</p>
 </div>
 </li>
 </ol>
-<p>In <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 26.3</span></a> sind die Messungen des gemeinsamen Emitterverstärkers
-gezeigt. Aus den P2P-Messungen können wir die erzielte Verstärkung und es berechnen
-ist ungefähr <span class="math notranslate nohighlight">\(A \approx 9\)</span>.</p>
+<p>In <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 26.3</span></a> sind die Messungen des Common - Emitter - Verstärkers dargestellt.
+Aus den P2P-Messungen können wir den erzielten Gewinn berechnen. Dieser liegt bei etwa
+<span class="math notranslate nohighlight">\(A \approx 9\)</span>.</p>
 </div>
 <div class="section" id="fragen">
 <h2>26.7. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
 <ol class="arabic simple">
-<li>Versuchen Sie, den Wert von <span class="math notranslate nohighlight">\(R_ {B_ {pot}}\)</span> zu ändern und beobachten Sie die Änderung
-im Gewinn?</li>
-<li>Was ist der maximale Spannungshub des Ausgangssignals?</li>
+<li>Versuchen Sie, den Wert des <span class="math notranslate nohighlight">\(R_{B_{pot}}\)</span> zu ändern und beobachten Sie die Veränderung
+des Gewinn?</li>
+<li>Wie hoch ist der maximale Spannungshub des Ausgangssignals?</li>
 <li>Erhöhen Sie die OUT1-Frequenz und versuchen Sie, die Verstärkerbandbreite zu messen.</li>
 </ol>
 <p>Für Frage 2 folgen Sie als nächstes:</p>
-<p>Stellen Sie den Sondensensor ** IN2 auf x10, im Menü SET Sonde des IN2
-Dämpfung auf 10 ** und Erhöhung der OUT1-Amplitude auf 0,2 V. Was ist der
-P2P-Wert des IN2?</p>
-<p>Mit Verstärkung <span class="math notranslate nohighlight">\(A = 9\)</span>, Eingangssignal P2P Amplitude 0,4V der Ausgang
-P2P (IN2) -Wert sollte sein <span class="math notranslate nohighlight">\(0.4 \ mal 9 = 3.6 V\)</span>! Aber es ist nicht?
-Signal ist abgeschnitten! Kannst du erklären warum?</p>
-<div class="admonition note">
-<p class="first admonition-title">Bemerkung</p>
-<p class="last">Überprüfen Sie die obigen Berechnungen und Spannungen über <span class="math notranslate nohighlight">\(V_ {CE}\)</span></p>
+<p>Stellen Sie die <strong>IN2-Scope-Sonde auf x10, im IN2-Menü die Sondendämpfung auf 10</strong>
+und die OUT1-Amplitude auf <span class="math notranslate nohighlight">\(0,2\,V\)</span>. Was ist der P2P-Wert des IN2?</p>
+<p>Bei Verstärkung <span class="math notranslate nohighlight">\(A = 9\)</span> und dem Eingangssignal P2P mit der Amplitude <span class="math notranslate nohighlight">\(0,4\,V\)</span>
+sollte der Ausgangswert P2P(IN2) <span class="math notranslate nohighlight">\(0,4 \times 9 = 3,6\,V\)</span> ! sein. Aber das ist es nicht? Das Signal ist unterbrochen!
+Können Sie erklären, warum?</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p class="last">Überprüfen Sie die obigen Berechnungen und Spannungen über <span class="math notranslate nohighlight">\(V_{CE}\)</span></p>
 </div>
 </div>
 </div>

@@ -216,20 +216,20 @@ Materialien
 Verfahren
 ---------
 
-Nach obigen Berechnungen und Richtlinien haben wir gemeinsam gebaut
-Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine :math:`470 \Omega`
-Widerstände verfügbar und diese Widerstände wurden verwendet für :math:`R_L` und
-:math:`R_E`. Nach Auswahl von :math:`R_L` und :math:`R_E` der anderen
-Komponenten wurden berechnet und ausgewählt.
-
+Nach den oben genannten Berechnungen und Vorgaben haben wir einen gemeinsamen
+Emitterverstärker gebaut, der in :numref:`26_fig_02` dargestellt ist. Wir hatten einen
+:math:`470\,\Omega` Widerstand zur Verfügung und diese Widerstände wurden für :math:`R_L` und :math:`R_E` verwendet.
+Nach der Auswahl von :math:`R_L` und :math:`R_E` wurden die anderen Komponenten berechnet und ausgewählt.
 
 .. figure:: img/ Activity_26_Fig_02.png
+   :name: 26_fig_02
+   :align: center
 
-   Abbildung 2: Gemeinsamer Emitterverstärker mit Komponentenwerten
+   Common - Emitter - Verstärker mit ermittelten Komponentenwerten
 
    
 
-1. Bauen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett auf.
+1. Bauen Sie die Schaltung aus :numref:`26_fig_02` auf dem Steckbrett auf.
 
    .. figure:: img/ Activity_26_Fig_03.png
       :name: 26_fig_03
@@ -240,18 +240,17 @@ Komponenten wurden berechnet und ausgewählt.
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Einstellungsmenü OUT1 den Amplitudenwert auf 0,1 V, DC-Offset auf ein
-   0 V und Frequenz bis 10 kHz zum Anlegen der Eingangsspannung. Von dem
-   Waveform-Menü wählen Sie SINE, deaktivieren Sie die SHOW-Taste und wählen Sie enable.
+3. Stellen Sie im Einstellungsmenü OUT1 den Amplitudenwert auf :math:`0,1\,V`,
+   DC-Offset auf ein :math:`0\,V` und die Frequenz auf :math:`10\,kHz` zum Anlegen der Eingangsspannung. Von dem
+   Waveform-Menü wählen Sie SINE, deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
    
-4. Vergewissern Sie sich auf der linken Seite des Bildschirms, dass IN1 und IN2 V / div
-   sind auf 200mV / div eingestellt (Sie können V / div einstellen, indem Sie die gewünschte Option auswählen
-   Kanal und mit vertikalen +/- Kontrollen)
+4. Vergewissern Sie sich auf der linken Seite des Bildschirms, dass IN1 und IN2 :math:`V/div`
+   sind auf :math:`200\,mV/div` eingestellt (Sie können :math:`V/div` einstellen, indem Sie den
+   gewünschten Kanal auswählen und vertikale +/- Reglern verwenden)
    
-5. Setzen Sie t / div Wert auf 20us / div (Sie können t / div mit horizontalen +/- einstellen
-   Kontrollen)
+5. Setzen Sie :math:`t/div` Wert auf :math:`20\,us/div` (Sie können :math:`t/div` mit horizontalen +/- Reglern einstellen)
    
-6. In den Einstellungen des Auslösermenüs und wählen Sie NORMAL
+6. Wählen Sie im Triggermenü Einstellungen und dann NORMAL
    
 7. Wählen Sie im Messmenü P2P für IN1 und IN2
    
@@ -264,32 +263,30 @@ Komponenten wurden berechnet und ausgewählt.
       
 
    
-In :numref:`26_fig_03` sind die Messungen des gemeinsamen Emitterverstärkers
-gezeigt. Aus den P2P-Messungen können wir die erzielte Verstärkung und es berechnen
-ist ungefähr :math:`A \approx 9`.
+In :numref:`26_fig_03` sind die Messungen des Common - Emitter - Verstärkers dargestellt.
+Aus den P2P-Messungen können wir den erzielten Gewinn berechnen. Dieser liegt bei etwa
+:math:`A \approx 9`.
 
 
 Fragen
 ------
 
-1. Versuchen Sie, den Wert von :math:`R_ {B_ {pot}}` zu ändern und beobachten Sie die Änderung
-   im Gewinn?
+1. Versuchen Sie, den Wert des :math:`R_{B_{pot}}` zu ändern und beobachten Sie die Veränderung
+   des Gewinn?
    
-2. Was ist der maximale Spannungshub des Ausgangssignals?
+2. Wie hoch ist der maximale Spannungshub des Ausgangssignals?
    
 3. Erhöhen Sie die OUT1-Frequenz und versuchen Sie, die Verstärkerbandbreite zu messen.
    
 
 Für Frage 2 folgen Sie als nächstes:
 
-Stellen Sie den Sondensensor ** IN2 auf x10, im Menü SET Sonde des IN2
-Dämpfung auf 10 ** und Erhöhung der OUT1-Amplitude auf 0,2 V. Was ist der
-P2P-Wert des IN2?
+Stellen Sie die **IN2-Scope-Sonde auf x10, im IN2-Menü die Sondendämpfung auf 10**
+und die OUT1-Amplitude auf :math:`0,2\,V`. Was ist der P2P-Wert des IN2?
 
+Bei Verstärkung :math:`A = 9` und dem Eingangssignal P2P mit der Amplitude :math:`0,4\,V`
+sollte der Ausgangswert P2P(IN2) :math:`0,4 \times 9 = 3,6\,V` ! sein. Aber das ist es nicht? Das Signal ist unterbrochen!
+Können Sie erklären, warum?
 
-Mit Verstärkung :math:`A = 9`, Eingangssignal P2P Amplitude 0,4V der Ausgang
-P2P (IN2) -Wert sollte sein :math:`0.4 \ mal 9 = 3.6 V`! Aber es ist nicht?
-Signal ist abgeschnitten! Kannst du erklären warum?
-
-.. note::
-   Überprüfen Sie die obigen Berechnungen und Spannungen über :math:`V_ {CE}`
+.. hint::
+   Überprüfen Sie die obigen Berechnungen und Spannungen über :math:`V_{CE}`
