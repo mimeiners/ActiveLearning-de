@@ -242,32 +242,30 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
    nehmen wir :math:`g_m = 25\,mS` und :math:`C_{iss} = 100\,pF` an.
 
    .. math::
-      :label: 27_eq_9
-
 	      
-   R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
-   = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)
+      R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
+      = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)
 
      .
 
-   = 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times
-   10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega
+      = 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times
+      10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega
 
      .
 
-   R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega
-
-     .
-     
-   \text{ setzen Sie den Trimmer } R_G  \text{ auf }  50\,k \Omega \text{ und Sie bekommen: }  
+     R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega
 
      .
      
-   A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega  
+     \text{ setzen Sie den Trimmer } R_G  \text{ auf }  50\,k \Omega \text{ und Sie bekommen: }  
+
+     .
+     
+     A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega  
 
      .
     
-   A_v \approx - 4.2
+     A_v \approx - 4.2
 
 
      
