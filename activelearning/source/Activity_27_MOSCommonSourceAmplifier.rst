@@ -105,7 +105,7 @@ Verstärkung für einen Common-Source-Verstärker** (:numref:`27_fig_01`),
    Transkonduktanz :math:`g_m` ist die Änderung des Drainstroms dividiert durch die
    geringe Änderung der Gate-/Source-Spannung bei konstanter Drain-/Source-Spannung.
    Typische Werte von :math:`g_m` für einen Kleinsignal-Feldeffekttransistor
-   sind :math:`1` bis :math:`30\,\mS` (Millisiemens).
+   sind :math:`1` bis :math:`30\,mS` (Millisiemens).
 	 
 .. math::
    :label: 27_eq_1
@@ -239,28 +239,34 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
 .. note::
    Für Verstärker aus :numref:`27_fig_02` und Eingangssignalfrequenz von :math:`10\,kHz` können
    wir die Spannungsverstärkung mit :eq:`27_eq_2` berechnen. Für ZVN211_
-   nehmen wir :math:`g_m = 25\,mS` und :math:`C_{iss} = 100\,\piko F` an.
+   nehmen wir :math:`g_m = 25\,mS` und :math:`C_{iss} = 100\,pF` an.
 
    .. math::
       :label: 27_eq_9
 
-     R_1 || R_2 || Z_{iss} &= 1 / (\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{Z_{iss}}
-     &= \frac{1}{R_1} + \frac{1}{R_2} + 2 \pi f C_{iss})
-     &= 1 / (\frac{1}{1 \times 10^6} + \frac{1}{3 \times 10^6} + 2 \pi
-     10 \times 10^3 \cdot 100 \times 10^{- 12})
-     &= 131\,k\Omega
-     
-     R_L || R_S &= \frac{R_S R_L}{R_S + R_L}
-     &= \frac{470 \cdot 470}{470 + 470}
-     &= 235 \Omega
-     
+      R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
+      = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)
 
-     \text{trimmerwert einstellen} R_G \text{zu} 50\,k \Omega \text{bekommen wir}
-     
+     .
 
-     A_v &\approx -\frac{131\, k\Omega}{50\,k\Omega + 131\,k\Omega}
-     \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot 235 \Omega
-     &= -4.2
+     = 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times
+     10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega
+
+     .
+
+     R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega
+
+     .
+     
+     \text{ setting trimmer value } R_G  \text{ to }  50k \Omega \text{bekommen wir: }  
+
+     .
+     
+     A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega  
+
+     .
+    
+     A_v \approx - 4.2
 
 
      
