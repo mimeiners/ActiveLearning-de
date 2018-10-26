@@ -276,7 +276,7 @@ Gleichung (1) vernachlässigt werden.</li>
 <p class="last">Transkonduktanz <span class="math notranslate nohighlight">\(g_m\)</span> ist die Änderung des Drainstroms dividiert durch die
 geringe Änderung der Gate-/Source-Spannung bei konstanter Drain-/Source-Spannung.
 Typische Werte von <span class="math notranslate nohighlight">\(g_m\)</span> für einen Kleinsignal-Feldeffekttransistor
-sind <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(30\,\mS\)</span> (Millisiemens).</p>
+sind <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(30\,mS\)</span> (Millisiemens).</p>
 </div>
 <div class="math notranslate nohighlight" id="equation-27-eq-1">
 <span class="eqno">(27.1)<a class="headerlink" href="#equation-27-eq-1" title="Permalink to this equation">¶</a></span>\[A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m (r_o || R_L || R_S)\]</div>
@@ -362,19 +362,11 @@ erhalten wir (nächstmöglichet Wert) für <span class="math notranslate nohighl
 <p class="first admonition-title">Bemerkung</p>
 <p>Für Verstärker aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 27.2</span></a> und Eingangssignalfrequenz von <span class="math notranslate nohighlight">\(10\,kHz\)</span> können
 wir die Spannungsverstärkung mit <a class="reference internal" href="#equation-27-eq-2">Gl. 27.2</a> berechnen. Für <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a>
-nehmen wir <span class="math notranslate nohighlight">\(g_m = 25\,mS\)</span> und <span class="math notranslate nohighlight">\(C_{iss} = 100\,\piko F\)</span> an.</p>
+nehmen wir <span class="math notranslate nohighlight">\(g_m = 25\,mS\)</span> und <span class="math notranslate nohighlight">\(C_{iss} = 100\,pF\)</span> an.</p>
 <div class="last math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}:label: 27_eq_9\\R_1 || R_2 || Z_{iss} &amp;= 1 / (\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{Z_{iss}}
-&amp;= \frac{1}{R_1} + \frac{1}{R_2} + 2 \pi f C_{iss})
-&amp;= 1 / (\frac{1}{1 \times 10^6} + \frac{1}{3 \times 10^6} + 2 \pi
-10 \times 10^3 \cdot 100 \times 10^{- 12})
-&amp;= 131\,k\Omega\\R_L || R_S &amp;= \frac{R_S R_L}{R_S + R_L}
-&amp;= \frac{470 \cdot 470}{470 + 470}
-&amp;= 235 \Omega\\
-\text{trimmerwert einstellen} R_G \text{zu} 50\,k \Omega \text{bekommen wir}\\
-A_v &amp;\approx -\frac{131\, k\Omega}{50\,k\Omega + 131\,k\Omega}
-\cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot 235 \Omega
-&amp;= -4.2\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}:label: 27_eq_9\\ R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
+ = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)\\.\\= 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times
+10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega\\.\\R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega\\.\\\text{ setting trimmer value } R_G  \text{ to }  50k \Omega \text{bekommen wir: }\\.\\A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega\\.\\A_v \approx - 4.2\end{aligned}\end{align} \]</div>
 </div>
 <ol class="arabic">
 <li><p class="first">Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.</p>
