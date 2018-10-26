@@ -363,26 +363,10 @@ erhalten wir (nächstmöglichet Wert) für <span class="math notranslate nohighl
 <p>Für Verstärker aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 27.2</span></a> und Eingangssignalfrequenz von <span class="math notranslate nohighlight">\(10\,kHz\)</span> können
 wir die Spannungsverstärkung mit <a class="reference internal" href="#equation-27-eq-2">Gl. 27.2</a> berechnen. Für <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a>
 nehmen wir <span class="math notranslate nohighlight">\(g_m = 25\,mS\)</span> und <span class="math notranslate nohighlight">\(C_{iss} = 100\,pF\)</span> an.</p>
-<div class="math notranslate nohighlight" id="equation-27-eq-9">
-<span class="eqno">(27.9)<a class="headerlink" href="#equation-27-eq-9" title="Permalink to this equation">¶</a></span>\[\]</div>
-<p>R_1 || R_2 || Z_{iss} = 1 / bigg( frac{1}{R_1}+frac{1}{R_2}+frac{1}{Z_{iss}}
-= frac{1}{R_1}+frac{1}{R_2} + 2 pi f C_{iss} bigg)</p>
-<blockquote>
-<div>.</div></blockquote>
-<p>= 1 / bigg( frac{1}{1 times 10^6}+frac{1}{3 times 10^6} + 2 cdot pi cdot 10 times
-10^3  cdot 100 times 10^{-12} bigg) = 131 k Omega</p>
-<blockquote>
-<div>.</div></blockquote>
-<p>R_L || R_S = frac{R_S R_L}{R_S + R_L} = frac{470 cdot 470}{470 + 470} = 235 Omega</p>
-<blockquote>
-<div>.</div></blockquote>
-<p>text{ setzen Sie den Trimmer } R_G  text{ auf }  50,k Omega text{ und Sie bekommen: }</p>
-<blockquote>
-<div>.</div></blockquote>
-<p>A_v approx - frac{131 k Omega } {50 k Omega + 131 k Omega} cdot 25 times 10^{-3} frac{1}{Omega} cdot  235Omega</p>
-<blockquote>
-<div>.</div></blockquote>
-<p class="last">A_v approx - 4.2</p>
+<div class="last math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
+ = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)\\.\\ = 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times
+ 10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega\\.\\R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega\\.\\\text{ setzen Sie den Trimmer } R_G  \text{ auf }  50\,k \Omega \text{ und Sie bekommen: }\\.\\A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega\\.\\A_v \approx - 4.2\end{aligned}\end{align} \]</div>
 </div>
 <ol class="arabic">
 <li><p class="first">Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.</p>

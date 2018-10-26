@@ -269,8 +269,7 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
 
 
      
-1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.
-
+1. Bauen Sie die Schaltung aus :numref:`27_fig_02` auf dem Steckbrett auf.
    
    .. figure:: img/ Activity_27_Fig_03.png
       :name: 27_fig_03
@@ -281,68 +280,65 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf 0,1 V,
-   DC-Offset auf 0 V und Frequenz auf 10 kHz ein, um die
+3. Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf :math:`0,1\,V`,
+   DC-Offset auf :math:`0\,V` und Frequenz auf :math:`10\,kHz` ein, um die
    Eingangsspannung anzulegen. Wählen Sie im Wellenformmenü SINE,
-   Deaktivieren Sie den SHOW-Button und wählen Sie enable.
+   Deaktivieren Sie den SHOW-Button und wählen Sie Enable.
    
-4. Stellen Sie sicher, dass IN1 und IN2 V / div am linken unteren
-   Bildschirmrand auf 200mV / div eingestellt sind (Sie können V / div
+4. Stellen Sie sicher, dass IN1 und IN2 :math:`V/div` am linken unteren
+   Bildschirmrand auf :math:`200\,mV/div` eingestellt sind (Sie können :math:`V/div`
    einstellen, indem Sie den gewünschten Kanal auswählen und die
    vertikalen +/- Regler verwenden)
    
-5. Setzen Sie t / div Wert auf 20us / div (Sie können t / div mit
-   horizontalen +/- Kontrollen einstellen)
+5. Setzen Sie :math:`t/div` Wert auf :math:`20\,us/div` (Sie können :math:`t/div` mit
+   horizontalen +/- Reglern einstellen)
    
-6. In den Einstellungen des Auslösermenüs und wählen Sie NORMAL
+6. In dem Trigger-Menu wählen Sie bitte Einstellungen
+   und stellen diese auf NORMAL
    
 7. Wählen Sie im Messmenü P2P für IN1 und IN2
 
-   
    .. figure:: img/ Activity_27_Fig_04.png
       :name: 27_fig_04
 
       Gemeinsame Quellenverstärker-Messungen
+
+In :numref:`27_fig_04` sind die Messungen des Common-Source-Verstärkers dargestellt.
+Aus den P2P-Messungen können wir den erzielten Gewinn berechnen. Dieser liegt bei :math:`A \approx 4` .
+Warum ist gitb es eine Differenz zwischen berechneter und gemessener Verstärkung?
+Dies liegt an der Eingangskapazität, die wir als :math:`100\,pF` angenommen haben.
+In Wirklichkeit kann Sie einen anderen Wert annehmen. Auch Werte anderer
+Komponenten haben bestimmte Toleranzen oder können mit einem bestimmtem Wert nicht annehmen.
+
+
+
+8. Um den Einfluss der Eingangssignalfrequenz auf den verstärkungsfaktor zu sehen,
+   stellen Sie die OUT1-Frequenz auf :math:`5\,kHz` ein
+   und messen Sie den Gewinn des Verstärkers.
    
 
-In Abbildung 3 sind die Messungen des gemeinsamen Quellenverstärkers
-dargestellt. Aus den P2P-Messungen können wir die erzielte Verstärkung
-berechnen und es ist ungefähr :math:`A \approx 4`. Warum ist der
-Unterschied zwischen berechneter und gemessener Verstärkung? Dies
-liegt an der Eingangskapazität, die wir als 100pF angenommen haben,
-aber in Wirklichkeit kann sie anders sein. Auch Werte anderer
-Komponenten und ähnlicher sind nicht exakt.
+.. figure:: img/ Activity_27_Fig_05.png
+   :name: 27_fig_05
+   :align: center
 
-
-8. Um den Einfluss der Verstärkungsabhängigkeit auf die
-   Eingangssignalfrequenz zu sehen, stellen Sie die OUT1-Frequenz auf
-   5 kHz ein und messen Sie die Verstärkung des Verstärkers.
-   
-
-   .. figure:: img/ Activity_27_Fig_05.png
-      :name: 27_fig_05
-      :align: center
-
-      Gemeinsame Quellenverstärkung bei 5 kHz Frequenz von :math:`V_ {in}`
+   Gemeinsame Quellenverstärkung bei :math:`5\,kHz` Frequenz von :math:`V_{in}`
 	 
 
 .. note::
-   Wir könnten einstellen :math:`1M \ Omega` Widerstand in Serie mit
-   MOSFET Gate-Eingang. Dies würde die Wirkung der parasitären
-   Kapazität verringern und eine hohe Eingangsimpedanz unabhängig von
-   der Eingangssignalfrequenz ermöglichen. Wie Sie aus der Gleichung 2
-   sehen können, sobald der 1M Widerstand hinzugefügt wird, gilt
-   :math:`Z_ {iss}` wird "konstant" und größer bei hoher Frequenz sein
-   und daher den Eingangsteiler weniger beeinflussen :math:`R_G/R_2`.
-	 
-   Eingangsimpedanz würde werden:
+   Wir könnten :math:`1\,M\Omega` Widerstand in Reihe mit MOSFET-Gate-Eingang schalten.
+   Dies würde den Einfluss der parasitären Kapazität verringern und eine
+   hohe Eingangsimpedanz, unabhängig von der Eingangssignalfrequenz ermöglichen.
+   Wie Sie aus der :eq:`27_eq_2` ersehen können, wird bei Zufügen eines :math:`1\,M\Omega` Widerstandes
+   der Ziss "konstant" und wirdbei hoher Frequenz größer, wodurch der
+   Eingangsteiler RG/R2 weniger beeinflusst wird.
+   Die Eingangsimpedanz würde sich erhöhen:
 
    .. math::
 
-      Z_ {iss} = 1\,M\Omega + \frac {1}{2 \pi f C_ {iss}}
+      Z_{iss} = 1\,M\Omega + \frac {1}{2 \pi f C_{iss}}
 
       
-   und :math:`Z_ {iss}` capacitance affect (part)
+   und :math:`Z_{iss}` -Kapazität beeinflussen 
 
    
    .. math::
@@ -350,22 +346,22 @@ Komponenten und ähnlicher sind nicht exakt.
       \frac{1}{2 \pi f C_{iss}}
 
       
-   hätte viel weniger Einfluss auf den Gewinn. Die
-   Eingangssignalfrequenz hätte weniger Einfluss auf die Verstärkung 
-   des Verstärkers.
+   hätte viel weniger Einfluss auf die Verstärkung. D.h. die Frequenz
+   des Eingangssignals hätte weniger Einfluss auf den Gewinn des
+   Verstärkers.
    
 
    
 Fragen
 ------
 
-1. Versuchen Sie Folgendes hinzuzufügen :math:`1M` Widerstand in
-   Reihe mit dem Transistor-Gate-Pin. Messverstärkerverstärkung
-   messen. Was passiert, wenn die OUT1-Frequenz geändert wird?
+1. Versuchen Sie, :math:`1\,M\Omega` -Widerstand in Reihe mit Transistor-Gate-Pin hinzuzufügen.
+   Messen Sie den Gewinn des Verstärkers. Was passiert, wenn die Frequenz
+   OUT1 geändert wird?
    
-2. Versuchen Sie den Wert von :math:`R_ {G_ {pot}}` zu ändern und
+2. Versuchen Sie den Wert von :math:`R_{G_{pot}}` zu ändern und
    beobachten Sie die Veränderung der Verstärkung?
    
-3. Versuchen Sie zu ändern :math:`R_1` und :math:`R_2` zu :math:
-   `100k \ Omega` und :math:`300k \ Omega`. Von welcher Abhängigkeit
-   hängt die Verstärkung ab :math:`V_ {in}` frequency.
+3. Versuchen Sie zu :math:`R_1` und :math:`R_2` auf :math:`100k \ Omega`
+   und :math:`300k \ Omega` zu ändern. Was ist die Verstärkungsabhängigkeit von der
+   :math:`V_{in}` -Frequenz??
