@@ -242,8 +242,9 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
    nehmen wir :math:`g_m = 25\,mS` und :math:`C_{iss} = 100\,pF` an.
 
    .. math::
-      :label: 27_eq_9
+   :label: 27_eq_9
 
+	      
       R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}}
       = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)
 
@@ -258,7 +259,7 @@ erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
 
      .
      
-     \text{ setting trimmer value } R_G  \text{ to }  50k \Omega \text{bekommen wir: }  
+     \text{ setzen Sie den Trimmer } R_G  \text{ auf }  50\,k \Omega \text{ und Sie bekommen: }  
 
      .
      
