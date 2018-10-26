@@ -203,24 +203,22 @@ Nach einem Spannungsabfall von :math:`1/3 V_{DD}` über :math:`R_L`,
       
 .. note::
 
-   Aufgrund der Verfügbarkeit haben wir einen :math:`R_S = R_L = 470\,\Omega` Widerstand gewählt.
+   Aufgrund der Verfügbarkeit wurde ein :math:`R_S = R_L = 470\,\Omega` Widerstand gewählt.
 	 
 
-Um den Transistor :math:`V_ {GS}` Spannung für den
-selbst-vorgespannten DC-Arbeitspunkt zu setzen, wird der
-Spannungsteiler :math:`\ frac {R_1} {R_2}` so gewählt, dass
-:math:`V_G` oben gesetzt ist ( :math:`V_ {TH} + V_S`) Spannungswert
-(bei DC-Betriebsbedingung).
+Um die :math:`V_{GS}` -Spannung des MOS-Transistors für den
+selbstvorbelasteten DC-Arbeitspunkt einzustellen, wird der
+Spannungsteiler :math:`\frac{R_1}{R_2}` so gewählt, dass
+:math:`V_G` oberhalb des Spannungswertes :math:`V_{TH} + V_S`
+(bei DC-Betrieb) eingestellt wird.
       
-
-
 .. math::
    :label: 27_eq_7
 
-   V_G > (V_{TH} + V_{S}) > (2,0 V + 1,6 V) > 3,6 V
+   V_G > (V_{TH} + V_{S}) > (2,0\,V + 1,6\,V) > 3,6\,V
 
-   
-2,0 V ist die Schwellenspannung von ZVN211, 1,6 V ist die Gleichspannung über :math:`R_S`.
+
+:math:`2,0\,V` ist die Schwellenspannung von ZVN211_, :math:`1,6\,V` ist die Gleichspannung über :math:`R_S`.
 
 
 .. math::
@@ -229,10 +227,8 @@ Spannungsteiler :math:`\ frac {R_1} {R_2}` so gewählt, dass
    V_G = \frac{R_2}{R_1 + R_2} V_{DD}
 
    
-Für ausgewählt :math:`V_G = 3.7 V` und :math:`R_1 = 1 M \Omega`
-erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \Omega`
-
-
+Für die ausgewählte Spannung :math:`V_G = 3.7\,V` und  den Widerstand :math:`R_1 = 1\,M \Omega`
+erhalten wir (nächstmöglichet Wert) für :math:`R_2 = 3\,M \Omega`.
 
 .. figure:: img/ Activity_27_Fig_02.png
    :name: 27_fig_02
@@ -240,18 +236,13 @@ erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \Omega`
 
    Gemeinsamer Quellverstärker mit Komponentenwerten
 
-   
 .. note::
-   
-   Für den Verstärker aus Abbildung 2 und die Eingangssignalfrequenz
-   von :math:`10\,kHz` können wir die Spannungsverstärkung mit Gleichung
-   2 berechnen.
-  
-   Für ZVN211_ nehmen wir :math:`g_m = 25 mS` und :math:`C_ {iss} = 100pF`.
+   Für Verstärker aus :numref:`27_fig_02` und Eingangssignalfrequenz von :math:`10\,kHz` können
+   wir die Spannungsverstärkung mit :eq:`27_eq_2` berechnen. Für ZVN211_
+   nehmen wir :math:`g_m = 25\,mS` und :math:`C_{iss} = 100\,\piko F` an.
 
-   
-  .. math::
-     :label: 27_eq_9
+   .. math::
+      :label: 27_eq_9
 
      R_1 || R_2 || Z_{iss} &= 1 / (\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{Z_{iss}}
      &= \frac{1}{R_1} + \frac{1}{R_2} + 2 \pi f C_{iss})
@@ -264,7 +255,7 @@ erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \Omega`
      &= 235 \Omega
      
 
-     \text{trimmerwert einstellen} R_G \text{zu} 50\,k \Omega \text{wir bekommen:}
+     \text{trimmerwert einstellen} R_G \text{zu} 50\,k \Omega \text{bekommen wir}
      
 
      A_v &\approx -\frac{131\, k\Omega}{50\,k\Omega + 131\,k\Omega}

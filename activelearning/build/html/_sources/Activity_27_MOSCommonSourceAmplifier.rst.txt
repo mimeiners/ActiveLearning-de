@@ -1,5 +1,5 @@
-Test_MOS-Transistor-Source-Verstärker
-=====================================
+MOS-Transistor-Source-Verstärker
+================================
 
 Zielsetzung
 -----------
@@ -35,7 +35,7 @@ Hintergrund
 Die in Abbildung 1 dargestellte Konfiguration zeigt den NMOS-Transistor,
 der als Common-Source-Verstärker verwendet wird. Um die Transistor - :math:`V_{GS}` - Spannung
 für den selbstvorbelasteten DC-Betriebspunkt einzustellen, wird der
-Spannungsteiler :math:`\fraq{R_1}{R_2}` gewählt. Der Widerstand :math:`R_G` dient zur
+Spannungsteiler :math:`\frac{R_1}{R_2}` gewählt. Der Widerstand :math:`R_G` dient zur
 Einstellung des **Gewinns** des Verstärkers. Der Wert des :math:`R_G` - Widerstandes
 in Kombination mit den Widerständen :math:`R_1` und :math:`R_2` beeinflusst,
 wie viel :math:`V_{in}` zur :math:`V_{GS}` - Spannung addiert wird und somit direkt
@@ -85,13 +85,13 @@ Eingangsimpedanz kann die Kapazität :math:`C_1` im Bereich von :math:`<\mu F` a
    - [7] `Drain Output Resistance`_ :math:`r_o`
 
 **Durch Vereinfachungen, die im Folgenden aufgeführt sind, kann die ungefähre
-Verstärkung für einen Common-Source-Verstärker (:numref:`27_fig_01`),
-wie in Gleichung (2) dargestellt**, beschrieben werden.
+Verstärkung für einen Common-Source-Verstärker** (:numref:`27_fig_01`),
+**wie in Gleichung** (:eq:`27_eq_2`) **dargestellt**, beschrieben werden.
 
 
 1. Vernachlässigung des Spannungsabfalls am :math:`C_1` - Kondensator.
    Wir können den Spannungsabfall am Kondensator :math:`C_1` vernachlässigen,
-   wenn :math:`1/(2\pifC_1) <<< R_G` .
+   wenn :math:`1/(2\pi f C_1) <<< R_G` .
    
 2. Vernachlässigung der :math:`C_S` - Impedanz. Wenn der :math:`C_S` - Wert im Bereich
    :math:`C_S >> 10\mu F` ausgewählt wird, ist seine Impedanz vernachlässigbar und geht für
@@ -105,7 +105,7 @@ wie in Gleichung (2) dargestellt**, beschrieben werden.
    Transkonduktanz :math:`g_m` ist die Änderung des Drainstroms dividiert durch die
    geringe Änderung der Gate-/Source-Spannung bei konstanter Drain-/Source-Spannung.
    Typische Werte von :math:`g_m` für einen Kleinsignal-Feldeffekttransistor
-   sind :math:`1` bis :math:`30\,\milli S` (Millisiemens).
+   sind :math:`1` bis :math:`30\,\mS` (Millisiemens).
 	 
 .. math::
    :label: 27_eq_1

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>27. Test_MOS-Transistor-Source-Verstärker &mdash; Red Pitaya 1.0 Dokumentation</title>
+  <title>27. MOS-Transistor-Source-Verstärker &mdash; Red Pitaya 1.0 Dokumentation</title>
   
 
   
@@ -114,7 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">27. Test_MOS-Transistor-Source-Verstärker</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">27. MOS-Transistor-Source-Verstärker</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#zielsetzung">27.1. Zielsetzung</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#anmerkungen">27.2. Anmerkungen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hintergrund">27.3. Hintergrund</a></li>
@@ -169,7 +169,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>27. Test_MOS-Transistor-Source-Verstärker</li>
+      <li>27. MOS-Transistor-Source-Verstärker</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,8 +188,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="test-mos-transistor-source-verstarker">
-<h1>27. Test_MOS-Transistor-Source-Verstärker<a class="headerlink" href="#test-mos-transistor-source-verstarker" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="mos-transistor-source-verstarker">
+<h1>27. MOS-Transistor-Source-Verstärker<a class="headerlink" href="#mos-transistor-source-verstarker" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="zielsetzung">
 <h2>27.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Der Zweck dieses Experiments ist es, die Common - Source - Verstärkerkonfiguration des MOS-Transistors zu untersuchen.</p>
@@ -207,7 +207,7 @@ Spannungsversorgung <strong>+5V</strong>, <strong>-3,3V</strong> und <strong>+3,
 <p>Die in Abbildung 1 dargestellte Konfiguration zeigt den NMOS-Transistor,
 der als Common-Source-Verstärker verwendet wird. Um die Transistor - <span class="math notranslate nohighlight">\(V_{GS}\)</span> - Spannung
 für den selbstvorbelasteten DC-Betriebspunkt einzustellen, wird der
-Spannungsteiler <span class="math notranslate nohighlight">\(\fraq{R_1}{R_2}\)</span> gewählt. Der Widerstand <span class="math notranslate nohighlight">\(R_G\)</span> dient zur
+Spannungsteiler <span class="math notranslate nohighlight">\(\frac{R_1}{R_2}\)</span> gewählt. Der Widerstand <span class="math notranslate nohighlight">\(R_G\)</span> dient zur
 Einstellung des <strong>Gewinns</strong> des Verstärkers. Der Wert des <span class="math notranslate nohighlight">\(R_G\)</span> - Widerstandes
 in Kombination mit den Widerständen <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span> beeinflusst,
 wie viel <span class="math notranslate nohighlight">\(V_{in}\)</span> zur <span class="math notranslate nohighlight">\(V_{GS}\)</span> - Spannung addiert wird und somit direkt
@@ -258,12 +258,12 @@ folgenden Links vorgeschlagen:</p>
 </ul>
 </div>
 <p><strong>Durch Vereinfachungen, die im Folgenden aufgeführt sind, kann die ungefähre
-Verstärkung für einen Common-Source-Verstärker (:numref:`27_fig_01`),
-wie in Gleichung (2) dargestellt</strong>, beschrieben werden.</p>
+Verstärkung für einen Common-Source-Verstärker</strong> (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 27.1</span></a>),
+<strong>wie in Gleichung</strong> (<a class="reference internal" href="#equation-27-eq-2">Gl. 27.2</a>) <strong>dargestellt</strong>, beschrieben werden.</p>
 <ol class="arabic simple">
 <li>Vernachlässigung des Spannungsabfalls am <span class="math notranslate nohighlight">\(C_1\)</span> - Kondensator.
 Wir können den Spannungsabfall am Kondensator <span class="math notranslate nohighlight">\(C_1\)</span> vernachlässigen,
-wenn <span class="math notranslate nohighlight">\(1/(2\pifC_1) &lt;&lt;&lt; R_G\)</span> .</li>
+wenn <span class="math notranslate nohighlight">\(1/(2\pi f C_1) &lt;&lt;&lt; R_G\)</span> .</li>
 <li>Vernachlässigung der <span class="math notranslate nohighlight">\(C_S\)</span> - Impedanz. Wenn der <span class="math notranslate nohighlight">\(C_S\)</span> - Wert im Bereich
 <span class="math notranslate nohighlight">\(C_S &gt;&gt; 10\mu F\)</span> ausgewählt wird, ist seine Impedanz vernachlässigbar und geht für
 alle AC-Signale effektiv auf <span class="math notranslate nohighlight">\(0\,\Omega\)</span>.</li>
@@ -276,7 +276,7 @@ Gleichung (1) vernachlässigt werden.</li>
 <p class="last">Transkonduktanz <span class="math notranslate nohighlight">\(g_m\)</span> ist die Änderung des Drainstroms dividiert durch die
 geringe Änderung der Gate-/Source-Spannung bei konstanter Drain-/Source-Spannung.
 Typische Werte von <span class="math notranslate nohighlight">\(g_m\)</span> für einen Kleinsignal-Feldeffekttransistor
-sind <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(30\,\milli S\)</span> (Millisiemens).</p>
+sind <span class="math notranslate nohighlight">\(1\)</span> bis <span class="math notranslate nohighlight">\(30\,\mS\)</span> (Millisiemens).</p>
 </div>
 <div class="math notranslate nohighlight" id="equation-27-eq-1">
 <span class="eqno">(27.1)<a class="headerlink" href="#equation-27-eq-1" title="Permalink to this equation">¶</a></span>\[A_v \approx -\frac{R_1 || R_2 || Z_{iss}}{R_G + (R_1 || R_2 || Z_{iss})} g_m (r_o || R_L || R_S)\]</div>
