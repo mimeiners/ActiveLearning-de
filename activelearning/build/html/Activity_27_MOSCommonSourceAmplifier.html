@@ -369,7 +369,7 @@ nehmen wir <span class="math notranslate nohighlight">\(g_m = 25\,mS\)</span> un
  10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega\\.\\R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega\\.\\\text{ setzen Sie den Trimmer } R_G  \text{ auf }  50\,k \Omega \text{ und Sie bekommen: }\\.\\A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega\\.\\A_v \approx - 4.2\end{aligned}\end{align} \]</div>
 </div>
 <ol class="arabic">
-<li><p class="first">Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.</p>
+<li><p class="first">Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 27.2</span></a> auf dem Steckbrett auf.</p>
 <div class="figure align-center" id="fig-03">
 <img alt="_images/Activity_27_Fig_03.png" src="_images/Activity_27_Fig_03.png" />
 <p class="caption"><span class="caption-number">Abb. 27.3 </span><span class="caption-text">Common Source Verstärker auf dem Steckbrett</span></p>
@@ -377,20 +377,21 @@ nehmen wir <span class="math notranslate nohighlight">\(g_m = 25\,mS\)</span> un
 </li>
 <li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
 </li>
-<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf 0,1 V,
-DC-Offset auf 0 V und Frequenz auf 10 kHz ein, um die
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen Amplitudenwert auf <span class="math notranslate nohighlight">\(0,1\,V\)</span>,
+DC-Offset auf <span class="math notranslate nohighlight">\(0\,V\)</span> und Frequenz auf <span class="math notranslate nohighlight">\(10\,kHz\)</span> ein, um die
 Eingangsspannung anzulegen. Wählen Sie im Wellenformmenü SINE,
-Deaktivieren Sie den SHOW-Button und wählen Sie enable.</p>
+Deaktivieren Sie den SHOW-Button und wählen Sie Enable.</p>
 </li>
-<li><p class="first">Stellen Sie sicher, dass IN1 und IN2 V / div am linken unteren
-Bildschirmrand auf 200mV / div eingestellt sind (Sie können V / div
+<li><p class="first">Stellen Sie sicher, dass IN1 und IN2 <span class="math notranslate nohighlight">\(V/div\)</span> am linken unteren
+Bildschirmrand auf <span class="math notranslate nohighlight">\(200\,mV/div\)</span> eingestellt sind (Sie können <span class="math notranslate nohighlight">\(V/div\)</span>
 einstellen, indem Sie den gewünschten Kanal auswählen und die
 vertikalen +/- Regler verwenden)</p>
 </li>
-<li><p class="first">Setzen Sie t / div Wert auf 20us / div (Sie können t / div mit
-horizontalen +/- Kontrollen einstellen)</p>
+<li><p class="first">Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(20\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</p>
 </li>
-<li><p class="first">In den Einstellungen des Auslösermenüs und wählen Sie NORMAL</p>
+<li><p class="first">In dem Trigger-Menu wählen Sie bitte Einstellungen
+und stellen diese auf NORMAL</p>
 </li>
 <li><p class="first">Wählen Sie im Messmenü P2P für IN1 und IN2</p>
 <div class="figure" id="fig-04">
@@ -399,54 +400,51 @@ horizontalen +/- Kontrollen einstellen)</p>
 </div>
 </li>
 </ol>
-<p>In Abbildung 3 sind die Messungen des gemeinsamen Quellenverstärkers
-dargestellt. Aus den P2P-Messungen können wir die erzielte Verstärkung
-berechnen und es ist ungefähr <span class="math notranslate nohighlight">\(A \approx 4\)</span>. Warum ist der
-Unterschied zwischen berechneter und gemessener Verstärkung? Dies
-liegt an der Eingangskapazität, die wir als 100pF angenommen haben,
-aber in Wirklichkeit kann sie anders sein. Auch Werte anderer
-Komponenten und ähnlicher sind nicht exakt.</p>
-<ol class="arabic" start="8">
-<li><p class="first">Um den Einfluss der Verstärkungsabhängigkeit auf die
-Eingangssignalfrequenz zu sehen, stellen Sie die OUT1-Frequenz auf
-5 kHz ein und messen Sie die Verstärkung des Verstärkers.</p>
+<p>In <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 27.4</span></a> sind die Messungen des Common-Source-Verstärkers dargestellt.
+Aus den P2P-Messungen können wir den erzielten Gewinn berechnen. Dieser liegt bei <span class="math notranslate nohighlight">\(A \approx 4\)</span> .
+Warum ist gitb es eine Differenz zwischen berechneter und gemessener Verstärkung?
+Dies liegt an der Eingangskapazität, die wir als <span class="math notranslate nohighlight">\(100\,pF\)</span> angenommen haben.
+In Wirklichkeit kann Sie einen anderen Wert annehmen. Auch Werte anderer
+Komponenten haben bestimmte Toleranzen oder können mit einem bestimmtem Wert nicht annehmen.</p>
+<ol class="arabic simple" start="8">
+<li>Um den Einfluss der Eingangssignalfrequenz auf den verstärkungsfaktor zu sehen,
+stellen Sie die OUT1-Frequenz auf <span class="math notranslate nohighlight">\(5\,kHz\)</span> ein
+und messen Sie den Gewinn des Verstärkers.</li>
+</ol>
 <div class="figure align-center" id="fig-05">
 <img alt="_images/Activity_27_Fig_05.png" src="_images/Activity_27_Fig_05.png" />
-<p class="caption"><span class="caption-number">Abb. 27.5 </span><span class="caption-text">Gemeinsame Quellenverstärkung bei 5 kHz Frequenz von <span class="math notranslate nohighlight">\(V_ {in}\)</span></span></p>
+<p class="caption"><span class="caption-number">Abb. 27.5 </span><span class="caption-text">Gemeinsame Quellenverstärkung bei <span class="math notranslate nohighlight">\(5\,kHz\)</span> Frequenz von <span class="math notranslate nohighlight">\(V_{in}\)</span></span></p>
 </div>
-</li>
-</ol>
 <div class="admonition note">
 <p class="first admonition-title">Bemerkung</p>
-<p>Wir könnten einstellen <span class="math notranslate nohighlight">\(1M \ Omega\)</span> Widerstand in Serie mit
-MOSFET Gate-Eingang. Dies würde die Wirkung der parasitären
-Kapazität verringern und eine hohe Eingangsimpedanz unabhängig von
-der Eingangssignalfrequenz ermöglichen. Wie Sie aus der Gleichung 2
-sehen können, sobald der 1M Widerstand hinzugefügt wird, gilt
-<span class="math notranslate nohighlight">\(Z_ {iss}\)</span> wird „konstant“ und größer bei hoher Frequenz sein
-und daher den Eingangsteiler weniger beeinflussen <span class="math notranslate nohighlight">\(R_G/R_2\)</span>.</p>
-<p>Eingangsimpedanz würde werden:</p>
+<p>Wir könnten <span class="math notranslate nohighlight">\(1\,M\Omega\)</span> Widerstand in Reihe mit MOSFET-Gate-Eingang schalten.
+Dies würde den Einfluss der parasitären Kapazität verringern und eine
+hohe Eingangsimpedanz, unabhängig von der Eingangssignalfrequenz ermöglichen.
+Wie Sie aus der <a class="reference internal" href="#equation-27-eq-2">Gl. 27.2</a> ersehen können, wird bei Zufügen eines <span class="math notranslate nohighlight">\(1\,M\Omega\)</span> Widerstandes
+der Ziss „konstant“ und wirdbei hoher Frequenz größer, wodurch der
+Eingangsteiler RG/R2 weniger beeinflusst wird.
+Die Eingangsimpedanz würde sich erhöhen:</p>
 <div class="math notranslate nohighlight">
-\[Z_ {iss} = 1\,M\Omega + \frac {1}{2 \pi f C_ {iss}}\]</div>
-<p>und <span class="math notranslate nohighlight">\(Z_ {iss}\)</span> capacitance affect (part)</p>
+\[Z_{iss} = 1\,M\Omega + \frac {1}{2 \pi f C_{iss}}\]</div>
+<p>und <span class="math notranslate nohighlight">\(Z_{iss}\)</span> -Kapazität beeinflussen</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{2 \pi f C_{iss}}\]</div>
-<p class="last">hätte viel weniger Einfluss auf den Gewinn. Die
-Eingangssignalfrequenz hätte weniger Einfluss auf die Verstärkung
-des Verstärkers.</p>
+<p class="last">hätte viel weniger Einfluss auf die Verstärkung. D.h. die Frequenz
+des Eingangssignals hätte weniger Einfluss auf den Gewinn des
+Verstärkers.</p>
 </div>
 </div>
 <div class="section" id="fragen">
 <h2>27.6. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
 <ol class="arabic simple">
-<li>Versuchen Sie Folgendes hinzuzufügen <span class="math notranslate nohighlight">\(1M\)</span> Widerstand in
-Reihe mit dem Transistor-Gate-Pin. Messverstärkerverstärkung
-messen. Was passiert, wenn die OUT1-Frequenz geändert wird?</li>
-<li>Versuchen Sie den Wert von <span class="math notranslate nohighlight">\(R_ {G_ {pot}}\)</span> zu ändern und
+<li>Versuchen Sie, <span class="math notranslate nohighlight">\(1\,M\Omega\)</span> -Widerstand in Reihe mit Transistor-Gate-Pin hinzuzufügen.
+Messen Sie den Gewinn des Verstärkers. Was passiert, wenn die Frequenz
+OUT1 geändert wird?</li>
+<li>Versuchen Sie den Wert von <span class="math notranslate nohighlight">\(R_{G_{pot}}\)</span> zu ändern und
 beobachten Sie die Veränderung der Verstärkung?</li>
-<li>Versuchen Sie zu ändern <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span> zu :math:
-<cite>100k Omega</cite> und <span class="math notranslate nohighlight">\(300k \ Omega\)</span>. Von welcher Abhängigkeit
-hängt die Verstärkung ab <span class="math notranslate nohighlight">\(V_ {in}\)</span> frequency.</li>
+<li>Versuchen Sie zu <span class="math notranslate nohighlight">\(R_1\)</span> und <span class="math notranslate nohighlight">\(R_2\)</span> auf <span class="math notranslate nohighlight">\(100k \ Omega\)</span>
+und <span class="math notranslate nohighlight">\(300k \ Omega\)</span> zu ändern. Was ist die Verstärkungsabhängigkeit von der
+<span class="math notranslate nohighlight">\(V_{in}\)</span> -Frequenz??</li>
 </ol>
 </div>
 </div>
