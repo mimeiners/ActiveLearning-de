@@ -126,9 +126,9 @@ Materialien
 -----------
 
 - Rotes Pitaya STEMlab
-- 1x 1kΩ Widerstand
-- 3 x 470Ω Widerstand
-- 1x 10kΩ Widerstand
+- 1x :math:`1\,k\Omega` Widerstand
+- 3 x :math:`470\,\Omega` Widerstand
+- 1x :math:`10\,k\Omega` Widerstand
 - 1x :math:`100 \ mu H` Leistungsinduktivität
 - 1x :math:`47 \ mu F` Kondensator
 - 2x LED (rot)
@@ -136,180 +136,159 @@ Materialien
 - 1x Signaldiode (1N4001_)
 - 2x Kleinsignal-NPN-Transistor (2N3904_)
 - 1x Leistungs-MOS-Transistor (IRLU120N_)
-- 1x AA :math:`1,5\,V` Batterie
+- 1x AA :math:`1,5\,V` Batterie oder Labornetzteil
 - 1x lötfreies Steckbrett
 
   
 Verfahren
 ---------
 
-1. Nach den obigen Anweisungen und den Schaltplänen von :numref:`28_fig_01`
-   bauen Sie die Schaltung auf dem Steckbrett auf.
+1. Bauen Sie die Schaltung aus :numref:`28_fig_01` auf. Befolgen Sie dabei die obigen
+   Anweisungen und orientieren Sie sich am Schaltzplan.  
    
-
-
 .. figure:: img/ Activity_28_Fig_02.png
+   :name: 28_fig_02
+   :align: center
 
-   Abbildung 2: DC - DC Boost Converter auf dem Steckbrett
+   DC - DC Boost Converter auf dem Steckbrett
 
    
-2. ** Setze IN1 und IN2 Scope Probes Dämpfungen auf x10 **
+2. **Stellen Sie die Dämpfung der IN1- und IN2-Scope-Sonden auf x10 ein.**
    
-3. Verbinden Sie den IN1-Scope-Sensor mit dem Punkt 3 (:numref:`28_fig_01`)
-   und dem IN2-Scope-Probe mit dem Punkt (5)
+3. Verbinden Sie die IN1-Scope-Sonde mit dem Punkt 3
+   und dem IN2-Scope-Sonde mit dem Punkt 5 auf Ihrer Schaltung (:numref:`28_fig_01`). 
    
-4. Starten Sie die Applikation Oszilloskop & Signalgenerator - ** OUT1
-   muss deaktiviert sein (ausgeschaltet) **
+4. Starten Sie die Applikation Oszilloskop & Signalgenerator - **OUT1 muss deaktiviert (ausgeschaltet) sein**
    
 5. Stellen Sie in den Menüeinstellungen IN1 und IN2 die Sondendämpfung
    auf x10 ein
    
-6. Wählen Sie im Menü MESSUNGEN MEAN-Messungen für IN1 und IN2
+6. Wählen Sie im Menü MEASUREMENTS die Option MEAN für IN1 und IN2.
    
-7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (Bild 1)?
+7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (:numref:`28_fig_01`)?
    
-
-Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist
-der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1`
-ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor:
-math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt
-5, :numref:`28_fig_01`). Für DC-Signale (keine Umschaltung) verhält sich die
-:math:`L_1` -Induktivität wie ein Kurzschluss, daher ist die
-Ausgangsspannung die Batteriespannung, die sich verringert durch
-:math:`D_1` Dioden-Durchlassspannung:
-:math:`V_ {out} = V_{Batterie} - V_ {Diode}`. Dieser Zustand wird in den
-Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben,
-sind :math:`LED_1` und :math:`LED_2` ausgeschaltet, da die
-Ausgangsspannung unter der Durchlassspannung der LEDs
-liegt (2x1.8V).
+An dieser Stelle, wenn das Schaltsignal OUT1 deaktiviert ist, ist der DC-DC-Aufwärtswandler
+nicht funktionsfähig. Der Transistor :math:`M_1` wird ausgeschaltet (Leerlauf) und die
+Batteriespannung wird über die Induktivität :math:`L_1` und die Diode :math:`D_1` auf die
+Lastseite übertragen (Punkt 5 in :numref:`28_fig_01`). Bei Gleichstromsignalen (kein Schalten)
+verhält sich die :math:`L_1` -Induktivität wie ein Kurzschluss, daher wird die Ausgangsspannung
+durch die Batteriespannung um die Schwellspannung der :math:`D_1` -Diode verringert:
+:math:`V_{out} = V_{Batterie} - V_{Diode}`. Dieser Zustand ist in den Messungen auf
+:numref:`28_fig_03` dargestellt. Wie erwartet, werden die :math:`LED_1` und :math:`LED_2`
+nicht leuchten, da die Ausgangsspannung unter der Durchlassspannung
+der LEDs liegt (:math:`2 \cdot 1,8\,V`).
 	    
 
 .. figure:: img/ Activity_28_Fig_03.png
+   :name: 28_fig_03
+   :align: center
 
-   Abbildung 3: DC - DC - Boost - Konverter ist ausgeschaltet
+   DC - DC - Boost - Konverter ist ausgeschaltet
 
-   
-8. Stellen Sie in den OUT1-Menüeinstellungen die Frequenz auf 10 kHz,
-   die Wellenform auf PWM, die Amplitude auf 0,5 V, den DC-Offset auf
-   0,5 V ein, deaktivieren Sie SHOW und wählen Sie ON.
+8. Stellen Sie in den OUT1-Menüeinstellungen die Frequenz auf :math:`10\,kHz`,
+   die Wellenform auf PWM, die Amplitude auf :math:`0,5\,V`, den DC-Offset auf
+   :math:`0,5\,V` ein, deaktivieren Sie SHOW und wählen Sie Enable.
    
 9. Wählen Sie im Menü MEASUREMENTS P2P-Messungen für IN1 und IN2
    
-10. Setzen Sie t / div Wert auf 100us / div (Sie können t / div mit
-    horizontalen +/- Kontrollen einstellen)
+10. Setzen Sie :math:`t/div` -Wert auf :math:`100\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
 
-An diesem Punkt, wenn das Schaltsignal OUT1 freigegeben ist, ist der
+An diesem Punkt, an dem das  Schaltsignal OUT1 aktiviert ist, ist der
 DC-DC-Aufwärtswandler funktionsfähig und verhält sich wie oben in der
-Theorie beschrieben. Die Ausgangsspannung wird auf ca. 5V erhöht und
-die LEDs werden eingeschaltet. Dieser Zustand ist in Abbildung 4
-dargestellt. Wie man an den Messungen sehen kann, tritt an der
-Batterie und an der Ausgangsspannung eine Welligkeit auf. Die
-Welligkeit der Ausgangsspannung wird durch die Welligkeit der
-Batteriespannung und den Transistor :math:`M_1` verursacht. Die
-Batteriespannungswelligkeit ist darauf zurückzuführen, dass die
-Batterie keine ideale Spannungsquelle ist und wenn :math:`M_1`
-eingeschaltet ist, verursacht der von der Batterie ertrunkene Strom
-einen Spannungsabfall.
+Theorie beschrieben. Die Ausgangsspannung wird auf ca. :math:`5\,V` angehoben und die LEDs leuchten.
+Dieser Zustand ist in :numfig:`28_fig_04` dargestellt. Wie wir aus den Messungen ersehen können,
+tritt bei Batterie und Ausgangsspannung eine Restwelligkeit auf, die durch
+Batteriespannungswelligkeit und Transistor :math:`M_1` -Schaltung verursacht wird.
+Die Spannungswelligkeit der Batterie ist darauf zurückzuführen, dass die Batterie keine
+ideale Spannungsquelle ist, und wenn M1 eingeschaltet wird, verursacht der von der Batterie
+abgegeber Strom einen Spannungsabfall.
 
 
 .. figure:: img/ Activity_28_Fig_04.png
+   :name: 28_fig_04
+   :align: center
 
-   Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
+   DC - DC - Boost - Konverter ist eingeschaltet
 
-   
 .. note::
-   Spannungswelligkeitswerte sind einer der Hauptparameter der
-   DC-DC-Wandlerqualität. Geringere Ausgangswelligkeit entspricht
-   einem besseren DC-DC-Aufwärtswandler.
-   
-   Kondensator :math:`C_1` wird daher benötigt, um die an der
-   Induktivität erscheinende Schaltspannung zu kompensieren und zu
-   glätten :math:`L_1` und diode :math:`D_1`.
-   
-   Versuche zu entfernen :math:`C_1` und beobachte :math:`V_ {out}`.
+   Welligkeitsspannungswerte sind einer der wichtigsten Parameter der DC-DC-Wandlerqualität.
+   Die geringere Ausgangswelligkeit entspricht einem besseren DC-DC-Aufwärtswandler.
+   Der Kondensator :math:`C_1` wird daher benötigt, um die an Induktivität :math:`L_1` und
+   Diode :math:`D_1` auftretende Schaltspannung zu kompensieren und zu glätten.
+   Versuchen Sie, :math:`C_1` zu entfernen und beobachten Sie :math:`V_{out}`.
 
 
-11. Um die Schaltspannungen von :math:`M_1` zu beobachten, stellen Sie
+11. Um die Schaltspannungen des :math:`M_1` -MOS-Transistors zu beobachten, setzen Sie
     die IN1-Sonde auf den Punkt 2 (:numref:`28_fig_01`) und die IN2-Sonde auf
     den Punkt 4 (:numref:`28_fig_01`).
     
-12. Stellen Sie im IN2-Einstellungsmenü den vertikalen Offset -4.0V
-    ein (um das Signal IN2 besser sehen zu können)
+12. Stellen Sie im IN2-Einstellungsmenü den vertikalen Offset auf :math:`-4,0\,V`
+    ein (um das Signal IN2 besser sehen zu können).
     
 13. Wählen Sie im TRIGGER-Menü NORMAL und stellen Sie den Triggerpegel
-    auf 3.0V ein
+    auf :math:`3,0\,V` ein.
     
-14. Setze t / div Wert auf 20us / div (Du kannst t / div mit
-    horizontalen +/- Kontrollen einstellen)
+14. Setze :math:`t/div` Wert auf :math:`20\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
 
 .. figure:: img/ Activity_28_Fig_05.png
+   :name: 28_fig_05
+   :align: center
 
-   Abbildung 5: M1 Schaltspannungen
+   M1 Schaltspannungen
 
-   
-In der Abbildung 5 sind :math:`M_1` Gate- und Drain-Signale
-dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine
-schaltende Rechteckwelle ist, die den Transistor steuert.
-
-Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des
-Transistors :math:`M_1`, aber während des" Off "-Zustandes sind
-signifikante Oszillationen sichtbar. Dies ist der Einfluss des
-Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn
-beeinflusst, die die Drain-Spannung von :math:`M_1` beeinflusst.
-
+Auf der :numref:`28_fig_05` sind :math:`M_1` Gate- und Drain-Signale dargestellt. Aus :numref:`28_fig_05` können wir ersehen, dass das Gatesignal eine schaltende Rechteckwelle ist, die den Transistor steuert. Das Drain-Signal entspricht den Zuständen "offen/geschlossen" des Transistors :math:`M_1`, aber im Zustand "aus" sind deutliche Schwingungen sichtbar. Dies ist die Auswirkung der Induktivität :math:`L_1`, da diese jede Stromänderung durch sie hindurch annimmt, die die Drainspannung :math:`M_1` beeinflusst.
 
 .. note::
-   Der DC-DC-Boost-Wandler-Ausgangsspannungswert wird häufig gesteuert
-   mit: math: "Duty-Cycle" des Schaltsignals.
+   Der Ausgangsspannungswert des DC-DC-Aufwärtswandlers wird oft mit dem
+   Tastverhältnis (Duty-Cycle) des Schaltsignals (PWM-Signal) gesteuert.
    
-
 15. Um die Auswirkungen des Schaltsignals (OUT1) zu beobachten,
-    stellen Sie den IN1-Fühler auf den Punkt 2 (:numref:`28_fig_01`) und den
-    IN2-Fühler auf den Punkt 5 (:numref:`28_fig_01`).
+    setzen Sie die IN1-Sonde auf den Punkt 2 (:numref:`28_fig_01`) und die
+    IN2-Sonde auf den Punkt 5 (:numref:`28_fig_01`).
     
-16. Stellen Sie in den Menüeinstellungen IN1 und IN2 den vertikalen
-    Offset auf -3,0V ein
+16. Stellen Sie in den Menü Einstellungen IN1 und IN2 den vertikalen
+    Offset auf :math:`-3,0\,V` ein.
     
-17. Setzen Sie t / div Wert auf 50us / div (Sie können t / div mit
-    horizontalen +/- Kontrollen einstellen)
+17. Setzen Sie :math:`t/div` Wert auf :math:`50\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
-18. In den OUT1-Menüeinstellungen ändern Sie den Arbeitszyklus von
-    30\%-80\% und beobachten Sie die Ergebnisse.
+18. In den Einstellungen des Menüs OUT1 das Tastverhältnis von 30% auf 80% ändern und die Ergebnisse beobachten.
 	  
 
-
 .. figure:: img/ Activity_28_Fig_06.png
-
+	   
 .. figure:: img/ Activity_28_Fig_07.png
+   :name: 28_fig_06
+   :align: center
 
-   Abbildung 5: Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten:
-   Ausgangsspannung bei 80% Tastverhältnis
+   Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten: Ausgangsspannung bei 80% Tastverhältnis
    
 
 .. warning::
-   Aus Abbildung 5 können wir den Einfluss des Tastverhältnisses auf
-   die Ausgangsspannung beobachten. Wenn wir mit dem Tastverhältnis
-   auf 0% oder 100% gehen, werden wir abschalten oder kurzschließen
-   :math:`M_1` Transistor daher sollte das Tastverhältnis oben
-   begrenzt sein für Kurzschlussschutz und
-   Schaltkreisbeschädigung.
+   Aus :numref:`28_fig_06` können wir den Einfluss des Tastverhältnisses auf
+   die Ausgangsspannung beobachten. Wenn wir mit der Tastverhältnis auf 0% oder 100% gehen,
+   dann schalten wir den M1-Transistor aus oder schließen diesen kurz. Zur Vermeidung eines
+   Kurzschlüßes und der damit verbundenen Schäden an der Schaltung, sollte die
+   Einschaltdauen (high) begrenzt werden. 
 	 
 
 
 Fragen
 ------
 
-1. Ändern Sie den Ladewert in :math:`470 \ Omega` und beobachten Sie
+1. Ändern Sie den Lastwert auf :math:`470\,\Omega` und beobachten Sie
    die Ergebnisse.
    
-2. Ändern Sie die OUT1-Frequenz auf 5 - 20 kHz. Messen und notieren
-   Sie die Wellenform der verstärkten Ausgangsspannung und die
-   Stromwellenformen. Erklären Sie, was sich geändert hat und warum?
+2. Ändern Sie die OUT1-Frequenz auf :math:`5 - 20\,kHz`. Messen und zeichnen
+   Sie die Wellenform der verstärkten Ausgangsspannung und des
+   Ausgangsstroms auf. Erklären Sie, was sich geändert hat und warum?
    
-3. Wie würde das Hinzufügen eines LC-Filters auf den Wandlerausgang
-   die Spannungswelligkeit beeinflussen?
+3. Wie würde das Hinzufügen eines LC-Filters am Umrichterausgang die
+   Spannungswelligkeit beeinflussen?
    
 
 
