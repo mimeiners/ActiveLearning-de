@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. Transient Response einer RL-Schaltung &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="8. Resonanz in RLC-Schaltungen" href="Activity_08_ResonanceRCL.html" />
+    <link rel="prev" title="6. Transient Response der RC-Beschaltung" href="Activity_06_ResponseRC.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Transient Response einer RL-Schaltung</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">7.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">7.2. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">7.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vorgehensweise">7.4. Vorgehensweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">7.5. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>7. Transient Response einer RL-Schaltung</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_07_ResponseRL.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transient-response-einer-rl-schaltung">
+<h1>7. Transient Response einer RL-Schaltung<a class="headerlink" href="#transient-response-einer-rl-schaltung" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>7.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Ziel dieser Labortätigkeit ist es, das transiente Verhalten von
+Induktionsschaltungen mit einer RL-Konfiguration der Serie zu
+untersuchen und das Konzept der Zeitkonstante zu verstehen.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya
+STEMlab-Board <a class="reference external" href="https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html">Hardware</a> geht.</p>
+<p class="last">Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+</div>
+</div>
+<div class="section" id="hintergrund">
+<h2>7.2. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Diese Labortätigkeit ist ähnlich wie der Versuch 6, nur dass der
+Kondensator durch eine Induktivität ersetzt wird. In diesem Experiment
+wenden Sie eine rechteckige Wellenform auf die RL-Schaltung an, um das
+transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in
+Bezug auf die Zeitkonstante der Schaltung bestimmt, wie sie von der
+RL-Schaltung beeinflusst wird.</p>
+<p>Zeitkonstante <span class="math notranslate nohighlight">\(\tau\)</span> : Es ist ein Maß für die Zeit, die für
+bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen
+benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf
+Zeitkonstanten (5 <span class="math notranslate nohighlight">\(\tau\)</span> ) nach dem Schalten überschreitet,
+haben die Ströme und Spannungen ihren Endwert erreicht, der auch als
+stationäre Reaktion bezeichnet wird.</p>
+<p>Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität
+dividiert durch den Thévenin-Widerstand, bezogen auf die Anschlüsse
+des äquivalenten Gleichstromkreises.</p>
+<div class="math notranslate nohighlight" id="equation-07-eq-01">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-07-eq-01" title="Permalink to this equation">¶</a></span>\[        f=\frac{L}{R}\]</div>
+<p>Ein Impuls ist eine Spannung oder ein Strom, der von einem Niveau zum
+anderen und wieder zurück wechselt. Wenn die hohe Zeit einer
+Wellenform gleich ihrer niedrigen Zeit ist, wird sie als Rechteckwelle
+bezeichnet. Die Länge eines jeden Zyklus einer Impulsfolge ist seine
+Periode (T). Die Impulsbreite (tp) einer idealen Rechteckwelle
+entspricht der Hälfte der Zeitspanne.</p>
+<p>Das Verhältnis zwischen Impulsbreite und Frequenz für die
+Rechteckwelle wird durch die folgende Gleichung beschrieben:</p>
+<div class="math notranslate nohighlight" id="equation-07-eq-02">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-07-eq-02" title="Permalink to this equation">¶</a></span>\[        f = \frac{1}{2t_p}\]</div>
+<div class="figure" id="id1">
+<span id="fig-01"></span><img alt="_images/Activity_07_Fig_01.png" src="_images/Activity_07_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 7.1 </span><span class="caption-text">Serien-RL-Schaltung</span></p>
+</div>
+<p>In einem RL-Kreis nimmt die Spannung über der Spule mit der Zeit ab,
+während in dem RC-Kreis die Spannung über dem Kondensator mit der Zeit
+zunimmt. Somit hat der Strom in einer RL-Schaltung die gleiche Form
+wie die Spannung in einer RC-Schaltung: Sie steigen beide exponentiell
+auf ihren Endwert an.</p>
+<p>Der Ausdruck für den Strom in der Spule ist gegeben durch:</p>
+<div class="math notranslate nohighlight" id="equation-07-eq-03">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-07-eq-03" title="Permalink to this equation">¶</a></span>\[     I_L(t) = R V \left(1 - e^{-\frac{R}{L}t} \right), \quad t &gt;= 0\]</div>
+<p>wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist,
+die Ansprechkurve steigt und ist in Figur 2 dargestellt.</p>
+<div class="figure" id="id2">
+<span id="fig-02"></span><img alt="_images/Activity_07_Fig_02.png" src="_images/Activity_07_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 7.2 </span><span class="caption-text">Der Strom in der Spule steigt in einem Serien-RL-Kreis an.
+(Zeitachse normiert um t.)</span></p>
+</div>
+<p>Der Ausdruck für den Stromabfall über der Spule wird durch:</p>
+<div class="math notranslate nohighlight" id="equation-07-eq-04">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-07-eq-04" title="Permalink to this equation">¶</a></span>\[        I_L(t) = I_0 e^{- \frac{R}{L}t}, \quad t &gt;= 0\]</div>
+<p>wo, I<sub>0</sub>der Anfangsstrom ist, der in der Spule bei t = 0
+gespeichert ist. <span class="math notranslate nohighlight">\(L/R = \tau\)</span> ist die Zeitkonstante.</p>
+<p>Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in
+<a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 7.3</span></a> dargestellt.</p>
+<div class="figure" id="fig-03">
+<img alt="_images/Activity_07_Fig_03.png" src="_images/Activity_07_Fig_03.png" />
+</div>
+<p>Da es nicht möglich ist, den Strom durch die Spule direkt zu messen
+(Strom, der von OUT1 geliefert wird), wird die Ausgangsspannung über
+den Widerstand in Reihe mit der Spule gemessen. Die Wellenform des
+Widerstandes wird die gleiche Form wie der Spulestrom haben, da wir
+aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den
+Widerstand mit V <sub>R</sub> = I <sub>R</sub> * R verbunden sind. Unsere
+Schaltung hat zwei Elemente (Widerstand und Spule) in Reihe, was
+bedeutet, dass der gleiche Strom durch beide Komponenten fließt I
+<sub>Schaltung</sub> = I <sub>L</sub> = I <sub>R</sub>. Wir wissen, dass das
+Signal am Eingang IN2 eine Spannung über dem Widerstand V
+<sub>R</sub> ist und damit der Strom durch die Spule multipliziert
+mit dem Widerstand R.</p>
+<div class="math notranslate nohighlight" id="equation-07-eq-05">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-07-eq-05" title="Permalink to this equation">¶</a></span>\[        IN2 = R \cdot I_L\]</div>
+<p>Daraus folgt, dass wir bei der Beobachtung des Signals IN2 den Strom
+durch den Spule beobachten, und das Einzige, was wir beachten müssen,
+ist der Skalierungsfaktor - Widerstand R.</p>
+<p>Aus den Wellenformen des Scopes sollten wir die Zeitkonstante
+<span class="math notranslate nohighlight">\(\tau\)</span> messen können, die gleich <span class="math notranslate nohighlight">\(\tau\)</span> = L / R
+<sub>total</sub> sein sollte. Hier ist R <sub>total</sub> der
+Gesamtwiderstand und kann aus R <sub>total</sub> = R
+<sub>Spule</sub> + R berechnet werden.</p>
+<p>Der Wert für R <sub>Spule</sub> ist der Messwert des
+Induktionswiderstandes und kann mit einem Multimeter vor der
+Durchführung des Experiments gemessen werden. (Messen Sie die R
+<sub>Spule</sub> genauso, wie Sie den normalen Widerstand messen würden.)</p>
+</div>
+<div class="section" id="materialien">
+<h2>7.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Red Pitaya STEMlab 125-14 oder STEMlab 125-10</p>
+<ul class="simple">
+<li>Widerstand <span class="math notranslate nohighlight">\(R = 220\,\Omega\)</span></li>
+<li>Spule <span class="math notranslate nohighlight">\(L = 20\,mH\)</span></li>
+</ul>
+</div>
+<div class="section" id="vorgehensweise">
+<h2>7.4. Vorgehensweise<a class="headerlink" href="#vorgehensweise" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Messen Sie den kombinierten Spule- und Widerstandswiderstand R <sub>total</sub> mit einem Multimeter.</p>
+<div class="figure" id="id3">
+<span id="fig-04"></span><img alt="_images/Activity_07_Fig_04.png" src="_images/Activity_07_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 7.4 </span><span class="caption-text">Versuchsaufbau</span></p>
+</div>
+</li>
+<li><p class="first">Bauen Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer
+lötfreien Leiterplatte mit den Bauteilwerten R <sub>1</sub> = 220 Ω und
+L <sub>1</sub> = 20mH auf.</p>
+<ul>
+<li><p class="first">Schließen Sie die Sonden des Oszilloskops und des
+Signalgenerators wie in Abbildung 5 dargestellt an.</p>
+<ul>
+<li><p class="first">Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.</p>
+<p>Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first">Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5 und den
+Amplitudenwert auf 0,5V einstellen, um eine 1Vp-p Rechteckwelle mit
+einer Zentrierung von 0,5 V als Eingangsspannung für die Schaltung
+anzulegen. Wählen Sie aus dem Wellenform-Menü SQUARE-Signal,
+deaktivieren Sie die SHOW-Taste und aktivieren Sie Enable. Stellen
+Sie sicher, dass IN1 V/div und IN2 V/div beide auf 200mV/div
+eingestellt sind (Sie können V/div einstellen, indem Sie den
+gewünschten Kanal auswählen und vertikale +/- Regler verwenden). Im
+Einstellungsmenü IN1 und IN2 den Wert des vertikalen Versatzes
+auf -500mV einstellen. Für die stabile Aufnahme stellen Sie den
+Triggerpegel im TRIGGER-Menü auf 0,5V und wählen Sie NORMAL.</p>
+<p>Berechnen Sie die angewandte Frequenz nach Gleichung (2) für tp = 5
+<span class="math notranslate nohighlight">\(\tau\)</span>. Im Menü OUT1 die Frequenz entsprechend der Berechnung
+einstellen.</p>
+<p>Stellen Sie die Zeitbasis mit der horizontalen +/- Steuerung so
+ein, dass Sie etwa zwei Zyklen der Rechteckwelle auf dem
+Anzeigegitter haben.</p>
+</li>
+<li><p class="first">Die V <sub>R</sub> (IN2) Wellenform hat die gleiche Form wie die I
+<sub>L</sub> (t) Wellenform. Messen Sie aus V <sub>R</sub> die
+Zeitkonstante <span class="math notranslate nohighlight">\(\tau\)</span> und vergleichen Sie sie mit
+derjenigen, die Sie aus L/R <sub>total</sub> berechnet haben.</p>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<dl class="docutils">
+<dt>Bei der Messung des RC-Transienteneffekts haben wir den</dt>
+<dd>Cursor verwendet, um 0,63*Vc zu finden, hier interessieren
+wir uns für den Strom I <sub>L</sub> = IN2/R und nicht für die
+Spannung. Gemäß der Abbildung 3 sollten Sie den Cursor Y1
+auf den Maximalwert von IN2 und den Cursor Y2 auf den Wert
+0,37*IN2 stellen. Die Cursor X1 und X2 auf die
+Kreuzungspunkte einstellen und die Zeitkonstante messen.</dd>
+</dl>
+<p>Zur Bestimmung der Zeitkonstante verwenden Sie die Option
+„CURSOR“. Öffnen Sie das Menü CURSOR und wählen Sie alle vier
+Cursor aus: X1, X2, Y1, Y2. Für den Y-Cursor wählen Sie IN2 für die
+Quelle. Steuern/Bewegen von Cursorn mit einem
+Linksklick+Maussteuerung auf der Cursor-Markierung (ein Pfeil am
+Ende der Cursorlinie).</p>
+<p class="last">Um die Cursor genauer einzustellen, stellen Sie die Zeitbasis ein,
+bis Sie etwa eine oder die Hälfte des Zyklus der Rechteckwelle auf
+dem Anzeigegitter haben.</p>
+</div>
+<ol class="arabic simple" start="5">
+<li>Beobachten Sie die Reaktion der Schaltung und notieren Sie die
+Ergebnisse erneut für tp = 25 <span class="math notranslate nohighlight">\(\tau\)</span> und tp = 0,5
+<span class="math notranslate nohighlight">\(\tau\)</span>.</li>
+</ol>
+</div>
+<div class="section" id="fragen">
+<h2>7.5. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Fügen Sie Diagramme von I <sub>L</sub> und V <sub>R</sub> für verschiedene
+tp-Werte hinzu, die oben in Verfahren 4 beschrieben sind.</li>
+<li>Ein Kondensator speichert die Ladung. Was denkst du, was eine Spule
+speichert? Antworte kurz.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_08_ResonanceRCL.html" class="btn btn-neutral float-right" title="8. Resonanz in RLC-Schaltungen" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_06_ResponseRC.html" class="btn btn-neutral" title="6. Transient Response der RC-Beschaltung" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

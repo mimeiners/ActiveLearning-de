@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>28. DC-DC-Aufwärtswandler &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="prev" title="27. MOS-Transistor-Source-Verstärker" href="Activity_27_MOSCommonSourceAmplifier.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">28. DC-DC-Aufwärtswandler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">28.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">28.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrundinformationen">28.3. Hintergrundinformationen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">28.4. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">28.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">28.6. Fragen</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>28. DC-DC-Aufwärtswandler</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_28_BoostConverter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dc-dc-aufwartswandler">
+<h1>28. DC-DC-Aufwärtswandler<a class="headerlink" href="#dc-dc-aufwartswandler" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>28.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Hier werden wir eine induktiv arbeitende Schaltung untersuchen, die eine
+Ausgangsspannung erzeugen kann, die höher ist als die eingespeiste Spannung.
+Diese Schaltungsklasse wird als DC/DC-Wandler oder Boost-Regler bezeichnet.
+In diesem Experiment wird die Spannung aus einer <span class="math notranslate nohighlight">\(1,5\,V\)</span> Versorgung (Batterie)
+auf eine ausreichend hohe Spannung (<span class="math notranslate nohighlight">\(\approx 5\,V\)</span>) angehoben, um zwei LEDs in Reihe zu
+betreiben. <strong>Beachten Sie, dass die Durchlassspannung der LED typischerweise</strong> <span class="math notranslate nohighlight">\(1,8\,V\)</span>
+<strong>beträgt, obwohl sie bei einigen Dioden bis zu</strong> <span class="math notranslate nohighlight">\(3,3\,V\)</span> <strong>betragen kann (blaue LED)</strong>.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>28.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> geht.
+Die Oszilloskop- und <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signalgeneratoranwendung</a> wird zum Erzeugen und Beobachten
+von Signalen auf der Schaltung verwendet. Die Erweiterungsstecker-Pins für die
+Spannungsversorgung <span class="math notranslate nohighlight">\(+5\,V\)</span>, <span class="math notranslate nohighlight">\(-3,3\,V\)</span> und <span class="math notranslate nohighlight">\(+3,3\,V\)</span> sind in der <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">Dokumentation</a> dargestellt.</p>
+</div>
+<div class="section" id="hintergrundinformationen">
+<h2>28.3. Hintergrundinformationen<a class="headerlink" href="#hintergrundinformationen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Schließen Sie eine Ihrer LEDs vorübergehend an die <span class="math notranslate nohighlight">\(1,5\,V\)</span> -Batterie an.
+Achten Sie auf die Polarität der Diode, damit sie vorwärts gerichtet ist.
+Leuchtet es? Wahrscheinlich nicht, da <span class="math notranslate nohighlight">\(1,5\,V\)</span> im Allgemeinen nicht ausreichen,
+um eine LED einzuschalten. Wir brauchen eine Möglichkeit, die <span class="math notranslate nohighlight">\(1,5\,V\)</span> auf eine höhere
+Spannung anzuheben, um eine einzelne LED zu betreiben, geschweige denn zwei in
+Reihe geschaltete LEDs.</p>
+<p>Ein Aufwärtswandler (Hochsetzsteller) ist ein DC/DC-Leistungswandler,
+der die Spannung (beim Absenken des Stroms) von seinem Eingang (Versorgung)
+zu seinem Ausgang (Last) erhöht. Es handelt sich um eine Klasse von Schaltnetzteilen (SMPS),
+die mindestens zwei Halbleiter (eine Diode und einen Transistor) und mindestens ein
+Energiespeicherelement enthalten: einen Kondensator, einen Induktor oder die beiden
+in Kombination. Um die Spannungswelligkeit zu reduzieren, werden in der Regel Filter
+aus Kondensatoren (teilweise in Kombination mit Induktoren) an den Ausgang (lastseitiger Filter)
+und Eingang (versorgungsseitiger Filter) eines solchen Umrichters angefügt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Die Funktionsweise des DC-DC Aufwärtswandlers wird in diesem <a class="reference external" href="https://en.wikipedia.org/wiki/Boost_converter">Wikipedia-Artikel</a>
+ausführlich erläutert. Vor der Versuchsdurchführung wird ein kurzer Überblick
+über die Theorie empfohlen.</p>
+</div>
+<p>Die klassische DC-DC Aufwärtswandlerschaltung ist in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a> dargestellt.
+Abhängig von der gewünschten Betriebs-(Schalt-)Frequenz und dem maximalen Nennstrom
+ist die Induktivität <span class="math notranslate nohighlight">\(L_1\)</span> auszuwählen. In diesem Experiment wird für <span class="math notranslate nohighlight">\(L_1\)</span>
+eine <span class="math notranslate nohighlight">\(100\,\mu H\)</span> Leistungsinduktivität mit <span class="math notranslate nohighlight">\(1\,A\)</span> -Nennstrom verwendet.
+Die Betriebs-(Schalt-)Frequenz sollte im Bereich von <span class="math notranslate nohighlight">\(10-50\,kHz\)</span> liegen.
+Für die Gleichrichter <span class="math notranslate nohighlight">\(D_1\)</span> kann klassische <a class="reference external" href="http://www.vishay.com/docs/88503/1n4001.pdf">1N4001</a> oder 1N3064 Dioden verwendet werden.
+Für den <span class="math notranslate nohighlight">\(M_1\)</span> -Transistor verwenden wir <a class="reference external" href="http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663">IRLU120N</a>. Wir haben diesen Leistungs-MOSFET-Transistor
+ausgewählt, da er eine niedrige Schwellenspannung <span class="math notranslate nohighlight">\(V_TH\)</span> aufweist.
+Wenn Sie FET-Transistoren mit hoher Schwellenspannung und Niederspannungs-Treibersignal (Gatesignal)
+verwenden, kann das Schalten des MOSFETs nicht optimal sein. Der ausgewählte MOSFET hat bereits eine
+integrierte Bulk-Diode, so dass eine externe Diode D2 nicht erforderlich ist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Der einfache <a class="reference external" href="https://learn.adafruit.com/diy-boost-calc/the-calculator">DC-DC-Aufwärtswandler-Rechner</a> ist auch auf der Adafruit-Webseite verfügbar..</p>
+</div>
+<p>Für den Speicherkondensator <span class="math notranslate nohighlight">\(C_1\)</span> elektrolytischer Hochkapazitätskondensator gewählt werden.
+Die Auswahl dieses Kondensators hängt von den Nennströmen, der Schaltfrequenz und dem Wert der Indutivität ab.
+Aber um auf der sicheren Seite zu sein, wären Werte über <span class="math notranslate nohighlight">\(10\,\mu F\)</span> ausreichend.
+Ein in diesem Experiment verwendeter DC-DC-Aufwärtswandler ist in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a> dargestellt.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_28_Fig_01.png" src="_images/Activity_28_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 28.1 </span><span class="caption-text">DC-DC-Aufwärtswandler</span></p>
+</div>
+<p>In <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a> ist die grundlegende DC-DC-Aufwärtswandlerschaltung dargestellt.
+Der Umrichterschaltung wird eine <span class="math notranslate nohighlight">\(200\,\Omega\)</span> Last hinzugefügt. Für den stabilen
+Betrieb des DC-DC-Aufwärtswandlers ist entweder eine konstante Last oder eine Lastregelung
+erforderlich. Ohne Regelung wirkt sich jede Änderung der Last auf den Ausgangsspannungspegel aus.
+Deshalb haben wir <span class="math notranslate nohighlight">\(200\,\Omega\)</span> Last eingestellt, um die Ausgangsspannung zu stabilisieren.
+Parallel zur Last werden zwei LED-Dioden in Reihe mit <span class="math notranslate nohighlight">\(1\,k\Omega\)</span> -Widerständen hinzugefügt.
+Beachten Sie, dass das Hinzufügen oder Entfernen zusätzlicher LEDs parallel zur Last keinen
+Einfluss auf die Ausgangsspannung hat, da die Stromaufnahme der LEDs viel geringer ist als die
+Stromaufnahme der <span class="math notranslate nohighlight">\(200\,\Omega\)</span>  Last. LEDs dienen als Anzeige dafür, dass unsere
+DC-Batteriespannung von <span class="math notranslate nohighlight">\(1,5\,V\)</span> auf <span class="math notranslate nohighlight">\(\approx 5\,V\)</span> erhöht wird. Wenn die LEDs
+aus sind, bedeutet das, dass unsere Batteriespannung unter der LED-Vorspannung (<span class="math notranslate nohighlight">\(2 \cdot 1,8\,V\)</span>) liegt
+und somit anzeigt, dass die DC-DC-Aufwärtswandlerschaltung nicht ordnungsgemäß funktioniert.</p>
+<p>Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem maximalen Ausgangsbereich
+von <span class="math notranslate nohighlight">\(+/- 1\,V\)</span> (<span class="math notranslate nohighlight">\(2\,V_{pp}\)</span>) erzeugen. Da für das MOSFET-Schalten die höheren
+Signalamplituden erforderlich sind, haben wir zwei NPN-Transistoren im Schaltmodus als
+Zwischenstufe, zwischen OUT1-Schaltsignal und MOSFET-Transistor verwendet. Das Rechtecksignal
+OUT1 schaltet den ersten NPN-Transistor ein und aus, wodurch die Kollektorspannung zwischen
+<span class="math notranslate nohighlight">\(0-5\,V\)</span> schwankt. Diese Kollektorspannung steuert dann den zweiten NPN-Transistor und
+seine Kollektorspannung, die ebenfalls zwischen <span class="math notranslate nohighlight">\(0-5\,V\)</span> schwankt, schaltet dann
+den MOSFET-Transistor ein und aus. Der Grund für die Verwendung von zwei NPN-Transistoren
+ist, dass das OUT1- und MOSFET-Gatesignal phasenrichtig sein müssen. D.h. wenn OUT1 high
+ist, sollte das Signal auf dem MOSFET-Gate ebenfalls high sein. Die Verwendung nur eines
+Transistors führt zu einer Phasenverschiebung von <span class="math notranslate nohighlight">\(180\Grad\)</span>. Sie können hier auch
+das andere wichtigere Problem sehen. Wenn wir nur einen NPN-Transistor verwenden, dann wird
+der MOSFET-Transistor, wenn OUT1 ständig ausgeschaltet wird, ständig eingeschaltet und erzeugt
+einen Kurzschluss: Batterie - Induktivität - Mosfet - gnd. Die Verwendung von zwei NPN-Transistoren
+verhindert dies.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Beachten Sie, dass die <span class="math notranslate nohighlight">\(+5\,V\)</span> -Spannungsschiene des STEMlab nur für die
+Transistorschaltung und nicht für die Lastversorgung verwendet wird. D.h. die
+elektrische Energie fließt von der Batterie zum LOAD und den LEDs.</p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>28.4. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Rotes Pitaya STEMlab</li>
+<li>1x <span class="math notranslate nohighlight">\(1\,k\Omega\)</span> Widerstand</li>
+<li>3 x <span class="math notranslate nohighlight">\(470\,\Omega\)</span> Widerstand</li>
+<li>1x <span class="math notranslate nohighlight">\(10\,k\Omega\)</span> Widerstand</li>
+<li>1x <span class="math notranslate nohighlight">\(100 \ mu H\)</span> Leistungsinduktivität</li>
+<li>1x <span class="math notranslate nohighlight">\(47 \ mu F\)</span> Kondensator</li>
+<li>2x LED (rot)</li>
+<li>1x 1W <span class="math notranslate nohighlight">\(200\,\Omega\)</span> Widerstand</li>
+<li>1x Signaldiode (<a class="reference external" href="http://www.vishay.com/docs/88503/1n4001.pdf">1N4001</a>)</li>
+<li>2x Kleinsignal-NPN-Transistor (<a class="reference external" href="https://www.sparkfun.com/datasheets/Components/2N3904.pdf">2N3904</a>)</li>
+<li>1x Leistungs-MOS-Transistor (<a class="reference external" href="http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663">IRLU120N</a>)</li>
+<li>1x AA <span class="math notranslate nohighlight">\(1,5\,V\)</span> Batterie oder Labornetzteil</li>
+<li>1x lötfreies Steckbrett</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>28.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a> auf. Befolgen Sie dabei die obigen
+Anweisungen und orientieren Sie sich am Schaltzplan.</li>
+</ol>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_28_Fig_02.png" src="_images/Activity_28_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 28.2 </span><span class="caption-text">DC - DC Boost Converter auf dem Steckbrett</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li><strong>Stellen Sie die Dämpfung der IN1- und IN2-Scope-Sonden auf x10 ein.</strong></li>
+<li>Verbinden Sie die IN1-Scope-Sonde mit dem Punkt 3
+und dem IN2-Scope-Sonde mit dem Punkt 5 auf Ihrer Schaltung (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>).</li>
+<li>Starten Sie die Applikation Oszilloskop &amp; Signalgenerator - <strong>OUT1 muss deaktiviert (ausgeschaltet) sein</strong></li>
+<li>Stellen Sie in den Menüeinstellungen IN1 und IN2 die Sondendämpfung
+auf x10 ein</li>
+<li>Wählen Sie im Menü MEASUREMENTS die Option MEAN für IN1 und IN2.</li>
+<li>Was sind die Werte der Gleichspannung an Punkt 3 und 5 (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>)?</li>
+</ol>
+<p>An dieser Stelle, wenn das Schaltsignal OUT1 deaktiviert ist, ist der DC-DC-Aufwärtswandler
+nicht funktionsfähig. Der Transistor <span class="math notranslate nohighlight">\(M_1\)</span> wird ausgeschaltet (Leerlauf) und die
+Batteriespannung wird über die Induktivität <span class="math notranslate nohighlight">\(L_1\)</span> und die Diode <span class="math notranslate nohighlight">\(D_1\)</span> auf die
+Lastseite übertragen (Punkt 5 in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>). Bei Gleichstromsignalen (kein Schalten)
+verhält sich die <span class="math notranslate nohighlight">\(L_1\)</span> -Induktivität wie ein Kurzschluss, daher wird die Ausgangsspannung
+durch die Batteriespannung um die Schwellspannung der <span class="math notranslate nohighlight">\(D_1\)</span> -Diode verringert:
+<span class="math notranslate nohighlight">\(V_{out} = V_{Batterie} - V_{Diode}\)</span>. Dieser Zustand ist in den Messungen auf
+<a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 28.3</span></a> dargestellt. Wie erwartet, werden die <span class="math notranslate nohighlight">\(LED_1\)</span> und <span class="math notranslate nohighlight">\(LED_2\)</span>
+nicht leuchten, da die Ausgangsspannung unter der Durchlassspannung
+der LEDs liegt (<span class="math notranslate nohighlight">\(2 \cdot 1,8\,V\)</span>).</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_28_Fig_03.png" src="_images/Activity_28_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 28.3 </span><span class="caption-text">DC - DC - Boost - Konverter ist ausgeschaltet</span></p>
+</div>
+<ol class="arabic simple" start="8">
+<li>Stellen Sie in den OUT1-Menüeinstellungen die Frequenz auf <span class="math notranslate nohighlight">\(10\,kHz\)</span>,
+die Wellenform auf PWM, die Amplitude auf <span class="math notranslate nohighlight">\(0,5\,V\)</span>, den DC-Offset auf
+<span class="math notranslate nohighlight">\(0,5\,V\)</span> ein, deaktivieren Sie SHOW und wählen Sie Enable.</li>
+<li>Wählen Sie im Menü MEASUREMENTS P2P-Messungen für IN1 und IN2</li>
+<li>Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> -Wert auf <span class="math notranslate nohighlight">\(100\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</li>
+</ol>
+<p>An diesem Punkt, an dem das  Schaltsignal OUT1 aktiviert ist, ist der
+DC-DC-Aufwärtswandler funktionsfähig und verhält sich wie oben in der
+Theorie beschrieben. Die Ausgangsspannung wird auf ca. <span class="math notranslate nohighlight">\(5\,V\)</span> angehoben und die LEDs leuchten.
+Dieser Zustand ist in <a href="#id1"><span class="problematic" id="id2">:numfig:`28_fig_04`</span></a> dargestellt. Wie wir aus den Messungen ersehen können,
+tritt bei Batterie und Ausgangsspannung eine Restwelligkeit auf, die durch
+Batteriespannungswelligkeit und Transistor <span class="math notranslate nohighlight">\(M_1\)</span> -Schaltung verursacht wird.
+Die Spannungswelligkeit der Batterie ist darauf zurückzuführen, dass die Batterie keine
+ideale Spannungsquelle ist, und wenn M1 eingeschaltet wird, verursacht der von der Batterie
+abgegeber Strom einen Spannungsabfall.</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_28_Fig_04.png" src="_images/Activity_28_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 28.4 </span><span class="caption-text">DC - DC - Boost - Konverter ist eingeschaltet</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Welligkeitsspannungswerte sind einer der wichtigsten Parameter der DC-DC-Wandlerqualität.
+Die geringere Ausgangswelligkeit entspricht einem besseren DC-DC-Aufwärtswandler.
+Der Kondensator <span class="math notranslate nohighlight">\(C_1\)</span> wird daher benötigt, um die an Induktivität <span class="math notranslate nohighlight">\(L_1\)</span> und
+Diode <span class="math notranslate nohighlight">\(D_1\)</span> auftretende Schaltspannung zu kompensieren und zu glätten.
+Versuchen Sie, <span class="math notranslate nohighlight">\(C_1\)</span> zu entfernen und beobachten Sie <span class="math notranslate nohighlight">\(V_{out}\)</span>.</p>
+</div>
+<ol class="arabic simple" start="11">
+<li>Um die Schaltspannungen des <span class="math notranslate nohighlight">\(M_1\)</span> -MOS-Transistors zu beobachten, setzen Sie
+die IN1-Sonde auf den Punkt 2 (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>) und die IN2-Sonde auf
+den Punkt 4 (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>).</li>
+<li>Stellen Sie im IN2-Einstellungsmenü den vertikalen Offset auf <span class="math notranslate nohighlight">\(-4,0\,V\)</span>
+ein (um das Signal IN2 besser sehen zu können).</li>
+<li>Wählen Sie im TRIGGER-Menü NORMAL und stellen Sie den Triggerpegel
+auf <span class="math notranslate nohighlight">\(3,0\,V\)</span> ein.</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(20\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_28_Fig_05.png" src="_images/Activity_28_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 28.5 </span><span class="caption-text">M1 Schaltspannungen</span></p>
+</div>
+<p>Auf der <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 28.5</span></a> sind <span class="math notranslate nohighlight">\(M_1\)</span> Gate- und Drain-Signale dargestellt. Aus <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 28.5</span></a> können wir ersehen, dass das Gatesignal eine schaltende Rechteckwelle ist, die den Transistor steuert. Das Drain-Signal entspricht den Zuständen „offen/geschlossen“ des Transistors <span class="math notranslate nohighlight">\(M_1\)</span>, aber im Zustand „aus“ sind deutliche Schwingungen sichtbar. Dies ist die Auswirkung der Induktivität <span class="math notranslate nohighlight">\(L_1\)</span>, da diese jede Stromänderung durch sie hindurch annimmt, die die Drainspannung <span class="math notranslate nohighlight">\(M_1\)</span> beeinflusst.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Der Ausgangsspannungswert des DC-DC-Aufwärtswandlers wird oft mit dem
+Tastverhältnis (Duty-Cycle) des Schaltsignals (PWM-Signal) gesteuert.</p>
+</div>
+<ol class="arabic simple" start="15">
+<li>Um die Auswirkungen des Schaltsignals (OUT1) zu beobachten,
+setzen Sie die IN1-Sonde auf den Punkt 2 (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>) und die
+IN2-Sonde auf den Punkt 5 (<a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 28.1</span></a>).</li>
+<li>Stellen Sie in den Menü Einstellungen IN1 und IN2 den vertikalen
+Offset auf <span class="math notranslate nohighlight">\(-3,0\,V\)</span> ein.</li>
+<li>Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(50\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</li>
+<li>In den Einstellungen des Menüs OUT1 das Tastverhältnis von 30% auf 80% ändern und die Ergebnisse beobachten.</li>
+</ol>
+<div class="figure">
+<img alt="_images/Activity_28_Fig_06.png" src="_images/Activity_28_Fig_06.png" />
+</div>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_28_Fig_07.png" src="_images/Activity_28_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 28.6 </span><span class="caption-text">Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten: Ausgangsspannung bei 80% Tastverhältnis</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Aus <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 28.6</span></a> können wir den Einfluss des Tastverhältnisses auf
+die Ausgangsspannung beobachten. Wenn wir mit der Tastverhältnis auf 0% oder 100% gehen,
+dann schalten wir den M1-Transistor aus oder schließen diesen kurz. Zur Vermeidung eines
+Kurzschlüßes und der damit verbundenen Schäden an der Schaltung, sollte die
+Einschaltdauen (high) begrenzt werden.</p>
+</div>
+</div>
+<div class="section" id="fragen">
+<h2>28.6. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Ändern Sie den Lastwert auf <span class="math notranslate nohighlight">\(470\,\Omega\)</span> und beobachten Sie
+die Ergebnisse.</li>
+<li>Ändern Sie die OUT1-Frequenz auf <span class="math notranslate nohighlight">\(5 - 20\,kHz\)</span>. Messen und zeichnen
+Sie die Wellenform der verstärkten Ausgangsspannung und des
+Ausgangsstroms auf. Erklären Sie, was sich geändert hat und warum?</li>
+<li>Wie würde das Hinzufügen eines LC-Filters am Umrichterausgang die
+Spannungswelligkeit beeinflussen?</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Activity_27_MOSCommonSourceAmplifier.html" class="btn btn-neutral" title="27. MOS-Transistor-Source-Verstärker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

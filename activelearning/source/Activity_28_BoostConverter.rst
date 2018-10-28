@@ -4,347 +4,291 @@ DC-DC-Aufwärtswandler
 Zielsetzung
 -----------
 
-Hier werden wir eine induktivitätsbasierte Schaltung untersuchen, die
-eine Ausgangsspannung erzeugen kann, die höher als die zugeführte
-Spannung ist. Diese Klasse von Schaltungen wird als DC / DC-Wandler
-oder Boost-Regler bezeichnet. In diesem Experiment wird die Spannung
-von einer 1,5-V-Versorgung (Batterie) auf eine Spannung erhöht, die
-hoch genug ist (~ 5 V), um zwei LEDs in Reihe zu treiben. **Beachten
-Sie, dass die Vorwärtsspannung der LED typischerweise 1,8 V beträgt,
-obwohl sie für einige Dioden bis zu 3,3 V (blaue LED) reichen kann** 
+Hier werden wir eine induktiv arbeitende Schaltung untersuchen, die eine
+Ausgangsspannung erzeugen kann, die höher ist als die eingespeiste Spannung.
+Diese Schaltungsklasse wird als DC/DC-Wandler oder Boost-Regler bezeichnet.
+In diesem Experiment wird die Spannung aus einer :math:`1,5\,V` Versorgung (Batterie)
+auf eine ausreichend hohe Spannung (:math:`\approx 5\,V`) angehoben, um zwei LEDs in Reihe zu
+betreiben. **Beachten Sie, dass die Durchlassspannung der LED typischerweise** :math:`1,8\,V`
+**beträgt, obwohl sie bei einigen Dioden bis zu** :math:`3,3\,V` **betragen kann (blaue LED)**.
 
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
-.. _this Wikipedia article: https://en.wikipedia.org/wiki/Boost_converter
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Signalgeneratoranwendung: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Wikipedia-Artikel: https://en.wikipedia.org/wiki/Boost_converter
 .. _IRLU120N: http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663
 .. _1N4001: http://www.vishay.com/docs/88503/1n4001.pdf
-.. _boost converter calculator: https://learn.adafruit.com/diy-boost-calc/the-calculator
+.. _DC-DC-Aufwärtswandler-Rechner: https://learn.adafruit.com/diy-boost-calc/the-calculator
 .. _2N3904: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 
-
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
-
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
-
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+ 3.3V**
-verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht.
+Die Oszilloskop- und Signalgeneratoranwendung_ wird zum Erzeugen und Beobachten
+von Signalen auf der Schaltung verwendet. Die Erweiterungsstecker-Pins für die
+Spannungsversorgung :math:`+5\,V`, :math:`-3,3\,V` und :math:`+3,3\,V` sind in der Dokumentation_ dargestellt.
 
 
-Hintergrundgrundlagen
----------------------
+Hintergrundinformationen
+------------------------
 
-Schließen Sie vorübergehend eine Ihrer LEDs an die 1,5-V-Batterie
-an. Achten Sie darauf, die Polarität der Diode zu beachten, damit sie
-in Vorwärtsrichtung vorgespannt ist. Leuchtet es? Wahrscheinlich nicht
-seit 1,5 V reicht im Allgemeinen nicht aus, um eine LED
-einzuschalten. Wir brauchen einen Weg, um die 1,5 V auf eine höhere
-Spannung zu erhöhen, um eine einzelne LED zu beleuchten, geschweige
-denn zwei in Reihe geschaltete LEDs.
+Schließen Sie eine Ihrer LEDs vorübergehend an die :math:`1,5\,V` -Batterie an.
+Achten Sie auf die Polarität der Diode, damit sie vorwärts gerichtet ist.
+Leuchtet es? Wahrscheinlich nicht, da :math:`1,5\,V` im Allgemeinen nicht ausreichen,
+um eine LED einzuschalten. Wir brauchen eine Möglichkeit, die :math:`1,5\,V` auf eine höhere
+Spannung anzuheben, um eine einzelne LED zu betreiben, geschweige denn zwei in
+Reihe geschaltete LEDs.
 
 
-Ein Aufwärtswandler (Hochsetzsteller) ist ein DC /
-DC-Leistungswandler, der die Spannung (während der Abwärtsstrom) von
-seinem Eingang (Versorgung) zu seinem Ausgang (Last) erhöht. Es ist
-eine Klasse von Schaltnetzteilen (SMPS), die mindestens zwei
-Halbleiter (eine Diode und einen Transistor) und mindestens ein
-Energiespeicherelement enthalten: einen Kondensator, einen Induktor
-oder die beiden in Kombination. Um die Spannungswelligkeit zu
-reduzieren, werden normalerweise Filter aus Kondensatoren (manchmal in
-Kombination mit Induktoren) zu einem solchen Wandlerausgang
-(lastseitiges Filter) und Eingang (versorgungsseitiger Filter)
-hinzugefügt.
+Ein Aufwärtswandler (Hochsetzsteller) ist ein DC/DC-Leistungswandler,
+der die Spannung (beim Absenken des Stroms) von seinem Eingang (Versorgung)
+zu seinem Ausgang (Last) erhöht. Es handelt sich um eine Klasse von Schaltnetzteilen (SMPS),
+die mindestens zwei Halbleiter (eine Diode und einen Transistor) und mindestens ein
+Energiespeicherelement enthalten: einen Kondensator, einen Induktor oder die beiden
+in Kombination. Um die Spannungswelligkeit zu reduzieren, werden in der Regel Filter
+aus Kondensatoren (teilweise in Kombination mit Induktoren) an den Ausgang (lastseitiger Filter)
+und Eingang (versorgungsseitiger Filter) eines solchen Umrichters angefügt.
 
 
 .. note::
-   Die Funktionsweise des DC - DC - Boost - Konverters wird in diesem
-   Wikipedia - Artikel erklärt. Vor dem Experiment wird ein kurzer
-   Überblick über die Theorie empfohlen. 
+   Die Funktionsweise des DC-DC Aufwärtswandlers wird in diesem Wikipedia-Artikel_
+   ausführlich erläutert. Vor der Versuchsdurchführung wird ein kurzer Überblick
+   über die Theorie empfohlen.
 
-Die klassische DC-DC-Aufwärtswandlerschaltung ist in Fig. 1
-gezeigt. Abhängig von der gewünschten Betriebsfrequenz
-(Schaltfrequenz) und der maximalen Stromstärke des Induktors
-:math:`L_1` sollte ausgewählt sein. In diesem Experiment für
-:math:`L_1` wird ein :math:`100 \ mu H` -Leistungsinduktor mit
-1A Nennstrom verwendet. Die Betriebsfrequenz
-(Schaltfrequenz) sollte im Bereich von: "10 - 50 kHz"
-liegen. Für den Gleichrichter :math:`D_1` und den Snubber:
-math:`D_2` können die klassischen Dioden 1N4001_ oder
-1N3064 verwendet werden.
-
-Für den :math:`M_1` Transistor werden wir IRLU120N_ verwenden. Wir
-haben diesen Leistungs-MOSFET-Transistor gewählt, da er eine niedrige
-Schwellenspannung hat :math:`V_ {TH}`. Wenn Sie FET-Transistoren mit
-hoher Schwellenspannung und ein Niederspannungstreibersignal
-(Gatesignal) verwenden, könnte das Schalten des MOSFET nicht optimal
-sein. Ausgewählter MOSFET hat bereits eine integrierte Snubber-Diode,
-also externe Diode :math:`D_2` ist nicht notwendig.
-
+Die klassische DC-DC Aufwärtswandlerschaltung ist in :numref:`28_fig_01` dargestellt.
+Abhängig von der gewünschten Betriebs-(Schalt-)Frequenz und dem maximalen Nennstrom
+ist die Induktivität :math:`L_1` auszuwählen. In diesem Experiment wird für :math:`L_1`
+eine :math:`100\,\mu H` Leistungsinduktivität mit :math:`1\,A` -Nennstrom verwendet.
+Die Betriebs-(Schalt-)Frequenz sollte im Bereich von :math:`10-50\,kHz` liegen.
+Für die Gleichrichter :math:`D_1` kann klassische 1N4001_ oder 1N3064 Dioden verwendet werden.
+Für den :math:`M_1` -Transistor verwenden wir IRLU120N_. Wir haben diesen Leistungs-MOSFET-Transistor
+ausgewählt, da er eine niedrige Schwellenspannung :math:`V_TH` aufweist.
+Wenn Sie FET-Transistoren mit hoher Schwellenspannung und Niederspannungs-Treibersignal (Gatesignal)
+verwenden, kann das Schalten des MOSFETs nicht optimal sein. Der ausgewählte MOSFET hat bereits eine
+integrierte Bulk-Diode, so dass eine externe Diode D2 nicht erforderlich ist.
 
 .. note::
-   Ein einfacher DC-DC-Boost-Konverter-Rechner ist auch auf der Adafruit-Webseite verfügbar.
+   Der einfache DC-DC-Aufwärtswandler-Rechner_ ist auch auf der Adafruit-Webseite verfügbar..
 
-Für Speicherkondensator :math:`C_1` und Elektrolytkondensator sollte
-gewählt werden. Die Auswahl dieses Kondensators hängt von
-Stromstärken, Schaltfrequenz und Induktivitätswert ab. Aber um auf der
-sicheren Seite zu sein Werte oben :math:`10 \ mu F` wäre ausreichend.
+Für den Speicherkondensator :math:`C_1` elektrolytischer Hochkapazitätskondensator gewählt werden.
+Die Auswahl dieses Kondensators hängt von den Nennströmen, der Schaltfrequenz und dem Wert der Indutivität ab.
+Aber um auf der sicheren Seite zu sein, wären Werte über :math:`10\,\mu F` ausreichend.
+Ein in diesem Experiment verwendeter DC-DC-Aufwärtswandler ist in :numref:`28_fig_01` dargestellt.
 
-Ein DC-DC-Aufwärtswandler, der in diesem Experiment verwendet wird,
-ist in 1 gezeigt.
 
 
 
 .. figure:: img/ Activity_28_Fig_01.png
+   :name: 28_fig_01
+   :align: center
 
-   Abbildung 1: DC-DC-Aufwärtswandler
+   DC-DC-Aufwärtswandler
 
-   
-In Fig. 1 ist eine grundlegende DC-DC-Aufwärtswandlerschaltung
-gezeigt. Zu der Konverterschaltung wird eine :math:`200 \Omega` -Ladung hinzugefügt.
-**Für einen stabilen Betrieb des DC-DC-Aufwärtswandlers wird entweder
-eine konstante Last oder eine Lastregelung benötigt**.
-Ohne Regulierung wirkt sich eine Änderung
-der Last auf den Ausgangsspannungspegel aus. Deshalb haben wir
-:math:`200 \Omega` Last eingestellt, um die Ausgangsspannung zu
-stabilisieren. Parallel zur Last werden zwei LED-Dioden in Reihe
-mit 1K-Widerständen hinzugefügt. Beachten Sie, dass das
-Hinzufügen oder Entfernen zusätzlicher LEDs parallel zur Last
-die Ausgangsspannung nicht beeinflusst, da der von der LED
-gezogene Strom viel kleiner ist als der Strom, der von
-gezogen wird :math:`200 \Omega` load.
-      
-**LEDs dienen als Indikatoren, dass unsere DC-Batteriespannung von 1,5
-V auf ~ 5 V BOOSTED UP ist.** Wenn die LEDs aus sind, bedeutet dies,
-dass unsere Batteriespannung unter der LED-Vorwärtsspannung (2x1,8 V)
-liegt. DC-Aufwärtswandlerschaltung funktioniert nicht richtig.
+In :numref:`28_fig_01` ist die grundlegende DC-DC-Aufwärtswandlerschaltung dargestellt.
+Der Umrichterschaltung wird eine :math:`200\,\Omega` Last hinzugefügt. Für den stabilen
+Betrieb des DC-DC-Aufwärtswandlers ist entweder eine konstante Last oder eine Lastregelung
+erforderlich. Ohne Regelung wirkt sich jede Änderung der Last auf den Ausgangsspannungspegel aus.
+Deshalb haben wir :math:`200\,\Omega` Last eingestellt, um die Ausgangsspannung zu stabilisieren.
+Parallel zur Last werden zwei LED-Dioden in Reihe mit :math:`1\,k\Omega` -Widerständen hinzugefügt.
+Beachten Sie, dass das Hinzufügen oder Entfernen zusätzlicher LEDs parallel zur Last keinen
+Einfluss auf die Ausgangsspannung hat, da die Stromaufnahme der LEDs viel geringer ist als die
+Stromaufnahme der :math:`200\,\Omega`  Last. LEDs dienen als Anzeige dafür, dass unsere
+DC-Batteriespannung von :math:`1,5\,V` auf :math:`\approx 5\,V` erhöht wird. Wenn die LEDs
+aus sind, bedeutet das, dass unsere Batteriespannung unter der LED-Vorspannung (:math:`2 \cdot 1,8\,V`) liegt
+und somit anzeigt, dass die DC-DC-Aufwärtswandlerschaltung nicht ordnungsgemäß funktioniert.
 
-
-Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für das
-MOSFET-Schalten sind höhere Signalamplituden erforderlich. Deshalb
-haben wir zwei NPN-Transistoren im Schaltmodus als Zwischenstufe
-zwischen OUT1-Schaltsignal und MOSFET-Transistor verwendet. Das
-OUT1-Rechtecksignal schaltet den ersten NPN-Transistor ein und aus,
-wodurch seine Kollektorspannung zwischen 0-5 V schwankt. Diese
-Kollektorspannung steuert dann den zweiten NPN-Transistor und seine
-Kollektorspannung, die ebenfalls zwischen 0-5 V schwingt, schaltet
-dann den MOSFET-Transistor EIN / AUS.
-
-Der Grund, warum zwei NPN-Transistoren verwendet werden, besteht
-darin, dass das Gate-Signal von OUT1 und MOSFET in Phase ist. Wenn
-OUT1 hoch ist, sollte das Signal am MOSFET-Gate ebenfalls hoch
-sein. Die Verwendung eines Transistors verursacht eine
-180-Phasen-Verzögerung. ** Sie können hier auch das andere wichtigere
-Problem sehen. Wenn wir nur einen NPN - Transistor verwenden, dann
-wird, wenn OUT1 konstant AUS - geschaltet ist, der MOSFET - Transistor
-konstant eingeschaltet, was zu einem Kurzschluss führt: Batterie -
-Induktivität - MOSFET - GND. Die Verwendung von zwei
-NPN-Transistoren verhindert dies.
+Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem maximalen Ausgangsbereich
+von :math:`+/- 1\,V` (:math:`2\,V_{pp}`) erzeugen. Da für das MOSFET-Schalten die höheren
+Signalamplituden erforderlich sind, haben wir zwei NPN-Transistoren im Schaltmodus als
+Zwischenstufe, zwischen OUT1-Schaltsignal und MOSFET-Transistor verwendet. Das Rechtecksignal
+OUT1 schaltet den ersten NPN-Transistor ein und aus, wodurch die Kollektorspannung zwischen
+:math:`0-5\,V` schwankt. Diese Kollektorspannung steuert dann den zweiten NPN-Transistor und
+seine Kollektorspannung, die ebenfalls zwischen :math:`0-5\,V` schwankt, schaltet dann
+den MOSFET-Transistor ein und aus. Der Grund für die Verwendung von zwei NPN-Transistoren
+ist, dass das OUT1- und MOSFET-Gatesignal phasenrichtig sein müssen. D.h. wenn OUT1 high
+ist, sollte das Signal auf dem MOSFET-Gate ebenfalls high sein. Die Verwendung nur eines
+Transistors führt zu einer Phasenverschiebung von :math:`180\Grad`. Sie können hier auch
+das andere wichtigere Problem sehen. Wenn wir nur einen NPN-Transistor verwenden, dann wird
+der MOSFET-Transistor, wenn OUT1 ständig ausgeschaltet wird, ständig eingeschaltet und erzeugt
+einen Kurzschluss: Batterie - Induktivität - Mosfet - gnd. Die Verwendung von zwei NPN-Transistoren
+verhindert dies.
 
 
 .. warning::
-   Beachten Sie, dass die + 5V-Spannungsschiene vom STEMlab nur für
-   die Transistorschaltung und nicht für die Lastversorgung verwendet
-   wird. Die elektrische Energie fließt von der Batterie zur LAST und
-   den LEDs.
-   
+   Beachten Sie, dass die :math:`+5\,V` -Spannungsschiene des STEMlab nur für die
+   Transistorschaltung und nicht für die Lastversorgung verwendet wird. D.h. die
+   elektrische Energie fließt von der Batterie zum LOAD und den LEDs.
 
+   
 Materialien
 -----------
 
 - Rotes Pitaya STEMlab
-- 1x 1kΩ Widerstand
-- 3 x 470Ω Widerstand
-- 1x 10kΩ Widerstand
+- 1x :math:`1\,k\Omega` Widerstand
+- 3 x :math:`470\,\Omega` Widerstand
+- 1x :math:`10\,k\Omega` Widerstand
 - 1x :math:`100 \ mu H` Leistungsinduktivität
 - 1x :math:`47 \ mu F` Kondensator
 - 2x LED (rot)
-- 1x 1W 200Ω Widerstand
+- 1x 1W :math:`200\,\Omega` Widerstand
 - 1x Signaldiode (1N4001_)
 - 2x Kleinsignal-NPN-Transistor (2N3904_)
 - 1x Leistungs-MOS-Transistor (IRLU120N_)
-- 1x AA 1,5 V Batterie
+- 1x AA :math:`1,5\,V` Batterie oder Labornetzteil
 - 1x lötfreies Steckbrett
 
   
 Verfahren
 ---------
 
-1. Nach den obigen Anweisungen und den Schaltplänen von Abbildung 1
-   bauen Sie die Schaltung auf dem Steckbrett auf.
+1. Bauen Sie die Schaltung aus :numref:`28_fig_01` auf. Befolgen Sie dabei die obigen
+   Anweisungen und orientieren Sie sich am Schaltzplan.  
    
-
-
 .. figure:: img/ Activity_28_Fig_02.png
+   :name: 28_fig_02
+   :align: center
 
-   Abbildung 2: DC - DC Boost Converter auf dem Steckbrett
+   DC - DC Boost Converter auf dem Steckbrett
 
    
-2. ** Setze IN1 und IN2 Scope Probes Dämpfungen auf x10 **
+2. **Stellen Sie die Dämpfung der IN1- und IN2-Scope-Sonden auf x10 ein.**
    
-3. Verbinden Sie den IN1-Scope-Sensor mit dem Punkt 3 (Abbildung 1)
-   und dem IN2-Scope-Probe mit dem Punkt (5)
+3. Verbinden Sie die IN1-Scope-Sonde mit dem Punkt 3
+   und dem IN2-Scope-Sonde mit dem Punkt 5 auf Ihrer Schaltung (:numref:`28_fig_01`). 
    
-4. Starten Sie die Applikation Oszilloskop & Signalgenerator - ** OUT1
-   muss deaktiviert sein (ausgeschaltet) **
+4. Starten Sie die Applikation Oszilloskop & Signalgenerator - **OUT1 muss deaktiviert (ausgeschaltet) sein**
    
 5. Stellen Sie in den Menüeinstellungen IN1 und IN2 die Sondendämpfung
    auf x10 ein
    
-6. Wählen Sie im Menü MESSUNGEN MEAN-Messungen für IN1 und IN2
+6. Wählen Sie im Menü MEASUREMENTS die Option MEAN für IN1 und IN2.
    
-7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (Bild 1)?
+7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (:numref:`28_fig_01`)?
    
-
-Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist
-der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1`
-ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor:
-math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt
-5, Abbildung 1). Für DC-Signale (keine Umschaltung) verhält sich die
-:math:`L_1` -Induktivität wie ein Kurzschluss, daher ist die
-Ausgangsspannung die Batteriespannung, die sich verringert durch
-:math:`D_1` Dioden-Durchlassspannung:
-:math:`V_ {out} = V_{Batterie} - V_ {Diode}`. Dieser Zustand wird in den
-Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben,
-sind :math:`LED_1` und :math:`LED_2` ausgeschaltet, da die
-Ausgangsspannung unter der Durchlassspannung der LEDs
-liegt (2x1.8V).
+An dieser Stelle, wenn das Schaltsignal OUT1 deaktiviert ist, ist der DC-DC-Aufwärtswandler
+nicht funktionsfähig. Der Transistor :math:`M_1` wird ausgeschaltet (Leerlauf) und die
+Batteriespannung wird über die Induktivität :math:`L_1` und die Diode :math:`D_1` auf die
+Lastseite übertragen (Punkt 5 in :numref:`28_fig_01`). Bei Gleichstromsignalen (kein Schalten)
+verhält sich die :math:`L_1` -Induktivität wie ein Kurzschluss, daher wird die Ausgangsspannung
+durch die Batteriespannung um die Schwellspannung der :math:`D_1` -Diode verringert:
+:math:`V_{out} = V_{Batterie} - V_{Diode}`. Dieser Zustand ist in den Messungen auf
+:numref:`28_fig_03` dargestellt. Wie erwartet, werden die :math:`LED_1` und :math:`LED_2`
+nicht leuchten, da die Ausgangsspannung unter der Durchlassspannung
+der LEDs liegt (:math:`2 \cdot 1,8\,V`).
 	    
 
 .. figure:: img/ Activity_28_Fig_03.png
+   :name: 28_fig_03
+   :align: center
 
-   Abbildung 3: DC - DC - Boost - Konverter ist ausgeschaltet
+   DC - DC - Boost - Konverter ist ausgeschaltet
 
-   
-8. Stellen Sie in den OUT1-Menüeinstellungen die Frequenz auf 10 kHz,
-   die Wellenform auf PWM, die Amplitude auf 0,5 V, den DC-Offset auf
-   0,5 V ein, deaktivieren Sie SHOW und wählen Sie ON.
+8. Stellen Sie in den OUT1-Menüeinstellungen die Frequenz auf :math:`10\,kHz`,
+   die Wellenform auf PWM, die Amplitude auf :math:`0,5\,V`, den DC-Offset auf
+   :math:`0,5\,V` ein, deaktivieren Sie SHOW und wählen Sie Enable.
    
 9. Wählen Sie im Menü MEASUREMENTS P2P-Messungen für IN1 und IN2
    
-10. Setzen Sie t / div Wert auf 100us / div (Sie können t / div mit
-    horizontalen +/- Kontrollen einstellen)
+10. Setzen Sie :math:`t/div` -Wert auf :math:`100\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
 
-An diesem Punkt, wenn das Schaltsignal OUT1 freigegeben ist, ist der
+An diesem Punkt, an dem das  Schaltsignal OUT1 aktiviert ist, ist der
 DC-DC-Aufwärtswandler funktionsfähig und verhält sich wie oben in der
-Theorie beschrieben. Die Ausgangsspannung wird auf ca. 5V erhöht und
-die LEDs werden eingeschaltet. Dieser Zustand ist in Abbildung 4
-dargestellt. Wie man an den Messungen sehen kann, tritt an der
-Batterie und an der Ausgangsspannung eine Welligkeit auf. Die
-Welligkeit der Ausgangsspannung wird durch die Welligkeit der
-Batteriespannung und den Transistor :math:`M_1` verursacht. Die
-Batteriespannungswelligkeit ist darauf zurückzuführen, dass die
-Batterie keine ideale Spannungsquelle ist und wenn :math:`M_1`
-eingeschaltet ist, verursacht der von der Batterie ertrunkene Strom
-einen Spannungsabfall.
+Theorie beschrieben. Die Ausgangsspannung wird auf ca. :math:`5\,V` angehoben und die LEDs leuchten.
+Dieser Zustand ist in :numref:`28_fig_04` dargestellt. Wie wir aus den Messungen ersehen können,
+tritt bei Batterie und Ausgangsspannung eine Restwelligkeit auf, die durch
+Batteriespannungswelligkeit und Transistor :math:`M_1` -Schaltung verursacht wird.
+Die Spannungswelligkeit der Batterie ist darauf zurückzuführen, dass die Batterie keine
+ideale Spannungsquelle ist, und wenn M1 eingeschaltet wird, verursacht der von der Batterie
+abgegeber Strom einen Spannungsabfall.
 
 
 .. figure:: img/ Activity_28_Fig_04.png
+   :name: 28_fig_04
+   :align: center
 
-   Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
+   DC - DC - Boost - Konverter ist eingeschaltet
 
-   
 .. note::
-   Spannungswelligkeitswerte sind einer der Hauptparameter der
-   DC-DC-Wandlerqualität. Geringere Ausgangswelligkeit entspricht
-   einem besseren DC-DC-Aufwärtswandler.
-   
-   Kondensator :math:`C_1` wird daher benötigt, um die an der
-   Induktivität erscheinende Schaltspannung zu kompensieren und zu
-   glätten :math:`L_1` und diode :math:`D_1`.
-   
-   Versuche zu entfernen :math:`C_1` und beobachte :math:`V_ {out}`.
+   Welligkeitsspannungswerte sind einer der wichtigsten Parameter der DC-DC-Wandlerqualität.
+   Die geringere Ausgangswelligkeit entspricht einem besseren DC-DC-Aufwärtswandler.
+   Der Kondensator :math:`C_1` wird daher benötigt, um die an Induktivität :math:`L_1` und
+   Diode :math:`D_1` auftretende Schaltspannung zu kompensieren und zu glätten.
+   Versuchen Sie, :math:`C_1` zu entfernen und beobachten Sie :math:`V_{out}`.
 
 
-11. Um die Schaltspannungen von :math:`M_1` zu beobachten, stellen Sie
-    die IN1-Sonde auf den Punkt 2 (Abbildung 1) und die IN2-Sonde auf
-    den Punkt 4 (Abbildung 1).
+11. Um die Schaltspannungen des :math:`M_1` -MOS-Transistors zu beobachten, setzen Sie
+    die IN1-Sonde auf den Punkt 2 (:numref:`28_fig_01`) und die IN2-Sonde auf
+    den Punkt 4 (:numref:`28_fig_01`).
     
-12. Stellen Sie im IN2-Einstellungsmenü den vertikalen Offset -4.0V
-    ein (um das Signal IN2 besser sehen zu können)
+12. Stellen Sie im IN2-Einstellungsmenü den vertikalen Offset auf :math:`-4,0\,V`
+    ein (um das Signal IN2 besser sehen zu können).
     
 13. Wählen Sie im TRIGGER-Menü NORMAL und stellen Sie den Triggerpegel
-    auf 3.0V ein
+    auf :math:`3,0\,V` ein.
     
-14. Setze t / div Wert auf 20us / div (Du kannst t / div mit
-    horizontalen +/- Kontrollen einstellen)
+14. Setze :math:`t/div` Wert auf :math:`20\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
 
 .. figure:: img/ Activity_28_Fig_05.png
+   :name: 28_fig_05
+   :align: center
 
-   Abbildung 5: M1 Schaltspannungen
+   M1 Schaltspannungen
 
-   
-In der Abbildung 5 sind :math:`M_1` Gate- und Drain-Signale
-dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine
-schaltende Rechteckwelle ist, die den Transistor steuert.
-
-Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des
-Transistors :math:`M_1`, aber während des" Off "-Zustandes sind
-signifikante Oszillationen sichtbar. Dies ist der Einfluss des
-Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn
-beeinflusst, die die Drain-Spannung von :math:`M_1` beeinflusst.
-
+Auf der :numref:`28_fig_05` sind :math:`M_1` Gate- und Drain-Signale dargestellt. Aus :numref:`28_fig_05` können wir ersehen, dass das Gatesignal eine schaltende Rechteckwelle ist, die den Transistor steuert. Das Drain-Signal entspricht den Zuständen "offen/geschlossen" des Transistors :math:`M_1`, aber im Zustand "aus" sind deutliche Schwingungen sichtbar. Dies ist die Auswirkung der Induktivität :math:`L_1`, da diese jede Stromänderung durch sie hindurch annimmt, die die Drainspannung :math:`M_1` beeinflusst.
 
 .. note::
-   Der DC-DC-Boost-Wandler-Ausgangsspannungswert wird häufig gesteuert
-   mit: math: "Duty-Cycle" des Schaltsignals.
+   Der Ausgangsspannungswert des DC-DC-Aufwärtswandlers wird oft mit dem
+   Tastverhältnis (Duty-Cycle) des Schaltsignals (PWM-Signal) gesteuert.
    
-
 15. Um die Auswirkungen des Schaltsignals (OUT1) zu beobachten,
-    stellen Sie den IN1-Fühler auf den Punkt 2 (Abbildung 1) und den
-    IN2-Fühler auf den Punkt 5 (Abbildung 1).
+    setzen Sie die IN1-Sonde auf den Punkt 2 (:numref:`28_fig_01`) und die
+    IN2-Sonde auf den Punkt 5 (:numref:`28_fig_01`).
     
-16. Stellen Sie in den Menüeinstellungen IN1 und IN2 den vertikalen
-    Offset auf -3,0V ein
+16. Stellen Sie in den Menü Einstellungen IN1 und IN2 den vertikalen
+    Offset auf :math:`-3,0\,V` ein.
     
-17. Setzen Sie t / div Wert auf 50us / div (Sie können t / div mit
-    horizontalen +/- Kontrollen einstellen)
+17. Setzen Sie :math:`t/div` Wert auf :math:`50\,us/div` (Sie können :math:`t/div` mit
+    horizontalen +/- Reglern einstellen)
     
-18. In den OUT1-Menüeinstellungen ändern Sie den Arbeitszyklus von
-    30\%-80\% und beobachten Sie die Ergebnisse.
+18. In den Einstellungen des Menüs OUT1 das Tastverhältnis von 30% auf 80% ändern und die Ergebnisse beobachten.
 	  
 
-
 .. figure:: img/ Activity_28_Fig_06.png
-
+	   
 .. figure:: img/ Activity_28_Fig_07.png
+   :name: 28_fig_06
+   :align: center
 
-   Abbildung 5: Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten:
-   Ausgangsspannung bei 80% Tastverhältnis
+   Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten: Ausgangsspannung bei 80% Tastverhältnis
    
 
 .. warning::
-   Aus Abbildung 5 können wir den Einfluss des Tastverhältnisses auf
-   die Ausgangsspannung beobachten. Wenn wir mit dem Tastverhältnis
-   auf 0% oder 100% gehen, werden wir abschalten oder kurzschließen
-   :math:`M_1` Transistor daher sollte das Tastverhältnis oben
-   begrenzt sein für Kurzschlussschutz und
-   Schaltkreisbeschädigung.
+   Aus :numref:`28_fig_06` können wir den Einfluss des Tastverhältnisses auf
+   die Ausgangsspannung beobachten. Wenn wir mit der Tastverhältnis auf 0% oder 100% gehen,
+   dann schalten wir den M1-Transistor aus oder schließen diesen kurz. Zur Vermeidung eines
+   Kurzschlüßes und der damit verbundenen Schäden an der Schaltung, sollte die
+   Einschaltdauen (high) begrenzt werden. 
 	 
 
 
 Fragen
 ------
 
-1. Ändern Sie den Ladewert in :math:`470 \ Omega` und beobachten Sie
+1. Ändern Sie den Lastwert auf :math:`470\,\Omega` und beobachten Sie
    die Ergebnisse.
    
-2. Ändern Sie die OUT1-Frequenz auf 5 - 20 kHz. Messen und notieren
-   Sie die Wellenform der verstärkten Ausgangsspannung und die
-   Stromwellenformen. Erklären Sie, was sich geändert hat und warum?
+2. Ändern Sie die OUT1-Frequenz auf :math:`5 - 20\,kHz`. Messen und zeichnen
+   Sie die Wellenform der verstärkten Ausgangsspannung und des
+   Ausgangsstroms auf. Erklären Sie, was sich geändert hat und warum?
    
-3. Wie würde das Hinzufügen eines LC-Filters auf den Wandlerausgang
-   die Spannungswelligkeit beeinflussen?
+3. Wie würde das Hinzufügen eines LC-Filters am Umrichterausgang die
+   Spannungswelligkeit beeinflussen?
    
 
 

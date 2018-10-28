@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>21. Präzisionsgleichrichter, Absolutwertschaltungen &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="22. Der BJT-Transistor ist als Diode geschaltet" href="Activity_22_TheBJTasDiode.html" />
+    <link rel="prev" title="20. Diodengleichrichter" href="Activity_20_DiodeRectifiers.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">21. Präzisionsgleichrichter, Absolutwertschaltungen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">21.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">21.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">21.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">21.4. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">21.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">21.6. Fragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vollwellengleichrichter">21.7. Vollwellengleichrichter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">21.8. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">21.9. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>21. Präzisionsgleichrichter, Absolutwertschaltungen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_21_PrecisionRectifiers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="prazisionsgleichrichter-absolutwertschaltungen">
+<h1>21. Präzisionsgleichrichter, Absolutwertschaltungen<a class="headerlink" href="#prazisionsgleichrichter-absolutwertschaltungen" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>21.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieses Experiments ist es, Präzisionsgleichrichter oder Absolutwertschaltungen
+zu untersuchen. Gleichrichter oder „Absolutwertschaltungen“ werden häufig als
+Detektoren verwendet, um die Amplituden von Wechselstromsignalen in leichter zu
+messende Gleichstromwerte umzuwandeln. Bei dieser Art von Schaltung wird das
+Wechselstromsignal zunächst hochpassgefiltert, um jegliche Gleichstromanteile zu
+entfernen, dann gleichgerichtet und eventuell tiefpassgefiltert.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>21.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab - Board - <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> beziehen.</p>
+<p>Oscilloscope &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signalgenerator</a> Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p>Die für die Spannungsversorgung <strong>-3.3V</strong> und <strong>+3.3V</strong>
+verwendeten Steckerstifte sind in der <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">Dokumentation</a> aufgeführt.</p>
+</div>
+<div class="section" id="materialien">
+<h2>21.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>1x <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> Quad-Rail-Rail-Operationsverstärker</li>
+<li>5x 10 kΩ Widerstände</li>
+<li>2x kleine Signaldioden (1N914 oder ähnlich)</li>
+</ul>
+</div>
+<div class="section" id="hintergrund">
+<h2>21.4. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wie wir in den einfachen Gleichrichterschaltungen mit Dioden gesehen haben,
+reagiert die Schaltung nicht gut auf Signale, die  kleiner als die
+Diodenschwellspannung („<span class="math notranslate nohighlight">\(0,7\,V\)</span> für Siliziumdioden“) sind. Dies schränkt ihren Einsatz in
+Schaltungen ein, bei denen kleine Amplituden gemessen werden sollen. Für
+Schaltungen, bei denen ein hohes Maß an Präzision gefordert ist, können
+Operationsverstärker in Verbindung mit Dioden zum Bau von Präzisionsgleichrichtern
+eingesetzt werden.</p>
+<p>Die invertierende <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html">Operationsverstärkerschaltung</a> kann durch Hinzufügen von zwei Dioden,
+wie in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 21.2</span></a> dargestellt, in einen „idealen“ (lineare Präzision) Einweggleichrichter
+umgewandelt werden. Denn die negative Hälfte der Eingangsdiode D1 ist rückwärts vorgespannt
+und die Diode D2 vorwärts vorgespannt und die Schaltung arbeitet wie ein konventioneller
+Wechselrichter mit einer Verstärkung von <span class="math notranslate nohighlight">\(-1\)</span>. Für die positive Hälfte des Eingangs ist die
+Diode D1 vorwärts vorgespannt und schließt die Rückführung um den Verstärker herum. Die
+Diode D2 ist eine umgekehrte Vorspannung, die den Ausgang vom Verstärker trennt.
+Der Ausgang liegt auf dem virtuellen Massepotential ( - Eingangsklemme) durch den <span class="math notranslate nohighlight">\(10\,k\Omega\)</span> Widerstand.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_21_Fig_01.png" src="_images/Activity_21_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 21.1 </span><span class="caption-text">Anschlussplan für Präzisions-Einweggleichrichter</span></p>
+</div>
+</div>
+<div class="section" id="verfahren">
+<h2>21.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Bauen Sie die Schaltung aus Abbildung 1 auf dem Steckbrett auf.</li>
+</ol>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_21_Fig_02.png" src="_images/Activity_21_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 21.2 </span><span class="caption-text">Verbindungen auf dem Steckbrett</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</li>
+<li>Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5\,V\)</span>,
+den DC-Offset auf <span class="math notranslate nohighlight">\(0,1\,V\)</span> und die Frequenz auf <span class="math notranslate nohighlight">\(100\,Hz\)</span> ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü SINE, deaktivieren Sie SHOW und
+wählen Sie Enable.</li>
+<li>Stellen Sie sicher, dass IN1 und IN2 <span class="math notranslate nohighlight">\(V/div\)</span> auf der linken unteren
+Seite des Bildschirms auf <span class="math notranslate nohighlight">\(200\,mV/div\)</span> eingestellt sind (Sie können
+<span class="math notranslate nohighlight">\(V/div\)</span> einstellen, indem Sie die gewünschten Kanal wählen und vertikalen +/- Regler verwenden)</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(2\,ms/div\)</span> (Du kannst <span class="math notranslate nohighlight">\(t/div\)</span> mit horizontalen +/- Regler einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_21_Fig_03.png" src="_images/Activity_21_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 21.3 </span><span class="caption-text">Präzisions-Einweggleichrichtermessungen</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Aus den auf <a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 21.3</span></a> gezeigten Messungen können wir folgendes beobachten:
+Die Spitze des gleichgerichteten Ausgangs sollte nun gleich dem Spitzenwert
+des Eingangs sein (nur Wechselspannungsspitze, beachten Sie, dass der
+Gleichstrompegel des Eingangssignals nicht auf den Ausgang übertragen wird).
+Es gibt auch einen scharfen Übergang, da der Eingang den Wert Null überschreitet.
+Der Laborant sollte die Wellenformen an verschiedenen Stellen in der
+Schaltung untersuchen, um zu erklären, warum diese Schaltung besser funktioniert
+als der einfache Dioden-Halbwellengleichrichter.</p>
+</div>
+<p>Für diesen Versuch sollten Sie:</p>
+<ol class="loweralpha simple">
+<li>Versuchen Sie, den Offset und die Amplitude von OUT1 zu ändern und
+beobachten Sie die Ergebnisse.</li>
+<li>Studiere die Schaltung und finde heraus, wie sie funktioniert. Es
+gibt ein sehr grundlegendes Konzept, das helfen sollte zu
+verstehen, wie dieser Schaltkreis funktioniert. Wenn ein
+Operationsverstärker mit negativer Rückkopplung konfiguriert wird,
+versuchen die invertierenden und nichtinvertierenden
+Eingangsanschlüsse, den gleichen Spannungspegel zu erreichen, der
+oft als „virtuelle Masse“ bezeichnet wird.</li>
+<li>Planen Sie einige Tests, um festzustellen, ob diese Schaltung
+tatsächlich eine Gleichrichterschaltung ist. Führen Sie diese Tests
+durch und dokumentieren Sie alle Tests und Ergebnisse vollständig
+in Ihrem Laborbericht.</li>
+<li>Messen und notieren Sie sorgfältig die Spannungen an allen Knoten
+im Stromkreis.</li>
+</ol>
+</div>
+<div class="section" id="fragen">
+<h2>21.6. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Was passiert, wenn die Richtung der Dioden umgekehrt wird?
+Wiederholen Sie den Versuch mit umgekehrter Richtung der beiden
+Dioden.</p>
+</div>
+<div class="section" id="vollwellengleichrichter">
+<h2>21.7. Vollwellengleichrichter<a class="headerlink" href="#vollwellengleichrichter" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir können den Halbwellen-Gleichrichter modifizieren, um einen Vollwellen-Gleichrichter
+oder eine Absolutwertschaltung herzustellen. Die in <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 21.4</span></a> dargestellte Schaltung ist
+eine Absolutwertschaltung, die oft als Präzisions-Vollwellengleichrichter bezeichnet wird.
+Es sollte wie eine Vollwellen-Gleichrichterschaltung funktionieren, die mit idealen
+Dioden aufgebaut ist (die Spannung über der Diode, in Vorwärtsleitung, entspricht 0 Volt).
+Die in der Schaltung verwendeten Dioden haben eine Durchlassspannung von ca. <span class="math notranslate nohighlight">\(0,6\,V\)</span>.</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_21_Fig_04.png" src="_images/Activity_21_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 21.4 </span><span class="caption-text">Präzisions-Vollweggleichrichter</span></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>21.8. Verfahren<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 21.4</span></a> auf dem Steckbrett auf.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+überprüfen Sie Ihre Schaltung nochmals. Die Spannungsversorgungsstifte -3,3V
+und +3,3V haben keine Schutzschaltung und können im Falle eines
+Kurzschlusses beschädigt werden.</p>
+</div>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_21_Fig_05.png" src="_images/Activity_21_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 21.5 </span><span class="caption-text">Verbindungen auf dem Steckbrett</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</li>
+<li>Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,5\,V\)</span>,
+den DC-Offset auf <span class="math notranslate nohighlight">\(0,1\,V\)</span> und die Frequenz auf <span class="math notranslate nohighlight">\(100\,Hz\)</span> ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenformmenü SINE, deaktivieren Sie SHOW
+und wählen Sie Enable.</li>
+<li>Stellen Sie sicher, dass IN1 und IN2 <span class="math notranslate nohighlight">\(V/div\)</span> auf der linken unteren
+Seite des Bildschirms auf <span class="math notranslate nohighlight">\(200\,mV/div\)</span> eingestellt sind (Sie können
+<span class="math notranslate nohighlight">\(V/div\)</span> einstellen, indem Sie die gewünschten Kanal auswählen und
+vertikalen +/- Regler verwenden.</li>
+<li>Setze <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(2\,ms/div\)</span> (Du kannst <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</li>
+</ol>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_21_Fig_06.png" src="_images/Activity_21_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 21.6 </span><span class="caption-text">Präzisions-Vollweggleichrichtermessungen - Absolutwertschaltung</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Wie aus der Fig. 6 ersichtlich ist, ist die in Fig. 4 gezeigte
+Schaltung tatsächlich ein Vollwellengleichrichter, bei dem
+Diodenschwellenspannungen KEINE Auswirkungen verursachen, wie dies
+bei Diodengleichrichtern der Fall ist. Wir können auch sehen, dass
+der DC-Offset-Wert nicht vom Gleichrichtungsprozess ausgeschlossen
+ist, was diese Schaltung zu einer <strong>Absolutwertschaltung</strong>
+macht. Der Name <strong>Absolutwertschaltung</strong> ergibt sich aus der Tatsache,
+dass, wie aus der Abbildung 6 ersichtlich, das Ausgangssignal (IN2)
+ein Absolutwert des Eingangssignals (IN1) ist.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>21.9. Fragen<a class="headerlink" href="#id2" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Was passiert, wenn die Richtung der Dioden umgekehrt wird?
+Wiederholen Sie den Versuch mit umgekehrter Richtung der beiden
+Dioden.</li>
+<li>Was passiert, wenn die Richtung einer Diode entgegengesetzt ist?
+Wiederholen Sie den Versuch mit der umgekehrten Richtung einer
+Diode (D1).</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_22_TheBJTasDiode.html" class="btn btn-neutral float-right" title="22. Der BJT-Transistor ist als Diode geschaltet" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_20_DiodeRectifiers.html" class="btn btn-neutral" title="20. Diodengleichrichter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

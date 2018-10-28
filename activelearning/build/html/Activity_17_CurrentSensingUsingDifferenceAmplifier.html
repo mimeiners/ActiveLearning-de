@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>17. Strommessung mit einem Differenzverstärker &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="18. Der Komparator, Positive Feedback und Schmitt Trigger" href="Activity_18_TheComparatorSchmittTrigger.html" />
+    <link rel="prev" title="16. Differenzverstärker" href="Activity_16_DifferenceAmplifier.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17. Strommessung mit einem Differenzverstärker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">17.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">17.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">17.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-unserem-beispiel-haben-wir">17.4. In unserem Beispiel haben wir</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">17.5. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#durchfuhrung">17.6. Durchführung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">17.7. Verfahren</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#widerstand-last">17.7.1. Widerstand LAST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kapazitive-last">17.7.2. Kapazitive Last</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#induktive-last">17.7.3. Induktive Last</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>17. Strommessung mit einem Differenzverstärker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="strommessung-mit-einem-differenzverstarker">
+<h1>17. Strommessung mit einem Differenzverstärker<a class="headerlink" href="#strommessung-mit-einem-differenzverstarker" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>17.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieser Labortätigkeit ist es, Strommesstechniken zu untersuchen,
+die einen als Differenzverstärker konfigurierten Operationsverstärker
+verwenden.</p>
+</div>
+<div class="section" id="anmerkungen">
+<h2>17.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab
+Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> geht. Die Erweiterungsstecker-Pins für die
+Spannungsversorgung <strong>-3,3V</strong> und <strong>+3,3V</strong> sind in der <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">Dokumentation</a>
+dargestellt. Die <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oszilloskop</a> - und <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signalgeneratoranwendung</a> wird zum
+Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>17.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wir haben den <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity_16_DifferenceAmplifier.html#difference-amplifier">Differenzverstärker</a> untersucht. Nun werden wir ihn als
+Strommessverstärker verwenden. Eine der Hauptanwendungen des
+Operationsverstärkers ist die Messung des Stroms an einem anderen
+Punkt in einer Schaltung als dort, wo er in oder aus der Erde oder dem
+gemeinsamen Knoten fließt. Der zu messende Strom wird durch Aufbrechen
+des Strompfades und Reihenschaltung eines Niederohmwiderstandes in
+eine kleine Spannung umgewandelt. Dieser Widerstand wird als
+Stromshunt-Widerstand oder auch nur als Shunt bezeichnet. Der
+Widerstand wird klein gehalten und der Spannungsabfall über dem Shunt
+klein, um die Auswirkungen dieser Änderung auf den Betrieb der
+Schaltung zu reduzieren. Der durch den Shunt-Widerstand fließende
+Strom wird als Pfadstrom angegeben.</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-1">
+<span class="eqno">(17.1)<a class="headerlink" href="#equation-17-eq-1" title="Permalink to this equation">¶</a></span>\[I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}}\]</div>
+<p>Da die Differenzspannung am Widerstand, gegeben als
+<span class="math notranslate nohighlight">\(\Delta V = V_{R_{shunt_{Knoten_1}}}-V_{R_{shunt_{Knoten_2}}}\)</span>,
+gemessen werden sollte, können wir sehen, dass ein Differenzverstärker
+ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle
+Spannungsabfall über den Shunt wird verstärkt und durch einen
+Operationsverstärker in eine einseitige (gemeinsam referenzierte)
+Spannung umgewandelt.</p>
+<div class="figure align-center" id="fig-01">
+<img alt="_images/Activity_17_Fig_01.png" src="_images/Activity_17_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 17.1 </span><span class="caption-text">Basis-Differenzverstärker in der Stromsensorkonfiguration</span></p>
+</div>
+<p>Aus der <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 17.1</span></a> wissen wir, dass die als <span class="math notranslate nohighlight">\(Delta V =
+I_L R_s\)</span> angegebene Differenzspannung <span class="math notranslate nohighlight">\(Delta V\)</span> Informationen
+über den Laststrom enthält. Auch aus der Differenzverstärker-Theorie
+wissen wir, dass <span class="math notranslate nohighlight">\(\Delta V\)</span> irgendwie mit dem <span class="math notranslate nohighlight">\(V_ {out}\)</span>
+zu tun haben wird. Die erste Annahme ist wie folgt:</p>
+<div class="math notranslate nohighlight">
+\[V_{out} \propto \Delta V = I_L R_s\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight">
+\[I_L \propto \frac{V_ {out}}{R_s}\]</div>
+<p>Mit anderen Worten: durch einfaches Messen und Skalieren von
+<span class="math notranslate nohighlight">\(V_{out}\)</span> werden wir den Laststrom messen, wobei <span class="math notranslate nohighlight">\(R_s\)</span> ein
+Nebenwiderstand ist. Übertragungscharakteristik des
+Differenzverstärkers für die in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 17.1</span></a> dargestellte
+Schaltung ist:</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-2">
+<span class="eqno">(17.2)<a class="headerlink" href="#equation-17-eq-2" title="Permalink to this equation">¶</a></span>\[V_{out} = V_{+} \left(1 + \frac{R_2}{R_1} \right) - V_{-} \left(\frac{R_2}{R_1} \right)\]</div>
+<p>Dabei sind <span class="math notranslate nohighlight">\(V_{+}\)</span> und <span class="math notranslate nohighlight">\(V_{-}\)</span> Spannungen an
+nicht-invertierenden (Pin 3) bzw. invertierenden (Pin 2)
+Operationsverstärkerseingängen. Setzen wir nun <span class="math notranslate nohighlight">\(V_{+}\)</span> und
+<span class="math notranslate nohighlight">\(V_{-}\)</span> für Spannungen an Shunt-Widerstandsknoten erhalten wir</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-3">
+<span class="eqno">(17.3)<a class="headerlink" href="#equation-17-eq-3" title="Permalink to this equation">¶</a></span>\[V_{out} = V_S \left( \frac{R_4}{R_3 + R_4} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)\]</div>
+<p>wobei <span class="math notranslate nohighlight">\(V_S\)</span> ist die Quellspannung und <span class="math notranslate nohighlight">\(V_L\)</span> Lastspannung ist. Wir können auch schreiben</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}V_S = V_{R_{shunt_{Knoten_1}}}\\V_L = V_{R_{shunt_{Knoten_2}}}\end{aligned}\end{align} \]</div>
+<p>und</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}V_S = V_L + \Delta V\\\Delta V = V_S - V_L\end{aligned}\end{align} \]</div>
+<p>Auf den ersten Blick, durch das Hinzufügen des Widerstandes
+<span class="math notranslate nohighlight">\(R_4\)</span> zur Schaltung, wie in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 17.1</span></a> dargestellt,
+haben wir irgendwie eine komplizierte Übertragungsfunktion; von
+Gleichung (2) zu Gleichung (3). Aber das Hinzufügen von
+<span class="math notranslate nohighlight">\(R_4\)</span> ist notwendig, um den Faktor <span class="math notranslate nohighlight">\(1+R_2/R_1\)</span> zum
+Faktor <span class="math notranslate nohighlight">\(R_2/R_1\)</span> aus der Gleichung (2)
+auszugleichen, um die Eingangsspannungen der
+Operationsverstärker gleichmäßig zu verstärken und somit
+eine einfache <span class="math notranslate nohighlight">\(\Delta V\)</span> zu <span class="math notranslate nohighlight">\(V_{out}\)</span>
+Korrelation zu ermöglichen. Der wichtige Schritt ist die
+Auswahl der Werte von <span class="math notranslate nohighlight">\(R_3\)</span> und <span class="math notranslate nohighlight">\(R_4\)</span> als</p>
+<div class="math notranslate nohighlight">
+\[R_4 = R_2 \quad R_3 = R_1\]</div>
+<p>Mit den obigen Gleichungen können wir Gleichung (3) wie folgt schreiben</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-4">
+<span class="eqno">(17.4)<a class="headerlink" href="#equation-17-eq-4" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}V_{out} = V_S \left(\frac{R_2}{R_1 + R_2} \right) \left(1 + \frac{R_2}{R_1} \right) - V_L \left( \frac{R_2}{R_1} \right)\\V_{out} = V_S \left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) - V_L \left( \frac{R_2}{R_1} \right)\end{aligned}\end{align} \]</div>
+<p>Sie besagt, dass</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \right) = \frac{R_2}{R_1}\]</div>
+<p>So können wir Gleichung (4) einfach schreiben als:</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-5">
+<span class="eqno">(17.5)<a class="headerlink" href="#equation-17-eq-5" title="Permalink to this equation">¶</a></span>\[V_{out} = V_S \left( \frac{R_2}{R_1} \right) - V_L \left(\frac{R_2}{R_1} \right)\]</div>
+<p>Jetzt haben wir eine einfache Gleichung (5) für unseren
+Differenzverstärker aus <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 17.1</span></a> und der letzte Schritt
+ist, ihn in Bezug auf <span class="math notranslate nohighlight">\(\Delta V\)</span> umzuschreiben, d.h. in Bezug
+auf <span class="math notranslate nohighlight">\(I_L\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-17-eq-6">
+<span class="eqno">(17.6)<a class="headerlink" href="#equation-17-eq-6" title="Permalink to this equation">¶</a></span>\[ \begin{align}\begin{aligned}V_{out} = \left( \frac{R_2}{R_1} \right) (V_S-V_L)\\V_{out} = \frac{R_2}{R_1} \Delta V\\V_{out} = \frac{R_2}{R_1} I_L R_S\end{aligned}\end{align} \]</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Und für <span class="math notranslate nohighlight">\(I_L\)</span> bekommen wir:</p>
+<div class="last math notranslate nohighlight" id="equation-17-eq-7">
+<span class="eqno">(17.7)<a class="headerlink" href="#equation-17-eq-7" title="Permalink to this equation">¶</a></span>\[I_L = V_{Aus} \frac{R_1}{R_2 R_S}\]</div>
+</div>
+</div>
+<div class="section" id="in-unserem-beispiel-haben-wir">
+<h2>17.4. In unserem Beispiel haben wir<a class="headerlink" href="#in-unserem-beispiel-haben-wir" title="Link zu dieser Überschrift">¶</a></h2>
+<ul>
+<li><p class="first">Widerstände:</p>
+<blockquote>
+<div><ul class="simple">
+<li><span class="math notranslate nohighlight">\(R_4 = R_2 = 100k\Omega,\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_3 = R_1 10k\Omega,\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_2/R_1 = 10,\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_S = R_5 = 10\Omega,\)</span></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Spulestrom: <span class="math notranslate nohighlight">\(I_L = \frac{V_{out}}{10R_S}.\)</span></p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>In unserem Beispiel wird der Laststrom wie folgt angegeben:</p>
+<div class="last math notranslate nohighlight" id="equation-17-eq-8">
+<span class="eqno">(17.8)<a class="headerlink" href="#equation-17-eq-8" title="Permalink to this equation">¶</a></span>\[I_L = \frac{V_{out}}{100}\]</div>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>17.5. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Rotes Pitaya STEMlab</li>
+<li>OPAMP: 1x <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> Quad Rail zu Rail Verstärker</li>
+<li>Widerstand: 3 x 10 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1 x 100 <span class="math notranslate nohighlight">\(k\Omega\)</span></li>
+<li>Widerstand: 1 x 10 <span class="math notranslate nohighlight">\(\Omega\)</span></li>
+<li>Widerstand: 1 x 220 <span class="math notranslate nohighlight">\(\Omega\)</span></li>
+<li>Kondensator: 1 x 0.1 <span class="math notranslate nohighlight">\(\mu F\)</span></li>
+<li>Induktivität: 1 x 4.7 <span class="math notranslate nohighlight">\(mH\)</span></li>
+</ul>
+</div>
+<div class="section" id="durchfuhrung">
+<h2>17.6. Durchführung<a class="headerlink" href="#durchfuhrung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bauen Sie den in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 17.2</span></a> gezeigten Strommessverstärker
+auf. <span class="math notranslate nohighlight">\(R_6\)</span> wird hinzugefügt, um den Ausgang des OP484 zu
+stabilisieren. Bei Verwendung großer Rückkopplungswiderstände kann der
+OP484 aufgrund der großen Eingangskapazität des IN2-Eingangs instabil
+sein. <span class="math notranslate nohighlight">\(V_{S}\)</span> wird direkt vom Ausgang OUT1 STEMlab als
+„Stromversorgung“ für die Last bereitgestellt. Die Last besteht aus
+verschiedenen Impedanzen wie beispielsweise einem Widerstand,
+Kondensator oder Induktor. Das Eingangsspannungssignal IN2 zeigt den
+Laststrom direkt an, wie in Gleichung 8 dargestellt.</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_17_Fig_02.png" src="_images/Activity_17_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 17.2 </span><span class="caption-text">Differenzverstärkerschaltung für die Strommessung</span></p>
+</div>
+<p>Komponentenwerte sind folgende:</p>
+<ul class="simple">
+<li>Widerstände:<ul>
+<li><span class="math notranslate nohighlight">\(R_4 = R_2 = 100\,k\Omega\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_3 = R_1 = 10\,k\Omega\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_S = R_5 = 10\,\Omega\)</span></li>
+<li><span class="math notranslate nohighlight">\(R_6 = 220\,\Omega\)</span></li>
+</ul>
+</li>
+<li>Kondensator und Spule:<ul>
+<li><span class="math notranslate nohighlight">\(C_1 = 0.1\, \mu F\)</span></li>
+<li><span class="math notranslate nohighlight">\(L_1 = 4.7\, mH\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>17.7. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="widerstand-last">
+<h3>17.7.1. Widerstand LAST<a class="headerlink" href="#widerstand-last" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für die Last nehmen Sie den Widerstand <span class="math notranslate nohighlight">\(470\Omega\)</span> und bauen
+eine Schaltung wie in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 17.2</span></a> dargestellt auf.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_17_Fig_03.png" src="_images/Activity_17_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 17.3 </span><span class="caption-text">Differenzverstärkerschaltung für Strommessung - Resistive Last</span></p>
+</div>
+<ol class="arabic simple">
+<li>Starten Sie die Oszilloskop &amp; Signalgenerator - Anwendung.</li>
+<li>Im Menü OUT1 Einstellungen den Amplitudenwert auf 0,5V einstellen,
+um eine Sinuswelle als Eingangsspannungsquelle <span class="math notranslate nohighlight">\(V_{Source}\)</span>
+anzulegen. Wählen Sie aus dem Wellenform-Menü SINE, deaktivieren
+Sie die SHOW-Taste und wählen Sie Enable.</li>
+<li>Für die stabile Aufnahme die Triggerquelle auf IN1 einstellen.</li>
+<li>Stellen Sie sicher, dass IN1 V/div am linken unteren Bildschirmrand
+auf 200 mV/div eingestellt ist (Sie können V/div einstellen, indem
+Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler
+verwenden)</li>
+<li>Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand
+auf 50 mV/div gestellt ist (Sie können V/div einstellen, indem Sie
+den gewünschten Kanal auswählen und die vertikalen +/- Regler
+verwenden)</li>
+<li>Wählen Sie im Messmenü „MAX“, wählen Sie IN1 und drücken Sie FERTIG</li>
+<li>Wählen Sie im Messmenü „MAX“, wählen Sie IN2 und drücken Sie FERTIG</li>
+<li>Setzen Sie t/div Wert auf 200 us/div (Sie können t/div mit
+horizontalen +/- Regler einstellen)</li>
+<li>Messwerte von IN2 auslesen und Laststrom nach Gleichung (8)
+berechnen</li>
+</ol>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_17_Fig_04.png" src="_images/Activity_17_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 17.4 </span><span class="caption-text">resestive-Last-Strommessungen</span></p>
+</div>
+<p>Aus den Messungen aus <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 17.4</span></a> können wir den maximalen
+Laststrom berechnen als:</p>
+<div class="math notranslate nohighlight">
+\[I_L = \frac{IN2_{max}}{100} = \frac{108.0\,mV}{100} = 1.08\, mA\]</div>
+<p>Wir können unsere Messungen überprüfen, indem wir den Laststrom berechnen wie folgt berechnen</p>
+<div class="math notranslate nohighlight">
+\[I_L = \frac{OUT1_{max}}{R_{Laden} + R_s} = \frac{0.5V}{470\Omega + 10\Omega} = 1.04\,mA\]</div>
+<p>Wir können sehen, dass der gemessene Strom dem entspricht, was wir
+erwartet haben, was das korrekte Verhalten unseres
+Differenzverstärkers bestätigt. Die Differenz von 0,04mA zwischen
+genauem und gemessenem Wert des Laststroms ergibt sich aus den
+Nenntoleranzen der Last- und Nebenwiderstände.</p>
+</div>
+<div class="section" id="kapazitive-last">
+<h3>17.7.2. Kapazitive Last<a class="headerlink" href="#kapazitive-last" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für die Last nehmen Sie <span class="math notranslate nohighlight">\(0.1\mu F\)</span> Kondensator und bauen
+Schaltung wie in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 17.2</span></a> gezeigt auf.</p>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_17_Fig_05.png" src="_images/Activity_17_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 17.5 </span><span class="caption-text">Kapazitive Last</span></p>
+</div>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_17_Fig_06.png" src="_images/Activity_17_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 17.6 </span><span class="caption-text">Kapazitive-Last-Strommessungen</span></p>
+</div>
+<p>Aus den Messungen aus <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 17.6</span></a> können wir den maximalen
+Laststrom berechnen als:</p>
+<div class="math notranslate nohighlight">
+\[I_L = \frac{IN2_{max}}{100} = \frac{36.5mV}{100} = 0.36mA\]</div>
+<p>Wir können unsere Messungen überprüfen, indem wir den Laststrom wie
+folgt berechnen:</p>
+<div class="math notranslate nohighlight">
+\[I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s} = \frac{0.5V}{1592\Omega + 10\Omega} = 0.31\, mA\]</div>
+</div>
+<div class="section" id="induktive-last">
+<h3>17.7.3. Induktive Last<a class="headerlink" href="#induktive-last" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Für Last nehmen Sie <span class="math notranslate nohighlight">\(4.7 mH\)</span> Induktivität und bauen Sie die
+Schaltung wie in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 17.2</span></a> gezeigt auf.</p>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/Activity_17_Fig_07.png" src="_images/Activity_17_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 17.7 </span><span class="caption-text">Induktive Last</span></p>
+</div>
+<ol class="arabic simple">
+<li>Stellen Sie im OUT1-Einstellungsmenü den Amplitudenwert auf 0,2 V
+ein.</li>
+<li>Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+dass IN1 V/div auf 50 mV/div eingestellt ist (Sie können V/div
+einstellen, indem Sie den gewünschten Kanal auswählen und die
+vertikalen +/- Regler verwenden).</li>
+<li>Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand
+auf 500 mV/div eingestellt ist (Sie können V/div einstellen, indem
+Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler
+verwenden).</li>
+</ol>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/Activity_17_Fig_08.png" src="_images/Activity_17_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 17.8 </span><span class="caption-text">Induktive-Last-Strommessungen</span></p>
+<div class="legend">
+Aus den Messungen aus <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 17.8</span></a> können wir den maximalen
+Laststrom berechnen als:</div>
+</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2 mA\\Wir können unsere Messungen überprüfen, indem wir den Laststrom wie
+folgt berechnen:\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[I_L = \frac {OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s} = \frac{0.2V}{30\Omega +10\Omega} = 5.0 mA\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Bei induktiver Last haben wir den größten Unterschied in den
+Messungen. Versuchen Sie zu erklären, warum.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p class="last">Parasitärer Serienwiderstand einer Induktivität.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_18_TheComparatorSchmittTrigger.html" class="btn btn-neutral float-right" title="18. Der Komparator, Positive Feedback und Schmitt Trigger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_16_DifferenceAmplifier.html" class="btn btn-neutral" title="16. Differenzverstärker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

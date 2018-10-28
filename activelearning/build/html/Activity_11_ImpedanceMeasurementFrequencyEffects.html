@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. Impedanzmessung - Frequenzeffekte &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="12. Messung eines Lautsprecherimpedanzprofils" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html" />
+    <link rel="prev" title="10. Bandpassfilter" href="Activity_10_BandPassFilters.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. Impedanzmessung - Frequenzeffekte</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">11.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkungen">11.2. Anmerkungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">11.3. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">11.4. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">11.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#messreihe-rlc-schaltung-impedanz">11.6. Messreihe RLC-Schaltung Impedanz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">11.7. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>11. Impedanzmessung - Frequenzeffekte</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_11_ImpedanceMeasurementFrequencyEffects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="impedanzmessung-frequenzeffekte">
+<h1>11. Impedanzmessung - Frequenzeffekte<a class="headerlink" href="#impedanzmessung-frequenzeffekte" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>11.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Ziel dieser Aktivität ist:</p>
+<ol class="arabic simple">
+<li>Messen Sie die Komponentenimpedanz und die Schaltungsimpedanz mit Hilfe der Impedanzanalysator-Applikation.</li>
+<li>Untersuchen Sie die Größen- und Phasenänderungen mit der
+Frequenzänderung für eine RLC-Schaltung.</li>
+</ol>
+</div>
+<div class="section" id="anmerkungen">
+<h2>11.2. Anmerkungen<a class="headerlink" href="#anmerkungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/index.html">Hardware</a> geht. Die Anwendung des <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer">Impedanz</a>  <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer">analysators</a> dient zur Messung der RLC-Schaltungsimpedanz <span class="math notranslate nohighlight">\(Z(f)\)</span>. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html">LCR</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html">Meter</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html">Frontend</a> eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen 1 Hz und 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich liegt zwischen 0.1 Ohm und 10 MOhm. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.</p>
+</div>
+<div class="section" id="hintergrund">
+<h2>11.3. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Impedanz ist ein Widerstand des Wechselstroms. Es ist
+die totale Widerwirkung, die eine Schaltung dem Stromfluss bei einer
+bestimmten Frequenz bietet. Impedanz <span class="math notranslate nohighlight">\(Z\)</span> wird als eine
+Kombination aus Widerstand <span class="math notranslate nohighlight">\(R\)</span> und Reaktanz <span class="math notranslate nohighlight">\(X\)</span> ausgedrückt und
+wird in <span class="math notranslate nohighlight">\(\Omega\)</span> gemessen. Es kann als eine komplexe Größe ausgedrückt werden:</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-1">
+<span class="eqno">(11.1)<a class="headerlink" href="#equation-11-eq-1" title="Permalink to this equation">¶</a></span>\[Z = R + jX\]</div>
+<p>Bei einem idealen Widerstand ist die Impedanz gleich dem Gleichstromwiderstand <span class="math notranslate nohighlight">\(Z = R_ {DC}\)</span>.
+Bei einem Kondensator ist die Impedanz (oder genauer gesagt die Reaktanz) <span class="math notranslate nohighlight">\(X_C\)</span> der imaginäre
+und <strong>negativ</strong> -reaktive Teil der Impedanz. Die Reaktanz des
+Kondensators hängt von der Frequenz ab und ist gegeben als:</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-2">
+<span class="eqno">(11.2)<a class="headerlink" href="#equation-11-eq-2" title="Permalink to this equation">¶</a></span>\[X_C = \frac{1}{j \omega C}\]</div>
+<p>Bei einer Induktivität ist die Impedanz (oder genauer gesagt die Reaktanz)
+<span class="math notranslate nohighlight">\(X_L\)</span> der imaginäre und <strong>positiv</strong> -reaktive Teil der
+Impedanz. Die Reaktanz der Induktivität hängt auch von der Frequenz
+ab und ist gegeben als:</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-3">
+<span class="eqno">(11.3)<a class="headerlink" href="#equation-11-eq-3" title="Permalink to this equation">¶</a></span>\[X_L = j \omega L\]</div>
+<p>Die Impedanz einer RLC-Reihenschaltung ist die Summe der Impedanzen
+der jeweiligen Komponenten.</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-4">
+<span class="eqno">(11.4)<a class="headerlink" href="#equation-11-eq-4" title="Permalink to this equation">¶</a></span>\[Z = R + Z_L + Z_C\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-5">
+<span class="eqno">(11.5)<a class="headerlink" href="#equation-11-eq-5" title="Permalink to this equation">¶</a></span>\[Z = R + jX_L - jX_C\]</div>
+<p>Dies kann auch mit Hilfe eines komplexen Zeigers, mit der Größe <span class="math notranslate nohighlight">\(|Z|\)</span>
+und <strong>phase</strong> <span class="math notranslate nohighlight">\(P\)</span> dargestellt werden, wobei <span class="math notranslate nohighlight">\(Z=|Z|e^{jP}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-11-eq-6">
+<span class="eqno">(11.6)<a class="headerlink" href="#equation-11-eq-6" title="Permalink to this equation">¶</a></span>\[\lvert Z \lvert = \sqrt{R ^ 2 + (X_L - X_C) ^ 2}\]</div>
+<div class="math notranslate nohighlight" id="equation-11-eq-7">
+<span class="eqno">(11.7)<a class="headerlink" href="#equation-11-eq-7" title="Permalink to this equation">¶</a></span>\[P = \arctan\left(\frac{(X_L - X_C)}{R}\right)\]</div>
+<div class="figure" id="id1">
+<span id="fig-01"></span><img alt="_images/Activity_11_Fig_01.png" src="_images/Activity_11_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 11.1 </span><span class="caption-text">RLC-Reihenschaltung.</span></p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>11.4. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab 125-14 oder STEMlab 125-10</li>
+<li>Widerstand Rs: 1 kΩ</li>
+<li>Kondensator Cs: 0,047 μF</li>
+<li>Induktor Ls: 22 mH</li>
+</ul>
+</div>
+<div class="section" id="verfahren">
+<h2>11.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit LCR-Meter-Anwendung können wir Induktivität, Widerstand und
+Kapazität unserer Elemente in der Schaltung bei ausgewählter Frequenz
+messen. LCR-Meter kann Ihnen helfen, jede Komponente einzeln zu
+messen, um ihren Wert zu extrahieren, wenn sie auf der Verpackung
+nicht sichtbar / lesbar ist:</p>
+<ol class="arabic simple">
+<li>Starten Sie das LCR-Messgerät</li>
+<li>Schließen Sie die zu messenede Komponente an die LCR-Messsonden an</li>
+<li>Wählen Sie in der LCR-Meter-Anwendung Messmodus/Parameter</li>
+<li>Stellen Sie die Messfrequenz auf 1 kHz ein</li>
+<li>Wiederholen Sie die obigen Schritte für Rs, Ls und Cs</li>
+</ol>
+<div class="figure" id="id2">
+<span id="fig-02"></span><img alt="_images/Activity_11_Fig_02.png" src="_images/Activity_11_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 11.2 </span><span class="caption-text">LCR-Meter-Anwendung</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Tatsächliche (gemessene) Werte der Komponenten Rs, Cs, Ls sind
+anders als markiert (Farbcode für Widerstand und gedruckte Werte an
+Induktor und Kondensator). Der Unterschied liegt an den Toleranzen
+der Komponentenwerte</p>
+</div>
+</div>
+<div class="section" id="messreihe-rlc-schaltung-impedanz">
+<h2>11.6. Messreihe RLC-Schaltung Impedanz<a class="headerlink" href="#messreihe-rlc-schaltung-impedanz" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Bauen Sie die Schaltung wie in <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 11.1</span></a> und <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 11.2</span></a> auf
+Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 KΩ, Cs
+= 0,047 μF, Ls = 22 mH auf.</p>
+<div class="figure" id="id3">
+<span id="fig-03"></span><img alt="_images/Activity_11_Fig_03.png" src="_images/Activity_11_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 11.3 </span><span class="caption-text">STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung</span></p>
+</div>
+</li>
+<li><p class="first">Starten Sie die Anwendung Impedanzanalysator.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss
+vom Application Marketplace (Basar) heruntergeladen werden.
+Klicken Sie auf Application-Marketplace-Icon und wählen Sie
+Install for Impedance analyzer.</p>
+</div>
+</li>
+<li><dl class="first docutils">
+<dt>Starten Sie den Impedanzanalysator und:</dt>
+<dd><ul class="first last">
+<li><p class="first">unter <strong>Menü Messeinstellungen</strong> Anzahl der Schritte einstellen: 20</p>
+</li>
+<li><p class="first">unter <strong>Frequenz-Sweep</strong> legen Sie die Startfrequenz auf 1 kHz und die Endfrequenz auf 50 kHz fest</p>
+</li>
+<li><p class="first">Wählen Sie <strong>Messung starten</strong></p>
+<div class="figure" id="id4">
+<span id="fig-04"></span><img alt="_images/Activity_11_Fig_04.png" src="_images/Activity_11_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 11.4 </span><span class="caption-text">Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der Impedanzanalysatoranwendung aufgenommen wurde</span></p>
+</div>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Ploten gemessener Phase
+- unter <strong>Plot settings Menu</strong> für <strong>Y-Achse</strong>  <strong>P [deg]</strong> wählen</p>
+<blockquote>
+<div><div class="figure" id="id5">
+<span id="fig-05"></span><img alt="_images/Activity_11_Fig_05.png" src="_images/Activity_11_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 11.5 </span><span class="caption-text">Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators</span></p>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Die Frequenz, bei der dies auftritt <strong>(Phase = 0)</strong>
+wird als Resonanzfrequenz bezeichnet.
+Bei Resonanzfrequenz ist die Gesamtreaktanz Null und die
+Schaltung ist rein ohmscher Natur.</p>
+</div>
+<p>Also</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-8">
+<span class="eqno">(11.8)<a class="headerlink" href="#equation-11-eq-8" title="Permalink to this equation">¶</a></span>\[Z = R + j(X_L - X_C)\]</div>
+<p>Wenn</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-9">
+<span class="eqno">(11.9)<a class="headerlink" href="#equation-11-eq-9" title="Permalink to this equation">¶</a></span>\[X_L - X_C = 0\]</div>
+<p>dann</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-10">
+<span class="eqno">(11.10)<a class="headerlink" href="#equation-11-eq-10" title="Permalink to this equation">¶</a></span>\[Z = R\]</div>
+<p>Die Resonanzfrequenz kann mathematisch unter Verwendung der
+folgenden Gleichung abgeleitet werden:</p>
+<div class="math notranslate nohighlight" id="equation-11-eq-11">
+<span class="eqno">(11.11)<a class="headerlink" href="#equation-11-eq-11" title="Permalink to this equation">¶</a></span>\[f_0 = \frac{1}{2 \pi \sqrt {LC}}\]</div>
+</li>
+</ol>
+</div>
+<div class="section" id="fragen">
+<h2>11.7. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic simple">
+<li>Berechne die Resonanzfrequenz <span class="math notranslate nohighlight">\(f_{o}\)</span> für die Serie RLC unter Verwendung
+von Gl. <a class="reference internal" href="#equation-11-eq-11">Gl. 11.11</a> und vergleiche sie mit dem gemessenen Wert. Wie
+groß ist der prozentuale Fehler zwischen den beiden?</li>
+<li>Geben Sie Ihre Schlussfolgerungen aus den Beobachtungen in Schritt
+3 des Verfahrens.</li>
+<li>Berechnen Sie die Größe und Phase für die Reihen-RLC-Schaltung,
+wenn die reaktive Komponente gleich der ohmschen Komponente ist.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html" class="btn btn-neutral float-right" title="12. Messung eines Lautsprecherimpedanzprofils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_10_BandPassFilters.html" class="btn btn-neutral" title="10. Bandpassfilter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

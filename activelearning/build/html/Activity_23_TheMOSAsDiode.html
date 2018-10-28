@@ -1,0 +1,660 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>23. Die Nutzung der MOS-Transistors als Diode &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="24. BJT-Transistor als Schalter" href="Activity_24_TheBJTasSwitch.html" />
+    <link rel="prev" title="22. Der BJT-Transistor ist als Diode geschaltet" href="Activity_22_TheBJTasDiode.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_08_ResonanceRCL.html">8. Resonanz in RLC-Schaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">23. Die Nutzung der MOS-Transistors als Diode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">23.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anmerkung">23.2. Anmerkung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">23.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nmos-als-diode">23.4. NMOS als Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verfahren">23.5. Verfahren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vi-kurvenmessungen">23.6. VI-Kurvenmessungen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pmos-als-diode">23.7. PMOS als Diode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">23.8. Verfahren</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>23. Die Nutzung der MOS-Transistors als Diode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_23_TheMOSAsDiode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="die-nutzung-der-mos-transistors-als-diode">
+<h1>23. Die Nutzung der MOS-Transistors als Diode<a class="headerlink" href="#die-nutzung-der-mos-transistors-als-diode" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>23.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ziel dieses Versuchs ist die Untersuchung, der
+Vorwärtsstrom-Spannungs-Charakteristik eines MOS-Feldeffekttransistors
+(NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem Experiment wird
+eine Übersicht über den vorherigen <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html">Versuch</a> empfohlen.</p>
+</div>
+<div class="section" id="anmerkung">
+<h2>23.2. Anmerkung<a class="headerlink" href="#anmerkung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab - Board - <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">Hardware</a> beziehen.</p>
+<p>Die Oszilloskop- und <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signalgeneratoranwendung</a> wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.</p>
+<p>Die für die Spannungsversorgung <strong>+5V</strong>, <strong>-3.3V</strong> und <strong>+3.3V</strong>
+verwendeten Steckerstifte sind in der <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2">Dokumentation</a> aufgeführt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
+maximalen Ausgangsbereich von <span class="math notranslate nohighlight">\(+/-\,1\,V\)</span> (2Vpp) erzeugen. Für diesen Versuch
+werden höhere Signalamplituden benötigt. Aus
+diesem Grund werden wir einen <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> in der invertierenden
+Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
+zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
+erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
+Spannungsschienen versorgt. Der Verstärkungfaktor des invertierenden
+Verstärkers wird auf <span class="math notranslate nohighlight">\(\approx 5\)</span> gesetzt, wobei
+<span class="math notranslate nohighlight">\(R1 = 2.2\,k\Omega\)</span> und <span class="math notranslate nohighlight">\(R2 = 10 \,k\Omega\)</span> eingesetzt werden.</p>
+<p class="last">Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+oder OP97 verwendet haben. (Hinweis:“Schiene-zu-Schiene“).</p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>23.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf">OP484</a> Quad-Rail-Rail-Operationsverstärker</li>
+<li><span class="math notranslate nohighlight">\(1\,k\Omega\)</span> Widerstand</li>
+<li>Kleinsignal-NMOS-Transistor (<a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a>)</li>
+<li>Kleinsignal-PMOS-Transistor (<a class="reference external" href="https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf">ZVP211</a>)</li>
+<li>lötfreies Steckbrett</li>
+</ul>
+</div>
+<div class="section" id="nmos-als-diode">
+<h2>23.4. NMOS als Diode<a class="headerlink" href="#nmos-als-diode" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Schaltung des NMOS in Diodenkonfiguration ist in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 23.2</span></a>
+gezeigt. In der Diodenkonfiguration arbeitet der NMOS anders als der
+NPN BJT-Transistor.</p>
+<p>Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei <span class="math notranslate nohighlight">\(\approx 0,7\,V\)</span>, sie
+hängt von der Größe des Transistors und seinen Eigenschaften ab. Für den
+ausgewählten NMOS-Transistor liegt die Schwellenspannung
+<span class="math notranslate nohighlight">\(V_{TH}\)</span> bei etwa <span class="math notranslate nohighlight">\(2,4\,V\)</span>. Das bedeutet, sollte die am Gate-Pin
+anliegende Spannung den <span class="math notranslate nohighlight">\(V_ {TH}\)</span> von <span class="math notranslate nohighlight">\(2,4\,V\)</span> überschreitet „schaltet“
+der MOS_Transistor ein und beginnt zu leiten. Da der Drain (D) -Pin schalttechnisch mit dem Gate-Pin (G)
+des Transistors verbunden ist, bleibt das Potential von <span class="math notranslate nohighlight">\(D-G\)</span>
+auf dem Pegel der Schwellenspannung <span class="math notranslate nohighlight">\(V_{TH}\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Diese Konfiguration von NMOS erzeugt effektiv eine Diode mit Durchlassspannung,
+die der <span class="math notranslate nohighlight">\(V_ {TH}\)</span> entspricht.</p>
+</div>
+<div class="figure" id="fig-01">
+<img alt="_images/Activity_23_Fig_01.png" src="_images/Activity_23_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 23.1 </span><span class="caption-text"><a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> Spezifikationen</span></p>
+</div>
+<p>Auf dem Steckbrett die Schaltung aus <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 23.2</span></a> aufbauen und mit den
+Messungen fortfahren.</p>
+<div class="figure align-center" id="fig-02">
+<img alt="_images/Activity_23_Fig_02.png" src="_images/Activity_23_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 23.2 </span><span class="caption-text">Anschlussdiagramm der NMOS-Diode</span></p>
+</div>
+</div>
+<div class="section" id="verfahren">
+<h2>23.5. Verfahren<a class="headerlink" href="#verfahren" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 23.1</span></a> auf dem
+Steckbrettauf. Stellen Sie <span class="math notranslate nohighlight">\(R1 = 2,2\,k\Omega\)</span>, <span class="math notranslate nohighlight">\(R2 = 10\,k\Omega\)</span> und <span class="math notranslate nohighlight">\(R3 = 1\,k\Omega\)</span> ein. Für
+M1 nehmen Sie ZVN211.</p>
+<div class="figure align-center" id="fig-03">
+<img alt="_images/Activity_23_Fig_03.png" src="_images/Activity_23_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 23.3 </span><span class="caption-text">NMOS-Diodenverbindung auf dem Steckbrett</span></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+überprüfen Sie Ihre Schaltung nochmal. Die Spannungsversorgungsstifte
+-3,3V und +3,3V haben keine Schutzschaltung und können im Falle eines
+Kurzschlusses beschädigt werden.</p>
+</div>
+</li>
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,45\,V\)</span>,
+den DC-Offset auf <span class="math notranslate nohighlight">\(-0,45\,V\)</span> und die Frequenz auf <span class="math notranslate nohighlight">\(1 kHz\)</span> ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren
+Sie SHOW und wählen Sie Enable.</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1, IN2 und MATH <span class="math notranslate nohighlight">\(V/div\)</span> auf der linken
+unteren Seite des Bildschirms auf <span class="math notranslate nohighlight">\(1\,V/div\)</span> eingestellt sind (Sie
+können <span class="math notranslate nohighlight">\(V/div\)</span> einstellen, indem Sie die gewünschten Kanal auswählen
+und mit vertikalen +/- Regler verwenden)</p>
+</li>
+<li><p class="first">Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(200\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</p>
+</li>
+<li><p class="first">Stellen Sie unter MATH-Kanaleinstellungen <span class="math notranslate nohighlight">\(IN1-IN2\)</span> ein
+und wählen Sie ENABLE.</p>
+</li>
+<li><p class="first">Stellen Sie unter den Menueinstellungen IN1 und IN2 den Messtaster
+auf x10 und den vertikalen Offset auf 0.</p>
+</li>
+<li><p class="first">Stellen Sie unter Einstellungen des MATH-Menus den vertikalen
+Offset auf 0 ein.</p>
+</li>
+<li><p class="first">Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf <span class="math notranslate nohighlight">\(1\,V\)</span> ein</p>
+<div class="figure align-center" id="fig-04">
+<img alt="_images/Activity_23_Fig_04.png" src="_images/Activity_23_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 23.4 </span><span class="caption-text">NMOS-Diodenanschluss-Messungen</span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="vi-kurvenmessungen">
+<h2>23.6. VI-Kurvenmessungen<a class="headerlink" href="#vi-kurvenmessungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Da sich NMOS wie eine Diode mit einer Durchlassspannung entsprechend der <span class="math notranslate nohighlight">\(V_{TH}\)</span>
+verhalten kann (Konfiguration in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 23.2</span></a>), können wir ihre VI-Charakteristik
+wie bei Diodenmessungen messen, wofür wir die Webanwendung Jupyter Notebook verwenden werden.
+Wie Sie Jupyter Notebook starten und ein neues Projekt erstellen, ist
+in <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 23.5</span></a> als Flussdiagramms dargestellt.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Das Jupyter <a class="reference external" href="http://jupyter.org/index.html">Notebook</a> ist eine Webanwendung, mit der Sie Dokumente erstellen
+und freigeben können, die Live-Code, Gleichungen, Visualisierungen und
+erklärenden Text enthalten. Sie haben auch die Unterstützung für die
+Jupyter-Anwendung mit Red Pitaya-Bibliotheken sichergestellt, die die Steuerung
+aller Funktionen der STEMlab-Boards ermöglichen, wie z.B.: Signalerfassung,
+Signalerzeugung, digitale Signalsteuerung, Kommunikation usw. Das Jupyter Notebook
+wird auf die gleiche Weise gestartet wie alle anderen Anwendungen. Nach dem Start
+der Jupyter-Anwendung wird ein webbasiertes Notebook geöffnet. Diese Kombination
+aus Notebook, STEMlab und Python macht das STEMlab zu einem hervorragenden Werkzeug
+für Prototyping und schnelle Programmierung. Da Jupyter Notebook Text-, Gleichungs-
+und Bildbearbeitung ermöglicht, ist es ein perfektes Werkzeug für Tutorials, Beispiele
+und vieles mehr.</p>
+</div>
+<div class="figure align-center" id="fig-05">
+<img alt="_images/Activity_19_Fig_07.png" src="_images/Activity_19_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 23.5 </span><span class="caption-text">Erstellen eines neuen Jupyter-Notebooks</span></p>
+</div>
+<p>Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren
+Sie den untenstehenden Code und führen Sie ihn aus.</p>
+<p>Der unten stehende Code erzeugt das gleiche Signal wie in <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 23.4</span></a>, aber er
+plotet dieses in einem XY-Diagramm.</p>
+<p>Für die Messung der VI-Kurve ist ein „XY“-Plot erforderlich, wobei die
+x-Achse die Diodenspannung <span class="math notranslate nohighlight">\(IN_2\)</span> und y-Achse ein Diodenstrom <span class="math notranslate nohighlight">\((IN_1 - IN_2)/R_3\)</span> dargestellt.</p>
+<p><strong>Kopieren Sie den unten stehenden Code in die Zelle 1</strong></p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
+<span class="kn">from</span> <span class="nn">redpitaya.overlay.mercury</span> <span class="kn">import</span> <span class="n">mercury</span> <span class="k">as</span> <span class="n">overlay</span>
+
+<span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="kn">import</span> <span class="n">push_notebook</span><span class="p">,</span> <span class="n">show</span><span class="p">,</span> <span class="n">output_notebook</span>
+<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">HoverTool</span><span class="p">,</span> <span class="n">Range1d</span><span class="p">,</span> <span class="n">LinearAxis</span><span class="p">,</span> <span class="n">LabelSet</span><span class="p">,</span> <span class="n">Label</span>
+<span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">bokeh.resources</span> <span class="kn">import</span> <span class="n">INLINE</span>
+<span class="n">output_notebook</span><span class="p">(</span><span class="n">resources</span><span class="o">=</span><span class="n">INLINE</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Initialize fpga modules</span>
+<span class="n">fpga</span> <span class="o">=</span> <span class="n">overlay</span><span class="p">()</span>
+<span class="n">gen0</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">gen</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">osc</span> <span class="o">=</span> <span class="p">[</span><span class="n">fpga</span><span class="o">.</span><span class="n">osc</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">fpga</span><span class="o">.</span><span class="n">MNO</span><span class="p">)]</span>
+
+<span class="c1"># Configure OUT1 generator channel</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">amplitude</span> <span class="o">=</span> <span class="mf">0.45</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.45</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">waveform</span> <span class="o">=</span> <span class="n">gen0</span><span class="o">.</span><span class="n">sawtooth</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">enable</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">gen0</span><span class="o">.</span><span class="n">trigger</span><span class="p">()</span>
+
+<span class="c1"># R1 resistor value</span>
+<span class="n">R3</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Configure IN1 and IN2 oscilloscope input channels</span>
+<span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">osc</span><span class="p">:</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">filter_bypass</span> <span class="o">=</span> <span class="bp">True</span>
+
+    <span class="c1"># data rate decimation</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">decimation</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="c1"># trigger timing [sample periods]</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">buffer_size</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_pre</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trigger_post</span> <span class="o">=</span> <span class="n">N</span>
+
+    <span class="c1"># osc0 is controlling both channels</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">sync_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">sync_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">trig_src</span> <span class="o">=</span> <span class="n">fpga</span><span class="o">.</span><span class="n">trig_src</span><span class="p">[</span><span class="s2">&quot;osc0&quot;</span><span class="p">]</span>
+
+    <span class="c1"># trigger level [V], edge [&#39;neg&#39;, &#39;pos&#39;] and holdoff time [sample periods]</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">edge</span> <span class="o">=</span> <span class="s1">&#39;pos&#39;</span>
+    <span class="n">ch</span><span class="o">.</span><span class="n">holdoff</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Initialize diode current and voltage</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">hover</span> <span class="o">=</span> <span class="n">HoverTool</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;vline&#39;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="s2">&quot;@x&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;@y&quot;</span><span class="p">)])</span>
+<span class="n">tools</span> <span class="o">=</span> <span class="s2">&quot;wheel_zoom, box_zoom, reset,pan&quot;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+           <span class="n">plot_width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;XY plot of NMOS transistor VI characteristic&quot;</span><span class="p">,</span>
+           <span class="n">toolbar_location</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+           <span class="n">tools</span><span class="o">=</span><span class="p">(</span><span class="n">tools</span><span class="p">,</span> <span class="n">hover</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Voltage [V]&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_label</span> <span class="o">=</span> <span class="s1">&#39;Current [mA]&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">line_alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># get and explicit handle to update the next show cell</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">notebook_handle</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Erstelle eine neue Zelle (Einfügen -&gt; Zelle darunter) und
+kopieren Sie den unten stehenden Code.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Measuring I, V and re-plotting</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="c1"># reset and start</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+    <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+    <span class="c1"># wait for data</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">status_run</span><span class="p">()):</span>
+        <span class="k">pass</span>
+
+    <span class="n">V0</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN1 signal</span>
+    <span class="n">V1</span> <span class="o">=</span> <span class="n">osc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span>  <span class="c1"># IN2 signal</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">((</span><span class="n">V0</span><span class="o">-</span><span class="n">V1</span><span class="p">)</span><span class="o">/</span><span class="n">R3</span><span class="p">)</span><span class="o">*</span><span class="mf">1E3</span>        <span class="c1"># 1E3 convert to mA</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">V0</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">data_source</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">I</span>
+    <span class="n">push_notebook</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
+für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen Sie
+einfach nur Zelle 2 aus, um die Messungen erneut zu starten.</p>
+<p>Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der Diode  erhalten, wie in <a class="reference internal" href="#fig-06"><span class="std std-numref">Abb. 23.6</span></a>  dargestellt.</p>
+<div class="figure align-center" id="fig-06">
+<img alt="_images/Activity_23_Fig_06.png" src="_images/Activity_23_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 23.6 </span><span class="caption-text">NMOS VI-Kennlinie gemessen mit Jupyter Notebook</span></p>
+</div>
+</div>
+<div class="section" id="pmos-als-diode">
+<h2>23.7. PMOS als Diode<a class="headerlink" href="#pmos-als-diode" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dieselben Messungen können auch für den PMOS-Transistor durchgeführt werden.
+Beim PMOS-Transistor wird die Spannungspolarität umgekehrt, so dass die
+Konfiguration der PMOS-Diode anders sein muss als bei NMOS.
+Die Konfiguration der PMOS-Diode ist in <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 23.7</span></a> dargestellt.</p>
+<div class="figure align-center" id="fig-07">
+<img alt="_images/Activity_23_Fig_07.png" src="_images/Activity_23_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 23.7 </span><span class="caption-text">Anschlussdiagramm der PMOS-Diode</span></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>23.8. Verfahren<a class="headerlink" href="#id1" title="Link zu dieser Überschrift">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Bauen Sie die Schaltung aus <a class="reference internal" href="#fig-07"><span class="std std-numref">Abb. 23.7</span></a> auf dem
+Steckbrett auf. Setzen Sie für <span class="math notranslate nohighlight">\(R1 = 2,2\,k\Omega\)</span>, <span class="math notranslate nohighlight">\(R2 = 10\,k\Omega\)</span> und für <span class="math notranslate nohighlight">\(R3 = 1\,k\Omega\)</span>
+ein. Für M1 nehmen Sie bitte ZVP211.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warnung</p>
+<p class="last">Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
+überprüfen Sie Ihre Schaltung nochmal. Die Spannungsversorgungsstifte
+-3,3V und +3,3V haben keine Schutzschaltung und können im Falle eines
+Kurzschlusses beschädigt werden.</p>
+</div>
+</li>
+<li><p class="first">Starten Sie die Anwendung Oszilloskop &amp; Signalgenerator</p>
+</li>
+<li><p class="first">Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf <span class="math notranslate nohighlight">\(0,45\,V\)</span>,
+den DC-Offset auf <span class="math notranslate nohighlight">\(-0,45\,V\)</span> und die Frequenz auf <span class="math notranslate nohighlight">\(1 kHz\)</span> ein, um die
+Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren
+Sie SHOW und wählen Sie Enable.</p>
+</li>
+<li><p class="first">Stellen Sie sicher, dass IN1, IN2 und MATH <span class="math notranslate nohighlight">\(V/div\)</span> auf der linken
+unteren Seite des Bildschirms auf <span class="math notranslate nohighlight">\(1\,V/div\)</span> eingestellt sind (Sie
+können <span class="math notranslate nohighlight">\(V/div\)</span> einstellen, indem Sie die gewünschten Kanal auswählen
+und mit vertikalen +/- Regler verwenden)</p>
+</li>
+<li><p class="first">Setzen Sie <span class="math notranslate nohighlight">\(t/div\)</span> Wert auf <span class="math notranslate nohighlight">\(200\,us/div\)</span> (Sie können <span class="math notranslate nohighlight">\(t/div\)</span> mit
+horizontalen +/- Reglern einstellen)</p>
+</li>
+<li><p class="first">Stellen Sie unter MATH-Kanaleinstellungen <span class="math notranslate nohighlight">\(IN1-IN2\)</span> ein
+und wählen Sie ENABLE.</p>
+</li>
+<li><p class="first">Stellen Sie unter den Menueinstellungen IN1 und IN2 den Messtaster
+auf x10 und den vertikalen Offset auf 0.</p>
+</li>
+<li><p class="first">Stellen Sie unter Einstellungen des MATH-Menus den vertikalen
+Offset auf 0 ein.</p>
+</li>
+<li><p class="first">Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf <span class="math notranslate nohighlight">\(1\,V\)</span> ein</p>
+</li>
+</ol>
+<div class="figure align-center" id="fig-08">
+<img alt="_images/Activity_23_Fig_08.png" src="_images/Activity_23_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 23.8 </span><span class="caption-text">PMOS-Diodenanschlussmessungen</span></p>
+</div>
+<p>Wie in <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 23.8</span></a> zu sehen, verhält sich der PMOS in der
+Diodenkonfiguration wie eine Diode mit einer Durchlassspannung
+gleich dem PMOS <span class="math notranslate nohighlight">\(V_ {TH}\)</span>.</p>
+<p>Vergleichen Sie die <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 23.8</span></a> und <a class="reference internal" href="#fig-04"><span class="std std-numref">Abb. 23.4</span></a> und versuchen Sie, den Unterschied zwischen NMOS- und
+PMOS-Diodenkonfigurationen zu erklären.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_24_TheBJTasSwitch.html" class="btn btn-neutral float-right" title="24. BJT-Transistor als Schalter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_22_TheBJTasDiode.html" class="btn btn-neutral" title="22. Der BJT-Transistor ist als Diode geschaltet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

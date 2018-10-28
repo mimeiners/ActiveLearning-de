@@ -1,0 +1,583 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. Resonanz in RLC-Schaltungen &mdash; Red Pitaya 1.0 Dokumentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
+    <link rel="next" title="9. Tiefpass- und Hochpassfilter" href="Activity_09_LowPassandHighPassFilters.html" />
+    <link rel="prev" title="7. Transient Response einer RL-Schaltung" href="Activity_07_ResponseRL.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity_01_Phase.html">1. Was ist Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_02_Kirchhoff.html">2. Kirchhoffs Spannungs- und Stromgesetze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_03_Voltage.html">3. Spannungsteilung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_04_Proportionality.html">4. Proportionalität und Überlagerung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_05_Thevenin.html">5. Thévenin Ersatzschaltung und maximale Leistungsübertragung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_06_ResponseRC.html">6. Transient Response der RC-Beschaltung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_07_ResponseRL.html">7. Transient Response einer RL-Schaltung</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Resonanz in RLC-Schaltungen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zielsetzung">8.1. Zielsetzung</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hintergrund">8.2. Hintergrund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materialien">8.3. Materialien</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vorgehensweise">8.4. Vorgehensweise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fragen">8.5. Fragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_09_LowPassandHighPassFilters.html">9. Tiefpass- und Hochpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_10_BandPassFilters.html">10. Bandpassfilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_11_ImpedanceMeasurementFrequencyEffects.html">11. Impedanzmessung - Frequenzeffekte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_12_MeasuringaLoudspeakerImpedanceProfile.html">12. Messung eines Lautsprecherimpedanzprofils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_13_BasicOPAmpConfigurations.html">13. Grundlegende OP-Verstärkerkonfigurationen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Verstärkung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_15_OpAmpGainBandwidthProduct.html">15. OPAMP Verstärkungsbandbreite Produkt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_16_DifferenceAmplifier.html">16. Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_17_CurrentSensingUsingDifferenceAmplifier.html">17. Strommessung mit einem Differenzverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_18_TheComparatorSchmittTrigger.html">18. Der Komparator, Positive Feedback und Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_19_Diodes.html">19. Diodes und Jupyter Notebook Beispiel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_20_DiodeRectifiers.html">20. Diodengleichrichter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_21_PrecisionRectifiers.html">21. Präzisionsgleichrichter, Absolutwertschaltungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_22_TheBJTasDiode.html">22. Der BJT-Transistor ist als Diode geschaltet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_23_TheMOSAsDiode.html">23. Die Nutzung der MOS-Transistors als Diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_24_TheBJTasSwitch.html">24. BJT-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_25_MOSasSwitch.html">25. MOSFET-Transistor als Schalter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_26_BJTCommonEmitterAmplifier.html">26. BJT gemeinsamer Emitterverstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_27_MOSCommonSourceAmplifier.html">27. MOS-Transistor-Source-Verstärker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity_28_BoostConverter.html">28. DC-DC-Aufwärtswandler</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>8. Resonanz in RLC-Schaltungen</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity_08_ResonanceRCL.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="resonanz-in-rlc-schaltungen">
+<h1>8. Resonanz in RLC-Schaltungen<a class="headerlink" href="#resonanz-in-rlc-schaltungen" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="zielsetzung">
+<h2>8.1. Zielsetzung<a class="headerlink" href="#zielsetzung" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das Ziel dieses Versuchs ist es, das Phänomen der Resonanz in
+RLC-Schaltungen zu untersuchen. Bestimmen Sie die Resonanzfrequenz und
+Bandbreite des gegebenen Netzwerks anhand des Amplitudengangs zu einer
+sinusförmigen Quelle.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch. wenn es um die Anschlüsse an die Red Pitaya
+STEMlab-Karte geht. <a class="reference external" href="https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html">hardware</a>.</p>
+<p class="last">Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet. Die <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html">Bode</a>
+Analysatoranwendung wird verwendet, um den Frequenzgang der
+RLC-Schaltung zu messen.</p>
+</div>
+</div>
+<div class="section" id="hintergrund">
+<h2>8.2. Hintergrund<a class="headerlink" href="#hintergrund" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ein Resonanzkreis, auch Abstimmkreis genannt, besteht aus einer
+Induktivität und einem Kondensator sowie einer Spannungs- oder
+Stromquelle. Es ist eine der wichtigsten Schaltungen in der
+Elektronik. Ein Resonanzkreis in einer von vielen Formen ermöglicht es
+uns beispielsweise, aus der Vielzahl der Signale, die uns jederzeit
+umgeben, einen gewünschten Radio- oder Fernsehsender einzustellen.</p>
+<p>Ein Netzwerk ist in Resonanz, wenn Spannung und Strom an den
+Netzeingangsklemmen in Phase sind und die Eingangsimpedanz des
+Netzwerks rein ohmscher Natur ist.</p>
+<div class="figure" id="id1">
+<span id="fig-01"></span><img alt="_images/Activity_08_Fig_01.png" src="_images/Activity_08_Fig_01.png" />
+<p class="caption"><span class="caption-number">Abb. 8.1 </span><span class="caption-text">Parallel-Resonanzkreis</span></p>
+</div>
+<p>Berücksichtigen Sie die parallele RLC-Schaltung von <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 8.1</span></a>. Die von
+der Schaltung angebotene stationäre Admittanz ist:</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-01">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-08-eq-01" title="Permalink to this equation">¶</a></span>\[Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)\]</div>
+<p>Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen
+phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass
+die notwendige Bedingung gegeben ist:</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-02">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-08-eq-02" title="Permalink to this equation">¶</a></span>\[\omega C - \frac{1}{\omega L} = 0\]</div>
+<p>Die Resonanzbedingung kann durch Einstellen von L, C oder
+<span class="math notranslate nohighlight">\(\omega\)</span> erreicht werden. Wenn man L und C konstant hält, wird
+die Resonanzfrequenz <span class="math notranslate nohighlight">\(\omega_0\)</span> durch:</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-03">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-08-eq-03" title="Permalink to this equation">¶</a></span>\[\omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)\]</div>
+<p>oder</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-04">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-08-eq-04" title="Permalink to this equation">¶</a></span>\[f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz (2)\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p><strong>Frequenzgang</strong></p>
+<p>Es handelt sich um eine Darstellung der Größe der
+Ausgangsspannung eines Resonanzkreises als Funktion der
+Frequenz. Die Reaktion beginnt natürlich bei Null, erreicht
+einen Maximalwert in der Nähe der Eigenresonanzfrequenz und
+fällt dann wieder auf Null, wenn <span class="math notranslate nohighlight">\(omega\)</span> unendlich
+wird. Der Frequenzgang ist in <a class="reference internal" href="#fig-02"><span class="std std-numref">Abb. 8.2</span></a>
+dargestellt.</p>
+<div class="last figure" id="id2">
+<span id="fig-02"></span><img alt="_images/Activity_08_Fig_02.png" src="_images/Activity_08_Fig_02.png" />
+<p class="caption"><span class="caption-number">Abb. 8.2 </span><span class="caption-text">Frequenzgang des Parallelschwingkreises</span></p>
+</div>
+</div>
+<p>Die beiden zusätzlichen Frequenzen <span class="math notranslate nohighlight">\(\omega_1\)</span> und
+<span class="math notranslate nohighlight">\(\omega_2\)</span> werden ebenfalls angezeigt, die als
+Halbleistungsfrequenzen bezeichnet werden. Diese Frequenzen
+lokalisieren diejenigen Punkte auf der Kurve, bei denen der
+Spannungsverlauf <span class="math notranslate nohighlight">\(1/sqrt(2)\)</span> oder das 0,707-fache des
+Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der
+Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des
+Schwingkreises und ist definiert als:</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-05">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-08-eq-05" title="Permalink to this equation">¶</a></span>\[\beta = \omega_2 - \omega_1 (3)\]</div>
+<div class="figure" id="id3">
+<span id="fig-03"></span><img alt="_images/Activity_08_Fig_03.png" src="_images/Activity_08_Fig_03.png" />
+<p class="caption"><span class="caption-number">Abb. 8.3 </span><span class="caption-text">Serien-Resonanzkreis</span></p>
+</div>
+</div>
+<div class="section" id="materialien">
+<h2>8.3. Materialien<a class="headerlink" href="#materialien" title="Link zu dieser Überschrift">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab 125-14 oder STEMlab 125-10</li>
+<li>Widerstände 100 Ω, 1 KΩ</li>
+<li>Kondensatoren 0,01 µF</li>
+<li>Induktivitäten 4,7 mH</li>
+</ul>
+</div>
+<div class="section" id="vorgehensweise">
+<h2>8.4. Vorgehensweise<a class="headerlink" href="#vorgehensweise" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zusätzliche Kalkulation:
+Mit einem der sw-Tools wie Matlab oder Python können wir die Impedanz
+der parallelen RLC-Schaltung aus Figur 1 berechnen.</p>
+<p>Die Admittanz, <span class="math notranslate nohighlight">\(Y\)</span> der Parallelschaltung ist in
+Gl. <a class="reference internal" href="#equation-08-eq-01">Gl. 8.1</a> angegeben, wobei die Impedanz <span class="math notranslate nohighlight">\(Z\)</span> als
+Kehrwert der Admittanz, <span class="math notranslate nohighlight">\(Z = 1 / Y\)</span> angegeben ist.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<dl class="docutils">
+<dt>Bei dieser Berechnung berücksichtigen wir den</dt>
+<dd>Serienwiderstand der Spule. Dieser Widerstand beeinflusst
+das Phasenverhalten der RLC-Schaltung bei niedrigeren
+Frequenzen. Die obige Gleichung wird für ideale Komponenten
+ohne parasitäre Elemente verwendet. In der Praxis
+(Messungen) haben wir nur reale Elemente und müssen
+berücksichtigen, dass die Spule keine reine Induktivität
+ist, sondern auch einen effektiven Serienwiderstand hat
+<span class="math notranslate nohighlight">\(R_{esr}\)</span>, also</dd>
+</dl>
+<div class="last math notranslate nohighlight" id="equation-08-eq-06">
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-08-eq-06" title="Permalink to this equation">¶</a></span>\[Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.\]</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p class="last">Die Resonanzfrequenz ist definiert als die Frequenz, bei der
+die <a class="reference external" href="https://en.wikipedia.org/wiki/Electrical_Impedanz">Impedanz</a> der Schaltung minimal ist. Äquivalent kann es
+definiert werden als die Frequenz, bei der die Impedanz rein
+real (d.h. rein resistiv) ist. Dies geschieht, weil die
+Impedanzen von Induktivität und Kondensator bei Resonanz
+gleich, aber mit entgegengesetztem Vorzeichen sind und sich
+aufheben. Schaltungen, bei denen L und C parallel und nicht
+in Reihe geschaltet sind, haben tatsächlich eine maximale
+Impedanz und keine minimale Impedanz. Aus diesem Grund
+werden sie oft als <a class="reference external" href="https://en.wikipedia.org/wiki/Antiresonance">Antiresonatoren</a> bezeichnet, es ist
+jedoch üblich, die Frequenz, bei der dies geschieht, als
+Resonanzfrequenz zu bezeichnen.</p>
+</div>
+<p>Matlab-Code zur Berechnung von <span class="math notranslate nohighlight">\(Z\)</span> ist unten aufgeführt.</p>
+<div class="highlight-matlab notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">%% Spezifikation</span>
+<span class="n">Rs</span> <span class="p">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="n">R1</span> <span class="p">=</span> <span class="mf">1e3</span><span class="p">;</span>
+<span class="n">L1</span> <span class="p">=</span> <span class="mf">4.7e-3</span><span class="p">;</span>
+<span class="n">C1</span> <span class="p">=</span> <span class="mf">0.1e-6</span><span class="p">;</span>
+<span class="n">Resr</span> <span class="p">=</span> <span class="mf">6.5</span><span class="p">;</span>          <span class="c">% Effektiver Serienwiderstand in Ohm</span>
+<span class="n">Vin</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="n">f</span> <span class="p">=</span> <span class="nb">logspace</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1e6</span><span class="p">);</span>     <span class="c">% Frequenzbereich</span>
+
+<span class="c">%% Berechnung von Z</span>
+<span class="n">Y1</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">R1</span><span class="p">;</span>
+<span class="n">Y2</span> <span class="p">=</span> <span class="nb">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">.*</span><span class="n">f</span><span class="o">*</span><span class="n">C1</span><span class="p">;</span>
+<span class="n">Y3</span> <span class="p">=</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="n">Resr</span><span class="o">+</span><span class="nb">i</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">.*</span><span class="n">f</span><span class="o">*</span><span class="n">L1</span><span class="p">);</span>
+<span class="n">Y</span> <span class="p">=</span> <span class="n">Y1</span> <span class="o">+</span> <span class="n">Y2</span> <span class="o">+</span> <span class="n">Y3</span><span class="p">;</span>
+<span class="n">Z</span> <span class="p">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">Y</span><span class="p">;</span>
+
+<span class="c">%% Plotting</span>
+<span class="n">fig1</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span> <span class="s">&#39;fontsize&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">);</span>
+<span class="n">yyaxis</span> <span class="n">left</span>
+<span class="n">semilogx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="nb">real</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Re(Z) in \Omega&#39;</span><span class="p">);</span>
+
+<span class="n">yyaxis</span> <span class="n">right</span>
+<span class="n">semilogx</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="nb">imag</span><span class="p">(</span><span class="n">Z</span><span class="p">))</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Im(Z) in \Omega&#39;</span><span class="p">);</span>
+
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Frequenz f in Hz&#39;</span><span class="p">);</span>
+<span class="n">grid</span> <span class="n">on</span>
+
+<span class="c">%% Export figure</span>
+<span class="n">print</span><span class="p">(</span><span class="n">fig1</span><span class="p">,</span> <span class="s">&#39;../img/Activity_08_Fig_04&#39;</span><span class="p">,</span> <span class="s">&#39;-depsc&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Wenn wir den obigen Code ausführen, erhalten wir folgende Ergebnisse,
+die auf dem Bild unten gezeigt werden.</p>
+<div class="figure" id="id4">
+<span id="fig-04"></span><img alt="_images/Activity_08_Fig_04.png" src="_images/Activity_08_Fig_04.png" />
+<p class="caption"><span class="caption-number">Abb. 8.4 </span><span class="caption-text">Berechnung der Impedanz Z der parallelen RLC-Schaltung.</span></p>
+</div>
+<p>Wir können auch den Absolutwert von Z berechnen, der die kombinierte
+Impedanz der RLC-Schaltung aus <a class="reference internal" href="#fig-01"><span class="std std-numref">Abb. 8.1</span></a> ist.  Der
+Absolutwert der Impedanz Z ist die Parameterform, mit der wir
+vorhersagen können, wie die Messungen aussehen sollen.</p>
+<p>Wir können die Schaltung aus <a class="reference internal" href="#fig-08"><span class="std std-numref">Abb. 8.8</span></a> modellieren, wie
+in der folgenden Abbildung gezeigt, wobei <span class="math notranslate nohighlight">\(Z = 1/Y\)</span> und
+<span class="math notranslate nohighlight">\(Y\)</span> in Gl. <a class="reference internal" href="#equation-08-eq-01">Gl. 8.1</a> angegeben ist.</p>
+<div class="figure" id="id5">
+<span id="fig-05"></span><img alt="_images/Activity_08_Fig_05.png" src="_images/Activity_08_Fig_05.png" />
+<p class="caption"><span class="caption-number">Abb. 8.5 </span><span class="caption-text">Darstellung der parallelen RLC-Schaltung als komplexe
+Impedanz Z.</span></p>
+</div>
+<p>Aus <a class="reference internal" href="#fig-05"><span class="std std-numref">Abb. 8.5</span></a> können wir deutlich erkennen, dass unsere
+Schaltung ein einfacher Spannungsteiler ist, wobei
+<span class="math notranslate nohighlight">\(V_{out} = V_{in} * Z / (R_s + Z)\)</span>. Da die Impedanz <span class="math notranslate nohighlight">\(Z\)</span>
+jedoch frequenzabhängig ist, ist das Verhältnis zwischen der Impedanz
+<span class="math notranslate nohighlight">\(Z\)</span> und dem Serienwiderstand <span class="math notranslate nohighlight">\(R_s\)</span> frequenzabhängig und
+damit das Spannungsübertragungsverhältnis <span class="math notranslate nohighlight">\(V_{out}/V){in}\)</span>.</p>
+<p>Bei einer Frequenz f: Wenn der Wert von Z viel kleiner als der Wert
+von Rs ist, ist die Ausgangsspannungsamplitude viel kleiner als die
+Eingangsspannungsamplitude.</p>
+<p>Bei einer bestimmten Frequenz f: wenn der Wert von Z viel höher ist
+als der Wert von Rs, wird die Ausgangsspannungsamplitude nahe der
+Eingangsspannungsamplitude liegen.</p>
+<p>Bei einer bestimmten Frequenz <span class="math notranslate nohighlight">\(f\)</span>, wobei <span class="math notranslate nohighlight">\(Z = R_s\)</span> ist
+<span class="math notranslate nohighlight">\(V_out = \frac{1}{2} V_in\)</span>.</p>
+<p>Bei einer bestimmten Frequenz <span class="math notranslate nohighlight">\(f\)</span>, wobei <span class="math notranslate nohighlight">\(Z\)</span> maximal ist,
+ist <span class="math notranslate nohighlight">\(V_out\)</span> auch maximal. Dies ist die Resonanzfrequenz.</p>
+<div class="figure" id="id6">
+<span id="fig-06"></span><img alt="_images/Activity_08_Fig_06.png" src="_images/Activity_08_Fig_06.png" />
+<p class="caption"><span class="caption-number">Abb. 8.6 </span><span class="caption-text">Berechnung des Absolutwertes der Impedanz Z für die in
+<a class="reference internal" href="#fig-03"><span class="std std-numref">Abb. 8.3</span></a> dargestellte Schaltung.</span></p>
+</div>
+<p>Durch Verwendung von</p>
+<div class="math notranslate nohighlight" id="equation-08-eq-07">
+<span class="eqno">(8.7)<a class="headerlink" href="#equation-08-eq-07" title="Permalink to this equation">¶</a></span>\[V_{out} = V_{in} \frac{Z}{R_s + Z}\]</div>
+<p>können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5
+und 8.</p>
+<div class="admonition note">
+<p class="first admonition-title">Bemerkung</p>
+<p>Größenänderung in Dezibel (dB)</p>
+<div class="last math notranslate nohighlight" id="equation-08-eq-08">
+<span class="eqno">(8.8)<a class="headerlink" href="#equation-08-eq-08" title="Permalink to this equation">¶</a></span>\[H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.\]</div>
+</div>
+<div class="figure" id="id7">
+<span id="fig-07"></span><img alt="_images/Activity_08_Fig_07.png" src="_images/Activity_08_Fig_07.png" />
+<p class="caption"><span class="caption-number">Abb. 8.7 </span><span class="caption-text">Berechnung des Frequenzgangs (Vout/Vin) für die Schaltung
+in Abbildung 5.</span></p>
+</div>
+<p>Vorgehensweise:</p>
+<ol class="arabic simple">
+<li>Bauen Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien
+Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1
+µF und L1= 4,7 mH auf.</li>
+</ol>
+<div class="figure" id="id8">
+<span id="fig-08"></span><img alt="_images/Activity_08_Fig_08.png" src="_images/Activity_08_Fig_08.png" />
+<p class="caption"><span class="caption-number">Abb. 8.8 </span><span class="caption-text">Parallele RLC-Schaltung für die Messungen.</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Öffnen Sie die Anwendung Bode analyzer. Im Menü „Einstellungen“ die
+Startfrequenz auf 100Hz, die Endfrequenz auf 1MHz und die
+Schrittzahl auf 50 einstellen. Und klicken Sie auf die Schaltfläche
+„RUN“.</li>
+</ol>
+<div class="figure" id="id9">
+<span id="fig-09"></span><img alt="_images/Activity_08_Fig_09.png" src="_images/Activity_08_Fig_09.png" />
+<p class="caption"><span class="caption-number">Abb. 8.9 </span><span class="caption-text">Bode Analysator Anwendung</span></p>
+</div>
+<p>Nachdem die Messungen durchgeführt wurden, sollten Sie den
+Frequenzgang Ihrer Schaltung erhalten, wie in Abbildung 10
+dargestellt.</p>
+<div class="figure" id="id10">
+<span id="fig-10"></span><img alt="_images/Activity_08_Fig_10.png" src="_images/Activity_08_Fig_10.png" />
+<p class="caption"><span class="caption-number">Abb. 8.10 </span><span class="caption-text">Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch
+Bode Analysator-Anwendung.</span></p>
+</div>
+<ul class="simple">
+<li>Vergleichen Sie Messungen und Berechnungen. Wenn es einen
+Unterschied gibt, versuchen Sie zu erklären, warum.</li>
+</ul>
+<div class="admonition hint">
+<p class="first admonition-title">Hinweis</p>
+<p class="last">Parasitäre Phänomene</p>
+</div>
+<p>Die Bode-Analysatoranwendung führt einen Frequenzdurchlauf durch, so
+dass sie ein Sinussignal auf OUT1 innerhalb des von uns gewählten
+Frequenzbereichs (im Einstellungsmenu) erzeugt.</p>
+<p>Das Eingangssignal IN1 ist direkt mit OUT1 verbunden, gefolgt von
+IN1=Vin. IN2 wird auf der anderen Seite des RLC-Kreises und damit
+IN2=Vout angeschlossen. Die Anwendung des Bode-Analysators wird dann
+für jeden Frequenzschritt das Verhältnis von IN1/IN2 aufnehmen und den
+Frequenzgang berechnen.</p>
+<ol class="arabic" start="3">
+<li><p class="first">Um zu sehen, wie sich die Signalamplitude von Vout/IN2 in Bezug auf
+OUT1 ändert, starten Sie die Oszilloskopanwendung, aktivieren Sie
+in den OUT1 Einstellungen OUT1, deaktivieren Sie die SHOW-Taste und
+betrachten Sie die Signalamplituden von IN1 und IN2.</p>
+<p>Ändern Sie die OUT1-Frequenz, stellen Sie den t/div-Wert so ein,
+dass Sie 2 Zyklen des IN1 haben und beobachten Sie die Amplituden
+von IN1 und IN2.</p>
+<p>Wiederholen Sie diesen Schritt für die OUT1-Frequenz von 100Hz bis
+1MHz und Sie sollten den gleichen Amplitudenverlauf beobachten, wie
+er mit dem Bode-Analysator gemessen wurde.</p>
+<p>Bode-Analysator misst auch die Phase zwischen IN1 und IN2. Die
+Phase ist ebenfalls frequenzabhängig. Das kann man mit der
+Oszilloskop-Applikation leicht erkennen.</p>
+</li>
+<li><p class="first">Wiederholen Sie das Experiment für den Serienschwingkreis in Figur
+3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 KΩ. Die
+Vo-Spannung am Widerstand ist proportional zum
+Serien-RLC-Schaltstrom.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="fragen">
+<h2>8.5. Fragen<a class="headerlink" href="#fragen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zeichne den Spannungsverlauf der Schaltung auf und erhalte die
+Bandbreite aus den Halbleistungsfrequenzen unter Verwendung der
+Gl. <a class="reference internal" href="#equation-08-eq-03">Gl. 8.3</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity_09_LowPassandHighPassFilters.html" class="btn btn-neutral float-right" title="9. Tiefpass- und Hochpassfilter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity_07_ResponseRL.html" class="btn btn-neutral" title="7. Transient Response einer RL-Schaltung" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'de',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
