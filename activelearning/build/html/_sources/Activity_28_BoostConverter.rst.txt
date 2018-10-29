@@ -198,7 +198,7 @@ der LEDs liegt (:math:`2 \cdot 1,8\,V`).
 An diesem Punkt, an dem das  Schaltsignal OUT1 aktiviert ist, ist der
 DC-DC-Aufwärtswandler funktionsfähig und verhält sich wie oben in der
 Theorie beschrieben. Die Ausgangsspannung wird auf ca. :math:`5\,V` angehoben und die LEDs leuchten.
-Dieser Zustand ist in :numfig:`28_fig_04` dargestellt. Wie wir aus den Messungen ersehen können,
+Dieser Zustand ist in :numref:`28_fig_04` dargestellt. Wie wir aus den Messungen ersehen können,
 tritt bei Batterie und Ausgangsspannung eine Restwelligkeit auf, die durch
 Batteriespannungswelligkeit und Transistor :math:`M_1` -Schaltung verursacht wird.
 Die Spannungswelligkeit der Batterie ist darauf zurückzuführen, dass die Batterie keine
