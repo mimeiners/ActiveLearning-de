@@ -4,10 +4,11 @@ Was ist Phase?
 Zielsetzung
 -----------
 
-Das Ziel dieses Labors ist es zu verstehen, was Phasenbeziehung
-zwischen Signalen bedeutet und zu prüfen, wie Theorie mit der Praxis
-übereinstimmen. Des Weiteren soll ein erstes Verständnis der Red
-Pitaya STEMlab Hardware und Software gewonnen werden.
+In diesem Versuch soll der Begriff der "Phase" zwischen zwei Signalen untersucht werden.
+Ziel ist es, die Phasenbeziehung dieser Signale zu einander zu verstehen und durch praktische
+Untersuchung, die Theorie in die Praxis umzusetzen.
+Des Weiteren soll ein erstes Verständnis für die Bedienung von Redpitaya STEMIlab Hardware
+und der dazugehörigen Software gewonnen werden. 
 
 
 Anmerkungen
@@ -15,8 +16,7 @@ Anmerkungen
 
 .. _Hardware: https://redpitaya.readthedocs.io/en/latest/developerGuide/hardware.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
-wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 
+Die, in diesem Versuch, verwendete Terminologie, bezieht sich auf das Handbuch der RedPitaya STEMIlab Hardware_.
 
 
 
@@ -25,10 +25,9 @@ Hintergrund
 
 Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen
 und passive Komponenten betrachten, die es uns ermöglichen, die
-Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden
-wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen.
+Phasenverschiebung mit reelen Signalen zu beobachten. Zuerst werden
+wir uns eine Sinuswelle und den Phasenausdruck in Beweisführung ansehen.
 Die nachfolgende Gleichung sollte bekannt sein.
-
 
 .. math::
    :label: 01_eq_1
@@ -37,14 +36,14 @@ Die nachfolgende Gleichung sollte bekannt sein.
    
 
    
-:math:`\omega` setzt die Frequenz der sinusförmigen Welle im
-zeitlichen Verlauf :math:`t` und :math:`\theta`
-definiert einen Zeitversatz :math:`\omega t_0`, der eine
-Phasenverschiebung in der Funktion definiert.
+:math:`\omega` stellt die Frequenz der sinusförmigen Welle im
+zeitlichen Verlauf :math:`t` dar. :math:`\theta`
+definiert einen Zeitversatz, der eine
+Phasenverschiebung in der Funktion darstellt.
 
 Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur
-Folge. Setze zunächst die Zeitvariable :math:`t` als konstant an,
-sagen wir 1. Das Argument, :math:`\omega t`, ist jetzt nicht länger
+Folge. Setzen Sie zunächst die Zeitvariable :math:`t` als konstant voraus,
+sagen wir 1. Der Ausdruck :math:`\omega t`, ist jetzt nicht länger
 eine Funktion der Zeit. Mit :math:`\omega` im Bogenmaß, ergibt sich
 für :math:`\sin(\frac{\pi}{4})\approx 0.7071`.
 
@@ -54,25 +53,24 @@ so ergibt sich für :math:`\frac{\pi}{4}` im Bogemaß
 :math:`45^{\circ}` bzw. :math:`\sin(45^{\circ}) = 0.7071` entsprechend.
 
 
-Lasse nun :math:`t` mit der Zeit variieren, wie es normalerweise
+Lassen Sie nun :math:`t` mit der Zeit variieren, wie es normalerweise
 der Fall ist. Wenn der Wert von :math:`\omega t` sich mit der Zeit
 linear ändert, ergibt dies eine Sinuswelle wie in :numref:`01_fig_01`
 dargestellt. Da :math:`\omega t` von 0 bis :math:`2 \pi` geht,
 verläuft die Amplitude der Sinuswelle von 0 bis 1, fällt auf -1 und
-geht zurück auf den Wert 0. Diesen Abschnitt nennt man Zyklus oder Periode
+geht zurück auf den Wert 0. Diesen Abschnitt bezeichnet  man als Zyklus oder Periode
 :math:`T` einer Sinuswelle. Die x-Achse ist das zeitvariable Argument
-bzw.\ der Winkel von :math:`\omega t`, der innerhalb von 0 bis :math:`2\pi`
+bzw. der Winkel von :math:`\omega t`, der innerhalb von 0 bis :math:`2\pi`
 variiert.
 
 Der Wert von :math:`\theta` ist gleich 0 in der Funktion, die in
 :numref:`01_fig_01` dargestellt ist. Aufgrund von :math:`sin(0) = 0`
 beginnt die Funktion im Koordinatenursprung bei 0. Dies ist eine
 einfache Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung.
-Beachte, wenn man :math:`\omega t` in Radianten in einem Bereich von 0
+Beachten Sie: wenn man :math:`\omega t` in Radianten in einem Bereich von 0
 bis :math:`2 \pi` oder in Gradzahlen von 0 bis :math:`360^{\circ}`
 verwendet, erhält man die in :numref:`01_fig_01` dargestellte
 Sinuswelle.
-
 
 .. figure:: img/Activity_01_Fig_01.png
    :name: 01_fig_01
@@ -82,12 +80,12 @@ Sinuswelle.
 
    
 
-Überlege, was passiert, wenn :math:`\omega t > 2\pi`.
+Überlegen Sie, was passiert, wenn :math:`\omega t > 2\pi`.
 	  
-Als Beispiel gebe :math:`2.5 \pi` in deinen Taschenrechner ein und
-sehe selbst. Die Sinusfunktion wiederholt sich alle
+Geben Sie zum Beispiel :math:`2.5 \pi` in deinen Taschenrechner ein und
+sehen Sie selbst. Die Sinusfunktion wiederholt sich alle
 :math:`2 \pi\,rad` oder :math:`360^{\circ}`. Es ist ähnlich wie das
-Subtrahieren von :math:`N \cdot 2 \pi` rad vom Argument, wobei
+Subtrahieren von :math:`N \cdot 2 \pi` rad vom Parameter, wobei
 :math:`N` die größte ganze Zahl ist, die ein nicht-negatives Ergebnis
 liefert.  
 
