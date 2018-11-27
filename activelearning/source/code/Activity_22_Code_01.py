@@ -12,7 +12,7 @@ import numpy as np
 # Initialize fpga modules
 fpga = overlay()
 gen0 = fpga.gen(0)
-osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
+osc = [fpga.osc(ch, 1.0) for ch in range(fpga._MNO)]
 
 # Configure OUT1 generator channel
 gen0.amplitude = 0.8
