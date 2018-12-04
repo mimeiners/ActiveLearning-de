@@ -326,8 +326,8 @@ als :math:`0,6 V` ist, beginnt die Diode zu leiten und der Pfadstrom wird nur du
 Widerstand :math:`R1` begrenzt. 
 
 
-Vorgehensweise - VI-Merkmalsmessungen
--------------------------------------
+Vorgehensweise - VI-Charakteristik Messungen
+--------------------------------------------
 
 Für diese Aufgabe verwenden wir die Webanwendung Jupyter Notebook. Wie Sie Jupyter
 Notebook starten und ein neues Projekt erstellen, ist in :numref:`19_fig_07` des
@@ -365,14 +365,14 @@ Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
 für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen
 Sie einfach nur Zelle 2 aus, um die Messungen erneut zu starten. 
 
-Nach dem Ausführen des obigen Codes sollten Sie die Charakteristik der
-Diode :math:`VI` erhalten, wie in :numref:`19_fig_08` dargestellt.
+Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der
+Diode erhalten wie in :numref:`19_fig_08` dargestellt.
 
 .. figure:: img/Activity_19_Fig_08.png
    :name: 19_fig_08
    :align: center
 
-   Didoes VI-Charakteristik gemessen mit Jupyter Notebook
+   Dioden VI-Charakteristik gemessen mit Jupyter Notebook
 
 In der :numref:`19_fig_08` ist die typische :math:`VI` -Dioden-Kennlinie dargestellt.
 Aus der :numref:`19_fig_08` ist ersichtlich, dass bei steigender Spannung an der

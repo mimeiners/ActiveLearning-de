@@ -5,7 +5,7 @@ Zielsetzung
 -----------
 
 Der Zweck dieses Versuchs ist es, die Vorwärts- und Rückwärtsstrom-/Spannungseigenschaften
-eines als Diode geschalteten Bipolartransistors ("Bipolar junction transistor", BJT) zu untersuchen.
+eines als Diode geschalteten Bipolartransistors ("Bipolar Junction Transistor", BJT) zu untersuchen.
 
 Hinweise
 --------
@@ -55,21 +55,21 @@ Materialien
 - :math:`1\,k\Omega` Widerstand
 - :math:`10\,k\Omega` Widerstand
 - :math:`2,2\,k\Omega` Widerstand
-- kleinsignal NPN-Transistor (2N3904)
-- kleinsignal PNP-Transistor (2N3906)
+- kleinsignal npn-Transistor (2N3904)
+- kleinsignal pnp-Transistor (2N3906)
 - lötfreies Steckbrett
 - 9V Batterie/Labornetzteil
 
-Ein NPN-Transistor, der wie in :numref:`22_fig_01` gezeigt angeschlossen ist,
+Ein npn-Transistor, der wie in :numref:`22_fig_01` gezeigt angeschlossen ist,
 verhält sich wie eine reguläre Diode. Wir können dies durch Messen der
-NPN-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen.
+npn-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen.
 
 
 .. figure:: img/Activity_22_Fig_01.png
    :name: 22_fig_01
    :align: center
 
-   NPN als Diodenanschlussdiagramm
+   npn als Diodenanschlussdiagramm
    
 
 .. note::
@@ -132,9 +132,9 @@ Verfahren
       npn-Transistor als Diodenmessungen
 
    
-.. _vorherigen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements
+.. _vorherigen: https://mimeinersactivelearning-de.readthedocs.io/de/latest/Activity19_Diodes.html#Zeitbereichsmessungen
 
-Aus :numref:`22_fig_03` ist ersichtlich, dass der NPN BJT-Transistor
+Aus :numref:`22_fig_03` ist ersichtlich, dass der npn BJT-Transistor
 in der, in :numref:`22_fig_01` gezeigten Konfiguration, sich wie eine
 Diode verhält.
 
@@ -239,7 +239,7 @@ Emitter-Basis-Verbindung eines, als Diode angeschlossenen, Bipolartransistors (B
 Bauen Sie die Schaltung auf der Lochrasterplatine so auf, wie es in :numref:`22_fig_06`
 dargestellt ist. **Der Emitter wird an den positiven Batteriepol angeschlossen.**
 
-Die NPNs haben wahrscheinlich eine Durchbruchspannung von mehr als :math:`10\,V`
+Die npns haben wahrscheinlich eine Durchbruchspannung von mehr als :math:`10\,V`
 und es kann vorkommen, dass unser maximaler Spannungsbereich nicht
 ausreichend ist, d.h. Wir werden nicht in der Lage sein, Q1 oberhalb
 der Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine
@@ -334,11 +334,11 @@ haben, sollten Sie ähnliche Ergebnisse wie in :numref:`22_fig_08` erhalten.
    :name: 22_fig_08
    :align: center
 
-   Messung der NPN-Emitter-Basis-Durchbruchspannung
+   Messung der npn-Emitter-Basis-Durchbruchspannung
    
 
 Aus :numref:`22_fig_08` können wir sehen, dass die umgekehrte
-Durchbruchspannung des NPN BJT 2N3904-Transistors etwa 10 V beträgt.
+Durchbruchspannung des npn BJT 2N3904-Transistors etwa 10 V beträgt.
 
 
 Frage
@@ -371,7 +371,7 @@ Verfahren
 
 1. Bauen Sie die Schaltung aus :numref:`22_fig_09` auf dem
    Steckbrett auf. Setzen Sie für :math:`R3 = 1\,k\Omega`, :math:`R4 = 100\,k\Omega`
-   und verwende für Q1 2N3904 NPN und für Q2 2N3904 PNP-Transistor.
+   und verwende für Q1 2N3904 npn und für Q2 2N3904 pnp-Transistor.
    
    .. figure:: img/Activity_22_Fig_10.png
       :name: 22_fig_10
@@ -432,6 +432,6 @@ Verfahren
 Fragen
 ------
 
-Könnte der Kollektor des PNP Q2 mit einem anderen Knoten wie einer
+Könnte der Kollektor des pnp Q2 mit einem anderen Knoten wie einer
 negativen Versorgungsspannung verbunden sein? Und was wäre der
 Effekt?
