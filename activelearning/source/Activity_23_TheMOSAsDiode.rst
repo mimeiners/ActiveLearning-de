@@ -1,4 +1,4 @@
-Die Nutzung der MOS-Transistors als Diode
+Die Nutzung des MOS-Transistors als Diode
 =========================================
 
 Zielsetzung
@@ -6,8 +6,8 @@ Zielsetzung
 
 Ziel dieses Versuchs ist die Untersuchung, der
 Vorwärtsstrom-Spannungs-Charakteristik eines MOS-Feldeffekttransistors
-(NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem Experiment wird
-eine Übersicht über den vorherigen Versuch_ empfohlen.
+(NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem
+Experiment wird eine Übersicht über den vorherigen Versuch_ empfohlen.
 
 
 
@@ -72,18 +72,20 @@ Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02`
 gezeigt. In der Diodenkonfiguration arbeitet der NMOS anders als der
 NPN BJT-Transistor. 
 
-Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei :math:`\approx 0,7\,V`, sie
-hängt von der Größe des Transistors und seinen Eigenschaften ab. Für den
-ausgewählten NMOS-Transistor liegt die Schwellenspannung
-:math:`V_{TH}` bei etwa :math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin
-anliegende Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreitet "schaltet"
-der MOS_Transistor ein und beginnt zu leiten. Da der Drain (D) -Pin schalttechnisch mit dem Gate-Pin (G)
-des Transistors verbunden ist, bleibt das Potential von :math:`D-G`
-auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
+Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei
+:math:`\approx 0,7\,V`, sie hängt von der Größe des Transistors und
+seinen Eigenschaften ab. Für den ausgewählten NMOS-Transistor
+liegt die Schwellenspannung :math:`V_{TH}` bei etwa
+:math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin anliegende
+Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreitet
+"schaltet" der MOS_Transistor ein und beginnt zu leiten. Da der
+Drain (D) -Pin schalttechnisch mit dem Gate-Pin (G) des Transistors
+verbunden ist, bleibt das Potential von :math:`D-G` auf dem Pegel der
+Schwellenspannung :math:`V_{TH}`. 
 
 .. note::
-   Diese Konfiguration von NMOS erzeugt effektiv eine Diode mit Durchlassspannung,
-   die der :math:`V_ {TH}` entspricht. 
+   Diese Konfiguration von NMOS erzeugt effektiv eine Diode mit
+   Durchlassspannung, die der :math:`V_ {TH}` entspricht. 
 
 
 .. figure:: img/Activity_23_Fig_01.png
@@ -92,8 +94,8 @@ auf dem Pegel der Schwellenspannung :math:`V_{TH}`.
    ZVN211_ Spezifikationen
 
    
-Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und mit den
-Messungen fortfahren.
+Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und
+mit den Messungen fortfahren.
 
 
 .. figure:: img/Activity_23_Fig_02.png
@@ -107,8 +109,9 @@ Verfahren
 ----------
 
 1. Bauen Sie die Schaltung aus :numref:`23_fig_01` auf dem
-   Steckbrettauf. Stellen Sie :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega` und :math:`R3 = 1\,k\Omega` ein. Für
-   M1 nehmen Sie ZVN211.
+   Steckbrettauf. Stellen Sie :math:`R1 = 2,2\,k\Omega`, :math:`R2 =
+   10\,k\Omega` und :math:`R3 = 1\,k\Omega` ein. Für M1 nehmen Sie
+   ZVN211.
    
 
    .. figure:: img/Activity_23_Fig_03.png
@@ -127,10 +130,11 @@ Verfahren
    
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf :math:`0,45\,V`,
-   den DC-Offset auf :math:`-0,45\,V` und die Frequenz auf :math:`1 kHz` ein, um die
-   Eingangsspannung anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren
-   Sie SHOW und wählen Sie Enable.
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf
+   :math:`0,45\,V`, den DC-Offset auf :math:`-0,45\,V` und die
+   Frequenz auf :math:`1 kHz` ein, um die Eingangsspannung
+   anzulegen. Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie
+   SHOW und wählen Sie Enable. 
    
 4. Stellen Sie sicher, dass IN1, IN2 und MATH :math:`V/div` auf der linken
    unteren Seite des Bildschirms auf :math:`1\,V/div` eingestellt sind (Sie
@@ -199,7 +203,8 @@ Der unten stehende Code erzeugt das gleiche Signal wie in :numref:`23_fig_04`, a
 plotet dieses in einem XY-Diagramm.
 
 Für die Messung der VI-Kurve ist ein "XY"-Plot erforderlich, wobei die
-x-Achse die Diodenspannung :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_3` dargestellt.
+x-Achse die Diodenspannung :math:`IN_2` und y-Achse ein Diodenstrom
+:math:`(IN_1 - IN_2)/R_3` dargestellt. 
 
 **Kopieren Sie den unten stehenden Code in die Zelle 1**
 
@@ -220,7 +225,8 @@ Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
 für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen Sie
 einfach nur Zelle 2 aus, um die Messungen erneut zu starten.
 
-Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der Diode  erhalten, wie in :numref:`23_fig_06`  dargestellt.
+Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik
+der Diode  erhalten, wie in :numref:`23_fig_06` dargestellt.
 
 
 .. figure:: img/Activity_23_Fig_06.png
@@ -252,9 +258,10 @@ Die Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
 Verfahren
 ---------
 
-1. Bauen Sie die Schaltung aus :numref:`23_fig_07` auf dem
-   Steckbrett auf. Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega` und für :math:`R3 = 1\,k\Omega`
-   ein. Für M1 nehmen Sie bitte ZVP211.
+1. Bauen Sie die Schaltung aus :numref:`23_fig_07` auf dem Steckbrett
+   auf. Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 =
+   10\,k\Omega` und für :math:`R3 = 1\,k\Omega` ein. Für M1 nehmen Sie
+   bitte ZVP211.
 
    .. warning::
       Bevor Sie die Schaltung an die STEMlab-Pins -3,3V und +3,3V anschließen,
