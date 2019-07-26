@@ -1,18 +1,6 @@
-TITLE: Red Pitaya's Active Learning
-AUTHOR: Many authors {copyright} Red Pitaya d.d.
+TITLE: Red Pitaya's Actives Lernen
+AUTHOR: Mirco Meiners at Hochschule Bremen
 DATE: today
-
-__Abstract.__
-Red Pitaya's Active Learning lecture notes.
-
-!bblock Risks, Side Effects and/or Discomforts
-A script is a keyword selection. It is characterized by my ideas and
-prejudices about electronics and circuit design strongly but not
-completely. And as common, this script has been written with a lot of time
-constraints, hence, it is not fully proof read and contains errors.
-Therefore, you should never rely solely on this script. Consult other
-sources like books, papers and application notes, also.
-!eblock
 
 # #include "Activity_01_Phase.do.txt"
 
@@ -50,7 +38,7 @@ sources like books, papers and application notes, also.
 
 ## # #include "Activity_18_TheComparatorSchmittTrigger.do.txt"
 
-## # #include "Activity_19_Diodes.do.txt"
+# # #include "Activity_19_Diodes.do.txt"
 
 ## # #include "Activity_20_DiodeRectifiers.do.txt"
 

@@ -4,10 +4,10 @@ Die Nutzung des MOS-Transistors als Diode
 Zielsetzung
 -----------
 
-Ziel dieses Versuchs ist die Untersuchung, der
-Vorwärtsstrom-Spannungs-Charakteristik eines MOS-Feldeffekttransistors
+Ziel dieses Versuches ist die Untersuchung der
+Vorwärtsstrom- und Spannungscharakteristik eines MOS-Feldeffekttransistors
 (NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem
-Experiment wird eine Übersicht über den vorherigen Versuch_ empfohlen.
+Experiment wird eine Durchsicht des vorherigen Versuch_ empfohlen.
 
 
 
@@ -29,7 +29,7 @@ Anmerkung
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab - Board - Hardware_ beziehen.
+STEMlab-Board- Hardware_ beziehen.
 
 Die Oszilloskop- und Signalgeneratoranwendung_ wird zum Erzeugen und
 Beobachten von Signalen auf der Schaltung verwendet.
@@ -40,25 +40,25 @@ verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
 
 .. note::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-   maximalen Ausgangsbereich von :math:`+/-\,1\,V` (2Vpp) erzeugen. Für diesen Versuch
-   werden höhere Signalamplituden benötigt. Aus
-   diesem Grund werden wir einen OP484_ in der invertierenden
+   maximalen Ausgangsbereich von :math:`+/-\,1\,V` (2 Vpp)
+   erzeugen. Für diesen Versuch werden höhere Signalamplituden
+   benötigt. Aus diesem Grund werden wir einen OP484_ in der invertierenden
    Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen versorgt. Der Verstärkungfaktor des invertierenden
    Verstärkers wird auf :math:`\approx 5` gesetzt, wobei
-   :math:`R1 = 2.2\,k\Omega` und :math:`R2 = 10 \,k\Omega` eingesetzt werden. 
+   :math:`R1 = 2.2\,k\Omega` und :math:`R2 = 10\,k\Omega` eingesetzt werden. 
 
-   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (Hinweis:"Schiene-zu-Schiene").
+   Versuchen Sie zu beantworten, warum ein OP484 anstelle eines OP27
+   oder OP97 verwendet wird. (Hinweis: "Rail-to-Rail").
    
 
 Materialien
 -----------
 
 - Red Pitaya STEMlab
-- OP484_ Quad-Rail-Rail-Operationsverstärker
+- OP484_ Quad-Rail-to-Rail-Operationsverstärker
 - :math:`1\,k\Omega` Widerstand
 - Kleinsignal-NMOS-Transistor (ZVN211_)
 - Kleinsignal-PMOS-Transistor (ZVP211_)
@@ -72,14 +72,14 @@ Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02`
 gezeigt. In der Diodenkonfiguration arbeitet der NMOS anders als der
 NPN BJT-Transistor. 
 
-Die Schwellenspannung(Threshold Voltage) liegt nicht zwingend bei
+Die Schwellspannung (Threshold Voltage) liegt nicht zwingend bei
 :math:`\approx 0,7\,V`, sie hängt von der Größe des Transistors und
 seinen Eigenschaften ab. Für den ausgewählten NMOS-Transistor
-liegt die Schwellenspannung :math:`V_{TH}` bei etwa
+liegt die Schwellspannung :math:`V_{TH}` bei etwa
 :math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin anliegende
-Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreitet
-"schaltet" der MOS_Transistor ein und beginnt zu leiten. Da der
-Drain (D) -Pin schalttechnisch mit dem Gate-Pin (G) des Transistors
+Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreiten,
+schaltet der MOS_Transistor ein und beginnt zu leiten. Da der
+Drain-Pin (D) schalttechnisch mit dem Gate-Pin (G) des Transistors
 verbunden ist, bleibt das Potential von :math:`D-G` auf dem Pegel der
 Schwellenspannung :math:`V_{TH}`. 
 

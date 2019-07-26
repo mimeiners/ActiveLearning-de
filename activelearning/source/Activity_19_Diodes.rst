@@ -136,7 +136,7 @@ der einer pn-Übergangsdiode mit den folgenden Ausnahmen:
    Gleichung, die als Richardson-Gleichung bekannt ist, bestimmt. Der
    primäre Unterschied zur herkömmlichen Diodengleichung liegt im
    :math:`I_S` mit der Ergänzung der modifizierten
-   Richardson-Konstante :math:`A^*`. 
+   Richardson-Konstante :math:`A^*`.
    
 
 .. math::
