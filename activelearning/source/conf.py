@@ -60,9 +60,9 @@ source_encoding = 'utf-8-sig'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Red Pitaya'
-copyright = u'2018, Red Pitaya d.d.'
-author = u'Red Pitaya'
+project = u'Red Pitaya - Active Learning'
+copyright = u'2019, Red Pitaya d.d., HSB'
+author = u'Red Pitaya, HSB'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -141,7 +141,8 @@ math_eqref_format = "Gl. {number}"
 #
 # html_theme = 'alabaster' -- original Sphinx
 # html_theme = 'guzzle_sphinx_theme'
-html_theme = "sphinx_rtd_theme"
+# html_theme = "sphinx_rtd_theme"
+html_theme = "sphinxdoc"
 
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -270,7 +271,7 @@ latex_elements = {
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '10pt',
+    'pointsize': '11pt',
 
     # Additional stuff for the LaTeX preamble.
     #
