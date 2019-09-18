@@ -109,7 +109,7 @@ seine Kollektorspannung, die ebenfalls zwischen :math:`0-5\,V` schwankt, schalte
 den MOSFET-Transistor ein und aus. Der Grund für die Verwendung von zwei NPN-Transistoren
 ist, dass das OUT1- und MOSFET-Gatesignal phasenrichtig sein müssen. D.h. wenn OUT1 high
 ist, sollte das Signal auf dem MOSFET-Gate ebenfalls high sein. Die Verwendung nur eines
-Transistors führt zu einer Phasenverschiebung von :math:`180\Grad`. Sie können hier auch
+Transistors führt zu einer Phasenverschiebung von :math:`180\,^\circ`. Sie können hier auch
 das andere wichtigere Problem sehen. Wenn wir nur einen NPN-Transistor verwenden, dann wird
 der MOSFET-Transistor, wenn OUT1 ständig ausgeschaltet wird, ständig eingeschaltet und erzeugt
 einen Kurzschluss: Batterie - Induktivität - Mosfet - gnd. Die Verwendung von zwei NPN-Transistoren

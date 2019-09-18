@@ -130,7 +130,7 @@ Materialien
 
 - Red Pitaya STEMlab
 - 1x :math:`10\,k\Omega` Widerstand
-- 1x :math:`100\,Ω` Widerstand
+- 1x :math:`100\,\Omega` Widerstand
 - 1x 5mm LED (jede Farbe)
 - 1x Kleinsignal-NMOS-Transistor ZVN211_
 - 1x lötfreies Steckbrett
