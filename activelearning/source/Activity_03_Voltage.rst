@@ -46,25 +46,25 @@ Materialien
 
 - Verschiedene Widerstände:
   
-  - :math:`470 \Omega`, 
+  - :math:`470\,\Omega`, 
     
-  - :math:`1 k\Omega`, 
+  - :math:`1\,k\Omega`, 
 
-  - :math:`4,7 k\Omega`,
-
-  - :math:`1,5 k\Omega`.
+  - :math:`4,7\,k\Omega`,
+    
+  - :math:`1,5\,k\Omega`.
 
 
 Vorgehensweise
 --------------
 
 1. Bauen Sie die Schaltung  wie in Abb. 1 dargestellt auf. Setzen Sie
-   :math:`R_1 = 4.7 k\Omega`, :math:`R_2 = 1,5 k\Omega` und verwenden
+   :math:`R_1 = 4.7\,k\Omega`, :math:`R_2 = 1,5\,k\Omega` und verwenden
    Sie das feste Netzteil 5 V-Pin vom Erweiterungsstecker als
    Spannungsquelle :math:`V_s`\. Verwenden Sie die
    Oszilloskopanwendung, um die Spannungen :math:`V_1` und
    :math:`V_2` zu messen. Wiederholen Sie diesen Schritt für
-   :math:`R_1 = R_2 = 4.7 k\Omega` und notiere die Messergebnisse.
+   :math:`R_1 = R_2 = 4.7\,k\Omega` und notiere die Messergebnisse.
 		   
 
 2. Berechnen Sie die Spannungen :math:`V_1` und :math:`V_2`
