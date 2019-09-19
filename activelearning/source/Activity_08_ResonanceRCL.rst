@@ -117,7 +117,7 @@ Materialien
 -----------
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
-- Widerstände 100 Ω, 1 KΩ
+- Widerstände 100 :math:`Omega`, 1 K:math:`Omega`
 - Kondensatoren 0,01 µF
 - Induktivitäten 4,7 mH
 
@@ -262,7 +262,7 @@ und 8.
 Vorgehensweise:
 
 1. Bauen Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien
-   Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1
+   Leiterplatte mit den Bauteilwerten RS = 100 :math:`Omega`, R1 = 1 K:math:`Omega`, C1 = 0,1
    µF und L1= 4,7 mH auf.
    
 
@@ -334,7 +334,7 @@ Frequenzgang berechnen.
    
 
 4. Wiederholen Sie das Experiment für den Serienschwingkreis in Figur
-   3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 KΩ. Die
+   3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 K:math:`Omega`. Die
    Vo-Spannung am Widerstand ist proportional zum
    Serien-RLC-Schaltstrom.
    

@@ -54,7 +54,7 @@ Materialien
 ___________
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10
-- Widerstand - :math:`R_ {shunt}`: 10 Ω
+- Widerstand - :math:`R_ {shunt}`: 10 :math:`Omega`
 - Lautsprecher, ist es am besten, wenn der Lautsprecher mit einem Konusdurchmesser größer als 10 cm ist,
   so dass er eine relativ niedrige Resonanzfrequenz hat.
 

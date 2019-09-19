@@ -298,7 +298,7 @@ Materialien
 
 - Lötfreies Steckbrett
   
-- Widerstand 10 Ω
+- Widerstand 10 :math:`Omega`
   
 - Herkömmliche Diode (1N4001 oder ähnlich)
   

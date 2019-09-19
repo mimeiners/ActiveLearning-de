@@ -69,7 +69,7 @@ Materialien:
 ------------
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
-- Widerstände: 1 KΩ 
+- Widerstände: 1 K:math:`Omega` 
 - Kondensatoren: 1 µF
 - Induktivität/Spule: 22 mH 
 
@@ -131,7 +131,7 @@ Vorgehensweise
 RL-Hochpassfilter:**RL-Hochpassfilter:**
 
 1. Bauen Sie den RL-Schaltkreis wie in Abbildung 2 auf Ihrem lötfreien
-   Breadboard, mit den Komponentenwerten R1 = 1 KΩ, L1 = 22 mH auf.
+   Breadboard, mit den Komponentenwerten R1 = 1 K:math:`Omega`, L1 = 22 mH auf.
    
 2. Verbinden Sie die STEMlab-Board mit Ihrer Schaltung:
 

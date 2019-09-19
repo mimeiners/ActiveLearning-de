@@ -85,15 +85,15 @@ Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 
 Verschiedene Widerstände:
 
-* 100 Ω, 
+* 100 :math:`Omega`, 
 	
-* 330 Ω, 
+* 330 :math:`Omega`, 
 	
-* 470 Ω, 
+* 470 :math:`Omega`, 
 	
-* 1 kΩ, 
+* 1 k:math:`Omega`, 
 	
-* 1,5 kΩ
+* 1,5 k:math:`Omega`
 	
 
 
@@ -104,12 +104,12 @@ Vorgehensweise
 
    a) Bauen Sie die Schaltung aus Abbildung 1 mit den folgenden Komponentenwerten:
  
-      * R1 = 330 Ω
-      * R2 = 100 Ω
-      * R3 = 100 Ω
-      * R4 = 330 Ω
-      * R5 = 1 KΩ
-      * Rl = 1,5 KΩ
+      * R1 = 330 :math:`Omega`
+      * R2 = 100 :math:`Omega`
+      * R3 = 100 :math:`Omega`
+      * R4 = 330 :math:`Omega`
+      * R5 = 1 K:math:`Omega`
+      * Rl = 1,5 K:math:`Omega`
       * Vs = +3.3V 
 
       .. hint:: Verwenden Sie anstelle der in Abbildung 1 dargestellten
@@ -184,14 +184,14 @@ Vorgehensweise
 	 Thevenin Equivalent Konstruktion
 		   
 
-   f) Mit R\ :sub:`L` auf die in Schritt b) verwendete 1,5 KΩ
+   f) Mit R\ :sub:`L` auf die in Schritt b) verwendete 1,5 K:math:`Omega`
       eingestellt, das V\ :sub:`L` für die Ersatzschaltung messen und
       mit dem in Schritt b) erhaltenen V\ :sub:`L` vergleichen. Dies
       bestätigt den Thévenin-Satz.
       
 
    g) Optional: Wiederholen Sie die Schritte 1 b) bis 1 f) für R\
-      :sub:`L` = 2.2 KΩ
+      :sub:`L` = 2.2 K:math:`Omega`
 	   
 	
 2. Überprüfen des Theorems zur maximalen Leistungsübertragung:
@@ -200,9 +200,9 @@ Vorgehensweise
       folgenden Werten:
       
       * Vs = +3,3 V
-      * R\ :sub:`1`\ = R\ :sub:`2`\ = 100 Ω
-      * R\ :sub:`3`\ = 1 KΩ
-      * R\ :sub:`L`\ = Kombinationen von 1 KΩ und 100 Ω Widerständen (Abbildung 8)
+      * R\ :sub:`1`\ = R\ :sub:`2`\ = 100 :math:`Omega`
+      * R\ :sub:`3`\ = 1 K:math:`Omega`
+      * R\ :sub:`L`\ = Kombinationen von 1 K:math:`Omega` und 100 :math:`Omega` Widerständen (Abbildung 8)
 
       .. _05_fig_07:
       .. figure:: img/Activity_05_Fig_07.png

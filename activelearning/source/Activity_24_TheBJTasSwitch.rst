@@ -124,7 +124,7 @@ Verfahren
 ---------
 
 1. Bauen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett auf. SetzenSie für
-   :math:`R_B` = 1kΩ, :math:`R_C` = 100Ω
+   :math:`R_B` = 1k:math:`Omega`, :math:`R_C` = 100:math:`Omega`
 	 
 
 .. figure:: img/Activity_24_Fig_03.png

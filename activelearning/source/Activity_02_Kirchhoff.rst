@@ -81,9 +81,9 @@ Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 
 Verschiedene Widerstände:
 
-- 1 KΩ (2),
-- 1,5 KΩ (2),
-- 2.2 KΩ
+- 1 K:math:`Omega` (2),
+- 1,5 K:math:`Omega` (2),
+- 2.2 K:math:`Omega`
 
 
 Vorgehensweise
@@ -91,11 +91,11 @@ Vorgehensweise
 
 1. Konstruieren Sie die in Abbildung 1 dargestellte Schaltung mit diesen Widerstandswerten:
 
-   - R1 = 1 KΩ
-   - R2 = 2,2 KΩ
-   - R3 = 1,5 KΩ
-   - R4 = 1 KΩ
-   - R5 = 1,5 KΩ
+   - R1 = 1 K:math:`Omega`
+   - R2 = 2,2 K:math:`Omega`
+   - R3 = 1,5 K:math:`Omega`
+   - R4 = 1 K:math:`Omega`
+   - R5 = 1,5 K:math:`Omega`
 
      
 .. _color_coding_tool: http://www.hobby-hour.com/electronics/resistorcalculator.php
