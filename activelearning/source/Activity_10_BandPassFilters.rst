@@ -79,7 +79,7 @@ Materialien:
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
-- Widerstand: 1 K:math:`Omega` 
+- Widerstand: 1 :math:`k\Omega` 
 
 - Kondensator: 0,047 µF
 
@@ -90,7 +90,7 @@ Vorgehensweise
 --------------
 
 1. Bauen Sie den Filterschaltkreis nach Abbildung 1 und Abbildung 3 auf Ihrer
-   lötfreie Lochrasterplatine mit den Bauteilwerten R1 = 1 K:math:`Omega`, C1 =
+   lötfreie Lochrasterplatine mit den Bauteilwerten R1 = 1 :math:`k\Omega`, C1 =
    0,047 µF, L1 =22 mH auf.
 
    .. _10_fig_03:

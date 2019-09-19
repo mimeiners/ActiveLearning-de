@@ -90,8 +90,8 @@ Materialien
 -----------
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10
-- Widerstand Rs: 1 k:math:`Omega`
-- Kondensator Cs: 0,047 :math:`mu`F
+- Widerstand Rs: 1 k:math:`\Omega`
+- Kondensator Cs: 0,047 :math:`\mu`F
 - Induktor Ls: 22 mH
 
   
@@ -132,8 +132,8 @@ Messreihe RLC-Schaltung Impedanz
 --------------------------------
 
 1. Bauen Sie die Schaltung wie in :numref:`11_fig_01` und :numref:`11_fig_02` auf
-   Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 K:math:`Omega`, Cs
-   = 0,047 :math:`mu`F, Ls = 22 mH auf.
+   Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 :math:`k\Omega`, Cs
+   = 0,047 :math:`\mu`F, Ls = 22 mH auf.
    
 
    .. _11_fig_03:

@@ -141,8 +141,8 @@ math_eqref_format = "Gl. {number}"
 #
 # html_theme = 'alabaster' -- original Sphinx
 # html_theme = 'guzzle_sphinx_theme'
-# html_theme = "sphinx_rtd_theme"
-html_theme = "sphinxdoc"
+html_theme = "sphinx_rtd_theme"
+# html_theme = "sphinxdoc"
 
 
 # Theme options are theme-specific and customize the look and feel of a theme

@@ -37,7 +37,7 @@ Materialien
 
 - Red Pitaya STEMlab
 - 1x OP484_ Quad-Rail-Rail-Operationsverstärker
-- 5x 10 k:math:`Omega` Widerstände
+- 5x 10 k:math:`\Omega` Widerstände
 - 2x kleine Signaldioden (1N914 oder ähnlich)
 
 

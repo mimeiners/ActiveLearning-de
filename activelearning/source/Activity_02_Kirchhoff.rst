@@ -81,9 +81,9 @@ Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 
 Verschiedene Widerstände:
 
-- 1 K:math:`Omega` (2),
-- 1,5 K:math:`Omega` (2),
-- 2.2 K:math:`Omega`
+- 1 :math:`k\Omega`
+- 1,5 :math:`k\Omega`
+- 2,2 :math:`k\Omega`
 
 
 Vorgehensweise
@@ -91,11 +91,11 @@ Vorgehensweise
 
 1. Konstruieren Sie die in Abbildung 1 dargestellte Schaltung mit diesen Widerstandswerten:
 
-   - R1 = 1 K:math:`Omega`
-   - R2 = 2,2 K:math:`Omega`
-   - R3 = 1,5 K:math:`Omega`
-   - R4 = 1 K:math:`Omega`
-   - R5 = 1,5 K:math:`Omega`
+   - R1 = 1 :math:`k\Omega`
+   - R2 = 2,2 :math:`k\Omega`
+   - R3 = 1,5 :math:`k\Omega`
+   - R4 = 1 :math:`k\Omega`
+   - R5 = 1,5 :math:`k\Omega`
 
      
 .. _color_coding_tool: http://www.hobby-hour.com/electronics/resistorcalculator.php
@@ -179,7 +179,7 @@ Vorgehensweise
    gemessenen Spannungs- und Stromwerten wie unten gezeigt.
    
  +--------------------------+-----------------+----------+--------+---------------------+
- |           Abzweig        |  Strom/Spannung |   V/Volt |   I/mA |   R/:math:`k\Omega` |
+ |           Abzweig        |  Strom/Spannung |   V/Volt |   I/mA |   R/:math:`k\\Omega` |
  +--------------------------+-----------------+----------+--------+---------------------+
  | :math:`V_1`, :math:`I_1` |                 |          |        |                     |
  |                          |                 |          |        |                     |
@@ -212,186 +212,3 @@ Fragen
 2. Berechnen Sie den prozentualen Fehler in den beiden Messungen und
    geben Sie eine kurze Erklärung für den Fehler.
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

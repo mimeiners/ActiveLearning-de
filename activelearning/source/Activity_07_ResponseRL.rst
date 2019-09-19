@@ -181,7 +181,7 @@ Vorgehensweise
 
 	       
 2. Bauen Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer
-   lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 :math:`Omega` und
+   lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 :math:`\Omega` und
    L :sub:`1` = 20mH auf.
    
    

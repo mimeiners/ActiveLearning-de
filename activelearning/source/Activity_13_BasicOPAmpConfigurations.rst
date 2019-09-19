@@ -172,13 +172,13 @@ Beobachten Sie gleichzeitig :math:`V_ {in}` (IN1) und :math:`V_ {out}`
    
 
 **Fall 2**
-Ersetzen Sie die 10k:math:`Omega` Last mit einem 1k:math:`Omega` Widerstand und notieren Sie die Amplituden(P2P) von :math:`V_ {in}`
+Ersetzen Sie die 10k:math:`\Omega` Last mit einem 1k:math:`\Omega` Widerstand und notieren Sie die Amplituden(P2P) von :math:`V_ {in}`
 (IN1) und :math:`V_ {out}`
 
 
 **Fall 3**
-Bewegen Sie die 1 k:math:`Omega` Last zwischen Pin 3 und +2,5 V, so dass sie
-parallel zum 4,7 K:math:`Omega` Widerstand ist. Zeichnen Sie die Amplituden (P2P) von
+Bewegen Sie die 1 k:math:`\Omega` Last zwischen Pin 3 und +2,5 V, so dass sie
+parallel zum 4,7 :math:`k\Omega` Widerstand ist. Zeichnen Sie die Amplituden (P2P) von
 :math:`V_ {in}` (IN1) und :math:`V_ {out}` auf.
       
 .. _13_fig_06:
@@ -203,7 +203,7 @@ Invertierender Verstärker
 -------------------------
 
 :numref:`13_fig_07` zeigt die herkömmliche Konfiguration eines invertierenden
-Verstärkers mit einem 10 K:math:`Omega` "Last" - Widerstand am Ausgang.
+Verstärkers mit einem 10 :math:`k\Omega` "Last" - Widerstand am Ausgang.
 
 .. _13_fig_07:
 .. figure:: img/ Activity_13_Fig_07.png
@@ -212,7 +212,7 @@ Verstärkers mit einem 10 K:math:`Omega` "Last" - Widerstand am Ausgang.
 
    
 Montieren Sie nun die in :numref:`13_fig_07` gezeigte invertierende
-Verstärkerschaltung mit R2 = 4.7k:math:`Omega`. Denken Sie daran, die Stromversorgung zu trennen,
+Verstärkerschaltung mit R2 = 4.7k:math:`\Omega`. Denken Sie daran, die Stromversorgung zu trennen,
 bevor Sie einen neuen Stromkreis aufbauen. Schneiden und biegen Sie die
 Widerstandsleitungen nach Bedarf ab, um sie flach gegen die Platinenoberfläche zu halten,
 und verwenden Sie die kürzesten Überbrückungsdrähte für jede Verbindung. Denken Sie daran,
@@ -330,7 +330,7 @@ Bauen Sie die nicht invertierende Verstärkerschaltung wie in
       V_ {out} =\bigg(1+\frac{R2}{R1}\bigg)V_ {in}\quad      (3)
 
 
-Erhöhen Sie den Rückkopplungswiderstand R2 weiter bis zum Beginn des Übersteuervorgangs, d.h. bis die Spitzen des Ausgangssignals aufgrund der Ausgangssättigung abzubauen beginnen. Notieren Sie den Wert des Widerstandes, wenn dies geschieht. Erhöhen Sie nun den Rückkopplungswiderstand auf 100 K:math:`Omega`. Beschreiben und zeichnen Sie Wellenformen in Ihrem Notebook. Was ist der theoretische Gewinn an dieser Stelle? Wie klein müsste das Eingangssignal sein, um den Ausgangspegel bei dieser Verstärkung auf weniger als 5V zu halten? Versuchen Sie, den Wellenform-Generator auf diesen Wert einzustellen. Beschreiben Sie die erzielte Leistung. Der letzte Schritt unterstreicht eine wichtige Überlegung für High-Gain-Verstärker. High-Gain bedeutet notwendigerweise einen großen Ausgang für einen kleinen Eingangspegel. Manchmal kann dies zu einer unbeabsichtigten Sättigung durch die Verstärkung von schwachem Rauschen oder Störungen führen, z.B. durch die Verstärkung von 60Hz-Streusignalen von Stromleitungen, die manchmal empfangen werden können. Die Verstärker verstärken alle Signale an den Eingangsklemmen....ob Sie es wollen oder nicht!
+Erhöhen Sie den Rückkopplungswiderstand R2 weiter bis zum Beginn des Übersteuervorgangs, d.h. bis die Spitzen des Ausgangssignals aufgrund der Ausgangssättigung abzubauen beginnen. Notieren Sie den Wert des Widerstandes, wenn dies geschieht. Erhöhen Sie nun den Rückkopplungswiderstand auf 100 :math:`k\Omega`. Beschreiben und zeichnen Sie Wellenformen in Ihrem Notebook. Was ist der theoretische Gewinn an dieser Stelle? Wie klein müsste das Eingangssignal sein, um den Ausgangspegel bei dieser Verstärkung auf weniger als 5V zu halten? Versuchen Sie, den Wellenform-Generator auf diesen Wert einzustellen. Beschreiben Sie die erzielte Leistung. Der letzte Schritt unterstreicht eine wichtige Überlegung für High-Gain-Verstärker. High-Gain bedeutet notwendigerweise einen großen Ausgang für einen kleinen Eingangspegel. Manchmal kann dies zu einer unbeabsichtigten Sättigung durch die Verstärkung von schwachem Rauschen oder Störungen führen, z.B. durch die Verstärkung von 60Hz-Streusignalen von Stromleitungen, die manchmal empfangen werden können. Die Verstärker verstärken alle Signale an den Eingangsklemmen....ob Sie es wollen oder nicht!
 
 
 Summierverstärkerschaltung
@@ -352,7 +352,7 @@ Bauen Sie bei abgeschalteter Stromversorgung einen Stromkreis wie in :numref:`13
 	    :Summierverstärkerschaltung auf dem Steckbrett
 
    
-**Setzen Sie** :math:`R_ {in}` = :math:`R_ {in}` = :math:`R_ {f}` = 4.7k:math:`Omega`.
+**Setzen Sie** :math:`R_ {in}` = :math:`R_ {in}` = :math:`R_ {f}` = 4.7k:math:`\Omega`.
 
 1. Starten Sie die  Oszilloskop & Signalgenerator - Anwendung.
    
