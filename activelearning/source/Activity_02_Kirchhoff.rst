@@ -179,7 +179,7 @@ Vorgehensweise
    gemessenen Spannungs- und Stromwerten wie unten gezeigt.
    
  +--------------------------+-----------------+----------+--------+---------------------+
- |           Abzweig        |  Strom/Spannung |   V/Volt |   I/mA |   R/:math:`k\\Omega` |
+ |           Abzweig        |  Strom/Spannung |   V/Volt |   I/mA |   R/:math:`k\\Omega`|
  +--------------------------+-----------------+----------+--------+---------------------+
  | :math:`V_1`, :math:`I_1` |                 |          |        |                     |
  |                          |                 |          |        |                     |
