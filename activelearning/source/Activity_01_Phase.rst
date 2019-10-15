@@ -471,7 +471,7 @@ aktiviere Math. Nun sollte eine dritte Sinuswelle für die Spannung
 
   - V\ :sub:`R1` \ + V\ :sub:`R2` \ _______ V\ :sub:`pp` \.
 
-- Ist ein Unterschied zwischen den Nulldurchgängen von V\ :sub:`R1` \ und V\ :sub:`R1` \
+- Ist ein Unterschied zwischen den Nulldurchgängen von V\ :sub:`R1` \ und V\ :sub:`R2` \
   zu sehen?
   
 - Sind sogar zwei unterschiedliche Sinuswellen zu sehen?
