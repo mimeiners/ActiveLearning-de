@@ -43,7 +43,7 @@ beschrieben werden:
 
    I_D = I_S \left(e^{\frac{V_D }{N V_T}} - 1 \right)
 
-wobei :math:`I_ {S}` der Sättigungssperrstrom ist und N ein
+wobei :math:`I_{S}` der Sättigungssperrstrom ist und N ein
 Skalierungsfaktoren, :math:`V_T = kT / q` ist die sogenannte
 thermische Spannung und beträgt :math:`25,4\,mV` bei Raumtemperatur.
 

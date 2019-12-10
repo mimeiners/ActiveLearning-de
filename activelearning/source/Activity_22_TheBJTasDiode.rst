@@ -51,12 +51,12 @@ Materialien
 -----------
 
 - Red Pitaya STEMlab
-- OP484_ Quad-Rail-Rail-Operationsverstärker
+- OP484_ Quad-Rail-to-Rail-Operationsverstärker
 - :math:`1\,k\Omega` Widerstand
 - :math:`10\,k\Omega` Widerstand
 - :math:`2,2\,k\Omega` Widerstand
-- kleinsignal npn-Transistor (2N3904)
-- kleinsignal pnp-Transistor (2N3906)
+- Kleinsignal npn-Transistor (2N3904)
+- Kleinsignal pnp-Transistor (2N3906)
 - lötfreies Steckbrett
 - 9V Batterie/Labornetzteil
 
@@ -85,8 +85,8 @@ npn-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen
 Verfahren
 ---------
 
-1. Bauen Sie die Schaltung aus :numref:`22_fig_01` auf dem
-   Steckbrett auf. Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega`
+1. Bauen Sie die Schaltung aus :numref:`22_fig_01` auf dem Steckbrett auf.
+   Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega`
    und :math:`R3 = 1\,k\Omega` ein.
    
 
@@ -233,33 +233,30 @@ Reverse Breakdown-Eigenschaften
 -------------------------------
 
 Hier untersuchen wir die Rückwärtsdurchbruchspannungseigenschaften der
-Emitter-Basis-Verbindung eines, als Diode angeschlossenen, Bipolartransistors (BJT).
-
+Emitter-Basis-Verbindung eines als Diode angeschlossenen Bipolartransistors (BJT).
 
 Bauen Sie die Schaltung auf der Lochrasterplatine so auf, wie es in :numref:`22_fig_06`
 dargestellt ist. **Der Emitter wird an den positiven Batteriepol angeschlossen.**
 
-Die npns haben wahrscheinlich eine Durchbruchspannung von mehr als :math:`10\,V`
-und es kann vorkommen, dass unser maximaler Spannungsbereich nicht
-ausreichend ist, d.h. Wir werden nicht in der Lage sein, Q1 oberhalb
-der Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine
-zusätzliche Batterie hinzugefügt, um das Emitterpotential in der Nähe
-der Durchbruchsspannung zu erhöhen. Wenn also unser :math:`V_ {OUT}`
-Signal NEGATIV wird, wird der Transistor rückwerts geschaltet, aber die
-Differenzspannung :math:`V_{E-BC} = V_E - V_{BC}` wird  größer
-als die BREAKDOWN-Spannung sein und der Transistor beginnt zu leiten.
+Die npn-Transistoren haben wahrscheinlich eine Durchbruchspannung
+von mehr als :math:`10\,V` und es kann vorkommen, dass der maximale
+Spannungsbereich nicht ausreichend ist. Wir werden daher nicht in
+der Lage sein, Q1 oberhalb der Durchbruchspannung umzupolen.
+Aus diesem Grund haben wir eine zusätzliche Batterie hinzugefügt, um
+das Emitterpotential in der Nähe der Rückwärtsdurchbruchsspannung zu
+erhöhen. Wenn also unser :math:`V_ {OUT}` Signal **negativ** wird, arbeitet
+der Transistor rückwärts, aber die Differenzspannung :math:`V_{E-BC} = V_E - V_{BC}`
+bleibt größer als die Durchbruchspannung und der Transistor beginnt zu leiten.
 
-
-Zum Beispiel ohne Batterie, d. H. Wenn der Emitter auf GND ist, können
-wir Q1 um den Betrag polarisieren:
-
+Zum Beispiel ohne Batterie, wenn der Emitter auf GND ist, kann
+der Transistor Q1 mit folgendem negativen Potential vorgestpannt werden:
 
 .. math::
    :label: 22_eq_01
 	   
-   V_{E-BC} = V_E - V_{BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
+   V_{E-BC} = V_E - V_{BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{negative Vorspannung}
 
-Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag erreichen
+Mit einer Batterie kann beispielsweise die maximale negative Vorspannung erreicht werden:
 
 .. math::
    :label: 22_eq_02
@@ -267,15 +264,14 @@ Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag
    V_{E-BC} = V_E - V_{BC} = 9 - (-3,3 V) = 12.3 V 
 
 
-Wo :math:`V_{BC}` die maximale negative Schwankung unseres
-Erregerspannungssignals :math:`V_{OUT}` ist.
+wobei :math:`V_{BC}` die maximale negative Schwankung unseres Erregerspannungssignals :math:`V_{OUT}` ist.
 
 
 .. figure:: img/Activity_22_Fig_06.png
    :name: 22_fig_06
    :align: center
 
-   npn-Emitter Base Reverse-Durchbruchkonfiguration
+   npn Emitter-Basis rückwärts Durchbruchkonfiguration
 
 
 Verfahren
