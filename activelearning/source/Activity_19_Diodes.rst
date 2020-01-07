@@ -30,13 +30,13 @@ Beobachten von Signalen in der Schaltung verwendet.
 Hintergrund
 -----------
 
-Die Halbleiterdiode ist ein elektronisches Bauelement, welches häufig
-in Schaltungsanwendungen, wie der Gleichrichtung, eingesetzt wird, bei
-denen der Strom nur in eine Richtung fließen darf. Wenn die Diode aus
-Silizium hergestellt wird, liegt die Durchlassspannung typischerweise
-bei :math:`0,7 V` und die VI-Charakteristik in Bezug auf
-Diodenspannung und -strom kann durch eine exponentielle Beziehung
-beschrieben werden:
+Eine Halbleiterdiode ist ein elektronisches Bauelement, welches häufig
+in Schaltungsanwendungen bei denen der Strom nur in eine Richtung fliessen
+darf als Gleichrichtung eingesetzt wird.
+
+Wenn die Diode aus Silizium hergestellt wird, liegt die Durchlassspannung typischerweise
+bei 0,7V und die VI-Charakteristik in Bezug auf Diodenspannung und -strom kann durch
+eine exponentielle Beziehung beschrieben werden:
 
 .. math::
    :label: 19_eq_01
@@ -53,11 +53,11 @@ Schematische Symbole der Diode
 
 Jeder Diodentyp hat ein spezifisches Schaltsymbol, welches vom
 herkömmlichen Diodensymbol der Siliziumdiode abgeleitet ist,
-vlg. :numref:`19_fig_01`. Eine etwa "Z"-förmige Kathode bezeichnet
-eine Zenerdiode wie im zweiten Symbol von Links in
-:numref:`19_fig_01`. Eine "S"-förmige Kathode bezeichnet eine
+vgl. :numref:`19_fig_01`. Eine etwa "Z"-förmige Kathode bezeichnet
+eine Zenerdiode, wie im zweiten Symbol von Links in
+:numref:`19_fig_01` zu sehen. Eine "S"-förmige Kathode bezeichnet eine
 Schottky-Diode und Pfeile, die von der Diode wegzeigen, kennzeichnen
-eine LED wie im rechten Symbol. Pfeile, die auf die Diode zeigen,
+eine LED, wie im rechten Symbol. Pfeile, die auf die Diode zeigen,
 kennzeichnen eine Photodiode (Lichtsensor).  
 
 
@@ -136,7 +136,7 @@ der einer pn-Übergangsdiode mit den folgenden Ausnahmen:
    Gleichung, die als Richardson-Gleichung bekannt ist, bestimmt. Der
    primäre Unterschied zur herkömmlichen Diodengleichung liegt im
    :math:`I_S` mit der Ergänzung der modifizierten
-   Richardson-Konstante :math:`A^*`.
+   Richardson-Konstanten :math:`A^*`.
    
 
 .. math::
@@ -193,24 +193,23 @@ ebenfalls in einem speziellen transparenten Gehäuse eingebaut, wie in
 
    Leuchtdioden
 
-Eine LED ist eine Halbleiterbauelement, welches elektromagnetische
+Eine LED ist ein Halbleiterbauelement, welches elektromagnetische
 Strahlung bei optischen und Infrarotfrequenzen abgibt. Das Bauelement
 ist eine pn-Übergangsdiode aus p- und n-Halbleitern, meist GaAs, GaP
 oder SiC. Sie strahlen nur dann Licht aus, wenn eine externe Spannung
-angelegt ist, so dass die Diode minimalen oberhalb des Schwellenwertes
+angelegt ist, so dass die Diode minimal oberhalb des Schwellenwertes
 vorgespannt ist (bias). Der Gewinn an elektrischer Potentialenergie,
 der durch diese Spannung geliefert wird, ist ausreichend, um
-Elektronen zu zwingen, aus dem n-Typ-Material, über die
-Verbindungsbarriere und in den p-Typ-Bereich zu fließen. Diese
+Elektronen zu zwingen, aus dem n-Typ-Material über die
+Verbindungsbarriere in den p-Typ-Bereich zu fließen. Diese
 Schwellenspannung für den Beginn des Stromflusses über die Verbindung
 und die Erzeugung von Licht ist :math:`V_0`. Die Lichtemission
 erfolgt, nachdem Elektronen in die p-Region (und Löcher in die
-n-Region) gelangt sind. Diese Elektronen sind eine kleine Minorität,
-die von Löchern umgeben ist (im Wesentlichen die Antiteilchen der
-Elektronen) und sie werden schnell ein Loch finden, mit dem sie sich
-wieder verbinden können. Energetisch entspannt sich das Elektron aus
-dem angeregten Zustand (Leitungsband) in den Grundzustand
-(Valenzband). Die Dioden werden als lichtemittierend bezeichnet, da
+n-Region) gelangt sind. Diese Elektronen sind Minoritäten,
+die von Löchern umgeben sind (im Wesentlichen die Antiteilchen der
+Elektronen) und sie werden schnell ein Loch finden, mit dem sie rekombinieren.
+Energetisch entspannt sich das Elektron aus dem angeregten Zustand (Leitungsband)
+in den Grundzustand (Valenzband). Die Dioden werden als lichtemittierend bezeichnet, da
 die vom Elektron beim Entspannen abgegebene Energie als Photon
 abgegeben wird. Oberhalb des Schwellenwerts steigt die Strom- 
 und Lichtleistung exponentiell mit der Vorspannung über der Diode
@@ -267,7 +266,7 @@ Diodenstrom und -spannung:
 
 Zur Messung der Strom-/Spannungseigenschaften der pn-Übergangsdiode
 sollte der OUT1-Generator als 1 kHz-Dreieckssignal mit max. 1 V und
-min. 0 V konfiguriert werden. Für die Messung der VI-Kurve
+min. 0 V konfiguriert werden. Für die Messung der IV-Kurve
 ist ein xy-Plot erforderlich, wobei die x-Achse die Diodenspannung IN2
 und die y-Achse den Diodenstrom :math:`I_D=(IN1-IN2)/R1`
 darstellt.
@@ -399,7 +398,7 @@ Führen Sie Zelle 1 und Zelle 2 aus. Obacht, Zelle 2 ist eine Hauptschleife
 für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen
 Sie einfach nur Zelle 2 aus, um die Messungen erneut zu starten. 
 
-Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der
+Nach dem Ausführen des obigen Codes sollten Sie die IV-Charakteristik der
 Diode erhalten wie in :numref:`19_fig_08` dargestellt.
 
 .. figure:: img/Activity_19_Fig_08.png
