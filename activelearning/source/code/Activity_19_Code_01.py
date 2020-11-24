@@ -50,11 +50,11 @@ V = I = np.zeros(N)
 hover = HoverTool(mode='vline', tooltips=[("V", "@x"), ("I", "@y")])
 tools = "wheel_zoom, box_zoom, reset, pan"
 p = figure(plot_height=500, plot_width=900,
-           title="XY plot of diodes VI characteristic",
+           title="XY plot der Dioden IV-Kurve",
            toolbar_location="right",
            tools=(tools, hover))
-p.xaxis.axis_label = 'Voltage in V'
-p.yaxis.axis_label = 'Current in mA'
+p.xaxis.axis_label = 'Spannung in V'
+p.yaxis.axis_label = 'Strom in mA'
 r = p.line(V, I, line_width=1, line_alpha=0.7, color="blue")
 
 # get and explicit handle to update the next show cell

@@ -1,16 +1,16 @@
-# Measuring I, V and re-plotting
+# Messung von  I, V und plotten
 while True:
-    # reset and start
+    # Reset und Start
     osc[0].reset()
     osc[0].start()
 
-    # wait for data
+    # Auf Daten warten
     while (osc[0].status_run()):
         pass
 
-    V0 = osc[0].data(N-100)  # IN1 signal
-    V1 = osc[1].data(N-100)  # IN2 signal
-    I = ((V0-V1)/R1)*1E3     # 1E3 convert to mA
+    V0 = osc[0].data(N-100)  # IN1 Signal
+    V1 = osc[1].data(N-100)  # IN2 Signal
+    I = ((V0-V1)/R1)*1E3     # 1E3 Umwandlung zu mA
     r.data_source.data['x'] = V0
     r.data_source.data['y'] = I
 
