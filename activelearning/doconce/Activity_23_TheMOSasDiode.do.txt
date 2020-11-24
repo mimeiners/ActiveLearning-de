@@ -1,13 +1,14 @@
-Die Nutzung des MOS-Transistors als Diode
-=========================================
+## TITLE: M3.3 ELK - Laborversuch MOSFET
+## AUTHOR: Prof. Dr.-Ing. Mirco Meiners at Hochschule Bremen - City University of Applied Sciences
+## DATE: WiSe 2020/21
 
-Zielsetzung
------------
+## ======= Die Nutzung des MOS-Transistors als Diode =======
 
-Ziel dieses Versuches ist die Untersuchung der
-Vorwärtsstrom- und Spannungscharakteristik eines MOS-Feldeffekttransistors
-(NMOS und PMOS), der als eine Diode geschaltet ist. Vor diesem
-Experiment wird eine Durchsicht des vorherigen Versuch_ empfohlen.
+
+===== Zielsetzung =====
+
+Ziel dieses Versuches ist die Untersuchung der Vorwärtsstrom- und Spannungscharakteristik eines
+MOS-Feldeffekttransistors (NMOS und PMOS), der als eine Diode geschaltet ist.
 
 
 
@@ -27,35 +28,19 @@ Anmerkung
 .. _Versuch: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
 
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board- Hardware_ beziehen.
 
-Die Oszilloskop- und Signalgeneratoranwendung_ wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
+!bnotice
+Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem maximalen Ausgangsbereich von :math:`+/-\,1\,V` (2 Vpp)
+erzeugen. Für diesen Versuch werden höhere Signalamplituden benötigt. Aus diesem Grund werden wir einen OP484_ in der
+invertierenden Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2 zu ermöglichen und einen
+Spannungshub von +4,7V bis -3,2V zu erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V Spannungsschienen
+versorgt. Der Verstärkungfaktor des invertierenden Verstärkers wird auf :math:`\approx 5` gesetzt, wobei :math:`R1 =
+2.2\,k\Omega` und :math:`R2 = 10\,k\Omega` eingesetzt werden.
+ 
+Versuchen Sie zu beantworten, warum ein OP484 anstelle eines OP27 oder OP97 verwendet wird. (Hinweis: "Rail-to-Rail").
+!notice   
 
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
-
-
-.. note::
-   Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-   maximalen Ausgangsbereich von :math:`+/-\,1\,V` (2 Vpp)
-   erzeugen. Für diesen Versuch werden höhere Signalamplituden
-   benötigt. Aus diesem Grund werden wir einen OP484_ in der invertierenden
-   Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
-   zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
-   erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
-   Spannungsschienen versorgt. Der Verstärkungfaktor des invertierenden
-   Verstärkers wird auf :math:`\approx 5` gesetzt, wobei
-   :math:`R1 = 2.2\,k\Omega` und :math:`R2 = 10\,k\Omega` eingesetzt werden. 
-
-   Versuchen Sie zu beantworten, warum ein OP484 anstelle eines OP27
-   oder OP97 verwendet wird. (Hinweis: "Rail-to-Rail").
-   
-
-Materialien
------------
+===== Materialien =====
 
 - Red Pitaya STEMlab
 - OP484_ Quad-Rail-to-Rail-Operationsverstärker
@@ -65,23 +50,17 @@ Materialien
 - lötfreies Steckbrett
 
   
-NMOS als Diode
---------------
+===== NMOS als Diode =====
 
-Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02`
-gezeigt. In der Diodenkonfiguration arbeitet der NMOS anders als der
-NPN BJT-Transistor. 
+Die Schaltung des NMOS in Diodenkonfiguration ist in :numref:`23_fig_02` gezeigt. In der Diodenkonfiguration arbeitet
+der NMOS anders als der NPN BJT-Transistor. 
 
-Die Schwellspannung (Threshold Voltage) liegt nicht zwingend bei
-:math:`\approx 0,7\,V`, sie hängt von der Größe des Transistors und
-seinen Eigenschaften ab. Für den ausgewählten NMOS-Transistor
-liegt die Schwellspannung :math:`V_{TH}` bei etwa
-:math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin anliegende
-Spannung den :math:`V_ {TH}` von :math:`2,4\,V` überschreiten,
-schaltet der MOS_Transistor ein und beginnt zu leiten. Da der
-Drain-Pin (D) schalttechnisch mit dem Gate-Pin (G) des Transistors
-verbunden ist, bleibt das Potential von :math:`D-G` auf dem Pegel der
-Schwellenspannung :math:`V_{TH}`. 
+Die Schwellspannung (Threshold Voltage) liegt nicht zwingend bei :math:`\approx 0,7\,V`, sie hängt von der Größe des
+Transistors und seinen Eigenschaften ab. Für den ausgewählten NMOS-Transistor liegt die Schwellspannung :math:`V_{TH}`
+bei etwa :math:`2,4\,V`. Das bedeutet, sollte die am Gate-Pin anliegende Spannung den :math:`V_ {TH}` von :math:`2,4\,V`
+überschreiten, schaltet der MOS_Transistor ein und beginnt zu leiten. Da der Drain-Pin (D) schalttechnisch mit dem
+Gate-Pin (G) des Transistors verbunden ist, bleibt das Potential von :math:`D-G` auf dem Pegel der Schwellenspannung
+:math:`V_{TH}`.
 
 .. note::
    Diese Konfiguration von NMOS erzeugt effektiv eine Diode mit
@@ -94,8 +73,7 @@ Schwellenspannung :math:`V_{TH}`.
    ZVN211_ Spezifikationen
 
    
-Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und
-mit den Messungen fortfahren.
+Auf dem Steckbrett die Schaltung aus :numref:`23_fig_02` aufbauen und mit den Messungen fortfahren.
 
 
 .. figure:: img/Activity_23_Fig_02.png
@@ -105,8 +83,7 @@ mit den Messungen fortfahren.
    Anschlussdiagramm der NMOS-Diode
 
 
-Verfahren
-----------
+===== Verfahren =====
 
 1. Bauen Sie die Schaltung aus :numref:`23_fig_01` auf dem
    Steckbrettauf. Stellen Sie :math:`R1 = 2,2\,k\Omega`, :math:`R2 =
@@ -163,32 +140,14 @@ Verfahren
       NMOS-Diodenanschluss-Messungen
 
    
-VI-Kurvenmessungen
-------------------
+===== VI-Kurvenmessungen =====
 
-Da sich NMOS wie eine Diode mit einer Durchlassspannung entsprechend der :math:`V_{TH}`
-verhalten kann (Konfiguration in :numref:`23_fig_02`), können wir ihre VI-Charakteristik
-wie bei Diodenmessungen messen, wofür wir die Webanwendung Jupyter Notebook verwenden werden.
-Wie Sie Jupyter Notebook starten und ein neues Projekt erstellen, ist
-in :numref:`23_fig_05` als Flussdiagramms dargestellt.
+Da sich NMOS wie eine Diode mit einer Durchlassspannung entsprechend der :math:`V_{TH}` verhalten kann (Konfiguration in
+:numref:`23_fig_02`), können wir ihre VI-Charakteristik wie bei Diodenmessungen messen, wofür wir die Webanwendung
+Jupyter Notebook verwenden werden. Wie Sie Jupyter Notebook starten und ein neues Projekt erstellen, ist in
+:numref:`23_fig_05` als Flussdiagramms dargestellt. 
 
 
-
-.. note::
-   Das Jupyter Notebook_ ist eine Webanwendung, mit der Sie Dokumente erstellen
-   und freigeben können, die Live-Code, Gleichungen, Visualisierungen und
-   erklärenden Text enthalten. Sie haben auch die Unterstützung für die
-   Jupyter-Anwendung mit Red Pitaya-Bibliotheken sichergestellt, die die Steuerung
-   aller Funktionen der STEMlab-Boards ermöglichen, wie z.B.: Signalerfassung,
-   Signalerzeugung, digitale Signalsteuerung, Kommunikation usw. Das Jupyter Notebook
-   wird auf die gleiche Weise gestartet wie alle anderen Anwendungen. Nach dem Start
-   der Jupyter-Anwendung wird ein webbasiertes Notebook geöffnet. Diese Kombination
-   aus Notebook, STEMlab und Python macht das STEMlab zu einem hervorragenden Werkzeug
-   für Prototyping und schnelle Programmierung. Da Jupyter Notebook Text-, Gleichungs-
-   und Bildbearbeitung ermöglicht, ist es ein perfektes Werkzeug für Tutorials, Beispiele
-   und vieles mehr.
-
-   
 .. figure:: img/Activity_19_Fig_07.png
    :name: 23_fig_05
    :align: center
@@ -196,38 +155,26 @@ in :numref:`23_fig_05` als Flussdiagramms dargestellt.
    Erstellen eines neuen Jupyter-Notebooks
 
 
-Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren
-Sie den untenstehenden Code und führen Sie ihn aus.
+Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren Sie den untenstehenden Code und führen Sie ihn aus.
 
-Der unten stehende Code erzeugt das gleiche Signal wie in :numref:`23_fig_04`, aber er
-plotet dieses in einem XY-Diagramm.
+Der unten stehende Code erzeugt das gleiche Signal wie in :numref:`23_fig_04`, aber er plotet dieses in einem XY-Diagramm.
 
-Für die Messung der VI-Kurve ist ein "XY"-Plot erforderlich, wobei die
-x-Achse die Diodenspannung :math:`IN_2` und y-Achse ein Diodenstrom
-:math:`(IN_1 - IN_2)/R_3` dargestellt. 
+Für die Messung der VI-Kurve ist ein "XY"-Plot erforderlich, wobei die x-Achse die Diodenspannung :math:`IN_2` und
+y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_3` dargestellt. 
 
 **Kopieren Sie den unten stehenden Code in die Zelle 1**
 
-.. literalinclude:: code/Activity_23_Code_01.py
-   :language: python
-   :linenos:
+@@@CODE code/Activity_23_Code_01.py
       
     
-Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und
-kopieren Sie den unten stehenden Code.
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopieren Sie den unten stehenden Code.
  
+@@@CODE code/Activity_23_Code_02.py
 
-.. literalinclude:: code/Activity_23_Code_02.py
-   :language: python
-   :linenos:
+Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife für die Erfassung und Neuaufnahme. Wenn Sie
+die Erfassung stoppen, führen Sie einfach nur Zelle 2 aus, um die Messungen erneut zu starten.
 
-Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife
-für die Erfassung und Neuaufnahme. Wenn Sie die Erfassung stoppen, führen Sie
-einfach nur Zelle 2 aus, um die Messungen erneut zu starten.
-
-Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik
-der Diode  erhalten, wie in :numref:`23_fig_06` dargestellt.
-
+Nach dem Ausführen des obigen Codes sollten Sie die VI-Charakteristik der Diode  erhalten, wie in :numref:`23_fig_06` dargestellt.
 
 .. figure:: img/Activity_23_Fig_06.png
    :name: 23_fig_06
@@ -237,14 +184,11 @@ der Diode  erhalten, wie in :numref:`23_fig_06` dargestellt.
 
    
    
-PMOS als Diode
---------------
+===== PMOS als Diode =====
 
-Dieselben Messungen können auch für den PMOS-Transistor durchgeführt werden.
-Beim PMOS-Transistor wird die Spannungspolarität umgekehrt, so dass die
-Konfiguration der PMOS-Diode anders sein muss als bei NMOS.
-Die Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
-
+Dieselben Messungen können auch für den PMOS-Transistor durchgeführt werden. Beim PMOS-Transistor wird die
+Spannungspolarität umgekehrt, so dass die Konfiguration der PMOS-Diode anders sein muss als bei NMOS. Die Konfiguration
+der PMOS-Diode ist in :numref:`23_fig_07` dargestellt. 
 
 
 .. figure:: img/Activity_23_Fig_07.png
@@ -255,8 +199,7 @@ Die Konfiguration der PMOS-Diode ist in :numref:`23_fig_07` dargestellt.
 
    
 
-Verfahren
----------
+===== Verfahren =====
 
 1. Bauen Sie die Schaltung aus :numref:`23_fig_07` auf dem Steckbrett
    auf. Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 =
@@ -305,19 +248,11 @@ Verfahren
    PMOS-Diodenanschlussmessungen
 
    
-Wie in :numref:`23_fig_08` zu sehen, verhält sich der PMOS in der
-Diodenkonfiguration wie eine Diode mit einer Durchlassspannung
-gleich dem PMOS :math:`V_ {TH}`.
+Wie in :numref:`23_fig_08` zu sehen, verhält sich der PMOS in der Diodenkonfiguration wie eine Diode mit einer
+Durchlassspannung gleich dem PMOS :math:`V_ {TH}`.
 
 Vergleichen Sie die :numref:`23_fig_08` und :numref:`23_fig_04` und versuchen Sie, den Unterschied zwischen NMOS- und
 PMOS-Diodenkonfigurationen zu erklären.
-
-
-
-
-
-
-
 
 
 

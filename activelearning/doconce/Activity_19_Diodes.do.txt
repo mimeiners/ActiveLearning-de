@@ -1,9 +1,9 @@
-TITLE: M3.3 ELK - Laborversuch Diode
-AUTHOR: Prof. Dr.-Ing. Mirco Meiners at Hochschule Bremen - City University of Applied Sciences
-DATE: WiSe 2020/21
+## TITLE: M3.3 ELK - Laborversuch Diode
+## AUTHOR: Prof. Dr.-Ing. Mirco Meiners at Hochschule Bremen - City University of Applied Sciences
+## DATE: WiSe 2020/21
 
 
-======= Dioden IV-Charakterisierung =======
+## ======= Project: Dioden IV-Charakterisierung =======
 
 ===== Zielsetzung =====
 
@@ -23,7 +23,7 @@ dargestellt.
 
 Die "Oszilloskop-":"http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html" und
 "Signalgeneratoranwendung":"http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html"
-wird zum Erzeugen und Beobachten von Signalen in der Schaltung verwendet. 
+xwird zum Erzeugen und Beobachten von Signalen in der Schaltung verwendet. 
 !enotice
 
 

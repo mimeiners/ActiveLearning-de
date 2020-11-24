@@ -46,15 +46,15 @@ editfix ()
 ipynb_figure=imgtag
 ipynb_movie=ipynb
 ipynb_admon=hrule
-nbv=3
+nbv=4
 
 doconce format ipynb ${name} \
-	--no_preprocess \
 	--ipynb_figure=${ipynb_figure} ipynb_figure=${ipynb_figure} \
 	--ipynb_movie=${ipynb_movie} ipynb_movie=${ipynb_movie} \
 	--ipynb_admon=${ipynb_admon} ipynb_admon=${ipynb_admon} \
 	--ipynb_version=$nbv \
 	${options}
+#	--no_preprocess \
 #	--without_solutions
 
 # HTML5 Slides
@@ -113,14 +113,14 @@ system doconce format html ${name} \
 #system doconce lightclean
 
 # PDF for screen viewing with an alternative look from classic LaTeX
-doconce format pdflatex ${name} \
- 	--latex_font=lmodern \
- 	--latex_admon=yellowicon '--latex_admon_color=yellow!5' \
- 	--latex_fancy_header --latex_code_style=pyg --siunits \
- 	--latex_section_headings=blue --latex_colored_table_rows=blue \
- 	--latex_movie=href \
-	--latex_preamble=preamble.do_tex \
- 	${options}
+# doconce format pdflatex ${name} \
+#  	--latex_font=lmodern \
+#  	--latex_admon=yellowicon '--latex_admon_color=yellow!5' \
+#  	--latex_fancy_header --latex_code_style=pyg --siunits \
+#  	--latex_section_headings=blue --latex_colored_table_rows=blue \
+#  	--latex_movie=href \
+# 	--latex_preamble=preamble.do_tex \
+#  	${options}
 #	--without_solutions
 # fixarticle ${name}.tex
 system pdflatex -shell-escape ${name}
@@ -197,11 +197,11 @@ system pdflatex -shell-escape ${name}
 system mkdir -p ${name}/{code,fig}
 system tar -xzf ipynb-${name}-src.tar.gz -C ./${name}/
 # system cp ../source/img/${name}*.png ./${name}/fig/
-system mv ${name}.pdf ./${name}/
+# system mv ${name}.pdf ./${name}/
 system mv ${name}.ipynb ./${name}/
 system cp ${name}.html ./${name}/
 system ln -s ${name}.html ./${name}/index.html
 system find ./${name} -type f -exec chmod 644 {} \;
 system find ./${name} -type d -exec chmod 755 {} \;
 # system zip -r ${name}.zip ./${name}
-# system rsync -rtvluz -e ssh ./${name} ${public}/elk/lab/ --delete-before
+system rsync -rtvluz -e ssh ./${name} ${public}/elk/lab/ --delete-before

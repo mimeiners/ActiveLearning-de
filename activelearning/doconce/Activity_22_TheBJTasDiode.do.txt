@@ -1,8 +1,6 @@
-Der BJT-Transistor ist als Diode geschaltet
-===========================================
+======= Project: Der BJT als Diode  =======
 
-Zielsetzung
------------
+===== Zielsetzung =====
 
 Der Zweck dieses Versuchs ist es, die Vorwärts- und Rückwärtsstrom-/Spannungseigenschaften
 eines als Diode geschalteten Bipolartransistors ("Bipolar Junction Transistor", BJT) zu untersuchen.
@@ -20,35 +18,27 @@ Hinweise
    .. _Notebook: http://jupyter.org/index.html
 
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
 STEMlab - Board - Hardware_ beziehen.
 
-Oszilloskope- & Signalgenerator_ Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
+Oszilloskope- & Signalgenerator_ Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
+Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V** verwendeten Steckerstifte sind in der Dokumentation_ aufgeführt.
 
 
-.. hint::
-   Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
-   maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für diesen
-   Versuch sind höhere Signalamplituden erforderlich. Aus
-   diesem Grund werden wir einen OP484_ Inverter verwenden,
-   um die Signalverstärkung von OUT1 / OUT2
-   zu ermöglichen und einen Spannungshub von :math:`+4,7\,V` bis :math:`-3,2\,V`
-   zu erreichen. Ein OP484_ wird von STEMlab :math:`+ 5\,V` und :math:`-3.3\,V`
-   Spannungsschienen versorgt. Die Verstärkung des invertierenden
-   Verstärkers wird auf :math:`\approx5` gesetzt, wobei gilt :math:`R_i = 2.2\,k\Omega`
-   und :math:`R_f = 10\,k\Omega`
-   
-   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (Hinweis: *Rail-to-Rail*).
-   
+!bnotice
+Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für
+diesen Versuch sind höhere Signalamplituden erforderlich. Aus diesem Grund werden wir einen OP484_ Inverter verwenden,
+um die Signalverstärkung von OUT1 / OUT2 zu ermöglichen und einen Spannungshub von :math:`+4,7\,V` bis :math:`-3,2\,V`
+zu erreichen. Ein OP484_ wird von STEMlab :math:`+ 5\,V` und :math:`-3.3\,V` Spannungsschienen versorgt. Die Verstärkung
+des invertierenden Verstärkers wird auf :math:`\approx5` gesetzt, wobei gilt :math:`R_i = 2.2\,k\Omega` und :math:`R_f =
+10\,k\Omega`
 
-Materialien
------------
+Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27 oder OP97 verwendet haben. (Hinweis: *Rail-to-Rail*).
+!enotice
+
+
+===== Materialien =====
 
 - Red Pitaya STEMlab
 - OP484_ Quad-Rail-to-Rail-Operationsverstärker
@@ -60,9 +50,9 @@ Materialien
 - lötfreies Steckbrett
 - 9V Batterie/Labornetzteil
 
-Ein npn-Transistor, der wie in :numref:`22_fig_01` gezeigt angeschlossen ist,
-verhält sich wie eine reguläre Diode. Wir können dies durch Messen der
-npn-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen.
+
+Ein npn-Transistor, der wie in :numref:`22_fig_01` gezeigt angeschlossen ist, verhält sich wie eine reguläre Diode. Wir
+können dies durch Messen der npn-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen.
 
 
 .. figure:: img/Activity_22_Fig_01.png
@@ -72,18 +62,15 @@ npn-Antwort unter Verwendung der Oszilloskop- & Signalgenerator-Anwendung zeigen
    npn als Diodenanschlussdiagramm
    
 
-.. note::
-   Beachten Sie, dass die in :numref:`22_fig_01` (links) gezeigte
-   Verstärkerschaltung nicht das Hauptthema dieses Experiments
-   ist. Diese Schaltung wird nur hinzugefügt, um das Signal OUT1 zu
-   verstärken.
+!bhint
+Beachten Sie, dass die in :numref:`22_fig_01` (links) gezeigte Verstärkerschaltung nicht das Hauptthema dieses
+Experiments ist. Diese Schaltung wird nur hinzugefügt, um das Signal OUT1 zu verstärken.
    
-   Von hier aus können Sie den Punkt :math:`-5 \times V_{OUT1}` als
-   Haupterregungssignal betrachten. 
+Von hier aus können Sie den Punkt :math:`-5 \times V_{OUT1}` als Haupterregungssignal betrachten. 
+!ehint
 
 
-Verfahren
----------
+===== Verfahren =====
 
 1. Bauen Sie die Schaltung aus :numref:`22_fig_01` auf dem Steckbrett auf.
    Setzen Sie für :math:`R1 = 2,2\,k\Omega`, :math:`R2 = 10\,k\Omega`
@@ -134,42 +121,16 @@ Verfahren
    
 .. _vorherigen: https://mimeinersactivelearning-de.readthedocs.io/de/latest/Activity19_Diodes.html#Zeitbereichsmessungen
 
-Aus :numref:`22_fig_03` ist ersichtlich, dass der npn BJT-Transistor
-in der, in :numref:`22_fig_01` gezeigten Konfiguration, sich wie eine
-Diode verhält.
+Aus :numref:`22_fig_03` ist ersichtlich, dass der npn BJT-Transistor in der, in :numref:`22_fig_01` gezeigten
+Konfiguration, sich wie eine Diode verhält.
 
 Vergleichen Sie die Ergebnisse mit den Diodenmessungen aus dem vorherigen_ Versuch.
 
 
-VI-Kurvenmessungen
-------------------
+===== IV-Kurvenmessungen =====
 
-Da sich BJT wie eine Diode verhalten kann (vgl. Konfiguration in
-:numref:`22_fig_01`), können wir die VI-Charakteristik messen, wie wir es bei
-der Diodenmessungen getan haben.
-
-Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
-Wie man Jupyter Notebook startet und ein neues Projekt erstellt,
-ist in :numref:`22_fig_05` dargestellt.
-
-
-.. note::
-   Das Jupyter_ Notebook_ ist eine Webanwendung, mit der Sie Dokumente
-   erstellen und freigeben können, die Live-Code, Gleichungen,
-   Visualisierungen und erklärenden Text enthalten. Sie haben auch die
-   Unterstützung der Jupyter-Anwendung mit Red Pitaya-Bibliotheken
-   sichergestellt, die die Steuerung aller Funktionen der
-   STEMlab-Boards ermöglichen: Signalerfassung, Signalerzeugung,
-   digitale Signalsteuerung, Kommunikation usw. Das Jupyter-Notebook
-   wird auf die gleiche Weise gestartet wie jede andere
-   Anwendungen. Nach dem Start der Jupyter-Anwendung wird ein
-   webbasiertes Notizbuch geöffnet. Diese Kombination aus Notebook,
-   STEMlab und Python macht das STEMlab zu einem hervorragenden
-   Werkzeug für das Prototyping und die schnelle Programmierung. Da
-   Jupyter Notebook Text-, Gleichungs- und Bildbearbeitung ermöglicht,
-   ist es ein perfektes Werkzeug für Tutorials, Beispiele und vieles mehr.
-
-   
+Da sich BJT wie eine Diode verhalten kann (vgl. Konfiguration in :numref:`22_fig_01`), können wir die VI-Charakteristik
+messen, wie wir es bei der Diodenmessungen getan haben.
 
 .. figure:: img/Activity_19_Fig_07.png
    :name: 22_fig_04
@@ -178,42 +139,28 @@ ist in :numref:`22_fig_05` dargestellt.
    Erstellen eines neuen Jupyter-Notebooks
 
    
-Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben,
-kopieren Sie den untenstehenden Code und führen Sie ihn aus.
+Wenn Sie erfolgreich ein neues Jupyter-Notebook erstellt haben, kopieren Sie den untenstehenden Code und führen Sie ihn aus.
 
-Der untenstehende Code erzeugt das gleiche Signal wie in :numref:`22_fig_06`,
-aber er zeichnet sie im XY-Diagramm auf.
+Der untenstehende Code erzeugt das gleiche Signal wie in :numref:`22_fig_06`, aber er zeichnet sie im XY-Diagramm auf.
 
-Zum Messen der :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei
-die x-Achse die Diodenspannung :math:`IN_2` und y-Achse
-ein Diodenstrom :math:`(IN_1 - IN_2) / R_3` darstellt.
+Zum Messen der :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei die x-Achse die Diodenspannung :math:`IN_2` und
+y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3` darstellt.
 
 
-**Kopieren Sie den Code von unten in die Zelle 1**
-
-	  
-.. literalinclude:: code/Activity_22_Code_01.py
-   :language: python
-   :linenos:
+@@@CODE code/Activity_22_Code_01.py
 
 
-Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code
-von unten hinein.
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code von unten hinein.
 
  
-.. literalinclude:: code/Activity_22_Code_02.py
-   :language: python
-   :linenos:
+@@@CODE code/Activity_22_Code_02.py
 
 
-Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine
-Hauptschleife für die Erfassung und Neuaufnahme. Wenn Sie die
-Erfassung stoppen, führen Sie einfach nur Zelle 2 aus, um die
-Messungen erneut zu starten.
+Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine Hauptschleife für die Erfassung und Neuaufnahme. Wenn Sie
+die Erfassung stoppen, führen Sie einfach nur Zelle 2 aus, um die Messungen erneut zu starten.
  
 
-Nach dem Ausführen des obigen Codes sollten Sie die Diode
-VI-Charakteristik erhalten, wie in :numref:`22_fig_05` gezeigt.
+Nach dem Ausführen des obigen Codes sollten Sie die Diode VI-Charakteristik erhalten, wie in :numref:`22_fig_05` gezeigt.
 
 
 .. figure:: img/Activity_22_Fig_05.png
@@ -223,33 +170,29 @@ VI-Charakteristik erhalten, wie in :numref:`22_fig_05` gezeigt.
    BJT VI-Charakteristik gemessen mit Jupyter Notebook
    
 
-In :numref:`22_fig_05` ist die in einer Diodenkonfiguration gemessene BJT VI-Charakteristik
-dargestellt. Vergleichen Sie diese Ergebnisse mit der VI-Charakteristik der Diode.
+In :numref:`22_fig_05` ist die in einer Diodenkonfiguration gemessene BJT VI-Charakteristik dargestellt. Vergleichen Sie
+diese Ergebnisse mit der VI-Charakteristik der Diode. 
 
 Wiederum sehen wir die Hysterese. Erklären Sie, warum wir Transistoren als Dioden verwenden wollen?
 
 
-Reverse Breakdown-Eigenschaften
--------------------------------
+===== Reverse Breakdown-Eigenschaften =====
 
-Hier untersuchen wir die Rückwärtsdurchbruchspannungseigenschaften der
-Emitter-Basis-Verbindung eines als Diode angeschlossenen Bipolartransistors (BJT).
+Hier untersuchen wir die Rückwärtsdurchbruchspannungseigenschaften der Emitter-Basis-Verbindung eines als Diode
+angeschlossenen Bipolartransistors (BJT).
 
-Bauen Sie die Schaltung auf der Lochrasterplatine so auf, wie es in :numref:`22_fig_06`
-dargestellt ist. **Der Emitter wird an den positiven Batteriepol angeschlossen.**
+Bauen Sie die Schaltung auf der Lochrasterplatine so auf, wie es in :numref:`22_fig_06` dargestellt ist. **Der Emitter
+wird an den positiven Batteriepol angeschlossen.** 
 
-Die npn-Transistoren haben wahrscheinlich eine Durchbruchspannung
-von mehr als :math:`10\,V` und es kann vorkommen, dass der maximale
-Spannungsbereich nicht ausreichend ist. Wir werden daher nicht in
-der Lage sein, Q1 oberhalb der Durchbruchspannung umzupolen.
-Aus diesem Grund haben wir eine zusätzliche Batterie hinzugefügt, um
-das Emitterpotential in der Nähe der Rückwärtsdurchbruchsspannung zu
-erhöhen. Wenn also unser :math:`V_ {OUT}` Signal **negativ** wird, arbeitet
-der Transistor rückwärts, aber die Differenzspannung :math:`V_{E-BC} = V_E - V_{BC}`
-bleibt größer als die Durchbruchspannung und der Transistor beginnt zu leiten.
+Die npn-Transistoren haben wahrscheinlich eine Durchbruchspannung von mehr als :math:`10\,V` und es kann vorkommen, dass
+der maximale Spannungsbereich nicht ausreichend ist. Wir werden daher nicht in der Lage sein, Q1 oberhalb der
+Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine zusätzliche Batterie hinzugefügt, um das Emitterpotential
+in der Nähe der Rückwärtsdurchbruchsspannung zu erhöhen. Wenn also unser :math:`V_ {OUT}` Signal **negativ** wird,
+arbeitet der Transistor rückwärts, aber die Differenzspannung :math:`V_{E-BC} = V_E - V_{BC}` bleibt größer als die
+Durchbruchspannung und der Transistor beginnt zu leiten. 
 
-Zum Beispiel ohne Batterie, wenn der Emitter auf GND ist, kann
-der Transistor Q1 mit folgendem negativen Potential vorgestpannt werden:
+Zum Beispiel ohne Batterie, wenn der Emitter auf GND ist, kann der Transistor Q1 mit folgendem negativen Potential
+vorgestpannt werden: 
 
 .. math::
    :label: 22_eq_01
@@ -274,11 +217,9 @@ wobei :math:`V_{BC}` die maximale negative Schwankung unseres Erregerspannungssi
    npn Emitter-Basis rückwärts Durchbruchkonfiguration
 
 
-Verfahren
----------
+===== Verfahren =====
 
-Bauen Sie die Schaltung aus der :numref:`22_fig_06` auf dem Steckbrett auf und fahre
-mit den Messungen fort.
+Bauen Sie die Schaltung aus der :numref:`22_fig_06` auf dem Steckbrett auf und fahre mit den Messungen fort.
 
 
 .. figure:: img/Activity_22_Fig_07.png
@@ -288,42 +229,32 @@ mit den Messungen fort.
    npn-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett
 
    
-Für diese Aufgabe verwenden wir die Jupyter Notebook
-Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
-erstellt, ist in :numref:`22_fig_04` dargestellt. 
+Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung. Wie man Jupyter Notebook startet und ein neues
+Projekt erstellt, ist in :numref:`22_fig_04` dargestellt. 
 
-Da Sie Jupyter Notebook bereits von Vorschau aus ausführen, wird nur
-ein kleines Update des Codes benötigt.
+Da Sie Jupyter Notebook bereits von Vorschau aus ausführen, wird nur ein kleines Update des Codes benötigt.
 
 
-.. note::
-   
-   Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol
-   **Stop** in der Menüleiste auswählen.
-
+!bnotice
+Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol **Stop** in der Menüleiste auswählen.
+!enotice
 
 
 Nach diesem Update **Zelle 2** wie unten gezeigt:
     
-.. literalinclude:: code/Activity_22_Code_02.py
-   :language: python
-   :linenos:
+@@@CODE code/Activity_22_Code_02.py
 
-
-Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"**
-hinzugefügt, um das Potential der Batterie bei der Ausführung des
-Plottings zu berücksichtigen.
+Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"** hinzugefügt, um das Potential der Batterie bei der
+Ausführung des Plottings zu berücksichtigen.
    
-Wählen Sie Zelle 2 und drücken Sie **Play** in der
-Menüleiste. Beachten Sie, Zelle 2 ist eine Hauptschleife für die
-Erfassung und das erneute Plotten. Wenn Sie die Erfassung stoppen,
-führen Sie nur die Zelle 2 aus, um die Messungen erneut zu starten.
+Wählen Sie Zelle 2 und drücken Sie **Play** in der Menüleiste. Beachten Sie, Zelle 2 ist eine Hauptschleife für die
+Erfassung und das erneute Plotten. Wenn Sie die Erfassung stoppen, führen Sie nur die Zelle 2 aus, um die Messungen
+erneut zu starten.
    
-Achten Sie darauf, die tatsächliche Batteriespannung für die
-genauesten Messungen zu messen.
+Achten Sie darauf, die tatsächliche Batteriespannung für die genauesten Messungen zu messen.
 
-Wenn Sie den Jupyter Notebook-Code aktualisiert und korrekt ausgeführt
-haben, sollten Sie ähnliche Ergebnisse wie in :numref:`22_fig_08` erhalten.
+Wenn Sie den Jupyter Notebook-Code aktualisiert und korrekt ausgeführt haben, sollten Sie ähnliche Ergebnisse wie in
+:numref:`22_fig_08` erhalten. 
 
 
 .. figure:: img/Activity_22_Fig_08.png
@@ -333,26 +264,20 @@ haben, sollten Sie ähnliche Ergebnisse wie in :numref:`22_fig_08` erhalten.
    Messung der npn-Emitter-Basis-Durchbruchspannung
    
 
-Aus :numref:`22_fig_08` können wir sehen, dass die umgekehrte
-Durchbruchspannung des npn BJT 2N3904-Transistors etwa 10 V beträgt.
+Aus :numref:`22_fig_08` können wir sehen, dass die umgekehrte Durchbruchspannung des npn BJT 2N3904-Transistors etwa 10 V beträgt.
 
 
-Frage
-------
+===== Problem: Durchbruckspannung =====
 
-Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie
-ändert sich die Durchbruchspannung?
+Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie ändert sich die Durchbruchspannung?
    
 
 
-Absenken der effektiven Durchlassspannung der Diode
----------------------------------------------------
+===== Absenken der effektiven Durchlassspannung der Diode =====
 
-Hier untersuchen wir eine Schaltungskonfiguration mit kleineren
-Durchlassspannungseigenschaften als ein, als Diode angeschlossener,
-Bipolar-Junction-Transistor (BJT). Die Einschaltspannung der "Diode"
-sollte etwa :math:`\approx 0,1\,V` betragen, gegenüber :math:`\approx 0,7\,V` für den einfachen
-Diodenanschluss im ersten Beispiel.
+Hier untersuchen wir eine Schaltungskonfiguration mit kleineren Durchlassspannungseigenschaften als ein, als Diode
+angeschlossener, Bipolar-Junction-Transistor (BJT). Die Einschaltspannung der "Diode" sollte etwa :math:`\approx 0,1\,V`
+betragen, gegenüber :math:`\approx 0,7\,V` für den einfachen Diodenanschluss im ersten Beispiel.
 
 
 .. figure:: img/Activity_22_Fig_09.png
@@ -362,8 +287,7 @@ Diodenanschluss im ersten Beispiel.
    Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
 
 
-Verfahren
----------
+===== Verfahren =====
 
 1. Bauen Sie die Schaltung aus :numref:`22_fig_09` auf dem
    Steckbrett auf. Setzen Sie für :math:`R3 = 1\,k\Omega`, :math:`R4 = 100\,k\Omega`
@@ -425,9 +349,7 @@ Verfahren
       zu beobachten.
    
 
-Fragen
-------
+===== Problem: Kollektor =====
 
-Könnte der Kollektor des pnp Q2 mit einem anderen Knoten wie einer
-negativen Versorgungsspannung verbunden sein? Und was wäre der
-Effekt?
+Könnte der Kollektor des pnp Q2 mit einem anderen Knoten wie einer negativen Versorgungsspannung verbunden sein? Und was
+wäre der Effekt?
