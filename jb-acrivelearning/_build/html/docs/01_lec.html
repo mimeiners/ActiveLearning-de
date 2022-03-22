@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einleitung &#8212; Grundlagen der Elektrotechnik 2 (GEL2)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Netzwerkerregung" href="02_lec.html" />
+    <link rel="prev" title="Jupyter-Book GEL2" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Elektrotechnik 2 (GEL2)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_lec.html">
+   Netzwerkerregung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lec.html">
+   Frequenzbereich
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_lec.html">
+   Impedanz, Admittanz und Leistung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_lec.html">
+   Graphische Analysemethoden
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_lec.html">
+   Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_lec.html">
+   Messbrücken
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_lec.html">
+   Resonanzkreise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_lec.html">
+   Transformatoren und Übertrager
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/01_lec.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jb-gel2"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jb-gel2/issues/new?title=Issue%20on%20page%20%2Fdocs/01_lec.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wissenschaftliches-rechnen-datenwissenschaft">
+   Wissenschaftliches Rechnen / Datenwissenschaft
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schaltungssimulation-spice">
+   Schaltungssimulation (SPICE)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#betriebssystem-os-werkzeuge-tools">
+   Betriebssystem (OS) - Werkzeuge (Tools)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-editoren">
+   Code Editoren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schreibst-du-noch-oder-texst-du-schon">
+   Schreibst Du noch oder TeXst Du schon?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latex-editoren">
+   LaTeX Editoren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#literaturverwaltung-und-latex">
+   Literaturverwaltung und LaTeX
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schone-neue-welt">
+   Schöne neue Welt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#halbleiterherstellung-infineon-dresden">
+   Halbleiterherstellung (Infineon, Dresden)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finfet-intel">
+   FinFET (Intel)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tsmc-fab-next-gen-7-5-nm">
+   TSMC Fab (Next Gen 7/5 nm)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#es-war-einmal">
+   Es war einmal …
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#damals-und-heute">
+   Damals und heute
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#systemhierarchie">
+   Systemhierarchie
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#schnittstellen-zur-aussenwelt">
+   Schnittstellen zur Aussenwelt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#meeting-mit-einem-system">
+   Meeting mit einem System
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#system-in-a-package-sip">
+   System in a Package (SiP)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sie-werden-unsere-experten">
+   Sie werden unsere Experten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lernziele-des-moduls">
+   Lernziele des Moduls
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beschreibung-elektrotechnischer-systeme-1">
+   Beschreibung elektrotechnischer Systeme (1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beschreibung-elektrotechnischer-systeme-2">
+   Beschreibung elektrotechnischer Systeme (2)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beschreibung-elektrotechnischer-systeme-3">
+   Beschreibung elektrotechnischer Systeme (3)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beschreibung-elektrotechnischer-systeme-4">
+   Beschreibung elektrotechnischer Systeme (4)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#konzentrierte-schaltelemente">
+   Konzentrierte Schaltelemente
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#harmonische-signale">
+   Harmonische Signale
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="einleitung">
+<h1>Einleitung<a class="headerlink" href="#einleitung" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="wissenschaftliches-rechnen-datenwissenschaft">
+<h2>Wissenschaftliches Rechnen / Datenwissenschaft<a class="headerlink" href="#wissenschaftliches-rechnen-datenwissenschaft" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.anaconda.com/download/">Python</a></p></li>
+<li><p><a class="reference external" href="https://www.r-project.org">R Project</a></p></li>
+<li><p><a class="reference external" href="http://de.mathworks.com/?requestedDomain=de.mathworks.com">Matlab</a></p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/octave/">Gnu Octave</a></p></li>
+<li><p><a class="reference external" href="http://www.gnuplot.info">Gnuplot</a> (<a class="reference external" href="http://www.gnuplotting.org">Gnuplotting</a>)</p></li>
+<li><p><a class="reference external" href="http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html">Command-line tools</a></p></li>
+</ul>
+</div>
+<div class="section" id="schaltungssimulation-spice">
+<h2>Schaltungssimulation (SPICE)<a class="headerlink" href="#schaltungssimulation-spice" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.linear.com/designtools/software/">LTspice Linear Technology</a></p></li>
+<li><p><a class="reference external" href="http://www.ti.com/tool/tina-ti">TINA-TI SPICE-Based Analog Simulation Program</a></p></li>
+<li><p><a class="reference external" href="http://ngspice.sourceforge.net">ngspice (open-source)</a></p></li>
+<li><p><a class="reference external" href="https://www.mentor.com/products/ic_nanometer_design/analog-mixed-signal-verification/eldo/">ELDO (Mentor Graphics)</a></p></li>
+<li><p><a class="reference external" href="https://www.cadence.com/content/cadence-www/global/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation/spectre-circuit-simulator.html">Spectre (Cadence)</a></p></li>
+<li><p><a class="reference external" href="https://www.synopsys.com/tools/Verification/AMSVerification/CircuitSimulation/HSPICE/Pages/default.aspx">HSPICE (Synopsys)</a></p></li>
+</ul>
+</div>
+<div class="section" id="betriebssystem-os-werkzeuge-tools">
+<h2>Betriebssystem (OS) - Werkzeuge (Tools)<a class="headerlink" href="#betriebssystem-os-werkzeuge-tools" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Shell_%28computing%29">Shell</a></p>
+<ul>
+<li><p><a class="reference external" href="https://ohmyz.sh">oh-my-zsh</a>,</p></li>
+<li><p><a class="reference external" href="https://bash-it.readthedocs.io/en/latest/">bash-it</a></p></li>
+<li><p><a class="reference external" href="https://de.wikipedia.org/wiki/Secure_Shell">SSH (Secure Shell)</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://git-scm.com">GIT (Versionskontrolle)</a></p></li>
+<li><p><a class="reference external" href="https://cygwin.com">Cygwin</a></p></li>
+</ul>
+</div>
+<div class="section" id="code-editoren">
+<h2>Code Editoren<a class="headerlink" href="#code-editoren" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a></p></li>
+<li><p><a class="reference external" href="https://www.vim.org">Vim</a></p></li>
+<li><p><a class="reference external" href="https://notepad-plus-plus.org">Notepad++</a> (Windows)</p></li>
+<li><p><a class="reference external" href="https://atom.io">Atom</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a></p></li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
+</ul>
+</div>
+<div class="section" id="schreibst-du-noch-oder-texst-du-schon">
+<h2>Schreibst Du noch oder TeXst Du schon?<a class="headerlink" href="#schreibst-du-noch-oder-texst-du-schon" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://miktex.org/">MikTeX (Windows, MacOS, Linux)</a></p></li>
+<li><p><a class="reference external" href="https://www.tug.org/mactex/">MacTeX (MacOS)</a></p></li>
+<li><p><a class="reference external" href="http://tug.org/texlive/">TeXLive (Linux)</a></p></li>
+</ul>
+</div>
+<div class="section" id="latex-editoren">
+<h2>LaTeX Editoren<a class="headerlink" href="#latex-editoren" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>IDE’s</p>
+<ul>
+<li><p><a class="reference external" href="http://www.texstudio.org">TeXStudio</a></p></li>
+<li><p><a class="reference external" href="http://www.xm1math.net/texmaker/">TeXMaker</a></p></li>
+<li><p><a class="reference external" href="http://www.tug.org/texworks/">TeXWorks</a></p></li>
+</ul>
+</li>
+<li><p>Kollaborative Frameworks</p>
+<ul>
+<li><p><a class="reference external" href="https://www.sharelatex.com/">ShareLaTeX, Online LaTeX</a></p></li>
+<li><p><a class="reference external" href="https://cocalc.com/doc/latex-editor.html">CoCalc - Online LaTeX</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="literaturverwaltung-und-latex">
+<h2>Literaturverwaltung und LaTeX<a class="headerlink" href="#literaturverwaltung-und-latex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www1.citavi.com/sub/manual5/de/exporting_to_bibtex.html">Citavi im Detail &gt; Titel exportieren &gt; Export nach BibTeX</a></p></li>
+<li><p><a class="reference external" href="https://unimelb.libguides.com/c.php?g=565734%5C&amp;p=3912294">RefWorks - Library Guide Univ. Melbourne</a></p></li>
+<li><p><a class="reference external" href="https://nerdpause.de/benutzerdefinierte-bibtex-keys-mit-zotero/">Benutzerdefinierte BibTex-Keys mit Zotero | nerdpause</a></p></li>
+<li><p><a class="reference external" href="https://unimelb.libguides.com/c.php?g=565734%5C&amp;p=3897117">JabRef - Library Guide Univ. Melbourne</a></p></li>
+<li><p><a class="reference external" href="https://unimelb.libguides.com/latexbibtex/endnote">EndNote - Library Guide Univ. Melbourne</a></p></li>
+</ul>
+</div>
+<div class="section" id="schone-neue-welt">
+<h2>Schöne neue Welt<a class="headerlink" href="#schone-neue-welt" title="Permalink to this headline">¶</a></h2>
+<p><img alt="AMD Jaguar APU (CPU/GPU), 16 nm, 325 qmm, 2016 " src="docs/fig/lec_AMD&#64;16nm&#64;Jaguar.jpg" /></p>
+</div>
+<div class="section" id="halbleiterherstellung-infineon-dresden">
+<h2>Halbleiterherstellung (Infineon, Dresden)<a class="headerlink" href="#halbleiterherstellung-infineon-dresden" title="Permalink to this headline">¶</a></h2>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/_Kj58yQ67KI" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="section" id="finfet-intel">
+<h2>FinFET (Intel)<a class="headerlink" href="#finfet-intel" title="Permalink to this headline">¶</a></h2>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/_VMYPLXnd7E" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="section" id="tsmc-fab-next-gen-7-5-nm">
+<h2>TSMC Fab (Next Gen 7/5 nm)<a class="headerlink" href="#tsmc-fab-next-gen-7-5-nm" title="Permalink to this headline">¶</a></h2>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/Hb1WDxSoSec" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="section" id="es-war-einmal">
+<h2>Es war einmal …<a class="headerlink" href="#es-war-einmal" title="Permalink to this headline">¶</a></h2>
+<div id="sec:history"></div>
+<p><img alt="1906 die Elektronenröhre" src="docs/fig/lec_vacuum_tube.png" /></p>
+<p><img alt="1947 der erste Transistor, Bell Labs Foto" src="docs/fig/lec_1st_transistor.png" /></p>
+</div>
+<div class="section" id="damals-und-heute">
+<h2>Damals und heute<a class="headerlink" href="#damals-und-heute" title="Permalink to this headline">¶</a></h2>
+<p><img alt="1958 Jack Kilby's erster IC " src="docs/fig/lec_1st_ic_kilby.png" /></p>
+<p><img alt="Moderner IC " src="docs/fig/lec_modern_ic.png" /></p>
+</div>
+<div class="section" id="systemhierarchie">
+<h2>Systemhierarchie<a class="headerlink" href="#systemhierarchie" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_system_hierarchy.png" width="400"><p><em>Funktionsblöcke eines elektronischen Systems. <div id="fig:hierarchy"></div></em></p> -->
+<p><img alt="Funktionsblöcke eines elektronischen Systems. " src="docs/fig/lec_system_hierarchy.png" /></p>
+<ul class="simple">
+<li><p>Nutzen Sie Hierarchien zur Beschreibung komplexer Systeme</p></li>
+<li><p>Teile und herrsche</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="schnittstellen-zur-aussenwelt">
+<h2>Schnittstellen zur Aussenwelt<a class="headerlink" href="#schnittstellen-zur-aussenwelt" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_real_world_interface.png" width="600"><p><em>Interfacing. <div id="fig:interfaces"></div></em></p> -->
+<p><img alt="Interfacing. " src="docs/fig/lec_real_world_interface.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="meeting-mit-einem-system">
+<h2>Meeting mit einem System<a class="headerlink" href="#meeting-mit-einem-system" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_smartphone.png" width="600"><p><em>Drahtloses Kommunikationssystem. <div id="fig:smartphone"></div></em></p> -->
+<p><img alt="Drahtloses Kommunikationssystem. " src="docs/fig/lec_smartphone.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="system-in-a-package-sip">
+<h2>System in a Package (SiP)<a class="headerlink" href="#system-in-a-package-sip" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_system_in_package.png" width="600"><p><em>Beschleunigungssensor. <div id="fig:sip"></div></em></p> -->
+<p><img alt="Beschleunigungssensor. " src="docs/fig/lec_system_in_package.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="sie-werden-unsere-experten">
+<h2>Sie werden unsere Experten<a class="headerlink" href="#sie-werden-unsere-experten" title="Permalink to this headline">¶</a></h2>
+<p><em>Leistungsmerkmale.</em></p>
+<ul class="simple">
+<li><p>Hintergrundwissen</p>
+<ul>
+<li><p>Systemverständnis, Architektur, Herstellungsverfahren, Implementation</p></li>
+</ul>
+</li>
+<li><p>Unterbewusste Kompetenz</p>
+<ul>
+<li><p>Abgespeicherte Erfahrungen aus Erfolgsgeschichten und Misserfolgen</p></li>
+</ul>
+</li>
+<li><p>Spezialwissen</p>
+<ul>
+<li><p>Berufsspezifisches Wissen</p></li>
+</ul>
+</li>
+<li><p>Teamwork Haltung</p>
+<ul>
+<li><p>Kommunikationsfähigkeit, Berichtswesen und technische Präsentation</p></li>
+</ul>
+</li>
+<li><p>Kreativität</p></li>
+<li><p>Tool-Kenntnisse</p></li>
+</ul>
+</div>
+<div class="section" id="lernziele-des-moduls">
+<h2>Lernziele des Moduls<a class="headerlink" href="#lernziele-des-moduls" title="Permalink to this headline">¶</a></h2>
+<p><em>Studierende können nach Abschluss des Moduls:</em></p>
+<ul class="simple">
+<li><p>Elektrische Systeme mathematisch und graphisch im Zeit- und Frequenzbereich beschreiben</p></li>
+<li><p>Netzwerkanalyse mit RLC-Gliedern</p></li>
+<li><p>Spezielle Netzwerke, wie Messbrücken, Schwingkreise und ideale Transformatoren, dimensionieren.</p></li>
+</ul>
+<p><em>Seminaristischer Unterricht:</em></p>
+<ul class="simple">
+<li><p>Komplexe Wechselstromrechnung</p></li>
+<li><p>Disktrete Bauelemente und ihre Modellierung (RLC)</p></li>
+<li><p>Methodik der Netzwerkanalyse</p></li>
+<li><p>Anwendungsbeispiele mit EDA-Werkzeugen und wissenschaftliches Rechnen (Scientific Computing)</p></li>
+</ul>
+</div>
+<div class="section" id="beschreibung-elektrotechnischer-systeme-1">
+<h2>Beschreibung elektrotechnischer Systeme (1)<a class="headerlink" href="#beschreibung-elektrotechnischer-systeme-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>verschiedene Stufen der Vereinfachung</p></li>
+</ul>
+<p><em>Felder / Wellen / Optik / HF-Technik.</em></p>
+<ul class="simple">
+<li><p>Maxwell-Gleichungen</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\oint \mathbf{H} d\mathbf{s} &amp;= \iint \mathbf{J} + \dot{D} d\mathbf{A} \\
+\oint \mathbf{E} d\mathbf{s} &amp;= - \iint \dot{B} d\mathbf{A}
+\end{align}
+\end{split}\]</div>
+</div>
+<div class="section" id="beschreibung-elektrotechnischer-systeme-2">
+<h2>Beschreibung elektrotechnischer Systeme (2)<a class="headerlink" href="#beschreibung-elektrotechnischer-systeme-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>bei lokaler Konzentration der Feldenergie <span class="math notranslate nohighlight">\(\Rightarrow\)</span> quasi-statische Näherung</p></li>
+</ul>
+<p><em>Mikrowellentechnik / Leitungstechnik.</em></p>
+<ul class="simple">
+<li><p>verteilte Schaltungen <span class="math notranslate nohighlight">\(l,c,\rho\)</span></p></li>
+<li><p>Kopplung, Laufzeit <span class="math notranslate nohighlight">\(\tau = a/v\)</span></p></li>
+<li><p><em>kleine</em> Systeme mit <span class="math notranslate nohighlight">\(a &lt; &lt; \lambda\)</span> bzw. <em>kurze</em> Laufzeiten mit <span class="math notranslate nohighlight">\(\tau &lt; &lt; T\)</span></p></li>
+</ul>
+<p><em>Regelungstechnik / Impulstechnik.</em></p>
+<ul class="simple">
+<li><p>Ersatzschaltungen</p></li>
+<li><p>(Block-)Schaltbilder</p></li>
+</ul>
+</div>
+<div class="section" id="beschreibung-elektrotechnischer-systeme-3">
+<h2>Beschreibung elektrotechnischer Systeme (3)<a class="headerlink" href="#beschreibung-elektrotechnischer-systeme-3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>eingeschwungener Zustand</p></li>
+</ul>
+<p><em>NF-Technik.</em></p>
+<ul class="simple">
+<li><p>stationär-periodische Signale</p></li>
+<li><p>Sinussignale</p></li>
+</ul>
+<p><em>Energietechnik.</em></p>
+<ul class="simple">
+<li><p>monofrequente Signale <span class="math notranslate nohighlight">\(U = Z \cdot I\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="beschreibung-elektrotechnischer-systeme-4">
+<h2>Beschreibung elektrotechnischer Systeme (4)<a class="headerlink" href="#beschreibung-elektrotechnischer-systeme-4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Frequenz <span class="math notranslate nohighlight">\(f \rightarrow 0\)</span></p></li>
+</ul>
+<p><em>Gleichstromtechnik.</em></p>
+<ul class="simple">
+<li><p>Ohmsches Gesetz <span class="math notranslate nohighlight">\(U = R \cdot I\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="konzentrierte-schaltelemente">
+<h2>Konzentrierte Schaltelemente<a class="headerlink" href="#konzentrierte-schaltelemente" title="Permalink to this headline">¶</a></h2>
+<p><em>Stromdichte.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{\int E(r,t) ds}{\iint J(r,t) dA} = \frac{u(t)}{i(t)} \Rightarrow R
+\end{equation}
+\)</span>$</p>
+<p><em>Verschiebungsdichte.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{\iint D(r,t) dA}{\int E(r,t) ds} = \frac{q(t)}{u(t)} \Rightarrow C
+\end{equation}
+\)</span>$</p>
+<p><em>Flußdichte.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+\frac{\iint B(r,t) dA}{\oint H(r,t) ds} = \frac{u(t)}{i(t)} \Rightarrow L
+\end{equation}
+\)</span>$</p>
+</div>
+<div class="section" id="harmonische-signale">
+<h2>Harmonische Signale<a class="headerlink" href="#harmonische-signale" title="Permalink to this headline">¶</a></h2>
+<p><em>als Zeitfunktion.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+u(t) = \hat{U} \cos(\omega t + \phi)
+\end{equation}
+\)</span>$</p>
+<p><em>als Zeiger / komplexe Grösse (Phasor).</em>
+$<span class="math notranslate nohighlight">\(
+\begin{equation}
+U = \lvert \hat{U} \lvert e^{j \phi}
+\end{equation}
+\)</span>$</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="index.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Jupyter-Book GEL2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02_lec.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Netzwerkerregung</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

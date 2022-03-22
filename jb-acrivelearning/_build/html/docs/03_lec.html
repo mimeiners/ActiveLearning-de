@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequenzbereich &#8212; Grundlagen der Elektrotechnik 2 (GEL2)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Impedanz, Admittanz und Leistung" href="04_lec.html" />
+    <link rel="prev" title="Netzwerkerregung" href="02_lec.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Elektrotechnik 2 (GEL2)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_lec.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_lec.html">
+   Netzwerkerregung
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Frequenzbereich
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_lec.html">
+   Impedanz, Admittanz und Leistung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_lec.html">
+   Graphische Analysemethoden
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_lec.html">
+   Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_lec.html">
+   Messbrücken
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_lec.html">
+   Resonanzkreise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_lec.html">
+   Transformatoren und Übertrager
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/03_lec.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jb-gel2"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jb-gel2/issues/new?title=Issue%20on%20page%20%2Fdocs/03_lec.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#beschreibung-und-analyse-im-frequenzbereich-2">
+   Beschreibung und Analyse im Frequenzbereich (2)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#symbolisches-verfahren">
+   Symbolisches Verfahren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vorteile-des-frequenzbereichs">
+   Vorteile des Frequenzbereichs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-1-zerlegung">
+   Funktionaltransformation (1) - Zerlegung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-2-euler-sche-formel">
+   Funktionaltransformation (2) - Euler’sche Formel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-3-exponentialdarstellung">
+   Funktionaltransformation (3) - Exponentialdarstellung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-4-fourierreihe">
+   Funktionaltransformation (4) - Fourierreihe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-5-transformation">
+   Funktionaltransformation (5) - Transformation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funktionaltransformation-6-definition">
+   Funktionaltransformation (6) - Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeigerdarstellung-1">
+   Zeigerdarstellung (1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zeigerdarstellung-2">
+   Zeigerdarstellung (2)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- !split -->
+<!-- jupyter-book 03_lec.md -->
+<div class="tex2jax_ignore mathjax_ignore section" id="frequenzbereich">
+<h1>Frequenzbereich<a class="headerlink" href="#frequenzbereich" title="Permalink to this headline">¶</a></h1>
+<div id="sec:freq"></div>
+<!-- !split -->
+## Beschreibung und Analyse im Frequenzbereich (1)
+*Problemstellung.* 
+Bei zukünftigen Schaltungen ist es nicht mehr möglich, direkt mit den Zeitfunktionen für Spannungen und Ströme zu
+arbeiten.
+<p>Die von den Gleichstromnetzen bekannten Lösungsverfahren aus dem ersten Semester, die von linearen algebraischen
+Gleichungssystemen ausgehen (Maschen-, Knoten- und andere Verfahren) können nicht übernommen werden.</p>
+<!-- !split -->
+<div class="section" id="beschreibung-und-analyse-im-frequenzbereich-2">
+<h2>Beschreibung und Analyse im Frequenzbereich (2)<a class="headerlink" href="#beschreibung-und-analyse-im-frequenzbereich-2" title="Permalink to this headline">¶</a></h2>
+<p><em>Symbolische Verfahren/Methoden.</em></p>
+<ul class="simple">
+<li><p>komplexe Darstellung (analytisches Verfahren)</p></li>
+<li><p>Zeigerdarstellung (graphisches Verfahren)</p></li>
+<li><p>Wechselstromanalyse</p></li>
+<li><p>Betrachtungen beruhen auf der Verwendung sinusförmiger Eingangsgrößen</p></li>
+<li><p>Zeitbereich ist physikalische Realität mit gew. und partiellen Differentialgleichung (ODE, PDE)</p></li>
+<li><p>Frequenzbereich hat mathematisch-formale Bedeutung</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="symbolisches-verfahren">
+<h2>Symbolisches Verfahren<a class="headerlink" href="#symbolisches-verfahren" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Man ordnet nach einer gewissen Regel jeder Sinusgrö{\ss}e eine symbolische Grö{\ss}e zu (z.B. einen Vektor oder eine komplexe Zahl);</p></li>
+<li><p>Man schreibt die Differentialgleichungen des Netzwerkes mit den symbolischen Grö{\ss}en;</p></li>
+<li><p>Statt die Differentialgleichungen zu lösen, löst man die Gleichungen für die Symbole und bestimmt die unbekannten Grö{\ss}en.</p></li>
+<li><p>Man transformiert die gefundenen Symbolgrö{\ss}en zurück in die gesuchten Sinusgrö{\ss}en.</p></li>
+<li><p>entn. <a href="marinescu2016.html#marinescu2016">[1]</a></p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="vorteile-des-frequenzbereichs">
+<h2>Vorteile des Frequenzbereichs<a class="headerlink" href="#vorteile-des-frequenzbereichs" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>zeitl. Differentiation und Integration geht über in Multiplikation und Division mit dem Differentialoperator <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> (komplexe Frequenz); häufig genügt es sich auf die imaginäre Frequenz <span class="math notranslate nohighlight">\(s=j \omega\)</span> zu beschränken.</p></li>
+<li><p>u-i-Zusammenhänge des Zeitbereichs <span class="math notranslate nohighlight">\(\rightarrow\)</span> ohmsche Form im Frequenzbereich durch komplexen Widerstands-/Leitwertbegriff</p></li>
+<li><p>ODE’s gehen über in algebraische Gleichungen</p></li>
+<li><p>gleichwertige Darstellung harmonischer Funktionen durch komplexe Größen <span class="math notranslate nohighlight">\(\rightarrow\)</span> Zeiger</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-1-zerlegung">
+<h2>Funktionaltransformation (1) - Zerlegung<a class="headerlink" href="#funktionaltransformation-1-zerlegung" title="Permalink to this headline">¶</a></h2>
+<p><em>Zerlegung periodischer Signale.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+f(t) &amp;= \frac{A_0}{2} + \sum_{k=1}^{\infty} A_k \cos(k\omega t) + \sum_{k=1}^{\infty} B_k \sin(k \omega t) \\
+A_k &amp;= \frac{2}{T_0} \int_0^{T_0} f(t) \cos(k \omega t) dt, \quad k=0, 1, \ldots \\
+B_k &amp;= \frac{2}{T_0} \int_0^{T_0} f(t) \sin(k \omega t) dt, \quad k=1, 2, \ldots
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-2-euler-sche-formel">
+<h2>Funktionaltransformation (2) - Euler’sche Formel<a class="headerlink" href="#funktionaltransformation-2-euler-sche-formel" title="Permalink to this headline">¶</a></h2>
+<p><em>Euler’sche Formel.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\sigma + j \omega = a e^{j \varphi} &amp;= a \left( \cos(\varphi) + j \sin(\varphi) \right) \\
+a = \sqrt{\sigma^2 + \omega^2} \quad &amp;\mbox{und} \quad \varphi = \arctan\left(\frac{\omega}{\sigma}\right)
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-3-exponentialdarstellung">
+<h2>Funktionaltransformation (3) - Exponentialdarstellung<a class="headerlink" href="#funktionaltransformation-3-exponentialdarstellung" title="Permalink to this headline">¶</a></h2>
+<p><em>Exponentialdarstellung von Sinussignalen.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\cos(k\omega t) &amp;= \frac{1}{2}\left( e^{j k \omega t} + e^{-jk\omega t}\right), \quad k=0, 1, \ldots \\
+\sin(k\omega t) &amp;= \frac{1}{j2}\left( e^{j k \omega t} - e^{-jk\omega t}\right), \quad k=0, 1, \ldots
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-4-fourierreihe">
+<h2>Funktionaltransformation (4) - Fourierreihe<a class="headerlink" href="#funktionaltransformation-4-fourierreihe" title="Permalink to this headline">¶</a></h2>
+<p><em>Exponentialdarstellung der Fourierreihe.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+f(t) &amp;= \frac{A_0}{2} + \sum_{k=1}^{\infty} \left(\frac{A_k}{2} \left(e^{jk\omega t}+e^{-jk\omega t}\right) + \frac{B_k}{j2}
+\left(e^{jk\omega t}-e^{-jk\omega t}\right) \right) \\
+&amp;= \underbrace{\frac{A_0}{2}}_{C_0} + \sum_{k=1}^{\infty} \frac{1}{2} \underbrace{(A_k-jB_k)}_{C_k}e^{jk\omega t} + \sum_{k=1}^{\infty} \frac{1}{2}
+\underbrace{(A_k+jB_k)}_{C_{-k}}e^{-jk\omega t} \\
+f(t) &amp;=  \sum_{-\infty}^{\infty} C_k e^{jk\omega t}
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-5-transformation">
+<h2>Funktionaltransformation (5) - Transformation<a class="headerlink" href="#funktionaltransformation-5-transformation" title="Permalink to this headline">¶</a></h2>
+<p><em>Transformation.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+f(t) &amp;= \hat{A}\cos(\omega t + \varphi_a) \\
+&amp;= \frac{1}{2} \underbrace{\hat{A} e^{j \varphi_a}}_{Phasor} e^{j \omega t} + \frac{1}{2} \underbrace{\hat{A} e^{-j\varphi_a}}_{Phasor} e^{-j \omega t} \\
+&amp;= \frac{1}{2}\underline{\hat{A}} e^{j \omega t} + \frac{1}{2}\underline{\hat{A}}^{*} e^{-j \omega t} \\
+&amp;= \mathfrak{Re}\left\{\underline{\hat{A}}e^{j\omega t}\right\} \\
+&amp;= \mathfrak{Re}\left\{\hat{A}e^{j \varphi_a}e^{j \omega t}\right\} \\
+&amp;= \mathfrak{Re}\left\{\hat{A}\left( \cos(\omega t + \varphi_a) + j \sin(\omega t + \varphi_a)\right)\right\}
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="funktionaltransformation-6-definition">
+<h2>Funktionaltransformation (6) - Definition<a class="headerlink" href="#funktionaltransformation-6-definition" title="Permalink to this headline">¶</a></h2>
+<p><em>Definitionen.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\underline{f}(t) &amp;= \underline{\hat{A}} e^{j\omega t} = \hat{A} e^{j \varphi_a} e^{j \omega t}, \quad \mbox{rotierender Zeiger, komplexer Momentanwert} \\
+\underline{f}(0) &amp;= \underline{\hat{A}} = \hat{A} e^{j\varphi_a}, \quad \mbox{ruhender Zeiger, komplexer Scheitelwert, Phasor} \\
+\underline{A} &amp;= \frac{1}{\sqrt{2}} \hat{A} e^{j \varphi_a}, \quad \mbox{komplexer Effektivwert}
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="zeigerdarstellung-1">
+<h2>Zeigerdarstellung (1)<a class="headerlink" href="#zeigerdarstellung-1" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_3-zeigerdarstellung.png" width="400"> -->
+<p><img alt="" src="docs/fig/lec_3-zeigerdarstellung.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="zeigerdarstellung-2">
+<h2>Zeigerdarstellung (2)<a class="headerlink" href="#zeigerdarstellung-2" title="Permalink to this headline">¶</a></h2>
+<p><em>Grundschaltelemente in Zeigerdarstellung.</em></p>
+<ul class="simple">
+<li><p>Sinusgrö{\ss}e <span class="math notranslate nohighlight">\(i(t) = I \sqrt{2} \sin(\omega t + \varphi)\)</span></p></li>
+<li><p>da alle in einer Schaltung vorkommenen Sinusgrö{\ss}en (meist) dieselbe Kreisfrequenz <span class="math notranslate nohighlight">\(\omega\)</span> aufweisen, kann man diese au{\ss}er Acht lassen und die Zeiger als stehend betrachten;</p></li>
+<li><p>Der Faktor 2 in den Scheitelwerten aller Sinusgrö{\ss}en wird nicht berücksichtigt und man arbeitet mit Effektivwerten, […], vor allem zur Bestimmung von Leistungen. Man reduziert also die Zeigerlängen im Ma{\ss}stab <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}\)</span>.</p></li>
+</ul>
+<!-- !split -->
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02_lec.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Netzwerkerregung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04_lec.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Impedanz, Admittanz und Leistung</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

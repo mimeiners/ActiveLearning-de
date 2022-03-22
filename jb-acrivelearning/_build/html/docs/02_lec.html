@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netzwerkerregung &#8212; Grundlagen der Elektrotechnik 2 (GEL2)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Frequenzbereich" href="03_lec.html" />
+    <link rel="prev" title="Einleitung" href="01_lec.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Elektrotechnik 2 (GEL2)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_lec.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Netzwerkerregung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lec.html">
+   Frequenzbereich
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_lec.html">
+   Impedanz, Admittanz und Leistung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_lec.html">
+   Graphische Analysemethoden
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_lec.html">
+   Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_lec.html">
+   Messbrücken
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_lec.html">
+   Resonanzkreise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_lec.html">
+   Transformatoren und Übertrager
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/02_lec.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jb-gel2"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jb-gel2/issues/new?title=Issue%20on%20page%20%2Fdocs/02_lec.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erregungsarten">
+   Erregungsarten
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sinusformige-erregung-periodische-vorgange">
+   Sinusförmige Erregung, periodische Vorgänge
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eigenschaften-der-harmonischen-funktionen">
+   Eigenschaften der harmonischen Funktionen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mittelwerte-periodischer-zeitfunktionen">
+   Mittelwerte periodischer Zeitfunktionen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-i-verhalten-von-r">
+   <span class="math notranslate nohighlight">
+    \(u/i\)
+   </span>
+   -Verhalten von
+   <span class="math notranslate nohighlight">
+    \(R\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-i-verhalten-von-l">
+   u/i-Verhalten von
+   <span class="math notranslate nohighlight">
+    \(L\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#u-i-verhalten-von-c">
+   u/i-Verhalten von
+   <span class="math notranslate nohighlight">
+    \(C\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- !split -->
+<!-- jupyter-book 02_lec.md -->
+<div class="tex2jax_ignore mathjax_ignore section" id="netzwerkerregung">
+<h1>Netzwerkerregung<a class="headerlink" href="#netzwerkerregung" title="Permalink to this headline">¶</a></h1>
+<div id="sec:netpwr"></div>
+<!-- !split -->
+## Schaltzeichen
+<p><em>Notice.</em>
+“In Deutschland sind elektrische Schaltzeichen durch DIN EN 60617 Graphische Symbole für Schaltpläne bzw. IEC 60617 genormt.
+Sie ersetzen seit 1996–1998 die DIN 40700 / DIN 40900.”</p>
+<p><a class="reference external" href="https://de.wikipedia.org/wiki/Liste_der_Schaltzeichen_%28Elektrik/Elektronik%29#Ideale_Stromkreise">Schaltzeichen nach DIN EN 60617</a></p>
+<!-- !split -->
+<div class="section" id="erregungsarten">
+<h2>Erregungsarten<a class="headerlink" href="#erregungsarten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gleichvorgänge</p></li>
+<li><p>Nichtperiodische Vorgänge</p></li>
+<li><p>Periodische Vorgänge, Spezialfall sind harmonische (sinus-, cosinusförmige) Vorgänge mit der Periodendauer <span class="math notranslate nohighlight">\(T\)</span></p></li>
+<li><p>Gleichgrößen mit <span class="math notranslate nohighlight">\(f(t)\)</span>=const. werden mit großen lateinischen Buchstaben gekennzeichnet, Gleichspannung <span class="math notranslate nohighlight">\(U\)</span> und Gleichstrom <span class="math notranslate nohighlight">\(I\)</span></p></li>
+<li><p>Zeitveränderliche Größen, hierbei ändert die Erregergröße <span class="math notranslate nohighlight">\(f(t)\)</span> ihre Amplitude und/oder ihre Richtung zeitlich. Der Wert von <span class="math notranslate nohighlight">\(f(t)\)</span> zum momentanen Zeitpunkt heißt Augenblicks- oder Momentanwert <span class="math notranslate nohighlight">\(f(t)\)</span> der physikalischen Größe. Momentanwerte erhalten kleine lateinische Buchstaben, Spannung <span class="math notranslate nohighlight">\(u\)</span> und Strom <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="sinusformige-erregung-periodische-vorgange">
+<h2>Sinusförmige Erregung, periodische Vorgänge<a class="headerlink" href="#sinusformige-erregung-periodische-vorgange" title="Permalink to this headline">¶</a></h2>
+<p><em>Definitionen.</em></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(t)=f(t+nT)\)</span> mit <span class="math notranslate nohighlight">\(n=0, 1 ...\)</span></p></li>
+<li><p>Frequenz <span class="math notranslate nohighlight">\(f=1/T\)</span></p></li>
+<li><p>Kreisfrequenz <span class="math notranslate nohighlight">\(\omega=2\pi f = 2\pi/T\)</span></p></li>
+<li><p>Periodendauer <span class="math notranslate nohighlight">\(T\)</span></p></li>
+<li><p>Wechselgröße allgem. <span class="math notranslate nohighlight">\(a(t)=\hat{A} \sin (\omega t +\varphi) = \hat{A} \sin(\omega t + \omega t_0)\)</span></p></li>
+<li><p>Scheitelwert, Maximalwert der Amplitude <span class="math notranslate nohighlight">\(\hat{A}=\max{A}=A_{max}\)</span></p></li>
+<li><p>Nullphasenwinkel bzw. Nullzeitpunkt <span class="math notranslate nohighlight">\(\varphi=\omega t_0\)</span></p></li>
+<li><p>Erregergröße wird aufgetragen mit <span class="math notranslate nohighlight">\(\omega t\)</span> und nicht <span class="math notranslate nohighlight">\(t\)</span>; <span class="math notranslate nohighlight">\(\psi(t) = \omega t + \varphi = \omega t + \omega t_0\)</span></p></li>
+<li><p>Bogenmaß <span class="math notranslate nohighlight">\(\psi/\mbox{Bogenmaß} = \frac{2 \pi}{360} \psi/\mbox{Grad}\)</span></p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="eigenschaften-der-harmonischen-funktionen">
+<h2>Eigenschaften der harmonischen Funktionen<a class="headerlink" href="#eigenschaften-der-harmonischen-funktionen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Differentiation, Integration und Addition, Subtraktion mithilfe von Additiontheoremen</p></li>
+<li><p>Aufspaltung einer harmonischen Schwingung und Koeffizientenvergleich</p></li>
+<li><p>Zusammengefasst: Bei Addition, Differentiation und Integration von harmonischen Funktionen der Kreisfrequenz <span class="math notranslate nohighlight">\(\omega\)</span> entstehen wieder harmonische Funktionen der gleichen Frequenz, aber veränderter Amplitude und Phase. Bei der Überlagerung zweier harmonischer Größen mit verschiedener Frequenz entsteht zwar eine periodische Schwingung, aber keine Sinusschwingung (harmonische).</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="mittelwerte-periodischer-zeitfunktionen">
+<h2>Mittelwerte periodischer Zeitfunktionen<a class="headerlink" href="#mittelwerte-periodischer-zeitfunktionen" title="Permalink to this headline">¶</a></h2>
+<p><em>Arithmetischer Mittelwert - linearer Mittelwert - Gleichwert.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\overline{u(t)} &amp;= \frac{1}{T} \int_t^{t+T} u(\tau) d \tau
+\end{align}
+\)</span>$</p>
+<p><em>Gleichrichtwert.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+\overline{\lvert u(t) \lvert} &amp;= \frac{1}{T} \int_t^{t+T} \lvert u(\tau) \lvert d \tau
+\end{align}
+\)</span>$</p>
+<p><em>Quadratischer Mittelwert - Effektivwert.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+U_{eff} &amp;= \sqrt{\frac{1}{T} \int_t^{t+T} \overline{u^2(\tau)} d \tau}
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="u-i-verhalten-von-r">
+<h2><span class="math notranslate nohighlight">\(u/i\)</span>-Verhalten von <span class="math notranslate nohighlight">\(R\)</span><a class="headerlink" href="#u-i-verhalten-von-r" title="Permalink to this headline">¶</a></h2>
+<p><em>Widerstand <span class="math notranslate nohighlight">\(R\)</span> - Einheit: <span class="math notranslate nohighlight">\(1 \Omega\)</span>.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+u(t) &amp;= R \cdot i(t) \\
+&amp;= R \cdot \hat{I} \sin(\omega t + \varphi_i) \\
+&amp;= \hat{U} \sin(\omega t + \varphi_u)
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="u-i-verhalten-von-l">
+<h2>u/i-Verhalten von <span class="math notranslate nohighlight">\(L\)</span><a class="headerlink" href="#u-i-verhalten-von-l" title="Permalink to this headline">¶</a></h2>
+<p><em>Induktivität <span class="math notranslate nohighlight">\(L\)</span> - Einheit: <span class="math notranslate nohighlight">\(1 H = 1 Vs/A\)</span>.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+u(t) &amp;= L \cdot \frac{di_L(t)}{dt} \\
+&amp;= \omega L \cdot \hat{I} \cos(\omega t + \varphi_i) \\
+&amp;= \omega L \hat{I} \sin(\omega t + \varphi_i + \frac{\pi}{2})
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+<div class="section" id="u-i-verhalten-von-c">
+<h2>u/i-Verhalten von <span class="math notranslate nohighlight">\(C\)</span><a class="headerlink" href="#u-i-verhalten-von-c" title="Permalink to this headline">¶</a></h2>
+<p><em>Kapazität <span class="math notranslate nohighlight">\(C\)</span> - Einheit: <span class="math notranslate nohighlight">\(1 F = 1 C/V = 1 As/V\)</span>.</em>
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+i(t) &amp;= C \cdot \frac{du_C(t)}{dt} \\
+&amp;= \omega C \cdot \hat{U} \cos(\omega t + \varphi_u) \\
+&amp;= \omega C \hat{U} \sin(\omega t + \varphi_u + \frac{\pi}{2})
+\end{align}
+\)</span>$</p>
+<!-- !split -->
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01_lec.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Einleitung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="03_lec.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Frequenzbereich</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

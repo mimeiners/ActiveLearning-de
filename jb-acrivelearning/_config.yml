@@ -1,0 +1,41 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Red Pitaya's Active Learning  
+author: M. Meiners
+logo: hsb-logo.png
+
+# Short description about the book
+description: >-
+  Red Pitaya's Active Learning Kurs in Deutsch.
+
+execute:
+  execute_notebooks: cache
+
+# HTML-specific settings
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  home_page_in_navbar: false
+  use_issues_button: true
+  use_repository_button: true
+
+# Interact link settings
+notebook_interface: "notebook"
+
+# Launch button settings
+repository:
+  url: https://github.com/executablebooks/jb-activelearning
+  path_to_book: "jb-aslkpro"
+
+binder:
+  binderhub_url: "https://mybinder.org"
+  text: "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+latex:
+  latex_engine: "xelatex"
+  latex_documents:
+    targetname: activelearning.tex
+

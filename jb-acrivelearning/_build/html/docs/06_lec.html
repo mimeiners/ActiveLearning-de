@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netzwerkanalyse &#8212; Grundlagen der Elektrotechnik 2 (GEL2)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Messbrücken" href="07_lec.html" />
+    <link rel="prev" title="Graphische Analysemethoden" href="05_lec.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Elektrotechnik 2 (GEL2)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_lec.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_lec.html">
+   Netzwerkerregung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lec.html">
+   Frequenzbereich
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_lec.html">
+   Impedanz, Admittanz und Leistung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_lec.html">
+   Graphische Analysemethoden
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_lec.html">
+   Messbrücken
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_lec.html">
+   Resonanzkreise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_lec.html">
+   Transformatoren und Übertrager
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/06_lec.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jb-gel2"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jb-gel2/issues/new?title=Issue%20on%20page%20%2Fdocs/06_lec.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#makrotheorie-ref-a-href-kasper2000-html-kasper2000-7-a">
+   Makrotheorie, Ref.
+   <a href="kasper2000.html#kasper2000">
+    [7]
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerksimulation">
+   Netzwerksimulation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerk">
+   Netzwerk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transiente-analyse">
+   Transiente Analyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differentialgleichungssystem">
+   Differentialgleichungssystem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerkanalyse-zeitabhangiger-signale">
+   Netzwerkanalyse zeitabhängiger Signale
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#losung-im-frequenzbereich">
+   Lösung im Frequenzbereich
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#grundaufgabe-der-netzwerkanalyse">
+   Grundaufgabe der Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#netzwerkstruktur-a-href-paul2012-html-paul2012-8-a">
+   Netzwerkstruktur
+   <a href="paul2012.html#paul2012">
+    [8]
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vollstandiger-baum">
+   Vollständiger Baum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maschenstromverfahren">
+   Maschenstromverfahren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wahl-der-unabhangigen-strome-i-m">
+   Wahl der unabhängigen Ströme
+   <span class="math notranslate nohighlight">
+    \(I_M\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maschengleichungen">
+   4 Maschengleichungen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maschenstromverfahren-kettenschaltung">
+   Maschenstromverfahren – Kettenschaltung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knotenspannungsanalyse">
+   Knotenspannungsanalyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knotenspannungs-vs-maschenstromanalyse">
+   Knotenspannungs- vs Maschenstromanalyse
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#knotenpotentialverfahren-mit-x-schaltung">
+   Knotenpotentialverfahren mit X-Schaltung
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- !split -->
+<!-- jupyter-book 06_lec.md -->
+<div class="tex2jax_ignore mathjax_ignore section" id="netzwerkanalyse">
+<h1>Netzwerkanalyse<a class="headerlink" href="#netzwerkanalyse" title="Permalink to this headline">¶</a></h1>
+<div id="sec:netana"></div>
+<!-- !split -->
+## Systemsimulation
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      Ebene             Maß       Simulation     
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Atom                       0.1 nm<br />
+Festkörper/Atomverbund     1.0 nm<br />
+Device                     0.1 mm  Feld<br />
+Transistor/Subkomponenten  1.0 mm<br />
+Gatter/Komponenten         10 mm   Verhaltensmodell</p>
+<!-- !split -->
+<div class="section" id="makrotheorie-ref-a-href-kasper2000-html-kasper2000-7-a">
+<h2>Makrotheorie, Ref. <a href="kasper2000.html#kasper2000">[7]</a><a class="headerlink" href="#makrotheorie-ref-a-href-kasper2000-html-kasper2000-7-a" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Mittelwerte charakteristischer Größen des Systems</p></li>
+<li><p>Temperatur, Wärmekapazität, Leitfähigkeit etc.</p></li>
+<li><p>schwache oder homogene Ortsabhängigkeit</p></li>
+<li><p>partielle Differentialgleichungen (PDE’s) der Feldtheorie gehen über in gewöhnliche Differentialgleichungen (ODE’s)</p></li>
+<li><p>nur noch dt kein dx (nach dem Ort)</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="netzwerksimulation">
+<h2>Netzwerksimulation<a class="headerlink" href="#netzwerksimulation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Maschenwiderstandsmatrix</p></li>
+<li><p>Knotenleitwertmatrix</p></li>
+<li><p>mathematisch äquivalente Beschreibungen</p></li>
+<li><p>für praktische Berechnungen (Simulation) “Knotenanalyse”</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="netzwerk">
+<h2>Netzwerk<a class="headerlink" href="#netzwerk" title="Permalink to this headline">¶</a></h2>
+<!-- <img src="fig/lec_6s20.png" width="400"> -->
+<p><img alt="" src="docs/fig/lec_6s20.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="transiente-analyse">
+<h2>Transiente Analyse<a class="headerlink" href="#transiente-analyse" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Knoten 0:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    -i_0-i_1-i_5&amp;=0 \\
+    -G_1(v_3-v_0) - C_5 \frac{d}{dt}(v_1-v_0) &amp;= i_0
+  \end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Knoten 1:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    -i_2+i_3+i_5+i_6&amp;=0 \\
+    -G_2(v_3-v_1)+G_3(v_1-v_3)+C_5 \frac{d}{dt}(v_1-v_0)+C_6 \frac{d}{dt}(v_1-v_6)&amp;=0
+  \end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Knoten 2:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    -i_3+i_4-i_6 &amp;= 0 \\
+    -G_3(v_1-v_2)+G_4(v_2-v_4)-C_6 \frac{d}{t}(v_1-v_2) &amp;= 0
+  \end{align*}
+\end{split}\]</div>
+<!-- !split -->
+</div>
+<div class="section" id="differentialgleichungssystem">
+<h2>Differentialgleichungssystem<a class="headerlink" href="#differentialgleichungssystem" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    \begin{pmatrix}
+      G_2+G_3 &amp; -G_3 &amp; -G_2 &amp; 0 \\
+      -G_3 &amp; G_3+G_4 &amp; 0 &amp; -G_4 \\
+      -G_2 &amp; 0 &amp; G_1+G_2 &amp; 0 \\
+      0 &amp; -G_4 &amp; 0 &amp; G_4
+    \end{pmatrix} &amp; 
+    \begin{pmatrix}
+      v_1 \\
+      v_2 \\
+      v_3 \\
+      v_4
+    \end{pmatrix}
+    + \cdots \\ 
+    \begin{pmatrix}
+      C_5+C_6 &amp; -C_6 &amp; 0 &amp; 0 \\
+      -C_6 &amp; C_6 &amp; 0 &amp; 0 \\
+      0 &amp; 0 &amp; 0 &amp; 0 \\
+      0 &amp; 0 &amp; 0 &amp; 0
+    \end{pmatrix}
+    \frac{d}{dt} &amp;
+    \begin{pmatrix}
+      v_1 \\
+      v_2 \\
+      v_3 \\
+      v_4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 \\
+      0 \\
+      0 \\
+      -i_0
+    \end{pmatrix}
+     \end{align*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+    \mathbf{A} \mathbf{x} + \mathbf{B} \dot{\mathbf{x}} &amp;= \mathbf{b} \\
+    \dot{\mathbf{x}} &amp;= -\mathbf{B}^{-1}\mathbf{A}\mathbf{x} +
+    \mathbf{B}^{-1}\mathbf{b}(t) \\
+    &amp;= \mathbf{T}\mathbf{x} + \mathbf{g}(t)
+  \end{align*}
+\end{split}\]</div>
+<!-- !split -->
+</div>
+<div class="section" id="netzwerkanalyse-zeitabhangiger-signale">
+<h2>Netzwerkanalyse zeitabhängiger Signale<a class="headerlink" href="#netzwerkanalyse-zeitabhangiger-signale" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Matrix <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> ist nicht immer invertierbar, ggf. blockweise zerlegen</p></li>
+<li><p>Algebro-Differentialgleichungen</p></li>
+<li><p>Euler-Verfahren, explizit (vorwärts), implizit (rückwärts)</p></li>
+<li><p>Trapez- oder Mittelpunktregel</p>
+<ul>
+<li><p>Adams-Bashforth-,Adams-Multon- und Gear-Verfahren</p></li>
+<li><p><em>Gut für den Rechner</em> <span class="math notranslate nohighlight">\(\rightarrow\)</span> Matlab, Python, SPICE</p></li>
+<li><p>Wir machen Transformation und dann Gauss’sches-Eliminationsverfahren</p></li>
+</ul>
+</li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="losung-im-frequenzbereich">
+<h2>Lösung im Frequenzbereich<a class="headerlink" href="#losung-im-frequenzbereich" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                  Zeitbereich                             Frequenzbereich                    
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         Urbildbereich                  Bildbereich                                          
+</pre></div>
+</div>
+<p>Spannung     <span class="math notranslate nohighlight">\(u_n(t)\)</span>                       <span class="math notranslate nohighlight">\(\underline{u}(t)=\underline{\hat{U}}e^{j\omega t}\)</span><br />
+Strom        <span class="math notranslate nohighlight">\(i_n(t)\)</span>                       <span class="math notranslate nohighlight">\(\underline{i}(t)=\underline{\hat{U}}e^{j\omega t}\)</span><br />
+Widerstand   <span class="math notranslate nohighlight">\(u_R(t)=Ri_R(t)\)</span>               <span class="math notranslate nohighlight">\(\underline{u}_R(t)=R \underline{i}(t)\)</span><br />
+Kondensator  <span class="math notranslate nohighlight">\(i_C(t)=C \frac{du_C(t)}{dt}\)</span>  <span class="math notranslate nohighlight">\(\underline{i}_C(t)= j \omega C \underline{u}_C(t)\)</span><br />
+Spule        <span class="math notranslate nohighlight">\(u_L(t)=L \frac{di_L(t)}{dt}\)</span>  <span class="math notranslate nohighlight">\(\underline{u}_L(t)= j \omega L \underline{i}_L(t)\)</span><br />
+(wenn für <span class="math notranslate nohighlight">\(t=0\)</span> energielos)</p>
+<!-- !split -->
+</div>
+<div class="section" id="grundaufgabe-der-netzwerkanalyse">
+<h2>Grundaufgabe der Netzwerkanalyse<a class="headerlink" href="#grundaufgabe-der-netzwerkanalyse" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Gewinnung des Netzwerkes</p></li>
+<li><p>Wahl des Lösungsverfahrens</p></li>
+<li><p>Durchführung der Netzwerkanalyse</p></li>
+<li><p>Diskussion der Lösung</p></li>
+</ul>
+<p><em>Netzwerkgleichungen – Kirchhoff’sche Gesetze.</em></p>
+<ul class="simple">
+<li><p>Knotensatz: <span class="math notranslate nohighlight">\(\sum i_n(t)=0\)</span></p></li>
+<li><p>Maschensatz: <span class="math notranslate nohighlight">\(\sum u_n(t)=0\)</span></p></li>
+<li><p>Zweigbeziehungen: <span class="math notranslate nohighlight">\(u_n = f(i_n)\)</span></p></li>
+</ul>
+<p><em>Vollständiges Kirchhoff’sches Gleichungssystem.</em></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p=k-1\)</span>, unabhängige Knotengleichungen</p></li>
+<li><p><span class="math notranslate nohighlight">\(m=z-(k-1)\)</span>, unabhängige Maschengleichungen</p></li>
+<li><p><span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(u,i\)</span>-Beziehungen der Zweigelemente</p></li>
+</ul>
+<!-- !split -->
+</div>
+<div class="section" id="netzwerkstruktur-a-href-paul2012-html-paul2012-8-a">
+<h2>Netzwerkstruktur <a href="paul2012.html#paul2012">[8]</a><a class="headerlink" href="#netzwerkstruktur-a-href-paul2012-html-paul2012-8-a" title="Permalink to this headline">¶</a></h2>
+<p><em>Unabhängige Knoten und Maschen.</em></p>
+<p>Die Eigenschaften eines Netzwerkes werden von den Netzwerkelementen und der Netzwerkstruktur oder -topologie bestimmt. Das ist die Art
+ihrer Zusammenschaltung. Sie wird auch als “Gerüst” bezeichnet und zeichnerisch durch den “Streckenkomplex” (engl. graph)
+ausgedrückt. Die Beschreibung kann gleichwertig durch eine “topologische Matrix” erfolgen.</p>
+<p><em>Netzwerkgraph.</em></p>
+<p>Der Netzwerkgraph beschreibt die Verbindung der Netzwerkelemente durch Abstraktion der Netzwerkgeometrie. Jedem Knoten im Graphen
+entspricht ein Knoten im Netzwerk und jeder Verbindungslinie ein Zweig zwischen zwei Knoten. Er ist Grundlage der Zahl unabhängiger
+Knoten- und Maschengleichungen und kann durch “topologische Matrizen” (sog. “Inzidenzmatrizen”) mathematisch beschrieben werden.</p>
+<!-- !split -->
+</div>
+<div class="section" id="vollstandiger-baum">
+<h2>Vollständiger Baum<a class="headerlink" href="#vollstandiger-baum" title="Permalink to this headline">¶</a></h2>
+<p><em>Eigenschaften:</em></p>
+<ul class="simple">
+<li><p>alle Knoten sind direkt oder indirekt miteinander verbunden,</p></li>
+<li><p>wird ein weiterer Zweig entfernt, so geht Merkmal 1. verloren,</p></li>
+<li><p>es treten keine Umläufe auf.</p></li>
+</ul>
+<p><em>Notice.</em></p>
+<p>Ein vollständiger Baum (engl. tree) ist ein Teilgraph, der keine Umläufe besitzt und alle Knoten des Ausgangsgraphen miteinander
+verbindet. In einem Netzwerk mit <span class="math notranslate nohighlight">\(k\)</span> Knoten hat der vollständige Baum insgesamt <span class="math notranslate nohighlight">\(k-1\)</span> Zweige.</p>
+<p><em>Baumkomplement.</em></p>
+<p>Das Baumkomplement bildet als Gesamtheit aller Verbindungszweige das “System unabhängiger Zweige”. Jeder Verbindungszweig gehört
+genau zu einer Schleife (Masche), die nur aus diesem Verbindungszweig und Zweigen des vollständigen Baumes besteht. Eine solche Schleife
+heißt “Fundamentalschleife” (“unabhängige Masche”). Davon gibt es <span class="math notranslate nohighlight">\(m=z-(k-1)\)</span>.</p>
+<!-- !split -->
+</div>
+<div class="section" id="maschenstromverfahren">
+<h2>Maschenstromverfahren<a class="headerlink" href="#maschenstromverfahren" title="Permalink to this headline">¶</a></h2>
+<div id="sec:masch"></div>
+<!-- <img src="fig/lec_6s30.png" width="400"> -->
+<p><img alt="" src="docs/fig/lec_6s30.png" /></p>
+<!-- !split -->
+</div>
+<div class="section" id="wahl-der-unabhangigen-strome-i-m">
+<h2>Wahl der unabhängigen Ströme <span class="math notranslate nohighlight">\(I_M\)</span><a class="headerlink" href="#wahl-der-unabhangigen-strome-i-m" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[
+ I_1, I_4, I_7, I_8 
+\]</div>
+<p>Abbildung der abhängigen Ströme durch die unabhängigen Ströme:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    \begin{pmatrix}
+      I_2 \\
+      I_3 \\
+      I_5 \\
+      I_6 \\
+      I_9 \\
+      I_{10}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -1 &amp; -1 &amp; -1 &amp; 0 \\
+      -1 &amp; 0 &amp; -1 &amp; 0 \\
+      0 &amp; -1 &amp; -1 &amp; 0 \\
+      0 &amp; -1 &amp; -1 &amp; 0 \\
+      0 &amp; 1 &amp; 1 &amp; -1 \\
+      0 &amp; 0 &amp; 1 &amp; -1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+      I_1 \\
+      I_4 \\
+      I_7 \\
+      I_8
+    \end{pmatrix}
+  \end{align}
+\end{split}\]</div>
+<!-- !split -->
+</div>
+<div class="section" id="maschengleichungen">
+<h2>4 Maschengleichungen<a class="headerlink" href="#maschengleichungen" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+      I_1Z_1 - I_2Z_2 - I_3Z_3 &amp;= 0 \\
+      U_4 + I_4Z_4 + I_9+Z_9 - I_6Z_6 - I_5Z_5 - I_2Z_2 &amp;= 0 \\
+      I_7Z_7 + I_{10}Z_{10} + I_9Z_9 - I_6Z_6 - I_5Z_5 - I_2Z_2 -
+      I_3Z_3 &amp;= 0 \\
+      U_8 + I_8Z_8 - I_9Z_9 - I_{10}Z_{10} &amp;= 0
+    \end{align}
+\end{split}\]</div>
+<p>Sortieren und aufstellen des Gleichungssystems:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    \underbrace{\begin{pmatrix}
+        \sum Z_{1,3} &amp; Z_2 &amp; \sum Z_{2,3} &amp; 0 \\
+        Z_2 &amp; \sum Z_{2,4,5,6,9} &amp; \sum Z_{2,5,6,9,10} &amp; -Z_9 \\
+        \sum Z_{2,3} &amp; \sum Z_{2,5,6,9,10} &amp; \sum Z_{2,3,5,6,7,9,10} &amp;
+        \sum -Z_{9,10} \\
+        0 &amp; -Z_9 &amp; \sum -Z_{9,10} &amp; \sum Z_{8,9,10}
+      \end{pmatrix}}_{\mathbf{Z}}
+    \underbrace{\begin{pmatrix}
+        I_1 \\
+	I_4 \\
+	I_7 \\
+	I_8
+      \end{pmatrix}}_{\mathbf{I_M}}
+    &amp;=
+    \underbrace{\begin{pmatrix}
+        0 \\
+	-U_4 \\
+	0 \\
+	-U_8
+      \end{pmatrix}}_{\mathbf{U}}
+  \end{align}
+\end{split}\]</div>
+<!-- !split -->
+<!-- --- begin exercise --- -->
+</div>
+<div class="section" id="maschenstromverfahren-kettenschaltung">
+<h2>Maschenstromverfahren – Kettenschaltung<a class="headerlink" href="#maschenstromverfahren-kettenschaltung" title="Permalink to this headline">¶</a></h2>
+<div id="exer:ladder"></div>
+<p>Berechnen Sie mittels des Maschenstromverfahrens den Strom <span class="math notranslate nohighlight">\(I\)</span> durch den Abschlußwiderstand <span class="math notranslate nohighlight">\(R\)</span>.
+<span class="math notranslate nohighlight">\(\hat{U}_0=150\,mV\)</span>, <span class="math notranslate nohighlight">\(f=10.7\,MHz\)</span>, <span class="math notranslate nohighlight">\(C_1=C_2=300\,pF\)</span>, <span class="math notranslate nohighlight">\(L_3=L_5=1\,\mu H\)</span></p>
+<p>Wählen Sie den gesuchten Strom <span class="math notranslate nohighlight">\(I\)</span> als unabhängigen Strom, damit Sie ihn direkt als Lösung der Impedanz-Gleichung erhalten.</p>
+<p>Das Netzwerk ist ein Tiefpassfilter höherer Ordnung. Wie können Sie das überprüfen?</p>
+<!-- <img src="fig/lec_6s33.png" width="400"> -->
+<p><img alt="" src="docs/fig/lec_6s33.png" /></p>
+<p><em>Notice.</em></p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html">Matrizen / Lineare Algebra in Python</a></p>
+<!-- --- end exercise --- -->
+<!-- !split -->
+</div>
+<div class="section" id="knotenspannungsanalyse">
+<h2>Knotenspannungsanalyse<a class="headerlink" href="#knotenspannungsanalyse" title="Permalink to this headline">¶</a></h2>
+<p>Beim Knotenspannungsverfahren, das auf Maxwell (1873) zurückgeht, wird die Hilfsvariable <em>Knotenspannung</em> so eingeführt,
+dass jede <em>Maschengleichung</em> automatisch erfüllt ist und daher alle wegfallen.</p>
+<p>Das Verfahren umfasst dann:</p>
+<ul class="simple">
+<li><p>die Aufstellung der Knotengleichungen für die Zweigströme,</p></li>
+<li><p>ihren Ersatz durch die Zweigbeziehungen <span class="math notranslate nohighlight">\(I=f(U)\)</span> der Netzwerkelemente ausgedrückt durch Knotenspannungen</p></li>
+</ul>
+<p>(statt der Zweigspannung) und die Lösung der Gleichungen nach den Knotenspannungen.</p>
+<!-- !split -->
+</div>
+<div class="section" id="knotenspannungs-vs-maschenstromanalyse">
+<h2>Knotenspannungs- vs Maschenstromanalyse<a class="headerlink" href="#knotenspannungs-vs-maschenstromanalyse" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Wegfall der Baumsuche, auch spielt die Zahl unabhängiger Maschen <span class="math notranslate nohighlight">\(m = z-(k-1)\)</span> und damit die Anzahl der Zweige keine Rolle,</p></li>
+<li><p>weil die Knotenspannungen unabhängige Variablen sind, dürfen Spannungsquellen nicht auftreten, denn eine ideale Spannungsquelle zwischen zwei Knoten macht den Strom durch die Quelle unbestimmt.</p></li>
+</ul>
+<!-- !split -->
+<!-- --- begin exercise --- -->
+</div>
+<div class="section" id="knotenpotentialverfahren-mit-x-schaltung">
+<h2>Knotenpotentialverfahren mit X-Schaltung<a class="headerlink" href="#knotenpotentialverfahren-mit-x-schaltung" title="Permalink to this headline">¶</a></h2>
+<div id="exer:x-circuit"></div>
+<p>Das folgende Netzwerk enthält vier Impedanzen in der sogenannten X-Schaltung. Die beiden Quellen haben dieselbe
+Frequenz <span class="math notranslate nohighlight">\(f= 440\,Hz\)</span>; dabei eilt der Strom <span class="math notranslate nohighlight">\(I_0\)</span> in seiner Phase um <span class="math notranslate nohighlight">\(30^{\circ}\)</span> der Spannung <span class="math notranslate nohighlight">\(U_0\)</span> voraus.
+Berechnen Sie mittels Knotenpotentialverfahren die Spannung <span class="math notranslate nohighlight">\(U_1\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\hat{U}_0 = 250\,V\)</span>, <span class="math notranslate nohighlight">\(R_0 = 100\,\Omega\)</span>, <span class="math notranslate nohighlight">\(R_1=R_2=69\,\Omega\)</span> <span class="math notranslate nohighlight">\(R_3=200\,\Omega\)</span>,
+<span class="math notranslate nohighlight">\(C_1=C_2=1\,\mu F\)</span>, <span class="math notranslate nohighlight">\(L_1=L_2=10\,mH\)</span>, <span class="math notranslate nohighlight">\(\hat{I}_0=2\,A\)</span></p>
+<!-- <img src="fig/lec_6s33.png" width="400"> -->
+<p><img alt="" src="docs/fig/lec_6s33.png" /></p>
+<!-- --- end exercise --- -->
+<!-- !split -->
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="05_lec.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Graphische Analysemethoden</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="07_lec.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Messbrücken</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

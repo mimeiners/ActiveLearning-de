@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphische Analysemethoden &#8212; Grundlagen der Elektrotechnik 2 (GEL2)</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Netzwerkanalyse" href="06_lec.html" />
+    <link rel="prev" title="Impedanz, Admittanz und Leistung" href="04_lec.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/hsb-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Grundlagen der Elektrotechnik 2 (GEL2)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_lec.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_lec.html">
+   Netzwerkerregung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_lec.html">
+   Frequenzbereich
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_lec.html">
+   Impedanz, Admittanz und Leistung
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Graphische Analysemethoden
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_lec.html">
+   Netzwerkanalyse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_lec.html">
+   Messbrücken
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_lec.html">
+   Resonanzkreise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_lec.html">
+   Transformatoren und Übertrager
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/05_lec.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jb-gel2"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jb-gel2/issues/new?title=Issue%20on%20page%20%2Fdocs/05_lec.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#frequenzgang-ubergangsverhalten">
+   Frequenzgang – Übergangsverhalten
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-bode-diagramm-einer-rc-schaltung">
+     Exercise: Bode-Diagramm einer RC-Schaltung
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ortskurven">
+   Ortskurven
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-ortskurve-einer-rc-schaltung">
+     Exercise: Ortskurve einer RC-Schaltung
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reihenschaltung-von-r-l-und-c">
+     Reihenschaltung von
+     <span class="math notranslate nohighlight">
+      \(R\)
+     </span>
+     ,
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+     und
+     <span class="math notranslate nohighlight">
+      \(C\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parallelschaltung-von-r-l-und-c">
+     Parallelschaltung von
+     <span class="math notranslate nohighlight">
+      \(R\)
+     </span>
+     ,
+     <span class="math notranslate nohighlight">
+      \(L\)
+     </span>
+     und
+     <span class="math notranslate nohighlight">
+      \(C\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inversion-von-ortskurven">
+     Inversion von Ortskurven
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- !split -->
+<!-- jupyter-book 05_lec.md -->
+<div class="tex2jax_ignore mathjax_ignore section" id="graphische-analysemethoden">
+<h1>Graphische Analysemethoden<a class="headerlink" href="#graphische-analysemethoden" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Bode-Diagramm, Frequenz- und Phasengang <a href="lunze2014.html#lunze2014">[2]</a><a href="philippsen2019.html#philippsen2019">[3]</a></p></li>
+<li><p>Nyquist-Ortskurve, kurz <a class="reference external" href="https://elektroniktutor.de/elektrophysik/ortskurv.html">Ortskurve</a> <a href="mietke2020.html#mietke2020">[4]</a><a href="schenke2020.html#schenke2020">[5]</a></p></li>
+</ul>
+<!-- !split -->
+<div class="section" id="frequenzgang-ubergangsverhalten">
+<h2>Frequenzgang – Übergangsverhalten<a class="headerlink" href="#frequenzgang-ubergangsverhalten" title="Permalink to this headline">¶</a></h2>
+<p><em>Kurzbeschreibung.</em>
+Der Frequenzgang beschreibt, wie ein dynamisches System eine sinusförmige Eingangsgröße überträgt.</p>
+<!-- <img src="fig/lec_5s1.png" width="200"> -->
+<p><img alt="" src="docs/fig/lec_5s1.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+ F(j\omega) = \frac{\underline{U}_2}{\underline{U}_1} = \frac{j \omega R_1 C_1}{1+j \omega R_1 C_1} 
+\]</div>
+<!-- !split -->
+<div class="section" id="exercise-bode-diagramm-einer-rc-schaltung">
+<h3>Exercise: Bode-Diagramm einer RC-Schaltung<a class="headerlink" href="#exercise-bode-diagramm-einer-rc-schaltung" title="Permalink to this headline">¶</a></h3>
+<div id="ipynb:bode"></div>
+<p>Ermitteln Sie den Betrags- und Phasengang der einfachen RC-Schaltung mit Hilfe der komplexen Wechselstromrechnung (KWR).
+Nutzen Sie Python oder Matlab zur Darstellung des Bode-Diagramms.</p>
+<!-- !split -->
+</div>
+</div>
+<div class="section" id="ortskurven">
+<h2>Ortskurven<a class="headerlink" href="#ortskurven" title="Permalink to this headline">¶</a></h2>
+<p>Als Referenz zu diesem Thema sei das Kapitel 5 aus <a href="buettner2014.html#buettner2014">[6]</a> empfohlen.</p>
+<p><em>Vergleich zum Zeigerdiagramm.</em></p>
+<ul class="simple">
+<li><p>Zeigerdiagramm nur für konstante Parameter</p></li>
+<li><p>Im Zeigerdiagramm keine Aussagen über Auswirkungen von Änderungen der Frequenz oder Schaltelemente</p></li>
+<li><p>“Für jeden Wert der Zweipole <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span>, und <span class="math notranslate nohighlight">\(C\)</span> oder jede Frequenz müssten gesonderte Zeigerdiagramme erstellt werden.”</p></li>
+<li><p>“Man verzichtet auf die Darstellung der Zeiger und trägt in der komplexen Zahlenebene nur die Kurve auf.”</p></li>
+</ul>
+<!-- !split -->
+<div class="section" id="exercise-ortskurve-einer-rc-schaltung">
+<h3>Exercise: Ortskurve einer RC-Schaltung<a class="headerlink" href="#exercise-ortskurve-einer-rc-schaltung" title="Permalink to this headline">¶</a></h3>
+<div id="ipynb:rc"></div>
+<p>“Mit den Bauteilen <span class="math notranslate nohighlight">\(R\)</span> = 2 k <span class="math notranslate nohighlight">\(\Omega\)</span> und <span class="math notranslate nohighlight">\(C\)</span> = 159 nF kann eine Reihen- oder Parallelschaltung
+gebildet werden. Die komplexe Impedanz der Reihenschaltung ist von der Frequenz abhängig und grafisch in der komplexen
+Ebene als Ortskurve mit der Frequenz als Parameter dargestellt. Die Blindwiderstandswerte wurden für einen bestimmten
+Frequenzbereich errechnet und im Polarkoordinatensystem eingetragen. Alle Werte liegen im 4. Quadranten auf einer
+Geraden. Da der ohmsche Widerstand ist von der Frequenz unabhängig ist, verläuft sie parallel zur imaginären Achse im
+Abstand von 2 k <span class="math notranslate nohighlight">\(\Omega\)</span>. Auf die reelle (Re) Achse bezogen ist der Phasenwinkel der Impedanz negativ. Das Diagramm
+ist mit den angegebenen gerundeten Rechenwerten des Blindwiderstands, der Impedanz und des Phasenwinkels erstellt.”</p>
+<!-- <img src="fig/lec_5s2.png" width="200"> -->
+<p><img alt="" src="docs/fig/lec_5s2.png" /></p>
+<div class="math notranslate nohighlight">
+\[
+ \underline{Z} = R_1 + \frac{1}{j \omega C_1} 
+\]</div>
+<p>“Die Ortskurve kann auch für die Parallelschaltung von R und C mit der Frequenz als Parameter gezeichnet werden. Im
+Polardiagramm wird sie durch die Zeiger aller Gesamtleitwerte oder Admittanzen gebildet und verläuft im 1. Quadranten
+parallel zur imaginären Achse. Die Achsenbezeichnungen der Leitwerte werden in Siemens S angeben. Die Phasenwinkel sind
+auf die Re-Achse bezogen positiv.” <a href="mietke2020.html#mietke2020">[4]</a></p>
+<!-- !split -->
+</div>
+<div class="section" id="reihenschaltung-von-r-l-und-c">
+<h3>Reihenschaltung von <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> und <span class="math notranslate nohighlight">\(C\)</span><a class="headerlink" href="#reihenschaltung-von-r-l-und-c" title="Permalink to this headline">¶</a></h3>
+<!-- !split -->
+</div>
+<div class="section" id="parallelschaltung-von-r-l-und-c">
+<h3>Parallelschaltung von <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> und <span class="math notranslate nohighlight">\(C\)</span><a class="headerlink" href="#parallelschaltung-von-r-l-und-c" title="Permalink to this headline">¶</a></h3>
+<!-- !split -->
+</div>
+<div class="section" id="inversion-von-ortskurven">
+<h3>Inversion von Ortskurven<a class="headerlink" href="#inversion-von-ortskurven" title="Permalink to this headline">¶</a></h3>
+<div id="inversion"></div>
+<p>“Bei der Konstruktion einer Ortskurve ist es oft notwendig von der Widerstandsform <span class="math notranslate nohighlight">\(\underline{Z}(\omega)\)</span> auf die
+Leitwertsform <span class="math notranslate nohighlight">\(\underline{Y}(\omega)\)</span> überzugehen und umgekehrt. Beide Funktionen gehen jeweils aus der Kehrwertbildung
+der anderen hervor, man nennt sie zueinander inverse Funktionen und die Kehrwertbildung selbst Inversion.” <a href="buettner2014.html#buettner2014">[6]</a></p>
+<ul class="simple">
+<li><p>Inversion eines Punktes (Widerstandsform/Impedanz): <span class="math notranslate nohighlight">\(\underline{Z} (5 + 5j) \Omega\)</span></p></li>
+<li><p>Ma{\ss}stäbe <span class="math notranslate nohighlight">\(M_Z = 2 \Omega/cm\)</span> und <span class="math notranslate nohighlight">\(M_Y = 0.1 S/cm\)</span></p></li>
+<li><p>Leitwertform/Admittanz: <span class="math notranslate nohighlight">\(\underline{Y} = 1 / \underline{Z}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\underline{Y} = \frac{1}{(5 + 5j) \Omega} = \frac{(5 - 5j)S}{50} = (0.1 - 0.1j) S
+\end{equation}
+\]</div>
+<ul class="simple">
+<li><p>Inversion von Ortskuven durch Inversion einzelner Punkte <a href="buettner2014.html#buettner2014">[6]</a>:
+a. In die komplexe Zahlenebene wird der Zeiger <span class="math notranslate nohighlight">\(Z\)</span> eingetragen, dessen Spitze invertiert werden soll.
+b. Um den Ursprung des Koordinatensystems wird ein Inversionskreis mit beliebigem Radius <span class="math notranslate nohighlight">\(r\)</span> geschlagen.
+c. Von der Spitze des Zeigers <span class="math notranslate nohighlight">\(Z\)</span> aus werden Tangenten an den Kreis gelegt, sie ergeben die Berührungspunkte <span class="math notranslate nohighlight">\(T_1\)</span> und <span class="math notranslate nohighlight">\(T_2\)</span>. Die Tangentenpunkte kann man auch finden, wenn man um die Mitte des Zeigers einen Kreis mit dem Radius <span class="math notranslate nohighlight">\(Z / 2\)</span>, d.h. einen Thaleskreis, schlägt (siehe <a class="reference external" href="https://de.wikipedia.org/wiki/H%C3%B6hensatz">Höhensatz</a>).
+d. Die beiden Punkte <span class="math notranslate nohighlight">\(T_1\)</span> und <span class="math notranslate nohighlight">\(T_2\)</span> werden miteinander verbunden.
+e. Wo die Verbindungslinie den Zeiger <span class="math notranslate nohighlight">\(Z\)</span> schneidet, liegt die Spitze des konjugiert komplexen Zeigers <span class="math notranslate nohighlight">\(Y^*\)</span>.
+f. Spiegelt man den Zeiger <span class="math notranslate nohighlight">\(Y^*\)</span> an der reellen Achse, so erhält man <span class="math notranslate nohighlight">\(Y\)</span>. Die Spitze dieses Zeigers entspricht also der invertierten Spitze von <span class="math notranslate nohighlight">\(Z\)</span>.
+g. Bezeichnet man die Maßstäbe für den komplexen Scheinwiderstand mit <span class="math notranslate nohighlight">\(M_Z\)</span> und den Scheinleitwert mit <span class="math notranslate nohighlight">\(M_Y\)</span> sowie die Länge des Zeigers <span class="math notranslate nohighlight">\(Z\)</span> mit <span class="math notranslate nohighlight">\(L_Z\)</span> und die der Zeiger <span class="math notranslate nohighlight">\(Y\)</span>  bzw. <span class="math notranslate nohighlight">\(Y^*\)</span> mit <span class="math notranslate nohighlight">\(L_Y^*\)</span>  bzw. <span class="math notranslate nohighlight">\(L_Y\)</span>, so ist – da das Dreieck 0T1P rechtwinklig ist – nach dem <a class="reference external" href="https://de.wikipedia.org/wiki/Satzgruppe_des_Pythagoras#Kathetensatz_des_Euklid">Kathetensatz</a>: <span class="math notranslate nohighlight">\(r^2 = L_Z \cdot L_Y^* = L_Z \cdot L_Y\)</span></p></li>
+</ul>
+<!-- !split -->
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="04_lec.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Impedanz, Admittanz und Leistung</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="06_lec.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Netzwerkanalyse</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By M. Meiners<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
